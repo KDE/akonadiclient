@@ -11,9 +11,12 @@ find_package(KdepimLibs 4.7.0 REQUIRED)
 
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDEPIMLIBS_INCLUDE_DIRS} ${KDE4_INCLUDES} ${QT_INCLUDE_DIR})
 
+set(CMAKE_AUTOMOC TRUE)
+
 ###### target ######
 
 set(akonadiclient_SRCS
+    abstractcommand.cpp
     main.cpp
 )
 
