@@ -26,7 +26,8 @@
 #include <QCoreApplication>
 
 CommandRunner::CommandRunner( int argc, char **argv )
-  : mApplication( 0 )
+  : mApplication( 0 ),
+    mCommand( 0 )
 {
 }
 
@@ -37,7 +38,12 @@ CommandRunner::~CommandRunner()
 
 int CommandRunner::exec()
 {
-  return mApplication ? mApplication->exec() : AbstractCommand::InvalidUsage;
+  if ( mApplication && mCommand ) {
+    QMetaObject::invokeMethod( mCommand, "start", Qt::QueuedConnection );
+    return mApplication->exec();
+  }
+  
+  return AbstractCommand::InvalidUsage;
 }
 
 void CommandRunner::onCommandFinished( int exitCode )

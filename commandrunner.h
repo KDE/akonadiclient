@@ -23,6 +23,8 @@
 
 #include <QObject>
 
+class AbstractCommand;
+
 class QCoreApplication;
 
 class CommandRunner : public QObject
@@ -37,6 +39,7 @@ class CommandRunner : public QObject
     
   private:
     QCoreApplication *mApplication;
+    AbstractCommand *mCommand;
     
   private Q_SLOTS:
     void onCommandFinished( int exitCode );
