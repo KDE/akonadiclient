@@ -18,6 +18,8 @@
 
 #include "abstractcommand.h"
 
+#include <QMetaObject>
+
 AbstractCommand::AbstractCommand( QObject *parent )
     : QObject( parent )
 {
@@ -25,4 +27,9 @@ AbstractCommand::AbstractCommand( QObject *parent )
 
 AbstractCommand::~AbstractCommand()
 {
+}
+
+void AbstractCommand::start()
+{
+    QMetaObject::invokeMethod( this, "finished", Qt::QueuedConnection, Q_ARG( int, NoError ) );
 }
