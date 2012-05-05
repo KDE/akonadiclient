@@ -23,12 +23,12 @@
 
 class AbstractCommand : public QObject
 {
-    Q_OBJECT
+  Q_OBJECT
     
-public:
+  public:
     enum Errors {
-        NoError = 0,
-        InvalidUsage
+      NoError = 0,
+      InvalidUsage
     };
     
     explicit AbstractCommand( QObject *parent = 0 );
@@ -36,10 +36,10 @@ public:
     
     virtual int init( const QStringList &cmdLineArgs ) = 0;
     
-public Q_SLOTS:
+  public Q_SLOTS:
     virtual void start();
     
-Q_SIGNALS:
+  Q_SIGNALS:
     void finished( int exitCode );
     void error( const QString &message );
 };

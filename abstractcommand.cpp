@@ -21,7 +21,7 @@
 #include <QMetaObject>
 
 AbstractCommand::AbstractCommand( QObject *parent )
-    : QObject( parent )
+  : QObject( parent )
 {
 }
 
@@ -31,5 +31,5 @@ AbstractCommand::~AbstractCommand()
 
 void AbstractCommand::start()
 {
-    QMetaObject::invokeMethod( this, "finished", Qt::QueuedConnection, Q_ARG( int, NoError ) );
+  QMetaObject::invokeMethod( this, "finished", Qt::QueuedConnection, Q_ARG( int, NoError ) );
 }
