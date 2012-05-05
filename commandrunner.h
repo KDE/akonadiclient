@@ -1,5 +1,6 @@
 /*
-    Copyright (C) 2012  Kevin Krammer <krammer@kde.org>
+    <one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) 2012  Kevin Krammer <kevin.krammer@gmx.at>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,9 +17,30 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#include "commandrunner.h"
 
-int main( int argc, char **argv ) {
-  CommandRunner runner( argc, argv );
-  return runner.exec();
-}
+#ifndef COMMANDRUNNER_H
+#define COMMANDRUNNER_H
+
+#include <QObject>
+
+class QCoreApplication;
+
+class CommandRunner : public QObject
+{
+  Q_OBJECT
+    
+  public:
+    CommandRunner( int argc, char **argv );
+    ~CommandRunner();
+    
+    int exec();
+    
+  private:
+    QCoreApplication *mApplication;
+    
+  private Q_SLOTS:
+    void onCommandFinished( int exitCode );
+    void onCommandError( const QString &error );
+};
+
+#endif // COMMANDRUNNER_H

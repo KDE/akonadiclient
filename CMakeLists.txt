@@ -17,9 +17,10 @@ set(CMAKE_AUTOMOC TRUE)
 
 set(akonadiclient_SRCS
     abstractcommand.cpp
+    commandrunner.cpp
     main.cpp
 )
 
 add_executable(akonadiclient ${akonadiclient_SRCS})
 
-target_link_libraries(akonadiclient ${QT_QTCORE_LIBRARY})
+target_link_libraries(akonadiclient ${KDE4_KDECORE_LIBS} ${QT_QTCORE_LIBRARY})

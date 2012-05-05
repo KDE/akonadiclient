@@ -1,5 +1,6 @@
 /*
-    Copyright (C) 2012  Kevin Krammer <krammer@kde.org>
+    <one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) 2012  Kevin Krammer <kevin.krammer@gmx.at>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,7 +19,33 @@
 
 #include "commandrunner.h"
 
-int main( int argc, char **argv ) {
-  CommandRunner runner( argc, argv );
-  return runner.exec();
+#include "abstractcommand.h"
+
+#include <KDebug>
+
+#include <QCoreApplication>
+
+CommandRunner::CommandRunner( int argc, char **argv )
+  : mApplication( 0 )
+{
+}
+
+CommandRunner::~CommandRunner()
+{
+  delete mApplication;
+}
+
+int CommandRunner::exec()
+{
+  return mApplication ? mApplication->exec() : AbstractCommand::InvalidUsage;
+}
+
+void CommandRunner::onCommandFinished( int exitCode )
+{
+  mApplication->exit( exitCode );
+}
+
+void CommandRunner::onCommandError( const QString &error )
+{
+  kError() << error;
 }
