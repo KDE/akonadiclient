@@ -22,6 +22,7 @@
 #include <QObject>
 
 class KCmdLineArgs;
+class KCmdLineOptions;
 
 class AbstractCommand : public QObject
 {
@@ -36,7 +37,7 @@ class AbstractCommand : public QObject
     explicit AbstractCommand( QObject *parent = 0 );
     ~AbstractCommand();
     
-    virtual int init( KCmdLineArgs *parsedArgs ) = 0;
+    int init( KCmdLineArgs *parsedArgs );
     
     QString shortHelp() const;
     
@@ -49,6 +50,10 @@ class AbstractCommand : public QObject
     
   protected:
     QString mShortHelp;
+
+  protected:
+    virtual void setupCommandOptions( KCmdLineOptions &options );
+    virtual int initCommand( KCmdLineArgs *parsedArgs ) = 0;
 };
 
 #endif // ABSTRACTCOMMAND_H

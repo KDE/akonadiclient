@@ -18,6 +18,9 @@
 
 #include "abstractcommand.h"
 
+#include <KCmdLineArgs>
+#include <KCmdLineOptions>
+
 #include <QMetaObject>
 
 AbstractCommand::AbstractCommand( QObject *parent )
@@ -29,6 +32,19 @@ AbstractCommand::~AbstractCommand()
 {
 }
 
+int AbstractCommand::init( KCmdLineArgs *parsedArgs )
+{
+  parsedArgs->clear();
+  KCmdLineArgs::reset();
+  
+  KCmdLineOptions options;
+  setupCommandOptions( options );
+  
+  KCmdLineArgs::addCmdLineOptions( options, KLocalizedString(), "command-options" );
+  
+  return initCommand( KCmdLineArgs::parsedArgs() );
+}
+
 QString AbstractCommand::shortHelp() const
 {
   return mShortHelp;
@@ -37,4 +53,9 @@ QString AbstractCommand::shortHelp() const
 void AbstractCommand::start()
 {
   QMetaObject::invokeMethod( this, "finished", Qt::QueuedConnection, Q_ARG( int, NoError ) );
+}
+
+void AbstractCommand::setupCommandOptions(KCmdLineOptions& options)
+{
+  Q_UNUSED( options );
 }
