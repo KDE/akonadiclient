@@ -15,7 +15,7 @@ set(CMAKE_AUTOMOC TRUE)
 
 ###### target ######
 
-add_definitions(-DPROGRAM_VERSION=0.1)
+add_definitions(-DPROGRAM_VERSION='"0.1"')
 
 set(akonadiclient_SRCS
     abstractcommand.cpp

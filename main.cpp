@@ -22,8 +22,8 @@
 #include <KCmdLineArgs>
 
 int main( int argc, char **argv ) {
-  KAboutData aboutData( "akonadiclient", "akonadiclient", ki18nc( "@title program name", "Akonadi Commandline Client" ),
-                        "PROGRAM_VERSION", ki18nc( "@info:shell short description", "A commandline/shell client for Akonadi" ),
+  KAboutData aboutData( "akonadiclient", "akonadiclient", ki18nc( "@title program name", "Akonadi Client" ),
+                        PROGRAM_VERSION, ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
                         KAboutData::License_GPL );
   
   aboutData.addAuthor( ki18n( "Kevin Krammer" ), ki18nc( "@title about data task", "Original Author" ), "krammer@kde.org" );
