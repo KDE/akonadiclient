@@ -19,6 +19,7 @@
 #include "commandrunner.h"
 
 #include "abstractcommand.h"
+#include "commandfactory.h"
 
 #include <KCmdLineArgs>
 #include <KDebug>
@@ -29,10 +30,30 @@ CommandRunner::CommandRunner( KCmdLineArgs *parsedArgs )
   : mApplication( 0 ),
     mCommand( 0 )
 {
+  CommandFactory factory( parsedArgs );
+  
+  mCommand = factory.createCommand();
+  Q_ASSERT( mCommand != 0 );
+  
+  connect( mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)) );
+  
+  if ( mCommand->init( parsedArgs ) == AbstractCommand::InvalidUsage ) {
+    delete mCommand;
+    mCommand = 0;
+    ::exit( AbstractCommand::InvalidUsage );
+  }
+  
+  connect( mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)) );
+
+  // TODO should we allow commands to optionally support GUI?
+  mApplication = new QCoreApplication( KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv() );
+  
+  QMetaObject::invokeMethod( mCommand, "start", Qt::QueuedConnection );
 }
 
 CommandRunner::~CommandRunner()
 {
+  delete mCommand;
   delete mApplication;
 }
 
