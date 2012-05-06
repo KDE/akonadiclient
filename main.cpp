@@ -34,9 +34,11 @@ int main( int argc, char **argv ) {
   KCmdLineArgs::addStdCmdLineOptions();
   
   KCmdLineOptions options;
-  options.add( "+command", ki18nc( "@info:shell", "Command (see '<application>%1</application> help command'"
-                                                  " for more information on a specific command)" ).subs( appname ) );
+  options.add( "+command", ki18nc( "@info:shell", "Command (see '<application>%1</application> help'"
+                                                  " for list of available commands)" ).subs( appname ) );
   options.add( "+[args]", ki18nc( "@info:shell", "Arguments for command" ) );
+  options.add( "", ki18nc( "@info:shell", "See '<application>%1</application> help command'"
+                                          " for more information on a specific command." ).subs( appname ) );
   KCmdLineArgs::addCmdLineOptions( options );
   
   // call right away so standard options like --version can terminate the program right here
