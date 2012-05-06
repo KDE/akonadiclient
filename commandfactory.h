@@ -43,6 +43,7 @@ class CommandFactory
   private:
     void registerCommands();
     void checkAndHandleHelp();
+    void printHelpAndExit( bool userRequestedHelp, const QString &leadingMessage );
 };
 
 #endif // COMMANDFACTORY_H
