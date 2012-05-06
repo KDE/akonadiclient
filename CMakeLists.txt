@@ -19,6 +19,7 @@ add_definitions(-DPROGRAM_VERSION='"0.1"')
 
 set(akonadiclient_SRCS
     abstractcommand.cpp
+    commandfactory.cpp
     commandrunner.cpp
     main.cpp
 )
