@@ -21,11 +21,12 @@
 
 #include "abstractcommand.h"
 
+#include <KCmdLineArgs>
 #include <KDebug>
 
 #include <QCoreApplication>
 
-CommandRunner::CommandRunner( int argc, char **argv )
+CommandRunner::CommandRunner( KCmdLineArgs *parsedArgs )
   : mApplication( 0 ),
     mCommand( 0 )
 {

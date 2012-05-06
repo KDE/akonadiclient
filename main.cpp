@@ -19,6 +19,7 @@
 #include "commandrunner.h"
 
 #include <KAboutData>
+#include <KCmdLineArgs>
 
 int main( int argc, char **argv ) {
   KAboutData aboutData( "akonadiclient", "akonadiclient", ki18nc( "@title program name", "Akonadi Commandline Client" ),
@@ -27,6 +28,18 @@ int main( int argc, char **argv ) {
   
   aboutData.addAuthor( ki18n( "Kevin Krammer" ), ki18nc( "@title about data task", "Original Author" ), "krammer@kde.org" );
     
-  CommandRunner runner( argc, argv );
+  KCmdLineArgs::init( argc, argv, &aboutData );
+  KCmdLineArgs::addStdCmdLineOptions();
+  
+  KCmdLineOptions options;
+  options.add( "list-commands", ki18nc( "@info:shell", "Lists all available commands" ) );
+  options.add( "+command", ki18nc( "@info:shell", "Command (see --list-commands" ) );
+  options.add( "+[args]", ki18nc( "@info:shell", "Arguments for command" ) );
+  KCmdLineArgs::addCmdLineOptions( options );
+  
+  // call right away so standard options like --version can terminate the program right here
+  KCmdLineArgs *parsedArgs = KCmdLineArgs::parsedArgs();
+  
+  CommandRunner runner( parsedArgs );
   return runner.exec();
 }

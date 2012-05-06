@@ -25,6 +25,8 @@
 
 class AbstractCommand;
 
+class KCmdLineArgs;
+
 class QCoreApplication;
 
 class CommandRunner : public QObject
@@ -32,7 +34,7 @@ class CommandRunner : public QObject
   Q_OBJECT
     
   public:
-    CommandRunner( int argc, char **argv );
+    CommandRunner( KCmdLineArgs *parsedArgs );
     ~CommandRunner();
     
     int exec();
