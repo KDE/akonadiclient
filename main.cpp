@@ -21,8 +21,10 @@
 #include <KAboutData>
 #include <KCmdLineArgs>
 
+const char *appname = "akonadiclient";
+
 int main( int argc, char **argv ) {
-  KAboutData aboutData( "akonadiclient", "akonadiclient", ki18nc( "@title program name", "Akonadi Client" ),
+  KAboutData aboutData( appname, 0, ki18nc( "@title program name", "Akonadi Client" ),
                         PROGRAM_VERSION, ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
                         KAboutData::License_GPL );
   
@@ -32,8 +34,8 @@ int main( int argc, char **argv ) {
   KCmdLineArgs::addStdCmdLineOptions();
   
   KCmdLineOptions options;
-  options.add( "list-commands", ki18nc( "@info:shell", "Lists all available commands" ) );
-  options.add( "+command", ki18nc( "@info:shell", "Command (see --list-commands" ) );
+  options.add( "+command", ki18nc( "@info:shell", "Command (see '<application>%1</application> help command'"
+                                                  " for more information on a specific command)" ).subs( appname ) );
   options.add( "+[args]", ki18nc( "@info:shell", "Arguments for command" ) );
   KCmdLineArgs::addCmdLineOptions( options );
   
