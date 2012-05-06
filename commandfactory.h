@@ -16,39 +16,33 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef ABSTRACTCOMMAND_H
-#define ABSTRACTCOMMAND_H
+#ifndef COMMANDFACTORY_H
+#define COMMANDFACTORY_H
 
-#include <QObject>
+#include <QHash>
+
+class AbstractCommand;
 
 class KCmdLineArgs;
 
-class AbstractCommand : public QObject
+class QString;
+
+class CommandFactory
 {
-  Q_OBJECT
-    
   public:
-    enum Errors {
-      NoError = 0,
-      InvalidUsage
-    };
+    explicit CommandFactory( KCmdLineArgs *parsedArgs );
+    ~CommandFactory();
     
-    explicit AbstractCommand( QObject *parent = 0 );
-    ~AbstractCommand();
+    AbstractCommand *createCommand();
     
-    virtual int init( KCmdLineArgs *parsedArgs ) = 0;
+  private:
+    KCmdLineArgs *mParsedArgs;
     
-    QString shortHelp() const;
+    QHash<QString, AbstractCommand*> mCommands;
     
-  public Q_SLOTS:
-    virtual void start();
-    
-  Q_SIGNALS:
-    void finished( int exitCode );
-    void error( const QString &message );
-    
-  protected:
-    QString mShortHelp;
+  private:
+    void registerCommands();
+    void checkAndHandleHelp();
 };
 
-#endif // ABSTRACTCOMMAND_H
+#endif // COMMANDFACTORY_H
