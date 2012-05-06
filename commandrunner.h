@@ -1,6 +1,5 @@
 /*
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) 2012  Kevin Krammer <kevin.krammer@gmx.at>
+    Copyright (C) 2012  Kevin Krammer <krammer@kde.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,7 +15,6 @@
     with this program; if not, write to the Free Software Foundation, Inc.,
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
-
 
 #ifndef COMMANDRUNNER_H
 #define COMMANDRUNNER_H
