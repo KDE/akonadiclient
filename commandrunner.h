@@ -34,7 +34,7 @@ class CommandRunner : public QObject
   Q_OBJECT
     
   public:
-    CommandRunner( KCmdLineArgs *parsedArgs );
+    explicit CommandRunner( KCmdLineArgs *parsedArgs );
     ~CommandRunner();
     
     int exec();
