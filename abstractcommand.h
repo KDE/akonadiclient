@@ -36,12 +36,17 @@ class AbstractCommand : public QObject
     
     virtual int init( const QStringList &cmdLineArgs ) = 0;
     
+    QString shortHelp() const;
+    
   public Q_SLOTS:
     virtual void start();
     
   Q_SIGNALS:
     void finished( int exitCode );
     void error( const QString &message );
+    
+  protected:
+    QString mShortHelp;
 };
 
 #endif // ABSTRACTCOMMAND_H

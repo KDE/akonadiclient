@@ -29,6 +29,11 @@ AbstractCommand::~AbstractCommand()
 {
 }
 
+QString AbstractCommand::shortHelp() const
+{
+  return mShortHelp;
+}
+
 void AbstractCommand::start()
 {
   QMetaObject::invokeMethod( this, "finished", Qt::QueuedConnection, Q_ARG( int, NoError ) );
