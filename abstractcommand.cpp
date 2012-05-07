@@ -40,9 +40,18 @@ int AbstractCommand::init( KCmdLineArgs *parsedArgs )
   KCmdLineOptions options;
   setupCommandOptions( options );
   
-  KCmdLineArgs::addCmdLineOptions( options, KLocalizedString(), "command-options" );
+  KCmdLineArgs::addCmdLineOptions( options );
   
-  return initCommand( KCmdLineArgs::parsedArgs() );
+  KCmdLineArgs *parseCommandArgs = KCmdLineArgs::parsedArgs();
+  Q_ASSERT( parseCommandArgs != 0 );
+  
+  const int result = initCommand( parseCommandArgs );
+  
+  KCmdLineArgs::reset();
+  KCmdLineArgs::addStdCmdLineOptions();
+  KCmdLineArgs::addCmdLineOptions( options, ki18nc( "@info:shell", "Options for command" ) );
+  
+  return result;
 }
 
 QString AbstractCommand::shortHelp() const

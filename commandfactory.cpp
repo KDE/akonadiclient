@@ -18,7 +18,7 @@
 
 #include "commandfactory.h"
 
-#include "abstractcommand.h"
+#include "listcommand.h"
 
 #include <KCmdLineArgs>
 
@@ -60,6 +60,7 @@ AbstractCommand *CommandFactory::createCommand()
 
 void CommandFactory::registerCommands()
 {
+  mCommands.insert( QLatin1String( "list" ), new ListCommand );
 }
 
 void CommandFactory::checkAndHandleHelp()
@@ -88,7 +89,7 @@ void CommandFactory::printHelpAndExit( bool userRequestedHelp, const QString &le
   // otherwise we are missing the mandatory command argument and output to stderr
   std::ostream &stream = userRequestedHelp ? std::cout : std::cerr;
   
-  const QString linePattern = QLatin1String( "\t%1\t\2" );
+  const QString linePattern = QLatin1String( "\t%1\t%2" );
   
   stream << leadingMessage.toLocal8Bit().constData() << std::endl << std::endl;
   

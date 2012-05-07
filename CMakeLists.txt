@@ -21,9 +21,10 @@ set(akonadiclient_SRCS
     abstractcommand.cpp
     commandfactory.cpp
     commandrunner.cpp
+    listcommand.cpp
     main.cpp
 )
 
 add_executable(akonadiclient ${akonadiclient_SRCS})
 
-target_link_libraries(akonadiclient ${KDE4_KDECORE_LIBS} ${QT_QTCORE_LIBRARY})
+target_link_libraries(akonadiclient ${KDEPIMLIBS_AKONADI_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTCORE_LIBRARY})

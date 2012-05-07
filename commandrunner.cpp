@@ -47,8 +47,6 @@ CommandRunner::CommandRunner( KCmdLineArgs *parsedArgs )
 
   // TODO should we allow commands to optionally support GUI?
   mApplication = new QCoreApplication( KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv() );
-  
-  QMetaObject::invokeMethod( mCommand, "start", Qt::QueuedConnection );
 }
 
 CommandRunner::~CommandRunner()
