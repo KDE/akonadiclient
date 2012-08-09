@@ -18,6 +18,7 @@
 
 #include "commandfactory.h"
 
+#include "addcommand.h"
 #include "listcommand.h"
 
 #include <KCmdLineArgs>
@@ -60,6 +61,7 @@ AbstractCommand *CommandFactory::createCommand()
 
 void CommandFactory::registerCommands()
 {
+  mCommands.insert( QLatin1String( "add" ), new AddCommand );
   mCommands.insert( QLatin1String( "list" ), new ListCommand );
 }
 
