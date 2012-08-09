@@ -29,3 +29,5 @@ set(akonadiclient_SRCS
 add_executable(akonadiclient ${akonadiclient_SRCS})
 
 target_link_libraries(akonadiclient ${KDEPIMLIBS_AKONADI_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTCORE_LIBRARY})
+
+install(TARGETS akonadiclient ${INSTALL_TARGETS_DEFAULT_ARGS})
