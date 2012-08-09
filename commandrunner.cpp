@@ -21,12 +21,13 @@
 #include "abstractcommand.h"
 #include "commandfactory.h"
 
+#include <KAboutData>
 #include <KCmdLineArgs>
 #include <KDebug>
 
 #include <QCoreApplication>
 
-CommandRunner::CommandRunner( KCmdLineArgs *parsedArgs )
+CommandRunner::CommandRunner( const KAboutData &aboutData, KCmdLineArgs *parsedArgs )
   : mApplication( 0 ),
     mCommand( 0 )
 {
@@ -47,6 +48,9 @@ CommandRunner::CommandRunner( KCmdLineArgs *parsedArgs )
 
   // TODO should we allow commands to optionally support GUI?
   mApplication = new QCoreApplication( KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv() );
+  mApplication->setApplicationName( aboutData.appName() );
+  mApplication->setApplicationVersion( aboutData.version() );
+  mApplication->setOrganizationDomain( aboutData.organizationDomain() );
 }
 
 CommandRunner::~CommandRunner()

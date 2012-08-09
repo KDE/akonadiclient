@@ -23,6 +23,7 @@
 
 class AbstractCommand;
 
+class KAboutData;
 class KCmdLineArgs;
 
 class QCoreApplication;
@@ -32,7 +33,7 @@ class CommandRunner : public QObject
   Q_OBJECT
     
   public:
-    explicit CommandRunner( KCmdLineArgs *parsedArgs );
+    CommandRunner( const KAboutData &aboutData, KCmdLineArgs *parsedArgs );
     ~CommandRunner();
     
     int exec();

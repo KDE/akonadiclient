@@ -44,6 +44,6 @@ int main( int argc, char **argv ) {
   // call right away so standard options like --version can terminate the program right here
   KCmdLineArgs *parsedArgs = KCmdLineArgs::parsedArgs();
   
-  CommandRunner runner( parsedArgs );
+  CommandRunner runner( aboutData, parsedArgs );
   return runner.exec();
 }
