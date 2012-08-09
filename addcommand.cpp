@@ -19,11 +19,16 @@
 #include "addcommand.h"
 
 #include <Akonadi/CollectionFetchJob>
+#include <Akonadi/Item>
+#include <Akonadi/ItemCreateJob>
 
 #include <akonadi/private/collectionpathresolver_p.h>
 
 #include <KCmdLineOptions>
+#include <KMimeType>
 #include <KUrl>
+
+#include <QFile>
 
 using namespace Akonadi;
 
@@ -95,7 +100,9 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
     return InvalidUsage;
   }
   
-  // TODO get files
+  for ( int i = 2; i < parsedArgs->count(); ++i ) {
+    mFiles << parsedArgs->arg( i );
+  }
   
   return NoError;
 }
@@ -103,12 +110,55 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
 void AddCommand::fetchBase()
 {
   if ( mCollection == Collection::root() ) {
-    // TODO
+    processNextFile();
     return;
   }
   
   CollectionFetchJob *job = new CollectionFetchJob( mCollection, CollectionFetchJob::Base, this );
   connect( job, SIGNAL(result(KJob*)), this, SLOT(onBaseFetched(KJob*)) );
+}
+
+void AddCommand::processNextFile()
+{
+  if ( mFiles.isEmpty() ) {
+    emit finished( NoError );
+    return;
+  }
+  
+  const QString fileName = mFiles.first();
+  mFiles.pop_front();
+  
+  QFile file( fileName );
+  if ( !file.exists() ) {
+    emit error( i18nc( "@info:shell", "File <filename>%1</filename> does not exist" ).arg( fileName ) );
+    QMetaObject::invokeMethod( this, "processNextFile", Qt::QueuedConnection );
+    return;
+  }
+  
+  if ( !file.open( QIODevice::ReadOnly ) ) {
+    emit error( i18nc( "@info:shell", "File <filename>%1</filename> cannot be read" ).arg( fileName ) );
+    QMetaObject::invokeMethod( this, "processNextFile", Qt::QueuedConnection );
+    return;
+  }
+  
+  const KMimeType::Ptr mimeType = KMimeType::findByNameAndContent( fileName, &file );
+  if ( !mimeType->isValid() ) {
+    emit error( i18nc( "@info:shell", "Cannot determine MIME type of file <filename>%1</filename>" ).arg( fileName ) );
+    QMetaObject::invokeMethod( this, "processNextFile", Qt::QueuedConnection );
+    return;
+  }
+  
+  kDebug() << "file=" << fileName << "mime=" << mimeType->name();
+
+  Item item;
+  item.setMimeType( mimeType->name() );
+  
+  file.reset();
+  item.setPayloadFromData( file.readAll() );
+  
+  ItemCreateJob *job = new ItemCreateJob( item, mCollection );
+  job->setProperty( "fileName", fileName );
+  connect( job, SIGNAL(result(KJob*)), this, SLOT(onItemCreated(KJob*)) );
 }
 
 void AddCommand::onPathResolved( KJob *job )
@@ -146,5 +196,19 @@ void AddCommand::onBaseFetched(KJob* job)
 
   mCollection = fetchJob->collections().first();
   
-  // TODO
+  processNextFile();
+}
+
+void AddCommand::onItemCreated( KJob *job )
+{
+  const QString fileName = job->property( "fileName" ).toString();
+  
+  if ( job->error() != 0 ) {
+    const QString msg = i18nc( "@info:shell", "Failed to add <filename>%1</filename>: %2" ).arg( fileName ). arg( job->errorString() );
+    emit error( msg );
+  } else {
+    kDebug() << "Successfully added file" << fileName; 
+  }
+  
+  processNextFile();
 }

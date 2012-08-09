@@ -24,6 +24,8 @@
 
 #include <Akonadi/Collection>
 
+#include <QStringList>
+
 class KJob;
 
 class AddCommand : public AbstractCommand
@@ -44,13 +46,16 @@ class AddCommand : public AbstractCommand
   private:
     QString mPath;
     Akonadi::Collection mCollection;
+    QStringList mFiles;
     
   private:
     void fetchBase();
     
   private Q_SLOTS:
+    void processNextFile();
     void onPathResolved( KJob *job );
     void onBaseFetched( KJob *job );
+    void onItemCreated( KJob *job );
 };
 
 #endif // ADDCOMMAND_H
