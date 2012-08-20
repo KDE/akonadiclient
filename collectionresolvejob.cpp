@@ -74,6 +74,11 @@ Collection CollectionResolveJob::collection() const
 
 void CollectionResolveJob::fetchBase()
 {
+  if ( mCollection == Collection::root() ) {
+    emitResult();
+    return;
+  }
+    
   CollectionFetchJob *job = new CollectionFetchJob( mCollection, CollectionFetchJob::Base, this );
   addSubjob( job );
 }
@@ -82,7 +87,7 @@ void CollectionResolveJob::slotResult( KJob *job )
 {
   if ( job->error() == 0 ) {
     CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob*>( job );
-    if ( fetchJob ) {
+    if ( fetchJob != 0 ) {
       mCollection = fetchJob->collections().first();      
     } else {
       CollectionPathResolver *resolver = qobject_cast<CollectionPathResolver*>( job );
