@@ -18,20 +18,20 @@
 
 #include "listcommand.h"
 
+#include "collectionresolvejob.h"
+
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/ItemFetchJob>
 
-#include <akonadi/private/collectionpathresolver_p.h>
-
 #include <KCmdLineOptions>
-#include <KUrl>
 
 #include <iostream>
 
 using namespace Akonadi;
 
 ListCommand::ListCommand( QObject *parent )
-  : AbstractCommand( parent )
+  : AbstractCommand( parent ),
+    mResolveJob( 0 )
 {
   mShortHelp = ki18nc( "@info:shell", "Lists sub collections and items in a specified collection" ).toString();
 }
@@ -42,14 +42,10 @@ ListCommand::~ListCommand()
 
 void ListCommand::start()
 {
-  if ( mCollection.isValid() ) {
-    fetchBase();
-    return;
-  }
+  Q_ASSERT( mResolveJob != 0 );
   
-  CollectionPathResolver *resolver = new CollectionPathResolver( mPath, this );
-  connect( resolver, SIGNAL(result(KJob*)), this, SLOT(onPathResolved(KJob*)) );
-  resolver->start();
+  connect( mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onBaseFetched(KJob*)) );
+  mResolveJob->start();  
 }
 
 void ListCommand::setupCommandOptions( KCmdLineOptions &options )
@@ -68,80 +64,49 @@ int ListCommand::initCommand( KCmdLineArgs *parsedArgs )
     return InvalidUsage;
   }
   
-  // check if we have an Akonadi URL. if not check if we have a path
   const QString collectionArg = parsedArgs->arg( 1 );
-  const QUrl url = parsedArgs->url( 1 );
-  if ( url.isValid() && url.scheme() == QLatin1String( "akonadi" ) ) {
-    mCollection = Collection::fromUrl( url );
-  } else {
-    if ( collectionArg.startsWith( CollectionPathResolver::pathDelimiter() ) ) {
-      mPath = collectionArg;
-    }
-  }
+  mResolveJob = new CollectionResolveJob( collectionArg, this );
     
-  if ( !mCollection.isValid() && mPath.isEmpty() ) {
+  if ( !mResolveJob->hasUsableInput() ) {
     emit error( ki18nc( "@info:shell",
                          "Invalid collection argument '%1. See <application>%2</application> help list'" ).subs( collectionArg )
                                                                                                           .subs( KCmdLineArgs::appName()
                        ).toString()
               );
 
+    delete mResolveJob;
+    mResolveJob = 0;
+    
     return InvalidUsage;
   }
   
   return NoError;
 }
 
-void ListCommand::fetchBase()
-{
-  if ( mCollection == Collection::root() ) {
-    fetchCollections();
-    return;
-  }
-  
-  CollectionFetchJob *job = new CollectionFetchJob( mCollection, CollectionFetchJob::Base, this );
-  connect( job, SIGNAL(result(KJob*)), this, SLOT(onBaseFetched(KJob*)) );
-}
-
 void ListCommand::fetchCollections()
 {
-  Q_ASSERT( mCollection.isValid() );
+  Q_ASSERT( mResolveJob != 0  && mResolveJob->collection().isValid() );
   
-  CollectionFetchJob *job = new CollectionFetchJob( mCollection, CollectionFetchJob::FirstLevel, this );
+  CollectionFetchJob *job = new CollectionFetchJob( mResolveJob->collection(), CollectionFetchJob::FirstLevel, this );
   connect( job, SIGNAL(result(KJob*)), this, SLOT(onCollectionsFetched(KJob*)) );
 }
 
 void ListCommand::fetchItems()
 {
-  Q_ASSERT( mCollection.isValid() );
+  Q_ASSERT( mResolveJob != 0  && mResolveJob->collection().isValid() );
   
   // only attempt item listing if collection has non-collection content MIME types
-  QStringList contentMimeTypes = mCollection.contentMimeTypes();
+  QStringList contentMimeTypes = mResolveJob->collection().contentMimeTypes();
   contentMimeTypes.removeAll( Collection::mimeType() );
   if ( !contentMimeTypes.isEmpty() ) { 
-    ItemFetchJob *job = new ItemFetchJob( mCollection, this );
+    ItemFetchJob *job = new ItemFetchJob( mResolveJob->collection(), this );
     connect( job, SIGNAL(result(KJob*)), this, SLOT(onItemsFetched(KJob*)) );
   } else {
     emit finished( NoError );
   }
 }
 
-void ListCommand::onPathResolved( KJob *job )
-{
-  if ( job->error() != 0 ) {
-    emit error( job->errorString() );
-    emit finished( -1 ); // TODO correct error code
-    return;
-  }
-
-  CollectionPathResolver *resolver = qobject_cast<CollectionPathResolver*>( job );
-  Q_ASSERT( resolver != 0 );
-  
-  mCollection = Collection( resolver->collection() );
-  fetchBase();
-}
-
-void ListCommand::onBaseFetched(KJob* job)
+void ListCommand::onBaseFetched( KJob *job )
 {
   if ( job->error() != 0 ) {
     emit error( job->errorString() );
@@ -149,18 +114,8 @@ void ListCommand::onBaseFetched(KJob* job)
     return;
   }
   
-  CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob*>( job );
-  Q_ASSERT( fetchJob != 0 );
-  
-  const Collection::List collections = fetchJob->collections();
-  if ( collections.isEmpty() ) {
-    emit error( job->errorString() );
-    emit finished( -1 ); // TODO correct error code
-    return;
-  }
-
-  mCollection = fetchJob->collections().first();
-  
+  Q_ASSERT( job == mResolveJob );
+    
   fetchCollections();
 }
 
@@ -184,7 +139,7 @@ void ListCommand::onCollectionsFetched( KJob *job )
   fetchItems();
 }
 
-void ListCommand::onItemsFetched(KJob* job)
+void ListCommand::onItemsFetched( KJob *job )
 {
   if ( job->error() != 0 ) {
     emit error( job->errorString() );
