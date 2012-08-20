@@ -22,10 +22,9 @@
 
 #include "abstractcommand.h"
 
-#include <Akonadi/Collection>
-
 #include <QStringList>
 
+class CollectionResolveJob;
 class KJob;
 
 class AddCommand : public AbstractCommand
@@ -44,17 +43,12 @@ class AddCommand : public AbstractCommand
     int initCommand( KCmdLineArgs *parsedArgs );
 
   private:
-    QString mPath;
-    Akonadi::Collection mCollection;
+    CollectionResolveJob *mResolveJob;
     QStringList mFiles;
-    
-  private:
-    void fetchBase();
     
   private Q_SLOTS:
     void processNextFile();
-    void onPathResolved( KJob *job );
-    void onBaseFetched( KJob *job );
+    void onTargetFetched( KJob *job );
     void onItemCreated( KJob *job );
 };
 

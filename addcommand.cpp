@@ -18,11 +18,10 @@
 
 #include "addcommand.h"
 
-#include <Akonadi/CollectionFetchJob>
+#include "collectionresolvejob.h"
+
 #include <Akonadi/Item>
 #include <Akonadi/ItemCreateJob>
-
-#include <akonadi/private/collectionpathresolver_p.h>
 
 #include <KCmdLineOptions>
 #include <KMimeType>
@@ -32,26 +31,23 @@
 
 using namespace Akonadi;
 
-AddCommand::AddCommand( QObject *parent ): AbstractCommand( parent )
+AddCommand::AddCommand( QObject *parent )
+  : AbstractCommand( parent ),
+    mResolveJob( 0 )
 {
   mShortHelp = ki18nc( "@info:shell", "Add items to a specified collection" ).toString();
 }
 
 AddCommand::~AddCommand()
 {
-
 }
 
 void AddCommand::start()
 {
-  if ( mCollection.isValid() ) {
-    fetchBase();
-    return;
-  }
+  Q_ASSERT( mResolveJob != 0 );
   
-  CollectionPathResolver *resolver = new CollectionPathResolver( mPath, this );
-  connect( resolver, SIGNAL(result(KJob*)), this, SLOT(onPathResolved(KJob*)) );
-  resolver->start();
+  connect( mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onTargetFetched(KJob*)) );
+  mResolveJob->start();  
 }
 
 void AddCommand::setupCommandOptions( KCmdLineOptions &options )
@@ -79,24 +75,19 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
     return InvalidUsage;
   }
   
-  // check if we have an Akonadi URL. if not check if we have a path
   const QString collectionArg = parsedArgs->arg( 1 );
-  const QUrl url = parsedArgs->url( 1 );
-  if ( url.isValid() && url.scheme() == QLatin1String( "akonadi" ) ) {
-    mCollection = Collection::fromUrl( url );
-  } else {
-    if ( collectionArg.startsWith( CollectionPathResolver::pathDelimiter() ) ) {
-      mPath = collectionArg;
-    }
-  }
+  mResolveJob = new CollectionResolveJob( collectionArg, this );
     
-  if ( !mCollection.isValid() && mPath.isEmpty() ) {
+  if ( !mResolveJob->hasUsableInput() ) {
     emit error( ki18nc( "@info:shell",
                          "Invalid collection argument '%1. See <application>%2</application> help add'" ).subs( collectionArg )
-                                                                                                          .subs( KCmdLineArgs::appName()
+                                                                                                         .subs( KCmdLineArgs::appName()
                        ).toString()
               );
 
+    delete mResolveJob;
+    mResolveJob = 0;
+    
     return InvalidUsage;
   }
   
@@ -105,17 +96,6 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
   }
   
   return NoError;
-}
-
-void AddCommand::fetchBase()
-{
-  if ( mCollection == Collection::root() ) {
-    processNextFile();
-    return;
-  }
-  
-  CollectionFetchJob *job = new CollectionFetchJob( mCollection, CollectionFetchJob::Base, this );
-  connect( job, SIGNAL(result(KJob*)), this, SLOT(onBaseFetched(KJob*)) );
 }
 
 void AddCommand::processNextFile()
@@ -156,27 +136,12 @@ void AddCommand::processNextFile()
   file.reset();
   item.setPayloadFromData( file.readAll() );
   
-  ItemCreateJob *job = new ItemCreateJob( item, mCollection );
+  ItemCreateJob *job = new ItemCreateJob( item, mResolveJob->collection() );
   job->setProperty( "fileName", fileName );
   connect( job, SIGNAL(result(KJob*)), this, SLOT(onItemCreated(KJob*)) );
 }
 
-void AddCommand::onPathResolved( KJob *job )
-{
-  if ( job->error() != 0 ) {
-    emit error( job->errorString() );
-    emit finished( -1 ); // TODO correct error code
-    return;
-  }
-
-  CollectionPathResolver *resolver = qobject_cast<CollectionPathResolver*>( job );
-  Q_ASSERT( resolver != 0 );
-  
-  mCollection = Collection( resolver->collection() );
-  fetchBase();
-}
-
-void AddCommand::onBaseFetched(KJob* job)
+void AddCommand::onTargetFetched(KJob* job)
 {
   if ( job->error() != 0 ) {
     emit error( job->errorString() );
@@ -184,17 +149,7 @@ void AddCommand::onBaseFetched(KJob* job)
     return;
   }
   
-  CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob*>( job );
-  Q_ASSERT( fetchJob != 0 );
-  
-  const Collection::List collections = fetchJob->collections();
-  if ( collections.isEmpty() ) {
-    emit error( job->errorString() );
-    emit finished( -1 ); // TODO correct error code
-    return;
-  }
-
-  mCollection = fetchJob->collections().first();
+  Q_ASSERT( job == mResolveJob && mResolveJob->collection().isValid() );
   
   processNextFile();
 }
