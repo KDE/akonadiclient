@@ -31,6 +31,8 @@ CollectionResolveJob::CollectionResolveJob( const QString &userInput, QObject* p
   : KCompositeJob( parent ),
     mUserInput( userInput )
 {
+  setAutoDelete( false );
+  
   // check if we have an Akonadi URL. if not check if we have a path
   const KUrl url = QUrl::fromUserInput( userInput );
   if ( url.isValid() && url.scheme() == QLatin1String( "akonadi" ) ) {
