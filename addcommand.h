@@ -22,16 +22,27 @@
 
 #include "abstractcommand.h"
 
-#include <QStringList>
+#include <QHash>
+#include <QMap>
+#include <QSet>
 
 class CollectionResolveJob;
 class KJob;
+
+namespace Akonadi {
+  class Collection;
+}
 
 class AddCommand : public AbstractCommand
 {
   Q_OBJECT
   
   public:
+    enum AddDirectoryMode {
+      AddDirOnly = 0,
+      AddRecursive
+    };
+      
     explicit AddCommand( QObject *parent = 0 );
     ~AddCommand();
     
@@ -44,11 +55,17 @@ class AddCommand : public AbstractCommand
 
   private:
     CollectionResolveJob *mResolveJob;
-    QStringList mFiles;
+    
+    QSet<QString> mFiles;
+    QMap<QString, AddDirectoryMode> mDirectories;
+    QHash<QString, Akonadi::Collection> mCollectionsByPath;
     
   private Q_SLOTS:
+    void processNextDirectory();
     void processNextFile();
     void onTargetFetched( KJob *job );
+    void onCollectionCreated( KJob *job );
+    void onCollectionFetched( KJob *job );
     void onItemCreated( KJob *job );
 };
 
