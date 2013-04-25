@@ -20,6 +20,7 @@
 
 #include "abstractcommand.h"
 #include "commandfactory.h"
+#include "errorreporter.h"
 
 #include <KAboutData>
 #include <KCmdLineArgs>
@@ -27,10 +28,15 @@
 
 #include <QCoreApplication>
 
+#include <iostream>
+
+
 CommandRunner::CommandRunner( const KAboutData &aboutData, KCmdLineArgs *parsedArgs )
   : mApplication( 0 ),
     mCommand( 0 )
 {
+  ErrorReporter::setAppName( aboutData.appName() );
+
   CommandFactory factory( parsedArgs );
   
   mCommand = factory.createCommand();
@@ -41,7 +47,7 @@ CommandRunner::CommandRunner( const KAboutData &aboutData, KCmdLineArgs *parsedA
   if ( mCommand->init( parsedArgs ) == AbstractCommand::InvalidUsage ) {
     delete mCommand;
     mCommand = 0;
-    ::exit( AbstractCommand::InvalidUsage );
+    std::exit( AbstractCommand::InvalidUsage );
   }
   
   connect( mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)) );
@@ -76,5 +82,5 @@ void CommandRunner::onCommandFinished( int exitCode )
 
 void CommandRunner::onCommandError( const QString &error )
 {
-  kError() << error;
+  ErrorReporter::fatal(error);
 }

@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2012  Kevin Krammer <krammer@kde.org>
+    Copyright (C) 2013  Jonathan Marten <jjm@keelhaul.me.uk>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,34 +16,18 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef COMMANDFACTORY_H
-#define COMMANDFACTORY_H
-
-#include <QHash>
-
-class AbstractCommand;
-
-class KCmdLineArgs;
+#ifndef ERRORREPORTER_H
+#define ERRORREPORTER_H
 
 class QString;
 
-class CommandFactory
+namespace ErrorReporter
 {
-  public:
-    explicit CommandFactory( KCmdLineArgs *parsedArgs );
-    ~CommandFactory();
-    
-    AbstractCommand *createCommand();
-    
-  private:
-    KCmdLineArgs *mParsedArgs;
-    
-    QHash<QString, AbstractCommand *> mCommands;
-    
-  private:
-    void registerCommands();
-    void checkAndHandleHelp();
-    void printHelpAndExit( bool userRequestedHelp );
+    void setAppName(const QString &name);
+
+    void error(const QString &msg);
+    void warning(const QString &msg);
+    void fatal(const QString &msg);
 };
 
-#endif // COMMANDFACTORY_H
+#endif // ERRORREPORTER_H

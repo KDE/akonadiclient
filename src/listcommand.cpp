@@ -33,7 +33,7 @@ ListCommand::ListCommand( QObject *parent )
   : AbstractCommand( parent ),
     mResolveJob( 0 )
 {
-  mShortHelp = ki18nc( "@info:shell", "Lists sub collections and items in a specified collection" ).toString();
+  mShortHelp = ki18nc( "@info:shell", "Lists sub-collections and items in a specified collection" ).toString();
 }
 
 ListCommand::~ListCommand()
@@ -43,7 +43,7 @@ ListCommand::~ListCommand()
 void ListCommand::start()
 {
   Q_ASSERT( mResolveJob != 0 );
-  
+
   connect( mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onBaseFetched(KJob*)) );
   mResolveJob->start();  
 }
@@ -57,10 +57,9 @@ void ListCommand::setupCommandOptions( KCmdLineOptions &options )
 int ListCommand::initCommand( KCmdLineArgs *parsedArgs )
 {
   if ( parsedArgs->count() < 2 ) {
-    emit error( ki18nc( "@info:shell",
-                         "Missing collection argument. See <application>%1</application> help list'" ).subs( KCmdLineArgs::appName()
-                       ).toString()
-              );
+    emitErrorSeeHelp( QLatin1String( "list" ),
+                      ki18nc( "@info:shell",
+                              "Missing collection argument" ) );
     return InvalidUsage;
   }
   
@@ -68,12 +67,7 @@ int ListCommand::initCommand( KCmdLineArgs *parsedArgs )
   mResolveJob = new CollectionResolveJob( collectionArg, this );
     
   if ( !mResolveJob->hasUsableInput() ) {
-    emit error( ki18nc( "@info:shell",
-                         "Invalid collection argument '%1. See <application>%2</application> help list'" ).subs( collectionArg )
-                                                                                                          .subs( KCmdLineArgs::appName()
-                       ).toString()
-              );
-
+    emit error( mResolveJob->errorString() );
     delete mResolveJob;
     mResolveJob = 0;
     

@@ -47,8 +47,6 @@ CollectionResolveJob::~CollectionResolveJob()
 void CollectionResolveJob::start()
 {
   if ( !hasUsableInput() ) {
-    setError( -1 ); // TODO better error code
-    setErrorText( i18nc( "@info:shell", "User input \"%1\" cannot be resolved into an Akonadi collection", mUserInput ) );
     emitResult();
     return;
   }
@@ -62,9 +60,15 @@ void CollectionResolveJob::start()
   }  
 }
 
-bool CollectionResolveJob::hasUsableInput() const
+bool CollectionResolveJob::hasUsableInput()
 {
-  return mCollection.isValid() || mUserInput.startsWith( CollectionPathResolver::pathDelimiter() );
+  if ( mCollection.isValid() || mUserInput.startsWith( CollectionPathResolver::pathDelimiter() ) ) {
+    return true;
+  }
+
+  setError( -1 ); // TODO better error code
+  setErrorText( i18nc( "@info:shell", "Cannot resolve '%1' as an Akonadi collection", mUserInput ) );
+  return false;
 }
 
 Collection CollectionResolveJob::collection() const

@@ -49,7 +49,7 @@ int AbstractCommand::init( KCmdLineArgs *parsedArgs )
   
   KCmdLineArgs::reset();
   KCmdLineArgs::addStdCmdLineOptions();
-  KCmdLineArgs::addCmdLineOptions( options, ki18nc( "@info:shell", "Options for command" ) );
+  KCmdLineArgs::addCmdLineOptions( options );
   
   return result;
 }
@@ -67,4 +67,14 @@ void AbstractCommand::start()
 void AbstractCommand::setupCommandOptions(KCmdLineOptions& options)
 {
   Q_UNUSED( options );
+}
+
+void AbstractCommand::emitErrorSeeHelp( const QString &subCmdName,
+                                        const KLocalizedString &msg )
+{
+  emit error( ki18nc( "@info:shell %1 is application name, %2 is subcommand name, %3 is error message",
+                      "%3. See '<application>%1</application> help %2'" )
+              .subs( KCmdLineArgs::appName() )
+              .subs( subCmdName )
+              .subs( msg.toString() ).toString() );
 }

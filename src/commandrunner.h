@@ -38,10 +38,14 @@ class CommandRunner : public QObject
     
     int exec();
     
+    static void reportError(const QString &msg);
+    static void reportWarning(const QString &msg);
+    static void reportFatal(const QString &msg);
+
   private:
     QCoreApplication *mApplication;
     AbstractCommand *mCommand;
-    
+
   private Q_SLOTS:
     void onCommandFinished( int exitCode );
     void onCommandError( const QString &error );

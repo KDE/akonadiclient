@@ -33,7 +33,7 @@ class CollectionResolveJob : public KCompositeJob
     
     void start();
     
-    bool hasUsableInput() const;
+    bool hasUsableInput();
 
     Akonadi::Collection collection() const;
     

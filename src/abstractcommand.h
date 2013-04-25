@@ -23,6 +23,7 @@
 
 class KCmdLineArgs;
 class KCmdLineOptions;
+class KLocalizedString;
 
 class AbstractCommand : public QObject
 {
@@ -43,7 +44,7 @@ class AbstractCommand : public QObject
     
   public Q_SLOTS:
     virtual void start();
-    
+
   Q_SIGNALS:
     void finished( int exitCode );
     void error( const QString &message );
@@ -54,6 +55,7 @@ class AbstractCommand : public QObject
   protected:
     virtual void setupCommandOptions( KCmdLineOptions &options );
     virtual int initCommand( KCmdLineArgs *parsedArgs ) = 0;
+    void emitErrorSeeHelp( const QString &subCmdName, const KLocalizedString &msg );
 };
 
 #endif // ABSTRACTCOMMAND_H

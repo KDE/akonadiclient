@@ -25,7 +25,8 @@
 
 const char *appname = "akonadiclient";
 
-int main( int argc, char **argv ) {
+int main( int argc, char **argv )
+{
   KAboutData aboutData( appname, 0, ki18nc( "@title program name", "Akonadi Client" ),
 #ifdef VCS_HAVE_VERSION
                         ( VERSION " (" VCS_TYPE_STRING " " VCS_REVISION_STRING ")"),
@@ -36,10 +37,10 @@ int main( int argc, char **argv ) {
                         KAboutData::License_GPL );
   
   aboutData.addAuthor( ki18n( "Kevin Krammer" ), ki18nc( "@title about data task", "Original Author" ), "krammer@kde.org" );
-    
+
   KCmdLineArgs::init( argc, argv, &aboutData );
   KCmdLineArgs::addStdCmdLineOptions();
-  
+
   KCmdLineOptions options;
   options.add( "+command", ki18nc( "@info:shell", "Command (see '<application>%1</application> help'"
                                                   " for list of available commands)" ).subs( appname ) );
@@ -50,7 +51,7 @@ int main( int argc, char **argv ) {
   
   // call right away so standard options like --version can terminate the program right here
   KCmdLineArgs *parsedArgs = KCmdLineArgs::parsedArgs();
-  
+
   CommandRunner runner( aboutData, parsedArgs );
   return runner.exec();
 }

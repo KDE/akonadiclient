@@ -18,6 +18,7 @@ set(akonadiclient_SRCS
     commandrunner.cpp
     listcommand.cpp
     main.cpp
+    errorreporter.cpp
 )
 
 kde4_add_executable(akonadiclient ${akonadiclient_SRCS})

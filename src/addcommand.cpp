@@ -65,18 +65,14 @@ void AddCommand::setupCommandOptions( KCmdLineOptions &options )
 int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
 {
   if ( parsedArgs->count() < 2 ) {
-    emit error( ki18nc( "@info:shell",
-                         "Missing collection argument. See <application>%1</application> help add'" ).subs( KCmdLineArgs::appName()
-                       ).toString()
-              );
+    emitErrorSeeHelp( QLatin1String( "add" ),
+                      ki18nc( "@info:shell", "Missing collection argument" ) );
     return InvalidUsage;
   }
   
   if ( parsedArgs->count() < 3 ) {
-    emit error( ki18nc( "@info:shell",
-                         "Missing file argument. See <application>%1</application> help add'" ).subs( KCmdLineArgs::appName()
-                       ).toString()
-              );
+    emitErrorSeeHelp( QLatin1String( "add" ),
+                      ki18nc( "@info:shell", "Missing file argument" ) );
     return InvalidUsage;
   }
   
@@ -84,12 +80,7 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
   mResolveJob = new CollectionResolveJob( collectionArg, this );
     
   if ( !mResolveJob->hasUsableInput() ) {
-    emit error( ki18nc( "@info:shell",
-                         "Invalid collection argument '%1. See <application>%2</application> help add'" ).subs( collectionArg )
-                                                                                                         .subs( KCmdLineArgs::appName()
-                       ).toString()
-              );
-
+    emit error( mResolveJob->errorString() );
     delete mResolveJob;
     mResolveJob = 0;
     
@@ -105,11 +96,11 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
     if ( !absolutePath.startsWith( currentPath ) ) {
       if ( fileInfo.isDir() ) {
         emit error( ki18nc( "@info:shell",
-                            "Invalid directory argument ''%1'. Needs to be a path in or below '%2'" ).subs( parsedArgs->arg( i ) )
+                            "Invalid directory argument '%1'. Needs to be a path in or below '%2'" ).subs( parsedArgs->arg( i ) )
                                                                                                      .subs( currentPath ).toString() );
       } else {
         emit error( ki18nc( "@info:shell",
-                            "Invalid file argument ''%1'. Needs to be on a path in or below '%2'"  ).subs( parsedArgs->arg( i ) )
+                            "Invalid file argument '%1'. Needs to be on a path in or below '%2'"  ).subs( parsedArgs->arg( i ) )
                                                                                                     .subs( currentPath ).toString() );
       }
     } else {
@@ -123,10 +114,8 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
   }
   
   if ( mFiles.isEmpty() && mDirectories.isEmpty() ) {
-    emit error( ki18nc( "@info:shell",
-                         "No valid file or directory arguments. See <application>%1</application> help add'" ).subs( KCmdLineArgs::appName()
-                       ).toString()
-              );
+    emitErrorSeeHelp( QLatin1String( "add" ),
+                      ki18nc( "@info:shell", "No valid file or directory arguments" ) );
     return InvalidUsage;    
   }
   
