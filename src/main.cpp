@@ -25,7 +25,7 @@ const char *appname = "akonadiclient";
 
 int main( int argc, char **argv ) {
   KAboutData aboutData( appname, 0, ki18nc( "@title program name", "Akonadi Client" ),
-                        PROGRAM_VERSION, ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
+                        VERSION, ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
                         KAboutData::License_GPL );
   
   aboutData.addAuthor( ki18n( "Kevin Krammer" ), ki18nc( "@title about data task", "Original Author" ), "krammer@kde.org" );
