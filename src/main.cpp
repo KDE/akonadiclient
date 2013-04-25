@@ -21,11 +21,18 @@
 #include <KAboutData>
 #include <KCmdLineArgs>
 
+#include "version.h"
+
 const char *appname = "akonadiclient";
 
 int main( int argc, char **argv ) {
   KAboutData aboutData( appname, 0, ki18nc( "@title program name", "Akonadi Client" ),
-                        VERSION, ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
+#ifdef VCS_HAVE_VERSION
+                        ( VERSION " (" VCS_TYPE_STRING " " VCS_REVISION_STRING ")"),
+#else
+                        VERSION,
+#endif
+                        ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
                         KAboutData::License_GPL );
   
   aboutData.addAuthor( ki18n( "Kevin Krammer" ), ki18nc( "@title about data task", "Original Author" ), "krammer@kde.org" );

@@ -23,6 +23,10 @@ set(akonadiclient_SRCS
 kde4_add_executable(akonadiclient ${akonadiclient_SRCS})
 target_link_libraries(akonadiclient ${KDEPIMLIBS_AKONADI_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTCORE_LIBRARY})
 
+###### version tracking ######
+
+add_dependencies(akonadiclient vcsversion)
+
 ###### install ######
 
 install(TARGETS akonadiclient ${INSTALL_TARGETS_DEFAULT_ARGS})
