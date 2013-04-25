@@ -39,7 +39,7 @@ int main( int argc, char **argv )
   aboutData.addAuthor( ki18n( "Kevin Krammer" ), ki18nc( "@title about data task", "Original Author" ), "krammer@kde.org" );
 
   KCmdLineArgs::init( argc, argv, &aboutData );
-  KCmdLineArgs::addStdCmdLineOptions();
+  KCmdLineArgs::addStdCmdLineOptions( KCmdLineArgs::CmdLineArgNone );
 
   KCmdLineOptions options;
   options.add( "+command", ki18nc( "@info:shell", "Command (see '<application>%1</application> help'"
