@@ -87,13 +87,13 @@ void CommandFactory::registerCommands()
 
 void CommandFactory::checkAndHandleHelp()
 {
-  const bool userRequestedHelp = mParsedArgs->count() == 1 && mParsedArgs->arg( 0 ) == QLatin1String( "help" );
-  
   if ( mParsedArgs->count() == 0 )			// case 1
   {
     KCmdLineArgs::enable_i18n();
-    ErrorReporter::error( i18nc( "@info:shell", "No command specified" ) );
-    printHelpAndExit( false );
+    ErrorReporter::error( i18nc( "@info:shell",
+                                 "No command specified (try '%1 --help')",
+                                 KCmdLineArgs::appName() ) );
+    std::exit( AbstractCommand::InvalidUsage );
   }
 
   if ( mParsedArgs->arg( 0 ) == QLatin1String( "help" ) )
@@ -113,7 +113,7 @@ void CommandFactory::checkAndHandleHelp()
       }
 
       AbstractCommand *command = mCommands.value( commandName );
-      command->init(mParsedArgs);
+      command->init( mParsedArgs );
       KCmdLineArgs::usage();
     }
 

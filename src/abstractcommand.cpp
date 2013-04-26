@@ -36,11 +36,12 @@ int AbstractCommand::init( KCmdLineArgs *parsedArgs )
 {
   parsedArgs->clear();
   KCmdLineArgs::reset();
-  
+
   KCmdLineOptions options;
   setupCommandOptions( options );
   
   KCmdLineArgs::addCmdLineOptions( options );
+  KCmdLineArgs::addStdCmdLineOptions( KCmdLineArgs::CmdLineArgNone );
   
   KCmdLineArgs *parseCommandArgs = KCmdLineArgs::parsedArgs();
   Q_ASSERT( parseCommandArgs != 0 );
