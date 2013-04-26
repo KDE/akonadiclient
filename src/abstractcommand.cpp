@@ -66,15 +66,15 @@ void AbstractCommand::start()
 
 void AbstractCommand::setupCommandOptions(KCmdLineOptions& options)
 {
-  Q_UNUSED( options );
+  options.add( ("+" + name().toLocal8Bit() ),
+               ki18nc( "@info:shell", "The name of the command" ) );
 }
 
-void AbstractCommand::emitErrorSeeHelp( const QString &subCmdName,
-                                        const KLocalizedString &msg )
+void AbstractCommand::emitErrorSeeHelp( const KLocalizedString &msg )
 {
   emit error( ki18nc( "@info:shell %1 is application name, %2 is subcommand name, %3 is error message",
                       "%3. See '<application>%1</application> help %2'" )
               .subs( KCmdLineArgs::appName() )
-              .subs( subCmdName )
+              .subs( this->name() )
               .subs( msg.toString() ).toString() );
 }

@@ -60,8 +60,12 @@ AbstractCommand *CommandFactory::createCommand()
 
 void CommandFactory::registerCommands()
 {
-  mCommands.insert( QLatin1String( "add" ), new AddCommand );
-  mCommands.insert( QLatin1String( "list" ), new ListCommand );
+  AbstractCommand *command;
+
+  command = new AddCommand;
+  mCommands.insert( command->name(), command );
+  command = new ListCommand;
+  mCommands.insert( command->name(), command );
 }
 
 

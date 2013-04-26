@@ -50,16 +50,14 @@ void ListCommand::start()
 
 void ListCommand::setupCommandOptions( KCmdLineOptions &options )
 {
-  options.add( "+list", ki18nc( "@info:shell", "The name of the command" ) );
+  AbstractCommand::setupCommandOptions( options );
   options.add( "+collection", ki18nc( "@info:shell", "The collection to list, either as a path or akonadi URL" ) );
 }
 
 int ListCommand::initCommand( KCmdLineArgs *parsedArgs )
 {
   if ( parsedArgs->count() < 2 ) {
-    emitErrorSeeHelp( QLatin1String( "list" ),
-                      ki18nc( "@info:shell",
-                              "Missing collection argument" ) );
+    emitErrorSeeHelp( ki18nc( "@info:shell", "Missing collection argument" ) );
     return InvalidUsage;
   }
   

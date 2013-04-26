@@ -57,22 +57,20 @@ void AddCommand::start()
 
 void AddCommand::setupCommandOptions( KCmdLineOptions &options )
 {
-  options.add( "+add", ki18nc( "@info:shell", "The name of the command" ) );
+  AbstractCommand::setupCommandOptions( options );
   options.add( "+collection", ki18nc( "@info:shell", "The collection to add to, either as a path or akonadi URL" ) );
-  options.add( "+files", ki18nc( "@info:shell", "The files to add to the collection." ) );
+  options.add( "+files...", ki18nc( "@info:shell", "The files to add to the collection." ) );
 }
 
 int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
 {
   if ( parsedArgs->count() < 2 ) {
-    emitErrorSeeHelp( QLatin1String( "add" ),
-                      ki18nc( "@info:shell", "Missing collection argument" ) );
+    emitErrorSeeHelp( ki18nc( "@info:shell", "Missing collection argument" ) );
     return InvalidUsage;
   }
   
   if ( parsedArgs->count() < 3 ) {
-    emitErrorSeeHelp( QLatin1String( "add" ),
-                      ki18nc( "@info:shell", "Missing file argument" ) );
+    emitErrorSeeHelp( ki18nc( "@info:shell", "Missing file argument" ) );
     return InvalidUsage;
   }
   
@@ -114,8 +112,7 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
   }
   
   if ( mFiles.isEmpty() && mDirectories.isEmpty() ) {
-    emitErrorSeeHelp( QLatin1String( "add" ),
-                      ki18nc( "@info:shell", "No valid file or directory arguments" ) );
+    emitErrorSeeHelp( ki18nc( "@info:shell", "No valid file or directory arguments" ) );
     return InvalidUsage;    
   }
   

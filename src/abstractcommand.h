@@ -41,7 +41,8 @@ class AbstractCommand : public QObject
     int init( KCmdLineArgs *parsedArgs );
     
     QString shortHelp() const;
-    
+    virtual QString name() const = 0;
+
   public Q_SLOTS:
     virtual void start();
 
@@ -55,7 +56,7 @@ class AbstractCommand : public QObject
   protected:
     virtual void setupCommandOptions( KCmdLineOptions &options );
     virtual int initCommand( KCmdLineArgs *parsedArgs ) = 0;
-    void emitErrorSeeHelp( const QString &subCmdName, const KLocalizedString &msg );
+    void emitErrorSeeHelp( const KLocalizedString &msg );
 };
 
 #endif // ABSTRACTCOMMAND_H
