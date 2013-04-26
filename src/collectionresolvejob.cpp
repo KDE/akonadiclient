@@ -33,7 +33,7 @@ CollectionResolveJob::CollectionResolveJob( const QString &userInput, QObject* p
 {
   setAutoDelete( false );
   
-  // First see if it is a valid integer as a collection ID
+  // First see if user input is a valid integer as a collection ID
   bool ok;
   int id = userInput.toInt( &ok );
   if ( ok ) {						// conversion succeeded
@@ -41,10 +41,17 @@ CollectionResolveJob::CollectionResolveJob( const QString &userInput, QObject* p
     else mCollection = Collection( id );		// the specified collection
   }
   else {
-    // If not that, check if we have an Akonadi URL
-    const KUrl url = QUrl::fromUserInput( userInput );
-    if ( url.isValid() && url.scheme() == QLatin1String( "akonadi" ) ) {
-      mCollection = Collection::fromUrl( url );
+    // Then quickly check for a path of "/", meaning the root
+    if ( userInput == QLatin1String( "/" ) )
+    {
+      mCollection = Collection::root();
+    }
+    else {
+      // Next check if we have an Akonadi URL
+      const KUrl url = QUrl::fromUserInput( userInput );
+      if ( url.isValid() && url.scheme() == QLatin1String( "akonadi" ) ) {
+        mCollection = Collection::fromUrl( url );
+      }
     }
   }
   // If neither of these, assume that we have a path
