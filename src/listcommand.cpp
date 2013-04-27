@@ -124,11 +124,10 @@ void ListCommand::onCollectionsFetched( KJob *job )
   Q_ASSERT( fetchJob != 0 );
   
   const Collection::List collections = fetchJob->collections();
-  std::cout << i18nc( "@info:shell output section header 1=collection ID, 2=count, 3=collection name",
-                      "Collection %1 \"%3\" has %2 sub-collections:",
-                      mResolveJob->collection().id(),
+  std::cout << i18nc( "@info:shell output section header 1=count, 2=collection",
+                      "Collection %2 has %1 sub-collections:",
                       collections.count(),
-                      mResolveJob->collection().name() ).toLocal8Bit().constData() << std::endl;
+                      mResolveJob->formattedCollectionName() ).toLocal8Bit().constData() << std::endl;
   Q_FOREACH ( const Collection &collection, collections ) {
     std::cout << "  " << collection.name().toLocal8Bit().constData() << std::endl; 
   }
@@ -167,11 +166,10 @@ void ListCommand::onItemsFetched( KJob *job )
   ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob*>( job );
   Q_ASSERT( fetchJob != 0 );
   const Item::List items = fetchJob->items();
-  std::cout << i18nc( "@info:shell output section header 1=collection ID, 2=count, 3=collection name",
-                      "Collection %1 \"%3\" has %2 items:",
-                      mResolveJob->collection().id(),
+  std::cout << i18nc( "@info:shell output section header 1=count, 2=collection",
+                      "Collection %2 has %1 items:",
                       items.count(),
-                      mResolveJob->collection().name() ).toLocal8Bit().constData() << std::endl;
+                      mResolveJob->formattedCollectionName() ).toLocal8Bit().constData() << std::endl;
   Q_FOREACH ( const Item &item, items ) {
     std::cout << "  " << item.id() << std::endl; 
   }  

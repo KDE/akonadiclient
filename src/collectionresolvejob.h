@@ -36,7 +36,8 @@ class CollectionResolveJob : public KCompositeJob
     bool hasUsableInput();
 
     Akonadi::Collection collection() const;
-    
+    QString formattedCollectionName() const;
+
   protected:
     void slotResult( KJob *job );
     
