@@ -17,6 +17,7 @@ set(akonadiclient_SRCS
     commandfactory.cpp
     commandrunner.cpp
     listcommand.cpp
+    infocommand.cpp
     main.cpp
     errorreporter.cpp
 )
