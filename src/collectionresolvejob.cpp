@@ -84,7 +84,7 @@ bool CollectionResolveJob::hasUsableInput()
   }
 
   setError( -1 ); // TODO better error code
-  setErrorText( i18nc( "@info:shell", "Cannot resolve '%1' as an Akonadi collection", mUserInput ) );
+  setErrorText( i18nc( "@info:shell", "Unknown Akonadi collection format '%1'", mUserInput ) );
   return false;
 }
 
@@ -117,9 +117,13 @@ void CollectionResolveJob::slotResult( KJob *job )
     }
   }
   
+  bool willEmitResult = ( job->error() && !error() );
+  // If willEmitResult is true, then emitResult() will be
+  // done inside the call of KCompositeJob::slotResult() below.
+  // So there will be no need for us to do it again.
   KCompositeJob::slotResult( job );
   
-  if ( !hasSubjobs() ) {
+  if ( !hasSubjobs() && !willEmitResult ) {
     emitResult();
   }
 }
