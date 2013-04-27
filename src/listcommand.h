@@ -46,6 +46,7 @@ class ListCommand : public AbstractCommand
     CollectionResolveJob *mResolveJob;
     bool mListItems;
     bool mListCollections;
+    bool mListDetails;
 
   private:
     void fetchCollections();
