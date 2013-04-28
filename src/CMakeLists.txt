@@ -14,6 +14,7 @@ set(akonadiclient_SRCS
     abstractcommand.cpp
     addcommand.cpp
     collectionresolvejob.cpp
+    collectionpathjob.cpp
     commandfactory.cpp
     commandrunner.cpp
     listcommand.cpp

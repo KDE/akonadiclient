@@ -19,6 +19,7 @@
 #include "infocommand.h"
 
 #include "collectionresolvejob.h"
+#include "collectionpathjob.h"
 
 #include <akonadi/itemfetchjob.h>
 #include <akonadi/itemfetchscope.h>
@@ -40,13 +41,19 @@ using namespace Akonadi;
 
 InfoCommand::InfoCommand(QObject *parent)
   : AbstractCommand(parent),
-    mResolveJob(0)
+    mResolveJob(0),
+    mInfoCollection(0),
+    mInfoItem(0),
+    mInfoStatistics(0)
 {
   mShortHelp = ki18nc("@info:shell", "Show full information for a collection or item").toString();
 }
 
 InfoCommand::~InfoCommand()
 {
+  delete mInfoItem;
+  delete mInfoCollection;
+  delete mInfoStatistics;
 }
 
 
@@ -99,26 +106,15 @@ void InfoCommand::start()
   if (mIsItem)						// user forced as an item
   {
     fetchItems();					// do this immediately
-    return;						// and don't try anything else
   }
-
-  // First try to resolve the input as a collection
-  connect(mResolveJob, SIGNAL(result(KJob *)), SLOT(onBaseFetched(KJob *)));
-  mResolveJob->start();
-}
-
-
-static void writeInfo(const QString &tag, const QString &data)
-{
-  std::cout << (tag+":").leftJustified(10).toLocal8Bit().constData();
-  std::cout << "  ";
-  std::cout << data.toLocal8Bit().constData();
-  std::cout << std::endl;
-}
-
-static void writeInfo(const QString &tag, quint64 data)
-{
-  writeInfo(tag, QString::number(data));
+  else
+  {
+    // User specified that the input is a collection, or
+    // didn't specify at all what sort of entity it is.
+    // First try to resolve it as a collection.
+    connect(mResolveJob, SIGNAL(result(KJob *)), SLOT(onBaseFetched(KJob *)));
+    mResolveJob->start();
+  }
 }
 
 
@@ -128,7 +124,7 @@ void InfoCommand::onBaseFetched(KJob *job)
 
   if (job->error()!=0)
   {
-    if (job->error() == CollectionPathResolver::Unknown)
+    if (job->error()==CollectionPathResolver::Unknown)
     {							// failed to resolve as collection
       if (!mIsCollection)				// not forced as a collection
       {
@@ -170,43 +166,12 @@ void InfoCommand::onStatisticsFetched(KJob *job)
     return;
   }
 
-  Collection collection = mResolveJob->collection();
-  Q_ASSERT(collection.isValid());
-
   CollectionStatisticsJob *statsJob = qobject_cast<CollectionStatisticsJob *>(job);
   Q_ASSERT(statsJob!=0);
+  mInfoStatistics = new CollectionStatistics(statsJob->statistics());
 
-  writeInfo(i18nc("@info:shell", "ID"), collection.id());
-  writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Collection"));
-  writeInfo(i18nc("@info:shell", "Name"), collection.name());
-
-  Collection par(collection.parent());
-  // TODO: show full parent path
-  writeInfo(i18nc("@info:shell", "Parent"), par.id());
-
-  writeInfo(i18nc("@info:shell", "Owner"), collection.resource());
-  writeInfo(i18nc("@info:shell", "MIME"), collection.contentMimeTypes().join(" "));
-
-  QStringList rightsList;
-  Collection::Rights rights = collection.rights();
-  if (rights & Collection::ReadOnly) rightsList << i18nc("@info:shell", "ReadOnly");
-  if (rights & Collection::CanChangeItem) rightsList << i18nc("@info:shell", "ChangeItem");
-  if (rights & Collection::CanCreateItem) rightsList << i18nc("@info:shell", "CreateItem");
-  if (rights & Collection::CanDeleteItem) rightsList << i18nc("@info:shell", "DeleteItem");
-  if (rights & Collection::CanChangeCollection) rightsList << i18nc("@info:shell", "ChangeColl");
-  if (rights & Collection::CanCreateCollection) rightsList << i18nc("@info:shell", "CreateColl");
-  if (rights & Collection::CanDeleteCollection) rightsList << i18nc("@info:shell", "DeleteColl");
-  if (rights & Collection::CanLinkItem) rightsList << i18nc("@info:shell", "LinkItem");
-  if (rights & Collection::CanUnlinkItem) rightsList << i18nc("@info:shell", "UnlinkItem");
-  writeInfo(i18nc("@info:shell", "Rights"), rightsList.join(" "));
-
-  writeInfo(i18nc("@info:shell", "URL"), collection.url().pathOrUrl());
-
-  CollectionStatistics stats = statsJob->statistics();
-  writeInfo(i18nc("@info:shell", "Count"), KGlobal::locale()->formatNumber(stats.count(), 0));
-  writeInfo(i18nc("@info:shell", "Size"), KGlobal::locale()->formatByteSize(stats.size()));
-
-  emit finished(NoError);
+  mInfoCollection = new Collection(mResolveJob->collection());
+  fetchParentPath(mInfoCollection->parentCollection());
 }
 
 
@@ -256,40 +221,116 @@ void InfoCommand::onItemsFetched(KJob *job)
   }
 
   ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
-  Q_ASSERT(fetchJob != 0);
+  Q_ASSERT(fetchJob!=0);
   Item::List items = fetchJob->items();
-  if (items.count()<1) {
+  if (items.count()<1)
+  {
     emit error(i18nc("@info:shell", "Cannot find '%1' as a collection or item", mEntityArg));
     emit finished(-1); // TODO correct error code
     return;
   }
 
-  Item item = items.first();
-  writeInfo(i18nc("@info:shell", "ID"), item.id());
-  writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Item"));
-  writeInfo(i18nc("@info:shell", "MIME"), item.mimeType());
+  mInfoItem = new Item(items.first());
+  fetchParentPath(mInfoItem->parentCollection());
+}
 
-  Collection par(item.parentCollection());
-  // TODO: show full parent path
-  writeInfo(i18nc("@info:shell", "Parent"), par.id());
 
-  writeInfo(i18nc("@info:shell", "Size"), KGlobal::locale()->formatByteSize(item.size()));
-  // from kdepim/akonadiconsole/browserwidget.cpp BrowserWidget::setItem()
-  writeInfo(i18nc("@info:shell", "Modified"), (item.modificationTime().toString()+" UTC"));
-  writeInfo(i18nc("@info:shell", "Revision"), item.revision());
-  writeInfo(i18nc("@info:shell", "URL"), item.url().pathOrUrl());
-  writeInfo(i18nc("@info:shell", "Remote ID"), item.remoteId());
+void InfoCommand::fetchParentPath(const Akonadi::Collection &collection)
+{
+  Q_ASSERT(mInfoCollection!=0 || mInfoItem!=0);
 
-  writeInfo(i18nc("@info:shell", "Payload"), (item.hasPayload() ? i18nc("@info:shell", "yes") : i18nc("@info:shell", "no")));
+  CollectionPathJob *job = new CollectionPathJob(collection);
+  connect(job, SIGNAL(result(KJob *)), SLOT(onParentPathFetched(KJob *)));
+  job->start();
+}
 
-  Item::Flags flags = item.flags();
-  QStringList flagDisp;
-  foreach (const QByteArray &flag, flags)
+
+static void writeInfo(const QString &tag, const QString &data)
+{
+  std::cout << (tag+":").leftJustified(10).toLocal8Bit().constData();
+  std::cout << "  ";
+  std::cout << data.toLocal8Bit().constData();
+  std::cout << std::endl;
+}
+
+static void writeInfo(const QString &tag, quint64 data)
+{
+  writeInfo(tag, QString::number(data));
+}
+
+
+void InfoCommand::onParentPathFetched(KJob *job)
+{
+  if (job->error()!=0)
   {
-    flagDisp << flag;
+    emit error(job->errorString());
+    emit finished(-1); // TODO correct error code
+    return;
   }
-  if (flagDisp.isEmpty()) flagDisp << i18nc("@info:shell", "(none)");
-  writeInfo(i18nc("@info:shell", "Flags"), flagDisp.join(" "));
+
+  // Finally we have fetched all of the information to display.
+
+  CollectionPathJob *pathJob = qobject_cast<CollectionPathJob *>(job);
+  Q_ASSERT(pathJob!=0);
+  const QString parentString = pathJob->formattedCollectionPath();
+
+  if (mInfoCollection!=0)				// for a collection
+  {
+    Q_ASSERT(mInfoCollection->isValid());
+
+    writeInfo(i18nc("@info:shell", "ID"), mInfoCollection->id());
+    writeInfo(i18nc("@info:shell", "URL"), mInfoCollection->url().pathOrUrl());
+    writeInfo(i18nc("@info:shell", "Parent"), parentString);
+    writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Collection"));
+    writeInfo(i18nc("@info:shell", "Name"), mInfoCollection->name());
+    writeInfo(i18nc("@info:shell", "Owner"), mInfoCollection->resource());
+    writeInfo(i18nc("@info:shell", "MIME"), mInfoCollection->contentMimeTypes().join(" "));
+
+    QStringList rightsList;
+    Collection::Rights rights = mInfoCollection->rights();
+    if (rights & Collection::ReadOnly) rightsList << i18nc("@info:shell", "ReadOnly");
+    if (rights & Collection::CanChangeItem) rightsList << i18nc("@info:shell", "ChangeItem");
+    if (rights & Collection::CanCreateItem) rightsList << i18nc("@info:shell", "CreateItem");
+    if (rights & Collection::CanDeleteItem) rightsList << i18nc("@info:shell", "DeleteItem");
+    if (rights & Collection::CanChangeCollection) rightsList << i18nc("@info:shell", "ChangeColl");
+    if (rights & Collection::CanCreateCollection) rightsList << i18nc("@info:shell", "CreateColl");
+    if (rights & Collection::CanDeleteCollection) rightsList << i18nc("@info:shell", "DeleteColl");
+    if (rights & Collection::CanLinkItem) rightsList << i18nc("@info:shell", "LinkItem");
+    if (rights & Collection::CanUnlinkItem) rightsList << i18nc("@info:shell", "UnlinkItem");
+    writeInfo(i18nc("@info:shell", "Rights"), rightsList.join(" "));
+
+    Q_ASSERT(mInfoStatistics!=0);
+    writeInfo(i18nc("@info:shell", "Count"), KGlobal::locale()->formatNumber(mInfoStatistics->count(), 0));
+    writeInfo(i18nc("@info:shell", "Size"), KGlobal::locale()->formatByteSize(mInfoStatistics->size()));
+  }
+  else if (mInfoItem!=0)				// for an item
+  {
+    writeInfo(i18nc("@info:shell", "ID"), mInfoItem->id());
+    writeInfo(i18nc("@info:shell", "URL"), mInfoItem->url().pathOrUrl());
+    writeInfo(i18nc("@info:shell", "Parent"), parentString);
+    writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Item"));
+    writeInfo(i18nc("@info:shell", "MIME"), mInfoItem->mimeType());
+    // from kdepim/akonadiconsole/browserwidget.cpp BrowserWidget::setItem()
+    writeInfo(i18nc("@info:shell", "Modified"), (mInfoItem->modificationTime().toString()+" UTC"));
+    writeInfo(i18nc("@info:shell", "Revision"), mInfoItem->revision());
+    writeInfo(i18nc("@info:shell", "Remote ID"), mInfoItem->remoteId());
+    writeInfo(i18nc("@info:shell", "Payload"), (mInfoItem->hasPayload() ? i18nc("@info:shell", "yes") : i18nc("@info:shell", "no")));
+
+    Item::Flags flags = mInfoItem->flags();
+    QStringList flagDisp;
+    foreach (const QByteArray &flag, flags)
+    {
+      flagDisp << flag;
+    }
+    if (flagDisp.isEmpty()) flagDisp << i18nc("@info:shell", "(none)");
+    writeInfo(i18nc("@info:shell", "Flags"), flagDisp.join(" "));
+
+    writeInfo(i18nc("@info:shell", "Size"), KGlobal::locale()->formatByteSize(mInfoItem->size()));
+  }
+  else							// neither collection nor item?
+  {							// should never happen
+    writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Unknown"));
+  }
 
   emit finished(NoError);
 }

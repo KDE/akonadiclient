@@ -22,6 +22,14 @@
 
 #include "abstractcommand.h"
 
+namespace Akonadi
+{
+  class Collection;
+  class Item;
+  class CollectionStatistics;
+};
+
+
 class CollectionResolveJob;
 class KJob;
 
@@ -46,16 +54,22 @@ class InfoCommand : public AbstractCommand
     CollectionResolveJob *mResolveJob;
     bool mIsCollection;
     bool mIsItem;
+
     QString mEntityArg;
+    Akonadi::Collection *mInfoCollection;
+    Akonadi::Item *mInfoItem;
+    Akonadi::CollectionStatistics *mInfoStatistics;
 
   private:
     void fetchStatistics();
     void fetchItems();
+    void fetchParentPath(const Akonadi::Collection &collection);
     
   private Q_SLOTS:
     void onBaseFetched(KJob *job);
     void onStatisticsFetched(KJob *job);
     void onItemsFetched(KJob *job);
+    void onParentPathFetched(KJob *job);
 };
 
 #endif							// INFOCOMMAND_H

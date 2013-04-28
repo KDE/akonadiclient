@@ -1,5 +1,6 @@
 /*
     Copyright (C) 2012  Kevin Krammer <krammer@kde.org>
+    Copyright (C) 2013  Jonathan Marten <jjm@keelhaul.me.uk>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -17,36 +18,31 @@
 */
 
 
-#ifndef COLLECTIONRESOLVEJOB_H
-#define COLLECTIONRESOLVEJOB_H
+#ifndef COLLECTIONPATHJOB_H
+#define COLLECTIONPATHJOB_H
 
 #include <Akonadi/Collection>
 #include <KCompositeJob>
 
-class CollectionResolveJob : public KCompositeJob
+class CollectionPathJob : public KCompositeJob
 {
   Q_OBJECT
   
   public:
-    explicit CollectionResolveJob( const QString &userInput, QObject *parent = 0 );
-    ~CollectionResolveJob();
+    explicit CollectionPathJob(const Akonadi::Collection &collection, QObject *parent = 0);
+    ~CollectionPathJob();
     
     void start();
     
-    bool hasUsableInput();
-
-    Akonadi::Collection collection() const;
-    QString formattedCollectionName() const;
+    QString collectionPath() const;
+    QString formattedCollectionPath() const;
 
   protected Q_SLOTS:
-    void slotResult( KJob *job );
+    void slotResult(KJob *job);
     
   private:
-    const QString mUserInput;
     Akonadi::Collection mCollection;
-    
-  private:
-    void fetchBase();
+    QString mPath;
 };
 
-#endif // COLLECTIONRESOLVEJOB_H
+#endif							// COLLECTIONPATHJOB_H
