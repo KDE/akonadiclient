@@ -198,6 +198,9 @@ void ListCommand::fetchItems()
     job->fetchScope().fetchFullPayload(false);
     connect( job, SIGNAL(result(KJob*)), this, SLOT(onItemsFetched(KJob*)) );
   } else {
+      std::cout << i18nc( "@info:shell",
+                          "Collection %1 cannot contain items",
+                          mResolveJob->formattedCollectionName() ).toLocal8Bit().constData() << std::endl;
     emit finished( NoError );
   }
 }
