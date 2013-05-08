@@ -27,19 +27,19 @@
 class CollectionPathJob : public KCompositeJob
 {
   Q_OBJECT
-  
+
   public:
     explicit CollectionPathJob(const Akonadi::Collection &collection, QObject *parent = 0);
     ~CollectionPathJob();
-    
+
     void start();
-    
+
     QString collectionPath() const;
     QString formattedCollectionPath() const;
 
   protected Q_SLOTS:
     void slotResult(KJob *job);
-    
+
   private:
     Akonadi::Collection mCollection;
     QString mPath;

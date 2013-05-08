@@ -31,13 +31,13 @@ class QCoreApplication;
 class CommandRunner : public QObject
 {
   Q_OBJECT
-    
+
   public:
     CommandRunner( const KAboutData &aboutData, KCmdLineArgs *parsedArgs );
     ~CommandRunner();
-    
+
     int exec();
-    
+
     static void reportError(const QString &msg);
     static void reportWarning(const QString &msg);
     static void reportFatal(const QString &msg);

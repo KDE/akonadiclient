@@ -35,7 +35,7 @@ int main( int argc, char **argv )
 #endif
                         ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
                         KAboutData::License_GPL );
-  
+
   aboutData.addAuthor( ki18n( "Kevin Krammer" ), ki18nc( "@title about data task", "Original Author" ), "krammer@kde.org" );
 
   KCmdLineArgs::init( argc, argv, &aboutData );
@@ -49,7 +49,7 @@ int main( int argc, char **argv )
   options.add( "", ki18nc( "@info:shell", "See '<application>%1</application> help command'"
                                           " for more information on a specific command." ).subs( appname ) );
   KCmdLineArgs::addCmdLineOptions( options );
-  
+
   // call right away so standard options like --version can terminate the program right here
   KCmdLineArgs *parsedArgs = KCmdLineArgs::parsedArgs();
 

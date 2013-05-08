@@ -26,13 +26,13 @@
 class CollectionResolveJob : public KCompositeJob
 {
   Q_OBJECT
-  
+
   public:
     explicit CollectionResolveJob( const QString &userInput, QObject *parent = 0 );
     ~CollectionResolveJob();
-    
+
     void start();
-    
+
     bool hasUsableInput();
 
     Akonadi::Collection collection() const;
@@ -40,11 +40,11 @@ class CollectionResolveJob : public KCompositeJob
 
   protected Q_SLOTS:
     void slotResult( KJob *job );
-    
+
   private:
     const QString mUserInput;
     Akonadi::Collection mCollection;
-    
+
   private:
     void fetchBase();
 };

@@ -36,20 +36,20 @@ class KJob;
 class InfoCommand : public AbstractCommand
 {
   Q_OBJECT
-  
+
   public:
     explicit InfoCommand(QObject *parent = 0);
     ~InfoCommand();
-    
+
     QString name() const	{ return (QLatin1String("info")); }
 
   public Q_SLOTS:
     void start();
-    
+
   protected:
     void setupCommandOptions(KCmdLineOptions &options);
     int initCommand(KCmdLineArgs *parsedArgs);
-    
+
   private:
     CollectionResolveJob *mResolveJob;
     bool mIsCollection;
@@ -64,7 +64,7 @@ class InfoCommand : public AbstractCommand
     void fetchStatistics();
     void fetchItems();
     void fetchParentPath(const Akonadi::Collection &collection);
-    
+
   private Q_SLOTS:
     void onBaseFetched(KJob *job);
     void onStatisticsFetched(KJob *job);

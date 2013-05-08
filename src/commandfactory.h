@@ -32,14 +32,14 @@ class CommandFactory
   public:
     explicit CommandFactory( KCmdLineArgs *parsedArgs );
     ~CommandFactory();
-    
+
     AbstractCommand *createCommand();
-    
+
   private:
     KCmdLineArgs *mParsedArgs;
-    
+
     QHash<QString, AbstractCommand *> mCommands;
-    
+
   private:
     void registerCommands();
     void checkAndHandleHelp();

@@ -36,13 +36,13 @@ namespace Akonadi {
 class AddCommand : public AbstractCommand
 {
   Q_OBJECT
-  
+
   public:
     enum AddDirectoryMode {
       AddDirOnly = 0,
       AddRecursive
     };
-      
+
     explicit AddCommand( QObject *parent = 0 );
     ~AddCommand();
 
@@ -50,19 +50,19 @@ class AddCommand : public AbstractCommand
 
   public Q_SLOTS:
     void start();
-    
+
   protected:
     void setupCommandOptions( KCmdLineOptions &options );
     int initCommand( KCmdLineArgs *parsedArgs );
 
   private:
     CollectionResolveJob *mResolveJob;
-    
+
     QSet<QString> mFiles;
     QMap<QString, AddDirectoryMode> mDirectories;
     QHash<QString, Akonadi::Collection> mCollectionsByPath;
     QString mBasePath;
-    
+
   private Q_SLOTS:
     void processNextDirectory();
     void processNextFile();

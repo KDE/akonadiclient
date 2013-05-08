@@ -61,10 +61,10 @@ void CollectionPathJob::slotResult(KJob *job)
     Q_ASSERT(resolver!=0);
     mPath = resolver->path();
   }
-  
+
   bool willEmitResult = (job->error() && !error());
   KCompositeJob::slotResult(job);
-  
+
   if (!hasSubjobs() && !willEmitResult)
   {
     emitResult();

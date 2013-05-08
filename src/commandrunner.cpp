@@ -38,18 +38,18 @@ CommandRunner::CommandRunner( const KAboutData &aboutData, KCmdLineArgs *parsedA
   ErrorReporter::setAppName( aboutData.appName() );
 
   CommandFactory factory( parsedArgs );
-  
+
   mCommand = factory.createCommand();
   Q_ASSERT( mCommand != 0 );
-  
+
   connect( mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)) );
-  
+
   if ( mCommand->init( parsedArgs ) == AbstractCommand::InvalidUsage ) {
     delete mCommand;
     mCommand = 0;
     std::exit( AbstractCommand::InvalidUsage );
   }
-  
+
   connect( mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)) );
 
   // TODO should we allow commands to optionally support GUI?
@@ -71,7 +71,7 @@ int CommandRunner::exec()
     QMetaObject::invokeMethod( mCommand, "start", Qt::QueuedConnection );
     return mApplication->exec();
   }
-  
+
   return AbstractCommand::InvalidUsage;
 }
 

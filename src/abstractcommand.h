@@ -28,18 +28,18 @@ class KLocalizedString;
 class AbstractCommand : public QObject
 {
   Q_OBJECT
-    
+
   public:
     enum Errors {
       NoError = 0,
       InvalidUsage
     };
-    
+
     explicit AbstractCommand( QObject *parent = 0 );
     ~AbstractCommand();
-    
+
     int init( KCmdLineArgs *parsedArgs );
-    
+
     QString shortHelp() const;
     virtual QString name() const = 0;
 
@@ -49,7 +49,7 @@ class AbstractCommand : public QObject
   Q_SIGNALS:
     void finished( int exitCode );
     void error( const QString &message );
-    
+
   protected:
     QString mShortHelp;
 

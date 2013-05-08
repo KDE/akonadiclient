@@ -28,20 +28,20 @@ class KJob;
 class ListCommand : public AbstractCommand
 {
   Q_OBJECT
-  
+
   public:
     explicit ListCommand( QObject *parent = 0 );
     ~ListCommand();
-    
+
     QString name() const	{ return ( QLatin1String( "list" ) ); }
 
   public Q_SLOTS:
     void start();
-    
+
   protected:
     void setupCommandOptions( KCmdLineOptions &options );
     int initCommand( KCmdLineArgs *parsedArgs );
-    
+
   private:
     CollectionResolveJob *mResolveJob;
     bool mListItems;
@@ -51,7 +51,7 @@ class ListCommand : public AbstractCommand
   private:
     void fetchCollections();
     void fetchItems();
-    
+
   private Q_SLOTS:
     void onBaseFetched( KJob *job );
     void onCollectionsFetched( KJob *job );

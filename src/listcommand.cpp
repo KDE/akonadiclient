@@ -72,15 +72,15 @@ int ListCommand::initCommand( KCmdLineArgs *parsedArgs )
 
   const QString collectionArg = parsedArgs->arg( 1 );
   mResolveJob = new CollectionResolveJob( collectionArg, this );
-    
+
   if ( !mResolveJob->hasUsableInput() ) {
     emit error( mResolveJob->errorString() );
     delete mResolveJob;
     mResolveJob = 0;
-    
+
     return InvalidUsage;
   }
-  
+
   return NoError;
 }
 
@@ -89,7 +89,7 @@ void ListCommand::start()
   Q_ASSERT( mResolveJob != 0 );
 
   connect( mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onBaseFetched(KJob*)) );
-  mResolveJob->start();  
+  mResolveJob->start();
 }
 
 static void writeColumn( const QString &data, int width = 0 )
@@ -109,9 +109,9 @@ void ListCommand::onBaseFetched( KJob *job )
     emit finished( -1 ); // TODO correct error code
     return;
   }
-  
+
   Q_ASSERT( job == mResolveJob );
-    
+
   if ( mListCollections ) {
     fetchCollections();
   }
@@ -123,7 +123,7 @@ void ListCommand::onBaseFetched( KJob *job )
 void ListCommand::fetchCollections()
 {
   Q_ASSERT( mResolveJob != 0  && mResolveJob->collection().isValid() );
-  
+
   CollectionFetchJob *job = new CollectionFetchJob( mResolveJob->collection(), CollectionFetchJob::FirstLevel, this );
   connect( job, SIGNAL(result(KJob*)), this, SLOT(onCollectionsFetched(KJob*)) );
 }
@@ -138,7 +138,7 @@ void ListCommand::onCollectionsFetched( KJob *job )
 
   CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob*>( job );
   Q_ASSERT( fetchJob != 0 );
-  
+
   Collection::List collections = fetchJob->collections();
   if ( collections.isEmpty() ) {
     if ( mListCollections ) {				// message only if collections requested
@@ -160,7 +160,7 @@ void ListCommand::onCollectionsFetched( KJob *job )
       std::cout << "  ";
       writeColumn( i18nc( "@info:shell column header", "ID" ), 8 );
       writeColumn( i18nc( "@info:shell column header", "Name" ) );
-      std::cout << std::endl; 
+      std::cout << std::endl;
     }
 
     Q_FOREACH ( const Collection &collection, collections ) {
@@ -170,9 +170,9 @@ void ListCommand::onCollectionsFetched( KJob *job )
         writeColumn( collection.name() );
       }
       else {
-        std::cout << collection.name().toLocal8Bit().constData(); 
+        std::cout << collection.name().toLocal8Bit().constData();
       }
-      std::cout << std::endl; 
+      std::cout << std::endl;
     }
   }
 
@@ -187,11 +187,11 @@ void ListCommand::onCollectionsFetched( KJob *job )
 void ListCommand::fetchItems()
 {
   Q_ASSERT( mResolveJob != 0  && mResolveJob->collection().isValid() );
-  
+
   // only attempt item listing if collection has non-collection content MIME types
   QStringList contentMimeTypes = mResolveJob->collection().contentMimeTypes();
   contentMimeTypes.removeAll( Collection::mimeType() );
-  if ( !contentMimeTypes.isEmpty() ) { 
+  if ( !contentMimeTypes.isEmpty() ) {
     ItemFetchJob *job = new ItemFetchJob( mResolveJob->collection(), this );
     job->fetchScope().setFetchModificationTime(true);
     job->fetchScope().fetchAllAttributes(false);
@@ -237,7 +237,7 @@ void ListCommand::onItemsFetched( KJob *job )
       writeColumn( i18nc( "@info:shell column header", "MIME type" ), 20 );
       writeColumn( i18nc( "@info:shell column header", "Size" ), 10 );
       writeColumn( i18nc( "@info:shell column header", "Modification Time" ) );
-      std::cout << std::endl; 
+      std::cout << std::endl;
     }
 
     Q_FOREACH ( const Item &item, items ) {
@@ -250,11 +250,11 @@ void ListCommand::onItemsFetched( KJob *job )
         writeColumn( ( item.modificationTime().toString() + " UTC" ) );
       }
       else {
-        std::cout << item.id(); 
+        std::cout << item.id();
       }
-      std::cout << std::endl; 
-    }  
-  }  
-  
+      std::cout << std::endl;
+    }
+  }
+
   emit finished( NoError );
 }

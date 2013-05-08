@@ -39,19 +39,19 @@ int AbstractCommand::init( KCmdLineArgs *parsedArgs )
 
   KCmdLineOptions options;
   setupCommandOptions( options );
-  
+
   KCmdLineArgs::addCmdLineOptions( options );
   KCmdLineArgs::addStdCmdLineOptions( KCmdLineArgs::CmdLineArgNone );
-  
+
   KCmdLineArgs *parseCommandArgs = KCmdLineArgs::parsedArgs();
   Q_ASSERT( parseCommandArgs != 0 );
-  
+
   const int result = initCommand( parseCommandArgs );
-  
+
   KCmdLineArgs::reset();
   KCmdLineArgs::addStdCmdLineOptions( KCmdLineArgs::CmdLineArgNone );
   KCmdLineArgs::addCmdLineOptions( options );
-  
+
   return result;
 }
 

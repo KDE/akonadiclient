@@ -35,7 +35,7 @@ CommandFactory::CommandFactory( KCmdLineArgs *parsedArgs )
   : mParsedArgs( parsedArgs )
 {
   Q_ASSERT( mParsedArgs != 0 );
-  
+
   registerCommands();
   checkAndHandleHelp();
 }
@@ -48,14 +48,14 @@ CommandFactory::~CommandFactory()
 AbstractCommand *CommandFactory::createCommand()
 {
   const QString commandName = mParsedArgs->arg( 0 );
-  
+
   AbstractCommand *command = mCommands.take( commandName );
   if ( command == 0 ) {
     KCmdLineArgs::enable_i18n();
     ErrorReporter::error( i18nc( "@info:shell", "Unknown command '%1'", commandName ) );
     printHelpAndExit( false );
   }
-  
+
   return command;
 }
 
@@ -135,7 +135,7 @@ void CommandFactory::printHelpAndExit( bool userRequestedHelp )
   // if the user requested help output to stdout,
   // otherwise we are missing the mandatory command argument and output to stderr
   std::ostream &stream = userRequestedHelp ? std::cout : std::cerr;
-  
+
   const QString linePattern = QLatin1String( "  %1  %2" );
 
   stream << std::endl << i18nc( "@info:shell", "Available commands are:" ).toLocal8Bit().constData() << std::endl;
@@ -147,6 +147,6 @@ void CommandFactory::printHelpAndExit( bool userRequestedHelp )
                                it.value()->shortHelp() ).toLocal8Bit().constData()
            << std::endl;
   }
-  
+
   std::exit( userRequestedHelp ? AbstractCommand::NoError : AbstractCommand::InvalidUsage );
 }

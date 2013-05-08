@@ -32,7 +32,7 @@ CollectionResolveJob::CollectionResolveJob( const QString &userInput, QObject* p
     mUserInput( userInput )
 {
   setAutoDelete( false );
-  
+
   // First see if user input is a valid integer as a collection ID
   bool ok;
   int id = userInput.toInt( &ok );
@@ -74,7 +74,7 @@ void CollectionResolveJob::start()
     CollectionPathResolver *resolver = new CollectionPathResolver( mUserInput, this );
     addSubjob( resolver );
     resolver->start();
-  }  
+  }
 }
 
 bool CollectionResolveJob::hasUsableInput()
@@ -99,7 +99,7 @@ void CollectionResolveJob::fetchBase()
     emitResult();
     return;
   }
-    
+
   CollectionFetchJob *job = new CollectionFetchJob( mCollection, CollectionFetchJob::Base, this );
   addSubjob( job );
 }
@@ -109,20 +109,20 @@ void CollectionResolveJob::slotResult( KJob *job )
   if ( job->error() == 0 ) {
     CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob*>( job );
     if ( fetchJob != 0 ) {
-      mCollection = fetchJob->collections().first();      
+      mCollection = fetchJob->collections().first();
     } else {
       CollectionPathResolver *resolver = qobject_cast<CollectionPathResolver*>( job );
       mCollection = Collection( resolver->collection() );
       fetchBase();
     }
   }
-  
+
   bool willEmitResult = ( job->error() && !error() );
   // If willEmitResult is true, then emitResult() will be
   // done inside the call of KCompositeJob::slotResult() below.
   // So there will be no need for us to do it again.
   KCompositeJob::slotResult( job );
-  
+
   if ( !hasSubjobs() && !willEmitResult ) {
     emitResult();
   }
