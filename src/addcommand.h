@@ -61,6 +61,7 @@ class AddCommand : public AbstractCommand
     QSet<QString> mFiles;
     QMap<QString, AddDirectoryMode> mDirectories;
     QHash<QString, Akonadi::Collection> mCollectionsByPath;
+    QString mBasePath;
     
   private Q_SLOTS:
     void processNextDirectory();
