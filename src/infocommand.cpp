@@ -134,14 +134,14 @@ void InfoCommand::onBaseFetched(KJob *job)
     }
 
     emit error(job->errorString());
-    emit finished(-1); // TODO correct error code
+    emit finished(RuntimeError);
     return;
   }
 
   if (mResolveJob->collection()==Collection::root())
   {
     emit error(i18nc("@info:shell", "No information available for collection root"));
-    emit finished(-1); // TODO correct error code
+    emit finished(RuntimeError);
     return;
   }
 
@@ -162,7 +162,7 @@ void InfoCommand::onStatisticsFetched(KJob *job)
   if (job->error() != 0)
   {
     emit error(job->errorString());
-    emit finished(-1); // TODO correct error code
+    emit finished(RuntimeError);
     return;
   }
 
@@ -193,7 +193,7 @@ void InfoCommand::fetchItems()
     else
     {
       emit error(i18nc("@info:shell", "Invalid item/collection syntax"));
-      emit finished(-1); // TODO correct error code
+      emit finished(RuntimeError);
       return;
     }
   }
@@ -216,7 +216,7 @@ void InfoCommand::onItemsFetched(KJob *job)
 {
   if (job->error() != 0) {
     emit error(job->errorString());
-    emit finished(-1); // TODO correct error code
+    emit finished(RuntimeError);
     return;
   }
 
@@ -226,7 +226,7 @@ void InfoCommand::onItemsFetched(KJob *job)
   if (items.count()<1)
   {
     emit error(i18nc("@info:shell", "Cannot find '%1' as a collection or item", mEntityArg));
-    emit finished(-1); // TODO correct error code
+    emit finished(RuntimeError);
     return;
   }
 
@@ -264,7 +264,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
   if (job->error()!=0)
   {
     emit error(job->errorString());
-    emit finished(-1); // TODO correct error code
+    emit finished(RuntimeError);
     return;
   }
 

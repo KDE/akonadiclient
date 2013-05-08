@@ -32,7 +32,8 @@ class AbstractCommand : public QObject
   public:
     enum Errors {
       NoError = 0,
-      InvalidUsage
+      InvalidUsage = 1,
+      RuntimeError = 2
     };
 
     explicit AbstractCommand( QObject *parent = 0 );

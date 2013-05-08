@@ -83,7 +83,7 @@ bool CollectionResolveJob::hasUsableInput()
     return true;
   }
 
-  setError( -1 ); // TODO better error code
+  setError( Akonadi::Job::UserError );
   setErrorText( i18nc( "@info:shell", "Unknown Akonadi collection format '%1'", mUserInput ) );
   return false;
 }

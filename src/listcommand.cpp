@@ -106,7 +106,7 @@ void ListCommand::onBaseFetched( KJob *job )
 {
   if ( job->error() != 0 ) {
     emit error( job->errorString() );
-    emit finished( -1 ); // TODO correct error code
+    emit finished( RuntimeError );
     return;
   }
 
@@ -132,7 +132,7 @@ void ListCommand::onCollectionsFetched( KJob *job )
 {
   if ( job->error() != 0 ) {
     emit error( job->errorString() );
-    emit finished( -1 ); // TODO correct error code
+    emit finished( RuntimeError );
     return;
   }
 
@@ -209,7 +209,7 @@ void ListCommand::onItemsFetched( KJob *job )
 {
   if ( job->error() != 0 ) {
     emit error( job->errorString() );
-    emit finished( -1 ); // TODO correct error code
+    emit finished( RuntimeError );
     return;
   }
 

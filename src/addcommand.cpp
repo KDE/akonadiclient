@@ -281,7 +281,7 @@ void AddCommand::onTargetFetched( KJob *job )
     emit error( ki18nc( "@info:shell",
                         "Cannot fetch target collection, %1" )
                 .subs( job->errorString() ).toString() );
-    emit finished( -1 ); // TODO correct error code
+    emit finished( RuntimeError );
     return;
   }
 
