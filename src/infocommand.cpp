@@ -301,6 +301,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
 
     Q_ASSERT(mInfoStatistics!=0);
     writeInfo(i18nc("@info:shell", "Count"), KGlobal::locale()->formatNumber(mInfoStatistics->count(), 0));
+    writeInfo(i18nc("@info:shell", "Unread"), KGlobal::locale()->formatNumber(mInfoStatistics->unreadCount(), 0));
     writeInfo(i18nc("@info:shell", "Size"), KGlobal::locale()->formatByteSize(mInfoStatistics->size()));
   }
   else if (mInfoItem!=0)				// for an item
