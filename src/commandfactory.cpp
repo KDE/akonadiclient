@@ -21,6 +21,7 @@
 #include "addcommand.h"
 #include "listcommand.h"
 #include "infocommand.h"
+#include "showcommand.h"
 #include "errorreporter.h"
 
 #include <KCmdLineArgs>
@@ -68,6 +69,8 @@ void CommandFactory::registerCommands()
   command = new ListCommand;
   mCommands.insert( command->name(), command );
   command = new InfoCommand;
+  mCommands.insert( command->name(), command );
+  command = new ShowCommand;
   mCommands.insert( command->name(), command );
 }
 
