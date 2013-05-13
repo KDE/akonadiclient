@@ -278,7 +278,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
   {
     Q_ASSERT(mInfoCollection->isValid());
 
-    writeInfo(i18nc("@info:shell", "ID"), mInfoCollection->id());
+    writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoCollection->id()));
     writeInfo(i18nc("@info:shell", "URL"), mInfoCollection->url().pathOrUrl());
     writeInfo(i18nc("@info:shell", "Parent"), parentString);
     writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Collection"));
@@ -306,7 +306,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
   }
   else if (mInfoItem!=0)				// for an item
   {
-    writeInfo(i18nc("@info:shell", "ID"), mInfoItem->id());
+    writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoItem->id()));
     writeInfo(i18nc("@info:shell", "URL"), mInfoItem->url().pathOrUrl());
     writeInfo(i18nc("@info:shell", "Parent"), parentString);
     writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Item"));

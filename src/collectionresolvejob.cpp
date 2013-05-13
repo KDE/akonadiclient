@@ -133,10 +133,11 @@ QString CollectionResolveJob::formattedCollectionName() const
 {
   if ( mCollection == Collection::root() ) {
     return ( i18nc( "@info:shell 1=collection ID",
-                    "%1 (root)", mCollection.id() ) );
+                    "%1 (root)", QString::number( mCollection.id() ) ) );
   }
   else {
     return ( i18nc( "@info:shell 1=collection ID, 2=collection name",
-                    "%1 (\"%2\")", mCollection.id(), mCollection.name() ) );
+                    "%1 (\"%2\")",
+                    QString::number( mCollection.id() ), mCollection.name() ) );
   }
 }
