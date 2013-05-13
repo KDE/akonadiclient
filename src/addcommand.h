@@ -26,12 +26,10 @@
 #include <QMap>
 #include <QSet>
 
+#include <Akonadi/Collection>
+
 class CollectionResolveJob;
 class KJob;
-
-namespace Akonadi {
-  class Collection;
-}
 
 class AddCommand : public AbstractCommand
 {
@@ -62,6 +60,8 @@ class AddCommand : public AbstractCommand
     QMap<QString, AddDirectoryMode> mDirectories;
     QHash<QString, Akonadi::Collection> mCollectionsByPath;
     QString mBasePath;
+    bool mFlatMode;
+    Akonadi::Collection mBaseCollection;
 
   private Q_SLOTS:
     void processNextDirectory();

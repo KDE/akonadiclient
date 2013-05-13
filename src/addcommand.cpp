@@ -21,7 +21,6 @@
 #include "collectionresolvejob.h"
 #include "errorreporter.h"
 
-#include <Akonadi/Collection>
 #include <Akonadi/CollectionCreateJob>
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/Item>
@@ -62,8 +61,12 @@ void AddCommand::start()
 void AddCommand::setupCommandOptions( KCmdLineOptions &options )
 {
   AbstractCommand::setupCommandOptions( options );
+
+  options.add("+[options]", ki18nc("@info:shell", "Options for command"));
   options.add( "+collection", ki18nc( "@info:shell", "The collection to add to, either as a path or akonadi URL" ) );
   options.add( "+files...", ki18nc( "@info:shell", "The files or directories to add to the collection." ) );
+  options.add(":", ki18nc("@info:shell", "Options for command:"));
+  options.add("f").add("flat", ki18nc("@info:shell", "Flat mode, do not duplicate subdirectory structure"));
 }
 
 int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
@@ -91,6 +94,8 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
 
     return InvalidUsage;
   }
+
+  mFlatMode = parsedArgs->isSet("flat");
 
   mBasePath = QDir::currentPath();
 
@@ -149,6 +154,10 @@ void AddCommand::processNextDirectory()
   const QString path = directoriesBegin.key();
   const AddDirectoryMode mode = directoriesBegin.value();
   mDirectories.erase( directoriesBegin );
+
+  if ( mFlatMode ) {
+    mCollectionsByPath[ path ] = mBaseCollection;
+  }
 
   if ( mCollectionsByPath.value( path ).isValid() ) {
     if ( mode == AddDirOnly ) {
@@ -287,10 +296,10 @@ void AddCommand::onTargetFetched( KJob *job )
 
   Q_ASSERT( job == mResolveJob && mResolveJob->collection().isValid() );
 
-  Akonadi::Collection basecol = mResolveJob->collection();
-  mCollectionsByPath[ mBasePath ] = basecol;
+  mBaseCollection = mResolveJob->collection();
+  mCollectionsByPath[ mBasePath ] = mBaseCollection;
   writeProgress( i18n( "Root folder is %1 \"%2\"",
-                       QString::number( basecol.id() ), basecol.name() ) );
+                       QString::number( mBaseCollection.id() ), mBaseCollection.name() ) );
 
   processNextDirectory();
 }
@@ -319,10 +328,18 @@ void AddCommand::onCollectionFetched( KJob *job )
   const QString path = job->property( "path" ).toString();
   Q_ASSERT( !path.isEmpty() );
 
-  if ( job->error() != 0 ) {
-    // no such collection, try creating it
-    Akonadi::Collection newCollection = job->property( "collection" ).value<Collection>();
+  Akonadi::Collection newCollection = job->property( "collection" ).value<Collection>();
 
+  if ( job->error() != 0 ) {
+    if ( mFlatMode ) {					// not creating any collections
+      ErrorReporter::error( i18n( "Error fetching collection %1 \"%2\", %3",
+                                  QString::number( newCollection.id() ), newCollection.name(),
+                                  job->errorString() ) );
+      QMetaObject::invokeMethod( this, "processNextDirectory", Qt::QueuedConnection );
+      return;
+    }
+
+    // no such collection, try creating it
     QString name = newCollection.name();
     // Workaround for bug 319513
     if ( ( name == "cur" ) || ( name == "new" ) || ( name == "tmp" ) ) {
