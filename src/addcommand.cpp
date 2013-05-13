@@ -66,6 +66,7 @@ void AddCommand::setupCommandOptions( KCmdLineOptions &options )
   options.add( "+collection", ki18nc( "@info:shell", "The collection to add to, either as a path or akonadi URL" ) );
   options.add( "+files...", ki18nc( "@info:shell", "The files or directories to add to the collection." ) );
   options.add(":", ki18nc("@info:shell", "Options for command:"));
+  options.add("b").add("base <dir>", ki18nc("@info:shell", "Base directory for input files/directories, default is current"));
   options.add("f").add("flat", ki18nc("@info:shell", "Flat mode, do not duplicate subdirectory structure"));
 }
 
@@ -95,16 +96,29 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
     return InvalidUsage;
   }
 
-  mFlatMode = parsedArgs->isSet("flat");
+  mFlatMode = parsedArgs->isSet( "flat" );
 
-  mBasePath = QDir::currentPath();
+  mBasePath = parsedArgs->getOption( "base" );
+  if ( !mBasePath.isEmpty() ) {				// base is specified
+    QDir dir(mBasePath);
+    if ( !dir.exists() )
+    {
+      emit error( ki18nc( "@info:shell",
+                          "Base directory '%1' not found" ).subs( mBasePath ).toString() );
+      return InvalidUsage;
+    }
+    mBasePath = dir.absolutePath();
+  }
+  else {						// base is not specified
+    mBasePath = QDir::currentPath();
+  }
 
   for ( int i = 2; i < parsedArgs->count(); ++i ) {
     QString path = parsedArgs->arg( i );
     while (path.endsWith( QLatin1Char( '/' ) ) ) {	// gives null collection name later
       path.chop(1);
     }
-    const QFileInfo fileInfo( path );
+    const QFileInfo fileInfo( mBasePath, path );
 
     const QString absolutePath = fileInfo.absoluteFilePath();
     if ( !absolutePath.startsWith( mBasePath ) ) {
