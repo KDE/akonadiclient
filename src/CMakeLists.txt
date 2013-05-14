@@ -20,6 +20,7 @@ set(akonadiclient_SRCS
     listcommand.cpp
     infocommand.cpp
     showcommand.cpp
+    createcommand.cpp
     main.cpp
     errorreporter.cpp
 )

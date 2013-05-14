@@ -18,10 +18,11 @@
 
 #include "commandfactory.h"
 
-#include "addcommand.h"
 #include "listcommand.h"
 #include "infocommand.h"
 #include "showcommand.h"
+#include "addcommand.h"
+#include "createcommand.h"
 #include "errorreporter.h"
 
 #include <KCmdLineArgs>
@@ -64,13 +65,15 @@ void CommandFactory::registerCommands()
 {
   AbstractCommand *command;
 
-  command = new AddCommand;
-  mCommands.insert( command->name(), command );
   command = new ListCommand;
   mCommands.insert( command->name(), command );
   command = new InfoCommand;
   mCommands.insert( command->name(), command );
   command = new ShowCommand;
+  mCommands.insert( command->name(), command );
+  command = new CreateCommand;
+  mCommands.insert( command->name(), command );
+  command = new AddCommand;
   mCommands.insert( command->name(), command );
 }
 
