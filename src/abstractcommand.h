@@ -57,7 +57,9 @@ class AbstractCommand : public QObject
   protected:
     virtual void setupCommandOptions( KCmdLineOptions &options );
     virtual int initCommand( KCmdLineArgs *parsedArgs ) = 0;
+
     void emitErrorSeeHelp( const KLocalizedString &msg );
+    bool allowDangerousOperation() const;
 };
 
 #endif // ABSTRACTCOMMAND_H

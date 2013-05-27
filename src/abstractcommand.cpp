@@ -23,6 +23,13 @@
 
 #include <QMetaObject>
 
+#include "errorreporter.h"
+
+
+#define ENV_VAR_DANGEROUS	"AKONADICLIENT_DANGEROUS"
+#define ENV_VAL_DANGEROUS	"enabled"
+
+
 AbstractCommand::AbstractCommand( QObject *parent )
   : QObject( parent )
 {
@@ -78,4 +85,18 @@ void AbstractCommand::emitErrorSeeHelp( const KLocalizedString &msg )
               .subs( KCmdLineArgs::appName() )
               .subs( this->name() )
               .subs( msg.toString() ).toString() );
+}
+
+bool AbstractCommand::allowDangerousOperation() const
+{
+  if ( qgetenv(ENV_VAR_DANGEROUS) == ENV_VAL_DANGEROUS )
+  {							// check set in environment
+    return true;
+  }
+
+  ErrorReporter::error( i18n( "Dangerous or destructive operations are not allowed" ) );
+  ErrorReporter::error( i18n( "Set %1=\"%2\" in environment",
+                              QLatin1String( ENV_VAR_DANGEROUS ),
+                              QLatin1String (ENV_VAL_DANGEROUS ) ) );
+  return false;
 }
