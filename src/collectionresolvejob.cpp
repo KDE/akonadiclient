@@ -29,26 +29,40 @@ using namespace Akonadi;
 
 CollectionResolveJob::CollectionResolveJob( const QString &userInput, QObject* parent )
   : KCompositeJob( parent ),
-    mUserInput( userInput )
+    mUserInput( userInput ),
+    mHadSlash( false )
 {
   setAutoDelete( false );
 
+  // A collection path ending with a '/' is accepted by a
+  // CollectionPathResolver.  However, we strip any slash here
+  // so that an ID or a URL can also be parsed (but, obviously,
+  // not from a single slash meaning the root).  Note whether
+  // any slash was removed, so that the caller can act on it
+  // if required.
+
+  QString in = userInput;
+  if ( in.length() > 1 && in.endsWith( QLatin1Char( '/' ) ) ) {
+    in.chop(1);
+    mHadSlash = true;
+  }
+
   // First see if user input is a valid integer as a collection ID
   bool ok;
-  int id = userInput.toInt( &ok );
+  int id = in.toInt( &ok );
   if ( ok ) {						// conversion succeeded
     if ( id == 0 ) mCollection = Collection::root();	// the root collection
     else mCollection = Collection( id );		// the specified collection
   }
   else {
     // Then quickly check for a path of "/", meaning the root
-    if ( userInput == QLatin1String( "/" ) )
+    if ( in == QLatin1String( "/" ) )
     {
       mCollection = Collection::root();
     }
     else {
       // Next check if we have an Akonadi URL
-      const KUrl url = QUrl::fromUserInput( userInput );
+      const KUrl url = QUrl::fromUserInput( in );
       if ( url.isValid() && url.scheme() == QLatin1String( "akonadi" ) ) {
         mCollection = Collection::fromUrl( url );
       }
@@ -86,11 +100,6 @@ bool CollectionResolveJob::hasUsableInput()
   setError( Akonadi::Job::UserError );
   setErrorText( i18nc( "@info:shell", "Unknown Akonadi collection format '%1'", mUserInput ) );
   return false;
-}
-
-Collection CollectionResolveJob::collection() const
-{
-  return mCollection;
 }
 
 void CollectionResolveJob::fetchBase()

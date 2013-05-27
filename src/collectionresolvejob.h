@@ -34,8 +34,8 @@ class CollectionResolveJob : public KCompositeJob
     void start();
 
     bool hasUsableInput();
-
-    Akonadi::Collection collection() const;
+    bool hadSlash() const			{ return (mHadSlash); }
+    Akonadi::Collection collection() const	{ return (mCollection); }
     QString formattedCollectionName() const;
 
   protected Q_SLOTS:
@@ -44,6 +44,7 @@ class CollectionResolveJob : public KCompositeJob
   private:
     const QString mUserInput;
     Akonadi::Collection mCollection;
+    bool mHadSlash;
 
   private:
     void fetchBase();
