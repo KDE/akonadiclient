@@ -40,11 +40,14 @@ class CopyCommand : public AbstractCommand
     QString name() const	{ return (QLatin1String("copy")); }
 
   public Q_SLOTS:
-    void start();
+    virtual void start();
 
   protected:
-    void setupCommandOptions(KCmdLineOptions &options);
-    int initCommand(KCmdLineArgs *parsedArgs);
+    bool mMoving;
+
+  protected:
+    virtual void setupCommandOptions(KCmdLineOptions &options);
+    virtual int initCommand(KCmdLineArgs *parsedArgs);
 
   private:
     CollectionResolveJob *mResolveJob;
