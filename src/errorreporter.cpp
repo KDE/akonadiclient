@@ -59,3 +59,10 @@ void ErrorReporter::fatal(const QString &msg)
     // Otherwise just tell the event loop to exit
     QCoreApplication::exit(1);
 }
+
+void ErrorReporter::progress(const QString &msg)
+{
+    std::cout << "** "
+              << msg.toLocal8Bit().constData()
+              << std::endl;
+}

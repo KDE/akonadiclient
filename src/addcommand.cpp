@@ -150,16 +150,10 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
 }
 
 
-static void writeProgress(const QString &msg)
-{
-  std::cout << msg.toLocal8Bit().constData() << std::endl;
-}
-
-
 void AddCommand::processNextDirectory()
 {
   if ( mDirectories.isEmpty() ) {
-    writeProgress( i18n( "No more directories to process" ) );
+    ErrorReporter::progress( i18n( "No more directories to process" ) );
     processNextFile();
     return;
   }
@@ -220,8 +214,8 @@ void AddCommand::processNextDirectory()
     collection.setParent( parent ); // set parent
     collection.setContentMimeTypes( parent.contentMimeTypes() );// "inherit" mime types from parent
 
-    writeProgress( i18n( "Fetching collection \"%3\" in parent %1 \"%2\"",
-                         QString::number( parent.id() ), parent.name(), collection.name() ) );
+    ErrorReporter::progress( i18n( "Fetching collection \"%3\" in parent %1 \"%2\"",
+                                   QString::number( parent.id() ), parent.name(), collection.name() ) );
 
     CollectionFetchJob *job = new CollectionFetchJob( collection, CollectionFetchJob::Base );
     job->setProperty( "path", path );
@@ -232,8 +226,8 @@ void AddCommand::processNextDirectory()
 
   // parent doesn't exist, generate parent chain creation entries
   while ( !mCollectionsByPath.value( dir.absolutePath() ).isValid() ) {
-    writeProgress( i18n( "Need to create collection for '%1'",
-                         QDir( mBasePath ).relativeFilePath( dir.absolutePath() ) ) );
+    ErrorReporter::progress( i18n( "Need to create collection for '%1'",
+                                   QDir( mBasePath ).relativeFilePath( dir.absolutePath() ) ) );
     mDirectories[ dir.absolutePath() ] = AddDirOnly;
     dir.cdUp();
   }
@@ -244,7 +238,7 @@ void AddCommand::processNextDirectory()
 void AddCommand::processNextFile()
 {
   if ( mFiles.isEmpty() ) {
-    writeProgress( i18n( "No more files to process" ) );
+    ErrorReporter::progress( i18n( "No more files to process" ) );
     emit finished( NoError );
     return;
   }
@@ -283,10 +277,10 @@ void AddCommand::processNextFile()
     return;
   }
 
-  writeProgress( i18n( "Creating item in collection %1 \"%2\" from '%3' size %4",
-                       QString::number( parent.id() ), parent.name(),
-                       QDir( mBasePath ).relativeFilePath( fileName ),
-                       KGlobal::locale()->formatByteSize( fileInfo.size() ) ) );
+  ErrorReporter::progress( i18n( "Creating item in collection %1 \"%2\" from '%3' size %4",
+                                 QString::number( parent.id() ), parent.name(),
+                                 QDir( mBasePath ).relativeFilePath( fileName ),
+                                 KGlobal::locale()->formatByteSize( fileInfo.size() ) ) );
   Item item;
   item.setMimeType( mimeType->name() );
 
@@ -312,8 +306,8 @@ void AddCommand::onTargetFetched( KJob *job )
 
   mBaseCollection = mResolveJob->collection();
   mCollectionsByPath[ mBasePath ] = mBaseCollection;
-  writeProgress( i18n( "Root folder is %1 \"%2\"",
-                       QString::number( mBaseCollection.id() ), mBaseCollection.name() ) );
+  ErrorReporter::progress( i18n( "Root folder is %1 \"%2\"",
+                                 QString::number( mBaseCollection.id() ), mBaseCollection.name() ) );
 
   processNextDirectory();
 }
@@ -369,9 +363,9 @@ void AddCommand::onCollectionFetched( KJob *job )
     createJob->setProperty( "path", path );
 
     Akonadi::Collection parent = newCollection.parentCollection();
-    writeProgress( i18n( "Creating collection \"%3\" under parent %1 \"%2\"",
-                         QString::number( parent.id() ), parent.name(),
-                         newCollection.name() ) );
+    ErrorReporter::progress( i18n( "Creating collection \"%3\" under parent %1 \"%2\"",
+                                   QString::number( parent.id() ), parent.name(),
+                                   newCollection.name() ) );
 
     connect( createJob, SIGNAL(result(KJob*)), this, SLOT(onCollectionCreated(KJob*)) );
     return;
@@ -398,9 +392,9 @@ void AddCommand::onItemCreated( KJob *job )
     ItemCreateJob *createJob = qobject_cast<ItemCreateJob *>( job );
     Q_ASSERT( createJob != 0 );
 
-    writeProgress( i18n( "Added file '%2' as item %1",
-                         QString::number( createJob->item().id() ),
-                         QDir( mBasePath ).relativeFilePath( fileName ) ) );
+    ErrorReporter::progress( i18n( "Added file '%2' as item %1",
+                                   QString::number( createJob->item().id() ),
+                                   QDir( mBasePath ).relativeFilePath( fileName ) ) );
   }
 
   processNextFile();

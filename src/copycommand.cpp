@@ -101,13 +101,6 @@ int CopyCommand::initCommand(KCmdLineArgs *parsedArgs)
 }
 
 
-// TODO: move to ErrorReporter
-static void writeProgress(const QString &msg)
-{
-  std::cout << msg.toLocal8Bit().constData() << std::endl;
-}
-
-
 void CopyCommand::onTargetFetched(KJob *job)
 {
   if (job->error()!=0)
@@ -138,7 +131,7 @@ void CopyCommand::processNextSource()
 {
   if (mSourceArgs.isEmpty())				// no more to do
   {
-    writeProgress(i18n("No more sources to copy"));
+    ErrorReporter::progress(i18n("No more sources to copy"));
     emit finished(!mAnyErrors ? NoError : RuntimeError);
     return;
   }
@@ -209,9 +202,9 @@ void CopyCommand::onSourceResolved(KJob *job)
     // name.  This interpretation is the same as that of the
     // source argument to rsync(1).
 
-    writeProgress(i18n("Copying contents of %1 -> %2",
-                       sourceJob->formattedCollectionName(),
-                       mResolveJob->formattedCollectionName()));
+    ErrorReporter::progress(i18n("Copying contents of %1 -> %2",
+                                 sourceJob->formattedCollectionName(),
+                                 mResolveJob->formattedCollectionName()));
 
     mSourceCollection = sourceJob->collection();
     CollectionFetchJob *fetchJob = new CollectionFetchJob(mSourceCollection,
@@ -226,9 +219,9 @@ void CopyCommand::onSourceResolved(KJob *job)
     // recursively into the destination collection, under the
     // original collection name.  This case is simpler!
 
-    writeProgress(i18n("Copying collection %1 -> %2",
-                       sourceJob->formattedCollectionName(),
-                       mResolveJob->formattedCollectionName()));
+    ErrorReporter::progress(i18n("Copying collection %1 -> %2",
+                                 sourceJob->formattedCollectionName(),
+                                 mResolveJob->formattedCollectionName()));
 
     CollectionCopyJob *copyJob = new CollectionCopyJob(sourceCollection, mDestinationCollection, this);
     copyJob->setProperty("arg", sourceArg);
@@ -273,12 +266,12 @@ void CopyCommand::onCollectionsFetched(KJob *job)
   mSubCollections = fetchJob->collections();
   if (mSubCollections.isEmpty())			// no sub-collections, no problem
   {
-    writeProgress(i18n("No sub-collections to copy"));
+    ErrorReporter::progress(i18n("No sub-collections to copy"));
     fetchItems(sourceArg);				// go on to do items
     return;
   }
 
-  writeProgress(i18nc("@info:shell", "Copying %1 subcollections", mSubCollections.count()));
+  ErrorReporter::progress(i18nc("@info:shell", "Copying %1 subcollections", mSubCollections.count()));
   doNextSubcollection(sourceArg);			// start copying them
 }
 
@@ -294,7 +287,7 @@ void CopyCommand::processNextSubcollection(const QString &sourceArg)
 {
   if (mSubCollections.isEmpty())			// no more to do
   {
-    writeProgress(i18n("No more sub-collections to copy"));
+    ErrorReporter::progress(i18n("No more sub-collections to copy"));
     fetchItems(sourceArg);
     return;
   }
@@ -354,12 +347,12 @@ void CopyCommand::onItemsFetched(KJob *job)
   Akonadi::Item::List items = fetchJob->items();
   if (items.isEmpty())					// no items, no problem
   {
-    writeProgress(i18n("No items to copy"));
+    ErrorReporter::progress(i18n("No items to copy"));
     doNextSource();
     return;
   }
 
-  writeProgress(i18nc("@info:shell", "Copying %1 items", items.count()));
+  ErrorReporter::progress(i18nc("@info:shell", "Copying %1 items", items.count()));
   ItemCopyJob *copyJob = new ItemCopyJob(items, mDestinationCollection, this);
   copyJob->setProperty("arg", sourceArg);
   connect(copyJob, SIGNAL(result(KJob *)), SLOT(onItemCopyFinished(KJob *)));
