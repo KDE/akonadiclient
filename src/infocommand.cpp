@@ -285,6 +285,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
     writeInfo(i18nc("@info:shell", "Name"), mInfoCollection->name());
     writeInfo(i18nc("@info:shell", "Owner"), mInfoCollection->resource());
     writeInfo(i18nc("@info:shell", "MIME"), mInfoCollection->contentMimeTypes().join(" "));
+    writeInfo(i18nc("@info:shell", "Remote ID"), mInfoCollection->remoteId());
 
     QStringList rightsList;
     Collection::Rights rights = mInfoCollection->rights();
