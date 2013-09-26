@@ -23,12 +23,13 @@ set(akonadiclient_SRCS
     createcommand.cpp
     copycommand.cpp
     movecommand.cpp
+    expandcommand.cpp
     main.cpp
     errorreporter.cpp
 )
 
 kde4_add_executable(akonadiclient ${akonadiclient_SRCS})
-target_link_libraries(akonadiclient ${KDEPIMLIBS_AKONADI_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTCORE_LIBRARY})
+target_link_libraries(akonadiclient ${KDEPIMLIBS_AKONADI_LIBS} ${KDE4_KABC_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTCORE_LIBRARY})
 
 ###### version tracking ######
 

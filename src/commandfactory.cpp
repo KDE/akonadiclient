@@ -25,6 +25,7 @@
 #include "createcommand.h"
 #include "copycommand.h"
 #include "movecommand.h"
+#include "expandcommand.h"
 #include "errorreporter.h"
 
 #include <KCmdLineArgs>
@@ -80,6 +81,8 @@ void CommandFactory::registerCommands()
   command = new CopyCommand;
   mCommands.insert( command->name(), command );
   command = new MoveCommand;
+  mCommands.insert( command->name(), command );
+  command = new ExpandCommand;
   mCommands.insert( command->name(), command );
 }
 
