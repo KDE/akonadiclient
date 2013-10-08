@@ -257,13 +257,28 @@ void ExpandCommand::onItemsFetched(KJob *job)
           else
           {
             KABC::Addressee addr = item.payload<KABC::Addressee>();
+            QString email = addr.preferredEmail();
+
+            // Retrieve the original preferred email from the contact group reference.
+            // If there is one, display that;  if not, the contact's preferred email.
+            for (int i = 0; i<c; ++i)
+            {
+              Item::Id id = group.contactReference(i).uid().toInt();
+              if (id==item.id())
+              {
+                const QString prefEmail = group.contactReference(i).preferredEmail();
+                if (!prefEmail.isEmpty()) email = prefEmail;
+                break;
+              }
+            }
+
             if (mBriefMode)
             {
-              std::cout << addr.preferredEmail().toLocal8Bit().constData();
+              std::cout << email.toLocal8Bit().constData();
             }
             else
             {
-              writeColumn(addr.preferredEmail(), 30);
+              writeColumn(email, 30);
               writeColumn(addr.formattedName(), 30);
             }
           }
