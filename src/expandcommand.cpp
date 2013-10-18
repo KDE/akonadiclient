@@ -186,7 +186,7 @@ void ExpandCommand::onItemsFetched(KJob *job)
     writeColumn(i18nc("@info:shell column header", "Type"), 4);
     writeColumn(i18nc("@info:shell column header", "ID"), 8);
     writeColumn(i18nc("@info:shell column header", "Email"), 30);
-    writeColumn(i18nc("@info:shell column header", "Name"), 30);
+    writeColumn(i18nc("@info:shell column header", "Name"));
     std::cout << std::endl;
   }
 
@@ -279,7 +279,7 @@ void ExpandCommand::onItemsFetched(KJob *job)
             else
             {
               writeColumn(email, 30);
-              writeColumn(addr.formattedName(), 30);
+              writeColumn(addr.formattedName());
             }
           }
           std::cout << std::endl;
@@ -305,7 +305,7 @@ void ExpandCommand::onItemsFetched(KJob *job)
     else
     {
       writeColumn(data.email(), 30);
-      writeColumn(data.name(), 30);
+      writeColumn(data.name());
     }
     std::cout << std::endl;
   }
