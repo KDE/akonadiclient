@@ -16,10 +16,12 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
+#include "abstractcommand.h"
 #include "commandrunner.h"
 
 #include <KAboutData>
 #include <KCmdLineArgs>
+#include <QCoreApplication>
 
 #include "version.h"
 
@@ -56,6 +58,20 @@ int main( int argc, char **argv )
   // call right away so standard options like --version can terminate the program right here
   KCmdLineArgs *parsedArgs = KCmdLineArgs::parsedArgs();
 
+  // TODO should we allow commands to optionally support GUI?
+  QCoreApplication application(KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv());
+  application.setApplicationName( aboutData.appName() );
+  application.setApplicationVersion( aboutData.version() );
+  application.setOrganizationDomain( aboutData.organizationDomain() );
+
   CommandRunner runner( aboutData, parsedArgs );
-  return runner.exec();
+  int ret = runner.start();
+  if ( ret == AbstractCommand::NoError )
+  {
+    return application.exec();
+  }
+  else
+  {
+    return ret;
+  }
 }

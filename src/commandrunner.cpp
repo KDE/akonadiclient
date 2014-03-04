@@ -32,52 +32,42 @@
 
 
 CommandRunner::CommandRunner( const KAboutData &aboutData, KCmdLineArgs *parsedArgs )
-  : mApplication( 0 ),
-    mCommand( 0 )
+  : mCommand( 0 ),
+    mParsedArgs( parsedArgs ),
+    mFactory( parsedArgs )
 {
-  ErrorReporter::setAppName( aboutData.appName() );
-
-  CommandFactory factory( parsedArgs );
-
-  mCommand = factory.createCommand();
-  Q_ASSERT( mCommand != 0 );
-
-  connect( mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)) );
-
-  if ( mCommand->init( parsedArgs ) == AbstractCommand::InvalidUsage ) {
-    delete mCommand;
-    mCommand = 0;
-    std::exit( AbstractCommand::InvalidUsage );
-  }
-
-  connect( mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)) );
-
-  // TODO should we allow commands to optionally support GUI?
-  mApplication = new QCoreApplication( KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv() );
-  mApplication->setApplicationName( aboutData.appName() );
-  mApplication->setApplicationVersion( aboutData.version() );
-  mApplication->setOrganizationDomain( aboutData.organizationDomain() );
+    ErrorReporter::setAppName( aboutData.appName() );
 }
 
 CommandRunner::~CommandRunner()
 {
   delete mCommand;
-  delete mApplication;
 }
 
-int CommandRunner::exec()
+int CommandRunner::start()
 {
-  if ( mApplication && mCommand ) {
-    QMetaObject::invokeMethod( mCommand, "start", Qt::QueuedConnection );
-    return mApplication->exec();
+
+  mCommand = mFactory.createCommand();
+  Q_ASSERT( mCommand != 0 );
+
+  connect( mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)) );
+
+  if ( mCommand->init( mParsedArgs ) == AbstractCommand::InvalidUsage ) {
+    delete mCommand;
+    mCommand = 0;
+    return AbstractCommand::InvalidUsage;
   }
 
-  return AbstractCommand::InvalidUsage;
+  connect( mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)) );
+
+  QMetaObject::invokeMethod( mCommand, "start", Qt::QueuedConnection );
+
+  return AbstractCommand::NoError;
 }
 
 void CommandRunner::onCommandFinished( int exitCode )
 {
-  mApplication->exit( exitCode );
+  QCoreApplication::exit(exitCode);
 }
 
 void CommandRunner::onCommandError( const QString &error )

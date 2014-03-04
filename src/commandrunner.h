@@ -19,14 +19,14 @@
 #ifndef COMMANDRUNNER_H
 #define COMMANDRUNNER_H
 
+#include "commandfactory.h"
+
 #include <QObject>
 
 class AbstractCommand;
 
 class KAboutData;
 class KCmdLineArgs;
-
-class QCoreApplication;
 
 class CommandRunner : public QObject
 {
@@ -36,15 +36,16 @@ class CommandRunner : public QObject
     CommandRunner( const KAboutData &aboutData, KCmdLineArgs *parsedArgs );
     ~CommandRunner();
 
-    int exec();
+    int start();
 
     static void reportError(const QString &msg);
     static void reportWarning(const QString &msg);
     static void reportFatal(const QString &msg);
 
   private:
-    QCoreApplication *mApplication;
     AbstractCommand *mCommand;
+    KCmdLineArgs *mParsedArgs;
+    CommandFactory mFactory;
 
   private Q_SLOTS:
     void onCommandFinished( int exitCode );
