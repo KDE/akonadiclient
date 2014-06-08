@@ -61,6 +61,7 @@ class AddCommand : public AbstractCommand
     QHash<QString, Akonadi::Collection> mCollectionsByPath;
     QString mBasePath;
     bool mFlatMode;
+    bool mDryRun;
     Akonadi::Collection mBaseCollection;
 
   private Q_SLOTS:

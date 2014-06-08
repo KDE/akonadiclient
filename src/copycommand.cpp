@@ -70,6 +70,8 @@ void CopyCommand::setupCommandOptions(KCmdLineOptions &options)
   options.add("+[options]", ki18nc("@info:shell", "Options for command"));
   options.add( "+source...", ki18nc( "@info:shell", "Existing collections or items to copy"));
   options.add( "+destination", ki18nc( "@info:shell", "Destination collection to copy into"));
+  options.add(":", ki18n("Options for command"));
+  options.add("n").add("dryrun", ki18n("Run without making any actual changes"));
 }
 
 
@@ -87,6 +89,8 @@ int CopyCommand::initCommand(KCmdLineArgs *parsedArgs)
   }
   mDestinationArg = mSourceArgs.takeLast();		// extract the destination
   Q_ASSERT(!mSourceArgs.isEmpty());			// must have some left
+
+  mDryRun = parsedArgs->isSet("dryrun");
 
   mResolveJob = new CollectionResolveJob(mDestinationArg, this);
   if (!mResolveJob->hasUsableInput())
@@ -237,18 +241,32 @@ void CopyCommand::onSourceResolved(KJob *job)
       ErrorReporter::progress(i18n("Moving collection %1 -> %2",
                                    sourceJob->formattedCollectionName(),
                                    mResolveJob->formattedCollectionName()));
-      job = new CollectionMoveJob(sourceCollection, mDestinationCollection, this);
+      if(!mDryRun)
+      {
+	job = new CollectionMoveJob(sourceCollection, mDestinationCollection, this);
+      }
     }
     else
     {
       ErrorReporter::progress(i18n("Copying collection %1 -> %2",
                                    sourceJob->formattedCollectionName(),
                                    mResolveJob->formattedCollectionName()));
-      job = new CollectionCopyJob(sourceCollection, mDestinationCollection, this);
+
+      if (!mDryRun)
+      {
+	job = new CollectionCopyJob(sourceCollection, mDestinationCollection, this);
+      }
     }
 
-    job->setProperty("arg", sourceArg);
-    connect(job, SIGNAL(result(KJob *)), SLOT(onRecursiveCopyFinished(KJob *)));
+    if (!mDryRun)
+    {
+      job->setProperty("arg", sourceArg);
+      connect(job, SIGNAL(result(KJob *)), SLOT(onRecursiveCopyFinished(KJob *)));
+    }
+    else
+    {
+      doNextSource();
+    }
   }
 }
 
@@ -327,16 +345,30 @@ void CopyCommand::processNextSubcollection(const QString &sourceArg)
 
   if (mMoving)
   {
-    job = new CollectionMoveJob(collection, mDestinationCollection, this);
+    if (!mDryRun)
+    {
+	job = new CollectionMoveJob(collection, mDestinationCollection, this);
+    }
   }
   else
   {
-    job = new CollectionCopyJob(collection, mDestinationCollection, this);
+    if (!mDryRun)
+    {
+	job = new CollectionCopyJob(collection, mDestinationCollection, this);
+    }
   }
 
-  job->setProperty("arg", sourceArg);
-  job->setProperty("collection", collection.name());
-  connect(job, SIGNAL(result(KJob *)), SLOT(onCollectionCopyFinished(KJob *)));
+  if (!mDryRun)
+  {
+    job->setProperty("arg", sourceArg);
+    job->setProperty("collection", collection.name());
+
+    connect(job, SIGNAL(result(KJob *)), SLOT(onCollectionCopyFinished(KJob *)));
+  }
+  else
+  {
+    doNextSubcollection(sourceArg);
+  }
 }
 
 
@@ -395,16 +427,28 @@ void CopyCommand::onItemsFetched(KJob *job)
   if (mMoving)
   {
     ErrorReporter::progress(i18nc("@info:shell", "Moving %1 items", items.count()));
-    copyJob = new ItemMoveJob(items, mDestinationCollection, this);
+    if (!mDryRun)
+    {
+	copyJob = new ItemMoveJob(items, mDestinationCollection, this);
+    }
   }
   else
   {
     ErrorReporter::progress(i18nc("@info:shell", "Copying %1 items", items.count()));
-    copyJob = new ItemCopyJob(items, mDestinationCollection, this);
+    if (!mDryRun)
+    {
+	copyJob = new ItemCopyJob(items, mDestinationCollection, this);
+    }
   }
-
-  copyJob->setProperty("arg", sourceArg);
-  connect(copyJob, SIGNAL(result(KJob *)), SLOT(onItemCopyFinished(KJob *)));
+  if (!mDryRun)
+  {
+    copyJob->setProperty("arg", sourceArg);
+    connect(copyJob, SIGNAL(result(KJob *)), SLOT(onItemCopyFinished(KJob *)));
+  }
+  else
+  {
+    doNextSource();
+  }
 }
 
 

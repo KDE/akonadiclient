@@ -68,6 +68,7 @@ void AddCommand::setupCommandOptions( KCmdLineOptions &options )
   options.add(":", ki18nc("@info:shell", "Options for command:"));
   options.add("b").add("base <dir>", ki18nc("@info:shell", "Base directory for input files/directories, default is current"));
   options.add("f").add("flat", ki18nc("@info:shell", "Flat mode, do not duplicate subdirectory structure"));
+  options.add("n").add("dryrun", ki18nc("@info:shell", "Run without making any actual changes"));
 }
 
 int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
@@ -97,6 +98,7 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
   }
 
   mFlatMode = parsedArgs->isSet( "flat" );
+  mDryRun = parsedArgs->isSet( "dryrun" );
 
   mBasePath = parsedArgs->getOption( "base" );
   if ( !mBasePath.isEmpty() ) {				// base is specified
@@ -287,9 +289,16 @@ void AddCommand::processNextFile()
   file.reset();
   item.setPayloadFromData( file.readAll() );
 
-  ItemCreateJob *job = new ItemCreateJob( item, parent );
-  job->setProperty( "fileName", fileName );
-  connect( job, SIGNAL(result(KJob*)), this, SLOT(onItemCreated(KJob*)) );
+  if ( !mDryRun )
+  {
+    ItemCreateJob *job = new ItemCreateJob( item, parent );
+    job->setProperty( "fileName", fileName );
+    connect( job, SIGNAL(result(KJob*)), this, SLOT(onItemCreated(KJob*)) );
+  }
+  else
+  {
+    processNextFile();
+  }
 }
 
 void AddCommand::onTargetFetched( KJob *job )
@@ -359,15 +368,22 @@ void AddCommand::onCollectionFetched( KJob *job )
       }
     }
 
-    CollectionCreateJob *createJob = new CollectionCreateJob( newCollection );
-    createJob->setProperty( "path", path );
+    if (!mDryRun)
+    {
+      CollectionCreateJob *createJob = new CollectionCreateJob( newCollection );
+      createJob->setProperty( "path", path );
 
-    Akonadi::Collection parent = newCollection.parentCollection();
-    ErrorReporter::progress( i18n( "Creating collection \"%3\" under parent %1 \"%2\"",
-                                   QString::number( parent.id() ), parent.name(),
-                                   newCollection.name() ) );
+      Akonadi::Collection parent = newCollection.parentCollection();
+      ErrorReporter::progress( i18n( "Creating collection \"%3\" under parent %1 \"%2\"",
+				    QString::number( parent.id() ), parent.name(),
+				    newCollection.name() ) );
 
-    connect( createJob, SIGNAL(result(KJob*)), this, SLOT(onCollectionCreated(KJob*)) );
+      connect( createJob, SIGNAL(result(KJob*)), this, SLOT(onCollectionCreated(KJob*)) );
+    }
+    else
+    {
+      QMetaObject::invokeMethod( this, "processNextDirectory", Qt::QueuedConnection );
+    }
     return;
   }
 

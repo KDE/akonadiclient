@@ -24,10 +24,8 @@
 #include <qstringlist.h>
 #include <akonadi/collection.h>
 
-
 class CollectionResolveJob;
 class KJob;
-
 
 class CopyCommand : public AbstractCommand
 {
@@ -57,6 +55,7 @@ class CopyCommand : public AbstractCommand
     Akonadi::Collection mDestinationCollection;
     Akonadi::Collection mSourceCollection;
     Akonadi::Collection::List mSubCollections;
+    bool mDryRun;
 
   private:
     void doNextSource();
@@ -74,6 +73,7 @@ class CopyCommand : public AbstractCommand
 
     void processNextSource();
     void processNextSubcollection(const QString &sourceArg);
+
 };
 
 #endif							// COPYCOMMAND_H

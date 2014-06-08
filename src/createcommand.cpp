@@ -63,6 +63,7 @@ void CreateCommand::setupCommandOptions(KCmdLineOptions &options)
   options.add( "+collection", ki18nc( "@info:shell", "The collection to create, either as a path or a name (with a parent specified)"));
   options.add(":", ki18nc("@info:shell", "Options for command:"));
   options.add("p").add("parent <collection>", ki18nc("@info:shell", "Parent collection to create in"));
+  options.add("n").add("dryrun", ki18nc("@info:shell", "Run without making any actual changes"));
 }
 
 
@@ -118,6 +119,8 @@ int CreateCommand::initCommand(KCmdLineArgs *parsedArgs)
     return InvalidUsage;
   }
 
+  mDryRun = parsedArgs->isSet("dryrun");
+
   mResolveJob = new CollectionResolveJob(mParentCollection, this);
   if (!mResolveJob->hasUsableInput())
   {
@@ -165,8 +168,15 @@ void CreateCommand::onTargetFetched(KJob *job)
   newCollection.setParentCollection(parentCollection);
   newCollection.setName(mNewCollectionName);
   newCollection.setContentMimeTypes(parentCollection.contentMimeTypes());
-  CollectionCreateJob *createJob = new CollectionCreateJob(newCollection);
-  connect(createJob, SIGNAL(result(KJob *)), this, SLOT(onCollectionCreated(KJob *)));
+  if (!mDryRun)
+  {
+    CollectionCreateJob *createJob = new CollectionCreateJob(newCollection);
+    connect(createJob, SIGNAL(result(KJob *)), this, SLOT(onCollectionCreated(KJob *)));
+  }
+  else
+  {
+    emit finished(NoError);
+  }
 }
 
 

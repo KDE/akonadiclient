@@ -45,6 +45,7 @@ void MoveCommand::setupCommandOptions(KCmdLineOptions &options)
   options.add("+[options]", ki18nc("@info:shell", "Options for command"));
   options.add( "+source...", ki18nc( "@info:shell", "Existing collections or items to move"));
   options.add( "+destination", ki18nc( "@info:shell", "Destination collection to move into"));
+  options.add("n").add( "dryrun", ki18nc( "@info:shell", "Run without making any actual changes"));
 }
 
 

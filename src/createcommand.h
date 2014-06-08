@@ -47,6 +47,7 @@ class CreateCommand : public AbstractCommand
     CollectionResolveJob *mResolveJob;
     QString mNewCollectionName;
     QString mParentCollection;
+    bool mDryRun;
 
   private Q_SLOTS:
     void onTargetFetched(KJob *job);
