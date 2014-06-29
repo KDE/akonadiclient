@@ -28,6 +28,7 @@ set(akonadiclient_SRCS
     main.cpp
     errorreporter.cpp
     renamecommand.cpp
+    updatecommand.cpp
 )
 
 kde4_add_executable(akonadiclient ${akonadiclient_SRCS})
