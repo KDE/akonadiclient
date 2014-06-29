@@ -18,15 +18,16 @@
 
 #include "commandfactory.h"
 
-#include "listcommand.h"
-#include "infocommand.h"
-#include "showcommand.h"
 #include "addcommand.h"
-#include "createcommand.h"
 #include "copycommand.h"
-#include "movecommand.h"
-#include "expandcommand.h"
+#include "createcommand.h"
+#include "editcommand.h"
 #include "errorreporter.h"
+#include "expandcommand.h"
+#include "infocommand.h"
+#include "listcommand.h"
+#include "movecommand.h"
+#include "showcommand.h"
 
 #include <KCmdLineArgs>
 
@@ -83,6 +84,8 @@ void CommandFactory::registerCommands()
   command = new MoveCommand;
   mCommands.insert( command->name(), command );
   command = new ExpandCommand;
+  mCommands.insert( command->name(), command );
+  command = new EditCommand;
   mCommands.insert( command->name(), command );
 }
 

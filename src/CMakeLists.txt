@@ -17,6 +17,7 @@ set(akonadiclient_SRCS
     collectionpathjob.cpp
     commandfactory.cpp
     commandrunner.cpp
+    editcommand.cpp
     listcommand.cpp
     infocommand.cpp
     showcommand.cpp
