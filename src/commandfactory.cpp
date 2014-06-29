@@ -27,6 +27,7 @@
 #include "infocommand.h"
 #include "listcommand.h"
 #include "movecommand.h"
+#include "renamecommand.h"
 #include "showcommand.h"
 
 #include <KCmdLineArgs>
@@ -86,6 +87,8 @@ void CommandFactory::registerCommands()
   command = new ExpandCommand;
   mCommands.insert( command->name(), command );
   command = new EditCommand;
+  mCommands.insert( command->name(), command );
+  command = new RenameCommand;
   mCommands.insert( command->name(), command );
 }
 
