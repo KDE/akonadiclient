@@ -25,6 +25,7 @@ set(akonadiclient_SRCS
     copycommand.cpp
     movecommand.cpp
     expandcommand.cpp
+    deletecommand.cpp
     main.cpp
     errorreporter.cpp
     renamecommand.cpp

@@ -21,6 +21,7 @@
 #include "addcommand.h"
 #include "copycommand.h"
 #include "createcommand.h"
+#include "deletecommand.h"
 #include "editcommand.h"
 #include "errorreporter.h"
 #include "expandcommand.h"
@@ -92,6 +93,8 @@ void CommandFactory::registerCommands()
   command = new RenameCommand;
   mCommands.insert( command->name(), command );
   command = new UpdateCommand;
+  mCommands.insert( command->name(), command );
+  command = new DeleteCommand;
   mCommands.insert( command->name(), command );
 }
 
