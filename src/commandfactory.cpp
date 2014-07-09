@@ -31,6 +31,7 @@
 #include "renamecommand.h"
 #include "showcommand.h"
 #include "updatecommand.h"
+#include "tagscommand.h"
 
 #include <KCmdLineArgs>
 
@@ -95,6 +96,8 @@ void CommandFactory::registerCommands()
   command = new UpdateCommand;
   mCommands.insert( command->name(), command );
   command = new DeleteCommand;
+  mCommands.insert( command->name(), command );
+  command = new TagsCommand;
   mCommands.insert( command->name(), command );
 }
 

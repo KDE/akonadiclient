@@ -30,6 +30,7 @@ set(akonadiclient_SRCS
     errorreporter.cpp
     renamecommand.cpp
     updatecommand.cpp
+    tagscommand.cpp
 )
 
 kde4_add_executable(akonadiclient ${akonadiclient_SRCS})
