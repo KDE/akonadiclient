@@ -30,6 +30,7 @@ set(libakonadiclient_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/renamecommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/updatecommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tagscommand.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/agentscommand.cpp
 )
 
 set(akonadiclient_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)

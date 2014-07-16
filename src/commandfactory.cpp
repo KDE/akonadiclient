@@ -19,6 +19,7 @@
 #include "commandfactory.h"
 
 #include "addcommand.h"
+#include "agentscommand.h"
 #include "copycommand.h"
 #include "createcommand.h"
 #include "deletecommand.h"
@@ -98,6 +99,8 @@ void CommandFactory::registerCommands()
   command = new DeleteCommand;
   mCommands.insert( command->name(), command );
   command = new TagsCommand;
+  mCommands.insert( command->name(), command );
+  command = new AgentsCommand;
   mCommands.insert( command->name(), command );
 }
 
