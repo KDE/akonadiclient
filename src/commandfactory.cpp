@@ -26,6 +26,8 @@
 #include "editcommand.h"
 #include "errorreporter.h"
 #include "expandcommand.h"
+#include "exportcommand.h"
+#include "importcommand.h"
 #include "infocommand.h"
 #include "listcommand.h"
 #include "movecommand.h"
@@ -101,6 +103,10 @@ void CommandFactory::registerCommands()
   command = new TagsCommand;
   mCommands.insert( command->name(), command );
   command = new AgentsCommand;
+  mCommands.insert( command->name(), command );
+  command = new ExportCommand;
+  mCommands.insert( command->name(), command );
+  command = new ImportCommand;
   mCommands.insert( command->name(), command );
 }
 

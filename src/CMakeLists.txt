@@ -31,12 +31,13 @@ set(libakonadiclient_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/updatecommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tagscommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/agentscommand.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/exportcommand.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/importcommand.cpp
 )
 
 set(akonadiclient_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
-
 kde4_add_library(libakonadiclient STATIC ${libakonadiclient_SRCS})
-target_link_libraries(libakonadiclient ${KDEPIMLIBS_AKONADI_LIBS} ${KDE4_KABC_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTCORE_LIBRARY})
+target_link_libraries(libakonadiclient ${KDEPIMLIBS_AKONADI_LIBS} ${KDEPIMLIBS_AKONADI_XML_LIBS} ${KDE4_KABC_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTCORE_LIBRARY})
 set_target_properties(libakonadiclient PROPERTIES ENABLE_EXPORTS TRUE)
 
 kde4_add_executable(akonadiclient ${akonadiclient_SRCS})
