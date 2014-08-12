@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014  Bhaskar Kandiyal <bkandiyal@gmail.com>
+ * Copyright (C) 2014 Bhaskar Kandiyal <bkandiyal@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,41 +17,18 @@
  *
  */
 
-#ifndef RENAMECOMMAND_H
-#define RENAMECOMMAND_H
+#ifndef RENAMECOMMANDTEST_H
+#define RENAMECOMMANDTEST_H
 
-#include "abstractcommand.h"
+#include "abstractcommandtest.h"
 
-class CollectionResolveJob;
-class KJob;
-
-class RenameCommand : public AbstractCommand
+class RenameCommandTest : public AbstractCommandTest
 {
     Q_OBJECT
 
-public:
-    explicit RenameCommand(QObject *parent = 0);
-    ~RenameCommand();
-
-    QString name() const {
-        return QLatin1String("rename");
-    }
-
-public Q_SLOTS:
-    void start();
-
-protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
-    void setupCommandOptions(KCmdLineOptions &options);
-
-private:
-    bool mDryRun;
-    CollectionResolveJob *mResolveJob;
-    QString mNewCollectionNameArg;
-
 private Q_SLOTS:
-    void onCollectionFetched(KJob *job);
-    void onCollectionModified(KJob *job);
+    void initTestCase();
+    void testRenameCollection();
 };
 
-#endif // RENAMECOMMAND_H
+#endif // RENAMECOMMANDTEST_H

@@ -28,6 +28,8 @@
 #include <QSignalSpy>
 #include <QTimer>
 
+#include <QDebug>
+
 using namespace Akonadi;
 
 AbstractCommandTest::AbstractCommandTest()
@@ -75,7 +77,18 @@ int AbstractCommandTest::runCommand(AbstractCommand *command, int maxWaitTime)
     QTimer::singleShot(maxWaitTime, &loop, SLOT(quit()));
 
     QMetaObject::invokeMethod(command, "start", Qt::QueuedConnection);
-    return loop.exec();
+    loop.exec();
+
+    if (m_errorSpy->count() > 0) {
+        qDebug() << "Error: " << m_errorSpy->takeFirst().at(0).toString();
+    }
+
+    if (m_finishedSpy->count() <= 0) {
+        return -1;
+    }
+
+    int ret = m_finishedSpy->takeFirst().at(0).toInt();
+    return ret;
 }
 
 void AbstractCommandTest::cleanup()
