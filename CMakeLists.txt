@@ -23,6 +23,7 @@ add_custom_target(vcsversion
 ###### targets ######
 
 add_subdirectory(src)
+add_subdirectory(doc)
 
 ###### information ######
 
