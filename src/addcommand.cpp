@@ -216,13 +216,13 @@ void AddCommand::processNextDirectory()
   if ( parent.isValid() ) {
     Collection collection;
     collection.setName( QFileInfo( path ).fileName() );
-    collection.setParent( parent ); // set parent
+    collection.setParentCollection ( parent ); // set parent
     collection.setContentMimeTypes( parent.contentMimeTypes() );// "inherit" mime types from parent
 
     ErrorReporter::progress( i18n( "Fetching collection \"%3\" in parent %1 \"%2\"",
                                    QString::number( parent.id() ), parent.name(), collection.name() ) );
 
-    CollectionFetchJob *job = new CollectionFetchJob( collection, CollectionFetchJob::Base );
+    CollectionFetchJob *job = new CollectionFetchJob( parent, CollectionFetchJob::FirstLevel );
     job->setProperty( "path", path );
     job->setProperty( "collection", QVariant::fromValue( collection ) );
     connect( job, SIGNAL(result(KJob*)), this, SLOT(onCollectionFetched(KJob*)) );
@@ -356,7 +356,19 @@ void AddCommand::onCollectionFetched( KJob *job )
 
   Akonadi::Collection newCollection = job->property( "collection" ).value<Collection>();
 
-  if ( job->error() != 0 ) {
+  CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob*>( job );
+  Q_ASSERT( fetchJob != 0 );
+
+  bool found = false;
+  Collection::List collections = fetchJob->collections();
+  Q_FOREACH( const Collection &col, collections ) {
+    if ( col.name() == newCollection.name() ) {
+        found = true;
+        newCollection = col;
+    }
+  }
+
+  if ( !found ) {
     if ( mFlatMode ) {					// not creating any collections
       ErrorReporter::error( i18n( "Error fetching collection %1 \"%2\", %3",
                                   QString::number( newCollection.id() ), newCollection.name(),
@@ -396,13 +408,7 @@ void AddCommand::onCollectionFetched( KJob *job )
     return;
   }
 
-  CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob*>( job );
-  Q_ASSERT( fetchJob != 0 );
-  Q_ASSERT( !fetchJob->collections().isEmpty() );
-
-  QFileInfo fileInfo( path );
-  mBasePaths[ path ] = fileInfo.absoluteFilePath();
-  mCollectionsByPath[ path ] = fetchJob->collections().first();
+  mCollectionsByPath[ path ] = newCollection;
 
   QMetaObject::invokeMethod( this, "processNextDirectory", Qt::QueuedConnection );
 }
