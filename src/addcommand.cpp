@@ -120,26 +120,27 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
     while (path.endsWith( QLatin1Char( '/' ) ) ) {	// gives null collection name later
       path.chop(1);
     }
-    const QFileInfo fileInfo( mBasePath, path );
 
+    QFileInfo fileInfo( path );
+    if ( fileInfo.isRelative() ) {
+        fileInfo.setFile( mBasePath, path );
+    }
     const QString absolutePath = fileInfo.absoluteFilePath();
-    if ( !absolutePath.startsWith( mBasePath ) ) {
-      if ( fileInfo.isDir() ) {
-        emit error( ki18nc( "@info:shell",
-                            "Invalid directory argument '%1'. Needs to be a path in or below '%2'" ).subs( parsedArgs->arg( i ) )
-                                                                                                     .subs( mBasePath ).toString() );
-      } else {
-        emit error( ki18nc( "@info:shell",
-                            "Invalid file argument '%1'. Needs to be on a path in or below '%2'"  ).subs( parsedArgs->arg( i ) )
-                                                                                                    .subs( mBasePath ).toString() );
-      }
+
+    if ( fileInfo.isDir() ) {
+      mDirectories[ absolutePath ] = AddRecursive;
     } else {
-      if ( fileInfo.isDir() ) {
-        mDirectories[ absolutePath ] = AddRecursive;
-      } else{
-        mDirectories[ fileInfo.absolutePath() ] = AddDirOnly;
-        mFiles.insert( absolutePath );
+      mDirectories[ fileInfo.absolutePath() ] = AddDirOnly;
+      mFiles.insert( absolutePath );
+    }
+
+    if ( absolutePath.startsWith( mBasePath ) ) {
+      mBasePaths.insert( absolutePath, fileInfo.absolutePath() );
+    } else {
+      if ( fileInfo.isFile() ) {
+          mBasePaths.insert( fileInfo.absolutePath(), mBasePath );
       }
+      mBasePaths.insert( absolutePath, mBasePath );
     }
   }
 
@@ -169,7 +170,7 @@ void AddCommand::processNextDirectory()
     mCollectionsByPath[ path ] = mBaseCollection;
   }
 
-  if ( mCollectionsByPath.value( path ).isValid() ) {
+  if ( mCollectionsByPath.value( mBasePaths[ path ] ).isValid() ) {
     if ( mode == AddDirOnly ) {
       // already added
       QMetaObject::invokeMethod( this, "processNextDirectory", Qt::QueuedConnection );
@@ -188,8 +189,10 @@ void AddCommand::processNextDirectory()
     Q_FOREACH ( const QFileInfo &fileInfo, children ) {
       if ( fileInfo.isDir() ) {
         mDirectories[ fileInfo.absoluteFilePath() ] = AddRecursive;
+        mBasePaths[ fileInfo.absoluteFilePath() ] = fileInfo.absoluteFilePath();
       } else {
         mFiles.insert( fileInfo.absoluteFilePath() );
+        mBasePaths[ fileInfo.absoluteFilePath() ] = fileInfo.absolutePath();
       }
     }
 
@@ -209,7 +212,7 @@ void AddCommand::processNextDirectory()
 
   dir.cdUp();
 
-  const Collection parent = mCollectionsByPath.value( dir.absolutePath() );
+  const Collection parent = mCollectionsByPath.value( mBasePaths[ dir.absolutePath() ] );
   if ( parent.isValid() ) {
     Collection collection;
     collection.setName( QFileInfo( path ).fileName() );
@@ -227,10 +230,11 @@ void AddCommand::processNextDirectory()
   }
 
   // parent doesn't exist, generate parent chain creation entries
-  while ( !mCollectionsByPath.value( dir.absolutePath() ).isValid() ) {
+  while ( !mCollectionsByPath.value( mBasePaths[ dir.absolutePath() ] ).isValid() ) {
     ErrorReporter::progress( i18n( "Need to create collection for '%1'",
                                    QDir( mBasePath ).relativeFilePath( dir.absolutePath() ) ) );
     mDirectories[ dir.absolutePath() ] = AddDirOnly;
+    mBasePaths[ dir.absolutePath() ] = dir.absolutePath();
     dir.cdUp();
   }
 
@@ -271,7 +275,7 @@ void AddCommand::processNextFile()
 
   const QFileInfo fileInfo( fileName );
 
-  const Collection parent = mCollectionsByPath.value( fileInfo.absolutePath() );
+  const Collection parent = mCollectionsByPath.value( mBasePaths[ fileInfo.absolutePath() ]);
   if ( !parent.isValid() ) {
     emit error( i18nc( "@info:shell", "Cannot determine parent collection for file <filename>%1</filename>",
                          QDir( mBasePath ).relativeFilePath( fileName ) ) );
@@ -315,6 +319,8 @@ void AddCommand::onTargetFetched( KJob *job )
 
   mBaseCollection = mResolveJob->collection();
   mCollectionsByPath[ mBasePath ] = mBaseCollection;
+  mBasePaths[ mBasePath ] = mBasePath;
+
   ErrorReporter::progress( i18n( "Root folder is %1 \"%2\"",
                                  QString::number( mBaseCollection.id() ), mBaseCollection.name() ) );
 
@@ -333,6 +339,9 @@ void AddCommand::onCollectionCreated( KJob *job )
   } else {
     CollectionCreateJob *createJob = qobject_cast<CollectionCreateJob*>( job );
     Q_ASSERT( createJob != 0 );
+
+    QFileInfo fileInfo( path );
+    mBasePaths[ path ] = fileInfo.absoluteFilePath();
 
     mCollectionsByPath[ path ] = createJob->collection();
   }
@@ -391,6 +400,8 @@ void AddCommand::onCollectionFetched( KJob *job )
   Q_ASSERT( fetchJob != 0 );
   Q_ASSERT( !fetchJob->collections().isEmpty() );
 
+  QFileInfo fileInfo( path );
+  mBasePaths[ path ] = fileInfo.absoluteFilePath();
   mCollectionsByPath[ path ] = fetchJob->collections().first();
 
   QMetaObject::invokeMethod( this, "processNextDirectory", Qt::QueuedConnection );

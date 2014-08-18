@@ -60,6 +60,7 @@ class AddCommand : public AbstractCommand
     QMap<QString, AddDirectoryMode> mDirectories;
     QHash<QString, Akonadi::Collection> mCollectionsByPath;
     QString mBasePath;
+    QHash<QString, QString> mBasePaths;
     bool mFlatMode;
     bool mDryRun;
     Akonadi::Collection mBaseCollection;
