@@ -125,6 +125,15 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
     if ( fileInfo.isRelative() ) {
         fileInfo.setFile( mBasePath, path );
     }
+
+    if ( !fileInfo.exists() ) {
+        emit error( i18n( "File '%1' does not exist", path ) );
+        return InvalidUsage;
+    } else if ( !fileInfo.isReadable() ) {
+        emit error( i18n( "Error accessing file '%1'", path ) );
+        return InvalidUsage;
+    }
+
     const QString absolutePath = fileInfo.absoluteFilePath();
 
     if ( fileInfo.isDir() ) {
@@ -135,7 +144,11 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
     }
 
     if ( absolutePath.startsWith( mBasePath ) ) {
-      mBasePaths.insert( absolutePath, fileInfo.absolutePath() );
+      if ( fileInfo.isDir() ) {
+        mBasePaths.insert( absolutePath, fileInfo.absoluteFilePath() );
+      } else {
+        mBasePaths.insert( absolutePath, fileInfo.absolutePath() );
+      }
     } else {
       if ( fileInfo.isFile() ) {
           mBasePaths.insert( fileInfo.absolutePath(), mBasePath );
