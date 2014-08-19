@@ -20,15 +20,20 @@
 #ifndef ADDCOMMANDTEST_H
 #define ADDCOMMANDTEST_H
 
-#include <abstractcommandtest.h>
+#include "abstractcommandtest.h"
 
+class KTempDir;
 class AddCommandTest : public AbstractCommandTest
 {
     Q_OBJECT
 
+private:
+    KTempDir *mTempDir;
+
 private Q_SLOTS:
     void initTestCase();
     void testAddItem();
+    void testAddItemWithBase();
 };
 
 #endif // ADDCOMMANDTEST_H
