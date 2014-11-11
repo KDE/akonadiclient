@@ -199,6 +199,11 @@ For example, adding items, collections, renaming or moving collections and also 
 					<listitem><para>Run without making any actual changes</para></listitem>
 					</varlistentry>
 
+					<varlistentry>
+					<term><option>-m, --mime <replaceable>mime-type</replaceable></option></term>
+					<listitem><para>MIME type to use (instead of auto-detection)</para></listitem>
+					</varlistentry>
+
 				</variablelist>
 				</listitem>
 			</varlistentry>
@@ -407,6 +412,7 @@ For example, adding items, collections, renaming or moving collections and also 
 <para><emphasis role="bold">akonadiclient export /Notes notes.xml</emphasis> - Exports all the items and sub-collections of the /Notes collection to the file 'notes.xml'</para>
 <para><emphasis role="bold">akonadiclient agents -l</emphasis> - Lists all agents</para>
 <para><emphasis role="bold">akonadiclient add /Notes note.txt</emphasis> - Adds the contents of the file note.txt as an item in the collection /Notes</para>
+<para><emphasis role="bold">akonadiclient add -m application/x-vnd.akonadi.calendar.todo /Todos todo.ics</emphasis> - Adds the contents of the file todo.ics as a TODO calendar entry in the collection /Todos</para>
 </refsect1>
 
 </refentry>
