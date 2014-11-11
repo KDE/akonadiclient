@@ -28,7 +28,6 @@
 
 #include <KCmdLineOptions>
 #include <KGlobal>
-#include <KMimeType>
 #include <KUrl>
 
 #include <QDir>
@@ -69,6 +68,7 @@ void AddCommand::setupCommandOptions( KCmdLineOptions &options )
   options.add("b").add("base <dir>", ki18nc("@info:shell", "Base directory for input files/directories, default is current"));
   options.add("f").add("flat", ki18nc("@info:shell", "Flat mode, do not duplicate subdirectory structure"));
   options.add("n").add("dryrun", ki18nc("@info:shell", "Run without making any actual changes"));
+  options.add("m").add("mime <mime-type>", ki18nc("@info:shell", "MIME type to use (instead of auto-detection)"));
 }
 
 int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
@@ -99,6 +99,16 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
 
   mFlatMode = parsedArgs->isSet( "flat" );
   mDryRun = parsedArgs->isSet( "dryrun" );
+
+  const QString mimeTypeArg = parsedArgs->getOption( "mime" );
+  if ( !mimeTypeArg.isEmpty() ) {
+    mMimeType = KMimeType::mimeType( mimeTypeArg );
+    if ( mMimeType.isNull() || !mMimeType->isValid() ) {
+        emit error( ki18nc( "@info:shell",
+                            "Invalid MIME type argument '%1'").subs( mimeTypeArg ).toString() );
+        return InvalidUsage;
+    }
+  }
 
   mBasePath = parsedArgs->getOption( "base" );
   if ( !mBasePath.isEmpty() ) {				// base is specified
@@ -279,8 +289,9 @@ void AddCommand::processNextFile()
     return;
   }
 
-  const KMimeType::Ptr mimeType = KMimeType::findByNameAndContent( fileName, &file );
-  if ( !mimeType->isValid() ) {
+  KMimeType::Ptr mimeType = !mMimeType.isNull() ? mMimeType
+                                                : KMimeType::findByNameAndContent( fileName, &file );
+  if ( mimeType.isNull() || !mimeType->isValid() ) {
     emit error( i18nc( "@info:shell", "Cannot determine MIME type of file <filename>%1</filename>", fileName ) );
     QMetaObject::invokeMethod( this, "processNextFile", Qt::QueuedConnection );
     return;

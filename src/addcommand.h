@@ -22,11 +22,13 @@
 
 #include "abstractcommand.h"
 
+#include <Akonadi/Collection>
+
+#include <KMimeType>
+
 #include <QHash>
 #include <QMap>
 #include <QSet>
-
-#include <Akonadi/Collection>
 
 class CollectionResolveJob;
 class KJob;
@@ -64,6 +66,7 @@ class AddCommand : public AbstractCommand
     bool mFlatMode;
     bool mDryRun;
     Akonadi::Collection mBaseCollection;
+    KMimeType::Ptr mMimeType;
 
   private Q_SLOTS:
     void processNextDirectory();
