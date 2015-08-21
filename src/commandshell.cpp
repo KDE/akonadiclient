@@ -59,9 +59,37 @@ void CommandShell::start()
         return;
     }
 
-    // TODO: Need to implement a better way to separate arguments to accomodate spaces in filenames
-    QStringList list = input.split(" ");
+    QStringList list;
     list.insert(0, mAboutData.appName());
+
+    QString arg;
+    bool quotestarted = false;
+
+    // Split the options string by space and quotation marks
+    for (int i = 0; i < input.length(); i++) {
+        if (input.at(i) == ' ') {
+            if (quotestarted) {
+                arg.append(input.at(i));
+            } else if (arg.length() > 0) {
+                list.append(arg);
+                arg.clear();
+            }
+        } else if (input.at(i) == '\"') {
+            if (quotestarted) {
+                list.append(arg);
+                arg.clear();
+                quotestarted = false;
+            } else {
+                quotestarted = true;
+            }
+        } else {
+            arg.append(input.at(i));
+        }
+    }
+
+    if (arg.length() > 0) {
+        list.append(arg);
+    }
 
     QVarLengthArray<char*> tempArgs;
     tempArgs.reserve(list.size());
