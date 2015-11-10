@@ -62,13 +62,13 @@ void AddCommand::setupCommandOptions( KCmdLineOptions &options )
 {
   AbstractCommand::setupCommandOptions( options );
 
-  options.add("+[options]", ki18nc("@info:shell", "Options for command"));
+  addOptionsOption(options);
   options.add( "+collection", ki18nc( "@info:shell", "The collection to add to, either as a path or akonadi URL" ) );
   options.add( "+files...", ki18nc( "@info:shell", "The files or directories to add to the collection." ) );
-  options.add(":", ki18nc("@info:shell", "Options for command:"));
+  addOptionSeparator(options);
   options.add("b").add("base <dir>", ki18nc("@info:shell", "Base directory for input files/directories, default is current"));
   options.add("f").add("flat", ki18nc("@info:shell", "Flat mode, do not duplicate subdirectory structure"));
-  options.add("n").add("dryrun", ki18nc("@info:shell", "Run without making any actual changes"));
+  addDryRunOption(options);
 }
 
 int AddCommand::initCommand( KCmdLineArgs *parsedArgs )

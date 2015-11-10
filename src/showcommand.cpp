@@ -45,10 +45,7 @@ void ShowCommand::setupCommandOptions(KCmdLineOptions &options)
 {
   AbstractCommand::setupCommandOptions(options);
 
-  //options.add("+[options]", ki18nc("@info:shell", "Options for command"));
-  options.add("+item...", ki18nc("@show:shell", "The items to show"));
-  //options.add(":", ki18nc("@info:shell", "Options for command:"));
-  //options.add("c").add("collection", ki18nc("@info:shell", "Assume that a collection is specified"));
+  options.add("+item...", ki18nc("@info:shell", "The items to show"));
 }
 
 

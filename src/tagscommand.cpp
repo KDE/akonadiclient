@@ -45,10 +45,10 @@ void TagsCommand::setupCommandOptions(KCmdLineOptions &options)
 {
   AbstractCommand::setupCommandOptions(options);
 
-  options.add("+[options]", ki18nc("@info:shell", "Options for command"));
-  options.add(":", ki18nc("@info:shell", "Options for command:"));
-  options.add("b").add("brief", ki18nc("@info:shell", "Brief output - tag names only"));
-  options.add("u").add("urls", ki18nc("@info:shell", "Brief output - tag URLs only"));
+  addOptionsOption(options);
+  addOptionSeparator(options);
+  options.add("b").add("brief", ki18nc("@info:shell", "Brief output, tag names only"));
+  options.add("u").add("urls", ki18nc("@info:shell", "Brief output, tag URLs only"));
 }
 
 

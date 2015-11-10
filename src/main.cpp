@@ -39,6 +39,8 @@ int main( int argc, char **argv )
                         KAboutData::License_GPL );
 
   aboutData.addAuthor( ki18n( "Kevin Krammer" ), ki18nc( "@title about data task", "Original Author" ), "krammer@kde.org" );
+  aboutData.addAuthor( ki18n( "Jonathan Marten" ), ki18nc( "@title about data task", "Additions and new commands" ), "jjm@keelhaul.me.uk" );
+  aboutData.addAuthor( ki18n( "Bhaskar Kandiyal" ), ki18nc( "@title about data task", "New commands, GSOC 2014" ), "bkandiyal@gmail.com" );
 
   KCmdLineArgs::init( argc, argv, &aboutData );
   KCmdLineArgs::addStdCmdLineOptions( KCmdLineArgs::CmdLineArgNone );

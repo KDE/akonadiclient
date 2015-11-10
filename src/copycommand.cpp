@@ -67,11 +67,11 @@ void CopyCommand::setupCommandOptions(KCmdLineOptions &options)
 {
   AbstractCommand::setupCommandOptions(options);
 
-  options.add("+[options]", ki18nc("@info:shell", "Options for command"));
+  addOptionsOption(options);
   options.add( "+source...", ki18nc( "@info:shell", "Existing collections or items to copy"));
   options.add( "+destination", ki18nc( "@info:shell", "Destination collection to copy into"));
-  options.add(":", ki18n("Options for command"));
-  options.add("n").add("dryrun", ki18n("Run without making any actual changes"));
+  addOptionSeparator(options);
+  addDryRunOption(options);
 }
 
 

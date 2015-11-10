@@ -44,7 +44,7 @@ DeleteCommand::DeleteCommand(QObject *parent)
       mIsCollection(false),
       mIsItem(false)
 {
-    mShortHelp = ki18nc("@info:shell", "Deletes a collection or an item").toString();
+    mShortHelp = ki18nc("@info:shell", "Delete a collection or an item").toString();
 }
 
 DeleteCommand::~DeleteCommand()
@@ -56,19 +56,18 @@ void DeleteCommand::setupCommandOptions(KCmdLineOptions &options)
 {
     AbstractCommand::setupCommandOptions(options);
 
-    options.add("[+option]", ki18nc("@info:shell", "Options for command"));
+    addOptionsOption(options);
     options.add("+collection|item", ki18nc("@info:shell", "The collection or item"));
-    options.add(":", ki18nc("@info:shell", "Options for command:"));
-    options.add("c").add("collection", ki18nc("@info:shell", "Assume that a collection is specified"));
-    options.add("i").add("item", ki18nc("@info:shell", "Assume that an item is specified"));
-    options.add("n").add("dryrun", ki18nc("@info:shell", "Run without making any actual changes"));
+    addOptionSeparator(options);
+    addCollectionItemOptions(options);
+    addDryRunOption(options);
 }
 
 
 int DeleteCommand::initCommand(KCmdLineArgs *parsedArgs)
 {
     if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "Missing collection / item argument"));
+        emitErrorSeeHelp(ki18nc("@info:shell", "Missing collection/item argument"));
         return InvalidUsage;
     }
 

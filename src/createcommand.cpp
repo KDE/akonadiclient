@@ -59,11 +59,11 @@ void CreateCommand::setupCommandOptions(KCmdLineOptions &options)
 {
   AbstractCommand::setupCommandOptions(options);
 
-  options.add("+[options]", ki18nc("@info:shell", "Options for command"));
-  options.add( "+collection", ki18nc( "@info:shell", "The collection to create, either as a path or a name (with a parent specified)"));
-  options.add(":", ki18nc("@info:shell", "Options for command:"));
+  addOptionsOption(options);
+  options.add( "+collection", ki18nc("@info:shell", "The collection to create, either as a path or a name (with a parent specified)"));
+  addOptionSeparator(options);
   options.add("p").add("parent <collection>", ki18nc("@info:shell", "Parent collection to create in"));
-  options.add("n").add("dryrun", ki18nc("@info:shell", "Run without making any actual changes"));
+  addDryRunOption(options);
 }
 
 

@@ -37,7 +37,7 @@ ListCommand::ListCommand( QObject *parent )
   : AbstractCommand( parent ),
     mResolveJob( 0 )
 {
-  mShortHelp = ki18nc( "@info:shell", "Lists sub-collections and/or items in a specified collection" ).toString();
+  mShortHelp = ki18nc( "@info:shell", "List sub-collections and/or items in a specified collection" ).toString();
 }
 
 ListCommand::~ListCommand()
@@ -48,9 +48,9 @@ void ListCommand::setupCommandOptions( KCmdLineOptions &options )
 {
   AbstractCommand::setupCommandOptions( options );
 
-  options.add( "+[options]", ki18nc( "@info:shell", "Options for command" ) );
+  addOptionsOption(options);
   options.add( "+collection", ki18nc( "@info:shell", "The collection to list, either as a path or akonadi URL" ) );
-  options.add(":", ki18n("Options for command:"));
+  addOptionSeparator(options);
   options.add("l").add("details", ki18n("List more detailed information"));
   options.add("c").add("collections", ki18n("List only sub-collections"));
   options.add("i").add("items", ki18n("List only contained items"));

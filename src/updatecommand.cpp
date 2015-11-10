@@ -36,7 +36,7 @@ UpdateCommand::UpdateCommand(QObject *parent)
       mDryRun(false),
       mFile(0)
 {
-    mShortHelp = ki18nc("@info:shell", "Updates an item's payload with the file specified").toString();
+    mShortHelp = ki18nc("@info:shell", "Update an item's payload with the file specified").toString();
 }
 
 UpdateCommand::~UpdateCommand()
@@ -48,8 +48,8 @@ void UpdateCommand::setupCommandOptions(KCmdLineOptions &options)
 {
     options.add("+item", ki18nc("@info:shell", "The item to update"));
     options.add("+file", ki18nc("@info:shell", "File to update the item from"));
-    options.add(":", ki18nc("@info:shell", "Options for command"));
-    options.add("n").add("dryrun", ki18nc("@info:shell", "Run command without making any actual changes"));
+    addOptionSeparator(options);
+    addDryRunOption(options);
 }
 
 int UpdateCommand::initCommand(KCmdLineArgs *parsedArgs)
@@ -90,14 +90,14 @@ void UpdateCommand::start()
     }
 
     if (!QFile::exists(mFileArg)) {
-        emit error(i18nc("@info:shell", "'%1' no such file or directory", mFileArg));
+        emit error(i18nc("@info:shell", "File <filename>%1</filename> does not exist", mFileArg));
         emit finished(RuntimeError);
         return;
     }
 
     mFile = new QFile(mFileArg);
     if (!mFile->open(QIODevice::ReadOnly)) {
-        emit error(i18nc("@info:shell", "Error opening file '%1' for reading", mFileArg));
+        emit error(i18nc("@info:shell", "File <filename>%1</filename> cannot be read", mFileArg));
         emit finished(RuntimeError);
         return;
     }

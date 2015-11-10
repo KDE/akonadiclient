@@ -55,9 +55,9 @@ void ExpandCommand::setupCommandOptions(KCmdLineOptions &options)
 {
   AbstractCommand::setupCommandOptions(options);
 
-  options.add("+[options]", ki18nc("@info:shell", "Options for command"));
+  addOptionsOption(options);
   options.add("+item", ki18nc("@info:shell", "The contact group item"));
-  options.add(":", ki18nc("@info:shell", "Options for command:"));
+  addOptionSeparator(options);
   options.add("b").add("brief", ki18nc("@info:shell", "Brief output (email addresses only)"));
 }
 
@@ -111,7 +111,7 @@ void ExpandCommand::fetchItems()
     }
     else
     {
-      emit error(i18nc("@info:shell", "Invalid item syntax"));
+      emit error(i18nc("@info:shell", "Invalid item syntax '%1'", mItemArg));
       emit finished(RuntimeError);
       return;
     }

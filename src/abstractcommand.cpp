@@ -74,8 +74,28 @@ void AbstractCommand::start()
 
 void AbstractCommand::setupCommandOptions(KCmdLineOptions& options)
 {
-  options.add( ("+" + name().toLocal8Bit() ),
-               ki18nc( "@info:shell", "The name of the command" ) );
+  options.add(("+"+name()).toLocal8Bit(), ki18nc("@info:shell", "The name of the command"));
+}
+
+void AbstractCommand::addOptionsOption(KCmdLineOptions &options)
+{
+    options.add("+[options]", ki18nc("@info:shell", "Options for command"));
+}
+
+void AbstractCommand::addOptionSeparator(KCmdLineOptions &options)
+{
+    options.add(":", ki18nc("@info:shell", "Options for command:"));
+}
+
+void AbstractCommand::addCollectionItemOptions(KCmdLineOptions &options)
+{
+    options.add("c").add("collection", ki18nc("@info:shell", "Assume that a collection is specified"));
+    options.add("i").add("item", ki18nc("@info:shell", "Assume that an item is specified"));
+}
+
+void AbstractCommand::addDryRunOption(KCmdLineOptions &options)
+{
+    options.add("n").add("dryrun", ki18nc("@info:shell", "Run without making any actual changes"));
 }
 
 void AbstractCommand::emitErrorSeeHelp( const KLocalizedString &msg )

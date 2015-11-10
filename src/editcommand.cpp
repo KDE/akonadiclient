@@ -37,7 +37,7 @@ EditCommand::EditCommand(QObject *parent)
       mTempFile(0),
       mDryRun(false)
 {
-    mShortHelp = ki18nc("@info:shell", "Opens the raw payload for the specified item in $EDITOR for editing").toString();
+    mShortHelp = ki18nc("@info:shell", "Edit the raw payload for the specified item using $EDITOR").toString();
 }
 
 EditCommand::~EditCommand()
@@ -50,8 +50,8 @@ void EditCommand::setupCommandOptions(KCmdLineOptions &options)
     AbstractCommand::setupCommandOptions(options);
 
     options.add("+item", ki18nc("@info:shell", "The item to edit"));
-    options.add(":", ki18nc("@info:shell", "Options for command"));
-    options.add("n").add("dryrun", ki18nc("@info:shell", "Run without making any actual changes"));
+    addOptionSeparator(options);
+    addDryRunOption(options);
 }
 
 int EditCommand::initCommand(KCmdLineArgs *parsedArgs)
@@ -121,7 +121,7 @@ void EditCommand::onItemFetched(KJob *job)
     QString editor = QString::fromLocal8Bit(qgetenv("EDITOR"));
 
     if (editor.isEmpty()) {
-        emit error(i18nc("@info:shell", "$EDITOR environment variable needs to be set"));
+        emit error(i18nc("@info:shell", "EDITOR environment variable needs to be set"));
         emit finished(RuntimeError);
         return;
     }

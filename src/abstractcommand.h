@@ -60,6 +60,11 @@ class AbstractCommand : public QObject
 
     void emitErrorSeeHelp( const KLocalizedString &msg );
     bool allowDangerousOperation() const;
+
+    void addOptionsOption(KCmdLineOptions &options);
+    void addOptionSeparator(KCmdLineOptions &options);
+    void addCollectionItemOptions(KCmdLineOptions &options);
+    void addDryRunOption(KCmdLineOptions &options);
 };
 
 #endif // ABSTRACTCOMMAND_H

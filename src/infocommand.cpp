@@ -61,11 +61,10 @@ void InfoCommand::setupCommandOptions(KCmdLineOptions &options)
 {
   AbstractCommand::setupCommandOptions(options);
 
-  options.add("+[options]", ki18nc("@info:shell", "Options for command"));
+  addOptionsOption(options);
   options.add("+collection|item", ki18nc("@info:shell", "The collection or item"));
-  options.add(":", ki18nc("@info:shell", "Options for command:"));
-  options.add("c").add("collection", ki18nc("@info:shell", "Assume that a collection is specified"));
-  options.add("i").add("item", ki18nc("@info:shell", "Assume that an item is specified"));
+  addOptionSeparator(options);
+  addCollectionItemOptions(options);
 }
 
 int InfoCommand::initCommand(KCmdLineArgs *parsedArgs)
