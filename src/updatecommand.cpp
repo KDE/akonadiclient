@@ -73,6 +73,8 @@ int UpdateCommand::initCommand(KCmdLineArgs *parsedArgs)
 
 void UpdateCommand::start()
 {
+    if (!allowDangerousOperation()) emit finished(RuntimeError);
+
     Item item;
     bool ok;
     int id = mItemArg.toInt(&ok);

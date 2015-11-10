@@ -94,6 +94,8 @@ int DeleteCommand::initCommand(KCmdLineArgs *parsedArgs)
 
 void DeleteCommand::start()
 {
+    if (!allowDangerousOperation()) emit finished(RuntimeError);
+
     Q_ASSERT(mResolveJob != 0);
 
     if (mIsItem) {
