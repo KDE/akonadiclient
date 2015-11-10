@@ -20,7 +20,7 @@
 #ifndef UPDATECOMMAND_H
 #define UPDATECOMMAND_H
 
-#include <abstractcommand.h>
+#include "abstractcommand.h"
 
 class KJob;
 class QFile;

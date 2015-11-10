@@ -1,0 +1,418 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+<!ENTITY % English "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title>akonadiclient man page</title>
+<author><personname>
+<firstname>Bhaskar</firstname>
+<surname>Kandiyal</surname>
+</personname>
+<email>bkandiyal@gmail.com</email></author>
+<date>2014-08-17</date>
+<productname>AkonadiClient</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle><command>akonadiclient</command></refentrytitle>
+<manvolnum>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname><command>akonadiclient</command></refname>
+<refpurpose>A commandline client for Akonadi</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis>
+<command>akonadiclient</command>
+<arg choice="opt">command</arg>
+<arg choice="opt">--help</arg>
+<arg choice="opt">--version</arg>
+<arg choice="opt">&kde; Generic Options</arg>
+<arg choice="opt">Qt Generic Options</arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title>Description</title>
+<para>akonadiclient is a commandline client for manipulating KDE's Akonadi datastore. It provides an easy way to manipulate Akonadi's data through the commandline.
+For example, adding items, collections, renaming or moving collections and also controlling the Akonadi agents.</para>
+
+</refsect1>
+
+<refsect1>
+<title>Commands</title>
+	<refsect2>
+		<title>Filesystem Commands</title>
+		<variablelist>
+
+		<varlistentry>
+		<term><option>copy</option></term>
+		<listitem>
+		<para>akonadiclient copy [OPTIONS] SOURCE DESTINATION</para>
+		<para>Used to copy collections or items from one collection to another.</para>
+		<para>Options:</para>
+		<variablelist>
+			<varlistentry>
+			<term><option>-n, --dryrun</option></term>
+			<listitem><para>Run without making any actual changes</para></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term><option>create</option></term>
+		<listitem>
+		<para>akonadiclient create [OPTIONS] COLLECTION</para>
+		<para>Creates a new collection. Please note that top-level collections can only be created by an Akonadi resource.</para>
+		<para>Options:</para>
+		<variablelist>
+			<varlistentry>
+			<term><option>-p, --parent <replaceable>collection</replaceable></option></term>
+			<listitem><para>Run without making any actual changes</para></listitem>
+			</varlistentry>
+			<varlistentry>
+			<term><option>-n, --dryrun</option></term>
+			<listitem><para>Run without making any actual changes</para></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term><option>delete</option></term>
+		<listitem>
+		<para>akonadiclient delete [OPTIONS] COLLECTION | ITEM</para>
+		<para>Deletes a collection or an item.</para>
+		<para>Options:</para>
+		<variablelist>
+			<varlistentry>
+			<term><option>-c, --collection</option></term>
+			<listitem><para>Assume that a collection is specified as an argument</para></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term><option>-i, --item</option></term>
+			<listitem><para>Assume that an item is specified as an argument</para></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term><option>-n, --dryrun</option></term>
+			<listitem><para>Run without making any actual changes</para></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term><option>list</option></term>
+		<listitem>
+		<para>akonadiclient list [OPTIONS] COLLECTION</para>
+		<para>Deletes a collection or an item.</para>
+		<para>Options:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term><option>-l, --details</option></term>
+			<listitem><para>List more detailed information</para></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term><option>-c, --collections</option></term>
+			<listitem><para>List only sub-collections</para></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term><option>-i, --items</option></term>
+			<listitem><para>List only contained items</para></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term><option>move</option></term>
+		<listitem>
+		<para>akonadiclient move [OPTIONS] SOURCE DESTINATION</para>
+		<para>Move collections or items into another collection.</para>
+		<para>Options:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term><option>-n, --dryrun</option></term>
+			<listitem><para>Run without making any actual changes</para></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term><option>rename</option></term>
+		<listitem>
+		<para>akonadiclient rename [OPTIONS] COLLECTION NAME</para>
+		<para>Renames a specified collection to NAME</para>
+		<para>Options:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term><option>-n, --dryrun</option></term>
+			<listitem><para>Run without making any actual changes</para></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title>Data Commands</title>
+		<variablelist>
+
+			<varlistentry>
+				<term><option>add</option></term>
+				<listitem>
+				<para>akonadiclient add [OPTIONS] COLLECTION FILES</para>
+				<para>Add items to a specified collection</para>
+				<para>Options:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term><option>-b, --base <replaceable>dir</replaceable></option></term>
+					<listitem><para>Base directory for input files / directories, default is current</para></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term><option>-f, --flat</option></term>
+					<listitem><para>Flat mode, do not duplicate subdirectory structure</para></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term><option>-n, --dryrun</option></term>
+					<listitem><para>Run without making any actual changes</para></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term><option>-m, --mime <replaceable>mime-type</replaceable></option></term>
+					<listitem><para>MIME type to use (instead of auto-detection)</para></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term><option>edit</option></term>
+				<listitem>
+				<para>akonadiclient edit [OPTIONS] ITEM</para>
+				<para>Opens the payload of ITEM in a text editor specified by the environment variable $EDITOR</para>
+				<para>Options:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term><option>-n, --dryrun</option></term>
+					<listitem><para>Run without making any actual changes</para></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term><option>expand</option></term>
+				<listitem>
+				<para>akonadiclient expand [OPTIONS] ITEM</para>
+				<para>Expands a contact group item</para>
+				<para>Options:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term><option>-b, --brief</option></term>
+					<listitem><para>Brief output (email addresses only)</para></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term><option>export</option></term>
+				<listitem>
+				<para>akonadiclient export [OPTIONS] COLLECTION FILE</para>
+				<para>Import an XML file inside the collection specified by PARENT. If the collection already exists, it's contents are merged with the contents of the collection in the XML file.</para>
+				<para>Options:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term><option>-n, --dryrun</option></term>
+					<listitem><para>Run without making any actual changes</para></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term><option>import</option></term>
+				<listitem>
+				<para>akonadiclient import [OPTIONS] PARENT FILE</para>
+				<para>Imports an XML file inside the collection specified by PARENT. If the collection already exists, it's contents are merged with the contents of the collection in the XML file.</para>
+				<para>Options:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term><option>-n, --dryrun</option></term>
+					<listitem><para>Run without making any actual changes</para></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term><option>info</option></term>
+				<listitem>
+				<para>akonadiclient info [OPTIONS] COLLECTION | ITEM</para>
+				<para>Show full information about a collection or item</para>
+				<para>Options:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term><option>-c, --collection</option></term>
+					<listitem><para>Assume that a collection is specified</para></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term><option>-i, --item</option></term>
+					<listitem><para>Assume that an item is specified</para></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term><option>show</option></term>
+				<listitem>
+				<para>akonadiclient show ITEM</para>
+				<para>Shows the raw payload of an item</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term><option>tags</option></term>
+				<listitem>
+				<para>akonadiclient tags [OPTIONS]</para>
+				<para>List all known tags</para>
+				<para>Options:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term><option>-b, --brief</option></term>
+					<listitem><para>Brief output - tag names only</para></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term><option>-u, --urls</option></term>
+					<listitem><para>Brief output - tag URLs only</para></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term><option>update</option></term>
+				<listitem>
+				<para>akonadiclient update [OPTIONS] ITEM FILE</para>
+				<para>Updates the raw payload of ITEM with the contents of FILE</para>
+				<para>Options:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term><option>-n, --dryrun</option></term>
+					<listitem><para>Run without making any actual changes</para></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title>Miscellaneous Commands</title>
+		<variablelist>
+
+			<varlistentry>
+				<term><option>agents</option></term>
+				<listitem>
+					<para>akonadiclient agents [OPTIONS] [AGENTS...]</para>
+					<para>Allows managing of Akonadi agents like changing their state, restarting an agent or listing all agents and their state.</para>
+					<para>Options:</para>
+					<variablelist>
+
+						<varlistentry>
+							<term><option>-l, --list</option></term>
+							<listitem><para>List all agents</para></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term><option>-s, --setstate <replaceable>state</replaceable></option></term>
+							<listitem><para>Set the state for specified agents. Valid states are 'offline' and 'online'.</para></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term><option>-g, --getstate</option></term>
+							<listitem><para>Get the state for specified agents</para></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term><option>-i, --info</option></term>
+							<listitem><para>Show information about the specified agents</para></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term><option>-r, --restart</option></term>
+							<listitem><para>Restarts the specified agents</para></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term><option>-n, --dryrun</option></term>
+							<listitem><para>Run without making any actual changes</para></listitem>
+						</varlistentry>
+
+					</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term><option>help</option></term>
+				<listitem>
+					<para>akonadiclient help [COMMAND]</para>
+					<para>Displays help for COMMAND. If COMMAND is not specified then it lists all the available commands</para>
+				</listitem>
+			</varlistentry>
+
+		</variablelist>
+	</refsect2>
+</refsect1>
+
+<refsect1>
+<title>Examples</title>
+<para><emphasis role="bold">akonadiclient list /</emphasis> - Lists all the collections under the root collection</para>
+<para><emphasis role="bold">akonadiclient export /Notes notes.xml</emphasis> - Exports all the items and sub-collections of the /Notes collection to the file 'notes.xml'</para>
+<para><emphasis role="bold">akonadiclient agents -l</emphasis> - Lists all agents</para>
+<para><emphasis role="bold">akonadiclient add /Notes note.txt</emphasis> - Adds the contents of the file note.txt as an item in the collection /Notes</para>
+<para><emphasis role="bold">akonadiclient add -m application/x-vnd.akonadi.calendar.todo /Todos todo.ics</emphasis> - Adds the contents of the file todo.ics as a TODO calendar entry in the collection /Todos</para>
+</refsect1>
+
+</refentry>

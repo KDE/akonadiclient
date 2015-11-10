@@ -17,41 +17,17 @@
  *
  */
 
-#ifndef RENAMECOMMAND_H
-#define RENAMECOMMAND_H
+#ifndef MOVECOMMANDTEST_H
+#define MOVECOMMANDTEST_H
 
-#include "abstractcommand.h"
+#include "abstractcommandtest.h"
 
-class CollectionResolveJob;
-class KJob;
-
-class RenameCommand : public AbstractCommand
+class MoveCommandTest : public AbstractCommandTest
 {
     Q_OBJECT
-
-public:
-    explicit RenameCommand(QObject *parent = 0);
-    ~RenameCommand();
-
-    QString name() const {
-        return QLatin1String("rename");
-    }
-
-public Q_SLOTS:
-    void start();
-
-protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
-    void setupCommandOptions(KCmdLineOptions &options);
-
-private:
-    bool mDryRun;
-    CollectionResolveJob *mResolveJob;
-    QString mNewCollectionNameArg;
-
 private Q_SLOTS:
-    void onCollectionFetched(KJob *job);
-    void onCollectionModified(KJob *job);
+    void initTestCase();
+    void testMoveCollection();
 };
 
-#endif // RENAMECOMMAND_H
+#endif // MOVECOMMANDTEST_H

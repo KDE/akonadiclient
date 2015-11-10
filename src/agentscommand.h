@@ -17,25 +17,24 @@
  *
  */
 
-#ifndef RENAMECOMMAND_H
-#define RENAMECOMMAND_H
+#ifndef AGENTSCOMMAND_H
+#define AGENTSCOMMAND_H
 
 #include "abstractcommand.h"
+#include <qstringlist.h>
 
-class CollectionResolveJob;
-class KJob;
+namespace Akonadi {
+    class AgentInstance;
+};
 
-class RenameCommand : public AbstractCommand
+class AgentsCommand : public AbstractCommand
 {
     Q_OBJECT
 
 public:
-    explicit RenameCommand(QObject *parent = 0);
-    ~RenameCommand();
-
-    QString name() const {
-        return QLatin1String("rename");
-    }
+    explicit AgentsCommand(QObject *parent = 0);
+    ~AgentsCommand();
+    QString name() const { return QLatin1String("agents"); }
 
 public Q_SLOTS:
     void start();
@@ -45,13 +44,30 @@ protected:
     void setupCommandOptions(KCmdLineOptions &options);
 
 private:
-    bool mDryRun;
-    CollectionResolveJob *mResolveJob;
-    QString mNewCollectionNameArg;
+    void getState();
+    void showInfo();
+    void printAgentStatus(const QList<Akonadi::AgentInstance> &agents);
+    void restartAgents();
+    void setState();
 
-private Q_SLOTS:
-    void onCollectionFetched(KJob *job);
-    void onCollectionModified(KJob *job);
+private:
+    bool mDryRun;
+    enum Option {
+        LIST = 0,
+        SETSTATE = 1,
+        GETSTATE = 2,
+        INFO = 3,
+        RESTART = 4
+    };
+
+    enum AgentState {
+        OFFLINE = 0,
+        ONLINE = 1
+    };
+
+    AgentState mStateArg;
+    Option mOption;
+    QStringList mArguments;
 };
 
-#endif // RENAMECOMMAND_H
+#endif // AGENTSCOMMAND_H

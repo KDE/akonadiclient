@@ -17,41 +17,38 @@
  *
  */
 
-#ifndef RENAMECOMMAND_H
-#define RENAMECOMMAND_H
+#ifndef EXPORTCOMMAND_H
+#define EXPORTCOMMAND_H
 
 #include "abstractcommand.h"
+#include "collectionresolvejob.h"
 
-class CollectionResolveJob;
-class KJob;
-
-class RenameCommand : public AbstractCommand
+class ExportCommand : public AbstractCommand
 {
     Q_OBJECT
 
 public:
-    explicit RenameCommand(QObject *parent = 0);
-    ~RenameCommand();
-
+    explicit ExportCommand(QObject *parent = 0);
+    ~ExportCommand();
     QString name() const {
-        return QLatin1String("rename");
+        return QLatin1String("export");
     }
 
 public Q_SLOTS:
     void start();
 
 protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
-    void setupCommandOptions(KCmdLineOptions &options);
+    int initCommand(KCmdLineArgs* parsedArgs);
+    void setupCommandOptions(KCmdLineOptions& options);
 
 private:
     bool mDryRun;
     CollectionResolveJob *mResolveJob;
-    QString mNewCollectionNameArg;
+    QString mFileArg;
 
 private Q_SLOTS:
-    void onCollectionFetched(KJob *job);
-    void onCollectionModified(KJob *job);
+    void onCollectionFetched(KJob*);
+    void onWriteFinished(KJob*);
 };
 
-#endif // RENAMECOMMAND_H
+#endif // EXPORTCOMMAND_H

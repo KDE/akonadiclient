@@ -201,7 +201,7 @@ void DeleteCommand::onItemsFetched(KJob *job)
 void DeleteCommand::onItemsDeleted(KJob *job)
 {
     if (job->error() != 0) {
-        emit error(job->errorString());
+        emit error(i18nc("@info:shell", "Error: %1", job->errorString()));
         emit finished(RuntimeError);
         return;
     }

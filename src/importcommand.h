@@ -17,25 +17,28 @@
  *
  */
 
-#ifndef RENAMECOMMAND_H
-#define RENAMECOMMAND_H
+#ifndef IMPORTCOMMAND_H
+#define IMPORTCOMMAND_H
 
 #include "abstractcommand.h"
+#include "collectionresolvejob.h"
 
-class CollectionResolveJob;
-class KJob;
+namespace Akonadi {
+    class XmlDocument;
+    class Collection;
+    class Item;
+};
 
-class RenameCommand : public AbstractCommand
+class QFile;
+
+class ImportCommand : public AbstractCommand
 {
     Q_OBJECT
 
 public:
-    explicit RenameCommand(QObject *parent = 0);
-    ~RenameCommand();
-
-    QString name() const {
-        return QLatin1String("rename");
-    }
+    explicit ImportCommand(QObject *parent = 0);
+    ~ImportCommand();
+    QString name() const { return QLatin1String("import"); }
 
 public Q_SLOTS:
     void start();
@@ -47,11 +50,22 @@ protected:
 private:
     bool mDryRun;
     CollectionResolveJob *mResolveJob;
-    QString mNewCollectionNameArg;
+    Akonadi::Collection mParentCollection;
+    Akonadi::Collection mCurrentCollection;
+    QList<Akonadi::Item> mItemQueue;
+    QList<Akonadi::Collection> mCollections;
+    QMap<QString, Akonadi::Collection> mCollectionMap;
+    Akonadi::XmlDocument *mDocument;
 
 private Q_SLOTS:
+    void onCollectionCreated(KJob *job);
     void onCollectionFetched(KJob *job);
-    void onCollectionModified(KJob *job);
+    void onChildrenFetched(KJob *job);
+    void onItemCreated(KJob *job);
+    void onParentFetched(KJob *job);
+    void processNextCollectionFromMap();
+    void processNextCollection();
+    void processNextItemFromQueue();
 };
 
-#endif // RENAMECOMMAND_H
+#endif // IMPORTCOMMAND_H

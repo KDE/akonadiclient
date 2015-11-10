@@ -20,7 +20,7 @@
 #ifndef DELETECOMMAND_H
 #define DELETECOMMAND_H
 
-#include <abstractcommand.h>
+#include "abstractcommand.h"
 
 namespace Akonadi
 {
