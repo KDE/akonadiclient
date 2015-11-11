@@ -42,22 +42,21 @@ AgentsCommand::AgentsCommand(QObject *parent)
 
 AgentsCommand::~AgentsCommand()
 {
-
 }
 
 void AgentsCommand::setupCommandOptions(KCmdLineOptions &options)
 {
     AbstractCommand::setupCommandOptions(options);
 
-    options.add("+options", ki18nc("@info:shell", "Options for command"));
-    options.add("+[agents]...", ki18nc("@info:shell", "List of agents separated by a space"));
-    options.add(":", ki18nc("@info:shell", "Options for command"));
+    addOptionsOption(options);
+    options.add("+[agents]...", ki18nc("@info:shell", "Agents to operate on"));
+    addOptionSeparator(options);
     options.add("l").add("list", ki18nc("@info:shell", "List all agents"));
-    options.add("s").add("setstate <state>", ki18nc("@info:shell", "Set <state> for specified agents. Valid states are \"online\" and \"offline\"."));
+    options.add("s").add("setstate <state>", ki18nc("@info:shell", "Set state for specified agents. Valid states are \"online\" and \"offline\"."));
     options.add("g").add("getstate", ki18nc("@info:shell", "Get state for the specified agent"));
-    options.add("i").add("info", ki18nc("@info:shell", "Shows information about the specified agent"));
-    options.add("r").add("restart", ki18nc("@info:shell", "Restarts the specified agent"));
-    options.add("n").add("dryrun", ki18nc("@info:shell", "Run without making any actual changes"));
+    options.add("i").add("info", ki18nc("@info:shell", "Show information about the specified agent"));
+    options.add("r").add("restart", ki18nc("@info:shell", "Restart the specified agent"));
+    addDryRunOption(options);
 }
 
 int AgentsCommand::initCommand(KCmdLineArgs *parsedArgs)
@@ -72,7 +71,7 @@ int AgentsCommand::initCommand(KCmdLineArgs *parsedArgs)
         mOption = LIST;
     } else {
         if (mArguments.length() == 0) {
-            emitErrorSeeHelp(ki18nc("@info:shell", "Please specify a list of agents"));
+            emitErrorSeeHelp(ki18nc("@info:shell", "No agents specified"));
             return InvalidUsage;
         }
 
@@ -95,7 +94,7 @@ int AgentsCommand::initCommand(KCmdLineArgs *parsedArgs)
                 return InvalidUsage;
             }
         } else {
-            emitErrorSeeHelp(ki18nc("@info:shell", "Please specify an option"));
+            emitErrorSeeHelp(ki18nc("@info:shell", "No option specified"));
             return InvalidUsage;
         }
     }

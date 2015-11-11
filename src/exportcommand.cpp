@@ -43,10 +43,11 @@ void ExportCommand::setupCommandOptions(KCmdLineOptions& options)
 {
     AbstractCommand::setupCommandOptions(options);
 
+    addOptionsOption(options);
     options.add("+collection", ki18nc("@info:shell", "The collection to export"));
     options.add("+file", ki18nc("@info:shell", "The file to export to"));
-    options.add(":", ki18nc("@info:shell", "Options for command"));
-    options.add("n").add("dryrun", ki18nc("@info:shell", "Run command without making any actual changes"));
+    addOptionSeparator(options);
+    addDryRunOption(options);
 }
 
 int ExportCommand::initCommand(KCmdLineArgs* parsedArgs)
@@ -57,7 +58,7 @@ int ExportCommand::initCommand(KCmdLineArgs* parsedArgs)
     }
 
     if (parsedArgs->count() == 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No file specified"));
+        emitErrorSeeHelp(ki18nc("@info:shell", "No export file specified"));
         return InvalidUsage;
     }
 

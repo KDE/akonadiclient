@@ -51,21 +51,23 @@ void ImportCommand::setupCommandOptions(KCmdLineOptions &options)
 {
     AbstractCommand::setupCommandOptions(options);
 
+    addOptionsOption(options);
     options.add("+parent", ki18nc("@info:shell", "The parent collection under which this file should be imported"));
     options.add("+file", ki18nc("@info:shell", "The file to import"));
     options.add(":", ki18nc("@info:shell", "Options for the command"));
-    options.add("n").add("dryrun", ki18nc("@info:shell", "Run command without making any actual changes"));
+    addOptionSeparator(options);
+    addDryRunOption(options);
 }
 
 int ImportCommand::initCommand(KCmdLineArgs *parsedArgs)
 {
     if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "Please specify a parent collection to import to"));
+        emitErrorSeeHelp(ki18nc("@info:shell", "No parent collection specified"));
         return InvalidUsage;
     }
 
     if (parsedArgs->count() == 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "Please specify a file to import"));
+        emitErrorSeeHelp(ki18nc("@info:shell", "No import file specified"));
         return InvalidUsage;
     }
 
