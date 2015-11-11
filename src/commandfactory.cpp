@@ -20,6 +20,7 @@
 
 #include "abstractcommand.h"
 #include "errorreporter.h"
+#include "commandshell.h"
 
 #include <KCmdLineArgs>
 
@@ -157,6 +158,7 @@ void CommandFactory::printHelpAndExit( bool userRequestedHelp )
   qSort(commands);
   Q_FOREACH (const QString &commandName, commands)
   {
+    if (commandName=="shell" && CommandShell::isActive()) continue;
     stream << qPrintable(linePattern.arg(commandName.leftJustified(maxNameLength),
                                          sCommands->value(commandName)->shortHelp.toString()))
            << std::endl;

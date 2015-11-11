@@ -18,7 +18,7 @@
 
 #include "abstractcommand.h"
 #include "commandrunner.h"
-#include "commandshell.h"
+#include "errorreporter.h"
 
 #include <KAboutData>
 #include <KCmdLineArgs>
@@ -28,14 +28,11 @@
 #include <cstdlib>
 #include <iostream>
 
-#include <unistd.h>
-#include <errno.h>
-
 #include "version.h"
+
 
 const char *appname = "akonadiclient";
 
-void restart();
 
 int main( int argc, char **argv )
 {
@@ -76,34 +73,9 @@ int main( int argc, char **argv )
   application.setApplicationVersion( aboutData.version() );
   application.setOrganizationDomain( aboutData.organizationDomain() );
 
-  if (argc > 1) {
-    CommandRunner runner(parsedArgs);
-    int ret = runner.start();
-    if ( ret == AbstractCommand::NoError )
-    {
-        return application.exec();
-    }
-    else
-    {
-        return ret;
-    }
-  } else {
-      std::atexit(restart);
-      CommandShell *shell = new CommandShell;
-      QMetaObject::invokeMethod(shell, "start", Qt::QueuedConnection);
-      return application.exec();
-  }
-}
+  CommandRunner runner(parsedArgs);
+  int ret = runner.start();
+  if (ret!=AbstractCommand::NoError) return (ret);
 
-
-void restart()
-{
-    if (CommandShell::isActive()) {
-        QByteArray path = QCoreApplication::applicationFilePath().toLocal8Bit();
-        char * const args[] = {
-            path.data(),
-            0,
-        };
-        execv(path.data(), args);
-    }
+  return (application.exec());
 }

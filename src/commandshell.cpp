@@ -19,7 +19,6 @@
 
 #include "commandshell.h"
 
-#include "abstractcommand.h"
 #include "commandfactory.h"
 #include "errorreporter.h"
 
@@ -30,25 +29,54 @@
 #include <QTextStream>
 #include <QCoreApplication>
 #include <QVector>
-#include <QDebug>
 #include <QTextCodec>
 #include <QVarLengthArray>
 
+#include <unistd.h>
+
+
+DEFINE_COMMAND("shell", CommandShell, "Enter commands in an interactive shell");
+
+
 bool CommandShell::sIsActive = false;
 
-CommandShell::CommandShell()
-    : mCommand(0)
+
+CommandShell::CommandShell(QObject *parent)
+    : AbstractCommand(parent),
+      mCommand(0)
 {
     mTextStream = new QTextStream(stdin);
     mTextStream->setCodec(QTextCodec::codecForLocale());
-
-    sIsActive = true;
 }
 
 CommandShell::~CommandShell()
 {
     delete mTextStream;
 }
+
+
+void shellRestart()
+{
+    if (CommandShell::isActive())
+    {
+        QByteArray path = QCoreApplication::applicationFilePath().toLocal8Bit();
+        char * const args[] = {
+            path.data(),
+            "shell",
+            0,
+        };
+        execv(path.data(), args);
+    }
+}
+
+
+int CommandShell::initCommand(KCmdLineArgs *parsedArgs)
+{
+    std::atexit(&shellRestart);
+    sIsActive = true;
+    return (AbstractCommand::NoError);
+}
+
 
 void CommandShell::start()
 {
@@ -58,6 +86,7 @@ void CommandShell::start()
         QCoreApplication::quit();
     }
 }
+
 
 bool CommandShell::enterCommandLoop()
 {
