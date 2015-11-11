@@ -53,6 +53,7 @@ private:
 
 private:
     void freeArguments(const QVarLengthArray<char*> &args);
+    bool enterCommandLoop();
 
 private Q_SLOTS:
     void start();

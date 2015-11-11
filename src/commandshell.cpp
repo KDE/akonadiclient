@@ -53,12 +53,17 @@ CommandShell::~CommandShell()
 
 void CommandShell::start()
 {
-    QString input = mTextStream->readLine();
-    if (mTextStream->atEnd()) {
+    if (!enterCommandLoop())
+    {
         sIsActive = false;
         QCoreApplication::quit();
-        return;
     }
+}
+
+bool CommandShell::enterCommandLoop()
+{
+    QString input = mTextStream->readLine();
+    if (mTextStream->atEnd()) return (false);
 
     QStringList list;
     list.insert(0, mAboutData.appName());
@@ -106,44 +111,40 @@ void CommandShell::start()
     char **args = tempArgs.data();
 
     KCmdLineArgs *parsedArgs = getParsedArgs(list.length(), args);
+    if (parsedArgs->arg(0)=="quit" || parsedArgs->arg(0)=="exit") return (false);
+
     CommandFactory factory(parsedArgs);
 
     mCommand = factory.createCommand();
-    if (mCommand == 0) {
-        freeArguments(tempArgs);
-        QMetaObject::invokeMethod(this, "start", Qt::QueuedConnection);
-        return;
+    QObject *toInvoke = this;
+    if (mCommand!=NULL)
+    {
+        connect(mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)));
+        if (mCommand->init(parsedArgs)==AbstractCommand::NoError)
+        {
+            connect(mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)));
+            toInvoke = mCommand;
+        }
     }
 
-    connect(mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)));
-
-    if (mCommand->init(parsedArgs) != AbstractCommand::NoError) {
-        freeArguments(tempArgs);
-        QMetaObject::invokeMethod(this, "start", Qt::QueuedConnection);
-        return;
-    }
-
-    connect(mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)));
-    QMetaObject::invokeMethod(mCommand, "start", Qt::QueuedConnection);
+    QMetaObject::invokeMethod(toInvoke, "start", Qt::QueuedConnection);
     freeArguments(tempArgs);
+    return (true);
 }
 
 KCmdLineArgs* CommandShell::getParsedArgs(int argc, char **argv)
 {
     KCmdLineArgs::reset();
-    KCmdLineArgs::init(argc, argv, &mAboutData);
-    KCmdLineArgs::addStdCmdLineOptions(KCmdLineArgs::CmdLineArgNone);
+    KCmdLineArgs::init(argc, argv, &mAboutData, KCmdLineArgs::CmdLineArgNone);
 
     KCmdLineOptions options;
     options.add("!+command", ki18nc("@info:shell", "Command to execute"));
     options.add("+[options]", ki18nc( "@info:shell", "Options for command"));
     options.add("+[args]", ki18nc( "@info:shell", "Arguments for command"));
     options.add("", ki18nc("@info:shell",
-                           "See '<application>%1</application> help'"
-                           " for available commands"
+                           "See 'help' for available commands"
                            "\n"
-                           "See '<application>%1</application> help command'"
-                           " for more information on a specific command.").subs(mAboutData.appName()));
+                           "See 'help command' for more information on a specific command"));
     KCmdLineArgs::addCmdLineOptions(options);
     return KCmdLineArgs::parsedArgs();
 }
