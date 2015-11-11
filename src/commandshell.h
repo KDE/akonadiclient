@@ -42,13 +42,14 @@ public:
     static void reportFatal(const QString &msg);
 
 public:
-    static bool restart() { return mRestart; }
+    static bool isActive()	{ return (sIsActive); }
 
 private:
     AbstractCommand *mCommand;
     const KAboutData &mAboutData;
     QTextStream *mTextStream;
-    static bool mRestart;
+
+    static bool sIsActive;
 
 private:
     void freeArguments(const QVarLengthArray<char*> &args);

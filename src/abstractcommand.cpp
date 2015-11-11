@@ -24,6 +24,7 @@
 #include <QMetaObject>
 
 #include "errorreporter.h"
+#include "commandshell.h"
 
 
 #define ENV_VAR_DANGEROUS	"AKONADICLIENT_DANGEROUS"
@@ -100,11 +101,24 @@ void AbstractCommand::addDryRunOption(KCmdLineOptions &options)
 
 void AbstractCommand::emitErrorSeeHelp( const KLocalizedString &msg )
 {
-  emit error( ki18nc( "@info:shell %1 is application name, %2 is subcommand name, %3 is error message",
-                      "%3. See '<application>%1</application> help %2'" )
-              .subs( KCmdLineArgs::appName() )
-              .subs( this->name() )
-              .subs( msg.toString() ).toString() );
+  QString s;
+  if (CommandShell::isActive())
+  {
+    s = ki18nc("@info:shell %1 is subcommand name, %2 is error message",
+               "%2. See 'help %1'")
+      .subs( this->name() )
+      .subs( msg.toString() ).toString();
+  }
+  else
+  {
+    s = ki18nc("@info:shell %1 is application name, %2 is subcommand name, %3 is error message",
+               "%3. See '<application>%1</application> help %2'")
+      .subs( KCmdLineArgs::appName() )
+      .subs( this->name() )
+      .subs( msg.toString() ).toString();
+  }
+
+  emit error(s);
 }
 
 bool AbstractCommand::allowDangerousOperation() const

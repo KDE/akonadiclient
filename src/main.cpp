@@ -98,7 +98,7 @@ int main( int argc, char **argv )
 
 void restart()
 {
-    if (CommandShell::restart()) {
+    if (CommandShell::isActive()) {
         QByteArray path = QCoreApplication::applicationFilePath().toLocal8Bit();
         char * const args[] = {
             path.data(),

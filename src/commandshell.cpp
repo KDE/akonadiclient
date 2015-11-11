@@ -33,7 +33,7 @@
 #include <QTextCodec>
 #include <QVarLengthArray>
 
-bool CommandShell::mRestart = true;
+bool CommandShell::sIsActive = false;
 
 CommandShell::CommandShell(const KAboutData &aboutData)
     : mCommand(0),
@@ -43,6 +43,7 @@ CommandShell::CommandShell(const KAboutData &aboutData)
     mTextStream->setCodec(QTextCodec::codecForLocale());
 
     ErrorReporter::setAppName(aboutData.appName());
+    sIsActive = true;
 }
 
 CommandShell::~CommandShell()
@@ -54,7 +55,7 @@ void CommandShell::start()
 {
     QString input = mTextStream->readLine();
     if (mTextStream->atEnd()) {
-        mRestart = false;
+        sIsActive = false;
         QCoreApplication::quit();
         return;
     }
@@ -142,7 +143,7 @@ KCmdLineArgs* CommandShell::getParsedArgs(int argc, char **argv)
                            " for available commands"
                            "\n"
                            "See '<application>%1</application> help command'"
-                           " for more information on a specific command.").subs("akonadiclient"));
+                           " for more information on a specific command.").subs(mAboutData.appName()));
     KCmdLineArgs::addCmdLineOptions(options);
     return KCmdLineArgs::parsedArgs();
 }
