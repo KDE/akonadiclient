@@ -2,6 +2,8 @@ project(akonadiclient)
 
 ###### setup ######
 
+option(AKONADICLIENT_BUILD_TESTS "Whether to build the automatic tests" ${KDE4_BUILD_TESTS})
+
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDEPIMLIBS_INCLUDE_DIRS} ${KDE4_INCLUDES} ${QT_INCLUDE_DIR})
 
 add_definitions(-DVERSION=\\"${VERSION}\\")
@@ -51,4 +53,7 @@ add_dependencies(akonadiclient vcsversion)
 ###### install ######
 
 install(TARGETS akonadiclient ${INSTALL_TARGETS_DEFAULT_ARGS})
-add_subdirectory(tests)
+
+if (AKONADICLIENT_BUILD_TESTS)
+  add_subdirectory(tests)
+endif (AKONADICLIENT_BUILD_TESTS)
