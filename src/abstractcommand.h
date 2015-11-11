@@ -51,9 +51,6 @@ class AbstractCommand : public QObject
     void error( const QString &message );
 
   protected:
-    QString mShortHelp;
-
-  protected:
     virtual void setupCommandOptions( KCmdLineOptions &options );
     virtual int initCommand( KCmdLineArgs *parsedArgs ) = 0;
 

@@ -24,30 +24,20 @@
 #include <iostream>
 
 
-// Non-POD should really be K_GLOBAL_STATIC, but this is not a library
-// so hopefully will not matter.
-static QString appName;
-
-
-void ErrorReporter::setAppName(const QString &name)
-{
-  appName = name;
-}
-
 void ErrorReporter::error(const QString &msg)
 {
-  std::cerr << appName.toLocal8Bit().constData()
-            << " (error): "
-            << msg.toLocal8Bit().constData()
-            << std::endl;
+    std::cerr << qPrintable(QCoreApplication::applicationName())
+              << " (error): "
+              << qPrintable(msg)
+              << std::endl;
 }
 
 void ErrorReporter::warning(const QString &msg)
 {
-  std::cerr << appName.toLocal8Bit().constData()
-            << " (warning): "
-            << msg.toLocal8Bit().constData()
-            << std::endl;
+    std::cerr << qPrintable(QCoreApplication::applicationName())
+              << " (warning): "
+              << qPrintable(msg)
+              << std::endl;
 }
 
 void ErrorReporter::fatal(const QString &msg)
@@ -63,6 +53,6 @@ void ErrorReporter::fatal(const QString &msg)
 void ErrorReporter::progress(const QString &msg)
 {
     std::cout << "** "
-              << msg.toLocal8Bit().constData()
+              << qPrintable(msg)
               << std::endl;
 }

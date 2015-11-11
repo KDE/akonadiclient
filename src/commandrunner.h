@@ -25,7 +25,6 @@
 
 class AbstractCommand;
 
-class KAboutData;
 class KCmdLineArgs;
 
 class CommandRunner : public QObject
@@ -33,14 +32,10 @@ class CommandRunner : public QObject
   Q_OBJECT
 
   public:
-    CommandRunner( const KAboutData &aboutData, KCmdLineArgs *parsedArgs );
+    CommandRunner(KCmdLineArgs *parsedArgs);
     ~CommandRunner();
 
     int start();
-
-    static void reportError(const QString &msg);
-    static void reportWarning(const QString &msg);
-    static void reportFatal(const QString &msg);
 
   private:
     AbstractCommand *mCommand;

@@ -22,7 +22,6 @@
 #include "commandfactory.h"
 #include "errorreporter.h"
 
-#include <KAboutData>
 #include <KCmdLineArgs>
 #include <KDebug>
 
@@ -31,12 +30,11 @@
 #include <iostream>
 
 
-CommandRunner::CommandRunner( const KAboutData &aboutData, KCmdLineArgs *parsedArgs )
+CommandRunner::CommandRunner(KCmdLineArgs *parsedArgs)
   : mCommand( 0 ),
     mParsedArgs( parsedArgs ),
     mFactory( parsedArgs )
 {
-    ErrorReporter::setAppName( aboutData.appName() );
 }
 
 CommandRunner::~CommandRunner()
@@ -46,7 +44,6 @@ CommandRunner::~CommandRunner()
 
 int CommandRunner::start()
 {
-
   mCommand = mFactory.createCommand();
   Q_ASSERT( mCommand != 0 );
 

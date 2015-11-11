@@ -77,7 +77,7 @@ int main( int argc, char **argv )
   application.setOrganizationDomain( aboutData.organizationDomain() );
 
   if (argc > 1) {
-    CommandRunner runner( aboutData, parsedArgs );
+    CommandRunner runner(parsedArgs);
     int ret = runner.start();
     if ( ret == AbstractCommand::NoError )
     {
@@ -89,7 +89,7 @@ int main( int argc, char **argv )
     }
   } else {
       std::atexit(restart);
-      CommandShell *shell = new CommandShell(aboutData);
+      CommandShell *shell = new CommandShell;
       QMetaObject::invokeMethod(shell, "start", Qt::QueuedConnection);
       return application.exec();
   }

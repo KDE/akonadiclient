@@ -23,8 +23,6 @@ class QString;
 
 namespace ErrorReporter
 {
-    void setAppName(const QString &name);
-
     void error(const QString &msg);
     void warning(const QString &msg);
     void fatal(const QString &msg);

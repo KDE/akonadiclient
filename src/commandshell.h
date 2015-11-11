@@ -25,7 +25,6 @@
 
 class KCmdLineArgs;
 class AbstractCommand;
-class KAboutData;
 class QTextStream;
 
 class CommandShell : public QObject
@@ -33,20 +32,16 @@ class CommandShell : public QObject
     Q_OBJECT
 
 public:
-    CommandShell(const KAboutData &aboutData);
+    CommandShell();
     ~CommandShell();
 
     KCmdLineArgs* getParsedArgs(int argc, char **argv);
-    static void reportError(const QString &msg);
-    static void reportWarning(const QString &msg);
-    static void reportFatal(const QString &msg);
 
 public:
     static bool isActive()	{ return (sIsActive); }
 
 private:
     AbstractCommand *mCommand;
-    const KAboutData &mAboutData;
     QTextStream *mTextStream;
 
     static bool sIsActive;

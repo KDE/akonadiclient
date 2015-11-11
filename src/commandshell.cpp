@@ -23,8 +23,9 @@
 #include "commandfactory.h"
 #include "errorreporter.h"
 
-#include <kaboutdata.h>
 #include <kcmdlineargs.h>
+#include <kglobal.h>
+#include <kcomponentdata.h>
 
 #include <QTextStream>
 #include <QCoreApplication>
@@ -35,14 +36,12 @@
 
 bool CommandShell::sIsActive = false;
 
-CommandShell::CommandShell(const KAboutData &aboutData)
-    : mCommand(0),
-      mAboutData(aboutData)
+CommandShell::CommandShell()
+    : mCommand(0)
 {
     mTextStream = new QTextStream(stdin);
     mTextStream->setCodec(QTextCodec::codecForLocale());
 
-    ErrorReporter::setAppName(aboutData.appName());
     sIsActive = true;
 }
 
@@ -66,7 +65,7 @@ bool CommandShell::enterCommandLoop()
     if (mTextStream->atEnd()) return (false);
 
     QStringList list;
-    list.insert(0, mAboutData.appName());
+    list.insert(0, QCoreApplication::applicationName());
 
     QString arg;
     bool quotestarted = false;
@@ -135,7 +134,7 @@ bool CommandShell::enterCommandLoop()
 KCmdLineArgs* CommandShell::getParsedArgs(int argc, char **argv)
 {
     KCmdLineArgs::reset();
-    KCmdLineArgs::init(argc, argv, &mAboutData, KCmdLineArgs::CmdLineArgNone);
+    KCmdLineArgs::init(argc, argv, KGlobal::mainComponent().aboutData(), KCmdLineArgs::CmdLineArgNone);
 
     KCmdLineOptions options;
     options.add("!+command", ki18nc("@info:shell", "Command to execute"));
