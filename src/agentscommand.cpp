@@ -71,7 +71,7 @@ int AgentsCommand::initCommand(KCmdLineArgs *parsedArgs)
         mOption = LIST;
     } else {
         if (mArguments.length() == 0) {
-            emitErrorSeeHelp(ki18nc("@info:shell", "No agents specified"));
+            emitErrorSeeHelp(ki18nc("@info:shell", "No agents or options specified"));
             return InvalidUsage;
         }
 
@@ -224,9 +224,9 @@ void AgentsCommand::showInfo()
 
     for (int i = 0; i < agentList.length(); i++) {
         AgentInstance instance = agentList.at(i);
-        std::cout << ki18nc("@info:shell", "ID: ").toString().constData() << instance.identifier().toLocal8Bit().data() << std::endl;
-        std::cout << ki18nc("@info:shell", "Name: ").toString().constData() << instance.name().toLocal8Bit().data() << std::endl;
-        std::cout << ki18nc("@info:shell", "Status: ").toString().constData() << instance.statusMessage().toLocal8Bit().data() << std::endl;
+        std::cout << ki18nc("@info:shell", "ID:      ").toString().toLocal8Bit().constData() << instance.identifier().toLocal8Bit().data() << std::endl;
+        std::cout << ki18nc("@info:shell", "Name:    ").toString().toLocal8Bit().constData() << instance.name().toLocal8Bit().data() << std::endl;
+        std::cout << ki18nc("@info:shell", "Status:  ").toString().toLocal8Bit().constData() << instance.statusMessage().toLocal8Bit().data() << std::endl;
         if ((i + 1) < mArguments.length()) {
             std::cout << std::endl;
         }
