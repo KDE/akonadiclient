@@ -34,7 +34,13 @@
 #include <QUrl>
 #include <iostream>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("delete", DeleteCommand, "Delete a collection or an item");
+
 
 DeleteCommand::DeleteCommand(QObject *parent)
     : AbstractCommand(parent),
@@ -44,7 +50,6 @@ DeleteCommand::DeleteCommand(QObject *parent)
       mIsCollection(false),
       mIsItem(false)
 {
-    mShortHelp = ki18nc("@info:shell", "Delete a collection or an item").toString();
 }
 
 DeleteCommand::~DeleteCommand()

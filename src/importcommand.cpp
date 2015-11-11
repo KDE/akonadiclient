@@ -31,14 +31,19 @@
 
 #include <qfile.h>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("import", ImportCommand, "Import an XML file");
+
 
 ImportCommand::ImportCommand(QObject *parent)
     : AbstractCommand(parent),
       mResolveJob(0),
       mDocument(0)
 {
-    mShortHelp = ki18nc("@info:shell", "Imports an XML file").toString();
 }
 
 ImportCommand::~ImportCommand()

@@ -30,9 +30,8 @@ class ExportCommand : public AbstractCommand
 public:
     explicit ExportCommand(QObject *parent = 0);
     ~ExportCommand();
-    QString name() const {
-        return QLatin1String("export");
-    }
+
+    QString name() const;
 
 public Q_SLOTS:
     void start();

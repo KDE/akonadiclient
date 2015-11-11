@@ -33,9 +33,7 @@ public:
     explicit EditCommand(QObject *parent = 0);
     ~EditCommand();
 
-    QString name() const {
-        return (QLatin1String("edit"));
-    }
+    QString name() const;
 
 public Q_SLOTS:
     void start();

@@ -41,11 +41,10 @@ class AbstractCommand : public QObject
 
     int init( KCmdLineArgs *parsedArgs );
 
-    QString shortHelp() const;
     virtual QString name() const = 0;
 
   public Q_SLOTS:
-    virtual void start();
+    virtual void start() = 0;
 
   Q_SIGNALS:
     void finished( int exitCode );

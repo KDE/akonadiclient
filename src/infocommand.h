@@ -41,7 +41,7 @@ class InfoCommand : public AbstractCommand
     explicit InfoCommand(QObject *parent = 0);
     ~InfoCommand();
 
-    QString name() const	{ return (QLatin1String("info")); }
+    QString name() const;
 
   public Q_SLOTS:
     void start();

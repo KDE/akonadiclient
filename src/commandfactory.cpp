@@ -18,23 +18,8 @@
 
 #include "commandfactory.h"
 
-#include "addcommand.h"
-#include "agentscommand.h"
-#include "copycommand.h"
-#include "createcommand.h"
-#include "deletecommand.h"
-#include "editcommand.h"
+#include "abstractcommand.h"
 #include "errorreporter.h"
-#include "expandcommand.h"
-#include "exportcommand.h"
-#include "importcommand.h"
-#include "infocommand.h"
-#include "listcommand.h"
-#include "movecommand.h"
-#include "renamecommand.h"
-#include "showcommand.h"
-#include "updatecommand.h"
-#include "tagscommand.h"
 
 #include <KCmdLineArgs>
 
@@ -44,70 +29,55 @@
 #include <iostream>
 
 
+struct CommandData
+{
+  KLocalizedString shortHelp;
+  CommandFactory::creatorFunction creator;
+};
+
+static QHash<QString, CommandData *> *sCommands = NULL;
+
+
 CommandFactory::CommandFactory( KCmdLineArgs *parsedArgs )
   : mParsedArgs( parsedArgs )
 {
   Q_ASSERT( mParsedArgs != 0 );
 
-  registerCommands();
   checkAndHandleHelp();
 }
 
 CommandFactory::~CommandFactory()
 {
-  qDeleteAll( mCommands );
 }
 
 AbstractCommand *CommandFactory::createCommand()
 {
-  const QString commandName = mParsedArgs->arg( 0 );
+  const QString commandName = mParsedArgs->arg(0);
 
-  AbstractCommand *command = mCommands.take( commandName );
-  if ( command == 0 ) {
+  CommandData *data = sCommands->value(commandName);
+  if (data==NULL)
+  {
     KCmdLineArgs::enable_i18n();
-    ErrorReporter::error( i18nc( "@info:shell", "Unknown command '%1'", commandName ) );
-    printHelpAndExit( false );
+    ErrorReporter::error(i18nc("@info:shell", "Unknown command '%1'", commandName));
+    printHelpAndExit(false);
   }
 
-  return command;
+  AbstractCommand *command = (data->creator)(NULL);
+  Q_ASSERT(command!=NULL);
+  return (command);
 }
 
-void CommandFactory::registerCommands()
-{
-  AbstractCommand *command;
 
-  command = new ListCommand;
-  mCommands.insert( command->name(), command );
-  command = new InfoCommand;
-  mCommands.insert( command->name(), command );
-  command = new ShowCommand;
-  mCommands.insert( command->name(), command );
-  command = new CreateCommand;
-  mCommands.insert( command->name(), command );
-  command = new AddCommand;
-  mCommands.insert( command->name(), command );
-  command = new CopyCommand;
-  mCommands.insert( command->name(), command );
-  command = new MoveCommand;
-  mCommands.insert( command->name(), command );
-  command = new ExpandCommand;
-  mCommands.insert( command->name(), command );
-  command = new EditCommand;
-  mCommands.insert( command->name(), command );
-  command = new RenameCommand;
-  mCommands.insert( command->name(), command );
-  command = new UpdateCommand;
-  mCommands.insert( command->name(), command );
-  command = new DeleteCommand;
-  mCommands.insert( command->name(), command );
-  command = new TagsCommand;
-  mCommands.insert( command->name(), command );
-  command = new AgentsCommand;
-  mCommands.insert( command->name(), command );
-  command = new ExportCommand;
-  mCommands.insert( command->name(), command );
-  command = new ImportCommand;
-  mCommands.insert( command->name(), command );
+void CommandFactory::registerCommand(const QString &name,
+                                     const KLocalizedString &shortHelp,
+                                     CommandFactory::creatorFunction creator)
+{
+  CommandData *data = new CommandData;
+  data->shortHelp = shortHelp;
+  data->creator = creator;
+
+  if (sCommands==NULL) sCommands = new QHash<QString, CommandData *>;
+  sCommands->insert(name, data);
 }
 
 
@@ -148,14 +118,17 @@ void CommandFactory::checkAndHandleHelp()
     for (int a = 1; a<mParsedArgs->count(); ++a)	// case 3
     {
       const QString commandName = mParsedArgs->arg(a);
-      if ( !mCommands.contains( commandName ) )
+      if ( !sCommands->contains( commandName ) )
       {
         ErrorReporter::warning( i18nc( "@info:shell", "Unknown command '%1'", commandName ) );
         continue;
       }
 
-      AbstractCommand *command = mCommands.value( commandName );
-      command->init( mParsedArgs );
+      CommandData *data = sCommands->value(commandName);
+      Q_ASSERT(data!=NULL);
+      AbstractCommand *command = (data->creator)(NULL);
+      Q_ASSERT(command!=NULL);
+      command->init(mParsedArgs);
       KCmdLineArgs::usage();
     }
 
@@ -167,8 +140,10 @@ void CommandFactory::checkAndHandleHelp()
 void CommandFactory::printHelpAndExit( bool userRequestedHelp )
 {
   int maxNameLength = 0;
-  Q_FOREACH( const QString &commandName, mCommands.keys() ) {
-    maxNameLength = qMax( maxNameLength, commandName.length() );
+  QStringList commands = sCommands->keys();
+  Q_FOREACH (const QString &commandName, commands)
+  {
+    maxNameLength = qMax(maxNameLength, commandName.length());
   }
 
   // if the user requested help output to stdout,
@@ -177,13 +152,13 @@ void CommandFactory::printHelpAndExit( bool userRequestedHelp )
 
   const QString linePattern = QLatin1String( "  %1  %2" );
 
-  stream << std::endl << i18nc( "@info:shell", "Available commands are:" ).toLocal8Bit().constData() << std::endl;
+  stream << std::endl << qPrintable(i18nc("@info:shell", "Available commands are:")) << std::endl;
 
-  QHash<QString, AbstractCommand *>::const_iterator it    = mCommands.constBegin();
-  QHash<QString, AbstractCommand *>::const_iterator endIt = mCommands.constEnd();
-  for (; it != endIt; ++it ) {
-    stream << linePattern.arg( it.key().leftJustified( maxNameLength, QLatin1Char( ' ' ) ),
-                               it.value()->shortHelp() ).toLocal8Bit().constData()
+  qSort(commands);
+  Q_FOREACH (const QString &commandName, commands)
+  {
+    stream << qPrintable(linePattern.arg(commandName.leftJustified(maxNameLength),
+                                         sCommands->value(commandName)->shortHelp.toString()))
            << std::endl;
   }
 

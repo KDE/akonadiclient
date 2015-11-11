@@ -31,13 +31,19 @@
 
 #include <iostream>
 
+#include "commandfactory.h"
+
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("list", ListCommand, "List sub-collections and/or items in a specified collection");
+
 
 ListCommand::ListCommand( QObject *parent )
   : AbstractCommand( parent ),
     mResolveJob( 0 )
 {
-  mShortHelp = ki18nc( "@info:shell", "List sub-collections and/or items in a specified collection" ).toString();
 }
 
 ListCommand::~ListCommand()

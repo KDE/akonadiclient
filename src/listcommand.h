@@ -33,7 +33,7 @@ class ListCommand : public AbstractCommand
     explicit ListCommand( QObject *parent = 0 );
     ~ListCommand();
 
-    QString name() const	{ return ( QLatin1String( "list" ) ); }
+    QString name() const;
 
   public Q_SLOTS:
     void start();

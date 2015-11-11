@@ -35,7 +35,7 @@ class CopyCommand : public AbstractCommand
     explicit CopyCommand(QObject *parent = 0);
     ~CopyCommand();
 
-    QString name() const	{ return (QLatin1String("copy")); }
+    QString name() const;
 
   public Q_SLOTS:
     virtual void start();

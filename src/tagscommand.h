@@ -32,7 +32,7 @@ class TagsCommand : public AbstractCommand
     explicit TagsCommand(QObject *parent = 0);
     ~TagsCommand();
 
-    QString name() const	{ return (QLatin1String("tags")); }
+    QString name() const;
 
   public Q_SLOTS:
     void start();

@@ -34,7 +34,8 @@ class AgentsCommand : public AbstractCommand
 public:
     explicit AgentsCommand(QObject *parent = 0);
     ~AgentsCommand();
-    QString name() const { return QLatin1String("agents"); }
+
+    QString name() const;
 
 public Q_SLOTS:
     void start();

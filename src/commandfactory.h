@@ -22,10 +22,36 @@
 #include <QHash>
 
 class AbstractCommand;
+class CommandData;
 
 class KCmdLineArgs;
+class KLocalizedString;
 
 class QString;
+
+
+#define DEFINE_COMMAND(commandName, className, shortHelp)			\
+	class className##Factory						\
+	{									\
+	public:									\
+	  className##Factory();							\
+	};									\
+	static className##Factory sFactory;					\
+	static AbstractCommand *className##Creator(QObject *parent)		\
+	{									\
+	  return (new className(parent));					\
+	}									\
+	className##Factory::className##Factory()				\
+	{									\
+	  CommandFactory::registerCommand(QLatin1String(commandName), 		\
+	                                  ki18nc("@info:shell", shortHelp),	\
+	                                  &className##Creator);			\
+	}									\
+	QString className::name() const						\
+	{									\
+		return (QLatin1String(commandName));				\
+	}
+
 
 class CommandFactory
 {
@@ -35,13 +61,14 @@ class CommandFactory
 
     AbstractCommand *createCommand();
 
+    typedef AbstractCommand * (*creatorFunction)(QObject *parent);
+    static void registerCommand(const QString &name,
+                                const KLocalizedString &shortHelp,
+                                CommandFactory::creatorFunction creator);
   private:
     KCmdLineArgs *mParsedArgs;
 
-    QHash<QString, AbstractCommand *> mCommands;
-
   private:
-    void registerCommands();
     void checkAndHandleHelp();
     void printHelpAndExit( bool userRequestedHelp );
 };

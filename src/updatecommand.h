@@ -32,9 +32,8 @@ class UpdateCommand : public AbstractCommand
 public:
     explicit UpdateCommand(QObject *parent = 0);
     ~UpdateCommand();
-    QString name() const {
-        return (QLatin1String("update"));
-    }
+
+    QString name() const;
 
 public Q_SLOTS:
     void start();

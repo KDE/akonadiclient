@@ -24,7 +24,12 @@
 
 #include <akonadi/tagfetchjob.h>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("tags", TagsCommand, "Lists all known tags");
 
 
 TagsCommand::TagsCommand(QObject *parent)
@@ -32,7 +37,6 @@ TagsCommand::TagsCommand(QObject *parent)
     mBriefOutput(false),
     mUrlsOutput(false)
 {
-  mShortHelp = ki18nc("@info:shell", "Lists all known tags").toString();
 }
 
 

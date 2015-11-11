@@ -30,7 +30,7 @@ class MoveCommand : public CopyCommand
     explicit MoveCommand(QObject *parent = 0);
     ~MoveCommand();
 
-    QString name() const	{ return (QLatin1String("move")); }
+    QString name() const;
 
   public Q_SLOTS:
     virtual void start();

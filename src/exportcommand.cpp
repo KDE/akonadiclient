@@ -24,14 +24,19 @@
 #include <klocalizedstring.h>
 #include <kcmdlineargs.h>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("export", ExportCommand, "Export a collection to an XML file");
+
 
 ExportCommand::ExportCommand(QObject *parent)
     : AbstractCommand(parent),
       mDryRun(false),
       mResolveJob(0)
 {
-    mShortHelp = ki18nc("@info:shell", "Export a collection to an XML file").toString();
 }
 
 ExportCommand::~ExportCommand()

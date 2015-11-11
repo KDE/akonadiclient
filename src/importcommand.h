@@ -38,7 +38,8 @@ class ImportCommand : public AbstractCommand
 public:
     explicit ImportCommand(QObject *parent = 0);
     ~ImportCommand();
-    QString name() const { return QLatin1String("import"); }
+
+    QString name() const;
 
 public Q_SLOTS:
     void start();

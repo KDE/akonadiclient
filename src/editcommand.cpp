@@ -30,14 +30,19 @@
 
 #include <iostream>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("edit", EditCommand, "Edit the raw payload for the specified item using $EDITOR");
+
 
 EditCommand::EditCommand(QObject *parent)
     : AbstractCommand(parent),
       mTempFile(0),
       mDryRun(false)
 {
-    mShortHelp = ki18nc("@info:shell", "Edit the raw payload for the specified item using $EDITOR").toString();
 }
 
 EditCommand::~EditCommand()

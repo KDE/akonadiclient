@@ -63,16 +63,6 @@ int AbstractCommand::init( KCmdLineArgs *parsedArgs )
   return result;
 }
 
-QString AbstractCommand::shortHelp() const
-{
-  return mShortHelp;
-}
-
-void AbstractCommand::start()
-{
-  QMetaObject::invokeMethod( this, "finished", Qt::QueuedConnection, Q_ARG( int, NoError ) );
-}
-
 void AbstractCommand::setupCommandOptions(KCmdLineOptions& options)
 {
   options.add(("+"+name()).toLocal8Bit(), ki18nc("@info:shell", "The name of the command"));

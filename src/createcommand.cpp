@@ -30,14 +30,18 @@
 
 #include <iostream>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("create", CreateCommand, "Create a new collection");
 
 
 CreateCommand::CreateCommand(QObject *parent)
   : AbstractCommand(parent),
     mResolveJob(0)
 {
-  mShortHelp = ki18nc("@info:shell", "Create a new collection").toString();
 }
 
 

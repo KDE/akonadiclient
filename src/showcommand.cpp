@@ -26,13 +26,17 @@
 
 #include <iostream>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("show", ShowCommand, "Show the raw payload of an item");
 
 
 ShowCommand::ShowCommand(QObject *parent)
   : AbstractCommand(parent)
 {
-  mShortHelp = ki18nc("@info:shell", "Show the raw payload of an item").toString();
 }
 
 

@@ -29,14 +29,19 @@
 
 #include <iostream>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("update", UpdateCommand, "Update an item's payload with the file specified");
+
 
 UpdateCommand::UpdateCommand(QObject *parent)
     : AbstractCommand(parent),
       mDryRun(false),
       mFile(0)
 {
-    mShortHelp = ki18nc("@info:shell", "Update an item's payload with the file specified").toString();
 }
 
 UpdateCommand::~UpdateCommand()

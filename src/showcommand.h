@@ -34,7 +34,7 @@ class ShowCommand : public AbstractCommand
     explicit ShowCommand(QObject *parent = 0);
     ~ShowCommand();
 
-    QString name() const	{ return (QLatin1String("show")); }
+    QString name() const;
 
   public Q_SLOTS:
     void start();

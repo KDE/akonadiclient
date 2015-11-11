@@ -46,7 +46,7 @@ class AddCommand : public AbstractCommand
     explicit AddCommand( QObject *parent = 0 );
     ~AddCommand();
 
-    QString name() const	{ return ( QLatin1String( "add" ) ); }
+    QString name() const;
 
   public Q_SLOTS:
     void start();

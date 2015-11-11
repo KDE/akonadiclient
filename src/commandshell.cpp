@@ -151,6 +151,8 @@ KCmdLineArgs* CommandShell::getParsedArgs(int argc, char **argv)
 
 void CommandShell::onCommandFinished(int exitCode)
 {
+    if (mCommand!=NULL) mCommand->deleteLater();
+    mCommand = NULL;
     QMetaObject::invokeMethod(this, "start", Qt::QueuedConnection);
 }
 

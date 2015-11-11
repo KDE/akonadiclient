@@ -33,9 +33,7 @@ public:
     explicit RenameCommand(QObject *parent = 0);
     ~RenameCommand();
 
-    QString name() const {
-        return QLatin1String("rename");
-    }
+    QString name() const;
 
 public Q_SLOTS:
     void start();

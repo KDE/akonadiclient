@@ -32,7 +32,12 @@
 
 #include <iostream>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("expand", ExpandCommand, "Expand a contact group item");
 
 
 ExpandCommand::ExpandCommand(QObject *parent)
@@ -41,7 +46,6 @@ ExpandCommand::ExpandCommand(QObject *parent)
     mExpandItem(0),
     mBriefMode(false)
 {
-  mShortHelp = ki18nc("@info:shell", "Expand a contact group item").toString();
 }
 
 

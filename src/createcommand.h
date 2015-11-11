@@ -34,7 +34,7 @@ class CreateCommand : public AbstractCommand
     explicit CreateCommand(QObject *parent = 0);
     ~CreateCommand();
 
-    QString name() const	{ return (QLatin1String("create")); }
+    QString name() const;
 
   public Q_SLOTS:
     void start();

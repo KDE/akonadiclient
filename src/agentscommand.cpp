@@ -29,7 +29,13 @@
 #include <iostream>
 #include <iomanip>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("agents", AgentsCommand, "Manage Akonadi agents");
+
 
 AgentsCommand::AgentsCommand(QObject *parent)
     : AbstractCommand(parent),
@@ -37,7 +43,6 @@ AgentsCommand::AgentsCommand(QObject *parent)
       mStateArg(ONLINE),
       mOption(LIST)
 {
-    mShortHelp = ki18nc("@info:shell", "Manage Akonadi agents").toString();
 }
 
 AgentsCommand::~AgentsCommand()
@@ -52,7 +57,7 @@ void AgentsCommand::setupCommandOptions(KCmdLineOptions &options)
     options.add("+[agents]...", ki18nc("@info:shell", "Agents to operate on"));
     addOptionSeparator(options);
     options.add("l").add("list", ki18nc("@info:shell", "List all agents"));
-    options.add("s").add("setstate <state>", ki18nc("@info:shell", "Set state for specified agents. Valid states are \"online\" and \"offline\"."));
+    options.add("s").add("setstate <state>", ki18nc("@info:shell", "Set state \"online\" or \"offline\" for specified agents"));
     options.add("g").add("getstate", ki18nc("@info:shell", "Get state for the specified agent"));
     options.add("i").add("info", ki18nc("@info:shell", "Show information about the specified agent"));
     options.add("r").add("restart", ki18nc("@info:shell", "Restart the specified agent"));

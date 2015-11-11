@@ -36,7 +36,12 @@
 
 #include <iostream>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("info", InfoCommand, "Show full information for a collection or item");
 
 
 InfoCommand::InfoCommand(QObject *parent)
@@ -46,7 +51,6 @@ InfoCommand::InfoCommand(QObject *parent)
     mInfoItem(0),
     mInfoStatistics(0)
 {
-  mShortHelp = ki18nc("@info:shell", "Show full information for a collection or item").toString();
 }
 
 InfoCommand::~InfoCommand()

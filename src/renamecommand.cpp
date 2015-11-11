@@ -26,14 +26,19 @@
 
 #include <iostream>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("rename", RenameCommand, "Rename a collection");
+
 
 RenameCommand::RenameCommand(QObject *parent)
     : AbstractCommand(parent),
       mDryRun(false),
       mResolveJob(0)
 {
-    mShortHelp = ki18nc("@info:shell", "Rename a collection").toString();
 }
 
 RenameCommand::~RenameCommand()

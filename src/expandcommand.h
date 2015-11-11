@@ -39,7 +39,7 @@ class ExpandCommand : public AbstractCommand
     explicit ExpandCommand(QObject *parent = 0);
     ~ExpandCommand();
 
-    QString name() const	{ return (QLatin1String("expand")); }
+    QString name() const;
 
   public Q_SLOTS:
     void start();

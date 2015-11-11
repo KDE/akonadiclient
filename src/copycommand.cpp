@@ -35,14 +35,18 @@
 
 #include <iostream>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("copy", CopyCommand, "Copy collections or items into a new collection");
 
 
 CopyCommand::CopyCommand(QObject *parent)
   : AbstractCommand(parent),
     mResolveJob(0)
 {
-  mShortHelp = ki18nc("@info:shell", "Copy collections or items into a new collection").toString();
   mMoving = false;
 }
 

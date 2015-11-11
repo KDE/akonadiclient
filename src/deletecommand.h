@@ -39,9 +39,8 @@ class DeleteCommand :  public AbstractCommand
 public:
     explicit DeleteCommand(QObject *parent = 0);
     ~DeleteCommand();
-    QString name() const  {
-        return (QLatin1String("delete"));
-    };
+
+    QString name() const;
 
 public Q_SLOTS:
     void start();

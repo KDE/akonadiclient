@@ -36,13 +36,18 @@
 
 #include <iostream>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("add", AddCommand, "Add items to a collection");
+
 
 AddCommand::AddCommand( QObject *parent )
   : AbstractCommand( parent ),
     mResolveJob( 0 )
 {
-  mShortHelp = ki18nc( "@info:shell", "Add items to a specified collection" ).toString();
 }
 
 AddCommand::~AddCommand()

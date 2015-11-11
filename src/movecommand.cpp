@@ -22,13 +22,17 @@
 
 #include <KCmdLineOptions>
 
+#include "commandfactory.h"
+
 using namespace Akonadi;
+
+
+DEFINE_COMMAND("move", MoveCommand, "Move collections or items into a new collection");
 
 
 MoveCommand::MoveCommand(QObject *parent)
   : CopyCommand(parent)
 {
-  mShortHelp = ki18nc("@info:shell", "Move collections or items into a new collection").toString();
   mMoving = true;
 }
 
