@@ -136,22 +136,24 @@ bool CommandShell::enterCommandLoop()
         tempArgs.append(temp);
     }
 
-    char **args = tempArgs.data();
-
-    KCmdLineArgs *parsedArgs = getParsedArgs(list.length(), args);
-    if (parsedArgs->arg(0)=="quit" || parsedArgs->arg(0)=="exit") return (false);
-
-    CommandFactory factory(parsedArgs);
-
-    mCommand = factory.createCommand();
     QObject *toInvoke = this;
-    if (mCommand!=NULL)
+
+    char **args = tempArgs.data();
+    KCmdLineArgs *parsedArgs = getParsedArgs(list.length(), args);
+    if (parsedArgs->count()>0)
     {
-        connect(mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)));
-        if (mCommand->init(parsedArgs)==AbstractCommand::NoError)
+        if (parsedArgs->arg(0)=="quit" || parsedArgs->arg(0)=="exit") return (false);
+
+        CommandFactory factory(parsedArgs);
+        mCommand = factory.createCommand();
+        if (mCommand!=NULL)
         {
-            connect(mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)));
-            toInvoke = mCommand;
+            connect(mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)));
+            if (mCommand->init(parsedArgs)==AbstractCommand::NoError)
+            {
+                connect(mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)));
+                toInvoke = mCommand;
+            }
         }
     }
 

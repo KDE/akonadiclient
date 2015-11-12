@@ -29,7 +29,7 @@
 using namespace Akonadi;
 
 
-DEFINE_COMMAND("tags", TagsCommand, "Lists all known tags");
+DEFINE_COMMAND("tags", TagsCommand, "List all known tags");
 
 
 TagsCommand::TagsCommand(QObject *parent)
