@@ -229,24 +229,19 @@ void ExpandCommand::onItemsFetched(KJob *job)
     {
       std::cout << std::endl;
       emit error(itemJob->errorString());
-      emit finished(RuntimeError);
-      return;
     }
-    else
-    {
+
       Item::List fetchedItems = itemJob->items();
       if (fetchedItems.isEmpty())
       {
         emit error(i18nc("@info:shell", "No items could be fetched"));
-        emit finished(RuntimeError);
-        return;
       }
-      else
-      {
+
         for (Item::List::const_iterator it = fetchedItems.constBegin();
              it != fetchedItems.constEnd(); ++it)
         {
           const Item item = (*it);
+          fetchIds.removeAll(item.id());		// note that we've fetched this
 
           if (!mBriefMode)
           {
@@ -256,7 +251,7 @@ void ExpandCommand::onItemsFetched(KJob *job)
 
           if (!item.hasPayload<KABC::Addressee>())
           {
-            std::cout << i18nc("@info:shell", "Item has no Addressee payload").toLocal8Bit().constData();
+            std::cout << qPrintable(i18nc("@info:shell", "(item has no Addressee payload)"));
           }
           else
           {
@@ -288,8 +283,17 @@ void ExpandCommand::onItemsFetched(KJob *job)
           }
           std::cout << std::endl;
         }
-      }
-    }
+
+        if (!mBriefMode)
+        {
+          foreach (const Item::Id id, fetchIds)		// error for any that remain
+          {
+            writeColumn("  E", 5);
+            writeColumn(id, 8);
+            std::cout << qPrintable(i18nc("@item:shell", "(unknown referenced item)"));
+            std::cout << std::endl;
+          }
+        }
   }
 
   c = group.dataCount();
@@ -314,5 +318,5 @@ void ExpandCommand::onItemsFetched(KJob *job)
     std::cout << std::endl;
   }
 
-  emit finished(NoError);
+  emit finished(!fetchIds.isEmpty() ? RuntimeError : NoError);
 }
