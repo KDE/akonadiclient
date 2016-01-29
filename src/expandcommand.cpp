@@ -130,7 +130,7 @@ void ExpandCommand::fetchItems()
 
 static void writeColumn(const QString &data, int width = 0)
 {
-  std::cout << data.leftJustified(width).toLocal8Bit().constData() << "  ";
+  std::cout << qPrintable(data.leftJustified(width)) << "  ";
 }
 
 static void writeColumn(quint64 data, int width = 0)
@@ -177,13 +177,13 @@ void ExpandCommand::onItemsFetched(KJob *job)
 
   if (!mBriefMode)
   {
-    std::cout << i18nc( "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count 5=name",
-                        "Item %1 \"%5\" has %2 groups, %3 references and %4 data items:",
-                        QString::number(mExpandItem->id()),
-                        group.contactGroupReferenceCount(),
-                        group.contactReferenceCount(),
-                        group.dataCount(),
-                        group.name()).toLocal8Bit().constData()
+    std::cout << qPrintable(i18nc("@info:shell section header 1=item 2=groupref count 3=ref count 4=data count 5=name",
+                                  "Item %1 \"%5\" has %2 groups, %3 references and %4 data items:",
+                                  QString::number(mExpandItem->id()),
+                                  group.contactGroupReferenceCount(),
+                                  group.contactReferenceCount(),
+                                  group.dataCount(),
+                                  group.name()))
               << std::endl;
 
     std::cout << " ";
@@ -273,7 +273,7 @@ void ExpandCommand::onItemsFetched(KJob *job)
 
         if (mBriefMode)
         {
-          std::cout << email.toLocal8Bit().constData();
+          std::cout << qPrintable(email);
         }
         else
         {
@@ -308,7 +308,7 @@ void ExpandCommand::onItemsFetched(KJob *job)
     const KABC::ContactGroup::Data data = group.data(i);
     if (mBriefMode)
     {
-      std::cout << data.email().toLocal8Bit().constData();
+      std::cout << qPrintable(data.email());
     }
     else
     {
