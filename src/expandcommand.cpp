@@ -231,69 +231,69 @@ void ExpandCommand::onItemsFetched(KJob *job)
       emit error(itemJob->errorString());
     }
 
-      Item::List fetchedItems = itemJob->items();
-      if (fetchedItems.isEmpty())
+    Item::List fetchedItems = itemJob->items();
+    if (fetchedItems.isEmpty())
+    {
+      emit error(i18nc("@info:shell", "No items could be fetched"));
+    }
+
+    for (Item::List::const_iterator it = fetchedItems.constBegin();
+         it != fetchedItems.constEnd(); ++it)
+    {
+      const Item item = (*it);
+      fetchIds.removeAll(item.id());			// note that we've fetched this
+
+      if (!mBriefMode)
       {
-        emit error(i18nc("@info:shell", "No items could be fetched"));
+        writeColumn("  R", 5);
+        writeColumn(item.id(), 8);
       }
 
-        for (Item::List::const_iterator it = fetchedItems.constBegin();
-             it != fetchedItems.constEnd(); ++it)
+      if (!item.hasPayload<KABC::Addressee>())
+      {
+        std::cout << qPrintable(i18nc("@info:shell", "(item has no Addressee payload)"));
+      }
+      else
+      {
+        KABC::Addressee addr = item.payload<KABC::Addressee>();
+        QString email = addr.preferredEmail();
+
+        // Retrieve the original preferred email from the contact group reference.
+        // If there is one, display that;  if not, the contact's preferred email.
+        for (int i = 0; i<c; ++i)
         {
-          const Item item = (*it);
-          fetchIds.removeAll(item.id());		// note that we've fetched this
-
-          if (!mBriefMode)
+          Item::Id id = group.contactReference(i).uid().toInt();
+          if (id==item.id())
           {
-            writeColumn("  R", 5);
-            writeColumn(item.id(), 8);
+            const QString prefEmail = group.contactReference(i).preferredEmail();
+            if (!prefEmail.isEmpty()) email = prefEmail;
+            break;
           }
-
-          if (!item.hasPayload<KABC::Addressee>())
-          {
-            std::cout << qPrintable(i18nc("@info:shell", "(item has no Addressee payload)"));
-          }
-          else
-          {
-            KABC::Addressee addr = item.payload<KABC::Addressee>();
-            QString email = addr.preferredEmail();
-
-            // Retrieve the original preferred email from the contact group reference.
-            // If there is one, display that;  if not, the contact's preferred email.
-            for (int i = 0; i<c; ++i)
-            {
-              Item::Id id = group.contactReference(i).uid().toInt();
-              if (id==item.id())
-              {
-                const QString prefEmail = group.contactReference(i).preferredEmail();
-                if (!prefEmail.isEmpty()) email = prefEmail;
-                break;
-              }
-            }
-
-            if (mBriefMode)
-            {
-              std::cout << email.toLocal8Bit().constData();
-            }
-            else
-            {
-              writeColumn(email, 30);
-              writeColumn(addr.formattedName());
-            }
-          }
-          std::cout << std::endl;
         }
 
-        if (!mBriefMode)
+        if (mBriefMode)
         {
-          foreach (const Item::Id id, fetchIds)		// error for any that remain
-          {
-            writeColumn("  E", 5);
-            writeColumn(id, 8);
-            std::cout << qPrintable(i18nc("@item:shell", "(unknown referenced item)"));
-            std::cout << std::endl;
-          }
+          std::cout << email.toLocal8Bit().constData();
         }
+        else
+        {
+          writeColumn(email, 30);
+          writeColumn(addr.formattedName());
+        }
+      }
+      std::cout << std::endl;
+    }
+
+    if (!mBriefMode)
+    {
+      foreach (const Item::Id id, fetchIds)		// error for any that remain
+      {
+        writeColumn("  E", 5);
+        writeColumn(id, 8);
+        std::cout << qPrintable(i18nc("@item:shell", "(unknown referenced item)"));
+        std::cout << std::endl;
+      }
+    }
   }
 
   c = group.dataCount();
