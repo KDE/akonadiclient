@@ -25,7 +25,10 @@
 #include <KLocale>
 #include <KUrl>
 
+#include "errorreporter.h"
+
 using namespace Akonadi;
+
 
 CollectionResolveJob::CollectionResolveJob( const QString &userInput, QObject* parent )
   : KCompositeJob( parent ),
@@ -47,28 +50,7 @@ CollectionResolveJob::CollectionResolveJob( const QString &userInput, QObject* p
     mHadSlash = true;
   }
 
-  // First see if user input is a valid integer as a collection ID
-  bool ok;
-  int id = in.toInt( &ok );
-  if ( ok ) {						// conversion succeeded
-    if ( id == 0 ) mCollection = Collection::root();	// the root collection
-    else mCollection = Collection( id );		// the specified collection
-  }
-  else {
-    // Then quickly check for a path of "/", meaning the root
-    if ( in == QLatin1String( "/" ) )
-    {
-      mCollection = Collection::root();
-    }
-    else {
-      // Next check if we have an Akonadi URL
-      const KUrl url = QUrl::fromUserInput( in );
-      if ( url.isValid() && url.scheme() == QLatin1String( "akonadi" ) ) {
-        mCollection = Collection::fromUrl( url );
-      }
-    }
-  }
-  // If neither of these, assume that we have a path
+  mCollection = parseCollection(in);
 }
 
 CollectionResolveJob::~CollectionResolveJob()
@@ -149,4 +131,65 @@ QString CollectionResolveJob::formattedCollectionName() const
                     "%1 (\"%2\")",
                     QString::number( mCollection.id() ), mCollection.name() ) );
   }
+}
+
+
+Akonadi::Item CollectionResolveJob::parseItem(const QString &userInput, bool verbose)
+{
+  Item item;
+
+  // See if user input is a valid integer as an item ID
+  bool ok;
+  unsigned int id = userInput.toUInt(&ok);
+  if (ok) item = Item(id);				// conversion succeeded
+  else
+  {
+    // Otherwise check if we have an Akonadi URL
+    const KUrl url = QUrl::fromUserInput(userInput);
+    if (url.isValid() && url.scheme()==QLatin1String("akonadi"))
+    {							// valid Akonadi URL
+      item = Item::fromUrl(url);
+    }
+  }
+  // Otherwise return an invalid Item
+
+  if (!item.isValid() && verbose)			// report error if required
+  {
+    ErrorReporter::error(i18nc("@info:shell", "Invalid item syntax '%1'", userInput));
+  }
+
+  return (item);
+}
+
+
+Akonadi::Collection CollectionResolveJob::parseCollection(const QString &userInput)
+{
+  Collection coll;
+
+  // First see if user input is a valid integer as a collection ID
+  bool ok;
+  unsigned int id = userInput.toUInt(&ok);
+  if (ok)						// conversion succeeded
+  {
+    if (id==0) coll = Collection::root();		// the root collection
+    else coll = Collection(id);				// the specified collection
+  }
+  else
+  {
+    // Then quickly check for a path of "/", meaning the root
+    if (userInput==QLatin1String("/")) coll = Collection::root();
+    else
+    {
+      // Next check if we have an Akonadi URL
+      const KUrl url = QUrl::fromUserInput(userInput);
+      if (url.isValid() && url.scheme()==QLatin1String("akonadi"))
+      {							// valid Akonadi URL
+        coll = Collection::fromUrl(url);
+      }
+    }
+  }
+  // If none of these applied, assume that we have a path
+  // and return an invalid Collection.
+
+  return (coll);
 }

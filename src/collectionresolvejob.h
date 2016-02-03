@@ -21,6 +21,7 @@
 #define COLLECTIONRESOLVEJOB_H
 
 #include <Akonadi/Collection>
+#include <Akonadi/Item>
 #include <KCompositeJob>
 
 class CollectionResolveJob : public KCompositeJob
@@ -38,6 +39,9 @@ class CollectionResolveJob : public KCompositeJob
     Akonadi::Collection collection() const	{ return (mCollection); }
     QString formattedCollectionName() const;
 
+    static Akonadi::Item parseItem(const QString &userInput, bool showError = false);
+    static Akonadi::Collection parseCollection(const QString &userInput);
+
   protected Q_SLOTS:
     void slotResult( KJob *job );
 
@@ -50,4 +54,4 @@ class CollectionResolveJob : public KCompositeJob
     void fetchBase();
 };
 
-#endif // COLLECTIONRESOLVEJOB_H
+#endif							// COLLECTIONRESOLVEJOB_H

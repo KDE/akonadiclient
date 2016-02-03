@@ -18,6 +18,8 @@
 
 #include "showcommand.h"
 
+#include "collectionresolvejob.h"
+
 #include <akonadi/itemfetchjob.h>
 #include <akonadi/itemfetchscope.h>
 
@@ -86,24 +88,12 @@ void ShowCommand::processNextItem()
   }
   QString arg = mItemArgs.takeFirst();
 
-  Item item;
-  bool ok;
-  int id = arg.toInt(&ok);				// try integer as item ID
-  if (ok) item = Item(id);				// conversion succeeded
-  else
-  {							// failed, try as an Akonadi URL
-    const KUrl url = QUrl::fromUserInput(arg);
-    if (url.isValid() && url.scheme()==QLatin1String("akonadi"))
-    {
-      item = Item::fromUrl(url);
-    }
-    else						// neither number nor URL
-    {
-      emit error(i18nc("@info:shell", "Invalid item syntax '%1'", arg));
-      mExitStatus = RuntimeError;
-      QMetaObject::invokeMethod(this, "processNextItem", Qt::QueuedConnection);
-      return;
-    }
+  Item item = CollectionResolveJob::parseItem(arg, true);
+  if (!item.isValid())
+  {
+    mExitStatus = RuntimeError;
+    QMetaObject::invokeMethod(this, "processNextItem", Qt::QueuedConnection);
+    return;
   }
 
   ItemFetchJob *job = new ItemFetchJob(item, this);

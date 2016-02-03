@@ -89,6 +89,9 @@ int InfoCommand::initCommand(KCmdLineArgs *parsedArgs)
 
   mEntityArg = parsedArgs->arg(1);
   mResolveJob = new CollectionResolveJob(mEntityArg, this);
+  // TODO: does this work for ITEMs specified as an Akonadi URL?
+  //       "akonadiclient info 10175" works,
+  //       but "akonadiclient info 'akonadi://?item=10175'" doesn't
 
   if (!mResolveJob->hasUsableInput())
   {
@@ -180,25 +183,12 @@ void InfoCommand::onStatisticsFetched(KJob *job)
 
 void InfoCommand::fetchItems()
 {
-  Item item;
-  // See if user input is a valid integer as an item ID
-  bool ok;
-  int id = mEntityArg.toInt(&ok);
-  if (ok) item = Item(id);				// conversion succeeded
-  else
+  Item item = CollectionResolveJob::parseItem(mEntityArg);
+  if (!item.isValid())
   {
-    // Otherwise check if we have an Akonadi URL
-    const KUrl url = QUrl::fromUserInput(mEntityArg);
-    if (url.isValid() && url.scheme()==QLatin1String("akonadi"))
-    {
-      item = Item::fromUrl(url);
-    }
-    else
-    {
-      emit error(i18nc("@info:shell", "Invalid item/collection syntax"));
-      emit finished(RuntimeError);
-      return;
-    }
+    emit error(i18nc("@info:shell", "Invalid item/collection syntax"));
+    emit finished(RuntimeError);
+    return;
   }
 
   ItemFetchJob *job = new ItemFetchJob(item, this);

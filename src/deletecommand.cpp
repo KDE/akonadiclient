@@ -87,6 +87,7 @@ int DeleteCommand::initCommand(KCmdLineArgs *parsedArgs)
 
     mEntityArg = parsedArgs->arg(1);
     mResolveJob = new CollectionResolveJob(mEntityArg, this);
+    // TODO: does this work for deleting ITEMs?
     if (!mResolveJob->hasUsableInput()) {
         emit error(mResolveJob->errorString());
         delete mResolveJob;
@@ -156,22 +157,12 @@ void DeleteCommand::onCollectionDeleted(KJob *job)
 
 void DeleteCommand::fetchItems()
 {
-    Item item;
-    // See if user input is a valid integer as an item ID
-    bool ok;
-    int id = mEntityArg.toInt(&ok);
-    if (ok) {
-        item = Item(id);        // conversion succeeded
-    } else {
-        // Otherwise check if we have an Akonadi URL
-        const KUrl url = QUrl::fromUserInput(mEntityArg);
-        if (url.isValid() && url.scheme() == QLatin1String("akonadi")) {
-            item = Item::fromUrl(url);
-        } else {
-            emit error(i18nc("@info:shell", "Invalid item/collection syntax"));
-            emit finished(RuntimeError);
-            return;
-        }
+    Item item = CollectionResolveJob::parseItem(mEntityArg);
+    if (!item.isValid())
+    {
+        emit error(i18nc("@info:shell", "Invalid item/collection syntax '%1'", mEntityArg));
+        emit finished(RuntimeError);
+        return;
     }
 
     if (!mDryRun) {

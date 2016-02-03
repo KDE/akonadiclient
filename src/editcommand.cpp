@@ -31,6 +31,7 @@
 #include <iostream>
 
 #include "commandfactory.h"
+#include "collectionresolvejob.h"
 
 using namespace Akonadi;
 
@@ -74,20 +75,8 @@ int EditCommand::initCommand(KCmdLineArgs *parsedArgs)
 
 void EditCommand::start()
 {
-    Item item;
-    bool ok;
-    int id = mItemArg.toInt(&ok);
-    if (ok) {
-        item = Item(id);
-    } else {
-        const KUrl url = QUrl::fromUserInput(mItemArg);
-        if (url.isValid()  && url.scheme() == QLatin1String("akonadi")) {
-            item = Item::fromUrl(url);
-        } else {
-            emit error(i18nc("@info:shell", "Invalid item syntax '%1'", mItemArg));
-            return;
-        }
-    }
+    Item item = CollectionResolveJob::parseItem(mItemArg, true);
+    if (!item.isValid()) emit finished(InvalidUsage);
 
     ItemFetchJob *job = new ItemFetchJob(item, this);
     job->fetchScope().setFetchModificationTime(false);

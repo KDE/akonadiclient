@@ -166,28 +166,14 @@ void CopyCommand::onSourceResolved(KJob *job)
   {
     Item item;
     if (job->error()==Akonadi::Job::Unknown)		// failed to resolve as collection
-    {
-      // See if user input is a valid integer as an item ID
-      bool ok;
-      int id = sourceArg.toInt(&ok);
-      if (ok) item = Item(id);				// conversion succeeded
-      else
-      {
-        // Otherwise check if we have an Akonadi URL
-        const KUrl url = QUrl::fromUserInput(sourceArg);
-        if (url.isValid() && url.scheme()==QLatin1String("akonadi"))
-        {
-          item = Item::fromUrl(url);
-        }
-      }
+    {							// try as item instead
+      item = CollectionResolveJob::parseItem(sourceArg);
     }
 
-    if (!item.isValid())				// couldn't parse an item
+    if (!item.isValid())				// couldn't parse as item either
     {
-      ErrorReporter::error(ki18nc("@info:shell",
-                                  "Cannot resolve source '%1', %2")
-                           .subs(sourceArg)
-                           .subs(job->errorString()).toString());
+      ErrorReporter::error(i18nc("@info:shell", "Cannot resolve source '%1', %2",
+                           sourceArg, job->errorString()));
       mAnyErrors = true;				// note for exit status
       doNextSource();
       return;

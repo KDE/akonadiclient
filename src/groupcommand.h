@@ -26,7 +26,6 @@
 #include <akonadi/item.h>
 #include <kabc/contactgroup.h>
 
-class CollectionResolveJob;
 class KJob;
 
 class GroupCommand : public AbstractCommand
@@ -55,7 +54,6 @@ class GroupCommand : public AbstractCommand
         ModeClean
     };
 
-    CollectionResolveJob *mResolveJob;
     Akonadi::Item *mGroupItem;
 
     QString mGroupArg;

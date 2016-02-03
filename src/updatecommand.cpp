@@ -19,6 +19,8 @@
 
 #include "updatecommand.h"
 
+#include "collectionresolvejob.h"
+
 #include <akonadi/itemfetchjob.h>
 #include <akonadi/itemfetchscope.h>
 #include <akonadi/itemmodifyjob.h>
@@ -80,20 +82,11 @@ void UpdateCommand::start()
 {
     if (!allowDangerousOperation()) emit finished(RuntimeError);
 
-    Item item;
-    bool ok;
-    int id = mItemArg.toInt(&ok);
-    if (ok) {
-        item = Item(id);
-    } else {
-        const KUrl url = QUrl::fromUserInput(mItemArg);
-        if (url.isValid() && url.scheme() == QLatin1String("akonadi")) {
-            item = Item::fromUrl(url);
-        } else {
-            emit error(i18nc("@info:shell", "Invalid item syntax '%1'", mItemArg));
-            emit finished(RuntimeError);
-            return;
-        }
+    Item item = CollectionResolveJob::parseItem(mItemArg, true);
+    if (!item.isValid())
+    {
+        emit finished(RuntimeError);
+        return;
     }
 
     if (!QFile::exists(mFileArg)) {
@@ -102,6 +95,7 @@ void UpdateCommand::start()
         return;
     }
 
+    // TODO: report strerror(errno), then above is superfluous
     mFile = new QFile(mFileArg);
     if (!mFile->open(QIODevice::ReadOnly)) {
         emit error(i18nc("@info:shell", "File <filename>%1</filename> cannot be read", mFileArg));

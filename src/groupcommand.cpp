@@ -47,7 +47,6 @@ DEFINE_COMMAND("group", GroupCommand, "Expand or modify a contact group");
 
 GroupCommand::GroupCommand(QObject *parent)
   : AbstractCommand(parent),
-    mResolveJob(NULL),
     mGroupItem(NULL),
     mBriefMode(false),
     mDryRun(false),
@@ -172,14 +171,8 @@ int GroupCommand::initCommand(KCmdLineArgs *parsedArgs)
     mItemArgs.append(parsedArgs->arg(i));
   }
 
-  mResolveJob = new CollectionResolveJob(mGroupArg, this);
-  if (!mResolveJob->hasUsableInput())
-  {
-    emit error(mResolveJob->errorString());
-    delete mResolveJob;
-    mResolveJob = 0;
-    return (InvalidUsage);
-  }
+  Akonadi::Item item = CollectionResolveJob::parseItem(mGroupArg, true);
+  if (!item.isValid()) return (InvalidUsage);
 
   return (NoError);
 }
@@ -195,33 +188,14 @@ void GroupCommand::start()
     }
   }
 
-  Q_ASSERT(mResolveJob!=NULL);
   fetchItems();
 }
 
 
 void GroupCommand::fetchItems()
 {
-  Item item;
-  // See if user input is a valid integer as an item ID
-  bool ok;
-  int id = mGroupArg.toInt(&ok);
-  if (ok) item = Item(id);				// conversion succeeded
-  else
-  {
-    // Otherwise check if we have an Akonadi URL
-    const KUrl url = QUrl::fromUserInput(mGroupArg);
-    if (url.isValid() && url.scheme()==QLatin1String("akonadi"))
-    {
-      item = Item::fromUrl(url);
-    }
-    else
-    {
-      emit error(i18nc("@info:shell", "Invalid item syntax '%1'", mGroupArg));
-      emit finished(RuntimeError);
-      return;
-    }
-  }
+  Item item = CollectionResolveJob::parseItem(mGroupArg);
+  Q_ASSERT(item.isValid());
 
   ItemFetchJob *job = new ItemFetchJob(item, this);
   job->fetchScope().fetchFullPayload(true);
@@ -627,27 +601,12 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KABC::ContactGroup &group)
     }
     else
     {
-      // Not an email address, see if an Akonadi URL or numeric ID
-      // TODO: done in lots of places, make this into a utility function
-      Item item;
-      // See if user input is a valid integer as an item ID
-      bool ok;
-      int id = arg.toInt(&ok);
-      if (ok) item = Item(id);				// conversion succeeded
-      else
+      // Not an email address, see if an Akonadi URL or numeric item ID
+      Item item = CollectionResolveJob::parseItem(arg, true);
+      if (!item.isValid())
       {
-        // Otherwise check if we have an Akonadi URL
-        const KUrl url = QUrl::fromUserInput(arg);
-        if (url.isValid() && url.scheme()==QLatin1String("akonadi"))
-        {
-          item = Item::fromUrl(url);
-        }
-        else
-        {
-          ErrorReporter::error(i18nc("@info:shell", "Invalid item syntax '%1'", arg));
-          hadError = true;
-          continue;
-        }
+        hadError = true;
+        continue;
       }
 
       Akonadi::ItemFetchJob *job = new Akonadi::ItemFetchJob(item);
@@ -676,7 +635,7 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KABC::ContactGroup &group)
 
       removeReferenceById(group, ref.uid());		// remove any existing
       group.append(ref);				// then add new reference
-      displayContactReference(item);			// report what was added
+      displayContactReference(fetchedItem);		// report what was added
     }
   }
 
@@ -754,27 +713,12 @@ AbstractCommand::Errors GroupCommand::deleteGroupItems(KABC::ContactGroup &group
     }
     else
     {
-      // Not an email address, see if an Akonadi URL or numeric ID
-      // TODO: done in lots of places, make this into a utility function
-      Item item;
-      // See if user input is a valid integer as an item ID
-      bool ok;
-      int id = arg.toInt(&ok);
-      if (ok) item = Item(id);				// conversion succeeded
-      else
+      // Not an email address, see if an Akonadi URL or numeric item ID
+      Item item = CollectionResolveJob::parseItem(arg, true);
+      if (!item.isValid())
       {
-        // Otherwise check if we have an Akonadi URL
-        const KUrl url = QUrl::fromUserInput(arg);
-        if (url.isValid() && url.scheme()==QLatin1String("akonadi"))
-        {
-          item = Item::fromUrl(url);
-        }
-        else
-        {
-          ErrorReporter::error(i18nc("@info:shell", "Invalid item syntax '%1'", arg));
-          hadError = true;
-          continue;
-        }
+        hadError = true;
+        continue;
       }
 
       // Remove any references to that Akonadi ID
