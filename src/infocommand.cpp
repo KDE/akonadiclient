@@ -193,6 +193,7 @@ void InfoCommand::fetchItems()
 
   ItemFetchJob *job = new ItemFetchJob(item, this);
   job->fetchScope().setFetchModificationTime(true);
+  job->fetchScope().setFetchTags(true);
   job->fetchScope().fetchAllAttributes(true);
 
   // Need this so that parentCollection() will be valid.
@@ -319,6 +320,15 @@ void InfoCommand::onParentPathFetched(KJob *job)
     }
     if (flagDisp.isEmpty()) flagDisp << i18nc("@info:shell", "(none)");
     writeInfo(i18nc("@info:shell", "Flags"), flagDisp.join(" "));
+
+    Tag::List tags = mInfoItem->tags();
+    QStringList tagDisp;
+    foreach (const Akonadi::Tag &tag, tags)
+    {
+      tagDisp << tag.url().url();
+    }
+    if (tagDisp.isEmpty()) tagDisp << i18nc("@info:shell", "(none)");
+    writeInfo(i18nc("@info:shell", "Tags"), tagDisp.join(" "));
 
     writeInfo(i18nc("@info:shell", "Size"), KGlobal::locale()->formatByteSize(mInfoItem->size()));
   }
