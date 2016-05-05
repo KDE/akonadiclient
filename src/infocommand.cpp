@@ -241,9 +241,9 @@ void InfoCommand::fetchParentPath(const Akonadi::Collection &collection)
 
 static void writeInfo(const QString &tag, const QString &data)
 {
-  std::cout << (tag+":").leftJustified(10).toLocal8Bit().constData();
+  std::cout << qPrintable((tag+":").leftJustified(10));
   std::cout << "  ";
-  std::cout << data.toLocal8Bit().constData();
+  std::cout << qPrintable(data);
   std::cout << std::endl;
 }
 
