@@ -42,7 +42,7 @@ DEFINE_COMMAND("update", UpdateCommand, "Update an item's payload with the file 
 UpdateCommand::UpdateCommand(QObject *parent)
     : AbstractCommand(parent),
       mDryRun(false),
-      mFile(0)
+      mFile(nullptr)
 {
 }
 
@@ -118,7 +118,7 @@ void UpdateCommand::onItemFetched(KJob *job)
     }
 
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
-    Q_ASSERT(fetchJob != 0);
+    Q_ASSERT(fetchJob != nullptr);
 
     Item::List items = fetchJob->items();
     if (items.count() < 1) {

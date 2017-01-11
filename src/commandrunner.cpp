@@ -30,7 +30,7 @@
 
 
 CommandRunner::CommandRunner(KCmdLineArgs *parsedArgs)
-  : mCommand( 0 ),
+  : mCommand( nullptr ),
     mParsedArgs( parsedArgs ),
     mFactory( parsedArgs )
 {
@@ -44,13 +44,13 @@ CommandRunner::~CommandRunner()
 int CommandRunner::start()
 {
   mCommand = mFactory.createCommand();
-  Q_ASSERT( mCommand != 0 );
+  Q_ASSERT( mCommand != nullptr );
 
   connect( mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)) );
 
   if ( mCommand->init( mParsedArgs ) == AbstractCommand::InvalidUsage ) {
     delete mCommand;
-    mCommand = 0;
+    mCommand = nullptr;
     return AbstractCommand::InvalidUsage;
   }
 

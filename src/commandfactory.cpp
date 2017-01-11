@@ -36,13 +36,13 @@ struct CommandData
   CommandFactory::creatorFunction creator;
 };
 
-static QHash<QString, CommandData *> *sCommands = NULL;
+static QHash<QString, CommandData *> *sCommands = nullptr;
 
 
 CommandFactory::CommandFactory( KCmdLineArgs *parsedArgs )
   : mParsedArgs( parsedArgs )
 {
-  Q_ASSERT( mParsedArgs != 0 );
+  Q_ASSERT( mParsedArgs != nullptr );
 
   checkAndHandleHelp();
 }
@@ -56,15 +56,15 @@ AbstractCommand *CommandFactory::createCommand()
   const QString commandName = mParsedArgs->arg(0);
 
   CommandData *data = sCommands->value(commandName);
-  if (data==NULL)
+  if (data==nullptr)
   {
     KCmdLineArgs::enable_i18n();
     ErrorReporter::error(i18nc("@info:shell", "Unknown command '%1'", commandName));
     printHelpAndExit(false);
   }
 
-  AbstractCommand *command = (data->creator)(NULL);
-  Q_ASSERT(command!=NULL);
+  AbstractCommand *command = (data->creator)(nullptr);
+  Q_ASSERT(command!=nullptr);
   return (command);
 }
 
@@ -77,7 +77,7 @@ void CommandFactory::registerCommand(const QString &name,
   data->shortHelp = shortHelp;
   data->creator = creator;
 
-  if (sCommands==NULL) sCommands = new QHash<QString, CommandData *>;
+  if (sCommands==nullptr) sCommands = new QHash<QString, CommandData *>;
   sCommands->insert(name, data);
 }
 
@@ -126,9 +126,9 @@ void CommandFactory::checkAndHandleHelp()
       }
 
       CommandData *data = sCommands->value(commandName);
-      Q_ASSERT(data!=NULL);
-      AbstractCommand *command = (data->creator)(NULL);
-      Q_ASSERT(command!=NULL);
+      Q_ASSERT(data!=nullptr);
+      AbstractCommand *command = (data->creator)(nullptr);
+      Q_ASSERT(command!=nullptr);
       command->init(mParsedArgs);
       KCmdLineArgs::usage();
     }

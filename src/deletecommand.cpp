@@ -44,8 +44,8 @@ DEFINE_COMMAND("delete", DeleteCommand, "Delete a collection or an item");
 
 DeleteCommand::DeleteCommand(QObject *parent)
     : AbstractCommand(parent),
-      mDeleteJob(0),
-      mResolveJob(0),
+      mDeleteJob(nullptr),
+      mResolveJob(nullptr),
       mDryRun(false),
       mIsCollection(false),
       mIsItem(false)
@@ -91,7 +91,7 @@ int DeleteCommand::initCommand(KCmdLineArgs *parsedArgs)
     if (!mResolveJob->hasUsableInput()) {
         emit error(mResolveJob->errorString());
         delete mResolveJob;
-        mResolveJob = 0;
+        mResolveJob = nullptr;
         return InvalidUsage;
     }
 
@@ -102,7 +102,7 @@ void DeleteCommand::start()
 {
     if (!allowDangerousOperation()) emit finished(RuntimeError);
 
-    Q_ASSERT(mResolveJob != 0);
+    Q_ASSERT(mResolveJob != nullptr);
 
     if (mIsItem) {
         fetchItems();
@@ -183,7 +183,7 @@ void DeleteCommand::onItemsFetched(KJob *job)
     }
 
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
-    Q_ASSERT(fetchJob!=0);
+    Q_ASSERT(fetchJob!=nullptr);
     Item::List items = fetchJob->items();
     if (items.count() < 0) {
         emit error(i18nc("@info:shell", "Cannot find '%1' as a collection or item", mEntityArg));

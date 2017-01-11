@@ -47,7 +47,7 @@ DEFINE_COMMAND("group", GroupCommand, "Expand or modify a contact group");
 
 GroupCommand::GroupCommand(QObject *parent)
   : AbstractCommand(parent),
-    mGroupItem(NULL),
+    mGroupItem(nullptr),
     mBriefMode(false),
     mDryRun(false),
     mOperationMode(ModeExpand)
@@ -213,7 +213,7 @@ void GroupCommand::onItemsFetched(KJob *job)
   }
 
   ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
-  Q_ASSERT(fetchJob!=0);
+  Q_ASSERT(fetchJob!=nullptr);
   Item::List items = fetchJob->items();
   if (items.count()<1)
   {

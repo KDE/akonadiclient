@@ -43,7 +43,7 @@ bool CommandShell::sIsActive = false;
 
 CommandShell::CommandShell(QObject *parent)
     : AbstractCommand(parent),
-      mCommand(0)
+      mCommand(nullptr)
 {
     mTextStream = new QTextStream(stdin);
     mTextStream->setCodec(QTextCodec::codecForLocale());
@@ -63,7 +63,7 @@ void shellRestart()
         char * const args[] = {
             path.data(),
             "shell",
-            0,
+            nullptr,
         };
         execv(path.data(), args);
     }
@@ -146,7 +146,7 @@ bool CommandShell::enterCommandLoop()
 
         CommandFactory factory(parsedArgs);
         mCommand = factory.createCommand();
-        if (mCommand!=NULL)
+        if (mCommand!=nullptr)
         {
             connect(mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)));
             if (mCommand->init(parsedArgs)==AbstractCommand::NoError)
@@ -181,8 +181,8 @@ KCmdLineArgs* CommandShell::getParsedArgs(int argc, char **argv)
 
 void CommandShell::onCommandFinished(int exitCode)
 {
-    if (mCommand!=NULL) mCommand->deleteLater();
-    mCommand = NULL;
+    if (mCommand!=nullptr) mCommand->deleteLater();
+    mCommand = nullptr;
     QMetaObject::invokeMethod(this, "start", Qt::QueuedConnection);
 }
 

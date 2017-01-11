@@ -41,7 +41,7 @@ DEFINE_COMMAND("edit", EditCommand, "Edit the raw payload for the specified item
 
 EditCommand::EditCommand(QObject *parent)
     : AbstractCommand(parent),
-      mTempFile(0),
+      mTempFile(nullptr),
       mDryRun(false)
 {
 }
@@ -94,7 +94,7 @@ void EditCommand::onItemFetched(KJob *job)
     }
 
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
-    Q_ASSERT(fetchJob != 0);
+    Q_ASSERT(fetchJob != nullptr);
 
     Item::List items = fetchJob->items();
 

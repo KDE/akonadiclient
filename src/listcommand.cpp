@@ -42,7 +42,7 @@ DEFINE_COMMAND("list", ListCommand, "List sub-collections and/or items in a spec
 
 ListCommand::ListCommand( QObject *parent )
   : AbstractCommand( parent ),
-    mResolveJob( 0 )
+    mResolveJob( nullptr )
 {
 }
 
@@ -82,7 +82,7 @@ int ListCommand::initCommand( KCmdLineArgs *parsedArgs )
   if ( !mResolveJob->hasUsableInput() ) {
     emit error( mResolveJob->errorString() );
     delete mResolveJob;
-    mResolveJob = 0;
+    mResolveJob = nullptr;
 
     return InvalidUsage;
   }
@@ -92,7 +92,7 @@ int ListCommand::initCommand( KCmdLineArgs *parsedArgs )
 
 void ListCommand::start()
 {
-  Q_ASSERT( mResolveJob != 0 );
+  Q_ASSERT( mResolveJob != nullptr );
 
   connect( mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onBaseFetched(KJob*)) );
   mResolveJob->start();
@@ -128,7 +128,7 @@ void ListCommand::onBaseFetched( KJob *job )
 
 void ListCommand::fetchCollections()
 {
-  Q_ASSERT( mResolveJob != 0  && mResolveJob->collection().isValid() );
+  Q_ASSERT( mResolveJob != nullptr  && mResolveJob->collection().isValid() );
 
   CollectionFetchJob *job = new CollectionFetchJob( mResolveJob->collection(), CollectionFetchJob::FirstLevel, this );
   connect( job, SIGNAL(result(KJob*)), this, SLOT(onCollectionsFetched(KJob*)) );
@@ -143,7 +143,7 @@ void ListCommand::onCollectionsFetched( KJob *job )
   }
 
   CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob*>( job );
-  Q_ASSERT( fetchJob != 0 );
+  Q_ASSERT( fetchJob != nullptr );
 
   Collection::List collections = fetchJob->collections();
   if ( collections.isEmpty() ) {
@@ -192,7 +192,7 @@ void ListCommand::onCollectionsFetched( KJob *job )
 
 void ListCommand::fetchItems()
 {
-  Q_ASSERT( mResolveJob != 0  && mResolveJob->collection().isValid() );
+  Q_ASSERT( mResolveJob != nullptr  && mResolveJob->collection().isValid() );
 
   // only attempt item listing if collection has non-collection content MIME types
   QStringList contentMimeTypes = mResolveJob->collection().contentMimeTypes();
@@ -220,7 +220,7 @@ void ListCommand::onItemsFetched( KJob *job )
   }
 
   ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob*>( job );
-  Q_ASSERT( fetchJob != 0 );
+  Q_ASSERT( fetchJob != nullptr );
   Item::List items = fetchJob->items();
 
   if ( items.isEmpty() ) {

@@ -58,7 +58,7 @@ void CollectionPathJob::slotResult(KJob *job)
   if (job->error()==0)
   {
     CollectionPathResolver *resolver = qobject_cast<CollectionPathResolver *>(job);
-    Q_ASSERT(resolver!=0);
+    Q_ASSERT(resolver!=nullptr);
     mPath = resolver->path();
   }
 

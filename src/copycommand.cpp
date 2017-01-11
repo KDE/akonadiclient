@@ -45,7 +45,7 @@ DEFINE_COMMAND("copy", CopyCommand, "Copy collections or items into a new collec
 
 CopyCommand::CopyCommand(QObject *parent)
   : AbstractCommand(parent),
-    mResolveJob(0)
+    mResolveJob(nullptr)
 {
   mMoving = false;
 }
@@ -58,7 +58,7 @@ CopyCommand::~CopyCommand()
 
 void CopyCommand::start()
 {
-  Q_ASSERT(mResolveJob!=0);
+  Q_ASSERT(mResolveJob!=nullptr);
 
   mAnyErrors = false;					// not yet, anyway
 
@@ -104,7 +104,7 @@ int CopyCommand::initCommand(KCmdLineArgs *parsedArgs)
                .subs(mDestinationArg)
                .subs(mResolveJob->errorString()).toString());
     delete mResolveJob;
-    mResolveJob = 0;
+    mResolveJob = nullptr;
     return (InvalidUsage);
   }
 
@@ -158,7 +158,7 @@ void CopyCommand::processNextSource()
 
 void CopyCommand::onSourceResolved(KJob *job)
 {
-  Q_ASSERT(mResolveJob!=0);
+  Q_ASSERT(mResolveJob!=nullptr);
   Q_ASSERT(mDestinationCollection.isValid());
 
   const QString sourceArg = job->property("arg").toString();
@@ -187,7 +187,7 @@ void CopyCommand::onSourceResolved(KJob *job)
   }
 
   CollectionResolveJob *sourceJob = qobject_cast<CollectionResolveJob *>(job);
-  Q_ASSERT(sourceJob!=0);
+  Q_ASSERT(sourceJob!=nullptr);
   Akonadi::Collection sourceCollection = sourceJob->collection();
 
   if (sourceJob->hadSlash())
@@ -292,7 +292,7 @@ void CopyCommand::onCollectionsFetched(KJob *job)
   }
 
   CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
-  Q_ASSERT(fetchJob!=0);
+  Q_ASSERT(fetchJob!=nullptr);
 
   mSubCollections = fetchJob->collections();
   if (mSubCollections.isEmpty())			// no sub-collections, no problem
@@ -403,7 +403,7 @@ void CopyCommand::onItemsFetched(KJob *job)
   }
 
   ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
-  Q_ASSERT(fetchJob!=0);
+  Q_ASSERT(fetchJob!=nullptr);
 
   Akonadi::Item::List items = fetchJob->items();
   if (items.isEmpty())					// no items, no problem

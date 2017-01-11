@@ -47,7 +47,7 @@ DEFINE_COMMAND("add", AddCommand, "Add items to a collection");
 
 AddCommand::AddCommand( QObject *parent )
   : AbstractCommand( parent ),
-    mResolveJob( 0 )
+    mResolveJob( nullptr )
 {
 }
 
@@ -57,7 +57,7 @@ AddCommand::~AddCommand()
 
 void AddCommand::start()
 {
-  Q_ASSERT( mResolveJob != 0 );
+  Q_ASSERT( mResolveJob != nullptr );
 
   connect( mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onTargetFetched(KJob*)) );
   mResolveJob->start();
@@ -98,7 +98,7 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
                 .subs( collectionArg )
                 .subs( mResolveJob->errorString() ).toString() );
     delete mResolveJob;
-    mResolveJob = 0;
+    mResolveJob = nullptr;
 
     return InvalidUsage;
   }
@@ -368,7 +368,7 @@ void AddCommand::onCollectionCreated( KJob *job )
     mDirectories.remove( path );
   } else {
     CollectionCreateJob *createJob = qobject_cast<CollectionCreateJob*>( job );
-    Q_ASSERT( createJob != 0 );
+    Q_ASSERT( createJob != nullptr );
 
     QFileInfo fileInfo( path );
     mBasePaths[ path ] = fileInfo.absoluteFilePath();
@@ -387,7 +387,7 @@ void AddCommand::onCollectionFetched( KJob *job )
   Akonadi::Collection newCollection = job->property( "collection" ).value<Collection>();
 
   CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob*>( job );
-  Q_ASSERT( fetchJob != 0 );
+  Q_ASSERT( fetchJob != nullptr );
 
   bool found = false;
   Collection::List collections = fetchJob->collections();
@@ -453,7 +453,7 @@ void AddCommand::onItemCreated( KJob *job )
   } else {
 
     ItemCreateJob *createJob = qobject_cast<ItemCreateJob *>( job );
-    Q_ASSERT( createJob != 0 );
+    Q_ASSERT( createJob != nullptr );
 
     ErrorReporter::progress( i18n( "Added file '%2' as item %1",
                                    QString::number( createJob->item().id() ),

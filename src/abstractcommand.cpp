@@ -52,7 +52,7 @@ int AbstractCommand::init( KCmdLineArgs *parsedArgs )
   KCmdLineArgs::addStdCmdLineOptions( KCmdLineArgs::CmdLineArgNone );
 
   KCmdLineArgs *parseCommandArgs = KCmdLineArgs::parsedArgs();
-  Q_ASSERT( parseCommandArgs != 0 );
+  Q_ASSERT( parseCommandArgs != nullptr );
 
   const int result = initCommand( parseCommandArgs );
 

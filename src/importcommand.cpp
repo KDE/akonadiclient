@@ -42,8 +42,8 @@ DEFINE_COMMAND("import", ImportCommand, "Import an XML file");
 
 ImportCommand::ImportCommand(QObject *parent)
     : AbstractCommand(parent),
-      mResolveJob(0),
-      mDocument(0)
+      mResolveJob(nullptr),
+      mDocument(nullptr)
 {
 }
 

@@ -98,7 +98,7 @@ void TagsCommand::onTagsFetched(KJob *job)
   }
 
   TagFetchJob *fetchJob = qobject_cast<TagFetchJob *>(job);
-  Q_ASSERT(fetchJob!=NULL);
+  Q_ASSERT(fetchJob!=nullptr);
 
   Tag::List tags = fetchJob->tags();
   if (tags.count()<1) {

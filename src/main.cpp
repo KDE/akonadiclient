@@ -46,7 +46,7 @@ int main( int argc, char **argv )
                         ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
                         K4AboutData::License_GPL );
 #else
-    K4AboutData aboutData( appname, 0, ki18nc( "@title program name", "Akonadi Client" ), "0.1",
+    K4AboutData aboutData( appname, nullptr, ki18nc( "@title program name", "Akonadi Client" ), "0.1",
                            ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
                            K4AboutData::License_GPL );
 

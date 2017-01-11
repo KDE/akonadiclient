@@ -40,7 +40,7 @@ DEFINE_COMMAND("create", CreateCommand, "Create a new collection");
 
 CreateCommand::CreateCommand(QObject *parent)
   : AbstractCommand(parent),
-    mResolveJob(0)
+    mResolveJob(nullptr)
 {
 }
 
@@ -52,7 +52,7 @@ CreateCommand::~CreateCommand()
 
 void CreateCommand::start()
 {
-  Q_ASSERT(mResolveJob!=0);
+  Q_ASSERT(mResolveJob!=nullptr);
 
   connect(mResolveJob, SIGNAL(result(KJob *)), this, SLOT(onTargetFetched(KJob *)));
   mResolveJob->start();
@@ -133,7 +133,7 @@ int CreateCommand::initCommand(KCmdLineArgs *parsedArgs)
                .subs(mParentCollection)
                .subs(mResolveJob->errorString()).toString());
     delete mResolveJob;
-    mResolveJob = 0;
+    mResolveJob = nullptr;
     return InvalidUsage;
   }
 
@@ -188,7 +188,7 @@ void CreateCommand::onCollectionCreated(KJob *job)
 {
   if (job->error()!=0)
   {
-    Q_ASSERT(mResolveJob!=0);
+    Q_ASSERT(mResolveJob!=nullptr);
     ErrorReporter::error(i18n("Error creating collection \"%1\" under \"%2\" , %3",
                               mNewCollectionName,
                               mResolveJob->formattedCollectionName(),
@@ -198,7 +198,7 @@ void CreateCommand::onCollectionCreated(KJob *job)
   }
 
   CollectionCreateJob *createJob = qobject_cast<CollectionCreateJob *>(job);
-  Q_ASSERT(createJob!=0);
+  Q_ASSERT(createJob!=nullptr);
 
   CollectionPathJob *pathJob = new CollectionPathJob(createJob->collection());
   connect(pathJob, SIGNAL(result(KJob *)), SLOT(onPathFetched(KJob *)));
@@ -210,14 +210,14 @@ void CreateCommand::onPathFetched(KJob *job)
 {
   if (job->error()!=0)
   {
-    Q_ASSERT(mResolveJob!=0);
+    Q_ASSERT(mResolveJob!=nullptr);
     ErrorReporter::error(i18n("Error getting path of new collection, %1", job->errorString()));
     emit finished(RuntimeError);
     return;
   }
 
   CollectionPathJob *pathJob = qobject_cast<CollectionPathJob *>(job);
-  Q_ASSERT(pathJob!=0);
+  Q_ASSERT(pathJob!=nullptr);
 
   std::cout << i18n("Created new collection %1",
                     pathJob->formattedCollectionPath()).toLocal8Bit().constData()

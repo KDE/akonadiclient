@@ -37,7 +37,7 @@ DEFINE_COMMAND("rename", RenameCommand, "Rename a collection");
 RenameCommand::RenameCommand(QObject *parent)
     : AbstractCommand(parent),
       mDryRun(false),
-      mResolveJob(0)
+      mResolveJob(nullptr)
 {
 }
 
@@ -79,7 +79,7 @@ int RenameCommand::initCommand(KCmdLineArgs *parsedArgs)
                     .subs(oldCollectionNameArg)
                     .subs(mResolveJob->errorString()).toString());
         delete mResolveJob;
-        mResolveJob = 0;
+        mResolveJob = nullptr;
 
         return InvalidUsage;
     }
@@ -89,7 +89,7 @@ int RenameCommand::initCommand(KCmdLineArgs *parsedArgs)
 
 void RenameCommand::start()
 {
-    Q_ASSERT(mResolveJob != 0);
+    Q_ASSERT(mResolveJob != nullptr);
     connect(mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onCollectionFetched(KJob*)));
     mResolveJob->start();
 }

@@ -35,7 +35,7 @@ DEFINE_COMMAND("export", ExportCommand, "Export a collection to an XML file");
 ExportCommand::ExportCommand(QObject *parent)
     : AbstractCommand(parent),
       mDryRun(false),
-      mResolveJob(0)
+      mResolveJob(nullptr)
 {
 }
 

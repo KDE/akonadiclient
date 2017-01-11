@@ -115,7 +115,7 @@ void ShowCommand::onItemFetched(KJob *job)
   else
   {
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
-    Q_ASSERT(fetchJob!=0);
+    Q_ASSERT(fetchJob!=nullptr);
     Item::List items = fetchJob->items();
     if (items.count()<1)
     {

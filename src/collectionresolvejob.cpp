@@ -99,7 +99,7 @@ void CollectionResolveJob::slotResult( KJob *job )
 {
   if ( job->error() == 0 ) {
     CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob*>( job );
-    if ( fetchJob != 0 ) {
+    if ( fetchJob != nullptr ) {
       mCollection = fetchJob->collections().first();
     } else {
       CollectionPathResolver *resolver = qobject_cast<CollectionPathResolver*>( job );

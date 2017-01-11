@@ -23,7 +23,7 @@
 #include <QObject>
 
 class AbstractCommand;
-class CommandData;
+struct CommandData;
 
 class KCmdLineArgs;
 class KLocalizedString;

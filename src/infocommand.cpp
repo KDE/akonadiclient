@@ -46,10 +46,10 @@ DEFINE_COMMAND("info", InfoCommand, "Show full information for a collection or i
 
 InfoCommand::InfoCommand(QObject *parent)
   : AbstractCommand(parent),
-    mResolveJob(0),
-    mInfoCollection(0),
-    mInfoItem(0),
-    mInfoStatistics(0)
+    mResolveJob(nullptr),
+    mInfoCollection(nullptr),
+    mInfoItem(nullptr),
+    mInfoStatistics(nullptr)
 {
 }
 
@@ -97,7 +97,7 @@ int InfoCommand::initCommand(KCmdLineArgs *parsedArgs)
   {
     emit error(mResolveJob->errorString());
     delete mResolveJob;
-    mResolveJob = 0;
+    mResolveJob = nullptr;
     return InvalidUsage;
   }
 
@@ -107,7 +107,7 @@ int InfoCommand::initCommand(KCmdLineArgs *parsedArgs)
 
 void InfoCommand::start()
 {
-  Q_ASSERT(mResolveJob!=0);
+  Q_ASSERT(mResolveJob!=nullptr);
 
   if (mIsItem)						// user forced as an item
   {
@@ -157,7 +157,7 @@ void InfoCommand::onBaseFetched(KJob *job)
 
 void InfoCommand::fetchStatistics()
 {
-  Q_ASSERT(mResolveJob!=0 && mResolveJob->collection().isValid());
+  Q_ASSERT(mResolveJob!=nullptr && mResolveJob->collection().isValid());
 
   CollectionStatisticsJob *job = new CollectionStatisticsJob(mResolveJob->collection(), this);
   connect(job, SIGNAL(result(KJob *)), SLOT(onStatisticsFetched(KJob *)));
@@ -173,7 +173,7 @@ void InfoCommand::onStatisticsFetched(KJob *job)
   }
 
   CollectionStatisticsJob *statsJob = qobject_cast<CollectionStatisticsJob *>(job);
-  Q_ASSERT(statsJob!=0);
+  Q_ASSERT(statsJob!=nullptr);
   mInfoStatistics = new CollectionStatistics(statsJob->statistics());
 
   mInfoCollection = new Collection(mResolveJob->collection());
@@ -215,7 +215,7 @@ void InfoCommand::onItemsFetched(KJob *job)
   }
 
   ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
-  Q_ASSERT(fetchJob!=0);
+  Q_ASSERT(fetchJob!=nullptr);
   Item::List items = fetchJob->items();
   if (items.count()<1)
   {
@@ -231,7 +231,7 @@ void InfoCommand::onItemsFetched(KJob *job)
 
 void InfoCommand::fetchParentPath(const Akonadi::Collection &collection)
 {
-  Q_ASSERT(mInfoCollection!=0 || mInfoItem!=0);
+  Q_ASSERT(mInfoCollection!=nullptr || mInfoItem!=nullptr);
 
   CollectionPathJob *job = new CollectionPathJob(collection);
   connect(job, SIGNAL(result(KJob *)), SLOT(onParentPathFetched(KJob *)));
@@ -265,10 +265,10 @@ void InfoCommand::onParentPathFetched(KJob *job)
   // Finally we have fetched all of the information to display.
 
   CollectionPathJob *pathJob = qobject_cast<CollectionPathJob *>(job);
-  Q_ASSERT(pathJob!=0);
+  Q_ASSERT(pathJob!=nullptr);
   const QString parentString = pathJob->formattedCollectionPath();
 
-  if (mInfoCollection!=0)				// for a collection
+  if (mInfoCollection!=nullptr)				// for a collection
   {
     Q_ASSERT(mInfoCollection->isValid());
 
@@ -294,12 +294,12 @@ void InfoCommand::onParentPathFetched(KJob *job)
     if (rights & Collection::CanUnlinkItem) rightsList << i18nc("@info:shell", "UnlinkItem");
     writeInfo(i18nc("@info:shell", "Rights"), rightsList.join(" "));
 
-    Q_ASSERT(mInfoStatistics!=0);
+    Q_ASSERT(mInfoStatistics!=nullptr);
     writeInfo(i18nc("@info:shell", "Count"), KGlobal::locale()->formatNumber(mInfoStatistics->count(), 0));
     writeInfo(i18nc("@info:shell", "Unread"), KGlobal::locale()->formatNumber(mInfoStatistics->unreadCount(), 0));
     writeInfo(i18nc("@info:shell", "Size"), KGlobal::locale()->formatByteSize(mInfoStatistics->size()));
   }
-  else if (mInfoItem!=0)				// for an item
+  else if (mInfoItem!=nullptr)				// for an item
   {
     writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoItem->id()));
     writeInfo(i18nc("@info:shell", "URL"), mInfoItem->url().path());
