@@ -184,7 +184,7 @@ void GroupCommand::fetchItems()
 
     ItemFetchJob *job = new ItemFetchJob(item, this);
     job->fetchScope().fetchFullPayload(true);
-    connect(job, SIGNAL(result(KJob*)), SLOT(onItemsFetched(KJob*)));
+    connect(job, &KJob::result, this, &GroupCommand::onItemsFetched);
 }
 
 void GroupCommand::onItemsFetched(KJob *job)

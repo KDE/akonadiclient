@@ -91,7 +91,7 @@ void ShowCommand::processNextItem()
     job->fetchScope().fetchAllAttributes(false);
     job->fetchScope().fetchFullPayload(true);
     job->setProperty("arg", arg);
-    connect(job, SIGNAL(result(KJob*)), SLOT(onItemFetched(KJob*)));
+    connect(job, &KJob::result, this, &ShowCommand::onItemFetched);
 }
 
 void ShowCommand::onItemFetched(KJob *job)

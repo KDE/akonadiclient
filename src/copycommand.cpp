@@ -58,7 +58,7 @@ void CopyCommand::start()
 
     mAnyErrors = false;                   // not yet, anyway
 
-    connect(mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onTargetFetched(KJob*)));
+    connect(mResolveJob, &KJob::result, this, &CopyCommand::onTargetFetched);
     mResolveJob->start();
 }
 
@@ -138,7 +138,7 @@ void CopyCommand::processNextSource()
 
     CollectionResolveJob *sourceJob = new CollectionResolveJob(sourceArg, this);
     sourceJob->setProperty("arg", sourceArg);
-    connect(sourceJob, SIGNAL(result(KJob*)), SLOT(onSourceResolved(KJob*)));
+    connect(sourceJob, &KJob::result, this, &CopyCommand::onSourceResolved);
     sourceJob->start();
 }
 
@@ -196,7 +196,7 @@ void CopyCommand::onSourceResolved(KJob *job)
         CollectionFetchJob *fetchJob = new CollectionFetchJob(mSourceCollection,
                 CollectionFetchJob::FirstLevel, this);
         fetchJob->setProperty("arg", sourceArg);
-        connect(fetchJob, SIGNAL(result(KJob*)), SLOT(onCollectionsFetched(KJob*)));
+        connect(fetchJob, &KJob::result, this, &CopyCommand::onCollectionsFetched);
     } else {
         // The source is a collection that does not end with a '/'.
         // This means that the entire source collection is to be copied
@@ -223,7 +223,7 @@ void CopyCommand::onSourceResolved(KJob *job)
 
         if (!mDryRun) {
             job->setProperty("arg", sourceArg);
-            connect(job, SIGNAL(result(KJob*)), SLOT(onRecursiveCopyFinished(KJob*)));
+            connect(job, &KJob::result, this, &CopyCommand::onRecursiveCopyFinished);
         } else {
             doNextSource();
         }
@@ -306,7 +306,7 @@ void CopyCommand::processNextSubcollection(const QString &sourceArg)
         job->setProperty("arg", sourceArg);
         job->setProperty("collection", collection.name());
 
-        connect(job, SIGNAL(result(KJob*)), SLOT(onCollectionCopyFinished(KJob*)));
+        connect(job, &KJob::result, this, &CopyCommand::onCollectionCopyFinished);
     } else {
         doNextSubcollection(sourceArg);
     }
@@ -332,7 +332,7 @@ void CopyCommand::fetchItems(const QString &sourceArg)
     ItemFetchJob *fetchJob = new ItemFetchJob(mSourceCollection, this);
     fetchJob->fetchScope().fetchFullPayload(false);
     fetchJob->setProperty("arg", sourceArg);
-    connect(fetchJob, SIGNAL(result(KJob*)), SLOT(onItemsFetched(KJob*)));
+    connect(fetchJob, &KJob::result, this, &CopyCommand::onItemsFetched);
 }
 
 void CopyCommand::onItemsFetched(KJob *job)
@@ -372,7 +372,7 @@ void CopyCommand::onItemsFetched(KJob *job)
     }
     if (!mDryRun) {
         copyJob->setProperty("arg", sourceArg);
-        connect(copyJob, SIGNAL(result(KJob*)), SLOT(onItemCopyFinished(KJob*)));
+        connect(copyJob, &KJob::result, this, &CopyCommand::onItemCopyFinished);
     } else {
         doNextSource();
     }

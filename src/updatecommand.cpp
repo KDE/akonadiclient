@@ -99,6 +99,8 @@ void UpdateCommand::start()
     if (!mFile->open(QIODevice::ReadOnly)) {
         emit error(i18nc("@info:shell", "File <filename>%1</filename> cannot be read", mFileArg));
         emit finished(RuntimeError);
+        delete mFile;
+        mFile = nullptr;
         return;
     }
 

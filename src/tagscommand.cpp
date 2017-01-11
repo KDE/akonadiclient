@@ -67,7 +67,7 @@ int TagsCommand::initCommand(KCmdLineArgs *parsedArgs)
 void TagsCommand::start()
 {
     TagFetchJob *job = new TagFetchJob(this);
-    connect(job, SIGNAL(result(KJob*)), SLOT(onTagsFetched(KJob*)));
+    connect(job, &KJob::result, this, &TagsCommand::onTagsFetched);
 }
 
 static void writeColumn(const QString &data, int width = 0)

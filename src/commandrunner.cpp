@@ -45,7 +45,7 @@ int CommandRunner::start()
     mCommand = mFactory.createCommand();
     Q_ASSERT(mCommand != nullptr);
 
-    connect(mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)));
+    connect(mCommand, &AbstractCommand::error, this, &CommandRunner::onCommandError);
 
     if (mCommand->init(mParsedArgs) == AbstractCommand::InvalidUsage) {
         delete mCommand;

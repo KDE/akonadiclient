@@ -82,7 +82,7 @@ void EditCommand::start()
     job->fetchScope().setFetchModificationTime(false);
     job->fetchScope().fetchAllAttributes(false);
     job->fetchScope().fetchFullPayload(true);
-    connect(job, SIGNAL(result(KJob*)), SLOT(onItemFetched(KJob*)));
+    connect(job, &ItemFetchJob::result, this, &EditCommand::onItemFetched);
 }
 
 void EditCommand::onItemFetched(KJob *job)
@@ -139,7 +139,7 @@ void EditCommand::onItemFetched(KJob *job)
         mTempFile->seek(0); // Seek to the beginning of the file
         item.setPayloadFromData(mTempFile->readAll());
         ItemModifyJob *modifyJob = new ItemModifyJob(item);
-        connect(modifyJob, SIGNAL(result(KJob*)), SLOT(onItemModified(KJob*)));
+        connect(modifyJob, &ItemModifyJob::result, this, &EditCommand::onItemModified);
     } else {
         onItemModified(job);
     }

@@ -88,7 +88,7 @@ int RenameCommand::initCommand(KCmdLineArgs *parsedArgs)
 void RenameCommand::start()
 {
     Q_ASSERT(mResolveJob != nullptr);
-    connect(mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onCollectionFetched(KJob*)));
+    connect(mResolveJob, &KJob::result, this, &RenameCommand::onCollectionFetched);
     mResolveJob->start();
 }
 

@@ -141,9 +141,9 @@ bool CommandShell::enterCommandLoop()
         CommandFactory factory(parsedArgs);
         mCommand = factory.createCommand();
         if (mCommand != nullptr) {
-            connect(mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)));
+            connect(mCommand, &AbstractCommand::error, this, &CommandShell::onCommandError);
             if (mCommand->init(parsedArgs) == AbstractCommand::NoError) {
-                connect(mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)));
+                connect(mCommand, &AbstractCommand::finished, this, &CommandShell::onCommandFinished);
                 toInvoke = mCommand;
             }
         }

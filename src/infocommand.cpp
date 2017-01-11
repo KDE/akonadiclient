@@ -108,7 +108,7 @@ void InfoCommand::start()
         // User specified that the input is a collection, or
         // didn't specify at all what sort of entity it is.
         // First try to resolve it as a collection.
-        connect(mResolveJob, SIGNAL(result(KJob*)), SLOT(onBaseFetched(KJob*)));
+        connect(mResolveJob, &KJob::result, this, &InfoCommand::onBaseFetched);
         mResolveJob->start();
     }
 }
@@ -145,7 +145,7 @@ void InfoCommand::fetchStatistics()
     Q_ASSERT(mResolveJob != nullptr && mResolveJob->collection().isValid());
 
     CollectionStatisticsJob *job = new CollectionStatisticsJob(mResolveJob->collection(), this);
-    connect(job, SIGNAL(result(KJob*)), SLOT(onStatisticsFetched(KJob*)));
+    connect(job, &KJob::result, this, &InfoCommand::onStatisticsFetched);
 }
 
 void InfoCommand::onStatisticsFetched(KJob *job)
@@ -185,7 +185,7 @@ void InfoCommand::fetchItems()
     // to be fetched then hasPayload() will not return a meaningful result.
     job->fetchScope().fetchFullPayload(true);
 
-    connect(job, SIGNAL(result(KJob*)), SLOT(onItemsFetched(KJob*)));
+    connect(job, &KJob::result, this, &InfoCommand::onItemsFetched);
 }
 
 void InfoCommand::onItemsFetched(KJob *job)
@@ -214,7 +214,7 @@ void InfoCommand::fetchParentPath(const Akonadi::Collection &collection)
     Q_ASSERT(mInfoCollection != nullptr || mInfoItem != nullptr);
 
     CollectionPathJob *job = new CollectionPathJob(collection);
-    connect(job, SIGNAL(result(KJob*)), SLOT(onParentPathFetched(KJob*)));
+    connect(job, &KJob::result, this, &InfoCommand::onParentPathFetched);
     job->start();
 }
 

@@ -71,6 +71,7 @@ int ExportCommand::initCommand(KCmdLineArgs *parsedArgs)
     mResolveJob = new CollectionResolveJob(collectionArg, this);
 
     if (!mResolveJob->hasUsableInput()) {
+
         emit error(mResolveJob->errorString());
         return InvalidUsage;
     }
@@ -80,7 +81,7 @@ int ExportCommand::initCommand(KCmdLineArgs *parsedArgs)
 
 void ExportCommand::start()
 {
-    connect(mResolveJob, SIGNAL(result(KJob*)), SLOT(onCollectionFetched(KJob*)));
+    connect(mResolveJob, &KJob::result, this, &ExportCommand::onCollectionFetched);
     mResolveJob->start();
 }
 
@@ -94,7 +95,7 @@ void ExportCommand::onCollectionFetched(KJob *job)
 
     if (!mDryRun) {
         XmlWriteJob *writeJob = new XmlWriteJob(mResolveJob->collection(), mFileArg);
-        connect(writeJob, SIGNAL(result(KJob*)), SLOT(onWriteFinished(KJob*)));
+        connect(writeJob, &KJob::result, this, &ExportCommand::onWriteFinished);
     } else {
         emit finished(NoError);
     }

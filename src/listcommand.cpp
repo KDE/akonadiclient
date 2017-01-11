@@ -127,7 +127,7 @@ void ListCommand::fetchCollections()
     Q_ASSERT(mResolveJob != nullptr  && mResolveJob->collection().isValid());
 
     CollectionFetchJob *job = new CollectionFetchJob(mResolveJob->collection(), CollectionFetchJob::FirstLevel, this);
-    connect(job, SIGNAL(result(KJob*)), this, SLOT(onCollectionsFetched(KJob*)));
+    connect(job, &KJob::result, this, &ListCommand::onCollectionsFetched);
 }
 
 void ListCommand::onCollectionsFetched(KJob *job)
@@ -195,7 +195,7 @@ void ListCommand::fetchItems()
         job->fetchScope().setFetchModificationTime(true);
         job->fetchScope().fetchAllAttributes(false);
         job->fetchScope().fetchFullPayload(false);
-        connect(job, SIGNAL(result(KJob*)), this, SLOT(onItemsFetched(KJob*)));
+        connect(job, &KJob::result, this, &ListCommand::onItemsFetched);
     } else {
         std::cout << i18nc("@info:shell",
                            "Collection %1 cannot contain items",

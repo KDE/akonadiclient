@@ -50,7 +50,7 @@ void CreateCommand::start()
 {
     Q_ASSERT(mResolveJob != nullptr);
 
-    connect(mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onTargetFetched(KJob*)));
+    connect(mResolveJob, &KJob::result, this, &CreateCommand::onTargetFetched);
     mResolveJob->start();
 }
 

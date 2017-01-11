@@ -97,7 +97,7 @@ int ImportCommand::initCommand(KCmdLineArgs *parsedArgs)
 
 void ImportCommand::start()
 {
-    connect(mResolveJob, SIGNAL(result(KJob*)), SLOT(onParentFetched(KJob*)));
+    connect(mResolveJob, &KJob::result, this, &ImportCommand::onParentFetched);
     mResolveJob->start();
 }
 
@@ -149,7 +149,7 @@ void ImportCommand::onChildrenFetched(KJob *job)
         if (!mDryRun) {
             CollectionCreateJob *createJob = new CollectionCreateJob(collection, this);
             createJob->setProperty("rid", rid);
-            connect(createJob, SIGNAL(result(KJob*)), SLOT(onCollectionCreated(KJob*)));
+            connect(createJob, &KJob::result, this, &ImportCommand::onCollectionCreated);
         } else {
             QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
         }
@@ -183,7 +183,7 @@ void ImportCommand::processNextCollection()
         CollectionFetchJob *fetchJob = new CollectionFetchJob(parent, CollectionFetchJob::FirstLevel, this);
         fetchJob->setProperty("rid", collection.remoteId());
         fetchJob->setProperty("parent", QVariant::fromValue<Collection>(parent));
-        connect(fetchJob, SIGNAL(result(KJob*)), SLOT(onChildrenFetched(KJob*)));
+        connect(fetchJob, &KJob::result, this, &ImportCommand::onChildrenFetched);
     } else {
         QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
     }
@@ -200,7 +200,7 @@ void ImportCommand::onCollectionFetched(KJob *job)
         if (!mDryRun) {
             CollectionCreateJob *createJob = new CollectionCreateJob(collection, this);
             createJob->setProperty("rid", collection.remoteId());
-            connect(createJob, SIGNAL(result(KJob*)), SLOT(onCollectionCreated(KJob*)));
+            connect(createJob, &KJob::result, this, &ImportCommand::onCollectionCreated);
         } else {
             QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
         }
@@ -253,7 +253,7 @@ void ImportCommand::processNextItemFromQueue()
 
     Item item = mItemQueue.takeFirst();
     ItemCreateJob *createJob = new ItemCreateJob(item, mCurrentCollection, this);
-    connect(createJob, SIGNAL(result(KJob*)), SLOT(onItemCreated(KJob*)));
+    connect(createJob, &KJob::result, this, &ImportCommand::onItemCreated);
 }
 
 void ImportCommand::onItemCreated(KJob *job)

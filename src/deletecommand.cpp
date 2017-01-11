@@ -106,7 +106,7 @@ void DeleteCommand::start()
     if (mIsItem) {
         fetchItems();
     } else {
-        connect(mResolveJob, SIGNAL(result(KJob*)), SLOT(onBaseFetched(KJob*)));
+        connect(mResolveJob, &KJob::result, this, &DeleteCommand::onBaseFetched);
         mResolveJob->start();
     }
 }
@@ -136,7 +136,7 @@ void DeleteCommand::onBaseFetched(KJob *job)
 
     if (!mDryRun) {
         mDeleteJob = new CollectionDeleteJob(mResolveJob->collection());
-        connect(mDeleteJob, SIGNAL(result(KJob*)), SLOT(onCollectionDeleted(KJob*)));
+        connect(mDeleteJob, &KJob::result, this, &DeleteCommand::onCollectionDeleted);
     } else {
         onCollectionDeleted(job);
     }
@@ -165,10 +165,10 @@ void DeleteCommand::fetchItems()
 
     if (!mDryRun) {
         ItemDeleteJob *deleteJob = new ItemDeleteJob(item, this);
-        connect(deleteJob, SIGNAL(result(KJob*)), SLOT(onItemsDeleted(KJob*)));
+        connect(deleteJob, &KJob::result, this, &DeleteCommand::onItemsDeleted);
     } else {
         ItemFetchJob *fetchJob = new ItemFetchJob(item, this);
-        connect(fetchJob, SIGNAL(result(KJob*)), SLOT(onItemsFetched(KJob*)));
+        connect(fetchJob, &KJob::result, this, &DeleteCommand::onItemsFetched);
     }
 }
 
