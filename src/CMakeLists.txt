@@ -1,14 +1,11 @@
-project(akonadiclient)
-
 ###### setup ######
 
 option(AKONADICLIENT_BUILD_TESTS "Whether to build the automatic tests" ${KDE4_BUILD_TESTS})
 
-include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDEPIMLIBS_INCLUDE_DIRS} ${KDE4_INCLUDES} ${QT_INCLUDE_DIR})
+include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDEPIMLIBS_INCLUDE_DIRS}  ${QT_INCLUDE_DIR})
 
 add_definitions(-DVERSION=\\"${VERSION}\\")
 
-set(CMAKE_AUTOMOC TRUE)
 
 ###### target ######
 
@@ -39,15 +36,15 @@ set(libakonadiclient_SRCS
 )
 
 set(akonadiclient_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
-kde4_add_library(libakonadiclient STATIC ${libakonadiclient_SRCS})
-target_link_libraries(libakonadiclient ${KDEPIMLIBS_AKONADI_LIBS} ${KDEPIMLIBS_AKONADI_XML_LIBS} ${KDEPIMLIBS_AKONADI_CONTACT_LIBS})
-target_link_libraries(libakonadiclient ${KDEPIMLIBS_KPIMUTILS_LIBS} ${KDE4_KABC_LIBS})
-target_link_libraries(libakonadiclient ${KDE4_KDECORE_LIBS})
-target_link_libraries(libakonadiclient ${QT_QTCORE_LIBRARY})
+add_library(libakonadiclient STATIC ${libakonadiclient_SRCS})
+target_link_libraries(libakonadiclient KF5::AkonadiCore ${KDEPIMLIBS_AKONADI_XML_LIBS} KF5::AkonadiContact)
+target_link_libraries(libakonadiclient  ${KDE4_KABC_LIBS})
+target_link_libraries(libakonadiclient KF5::KDELibs4Support)
+target_link_libraries(libakonadiclient Qt5::Core)
 
 set_target_properties(libakonadiclient PROPERTIES ENABLE_EXPORTS TRUE)
 
-kde4_add_executable(akonadiclient ${akonadiclient_SRCS})
+add_executable(akonadiclient ${akonadiclient_SRCS})
 target_link_libraries(akonadiclient libakonadiclient)
 
 ###### version tracking ######
