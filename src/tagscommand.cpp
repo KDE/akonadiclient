@@ -118,7 +118,7 @@ void TagsCommand::onTagsFetched(KJob *job)
     const Tag tag = (*it);
 
     if (!mBriefOutput && !mUrlsOutput) writeColumn(tag.id(), 8);
-    if (!mBriefOutput || mUrlsOutput) writeColumn(tag.url().pathOrUrl(), 25);
+    if (!mBriefOutput || mUrlsOutput) writeColumn(tag.url().path(), 25);
     if (!mUrlsOutput) writeColumn(tag.name());
     std::cout << std::endl;
   }

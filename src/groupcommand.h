@@ -24,7 +24,7 @@
 
 #include <qstringlist.h>
 #include <AkonadiCore/item.h>
-#include <kabc/contactgroup.h>
+#include <kcontacts/contactgroup.h>
 
 class KJob;
 
@@ -66,18 +66,18 @@ class GroupCommand : public AbstractCommand
   private:
     void fetchItems();
 
-    void displayContactData(const KABC::ContactGroup::Data &data);
+    void displayContactData(const KContacts::ContactGroup::Data &data);
     void displayContactReference(Akonadi::Entity::Id id);
     void displayContactReference(const Akonadi::Item &item, const QString &email = QString::null);
     void displayReferenceError(Akonadi::Entity::Id id);
 
-    bool removeDataByEmail(KABC::ContactGroup &group, const QString &email, bool verbose = false);
-    bool removeReferenceById(KABC::ContactGroup &group, const QString &id, bool verbose = false);
+    bool removeDataByEmail(KContacts::ContactGroup &group, const QString &email, bool verbose = false);
+    bool removeReferenceById(KContacts::ContactGroup &group, const QString &id, bool verbose = false);
 
-    AbstractCommand::Errors showExpandedGroup(const KABC::ContactGroup &group);
-    AbstractCommand::Errors addGroupItems(KABC::ContactGroup &group);
-    AbstractCommand::Errors deleteGroupItems(KABC::ContactGroup &group);
-    AbstractCommand::Errors cleanGroupItems(KABC::ContactGroup &group);
+    AbstractCommand::Errors showExpandedGroup(const KContacts::ContactGroup &group);
+    AbstractCommand::Errors addGroupItems(KContacts::ContactGroup &group);
+    AbstractCommand::Errors deleteGroupItems(KContacts::ContactGroup &group);
+    AbstractCommand::Errors cleanGroupItems(KContacts::ContactGroup &group);
 
   private Q_SLOTS:
     void onItemsFetched(KJob *job);

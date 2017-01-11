@@ -26,9 +26,9 @@
 
 #include <akonadi/contact/contactsearchjob.h>
 
-#include <kabc/addressee.h>
+#include <kcontacts/addressee.h>
 
-#include <kpimutils/email.h>
+//#include <kpimutils/email.h>
 
 #include <kcmdlineargs.h>
 #include <kglobal.h>
@@ -223,21 +223,21 @@ void GroupCommand::onItemsFetched(KJob *job)
   }
 
   mGroupItem = new Item(items.first());
-  if (mGroupItem->mimeType()!=KABC::ContactGroup::mimeType())
+  if (mGroupItem->mimeType()!=KContacts::ContactGroup::mimeType())
   {
     emit error(i18nc("@info:shell", "Item '%1' is not a contact group", mGroupArg));
     emit finished(RuntimeError);
     return;
   }
 
-  if (!mGroupItem->hasPayload<KABC::ContactGroup>())	// should never happen?
+  if (!mGroupItem->hasPayload<KContacts::ContactGroup>())	// should never happen?
   {
     emit error(i18nc("@info:shell", "Item '%1' has no contact group payload", mGroupArg));
     emit finished(RuntimeError);
     return;
   }
 
-  KABC::ContactGroup group = mGroupItem->payload<KABC::ContactGroup>();
+  KContacts::ContactGroup group = mGroupItem->payload<KContacts::ContactGroup>();
 
   AbstractCommand::Errors status;
   switch (mOperationMode)				// perform the requested operation
@@ -265,7 +265,7 @@ case ModeClean:
     {
       if (!mDryRun)
       {
-        mGroupItem->setPayload<KABC::ContactGroup>(group);
+        mGroupItem->setPayload<KContacts::ContactGroup>(group);
         Akonadi::ItemModifyJob *job = new Akonadi::ItemModifyJob(*mGroupItem);
         job->exec();
         if (job->error()!=0)
@@ -293,7 +293,7 @@ static void writeColumn(quint64 data, int width = 0)
 }
 
 
-void GroupCommand::displayContactData(const KABC::ContactGroup::Data &data)
+void GroupCommand::displayContactData(const KContacts::ContactGroup::Data &data)
 {
   if (mBriefMode) return;
 
@@ -326,13 +326,13 @@ void GroupCommand::displayContactReference(Akonadi::Entity::Id id)
     Q_ASSERT(fetchedItems.count()>0);
     const Akonadi::Item fetchedItem = fetchedItems.first();
 
-    if (!fetchedItem.hasPayload<KABC::Addressee>())
+    if (!fetchedItem.hasPayload<KContacts::Addressee>())
     {
       writeColumn(i18nc("@info:shell", "(item has no Addressee payload)"));
     }
     else
     {
-      KABC::Addressee addr = fetchedItem.payload<KABC::Addressee>();
+      KContacts::Addressee addr = fetchedItem.payload<KContacts::Addressee>();
       writeColumn(addr.preferredEmail(), 30);
       writeColumn(addr.formattedName());
     }
@@ -349,13 +349,13 @@ void GroupCommand::displayContactReference(const Akonadi::Item &item, const QStr
   writeColumn("  R", 5);
   writeColumn(item.id(), 8);
 
-  if (!item.hasPayload<KABC::Addressee>())
+  if (!item.hasPayload<KContacts::Addressee>())
   {
     writeColumn(i18nc("@info:shell", "(item has no Addressee payload)"));
   }
   else
   {
-    KABC::Addressee addr = item.payload<KABC::Addressee>();
+    KContacts::Addressee addr = item.payload<KContacts::Addressee>();
     writeColumn(!email.isEmpty() ? email : addr.preferredEmail(), 30);
     writeColumn(addr.formattedName());
   }
@@ -376,14 +376,14 @@ void GroupCommand::displayReferenceError(Akonadi::Entity::Id id)
 }
 
 
-bool GroupCommand::removeReferenceById(KABC::ContactGroup &group, const QString &id, bool verbose)
+bool GroupCommand::removeReferenceById(KContacts::ContactGroup &group, const QString &id, bool verbose)
 {
   bool somethingFound = false;
 
   // Remove any existing reference with the same ID from the group.
   for (unsigned int i = 0; i<group.contactReferenceCount(); )
   {
-    KABC::ContactGroup::ContactReference existingRef = group.contactReference(i);
+    KContacts::ContactGroup::ContactReference existingRef = group.contactReference(i);
     if (existingRef.uid()==id)
     {
       group.remove(existingRef);
@@ -397,14 +397,14 @@ bool GroupCommand::removeReferenceById(KABC::ContactGroup &group, const QString 
 }
 
 
-bool GroupCommand::removeDataByEmail(KABC::ContactGroup &group, const QString &email, bool verbose)
+bool GroupCommand::removeDataByEmail(KContacts::ContactGroup &group, const QString &email, bool verbose)
 {
   bool somethingFound = false;
 
   // Remove any existing data with the same email address from the group.
   for (unsigned int i = 0; i<group.dataCount(); )
   {
-    const KABC::ContactGroup::Data data = group.data(i);
+    const KContacts::ContactGroup::Data data = group.data(i);
     if (QString::compare(data.email(), email, Qt::CaseInsensitive)==0)
     {
       group.remove(data);
@@ -418,7 +418,7 @@ bool GroupCommand::removeDataByEmail(KABC::ContactGroup &group, const QString &e
 }
 
 
-AbstractCommand::Errors GroupCommand::showExpandedGroup(const KABC::ContactGroup &group)
+AbstractCommand::Errors GroupCommand::showExpandedGroup(const KContacts::ContactGroup &group)
 {
   if (!mBriefMode)
   {
@@ -485,9 +485,9 @@ AbstractCommand::Errors GroupCommand::showExpandedGroup(const KABC::ContactGroup
       fetchIds.removeAll(item.id());			// note that we've fetched this
 
       QString email;
-      if (item.hasPayload<KABC::Addressee>())
+      if (item.hasPayload<KContacts::Addressee>())
       {
-        KABC::Addressee addr = item.payload<KABC::Addressee>();
+        KContacts::Addressee addr = item.payload<KContacts::Addressee>();
         email = addr.preferredEmail();
 
         // Retrieve the original preferred email from the contact group reference.
@@ -521,7 +521,7 @@ AbstractCommand::Errors GroupCommand::showExpandedGroup(const KABC::ContactGroup
   c = group.dataCount();
   for (int i = 0; i<c; ++i)
   {
-    const KABC::ContactGroup::Data data = group.data(i);
+    const KContacts::ContactGroup::Data data = group.data(i);
     if (mBriefMode)					// only show email
     {
       std::cout << qPrintable(data.email());
@@ -534,7 +534,7 @@ AbstractCommand::Errors GroupCommand::showExpandedGroup(const KABC::ContactGroup
 }
 
 
-AbstractCommand::Errors GroupCommand::addGroupItems(KABC::ContactGroup &group)
+AbstractCommand::Errors GroupCommand::addGroupItems(KContacts::ContactGroup &group)
 {
   Q_ASSERT(!mItemArgs.isEmpty());
 
@@ -576,8 +576,8 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KABC::ContactGroup &group)
         }
 
         Akonadi::Item item = resultItems.first();
-        Q_ASSERT(item.hasPayload<KABC::Addressee>());
-        KABC::ContactGroup::ContactReference ref(QString::number(item.id()));
+        Q_ASSERT(item.hasPayload<KContacts::Addressee>());
+        KContacts::ContactGroup::ContactReference ref(QString::number(item.id()));
 
         // Not really equivalent to "only add the new reference if it
         // doesn't exist already", because e.g. the old reference may have
@@ -594,7 +594,7 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KABC::ContactGroup &group)
 
         removeDataByEmail(group, email);		// remove existing with that email
         QString name = (mNameArg.isEmpty() ? arg : mNameArg);
-        KABC::ContactGroup::Data data(name, email);
+        KContacts::ContactGroup::Data data(name, email);
         group.append(data);				// add new contact data
         displayContactData(data);			// report what was added
       }
@@ -623,7 +623,7 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KABC::ContactGroup &group)
       Q_ASSERT(fetchedItems.count()>0);
       const Akonadi::Item fetchedItem = fetchedItems.first();
 
-      if (!fetchedItem.hasPayload<KABC::Addressee>())
+      if (!fetchedItem.hasPayload<KContacts::Addressee>())
       {
         ErrorReporter::error(i18nc("@info:shell", "Item %1 is not a contact item",
                                    QString::number(item.id())));
@@ -631,7 +631,7 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KABC::ContactGroup &group)
         continue;
       }
 
-      KABC::ContactGroup::ContactReference ref(QString::number(fetchedItem.id()));
+      KContacts::ContactGroup::ContactReference ref(QString::number(fetchedItem.id()));
 
       removeReferenceById(group, ref.uid());		// remove any existing
       group.append(ref);				// then add new reference
@@ -655,7 +655,7 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KABC::ContactGroup &group)
 }
 
 
-AbstractCommand::Errors GroupCommand::deleteGroupItems(KABC::ContactGroup &group)
+AbstractCommand::Errors GroupCommand::deleteGroupItems(KContacts::ContactGroup &group)
 {
   Q_ASSERT(!mItemArgs.isEmpty());
 
@@ -725,7 +725,7 @@ AbstractCommand::Errors GroupCommand::deleteGroupItems(KABC::ContactGroup &group
       const QString itemId = QString::number(item.id());
       for (unsigned int i = 0; i<group.contactReferenceCount(); )
       {
-        KABC::ContactGroup::ContactReference existingRef = group.contactReference(i);
+        KContacts::ContactGroup::ContactReference existingRef = group.contactReference(i);
         if (existingRef.uid()==itemId)
         {
           displayContactReference(item.id());
@@ -752,7 +752,7 @@ AbstractCommand::Errors GroupCommand::deleteGroupItems(KABC::ContactGroup &group
 }
 
 
-AbstractCommand::Errors GroupCommand::cleanGroupItems(KABC::ContactGroup &group)
+AbstractCommand::Errors GroupCommand::cleanGroupItems(KContacts::ContactGroup &group)
 {
   if (!mBriefMode)
   {
@@ -765,7 +765,7 @@ AbstractCommand::Errors GroupCommand::cleanGroupItems(KABC::ContactGroup &group)
   // Remove any reference items with an unknown or invalid ID from the group.
   for (unsigned int i = 0; i<group.contactReferenceCount(); )
   {
-    KABC::ContactGroup::ContactReference ref = group.contactReference(i);
+    KContacts::ContactGroup::ContactReference ref = group.contactReference(i);
 
     bool doDelete = false;
     qint64 id = ref.uid().toLong();

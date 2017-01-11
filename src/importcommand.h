@@ -53,8 +53,8 @@ private:
     CollectionResolveJob *mResolveJob;
     Akonadi::Collection mParentCollection;
     Akonadi::Collection mCurrentCollection;
-    QList<Akonadi::Item> mItemQueue;
-    QList<Akonadi::Collection> mCollections;
+    QVector<Akonadi::Item> mItemQueue;
+    QVector<Akonadi::Collection> mCollections;
     QMap<QString, Akonadi::Collection> mCollectionMap;
     Akonadi::XmlDocument *mDocument;
 

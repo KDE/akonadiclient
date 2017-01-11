@@ -20,7 +20,7 @@
 #include "commandrunner.h"
 #include "errorreporter.h"
 
-#include <KAboutData>
+#include <K4AboutData>
 #include <KCmdLineArgs>
 #include <QCoreApplication>
 #include <qprocess.h>
@@ -36,14 +36,14 @@ const char *appname = "akonadiclient";
 
 int main( int argc, char **argv )
 {
-  KAboutData aboutData( appname, 0, ki18nc( "@title program name", "Akonadi Client" ),
+  K4AboutData aboutData( appname, 0, ki18nc( "@title program name", "Akonadi Client" ),
 #ifdef VCS_HAVE_VERSION
                         ( VERSION " (" VCS_TYPE_STRING " " VCS_REVISION_STRING ")"),
 #else
                         VERSION,
 #endif
                         ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
-                        KAboutData::License_GPL );
+                        K4AboutData::License_GPL );
 
   aboutData.addAuthor( ki18n( "Kevin Krammer" ), ki18nc( "@title about data task", "Original Author" ), "krammer@kde.org" );
   aboutData.addAuthor( ki18n( "Jonathan Marten" ), ki18nc( "@title about data task", "Additions and new commands" ), "jjm@keelhaul.me.uk" );

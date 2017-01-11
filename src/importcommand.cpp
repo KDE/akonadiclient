@@ -21,7 +21,8 @@
 #include "errorreporter.h"
 
 #include <AkonadiCore/collection.h>
-#include <akonadi/xml/xmldocument.h>
+#include <AkonadiXml/XmlWriteJob>
+#include <AkonadiXml/XmlDocument>
 #include <AkonadiCore/collectioncreatejob.h>
 #include <AkonadiCore/collectionfetchjob.h>
 #include <AkonadiCore/itemcreatejob.h>

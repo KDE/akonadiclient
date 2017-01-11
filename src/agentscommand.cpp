@@ -25,6 +25,7 @@
 #include <AkonadiCore/agentinstance.h>
 
 #include <qstringlist.h>
+#include <QVector>
 
 #include <iostream>
 #include <iomanip>
@@ -111,7 +112,7 @@ void AgentsCommand::start()
 {
     switch (mOption) {
         case LIST: {
-            QList<AgentInstance> instances = AgentManager::self()->instances();
+            QVector<AgentInstance> instances = AgentManager::self()->instances();
             printAgentStatus(instances);
             break;
         }
@@ -143,7 +144,7 @@ void AgentsCommand::start()
     emit finished(NoError);
 }
 
-void AgentsCommand::printAgentStatus(const QList<AgentInstance> &agents)
+void AgentsCommand::printAgentStatus(const QVector<AgentInstance> &agents)
 {
     int max_width = 0;
     for (int i = 0; i < agents.length(); i++) {
@@ -197,7 +198,7 @@ void AgentsCommand::setState()
 void AgentsCommand::getState()
 {
     AgentManager *manager = AgentManager::self();
-    QList<AgentInstance> agentList;
+    QVector<AgentInstance> agentList;
 
     for (int i = 0; i < mArguments.length(); i++) {
         AgentInstance instance = manager->instance(mArguments.at(i));

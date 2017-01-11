@@ -47,7 +47,7 @@ protected:
 private:
     void getState();
     void showInfo();
-    void printAgentStatus(const QList<Akonadi::AgentInstance> &agents);
+    void printAgentStatus(const QVector<Akonadi::AgentInstance> &agents);
     void restartAgents();
     void setState();
 
