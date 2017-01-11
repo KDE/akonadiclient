@@ -37,7 +37,7 @@ set(libakonadiclient_SRCS
 
 set(akonadiclient_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
 add_library(libakonadiclient STATIC ${libakonadiclient_SRCS})
-target_link_libraries(libakonadiclient KF5::AkonadiCore ${KDEPIMLIBS_AKONADI_XML_LIBS} KF5::AkonadiContact)
+target_link_libraries(libakonadiclient KF5::AkonadiCore KF5::AkonadiXml KF5::AkonadiContact)
 target_link_libraries(libakonadiclient  ${KDE4_KABC_LIBS})
 target_link_libraries(libakonadiclient KF5::KDELibs4Support)
 target_link_libraries(libakonadiclient Qt5::Core)

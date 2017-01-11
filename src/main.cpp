@@ -36,6 +36,7 @@ const char *appname = "akonadiclient";
 
 int main( int argc, char **argv )
 {
+#if 0
   K4AboutData aboutData( appname, 0, ki18nc( "@title program name", "Akonadi Client" ),
 #ifdef VCS_HAVE_VERSION
                         ( VERSION " (" VCS_TYPE_STRING " " VCS_REVISION_STRING ")"),
@@ -44,7 +45,12 @@ int main( int argc, char **argv )
 #endif
                         ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
                         K4AboutData::License_GPL );
+#else
+    K4AboutData aboutData( appname, 0, ki18nc( "@title program name", "Akonadi Client" ), "0.1",
+                           ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
+                           K4AboutData::License_GPL );
 
+#endif
   aboutData.addAuthor( ki18n( "Kevin Krammer" ), ki18nc( "@title about data task", "Original Author" ), "krammer@kde.org" );
   aboutData.addAuthor( ki18n( "Jonathan Marten" ), ki18nc( "@title about data task", "Additions and new commands" ), "jjm@keelhaul.me.uk" );
   aboutData.addAuthor( ki18n( "Bhaskar Kandiyal" ), ki18nc( "@title about data task", "New commands, GSOC 2014" ), "bkandiyal@gmail.com" );
