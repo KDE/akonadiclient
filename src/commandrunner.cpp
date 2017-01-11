@@ -28,45 +28,44 @@
 
 #include <iostream>
 
-
 CommandRunner::CommandRunner(KCmdLineArgs *parsedArgs)
-  : mCommand( nullptr ),
-    mParsedArgs( parsedArgs ),
-    mFactory( parsedArgs )
+    : mCommand(nullptr),
+      mParsedArgs(parsedArgs),
+      mFactory(parsedArgs)
 {
 }
 
 CommandRunner::~CommandRunner()
 {
-  delete mCommand;
+    delete mCommand;
 }
 
 int CommandRunner::start()
 {
-  mCommand = mFactory.createCommand();
-  Q_ASSERT( mCommand != nullptr );
+    mCommand = mFactory.createCommand();
+    Q_ASSERT(mCommand != nullptr);
 
-  connect( mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)) );
+    connect(mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)));
 
-  if ( mCommand->init( mParsedArgs ) == AbstractCommand::InvalidUsage ) {
-    delete mCommand;
-    mCommand = nullptr;
-    return AbstractCommand::InvalidUsage;
-  }
+    if (mCommand->init(mParsedArgs) == AbstractCommand::InvalidUsage) {
+        delete mCommand;
+        mCommand = nullptr;
+        return AbstractCommand::InvalidUsage;
+    }
 
-  connect( mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)) );
+    connect(mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)));
 
-  QMetaObject::invokeMethod( mCommand, "start", Qt::QueuedConnection );
+    QMetaObject::invokeMethod(mCommand, "start", Qt::QueuedConnection);
 
-  return AbstractCommand::NoError;
+    return AbstractCommand::NoError;
 }
 
-void CommandRunner::onCommandFinished( int exitCode )
+void CommandRunner::onCommandFinished(int exitCode)
 {
-  QCoreApplication::exit(exitCode);
+    QCoreApplication::exit(exitCode);
 }
 
-void CommandRunner::onCommandError( const QString &error )
+void CommandRunner::onCommandError(const QString &error)
 {
-  ErrorReporter::fatal(error);
+    ErrorReporter::fatal(error);
 }

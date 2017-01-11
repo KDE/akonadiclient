@@ -16,7 +16,6 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-
 #ifndef COLLECTIONRESOLVEJOB_H
 #define COLLECTIONRESOLVEJOB_H
 
@@ -26,32 +25,38 @@
 
 class CollectionResolveJob : public KCompositeJob
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
-    explicit CollectionResolveJob( const QString &userInput, QObject *parent = 0 );
+public:
+    explicit CollectionResolveJob(const QString &userInput, QObject *parent = 0);
     ~CollectionResolveJob();
 
     void start();
 
     bool hasUsableInput();
-    bool hadSlash() const			{ return (mHadSlash); }
-    Akonadi::Collection collection() const	{ return (mCollection); }
+    bool hadSlash() const
+    {
+        return (mHadSlash);
+    }
+    Akonadi::Collection collection() const
+    {
+        return (mCollection);
+    }
     QString formattedCollectionName() const;
 
     static Akonadi::Item parseItem(const QString &userInput, bool showError = false);
     static Akonadi::Collection parseCollection(const QString &userInput);
 
-  protected Q_SLOTS:
-    void slotResult( KJob *job );
+protected Q_SLOTS:
+    void slotResult(KJob *job);
 
-  private:
+private:
     const QString mUserInput;
     Akonadi::Collection mCollection;
     bool mHadSlash;
 
-  private:
+private:
     void fetchBase();
 };
 
-#endif							// COLLECTIONRESOLVEJOB_H
+#endif                          // COLLECTIONRESOLVEJOB_H

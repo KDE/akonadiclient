@@ -37,9 +37,9 @@ AbstractCommandTest::AbstractCommandTest()
       m_errorSpy(0)
 {
     mAboutData = new KAboutData("akonadiclient", 0, ki18nc("@title program name", "Akonadi Client"),
-                         "0.1",
-                         ki18nc("@info:shell short description", "A command-line/shell client for Akonadi"),
-                         KAboutData::License_GPL);
+                                "0.1",
+                                ki18nc("@info:shell short description", "A command-line/shell client for Akonadi"),
+                                KAboutData::License_GPL);
 }
 
 AbstractCommandTest::~AbstractCommandTest()
@@ -47,15 +47,15 @@ AbstractCommandTest::~AbstractCommandTest()
 
 }
 
-KCmdLineArgs* AbstractCommandTest::getParsedArgs(int argc, const char **argv)
+KCmdLineArgs *AbstractCommandTest::getParsedArgs(int argc, const char **argv)
 {
-    KCmdLineArgs::init(argc, const_cast<char**>(argv), mAboutData);
+    KCmdLineArgs::init(argc, const_cast<char **>(argv), mAboutData);
     KCmdLineArgs::addStdCmdLineOptions(KCmdLineArgs::CmdLineArgNone);
 
     KCmdLineOptions options;
     options.add("!+command", ki18nc("@info:shell", "Command to execute"));
-    options.add("+[options]", ki18nc( "@info:shell", "Options for command"));
-    options.add("+[args]", ki18nc( "@info:shell", "Arguments for command"));
+    options.add("+[options]", ki18nc("@info:shell", "Options for command"));
+    options.add("+[args]", ki18nc("@info:shell", "Arguments for command"));
     options.add("", ki18nc("@info:shell",
                            "See '<application>%1</application> help'"
                            " for available commands"

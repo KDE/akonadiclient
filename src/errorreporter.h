@@ -23,10 +23,10 @@ class QString;
 
 namespace ErrorReporter
 {
-    void error(const QString &msg);
-    void warning(const QString &msg);
-    void fatal(const QString &msg);
-    void progress(const QString &msg);
+void error(const QString &msg);
+void warning(const QString &msg);
+void fatal(const QString &msg);
+void progress(const QString &msg);
 };
 
 #endif // ERRORREPORTER_H

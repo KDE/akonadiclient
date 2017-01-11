@@ -16,7 +16,6 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-
 #ifndef TAGSCOMMAND_H
 #define TAGSCOMMAND_H
 
@@ -26,27 +25,27 @@ class KJob;
 
 class TagsCommand : public AbstractCommand
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     explicit TagsCommand(QObject *parent = 0);
     ~TagsCommand();
 
     QString name() const;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     void start();
 
-  protected:
+protected:
     void setupCommandOptions(KCmdLineOptions &options);
     int initCommand(KCmdLineArgs *parsedArgs);
 
-  private:
+private:
     bool mBriefOutput;
     bool mUrlsOutput;
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void onTagsFetched(KJob *job);
 };
 
-#endif							// TAGSCOMMAND_H
+#endif                          // TAGSCOMMAND_H

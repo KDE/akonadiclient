@@ -17,7 +17,6 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-
 #ifndef COLLECTIONPATHJOB_H
 #define COLLECTIONPATHJOB_H
 
@@ -26,9 +25,9 @@
 
 class CollectionPathJob : public KCompositeJob
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     explicit CollectionPathJob(const Akonadi::Collection &collection, QObject *parent = 0);
     ~CollectionPathJob();
 
@@ -37,12 +36,12 @@ class CollectionPathJob : public KCompositeJob
     QString collectionPath() const;
     QString formattedCollectionPath() const;
 
-  protected Q_SLOTS:
+protected Q_SLOTS:
     void slotResult(KJob *job);
 
-  private:
+private:
     Akonadi::Collection mCollection;
     QString mPath;
 };
 
-#endif							// COLLECTIONPATHJOB_H
+#endif                          // COLLECTIONPATHJOB_H

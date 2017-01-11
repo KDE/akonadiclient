@@ -26,13 +26,11 @@
 #include "errorreporter.h"
 #include "commandshell.h"
 
+#define ENV_VAR_DANGEROUS   "AKONADICLIENT_DANGEROUS"
+#define ENV_VAL_DANGEROUS   "enabled"
 
-#define ENV_VAR_DANGEROUS	"AKONADICLIENT_DANGEROUS"
-#define ENV_VAL_DANGEROUS	"enabled"
-
-
-AbstractCommand::AbstractCommand( QObject *parent )
-  : QObject( parent )
+AbstractCommand::AbstractCommand(QObject *parent)
+    : QObject(parent)
 {
 }
 
@@ -40,32 +38,32 @@ AbstractCommand::~AbstractCommand()
 {
 }
 
-int AbstractCommand::init( KCmdLineArgs *parsedArgs )
+int AbstractCommand::init(KCmdLineArgs *parsedArgs)
 {
-  parsedArgs->clear();
-  KCmdLineArgs::reset();
+    parsedArgs->clear();
+    KCmdLineArgs::reset();
 
-  KCmdLineOptions options;
-  setupCommandOptions( options );
+    KCmdLineOptions options;
+    setupCommandOptions(options);
 
-  KCmdLineArgs::addCmdLineOptions( options );
-  KCmdLineArgs::addStdCmdLineOptions( KCmdLineArgs::CmdLineArgNone );
+    KCmdLineArgs::addCmdLineOptions(options);
+    KCmdLineArgs::addStdCmdLineOptions(KCmdLineArgs::CmdLineArgNone);
 
-  KCmdLineArgs *parseCommandArgs = KCmdLineArgs::parsedArgs();
-  Q_ASSERT( parseCommandArgs != nullptr );
+    KCmdLineArgs *parseCommandArgs = KCmdLineArgs::parsedArgs();
+    Q_ASSERT(parseCommandArgs != nullptr);
 
-  const int result = initCommand( parseCommandArgs );
+    const int result = initCommand(parseCommandArgs);
 
-  KCmdLineArgs::reset();
-  KCmdLineArgs::addStdCmdLineOptions( KCmdLineArgs::CmdLineArgNone );
-  KCmdLineArgs::addCmdLineOptions( options );
+    KCmdLineArgs::reset();
+    KCmdLineArgs::addStdCmdLineOptions(KCmdLineArgs::CmdLineArgNone);
+    KCmdLineArgs::addCmdLineOptions(options);
 
-  return result;
+    return result;
 }
 
-void AbstractCommand::setupCommandOptions(KCmdLineOptions& options)
+void AbstractCommand::setupCommandOptions(KCmdLineOptions &options)
 {
-  options.add(("+"+name()).toLocal8Bit(), ki18nc("@info:shell", "The name of the command"));
+    options.add(("+" + name()).toLocal8Bit(), ki18nc("@info:shell", "The name of the command"));
 }
 
 void AbstractCommand::addOptionsOption(KCmdLineOptions &options)
@@ -89,38 +87,35 @@ void AbstractCommand::addDryRunOption(KCmdLineOptions &options)
     options.add("n").add("dryrun", ki18nc("@info:shell", "Run without making any actual changes"));
 }
 
-void AbstractCommand::emitErrorSeeHelp( const KLocalizedString &msg )
+void AbstractCommand::emitErrorSeeHelp(const KLocalizedString &msg)
 {
-  QString s;
-  if (CommandShell::isActive())
-  {
-    s = ki18nc("@info:shell %1 is subcommand name, %2 is error message",
-               "%2. See 'help %1'")
-      .subs( this->name() )
-      .subs( msg.toString() ).toString();
-  }
-  else
-  {
-    s = ki18nc("@info:shell %1 is application name, %2 is subcommand name, %3 is error message",
-               "%3. See '<application>%1</application> help %2'")
-      .subs( KCmdLineArgs::appName() )
-      .subs( this->name() )
-      .subs( msg.toString() ).toString();
-  }
+    QString s;
+    if (CommandShell::isActive()) {
+        s = ki18nc("@info:shell %1 is subcommand name, %2 is error message",
+                   "%2. See 'help %1'")
+            .subs(this->name())
+            .subs(msg.toString()).toString();
+    } else {
+        s = ki18nc("@info:shell %1 is application name, %2 is subcommand name, %3 is error message",
+                   "%3. See '<application>%1</application> help %2'")
+            .subs(KCmdLineArgs::appName())
+            .subs(this->name())
+            .subs(msg.toString()).toString();
+    }
 
-  emit error(s);
+    emit error(s);
 }
 
 bool AbstractCommand::allowDangerousOperation() const
 {
-  if ( qgetenv(ENV_VAR_DANGEROUS) == ENV_VAL_DANGEROUS )
-  {							// check set in environment
-    return true;
-  }
+    if (qgetenv(ENV_VAR_DANGEROUS) == ENV_VAL_DANGEROUS) {
+        // check set in environment
+        return true;
+    }
 
-  ErrorReporter::error( i18n( "Dangerous or destructive operations are not allowed" ) );
-  ErrorReporter::error( i18n( "Set %1=\"%2\" in environment",
-                              QLatin1String( ENV_VAR_DANGEROUS ),
-                              QLatin1String (ENV_VAL_DANGEROUS ) ) );
-  return false;
+    ErrorReporter::error(i18n("Dangerous or destructive operations are not allowed"));
+    ErrorReporter::error(i18n("Set %1=\"%2\" in environment",
+                              QLatin1String(ENV_VAR_DANGEROUS),
+                              QLatin1String(ENV_VAL_DANGEROUS)));
+    return false;
 }

@@ -30,9 +30,7 @@
 
 using namespace Akonadi;
 
-
 DEFINE_COMMAND("rename", RenameCommand, "Rename a collection");
-
 
 RenameCommand::RenameCommand(QObject *parent)
     : AbstractCommand(parent),
@@ -75,9 +73,9 @@ int RenameCommand::initCommand(KCmdLineArgs *parsedArgs)
     mResolveJob = new CollectionResolveJob(oldCollectionNameArg, this);
     if (!mResolveJob->hasUsableInput()) {
         emit error(ki18nc("@info:shell",
-                            "Invalid collection argument '%1', '%2'" )
-                    .subs(oldCollectionNameArg)
-                    .subs(mResolveJob->errorString()).toString());
+                          "Invalid collection argument '%1', '%2'")
+                   .subs(oldCollectionNameArg)
+                   .subs(mResolveJob->errorString()).toString());
         delete mResolveJob;
         mResolveJob = nullptr;
 

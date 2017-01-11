@@ -29,22 +29,22 @@ class KCmdLineArgs;
 
 class CommandRunner : public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     CommandRunner(KCmdLineArgs *parsedArgs);
     ~CommandRunner();
 
     int start();
 
-  private:
+private:
     AbstractCommand *mCommand;
     KCmdLineArgs *mParsedArgs;
     CommandFactory mFactory;
 
-  private Q_SLOTS:
-    void onCommandFinished( int exitCode );
-    void onCommandError( const QString &error );
+private Q_SLOTS:
+    void onCommandFinished(int exitCode);
+    void onCommandError(const QString &error);
 };
 
 #endif // COMMANDRUNNER_H

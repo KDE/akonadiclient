@@ -16,7 +16,6 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-
 #ifndef GROUPCOMMAND_H
 #define GROUPCOMMAND_H
 
@@ -30,24 +29,23 @@ class KJob;
 
 class GroupCommand : public AbstractCommand
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     explicit GroupCommand(QObject *parent = 0);
     ~GroupCommand();
 
     QString name() const;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     void start();
 
-  protected:
+protected:
     void setupCommandOptions(KCmdLineOptions &options);
     int initCommand(KCmdLineArgs *parsedArgs);
 
-  private:
-    enum Mode
-    {
+private:
+    enum Mode {
         ModeExpand,
         ModeAdd,
         ModeDelete,
@@ -63,7 +61,7 @@ class GroupCommand : public AbstractCommand
     bool mDryRun;
     GroupCommand::Mode mOperationMode;
 
-  private:
+private:
     void fetchItems();
 
     void displayContactData(const KContacts::ContactGroup::Data &data);
@@ -79,8 +77,8 @@ class GroupCommand : public AbstractCommand
     AbstractCommand::Errors deleteGroupItems(KContacts::ContactGroup &group);
     AbstractCommand::Errors cleanGroupItems(KContacts::ContactGroup &group);
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void onItemsFetched(KJob *job);
 };
 
-#endif							// GROUPCOMMAND_H
+#endif                          // GROUPCOMMAND_H

@@ -34,194 +34,169 @@
 
 using namespace Akonadi;
 
-
 DEFINE_COMMAND("create", CreateCommand, "Create a new collection");
 
-
 CreateCommand::CreateCommand(QObject *parent)
-  : AbstractCommand(parent),
-    mResolveJob(nullptr)
+    : AbstractCommand(parent),
+      mResolveJob(nullptr)
 {
 }
-
 
 CreateCommand::~CreateCommand()
 {
 }
 
-
 void CreateCommand::start()
 {
-  Q_ASSERT(mResolveJob!=nullptr);
+    Q_ASSERT(mResolveJob != nullptr);
 
-  connect(mResolveJob, SIGNAL(result(KJob *)), this, SLOT(onTargetFetched(KJob *)));
-  mResolveJob->start();
+    connect(mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onTargetFetched(KJob*)));
+    mResolveJob->start();
 }
-
 
 void CreateCommand::setupCommandOptions(KCmdLineOptions &options)
 {
-  AbstractCommand::setupCommandOptions(options);
+    AbstractCommand::setupCommandOptions(options);
 
-  addOptionsOption(options);
-  options.add( "+collection", ki18nc("@info:shell", "The collection to create, either as a path or a name (with a parent specified)"));
-  addOptionSeparator(options);
-  options.add("p").add("parent <collection>", ki18nc("@info:shell", "Parent collection to create in"));
-  addDryRunOption(options);
+    addOptionsOption(options);
+    options.add("+collection", ki18nc("@info:shell", "The collection to create, either as a path or a name (with a parent specified)"));
+    addOptionSeparator(options);
+    options.add("p").add("parent <collection>", ki18nc("@info:shell", "Parent collection to create in"));
+    addDryRunOption(options);
 }
-
 
 int CreateCommand::initCommand(KCmdLineArgs *parsedArgs)
 {
-  if (parsedArgs->count()<2)
-  {
-    emitErrorSeeHelp(ki18nc("@info:shell", "Missing collection argument"));
-    return InvalidUsage;
-  }
-
-  const QString collectionArg = parsedArgs->arg(1);
-
-  if (parsedArgs->isSet("parent"))
-  {
-    // A parent collection is specified.  That must already exist,
-    // and the new collection must be a plain name (not containing
-    // any '/'es).
-
-    if (collectionArg.contains(QLatin1Char('/')))
-    {
-      emitErrorSeeHelp(ki18nc("@info:shell", "Collection argument (with parent) cannot be a path"));
-      return InvalidUsage;
+    if (parsedArgs->count() < 2) {
+        emitErrorSeeHelp(ki18nc("@info:shell", "Missing collection argument"));
+        return InvalidUsage;
     }
 
-    mNewCollectionName = collectionArg;
-    mParentCollection = parsedArgs->getOption("parent");
-  }
-  else
-  {
-    // No parent collection is specified.  The new collection name
-    // is the last part of the specified argument, and the remainder
-    // is taken as the parent collection which must already exist.
-    // Note that this means that an argument like "33/newname" is
-    // acceptable, where the number is resolved as a collection ID.
-    // Even something like "akonadi://?collection=33/newname" is
-    // acceptable.
+    const QString collectionArg = parsedArgs->arg(1);
 
-    int i = collectionArg.lastIndexOf(QLatin1Char('/'));
-    if (i==-1)
-    {
-      emitErrorSeeHelp(ki18nc("@info:shell", "Collection argument (without parent) must be a path"));
-      return InvalidUsage;
+    if (parsedArgs->isSet("parent")) {
+        // A parent collection is specified.  That must already exist,
+        // and the new collection must be a plain name (not containing
+        // any '/'es).
+
+        if (collectionArg.contains(QLatin1Char('/'))) {
+            emitErrorSeeHelp(ki18nc("@info:shell", "Collection argument (with parent) cannot be a path"));
+            return InvalidUsage;
+        }
+
+        mNewCollectionName = collectionArg;
+        mParentCollection = parsedArgs->getOption("parent");
+    } else {
+        // No parent collection is specified.  The new collection name
+        // is the last part of the specified argument, and the remainder
+        // is taken as the parent collection which must already exist.
+        // Note that this means that an argument like "33/newname" is
+        // acceptable, where the number is resolved as a collection ID.
+        // Even something like "akonadi://?collection=33/newname" is
+        // acceptable.
+
+        int i = collectionArg.lastIndexOf(QLatin1Char('/'));
+        if (i == -1) {
+            emitErrorSeeHelp(ki18nc("@info:shell", "Collection argument (without parent) must be a path"));
+            return InvalidUsage;
+        }
+
+        mNewCollectionName = collectionArg.mid(i + 1);
+        mParentCollection = collectionArg.left(i);
     }
 
-    mNewCollectionName = collectionArg.mid(i+1);
-    mParentCollection = collectionArg.left(i);
-  }
+    if (mNewCollectionName.isEmpty()) {
+        emitErrorSeeHelp(ki18nc("@info:shell", "New collection name not specified"));
+        return InvalidUsage;
+    }
 
-  if (mNewCollectionName.isEmpty())
-  {
-    emitErrorSeeHelp(ki18nc("@info:shell", "New collection name not specified"));
-    return InvalidUsage;
-  }
+    mDryRun = parsedArgs->isSet("dryrun");
 
-  mDryRun = parsedArgs->isSet("dryrun");
+    mResolveJob = new CollectionResolveJob(mParentCollection, this);
+    if (!mResolveJob->hasUsableInput()) {
+        emit error(ki18nc("@info:shell",
+                          "Invalid parent collection '%1', %2")
+                   .subs(mParentCollection)
+                   .subs(mResolveJob->errorString()).toString());
+        delete mResolveJob;
+        mResolveJob = nullptr;
+        return InvalidUsage;
+    }
 
-  mResolveJob = new CollectionResolveJob(mParentCollection, this);
-  if (!mResolveJob->hasUsableInput())
-  {
-    emit error(ki18nc("@info:shell",
-                      "Invalid parent collection '%1', %2")
-               .subs(mParentCollection)
-               .subs(mResolveJob->errorString()).toString());
-    delete mResolveJob;
-    mResolveJob = nullptr;
-    return InvalidUsage;
-  }
-
-  return NoError;
+    return NoError;
 }
-
 
 void CreateCommand::onTargetFetched(KJob *job)
 {
-  if (job->error()!=0)
-  {
-    emit error(ki18nc("@info:shell",
-                      "Cannot fetch parent collection '%1', %2")
-               .subs(mParentCollection)
-               .subs(job->errorString()).toString());
-    emit finished(RuntimeError);
-    return;
-  }
-
-  Q_ASSERT(job==mResolveJob);
-  Akonadi::Collection parentCollection = mResolveJob->collection();
-  Q_ASSERT(parentCollection.isValid());
-
-  // Warning for bug 319513
-  if ((mNewCollectionName=="cur") || (mNewCollectionName=="new") || (mNewCollectionName=="tmp"))
-  {
-    QString parentResource = parentCollection.resource();
-    if (parentResource.startsWith(QLatin1String("akonadi_maildir_resource")))
-    {
-      ErrorReporter::warning(i18n("Creating a maildir folder named '%1' may not work",
-                                  mNewCollectionName));
+    if (job->error() != 0) {
+        emit error(ki18nc("@info:shell",
+                          "Cannot fetch parent collection '%1', %2")
+                   .subs(mParentCollection)
+                   .subs(job->errorString()).toString());
+        emit finished(RuntimeError);
+        return;
     }
-  }
 
-  Akonadi::Collection newCollection;
-  newCollection.setParentCollection(parentCollection);
-  newCollection.setName(mNewCollectionName);
-  newCollection.setContentMimeTypes(parentCollection.contentMimeTypes());
-  if (!mDryRun)
-  {
-    CollectionCreateJob *createJob = new CollectionCreateJob(newCollection);
-    connect(createJob, SIGNAL(result(KJob *)), this, SLOT(onCollectionCreated(KJob *)));
-  }
-  else
-  {
-    emit finished(NoError);
-  }
+    Q_ASSERT(job == mResolveJob);
+    Akonadi::Collection parentCollection = mResolveJob->collection();
+    Q_ASSERT(parentCollection.isValid());
+
+    // Warning for bug 319513
+    if ((mNewCollectionName == "cur") || (mNewCollectionName == "new") || (mNewCollectionName == "tmp")) {
+        QString parentResource = parentCollection.resource();
+        if (parentResource.startsWith(QLatin1String("akonadi_maildir_resource"))) {
+            ErrorReporter::warning(i18n("Creating a maildir folder named '%1' may not work",
+                                        mNewCollectionName));
+        }
+    }
+
+    Akonadi::Collection newCollection;
+    newCollection.setParentCollection(parentCollection);
+    newCollection.setName(mNewCollectionName);
+    newCollection.setContentMimeTypes(parentCollection.contentMimeTypes());
+    if (!mDryRun) {
+        CollectionCreateJob *createJob = new CollectionCreateJob(newCollection);
+        connect(createJob, SIGNAL(result(KJob*)), this, SLOT(onCollectionCreated(KJob*)));
+    } else {
+        emit finished(NoError);
+    }
 }
-
 
 void CreateCommand::onCollectionCreated(KJob *job)
 {
-  if (job->error()!=0)
-  {
-    Q_ASSERT(mResolveJob!=nullptr);
-    ErrorReporter::error(i18n("Error creating collection \"%1\" under \"%2\" , %3",
-                              mNewCollectionName,
-                              mResolveJob->formattedCollectionName(),
-                              job->errorString()));
-    emit finished(RuntimeError);
-    return;
-  }
+    if (job->error() != 0) {
+        Q_ASSERT(mResolveJob != nullptr);
+        ErrorReporter::error(i18n("Error creating collection \"%1\" under \"%2\" , %3",
+                                  mNewCollectionName,
+                                  mResolveJob->formattedCollectionName(),
+                                  job->errorString()));
+        emit finished(RuntimeError);
+        return;
+    }
 
-  CollectionCreateJob *createJob = qobject_cast<CollectionCreateJob *>(job);
-  Q_ASSERT(createJob!=nullptr);
+    CollectionCreateJob *createJob = qobject_cast<CollectionCreateJob *>(job);
+    Q_ASSERT(createJob != nullptr);
 
-  CollectionPathJob *pathJob = new CollectionPathJob(createJob->collection());
-  connect(pathJob, SIGNAL(result(KJob *)), SLOT(onPathFetched(KJob *)));
-  pathJob->start();
+    CollectionPathJob *pathJob = new CollectionPathJob(createJob->collection());
+    connect(pathJob, SIGNAL(result(KJob*)), SLOT(onPathFetched(KJob*)));
+    pathJob->start();
 }
-
 
 void CreateCommand::onPathFetched(KJob *job)
 {
-  if (job->error()!=0)
-  {
-    Q_ASSERT(mResolveJob!=nullptr);
-    ErrorReporter::error(i18n("Error getting path of new collection, %1", job->errorString()));
-    emit finished(RuntimeError);
-    return;
-  }
+    if (job->error() != 0) {
+        Q_ASSERT(mResolveJob != nullptr);
+        ErrorReporter::error(i18n("Error getting path of new collection, %1", job->errorString()));
+        emit finished(RuntimeError);
+        return;
+    }
 
-  CollectionPathJob *pathJob = qobject_cast<CollectionPathJob *>(job);
-  Q_ASSERT(pathJob!=nullptr);
+    CollectionPathJob *pathJob = qobject_cast<CollectionPathJob *>(job);
+    Q_ASSERT(pathJob != nullptr);
 
-  std::cout << i18n("Created new collection %1",
-                    pathJob->formattedCollectionPath()).toLocal8Bit().constData()
-            << std::endl;
+    std::cout << i18n("Created new collection %1",
+                      pathJob->formattedCollectionPath()).toLocal8Bit().constData()
+              << std::endl;
 
-  emit finished(NoError);
+    emit finished(NoError);
 }

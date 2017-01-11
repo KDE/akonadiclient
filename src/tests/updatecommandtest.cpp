@@ -68,8 +68,8 @@ void UpdateCommandTest::testUpdateItem()
     QVector<QByteArray> args;
     args.reserve(numArgs);
     args << "akonadiclient" << "update"
-        << item.url().toEncoded()
-        << tempFile.fileName().toLocal8Bit();
+         << item.url().toEncoded()
+         << tempFile.fileName().toLocal8Bit();
 
     const char *testArgs[4] = {
         args[0].data(),

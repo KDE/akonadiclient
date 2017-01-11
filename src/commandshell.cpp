@@ -34,12 +34,9 @@
 
 #include <unistd.h>
 
-
 DEFINE_COMMAND("shell", CommandShell, "Enter commands in an interactive shell");
 
-
 bool CommandShell::sIsActive = false;
-
 
 CommandShell::CommandShell(QObject *parent)
     : AbstractCommand(parent),
@@ -54,13 +51,11 @@ CommandShell::~CommandShell()
     delete mTextStream;
 }
 
-
 void shellRestart()
 {
-    if (CommandShell::isActive())
-    {
+    if (CommandShell::isActive()) {
         QByteArray path = QCoreApplication::applicationFilePath().toLocal8Bit();
-        char * const args[] = {
+        char *const args[] = {
             path.data(),
             "shell",
             nullptr,
@@ -69,7 +64,6 @@ void shellRestart()
     }
 }
 
-
 int CommandShell::initCommand(KCmdLineArgs *parsedArgs)
 {
     std::atexit(&shellRestart);
@@ -77,21 +71,20 @@ int CommandShell::initCommand(KCmdLineArgs *parsedArgs)
     return (AbstractCommand::NoError);
 }
 
-
 void CommandShell::start()
 {
-    if (!enterCommandLoop())
-    {
+    if (!enterCommandLoop()) {
         sIsActive = false;
         QCoreApplication::quit();
     }
 }
 
-
 bool CommandShell::enterCommandLoop()
 {
     QString input = mTextStream->readLine();
-    if (mTextStream->atEnd()) return (false);
+    if (mTextStream->atEnd()) {
+        return (false);
+    }
 
     QStringList list;
     list.insert(0, QCoreApplication::applicationName());
@@ -125,12 +118,12 @@ bool CommandShell::enterCommandLoop()
         list.append(arg);
     }
 
-    QVarLengthArray<char*> tempArgs;
+    QVarLengthArray<char *> tempArgs;
     tempArgs.reserve(list.size());
 
     for (int i = 0; i < list.size(); i++) {
         std::string str = list.at(i).toStdString();
-        char *temp = new char[str.length()+1];
+        char *temp = new char[str.length() + 1];
         str.copy(temp, str.length());
         temp[str.length()] = '\0';
         tempArgs.append(temp);
@@ -140,17 +133,16 @@ bool CommandShell::enterCommandLoop()
 
     char **args = tempArgs.data();
     KCmdLineArgs *parsedArgs = getParsedArgs(list.length(), args);
-    if (parsedArgs->count()>0)
-    {
-        if (parsedArgs->arg(0)=="quit" || parsedArgs->arg(0)=="exit") return (false);
+    if (parsedArgs->count() > 0) {
+        if (parsedArgs->arg(0) == "quit" || parsedArgs->arg(0) == "exit") {
+            return (false);
+        }
 
         CommandFactory factory(parsedArgs);
         mCommand = factory.createCommand();
-        if (mCommand!=nullptr)
-        {
+        if (mCommand != nullptr) {
             connect(mCommand, SIGNAL(error(QString)), this, SLOT(onCommandError(QString)));
-            if (mCommand->init(parsedArgs)==AbstractCommand::NoError)
-            {
+            if (mCommand->init(parsedArgs) == AbstractCommand::NoError) {
                 connect(mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)));
                 toInvoke = mCommand;
             }
@@ -162,15 +154,15 @@ bool CommandShell::enterCommandLoop()
     return (true);
 }
 
-KCmdLineArgs* CommandShell::getParsedArgs(int argc, char **argv)
+KCmdLineArgs *CommandShell::getParsedArgs(int argc, char **argv)
 {
     KCmdLineArgs::reset();
     KCmdLineArgs::init(argc, argv, KGlobal::mainComponent().aboutData(), KCmdLineArgs::CmdLineArgNone);
 
     KCmdLineOptions options;
     options.add("!+command", ki18nc("@info:shell", "Command to execute"));
-    options.add("+[options]", ki18nc( "@info:shell", "Options for command"));
-    options.add("+[args]", ki18nc( "@info:shell", "Arguments for command"));
+    options.add("+[options]", ki18nc("@info:shell", "Options for command"));
+    options.add("+[args]", ki18nc("@info:shell", "Arguments for command"));
     options.add("", ki18nc("@info:shell",
                            "See 'help' for available commands"
                            "\n"
@@ -181,7 +173,9 @@ KCmdLineArgs* CommandShell::getParsedArgs(int argc, char **argv)
 
 void CommandShell::onCommandFinished(int exitCode)
 {
-    if (mCommand!=nullptr) mCommand->deleteLater();
+    if (mCommand != nullptr) {
+        mCommand->deleteLater();
+    }
     mCommand = nullptr;
     QMetaObject::invokeMethod(this, "start", Qt::QueuedConnection);
 }
@@ -191,7 +185,7 @@ void CommandShell::onCommandError(const QString &error)
     ErrorReporter::error(error);
 }
 
-void CommandShell::freeArguments(const QVarLengthArray<char*> &args)
+void CommandShell::freeArguments(const QVarLengthArray<char *> &args)
 {
     for (int i = 0; i < args.size(); i++) {
         delete[] args.at(i);

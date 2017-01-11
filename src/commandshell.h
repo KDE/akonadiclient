@@ -39,7 +39,10 @@ public:
     QString name() const;
 
 public:
-    static bool isActive()	{ return (sIsActive); }
+    static bool isActive()
+    {
+        return (sIsActive);
+    }
 
 public Q_SLOTS:
     void start();
@@ -55,12 +58,12 @@ private:
 
 private:
     KCmdLineArgs *getParsedArgs(int argc, char **argv);
-    void freeArguments(const QVarLengthArray<char*> &args);
+    void freeArguments(const QVarLengthArray<char *> &args);
     bool enterCommandLoop();
 
 private Q_SLOTS:
-    void onCommandFinished( int exitCode );
-    void onCommandError( const QString &error );
+    void onCommandFinished(int exitCode);
+    void onCommandError(const QString &error);
 };
 
 #endif // COMMANDSHELL_H

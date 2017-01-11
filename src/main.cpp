@@ -30,58 +30,58 @@
 
 #include "version.h"
 
-
 const char *appname = "akonadiclient";
 
-
-int main( int argc, char **argv )
+int main(int argc, char **argv)
 {
 #if 0
-  K4AboutData aboutData( appname, 0, ki18nc( "@title program name", "Akonadi Client" ),
+    K4AboutData aboutData(appname, 0, ki18nc("@title program name", "Akonadi Client"),
 #ifdef VCS_HAVE_VERSION
-                        ( VERSION " (" VCS_TYPE_STRING " " VCS_REVISION_STRING ")"),
+                          (VERSION " (" VCS_TYPE_STRING " " VCS_REVISION_STRING ")"),
 #else
-                        VERSION,
+                          VERSION,
 #endif
-                        ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
-                        K4AboutData::License_GPL );
+                          ki18nc("@info:shell short description", "A command-line/shell client for Akonadi"),
+                          K4AboutData::License_GPL);
 #else
-    K4AboutData aboutData( appname, nullptr, ki18nc( "@title program name", "Akonadi Client" ), "0.1",
-                           ki18nc( "@info:shell short description", "A command-line/shell client for Akonadi" ),
-                           K4AboutData::License_GPL );
+    K4AboutData aboutData(appname, nullptr, ki18nc("@title program name", "Akonadi Client"), "0.1",
+                          ki18nc("@info:shell short description", "A command-line/shell client for Akonadi"),
+                          K4AboutData::License_GPL);
 
 #endif
-  aboutData.addAuthor( ki18n( "Kevin Krammer" ), ki18nc( "@title about data task", "Original Author" ), "krammer@kde.org" );
-  aboutData.addAuthor( ki18n( "Jonathan Marten" ), ki18nc( "@title about data task", "Additions and new commands" ), "jjm@keelhaul.me.uk" );
-  aboutData.addAuthor( ki18n( "Bhaskar Kandiyal" ), ki18nc( "@title about data task", "New commands, GSOC 2014" ), "bkandiyal@gmail.com" );
+    aboutData.addAuthor(ki18n("Kevin Krammer"), ki18nc("@title about data task", "Original Author"), "krammer@kde.org");
+    aboutData.addAuthor(ki18n("Jonathan Marten"), ki18nc("@title about data task", "Additions and new commands"), "jjm@keelhaul.me.uk");
+    aboutData.addAuthor(ki18n("Bhaskar Kandiyal"), ki18nc("@title about data task", "New commands, GSOC 2014"), "bkandiyal@gmail.com");
 
-  KCmdLineArgs::init( argc, argv, &aboutData );
-  KCmdLineArgs::addStdCmdLineOptions( KCmdLineArgs::CmdLineArgNone );
+    KCmdLineArgs::init(argc, argv, &aboutData);
+    KCmdLineArgs::addStdCmdLineOptions(KCmdLineArgs::CmdLineArgNone);
 
-  KCmdLineOptions options;
-  options.add( "!+command", ki18nc( "@info:shell", "Command to execute" ) );
-  options.add( "+[options]", ki18nc( "@info:shell", "Options for command" ) );
-  options.add( "+[args]", ki18nc( "@info:shell", "Arguments for command" ) );
-  options.add( "", ki18nc( "@info:shell",
+    KCmdLineOptions options;
+    options.add("!+command", ki18nc("@info:shell", "Command to execute"));
+    options.add("+[options]", ki18nc("@info:shell", "Options for command"));
+    options.add("+[args]", ki18nc("@info:shell", "Arguments for command"));
+    options.add("", ki18nc("@info:shell",
                            "See '<application>%1</application> help'"
                            " for available commands"
                            "\n"
                            "See '<application>%1</application> help command'"
-                           " for more information on a specific command." ).subs( appname ) );
-  KCmdLineArgs::addCmdLineOptions( options );
+                           " for more information on a specific command.").subs(appname));
+    KCmdLineArgs::addCmdLineOptions(options);
 
-  // call right away so standard options like --version can terminate the program right here
-  KCmdLineArgs *parsedArgs = KCmdLineArgs::parsedArgs();
+    // call right away so standard options like --version can terminate the program right here
+    KCmdLineArgs *parsedArgs = KCmdLineArgs::parsedArgs();
 
-  // TODO should we allow commands to optionally support GUI?
-  QCoreApplication application(KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv());
-  application.setApplicationName( aboutData.appName() );
-  application.setApplicationVersion( aboutData.version() );
-  application.setOrganizationDomain( aboutData.organizationDomain() );
+    // TODO should we allow commands to optionally support GUI?
+    QCoreApplication application(KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv());
+    application.setApplicationName(aboutData.appName());
+    application.setApplicationVersion(aboutData.version());
+    application.setOrganizationDomain(aboutData.organizationDomain());
 
-  CommandRunner runner(parsedArgs);
-  int ret = runner.start();
-  if (ret!=AbstractCommand::NoError) return (ret);
+    CommandRunner runner(parsedArgs);
+    int ret = runner.start();
+    if (ret != AbstractCommand::NoError) {
+        return (ret);
+    }
 
-  return (application.exec());
+    return (application.exec());
 }

@@ -26,35 +26,32 @@
 
 using namespace Akonadi;
 
-
 DEFINE_COMMAND("move", MoveCommand, "Move collections or items into a new collection");
 
-
 MoveCommand::MoveCommand(QObject *parent)
-  : CopyCommand(parent)
+    : CopyCommand(parent)
 {
-  mMoving = true;
+    mMoving = true;
 }
-
 
 MoveCommand::~MoveCommand()
 {
 }
 
-
 void MoveCommand::setupCommandOptions(KCmdLineOptions &options)
 {
-  AbstractCommand::setupCommandOptions(options);
+    AbstractCommand::setupCommandOptions(options);
 
-  addOptionsOption(options);
-  options.add( "+source...", ki18nc( "@info:shell", "Existing collections or items to move"));
-  options.add( "+destination", ki18nc( "@info:shell", "Destination collection to move into"));
-  addDryRunOption(options);
+    addOptionsOption(options);
+    options.add("+source...", ki18nc("@info:shell", "Existing collections or items to move"));
+    options.add("+destination", ki18nc("@info:shell", "Destination collection to move into"));
+    addDryRunOption(options);
 }
-
 
 void MoveCommand::start()
 {
-  if (!allowDangerousOperation()) emit finished(RuntimeError);
-  CopyCommand::start();
+    if (!allowDangerousOperation()) {
+        emit finished(RuntimeError);
+    }
+    CopyCommand::start();
 }

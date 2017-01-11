@@ -28,9 +28,7 @@
 
 using namespace Akonadi;
 
-
 DEFINE_COMMAND("export", ExportCommand, "Export a collection to an XML file");
-
 
 ExportCommand::ExportCommand(QObject *parent)
     : AbstractCommand(parent),
@@ -44,7 +42,7 @@ ExportCommand::~ExportCommand()
     delete mResolveJob;
 }
 
-void ExportCommand::setupCommandOptions(KCmdLineOptions& options)
+void ExportCommand::setupCommandOptions(KCmdLineOptions &options)
 {
     AbstractCommand::setupCommandOptions(options);
 
@@ -55,7 +53,7 @@ void ExportCommand::setupCommandOptions(KCmdLineOptions& options)
     addDryRunOption(options);
 }
 
-int ExportCommand::initCommand(KCmdLineArgs* parsedArgs)
+int ExportCommand::initCommand(KCmdLineArgs *parsedArgs)
 {
     if (parsedArgs->count() < 2) {
         emitErrorSeeHelp(ki18nc("@info:shell", "No collection specified"));

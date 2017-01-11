@@ -21,38 +21,36 @@
 
 #include "abstractcommand.h"
 
-
 class CollectionResolveJob;
 class KJob;
 
-
 class CreateCommand : public AbstractCommand
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     explicit CreateCommand(QObject *parent = 0);
     ~CreateCommand();
 
     QString name() const;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     void start();
 
-  protected:
+protected:
     void setupCommandOptions(KCmdLineOptions &options);
     int initCommand(KCmdLineArgs *parsedArgs);
 
-  private:
+private:
     CollectionResolveJob *mResolveJob;
     QString mNewCollectionName;
     QString mParentCollection;
     bool mDryRun;
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void onTargetFetched(KJob *job);
     void onCollectionCreated(KJob *job);
     void onPathFetched(KJob *job);
 };
 
-#endif							// CREATECOMMAND_H
+#endif                          // CREATECOMMAND_H

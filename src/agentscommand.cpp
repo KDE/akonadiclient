@@ -34,9 +34,7 @@
 
 using namespace Akonadi;
 
-
 DEFINE_COMMAND("agents", AgentsCommand, "Manage Akonadi agents");
-
 
 AgentsCommand::AgentsCommand(QObject *parent)
     : AbstractCommand(parent),
@@ -111,34 +109,34 @@ int AgentsCommand::initCommand(KCmdLineArgs *parsedArgs)
 void AgentsCommand::start()
 {
     switch (mOption) {
-        case LIST: {
-            QVector<AgentInstance> instances = AgentManager::self()->instances();
-            printAgentStatus(instances);
-            break;
-        }
-        case SETSTATE: {
-            setState();
-            break;
-        }
-        case GETSTATE: {
-            getState();
-            break;
-        }
-        case INFO: {
-            showInfo();
-            break;
-        }
+    case LIST: {
+        QVector<AgentInstance> instances = AgentManager::self()->instances();
+        printAgentStatus(instances);
+        break;
+    }
+    case SETSTATE: {
+        setState();
+        break;
+    }
+    case GETSTATE: {
+        getState();
+        break;
+    }
+    case INFO: {
+        showInfo();
+        break;
+    }
 
-        case RESTART: {
-            restartAgents();
-            break;
-        }
+    case RESTART: {
+        restartAgents();
+        break;
+    }
 
-        default: {
-            emitErrorSeeHelp(ki18nc("@info:shell", "Invalid parameters"));
-            emit finished(InvalidUsage);
-            break;
-        }
+    default: {
+        emitErrorSeeHelp(ki18nc("@info:shell", "Invalid parameters"));
+        emit finished(InvalidUsage);
+        break;
+    }
     }
 
     emit finished(NoError);
@@ -182,14 +180,14 @@ void AgentsCommand::setState()
         for (int i = 0; i < agentList.length(); i++) {
             AgentInstance instance = agentList.at(i);
             switch (mStateArg) {
-                case ONLINE: {
-                    instance.setIsOnline(true);
-                    break;
-                }
-                case OFFLINE: {
-                    instance.setIsOnline(false);
-                    break;
-                }
+            case ONLINE: {
+                instance.setIsOnline(true);
+                break;
+            }
+            case OFFLINE: {
+                instance.setIsOnline(false);
+                break;
+            }
             }
         }
     }

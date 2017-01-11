@@ -16,7 +16,6 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-
 #ifndef ADDCOMMAND_H
 #define ADDCOMMAND_H
 
@@ -35,27 +34,27 @@ class KJob;
 
 class AddCommand : public AbstractCommand
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     enum AddDirectoryMode {
-      AddDirOnly = 0,
-      AddRecursive
+        AddDirOnly = 0,
+        AddRecursive
     };
 
-    explicit AddCommand( QObject *parent = 0 );
+    explicit AddCommand(QObject *parent = 0);
     ~AddCommand();
 
     QString name() const;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     void start();
 
-  protected:
-    void setupCommandOptions( KCmdLineOptions &options );
-    int initCommand( KCmdLineArgs *parsedArgs );
+protected:
+    void setupCommandOptions(KCmdLineOptions &options);
+    int initCommand(KCmdLineArgs *parsedArgs);
 
-  private:
+private:
     CollectionResolveJob *mResolveJob;
 
     QSet<QString> mFiles;
@@ -68,13 +67,13 @@ class AddCommand : public AbstractCommand
     Akonadi::Collection mBaseCollection;
     KMimeType::Ptr mMimeType;
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void processNextDirectory();
     void processNextFile();
-    void onTargetFetched( KJob *job );
-    void onCollectionCreated( KJob *job );
-    void onCollectionFetched( KJob *job );
-    void onItemCreated( KJob *job );
+    void onTargetFetched(KJob *job);
+    void onCollectionCreated(KJob *job);
+    void onCollectionFetched(KJob *job);
+    void onItemCreated(KJob *job);
 };
 
 #endif // ADDCOMMAND_H

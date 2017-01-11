@@ -38,9 +38,7 @@
 
 using namespace Akonadi;
 
-
 DEFINE_COMMAND("delete", DeleteCommand, "Delete a collection or an item");
-
 
 DeleteCommand::DeleteCommand(QObject *parent)
     : AbstractCommand(parent),
@@ -67,7 +65,6 @@ void DeleteCommand::setupCommandOptions(KCmdLineOptions &options)
     addCollectionItemOptions(options);
     addDryRunOption(options);
 }
-
 
 int DeleteCommand::initCommand(KCmdLineArgs *parsedArgs)
 {
@@ -100,14 +97,16 @@ int DeleteCommand::initCommand(KCmdLineArgs *parsedArgs)
 
 void DeleteCommand::start()
 {
-    if (!allowDangerousOperation()) emit finished(RuntimeError);
+    if (!allowDangerousOperation()) {
+        emit finished(RuntimeError);
+    }
 
     Q_ASSERT(mResolveJob != nullptr);
 
     if (mIsItem) {
         fetchItems();
     } else {
-        connect(mResolveJob, SIGNAL(result(KJob *)), SLOT(onBaseFetched(KJob *)));
+        connect(mResolveJob, SIGNAL(result(KJob*)), SLOT(onBaseFetched(KJob*)));
         mResolveJob->start();
     }
 }
@@ -137,7 +136,7 @@ void DeleteCommand::onBaseFetched(KJob *job)
 
     if (!mDryRun) {
         mDeleteJob = new CollectionDeleteJob(mResolveJob->collection());
-        connect(mDeleteJob, SIGNAL(result(KJob *)), SLOT(onCollectionDeleted(KJob *)));
+        connect(mDeleteJob, SIGNAL(result(KJob*)), SLOT(onCollectionDeleted(KJob*)));
     } else {
         onCollectionDeleted(job);
     }
@@ -158,8 +157,7 @@ void DeleteCommand::onCollectionDeleted(KJob *job)
 void DeleteCommand::fetchItems()
 {
     Item item = CollectionResolveJob::parseItem(mEntityArg);
-    if (!item.isValid())
-    {
+    if (!item.isValid()) {
         emit error(i18nc("@info:shell", "Invalid item/collection syntax '%1'", mEntityArg));
         emit finished(RuntimeError);
         return;
@@ -167,10 +165,10 @@ void DeleteCommand::fetchItems()
 
     if (!mDryRun) {
         ItemDeleteJob *deleteJob = new ItemDeleteJob(item, this);
-        connect(deleteJob, SIGNAL(result(KJob *)), SLOT(onItemsDeleted(KJob *)));
+        connect(deleteJob, SIGNAL(result(KJob*)), SLOT(onItemsDeleted(KJob*)));
     } else {
         ItemFetchJob *fetchJob = new ItemFetchJob(item, this);
-        connect(fetchJob, SIGNAL(result(KJob *)), SLOT(onItemsFetched(KJob *)));
+        connect(fetchJob, SIGNAL(result(KJob*)), SLOT(onItemsFetched(KJob*)));
     }
 }
 
@@ -183,7 +181,7 @@ void DeleteCommand::onItemsFetched(KJob *job)
     }
 
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
-    Q_ASSERT(fetchJob!=nullptr);
+    Q_ASSERT(fetchJob != nullptr);
     Item::List items = fetchJob->items();
     if (items.count() < 0) {
         emit error(i18nc("@info:shell", "Cannot find '%1' as a collection or item", mEntityArg));

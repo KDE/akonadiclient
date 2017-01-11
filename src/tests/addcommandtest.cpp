@@ -141,7 +141,6 @@ void AddCommandTest::testAddItem()
     QCOMPARE(itemFetchJob2->items().at(0).payloadData(), QByteArray("Bar Item"));
 }
 
-
 void AddCommandTest::testAddItemWithBase()
 {
     CollectionResolveJob *resolveJob = new CollectionResolveJob("/res3", this);
@@ -164,7 +163,7 @@ void AddCommandTest::testAddItemWithBase()
     QVector<QByteArray> args;
     args.reserve(numArgs);
     args << "akonadiclient" << "add" << "--base" << mTempDir->name().toLocal8Bit() << "/res3/temp"
-        << "test.txt" << "foo/hello.txt" << "foo/bar";
+         << "test.txt" << "foo/hello.txt" << "foo/bar";
 
     const char *testArgs[numArgs];
     for (int i = 0; i < numArgs; i++) {

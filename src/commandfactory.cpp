@@ -29,22 +29,19 @@
 
 #include <iostream>
 
-
-struct CommandData
-{
-  KLocalizedString shortHelp;
-  CommandFactory::creatorFunction creator;
+struct CommandData {
+    KLocalizedString shortHelp;
+    CommandFactory::creatorFunction creator;
 };
 
 static QHash<QString, CommandData *> *sCommands = nullptr;
 
-
-CommandFactory::CommandFactory( KCmdLineArgs *parsedArgs )
-  : mParsedArgs( parsedArgs )
+CommandFactory::CommandFactory(KCmdLineArgs *parsedArgs)
+    : mParsedArgs(parsedArgs)
 {
-  Q_ASSERT( mParsedArgs != nullptr );
+    Q_ASSERT(mParsedArgs != nullptr);
 
-  checkAndHandleHelp();
+    checkAndHandleHelp();
 }
 
 CommandFactory::~CommandFactory()
@@ -53,116 +50,109 @@ CommandFactory::~CommandFactory()
 
 AbstractCommand *CommandFactory::createCommand()
 {
-  const QString commandName = mParsedArgs->arg(0);
+    const QString commandName = mParsedArgs->arg(0);
 
-  CommandData *data = sCommands->value(commandName);
-  if (data==nullptr)
-  {
-    KCmdLineArgs::enable_i18n();
-    ErrorReporter::error(i18nc("@info:shell", "Unknown command '%1'", commandName));
-    printHelpAndExit(false);
-  }
+    CommandData *data = sCommands->value(commandName);
+    if (data == nullptr) {
+        KCmdLineArgs::enable_i18n();
+        ErrorReporter::error(i18nc("@info:shell", "Unknown command '%1'", commandName));
+        printHelpAndExit(false);
+    }
 
-  AbstractCommand *command = (data->creator)(nullptr);
-  Q_ASSERT(command!=nullptr);
-  return (command);
+    AbstractCommand *command = (data->creator)(nullptr);
+    Q_ASSERT(command != nullptr);
+    return (command);
 }
-
 
 void CommandFactory::registerCommand(const QString &name,
                                      const KLocalizedString &shortHelp,
                                      CommandFactory::creatorFunction creator)
 {
-  CommandData *data = new CommandData;
-  data->shortHelp = shortHelp;
-  data->creator = creator;
+    CommandData *data = new CommandData;
+    data->shortHelp = shortHelp;
+    data->creator = creator;
 
-  if (sCommands==nullptr) sCommands = new QHash<QString, CommandData *>;
-  sCommands->insert(name, data);
+    if (sCommands == nullptr) {
+        sCommands = new QHash<QString, CommandData *>;
+    }
+    sCommands->insert(name, data);
 }
-
 
 // There are 3 cases to consider here:
 //
-//  1.	No arguments specified.  Display an error message and the list of
-//	available commands to stderr.
+//  1.  No arguments specified.  Display an error message and the list of
+//  available commands to stderr.
 //
-//  2.	One argument specified and it is "help".  Just display the list of
-//	available commands to stdout.
+//  2.  One argument specified and it is "help".  Just display the list of
+//  available commands to stdout.
 //
-//  3.	More than one argument is specified and the first is "help".  For
-//	the first argument, display the help for its options to stdout.
-//	If there is no such command, display an error message.  Only help
-//	for one command can be displayed, because KCmdLineArgs::usage()
-//	exits when it has finished displaying the help.
+//  3.  More than one argument is specified and the first is "help".  For
+//  the first argument, display the help for its options to stdout.
+//  If there is no such command, display an error message.  Only help
+//  for one command can be displayed, because KCmdLineArgs::usage()
+//  exits when it has finished displaying the help.
 //
 // If none of the above apply, then do nothing.
 
 void CommandFactory::checkAndHandleHelp()
 {
-  if ( mParsedArgs->count() == 0 )			// case 1
-  {
-    KCmdLineArgs::enable_i18n();
-    ErrorReporter::error( i18nc( "@info:shell",
-                                 "No command specified (try '%1 --help')",
-                                 KCmdLineArgs::appName() ) );
-    std::exit( AbstractCommand::InvalidUsage );
-  }
-
-  if ( mParsedArgs->arg( 0 ) == QLatin1String( "help" ) )
-  {
-    if ( mParsedArgs->count() == 1 )			// case 2
-    {
-      printHelpAndExit( true );
+    if (mParsedArgs->count() == 0) {           // case 1
+        KCmdLineArgs::enable_i18n();
+        ErrorReporter::error(i18nc("@info:shell",
+                                   "No command specified (try '%1 --help')",
+                                   KCmdLineArgs::appName()));
+        std::exit(AbstractCommand::InvalidUsage);
     }
 
-    for (int a = 1; a<mParsedArgs->count(); ++a)	// case 3
-    {
-      const QString commandName = mParsedArgs->arg(a);
-      if ( !sCommands->contains( commandName ) )
-      {
-        ErrorReporter::warning( i18nc( "@info:shell", "Unknown command '%1'", commandName ) );
-        continue;
-      }
+    if (mParsedArgs->arg(0) == QLatin1String("help")) {
+        if (mParsedArgs->count() == 1) {         // case 2
+            printHelpAndExit(true);
+        }
 
-      CommandData *data = sCommands->value(commandName);
-      Q_ASSERT(data!=nullptr);
-      AbstractCommand *command = (data->creator)(nullptr);
-      Q_ASSERT(command!=nullptr);
-      command->init(mParsedArgs);
-      KCmdLineArgs::usage();
+        for (int a = 1; a < mParsedArgs->count(); ++a) { // case 3
+            const QString commandName = mParsedArgs->arg(a);
+            if (!sCommands->contains(commandName)) {
+                ErrorReporter::warning(i18nc("@info:shell", "Unknown command '%1'", commandName));
+                continue;
+            }
+
+            CommandData *data = sCommands->value(commandName);
+            Q_ASSERT(data != nullptr);
+            AbstractCommand *command = (data->creator)(nullptr);
+            Q_ASSERT(command != nullptr);
+            command->init(mParsedArgs);
+            KCmdLineArgs::usage();
+        }
+
+        std::exit(AbstractCommand::NoError);
     }
-
-    std::exit( AbstractCommand::NoError );
-  }
 }
 
-
-void CommandFactory::printHelpAndExit( bool userRequestedHelp )
+void CommandFactory::printHelpAndExit(bool userRequestedHelp)
 {
-  int maxNameLength = 0;
-  QStringList commands = sCommands->keys();
-  Q_FOREACH (const QString &commandName, commands)
-  {
-    maxNameLength = qMax(maxNameLength, commandName.length());
-  }
+    int maxNameLength = 0;
+    QStringList commands = sCommands->keys();
+    Q_FOREACH (const QString &commandName, commands) {
+        maxNameLength = qMax(maxNameLength, commandName.length());
+    }
 
-  // if the user requested help output to stdout,
-  // otherwise we are missing the mandatory command argument and output to stderr
-  std::ostream &stream = userRequestedHelp ? std::cout : std::cerr;
+    // if the user requested help output to stdout,
+    // otherwise we are missing the mandatory command argument and output to stderr
+    std::ostream &stream = userRequestedHelp ? std::cout : std::cerr;
 
-  const QString linePattern = QLatin1String( "  %1  %2" );
+    const QString linePattern = QLatin1String("  %1  %2");
 
-  stream << std::endl << qPrintable(i18nc("@info:shell", "Available commands are:")) << std::endl;
+    stream << std::endl << qPrintable(i18nc("@info:shell", "Available commands are:")) << std::endl;
 
-  qSort(commands);
-  Q_FOREACH (const QString &commandName, commands)
-  {
-    if (commandName=="shell" && CommandShell::isActive()) continue;
-    stream << qPrintable(linePattern.arg(commandName.leftJustified(maxNameLength),
-                                         sCommands->value(commandName)->shortHelp.toString()))
-           << std::endl;
-  }
+    qSort(commands);
+    Q_FOREACH (const QString &commandName, commands) {
+        if (commandName == "shell" && CommandShell::isActive()) {
+            continue;
+        }
+        stream << qPrintable(linePattern.arg(commandName.leftJustified(maxNameLength),
+                                             sCommands->value(commandName)->shortHelp.toString()))
+               << std::endl;
+    }
 
-  std::exit( userRequestedHelp ? AbstractCommand::NoError : AbstractCommand::InvalidUsage );
+    std::exit(userRequestedHelp ? AbstractCommand::NoError : AbstractCommand::InvalidUsage);
 }

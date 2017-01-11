@@ -23,8 +23,9 @@
 #include "abstractcommand.h"
 #include <qstringlist.h>
 
-namespace Akonadi {
-    class AgentInstance;
+namespace Akonadi
+{
+class AgentInstance;
 };
 
 class AgentsCommand : public AbstractCommand

@@ -30,48 +30,46 @@ class KLocalizedString;
 
 class QString;
 
-
-#define DEFINE_COMMAND(commandName, className, shortHelp)			\
-	class className##Factory						\
-	{									\
-	public:									\
-	  className##Factory();							\
-	};									\
-	static className##Factory sFactory;					\
-	static AbstractCommand *className##Creator(QObject *parent)		\
-	{									\
-	  return (new className(parent));					\
-	}									\
-	className##Factory::className##Factory()				\
-	{									\
-	  CommandFactory::registerCommand(QLatin1String(commandName), 		\
-	                                  ki18nc("@info:shell", shortHelp),	\
-	                                  &className##Creator);			\
-	}									\
-	QString className::name() const						\
-	{									\
-		return (QLatin1String(commandName));				\
-	}
-
+#define DEFINE_COMMAND(commandName, className, shortHelp)           \
+    class className##Factory                        \
+    {                                   \
+    public:                                 \
+        className##Factory();                         \
+    };                                  \
+    static className##Factory sFactory;                 \
+    static AbstractCommand *className##Creator(QObject *parent)     \
+    {                                   \
+        return (new className(parent));                   \
+    }                                   \
+    className##Factory::className##Factory()                \
+    {                                   \
+        CommandFactory::registerCommand(QLatin1String(commandName),       \
+                                        ki18nc("@info:shell", shortHelp), \
+                                        &className##Creator);         \
+    }                                   \
+    QString className::name() const                     \
+    {                                   \
+        return (QLatin1String(commandName));                \
+    }
 
 class CommandFactory
 {
-  public:
-    explicit CommandFactory( KCmdLineArgs *parsedArgs );
+public:
+    explicit CommandFactory(KCmdLineArgs *parsedArgs);
     ~CommandFactory();
 
     AbstractCommand *createCommand();
 
-    typedef AbstractCommand * (*creatorFunction)(QObject *parent);
+    typedef AbstractCommand *(*creatorFunction)(QObject *parent);
     static void registerCommand(const QString &name,
                                 const KLocalizedString &shortHelp,
                                 CommandFactory::creatorFunction creator);
-  private:
+private:
     KCmdLineArgs *mParsedArgs;
 
-  private:
+private:
     void checkAndHandleHelp();
-    void printHelpAndExit( bool userRequestedHelp );
+    void printHelpAndExit(bool userRequestedHelp);
 };
 
 #endif // COMMANDFACTORY_H

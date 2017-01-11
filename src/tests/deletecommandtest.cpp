@@ -31,7 +31,7 @@ using namespace Akonadi;
 
 QTEST_AKONADIMAIN(DeleteCommandTest, NoGUI);
 
-Q_DECLARE_METATYPE(KJob*)
+Q_DECLARE_METATYPE(KJob *)
 
 void DeleteCommandTest::initTestCase()
 {
@@ -66,7 +66,7 @@ void DeleteCommandTest::testDeleteItem()
 
 void DeleteCommandTest::testDeleteCollection()
 {
-    qRegisterMetaType<KJob*>();
+    qRegisterMetaType<KJob *>();
 
     const char *args[3] = {
         "akonadiclient",

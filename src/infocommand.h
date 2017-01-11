@@ -16,7 +16,6 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-
 #ifndef INFOCOMMAND_H
 #define INFOCOMMAND_H
 
@@ -24,33 +23,32 @@
 
 namespace Akonadi
 {
-  class Collection;
-  class Item;
-  class CollectionStatistics;
+class Collection;
+class Item;
+class CollectionStatistics;
 };
-
 
 class CollectionResolveJob;
 class KJob;
 
 class InfoCommand : public AbstractCommand
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     explicit InfoCommand(QObject *parent = 0);
     ~InfoCommand();
 
     QString name() const;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     void start();
 
-  protected:
+protected:
     void setupCommandOptions(KCmdLineOptions &options);
     int initCommand(KCmdLineArgs *parsedArgs);
 
-  private:
+private:
     CollectionResolveJob *mResolveJob;
     bool mIsCollection;
     bool mIsItem;
@@ -60,16 +58,16 @@ class InfoCommand : public AbstractCommand
     Akonadi::Item *mInfoItem;
     Akonadi::CollectionStatistics *mInfoStatistics;
 
-  private:
+private:
     void fetchStatistics();
     void fetchItems();
     void fetchParentPath(const Akonadi::Collection &collection);
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void onBaseFetched(KJob *job);
     void onStatisticsFetched(KJob *job);
     void onItemsFetched(KJob *job);
     void onParentPathFetched(KJob *job);
 };
 
-#endif							// INFOCOMMAND_H
+#endif                          // INFOCOMMAND_H

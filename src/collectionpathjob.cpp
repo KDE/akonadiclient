@@ -26,60 +26,52 @@
 
 using namespace Akonadi;
 
-
-CollectionPathJob::CollectionPathJob(const Akonadi::Collection &collection, QObject *parent )
-  : KCompositeJob(parent),
-    mCollection(collection)
+CollectionPathJob::CollectionPathJob(const Akonadi::Collection &collection, QObject *parent)
+    : KCompositeJob(parent),
+      mCollection(collection)
 {
-  setAutoDelete( false );
+    setAutoDelete(false);
 }
 
 CollectionPathJob::~CollectionPathJob()
 {
 }
 
-
 void CollectionPathJob::start()
 {
-  if (!mCollection.isValid())
-  {
-    emitResult();
-    return;
-  }
+    if (!mCollection.isValid()) {
+        emitResult();
+        return;
+    }
 
-  CollectionPathResolver *resolver = new CollectionPathResolver(mCollection, this);
-  addSubjob(resolver);
-  resolver->start();
+    CollectionPathResolver *resolver = new CollectionPathResolver(mCollection, this);
+    addSubjob(resolver);
+    resolver->start();
 }
-
 
 void CollectionPathJob::slotResult(KJob *job)
 {
-  if (job->error()==0)
-  {
-    CollectionPathResolver *resolver = qobject_cast<CollectionPathResolver *>(job);
-    Q_ASSERT(resolver!=nullptr);
-    mPath = resolver->path();
-  }
+    if (job->error() == 0) {
+        CollectionPathResolver *resolver = qobject_cast<CollectionPathResolver *>(job);
+        Q_ASSERT(resolver != nullptr);
+        mPath = resolver->path();
+    }
 
-  bool willEmitResult = (job->error() && !error());
-  KCompositeJob::slotResult(job);
+    bool willEmitResult = (job->error() && !error());
+    KCompositeJob::slotResult(job);
 
-  if (!hasSubjobs() && !willEmitResult)
-  {
-    emitResult();
-  }
+    if (!hasSubjobs() && !willEmitResult) {
+        emitResult();
+    }
 }
-
 
 QString CollectionPathJob::collectionPath() const
 {
-  return (mPath);
+    return (mPath);
 }
-
 
 QString CollectionPathJob::formattedCollectionPath() const
 {
-  return (i18nc("@info:shell 1=collection ID, 2=collection path",
-                "%1 (\"/%2\")", QString::number(mCollection.id()), mPath));
+    return (i18nc("@info:shell 1=collection ID, 2=collection path",
+                  "%1 (\"/%2\")", QString::number(mCollection.id()), mPath));
 }

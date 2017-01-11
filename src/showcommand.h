@@ -16,7 +16,6 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-
 #ifndef SHOWCOMMAND_H
 #define SHOWCOMMAND_H
 
@@ -28,28 +27,28 @@ class KJob;
 
 class ShowCommand : public AbstractCommand
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     explicit ShowCommand(QObject *parent = 0);
     ~ShowCommand();
 
     QString name() const;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     void start();
 
-  protected:
+protected:
     void setupCommandOptions(KCmdLineOptions &options);
     int initCommand(KCmdLineArgs *parsedArgs);
 
-  private:
+private:
     QStringList mItemArgs;
     AbstractCommand::Errors mExitStatus;
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void processNextItem();
     void onItemFetched(KJob *job);
 };
 
-#endif							// SHOWCOMMAND_H
+#endif                          // SHOWCOMMAND_H

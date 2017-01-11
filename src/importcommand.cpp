@@ -36,9 +36,7 @@
 
 using namespace Akonadi;
 
-
 DEFINE_COMMAND("import", ImportCommand, "Import an XML file");
-
 
 ImportCommand::ImportCommand(QObject *parent)
     : AbstractCommand(parent),
@@ -107,7 +105,7 @@ void ImportCommand::onParentFetched(KJob *job)
 {
     if (job->error() != 0) {
         emit error(ki18nc("@info:shell", "Unable to fetch parent collection: '%1'")
-            .subs(job->errorString()).toString());
+                   .subs(job->errorString()).toString());
         emit finished(RuntimeError);
     }
 
@@ -119,7 +117,7 @@ void ImportCommand::onChildrenFetched(KJob *job)
 {
     if (job->error() != 0) {
         emit error(ki18nc("@info:shell", "Unable to fetch children of parent collection: '%1'")
-            .subs(job->errorString()).toString());
+                   .subs(job->errorString()).toString());
         emit finished(RuntimeError);
         return;
     }
@@ -128,7 +126,7 @@ void ImportCommand::onChildrenFetched(KJob *job)
     Collection parent = job->property("parent").value<Collection>();
     Collection collection = mDocument->collectionByRemoteId(rid);
     Collection newCol;
-    Collection::List collections = qobject_cast<CollectionFetchJob*>(job)->collections();
+    Collection::List collections = qobject_cast<CollectionFetchJob *>(job)->collections();
     bool found = false;
 
     Q_FOREACH (const Collection &col, collections) {
@@ -141,12 +139,12 @@ void ImportCommand::onChildrenFetched(KJob *job)
 
     if (found) {
         ErrorReporter::progress(ki18nc("@info:shell", "Collection '%1' already exists")
-            .subs(collection.name()).toString());
+                                .subs(collection.name()).toString());
         mCollectionMap.insert(rid, newCol);
         QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
     } else {
         ErrorReporter::progress(ki18nc("@info:shell", "Creating collection '%1'")
-            .subs(collection.name()).toString());
+                                .subs(collection.name()).toString());
         collection.setParentCollection(parent);
         if (!mDryRun) {
             CollectionCreateJob *createJob = new CollectionCreateJob(collection, this);
@@ -176,7 +174,7 @@ void ImportCommand::processNextCollection()
         parent = mCollectionMap.value(collection.parentCollection().remoteId());
         if (!parent.isValid() && !mDryRun) {
             ErrorReporter::warning(ki18nc("@info:shell", "Invalid parent collection for collection with remote ID '%1'")
-                .subs(collection.remoteId()).toString());
+                                   .subs(collection.remoteId()).toString());
             QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
         }
     }
@@ -197,7 +195,7 @@ void ImportCommand::onCollectionFetched(KJob *job)
 
     if (job->error() != 0) {
         ErrorReporter::warning(ki18nc("@info:shell", "Unable to fetch collection with remote ID '%1'. Error: '%2'")
-            .subs(collection.remoteId()).subs(job->errorString()).toString());
+                               .subs(collection.remoteId()).subs(job->errorString()).toString());
 
         if (!mDryRun) {
             CollectionCreateJob *createJob = new CollectionCreateJob(collection, this);
@@ -207,7 +205,7 @@ void ImportCommand::onCollectionFetched(KJob *job)
             QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
         }
     } else {
-        CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob*>(job);
+        CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
         mCollectionMap.insert(collection.remoteId(), fetchJob->collections().first());
         QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
     }
@@ -217,12 +215,12 @@ void ImportCommand::onCollectionCreated(KJob *job)
 {
     if (job->error() != 0) {
         emit error(ki18nc("@info:shell", "Unable to create collection with remote ID '%1'")
-            .subs(job->property("rid").toString()).toString());
+                   .subs(job->property("rid").toString()).toString());
         emit finished(RuntimeError);
         return;
     }
 
-    CollectionCreateJob *createJob = qobject_cast<CollectionCreateJob*>(job);
+    CollectionCreateJob *createJob = qobject_cast<CollectionCreateJob *>(job);
     mCollectionMap.insert(job->property("rid").toString(), createJob->collection());
     QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
 }
@@ -265,7 +263,7 @@ void ImportCommand::onItemCreated(KJob *job)
         emit finished(RuntimeError);
         return;
     }
-    ItemCreateJob *itemCreateJob = qobject_cast<ItemCreateJob*>(job);
+    ItemCreateJob *itemCreateJob = qobject_cast<ItemCreateJob *>(job);
     ErrorReporter::progress(ki18nc("@info:shell", "Created item '%1'").subs(itemCreateJob->item().remoteId()).toString());
     QMetaObject::invokeMethod(this, "processNextItemFromQueue", Qt::QueuedConnection);
 }

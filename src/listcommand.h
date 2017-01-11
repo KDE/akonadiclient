@@ -16,7 +16,6 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-
 #ifndef LISTCOMMAND_H
 #define LISTCOMMAND_H
 
@@ -27,35 +26,35 @@ class KJob;
 
 class ListCommand : public AbstractCommand
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
-    explicit ListCommand( QObject *parent = 0 );
+public:
+    explicit ListCommand(QObject *parent = 0);
     ~ListCommand();
 
     QString name() const;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     void start();
 
-  protected:
-    void setupCommandOptions( KCmdLineOptions &options );
-    int initCommand( KCmdLineArgs *parsedArgs );
+protected:
+    void setupCommandOptions(KCmdLineOptions &options);
+    int initCommand(KCmdLineArgs *parsedArgs);
 
-  private:
+private:
     CollectionResolveJob *mResolveJob;
     bool mListItems;
     bool mListCollections;
     bool mListDetails;
 
-  private:
+private:
     void fetchCollections();
     void fetchItems();
 
-  private Q_SLOTS:
-    void onBaseFetched( KJob *job );
-    void onCollectionsFetched( KJob *job );
-    void onItemsFetched( KJob *job );
+private Q_SLOTS:
+    void onBaseFetched(KJob *job);
+    void onCollectionsFetched(KJob *job);
+    void onItemsFetched(KJob *job);
 };
 
 #endif // LISTCOMMAND_H

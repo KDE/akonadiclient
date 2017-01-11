@@ -21,22 +21,21 @@
 
 #include "copycommand.h"
 
-
 class MoveCommand : public CopyCommand
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     explicit MoveCommand(QObject *parent = 0);
     ~MoveCommand();
 
     QString name() const;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     virtual void start();
 
-  protected:
+protected:
     virtual void setupCommandOptions(KCmdLineOptions &options);
 };
 
-#endif							// MOVECOMMAND_H
+#endif                          // MOVECOMMAND_H

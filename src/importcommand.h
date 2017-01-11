@@ -23,10 +23,11 @@
 #include "abstractcommand.h"
 #include "collectionresolvejob.h"
 
-namespace Akonadi {
-    class XmlDocument;
-    class Collection;
-    class Item;
+namespace Akonadi
+{
+class XmlDocument;
+class Collection;
+class Item;
 };
 
 class QFile;

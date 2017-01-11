@@ -64,7 +64,7 @@ void ImportCommandTest::testImportCommand()
     args.clear();
     args << "akonadiclient" << "import" << "/res3" << exportFile.fileName().toLocal8Bit();
 
-    for (int i=0; i < numArgs; i++) {
+    for (int i = 0; i < numArgs; i++) {
         testArgs[i] = args[i].data();
     }
 

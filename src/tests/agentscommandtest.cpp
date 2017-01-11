@@ -44,7 +44,7 @@ void AgentsCommandTest::testAgentSetState()
     };
 
     AgentManager *manager = AgentManager::self();
-    QSignalSpy instanceSpy(manager, SIGNAL(instanceOnline(Akonadi::AgentInstance, bool)));
+    QSignalSpy instanceSpy(manager, SIGNAL(instanceOnline(Akonadi::AgentInstance,bool)));
 
     KCmdLineArgs *parsedArgs = getParsedArgs(4, args);
     AgentsCommand *command = new AgentsCommand(this);

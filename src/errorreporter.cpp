@@ -23,7 +23,6 @@
 
 #include <iostream>
 
-
 void ErrorReporter::error(const QString &msg)
 {
     std::cerr << qPrintable(QCoreApplication::applicationName())
@@ -45,7 +44,9 @@ void ErrorReporter::fatal(const QString &msg)
     error(msg);
 
     // If the QCoreApplication event loop has not been started yet, exit now
-    if (!QCoreApplication::hasPendingEvents()) exit(1);
+    if (!QCoreApplication::hasPendingEvents()) {
+        exit(1);
+    }
     // Otherwise just tell the event loop to exit
     QCoreApplication::exit(1);
 }

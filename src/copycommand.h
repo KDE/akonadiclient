@@ -29,25 +29,25 @@ class KJob;
 
 class CopyCommand : public AbstractCommand
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     explicit CopyCommand(QObject *parent = 0);
     ~CopyCommand();
 
     QString name() const;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     virtual void start();
 
-  protected:
+protected:
     bool mMoving;
 
-  protected:
+protected:
     virtual void setupCommandOptions(KCmdLineOptions &options);
     virtual int initCommand(KCmdLineArgs *parsedArgs);
 
-  private:
+private:
     CollectionResolveJob *mResolveJob;
     QString mDestinationArg;
     QStringList mSourceArgs;
@@ -57,12 +57,12 @@ class CopyCommand : public AbstractCommand
     Akonadi::Collection::List mSubCollections;
     bool mDryRun;
 
-  private:
+private:
     void doNextSource();
     void doNextSubcollection(const QString &sourceArg);
     void fetchItems(const QString &sourceArg);
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void onTargetFetched(KJob *job);
     void onSourceResolved(KJob *job);
     void onRecursiveCopyFinished(KJob *job);
@@ -76,4 +76,4 @@ class CopyCommand : public AbstractCommand
 
 };
 
-#endif							// COPYCOMMAND_H
+#endif                          // COPYCOMMAND_H

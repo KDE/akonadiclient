@@ -35,9 +35,7 @@
 
 using namespace Akonadi;
 
-
 DEFINE_COMMAND("edit", EditCommand, "Edit the raw payload for the specified item using $EDITOR");
-
 
 EditCommand::EditCommand(QObject *parent)
     : AbstractCommand(parent),
@@ -76,13 +74,15 @@ int EditCommand::initCommand(KCmdLineArgs *parsedArgs)
 void EditCommand::start()
 {
     Item item = CollectionResolveJob::parseItem(mItemArg, true);
-    if (!item.isValid()) emit finished(InvalidUsage);
+    if (!item.isValid()) {
+        emit finished(InvalidUsage);
+    }
 
     ItemFetchJob *job = new ItemFetchJob(item, this);
     job->fetchScope().setFetchModificationTime(false);
     job->fetchScope().fetchAllAttributes(false);
     job->fetchScope().fetchFullPayload(true);
-    connect(job, SIGNAL(result(KJob *)), SLOT(onItemFetched(KJob *)));
+    connect(job, SIGNAL(result(KJob*)), SLOT(onItemFetched(KJob*)));
 }
 
 void EditCommand::onItemFetched(KJob *job)
@@ -139,7 +139,7 @@ void EditCommand::onItemFetched(KJob *job)
         mTempFile->seek(0); // Seek to the beginning of the file
         item.setPayloadFromData(mTempFile->readAll());
         ItemModifyJob *modifyJob = new ItemModifyJob(item);
-        connect(modifyJob, SIGNAL(result(KJob *)), SLOT(onItemModified(KJob *)));
+        connect(modifyJob, SIGNAL(result(KJob*)), SLOT(onItemModified(KJob*)));
     } else {
         onItemModified(job);
     }

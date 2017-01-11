@@ -35,9 +35,7 @@
 
 using namespace Akonadi;
 
-
 DEFINE_COMMAND("update", UpdateCommand, "Update an item's payload with the file specified");
-
 
 UpdateCommand::UpdateCommand(QObject *parent)
     : AbstractCommand(parent),
@@ -80,11 +78,12 @@ int UpdateCommand::initCommand(KCmdLineArgs *parsedArgs)
 
 void UpdateCommand::start()
 {
-    if (!allowDangerousOperation()) emit finished(RuntimeError);
+    if (!allowDangerousOperation()) {
+        emit finished(RuntimeError);
+    }
 
     Item item = CollectionResolveJob::parseItem(mItemArg, true);
-    if (!item.isValid())
-    {
+    if (!item.isValid()) {
         emit finished(RuntimeError);
         return;
     }
@@ -106,7 +105,7 @@ void UpdateCommand::start()
     ItemFetchJob *job = new ItemFetchJob(item, this);
     job->fetchScope().setFetchModificationTime(false);
     job->fetchScope().fetchAllAttributes(false);
-    connect(job, SIGNAL(result(KJob *)), SLOT(onItemFetched(KJob *)));
+    connect(job, SIGNAL(result(KJob*)), SLOT(onItemFetched(KJob*)));
 }
 
 void UpdateCommand::onItemFetched(KJob *job)
@@ -132,7 +131,7 @@ void UpdateCommand::onItemFetched(KJob *job)
         QByteArray data = mFile->readAll();
         item.setPayloadFromData(data);
         ItemModifyJob *modifyJob = new ItemModifyJob(item, this);
-        connect(modifyJob, SIGNAL(result(KJob *)), SLOT(onItemUpdated(KJob *)));
+        connect(modifyJob, SIGNAL(result(KJob*)), SLOT(onItemUpdated(KJob*)));
     } else {
         onItemUpdated(job);
     }

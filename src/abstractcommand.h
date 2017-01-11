@@ -27,34 +27,34 @@ class KLocalizedString;
 
 class AbstractCommand : public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
     enum Errors {
-      NoError = 0,
-      InvalidUsage = 1,
-      RuntimeError = 2
+        NoError = 0,
+        InvalidUsage = 1,
+        RuntimeError = 2
     };
 
-    explicit AbstractCommand( QObject *parent = 0 );
+    explicit AbstractCommand(QObject *parent = 0);
     ~AbstractCommand();
 
-    int init( KCmdLineArgs *parsedArgs );
+    int init(KCmdLineArgs *parsedArgs);
 
     virtual QString name() const = 0;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     virtual void start() = 0;
 
-  Q_SIGNALS:
-    void finished( int exitCode );
-    void error( const QString &message );
+Q_SIGNALS:
+    void finished(int exitCode);
+    void error(const QString &message);
 
-  protected:
-    virtual void setupCommandOptions( KCmdLineOptions &options );
-    virtual int initCommand( KCmdLineArgs *parsedArgs ) = 0;
+protected:
+    virtual void setupCommandOptions(KCmdLineOptions &options);
+    virtual int initCommand(KCmdLineArgs *parsedArgs) = 0;
 
-    void emitErrorSeeHelp( const KLocalizedString &msg );
+    void emitErrorSeeHelp(const KLocalizedString &msg);
     bool allowDangerousOperation() const;
 
     void addOptionsOption(KCmdLineOptions &options);

@@ -37,8 +37,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    int initCommand(KCmdLineArgs* parsedArgs);
-    void setupCommandOptions(KCmdLineOptions& options);
+    int initCommand(KCmdLineArgs *parsedArgs);
+    void setupCommandOptions(KCmdLineOptions &options);
 
 private:
     bool mDryRun;
@@ -46,8 +46,8 @@ private:
     QString mFileArg;
 
 private Q_SLOTS:
-    void onCollectionFetched(KJob*);
-    void onWriteFinished(KJob*);
+    void onCollectionFetched(KJob *);
+    void onWriteFinished(KJob *);
 };
 
 #endif // EXPORTCOMMAND_H
