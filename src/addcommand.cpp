@@ -29,7 +29,6 @@
 #include <KCmdLineOptions>
 #include <KGlobal>
 #include <KUrl>
-#include <KDebug>
 #include <KMimeType>
 
 #include <QDir>
@@ -364,7 +363,7 @@ void AddCommand::onCollectionCreated( KJob *job )
   Q_ASSERT( !path.isEmpty() );
 
   if ( job->error() != 0 ) {
-    kWarning() << "error=" << job->error() << "errorString=" << job->errorString();
+    qWarning() << "error=" << job->error() << "errorString=" << job->errorString();
 
     mDirectories.remove( path );
   } else {

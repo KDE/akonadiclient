@@ -23,7 +23,6 @@
 #include "errorreporter.h"
 
 #include <KCmdLineArgs>
-#include <KDebug>
 
 #include <QCoreApplication>
 
