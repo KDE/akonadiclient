@@ -42,6 +42,7 @@ find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS
     WidgetsAddons
     ItemViews
     KDELibs4Support
+    DocTools
     Completion)
 
 
@@ -54,7 +55,6 @@ add_custom_target(vcsversion
 
 
 add_subdirectory( src )
-#FIXME
-#add_subdirectory(doc)
+add_subdirectory(doc)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
