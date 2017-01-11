@@ -22,7 +22,7 @@
 #include "../commandrunner.h"
 #include "../collectionresolvejob.h"
 
-#include <akonadi/control.h>
+#include <AkonadiCore/control.h>
 #include <akonadi/qtest_akonadi.h>
 
 #include <QtDebug>

@@ -20,7 +20,7 @@
 #include "exportcommandtest.h"
 #include "../exportcommand.h"
 
-#include <akonadi/control.h>
+#include <AkonadiCore/control.h>
 #include <akonadi/xml/xmlwritejob.h>
 #include <akonadi/qtest_akonadi.h>
 

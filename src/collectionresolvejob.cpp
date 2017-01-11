@@ -18,7 +18,7 @@
 
 #include "collectionresolvejob.h"
 
-#include <Akonadi/CollectionFetchJob>
+#include <AkonadiCore/CollectionFetchJob>
 
 #include <akonadi/private/collectionpathresolver_p.h>
 

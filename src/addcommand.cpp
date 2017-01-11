@@ -21,10 +21,10 @@
 #include "collectionresolvejob.h"
 #include "errorreporter.h"
 
-#include <Akonadi/CollectionCreateJob>
-#include <Akonadi/CollectionFetchJob>
+#include <AkonadiCore/CollectionCreateJob>
+#include <AkonadiCore/CollectionFetchJob>
 #include <Akonadi/Item>
-#include <Akonadi/ItemCreateJob>
+#include <AkonadiCore/ItemCreateJob>
 
 #include <KCmdLineOptions>
 #include <KGlobal>

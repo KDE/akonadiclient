@@ -24,9 +24,9 @@
 #include "../copycommand.h"
 #include "../collectionresolvejob.h"
 
-#include <akonadi/collection.h>
-#include <akonadi/control.h>
-#include <akonadi/item.h>
+#include <AkonadiCore/collection.h>
+#include <AkonadiCore/control.h>
+#include <AkonadiCore/item.h>
 #include <akonadi/qtest_akonadi.h>
 
 #include <QtDebug>

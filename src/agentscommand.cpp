@@ -21,8 +21,8 @@
 
 #include <klocalizedstring.h>
 #include <kcmdlineargs.h>
-#include <akonadi/agentmanager.h>
-#include <akonadi/agentinstance.h>
+#include <AkonadiCore/agentmanager.h>
+#include <AkonadiCore/agentinstance.h>
 
 #include <qstringlist.h>
 

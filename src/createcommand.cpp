@@ -23,8 +23,8 @@
 #include "errorreporter.h"
 
 #include <Akonadi/Collection>
-#include <Akonadi/CollectionCreateJob>
-#include <Akonadi/CollectionFetchJob>
+#include <AkonadiCore/CollectionCreateJob>
+#include <AkonadiCore/CollectionFetchJob>
 
 #include <KCmdLineOptions>
 

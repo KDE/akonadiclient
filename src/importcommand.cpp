@@ -20,11 +20,11 @@
 #include "importcommand.h"
 #include "errorreporter.h"
 
-#include <akonadi/collection.h>
+#include <AkonadiCore/collection.h>
 #include <akonadi/xml/xmldocument.h>
-#include <akonadi/collectioncreatejob.h>
-#include <akonadi/collectionfetchjob.h>
-#include <akonadi/itemcreatejob.h>
+#include <AkonadiCore/collectioncreatejob.h>
+#include <AkonadiCore/collectionfetchjob.h>
+#include <AkonadiCore/itemcreatejob.h>
 
 #include <klocalizedstring.h>
 #include <kcmdlineargs.h>

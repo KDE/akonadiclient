@@ -21,12 +21,12 @@
 #include "../addcommand.h"
 #include "../collectionresolvejob.h"
 
-#include <akonadi/collectioncreatejob.h>
-#include <akonadi/collectionfetchjob.h>
-#include <akonadi/control.h>
+#include <AkonadiCore/collectioncreatejob.h>
+#include <AkonadiCore/collectionfetchjob.h>
+#include <AkonadiCore/control.h>
 #include <akonadi/qtest_akonadi.h>
-#include <akonadi/itemfetchjob.h>
-#include <akonadi/itemfetchscope.h>
+#include <AkonadiCore/itemfetchjob.h>
+#include <AkonadiCore/itemfetchscope.h>
 
 #include <kstandarddirs.h>
 #include <ktempdir.h>

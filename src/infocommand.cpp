@@ -21,10 +21,10 @@
 #include "collectionresolvejob.h"
 #include "collectionpathjob.h"
 
-#include <akonadi/itemfetchjob.h>
-#include <akonadi/itemfetchscope.h>
+#include <AkonadiCore/itemfetchjob.h>
+#include <AkonadiCore/itemfetchscope.h>
 #include <akonadi/collectionstatisticsjob.h>
-#include <akonadi/collectionstatistics.h>
+#include <AkonadiCore/collectionstatistics.h>
 
 #include <akonadi/private/collectionpathresolver_p.h>	// just for error code
 

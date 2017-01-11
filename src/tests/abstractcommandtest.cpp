@@ -19,7 +19,7 @@
 
 #include "abstractcommandtest.h"
 
-#include <akonadi/control.h>
+#include <AkonadiCore/control.h>
 
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>

@@ -24,11 +24,11 @@
 
 #include <Akonadi/CollectionCopyJob>
 #include <Akonadi/CollectionMoveJob>
-#include <Akonadi/CollectionFetchJob>
+#include <AkonadiCore/CollectionFetchJob>
 #include <Akonadi/ItemCopyJob>
-#include <Akonadi/ItemMoveJob>
-#include <Akonadi/ItemFetchJob>
-#include <Akonadi/ItemFetchScope>
+#include <AkonadiCore/ItemMoveJob>
+#include <AkonadiCore/ItemFetchJob>
+#include <AkonadiCore/ItemFetchScope>
 
 #include <KCmdLineOptions>
 #include <KUrl>

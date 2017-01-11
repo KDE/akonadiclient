@@ -20,7 +20,7 @@
 #include "collectionresolvejob.h"
 #include "renamecommand.h"
 
-#include <akonadi/collectionmodifyjob.h>
+#include <AkonadiCore/collectionmodifyjob.h>
 #include <kcmdlineargs.h>
 #include <klocalizedstring.h>
 

@@ -22,8 +22,8 @@
 #include "../collectionresolvejob.h"
 #include "../deletecommand.h"
 
-#include <akonadi/control.h>
-#include <akonadi/itemfetchjob.h>
+#include <AkonadiCore/control.h>
+#include <AkonadiCore/itemfetchjob.h>
 #include <akonadi/qtest_akonadi.h>
 
 #include <QSignalSpy>

@@ -21,7 +21,7 @@
 #include "../exportcommand.h"
 #include "../importcommand.h"
 
-#include <akonadi/control.h>
+#include <AkonadiCore/control.h>
 #include <akonadi/qtest_akonadi.h>
 
 using namespace Akonadi;

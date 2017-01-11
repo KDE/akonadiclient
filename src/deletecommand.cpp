@@ -21,11 +21,11 @@
 
 #include "collectionresolvejob.h"
 
-#include <akonadi/item.h>
-#include <akonadi/itemdeletejob.h>
-#include <akonadi/itemfetchjob.h>
+#include <AkonadiCore/item.h>
+#include <AkonadiCore/itemdeletejob.h>
+#include <AkonadiCore/itemfetchjob.h>
 
-#include <akonadi/collectiondeletejob.h>
+#include <AkonadiCore/collectiondeletejob.h>
 #include <akonadi/private/collectionpathresolver_p.h>
 
 #include <kcmdlineargs.h>
