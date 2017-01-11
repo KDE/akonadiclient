@@ -20,7 +20,7 @@
 
 #include <AkonadiCore/CollectionFetchJob>
 
-#include <akonadi/private/collectionpathresolver_p.h>
+#include <AkonadiCore/collectionpathresolver.h>
 
 #include <KLocale>
 #include <KUrl>

@@ -22,7 +22,7 @@
 #include "abstractcommand.h"
 
 #include <qstringlist.h>
-#include <akonadi/collection.h>
+#include <AkonadiCore/collection.h>
 
 class CollectionResolveJob;
 class KJob;

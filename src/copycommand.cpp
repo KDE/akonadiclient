@@ -22,10 +22,10 @@
 #include "collectionpathjob.h"
 #include "errorreporter.h"
 
-#include <Akonadi/CollectionCopyJob>
-#include <Akonadi/CollectionMoveJob>
+#include <AkonadiCore/CollectionCopyJob>
+#include <AkonadiCore/CollectionMoveJob>
 #include <AkonadiCore/CollectionFetchJob>
-#include <Akonadi/ItemCopyJob>
+#include <AkonadiCore/ItemCopyJob>
 #include <AkonadiCore/ItemMoveJob>
 #include <AkonadiCore/ItemFetchJob>
 #include <AkonadiCore/ItemFetchScope>

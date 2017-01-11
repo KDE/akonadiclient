@@ -23,7 +23,7 @@
 #include "abstractcommand.h"
 
 #include <qstringlist.h>
-#include <akonadi/item.h>
+#include <AkonadiCore/item.h>
 #include <kabc/contactgroup.h>
 
 class KJob;

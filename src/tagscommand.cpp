@@ -22,7 +22,7 @@
 
 #include <kcmdlineargs.h>
 
-#include <akonadi/tagfetchjob.h>
+#include <AkonadiCore/tagfetchjob.h>
 
 #include "commandfactory.h"
 

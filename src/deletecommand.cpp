@@ -26,7 +26,7 @@
 #include <AkonadiCore/itemfetchjob.h>
 
 #include <AkonadiCore/collectiondeletejob.h>
-#include <akonadi/private/collectionpathresolver_p.h>
+#include <AkonadiCore/CollectionPathResolver>
 
 #include <kcmdlineargs.h>
 #include <klocalizedstring.h>

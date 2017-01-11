@@ -23,10 +23,10 @@
 
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
-#include <akonadi/collectionstatisticsjob.h>
+#include <AkonadiCore/collectionstatisticsjob.h>
 #include <AkonadiCore/collectionstatistics.h>
 
-#include <akonadi/private/collectionpathresolver_p.h>	// just for error code
+#include <AkonadiCore/CollectionPathResolver>	// just for error code
 
 #include <qdatetime.h>
 
@@ -241,7 +241,7 @@ void InfoCommand::fetchParentPath(const Akonadi::Collection &collection)
 
 static void writeInfo(const QString &tag, const QString &data)
 {
-  std::cout << qPrintable((tag+":").leftJustified(10));
+  std::cout << qPrintable(QString(tag+":").leftJustified(10));
   std::cout << "  ";
   std::cout << qPrintable(data);
   std::cout << std::endl;
@@ -273,7 +273,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
     Q_ASSERT(mInfoCollection->isValid());
 
     writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoCollection->id()));
-    writeInfo(i18nc("@info:shell", "URL"), mInfoCollection->url().pathOrUrl());
+    writeInfo(i18nc("@info:shell", "URL"), mInfoCollection->url().path());
     writeInfo(i18nc("@info:shell", "Parent"), parentString);
     writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Collection"));
     writeInfo(i18nc("@info:shell", "Name"), mInfoCollection->name());
@@ -302,7 +302,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
   else if (mInfoItem!=0)				// for an item
   {
     writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoItem->id()));
-    writeInfo(i18nc("@info:shell", "URL"), mInfoItem->url().pathOrUrl());
+    writeInfo(i18nc("@info:shell", "URL"), mInfoItem->url().path());
     writeInfo(i18nc("@info:shell", "Parent"), parentString);
     writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Item"));
     writeInfo(i18nc("@info:shell", "MIME"), mInfoItem->mimeType());

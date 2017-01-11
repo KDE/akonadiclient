@@ -20,8 +20,8 @@
 #ifndef COLLECTIONRESOLVEJOB_H
 #define COLLECTIONRESOLVEJOB_H
 
-#include <Akonadi/Collection>
-#include <Akonadi/Item>
+#include <AkonadiCore/Collection>
+#include <AkonadiCore/Item>
 #include <KCompositeJob>
 
 class CollectionResolveJob : public KCompositeJob

@@ -23,12 +23,14 @@
 
 #include <AkonadiCore/CollectionCreateJob>
 #include <AkonadiCore/CollectionFetchJob>
-#include <Akonadi/Item>
+#include <AkonadiCore/Item>
 #include <AkonadiCore/ItemCreateJob>
 
 #include <KCmdLineOptions>
 #include <KGlobal>
 #include <KUrl>
+#include <KDebug>
+#include <KMimeType>
 
 #include <QDir>
 #include <QFile>
@@ -108,7 +110,7 @@ int AddCommand::initCommand( KCmdLineArgs *parsedArgs )
   const QString mimeTypeArg = parsedArgs->getOption( "mime" );
   if ( !mimeTypeArg.isEmpty() ) {
     mMimeType = KMimeType::mimeType( mimeTypeArg );
-    if ( mMimeType.isNull() || !mMimeType->isValid() ) {
+    if ( mMimeType.isNull() /*|| !mMimeType->isValid() FIXME */ ) {
         emit error( ki18nc( "@info:shell",
                             "Invalid MIME type argument '%1'").subs( mimeTypeArg ).toString() );
         return InvalidUsage;
@@ -296,7 +298,7 @@ void AddCommand::processNextFile()
 
   KMimeType::Ptr mimeType = !mMimeType.isNull() ? mMimeType
                                                 : KMimeType::findByNameAndContent( fileName, &file );
-  if ( mimeType.isNull() || !mimeType->isValid() ) {
+  if ( mimeType.isNull() /*|| !mimeType->isValid() FIXME*/ ) {
     emit error( i18nc( "@info:shell", "Cannot determine MIME type of file <filename>%1</filename>", fileName ) );
     QMetaObject::invokeMethod( this, "processNextFile", Qt::QueuedConnection );
     return;

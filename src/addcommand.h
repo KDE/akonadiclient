@@ -22,7 +22,7 @@
 
 #include "abstractcommand.h"
 
-#include <Akonadi/Collection>
+#include <AkonadiCore/Collection>
 
 #include <KMimeType>
 

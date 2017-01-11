@@ -20,6 +20,7 @@
 #define COMMANDFACTORY_H
 
 #include <QHash>
+#include <QObject>
 
 class AbstractCommand;
 class CommandData;
