@@ -28,7 +28,7 @@
 
 #include <kcontacts/addressee.h>
 
-//#include <kpimutils/email.h>
+#include <KCodecs/kemailaddress.h>
 
 #include <kcmdlineargs.h>
 #include <kglobal.h>
@@ -305,7 +305,7 @@ void GroupCommand::displayContactData(const KContacts::ContactGroup::Data &data)
 }
 
 
-void GroupCommand::displayContactReference(Akonadi::Entity::Id id)
+void GroupCommand::displayContactReference(Akonadi::Item::Id id)
 {
   if (mBriefMode) return;
 
@@ -364,7 +364,7 @@ void GroupCommand::displayContactReference(const Akonadi::Item &item, const QStr
 }
 
 
-void GroupCommand::displayReferenceError(Akonadi::Entity::Id id)
+void GroupCommand::displayReferenceError(Akonadi::Item::Id id)
 {
   if (mBriefMode) return;
 
@@ -550,7 +550,7 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KContacts::ContactGroup &gro
   foreach (const QString &arg, mItemArgs)
   {
     // Look to see whether the argument is an email address
-    if (KPIMUtils::isValidSimpleAddress(arg))
+    if (KEmailAddress::isValidSimpleAddress(arg))
     {
       const QString email = arg.toLower();		// email addresses are case-insensitive
 
@@ -671,7 +671,7 @@ AbstractCommand::Errors GroupCommand::deleteGroupItems(KContacts::ContactGroup &
   foreach (const QString &arg, mItemArgs)
   {
     // Look to see whether the argument is an email address
-    if (KPIMUtils::isValidSimpleAddress(arg))
+    if (KEmailAddress::isValidSimpleAddress(arg))
     {
       bool somethingFound = false;
 

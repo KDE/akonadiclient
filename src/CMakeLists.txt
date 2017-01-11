@@ -22,7 +22,7 @@ set(libakonadiclient_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/createcommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/copycommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/movecommand.cpp
-    #${CMAKE_CURRENT_SOURCE_DIR}/groupcommand.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/groupcommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/errorreporter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editcommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/deletecommand.cpp

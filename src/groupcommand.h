@@ -67,9 +67,9 @@ class GroupCommand : public AbstractCommand
     void fetchItems();
 
     void displayContactData(const KContacts::ContactGroup::Data &data);
-    void displayContactReference(Akonadi::Entity::Id id);
+    void displayContactReference(Akonadi::Item::Id id);
     void displayContactReference(const Akonadi::Item &item, const QString &email = QString::null);
-    void displayReferenceError(Akonadi::Entity::Id id);
+    void displayReferenceError(Akonadi::Item::Id id);
 
     bool removeDataByEmail(KContacts::ContactGroup &group, const QString &email, bool verbose = false);
     bool removeReferenceById(KContacts::ContactGroup &group, const QString &id, bool verbose = false);
