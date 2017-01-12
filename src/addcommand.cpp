@@ -127,7 +127,8 @@ int AddCommand::initCommand(KCmdLineArgs *parsedArgs)
         mBasePath = QDir::currentPath();
     }
 
-    for (int i = 2; i < parsedArgs->count(); ++i) {
+    const int parsedArgsCount(parsedArgs->count());
+    for (int i = 2; i < parsedArgsCount; ++i) {
         QString path = parsedArgs->arg(i);
         while (path.endsWith(QLatin1Char('/'))) {         // gives null collection name later
             path.chop(1);

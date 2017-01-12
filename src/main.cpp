@@ -80,8 +80,8 @@ int main(int argc, char **argv)
     CommandRunner runner(parsedArgs);
     int ret = runner.start();
     if (ret != AbstractCommand::NoError) {
-        return (ret);
+        return ret;
     }
 
-    return (application.exec());
+    return application.exec();
 }
