@@ -20,7 +20,6 @@ include(ECMAddTests)
 include(ECMQtDeclareLoggingCategory)
 
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-#FIXME add_definitions(-DTRANSLATION_DOMAIN="")
 #add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
 
 # KDE Application Version, managed by release script
@@ -50,7 +49,7 @@ add_custom_target(vcsversion
   ALL
   COMMENT "Checking VCS type and version"
   VERBATIM
-  COMMAND sh ${CMAKE_CURRENT_SOURCE_DIR}/genversion.sh ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${VERSION}
+  COMMAND sh ${CMAKE_CURRENT_SOURCE_DIR}/genversion.sh ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${KDE_APPLICATIONS_VERSION}
 )
 
 
