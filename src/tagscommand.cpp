@@ -105,7 +105,7 @@ void TagsCommand::onTagsFetched(KJob *job)
         std::cout << std::endl;
     }
 
-    for (Tag::List::const_iterator it = tags.constBegin(); it != tags.constEnd(); ++it) {
+    for (Tag::List::const_iterator it = tags.constBegin(), end = tags.constEnd(); it != end; ++it) {
         const Tag tag = (*it);
 
         if (!mBriefOutput && !mUrlsOutput) {

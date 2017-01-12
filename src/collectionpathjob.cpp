@@ -18,7 +18,7 @@
 
 #include "collectionpathjob.h"
 
-#include <KLocale>
+#include <KLocalizedString>
 
 #include <AkonadiCore/CollectionFetchJob>
 

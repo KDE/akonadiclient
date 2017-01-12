@@ -107,7 +107,7 @@ void UpdateCommand::start()
     ItemFetchJob *job = new ItemFetchJob(item, this);
     job->fetchScope().setFetchModificationTime(false);
     job->fetchScope().fetchAllAttributes(false);
-    connect(job, SIGNAL(result(KJob*)), SLOT(onItemFetched(KJob*)));
+    connect(job, &KJob::result, this, &UpdateCommand::onItemFetched);
 }
 
 void UpdateCommand::onItemFetched(KJob *job)

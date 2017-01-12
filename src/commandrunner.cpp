@@ -53,7 +53,7 @@ int CommandRunner::start()
         return AbstractCommand::InvalidUsage;
     }
 
-    connect(mCommand, SIGNAL(finished(int)), this, SLOT(onCommandFinished(int)));
+    connect(mCommand, &AbstractCommand::finished, this, &CommandRunner::onCommandFinished);
 
     QMetaObject::invokeMethod(mCommand, "start", Qt::QueuedConnection);
 

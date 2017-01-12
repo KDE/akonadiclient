@@ -22,7 +22,7 @@
 
 #include <AkonadiCore/collectionpathresolver.h>
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KUrl>
 
 #include "errorreporter.h"

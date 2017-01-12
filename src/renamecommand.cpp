@@ -107,7 +107,7 @@ void RenameCommand::onCollectionFetched(KJob *job)
         collection.setName(mNewCollectionNameArg);
 
         CollectionModifyJob *modifyJob = new CollectionModifyJob(collection);
-        connect(modifyJob, SIGNAL(result(KJob*)), SLOT(onCollectionModified(KJob*)));
+        connect(modifyJob, &KJob::result, this, &RenameCommand::onCollectionModified);
     } else {
         onCollectionModified(job);
     }

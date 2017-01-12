@@ -166,7 +166,7 @@ void CopyCommand::onSourceResolved(KJob *job)
         ItemFetchJob *fetchJob = new ItemFetchJob(item, this);
         fetchJob->fetchScope().fetchFullPayload(false);
         fetchJob->setProperty("arg", sourceArg);
-        connect(fetchJob, SIGNAL(result(KJob*)), SLOT(onItemsFetched(KJob*)));
+        connect(fetchJob, &KJob::result, this, &CopyCommand::onItemsFetched);
         return;
     }
 

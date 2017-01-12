@@ -156,7 +156,7 @@ void CreateCommand::onTargetFetched(KJob *job)
     newCollection.setContentMimeTypes(parentCollection.contentMimeTypes());
     if (!mDryRun) {
         CollectionCreateJob *createJob = new CollectionCreateJob(newCollection);
-        connect(createJob, SIGNAL(result(KJob*)), this, SLOT(onCollectionCreated(KJob*)));
+        connect(createJob, &KJob::result, this, &CreateCommand::onCollectionCreated);
     } else {
         emit finished(NoError);
     }
@@ -178,7 +178,7 @@ void CreateCommand::onCollectionCreated(KJob *job)
     Q_ASSERT(createJob != nullptr);
 
     CollectionPathJob *pathJob = new CollectionPathJob(createJob->collection());
-    connect(pathJob, SIGNAL(result(KJob*)), SLOT(onPathFetched(KJob*)));
+    connect(pathJob, &KJob::result, this, &CreateCommand::onPathFetched);
     pathJob->start();
 }
 
