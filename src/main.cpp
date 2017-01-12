@@ -61,10 +61,10 @@ int main(int argc, char **argv)
     options.add("+[options]", ki18nc("@info:shell", "Options for command"));
     options.add("+[args]", ki18nc("@info:shell", "Arguments for command"));
     options.add("", ki18nc("@info:shell",
-                           "See '<application>%1</application> help'"
+                           "See '%1 help'"
                            " for available commands"
                            "\n"
-                           "See '<application>%1</application> help command'"
+                           "See '%1 help command'"
                            " for more information on a specific command.").subs(appname));
     KCmdLineArgs::addCmdLineOptions(options);
 

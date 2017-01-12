@@ -89,7 +89,7 @@ void UpdateCommand::start()
     }
 
     if (!QFile::exists(mFileArg)) {
-        emit error(i18nc("@info:shell", "File <filename>%1</filename> does not exist", mFileArg));
+        emit error(i18nc("@info:shell", "File ‘%1’ does not exist", mFileArg));
         emit finished(RuntimeError);
         return;
     }
@@ -97,7 +97,7 @@ void UpdateCommand::start()
     // TODO: report strerror(errno), then above is superfluous
     mFile = new QFile(mFileArg);
     if (!mFile->open(QIODevice::ReadOnly)) {
-        emit error(i18nc("@info:shell", "File <filename>%1</filename> cannot be read", mFileArg));
+        emit error(i18nc("@info:shell", "File ‘%1’ cannot be read", mFileArg));
         emit finished(RuntimeError);
         delete mFile;
         mFile = nullptr;

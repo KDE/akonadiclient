@@ -205,7 +205,7 @@ void AddCommand::processNextDirectory()
         // exists but needs recursion and items
         QDir dir(path);
         if (!dir.exists()) {
-            ErrorReporter::warning(i18n("Directory <filename>%1</filename> no longer exists", path));
+            ErrorReporter::warning(i18n("Directory ‘%1’ no longer exists", path));
             QMetaObject::invokeMethod(this, "processNextDirectory", Qt::QueuedConnection);
             return;
         }
@@ -227,7 +227,7 @@ void AddCommand::processNextDirectory()
 
     QDir dir(path);
     if (!dir.exists()) {
-        ErrorReporter::warning(i18n("Directory <filename>%1</filename> no longer exists", path));
+        ErrorReporter::warning(i18n("Directory ‘%1’ no longer exists", path));
         QMetaObject::invokeMethod(this, "processNextDirectory", Qt::QueuedConnection);
         return;
     }
@@ -280,13 +280,13 @@ void AddCommand::processNextFile()
 
     QFile file(fileName);
     if (!file.exists()) {
-        emit error(i18nc("@info:shell", "File <filename>%1</filename> does not exist", fileName));
+        emit error(i18nc("@info:shell", "File ‘%1’ does not exist", fileName));
         QMetaObject::invokeMethod(this, "processNextFile", Qt::QueuedConnection);
         return;
     }
 
     if (!file.open(QIODevice::ReadOnly)) {
-        emit error(i18nc("@info:shell", "File <filename>%1</filename> cannot be read", fileName));
+        emit error(i18nc("@info:shell", "File ‘%1’ cannot be read", fileName));
         QMetaObject::invokeMethod(this, "processNextFile", Qt::QueuedConnection);
         return;
     }
@@ -294,7 +294,7 @@ void AddCommand::processNextFile()
     KMimeType::Ptr mimeType = !mMimeType.isNull() ? mMimeType
                               : KMimeType::findByNameAndContent(fileName, &file);
     if (mimeType.isNull() /*|| !mimeType->isValid() FIXME*/) {
-        emit error(i18nc("@info:shell", "Cannot determine MIME type of file <filename>%1</filename>", fileName));
+        emit error(i18nc("@info:shell", "Cannot determine MIME type of file ‘%1’", fileName));
         QMetaObject::invokeMethod(this, "processNextFile", Qt::QueuedConnection);
         return;
     }
@@ -303,7 +303,7 @@ void AddCommand::processNextFile()
 
     const Collection parent = mCollectionsByPath.value(mBasePaths[ fileInfo.absolutePath() ]);
     if (!parent.isValid()) {
-        emit error(i18nc("@info:shell", "Cannot determine parent collection for file <filename>%1</filename>",
+        emit error(i18nc("@info:shell", "Cannot determine parent collection for file ‘%1’",
                          QDir(mBasePath).relativeFilePath(fileName)));
         QMetaObject::invokeMethod(this, "processNextFile", Qt::QueuedConnection);
         return;
@@ -438,7 +438,7 @@ void AddCommand::onItemCreated(KJob *job)
     const QString fileName = job->property("fileName").toString();
 
     if (job->error() != 0) {
-        const QString msg = i18nc("@info:shell", "Failed to add <filename>%1</filename>, %2", fileName, job->errorString());
+        const QString msg = i18nc("@info:shell", "Failed to add ‘%1’, %2", fileName, job->errorString());
         emit error(msg);
     } else {
 

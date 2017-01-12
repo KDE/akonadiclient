@@ -97,7 +97,7 @@ void AbstractCommand::emitErrorSeeHelp(const KLocalizedString &msg)
             .subs(msg.toString()).toString();
     } else {
         s = ki18nc("@info:shell %1 is application name, %2 is subcommand name, %3 is error message",
-                   "%3. See '<application>%1</application> help %2'")
+                   "%3. See '%1 help %2'")
             .subs(KCmdLineArgs::appName())
             .subs(this->name())
             .subs(msg.toString()).toString();
