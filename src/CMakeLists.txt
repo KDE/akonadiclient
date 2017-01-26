@@ -2,7 +2,7 @@
 
 option(AKONADICLIENT_BUILD_TESTS "Whether to build the automatic tests" ${KDE4_BUILD_TESTS})
 
-include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDEPIMLIBS_INCLUDE_DIRS}  ${QT_INCLUDE_DIR})
+include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 add_definitions(-DVERSION=\\"${VERSION}\\")
 
