@@ -28,7 +28,7 @@ class ExportCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit ExportCommand(QObject *parent = 0);
+    explicit ExportCommand(QObject *parent = nullptr);
     ~ExportCommand();
 
     QString name() const;

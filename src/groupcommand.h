@@ -32,7 +32,7 @@ class GroupCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit GroupCommand(QObject *parent = 0);
+    explicit GroupCommand(QObject *parent = nullptr);
     ~GroupCommand();
 
     QString name() const;

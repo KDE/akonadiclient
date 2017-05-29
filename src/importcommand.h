@@ -37,7 +37,7 @@ class ImportCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit ImportCommand(QObject *parent = 0);
+    explicit ImportCommand(QObject *parent = nullptr);
     ~ImportCommand();
 
     QString name() const;

@@ -29,7 +29,7 @@ class CreateCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit CreateCommand(QObject *parent = 0);
+    explicit CreateCommand(QObject *parent = nullptr);
     ~CreateCommand();
 
     QString name() const;

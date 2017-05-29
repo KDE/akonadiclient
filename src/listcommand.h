@@ -29,7 +29,7 @@ class ListCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit ListCommand(QObject *parent = 0);
+    explicit ListCommand(QObject *parent = nullptr);
     ~ListCommand();
 
     QString name() const;

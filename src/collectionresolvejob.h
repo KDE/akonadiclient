@@ -28,7 +28,7 @@ class CollectionResolveJob : public KCompositeJob
     Q_OBJECT
 
 public:
-    explicit CollectionResolveJob(const QString &userInput, QObject *parent = 0);
+    explicit CollectionResolveJob(const QString &userInput, QObject *parent = nullptr);
     ~CollectionResolveJob();
 
     void start();

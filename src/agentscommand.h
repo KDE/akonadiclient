@@ -33,7 +33,7 @@ class AgentsCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit AgentsCommand(QObject *parent = 0);
+    explicit AgentsCommand(QObject *parent = nullptr);
     ~AgentsCommand();
 
     QString name() const;

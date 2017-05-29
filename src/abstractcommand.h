@@ -36,7 +36,7 @@ public:
         RuntimeError = 2
     };
 
-    explicit AbstractCommand(QObject *parent = 0);
+    explicit AbstractCommand(QObject *parent = nullptr);
     ~AbstractCommand();
 
     int init(KCmdLineArgs *parsedArgs);

@@ -30,7 +30,7 @@ class EditCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit EditCommand(QObject *parent = 0);
+    explicit EditCommand(QObject *parent = nullptr);
     ~EditCommand();
 
     QString name() const;

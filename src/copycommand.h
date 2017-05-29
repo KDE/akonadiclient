@@ -32,7 +32,7 @@ class CopyCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit CopyCommand(QObject *parent = 0);
+    explicit CopyCommand(QObject *parent = nullptr);
     ~CopyCommand();
 
     QString name() const;

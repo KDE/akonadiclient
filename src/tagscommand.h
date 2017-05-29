@@ -28,7 +28,7 @@ class TagsCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit TagsCommand(QObject *parent = 0);
+    explicit TagsCommand(QObject *parent = nullptr);
     ~TagsCommand();
 
     QString name() const;

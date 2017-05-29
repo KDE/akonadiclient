@@ -26,7 +26,7 @@ class MoveCommand : public CopyCommand
     Q_OBJECT
 
 public:
-    explicit MoveCommand(QObject *parent = 0);
+    explicit MoveCommand(QObject *parent = nullptr);
     ~MoveCommand();
 
     QString name() const;

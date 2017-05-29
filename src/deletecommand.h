@@ -37,7 +37,7 @@ class DeleteCommand :  public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit DeleteCommand(QObject *parent = 0);
+    explicit DeleteCommand(QObject *parent = nullptr);
     ~DeleteCommand();
 
     QString name() const;

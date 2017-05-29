@@ -28,7 +28,7 @@ class CollectionPathJob : public KCompositeJob
     Q_OBJECT
 
 public:
-    explicit CollectionPathJob(const Akonadi::Collection &collection, QObject *parent = 0);
+    explicit CollectionPathJob(const Akonadi::Collection &collection, QObject *parent = nullptr);
     ~CollectionPathJob();
 
     void start();

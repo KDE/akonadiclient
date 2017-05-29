@@ -42,7 +42,7 @@ public:
         AddRecursive
     };
 
-    explicit AddCommand(QObject *parent = 0);
+    explicit AddCommand(QObject *parent = nullptr);
     ~AddCommand();
 
     QString name() const;

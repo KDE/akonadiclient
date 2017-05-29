@@ -30,7 +30,7 @@ class UpdateCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit UpdateCommand(QObject *parent = 0);
+    explicit UpdateCommand(QObject *parent = nullptr);
     ~UpdateCommand();
 
     QString name() const;

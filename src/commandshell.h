@@ -33,7 +33,7 @@ class CommandShell : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit CommandShell(QObject *parent = 0);
+    explicit CommandShell(QObject *parent = nullptr);
     ~CommandShell();
 
     QString name() const;

@@ -30,7 +30,7 @@ class ShowCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    explicit ShowCommand(QObject *parent = 0);
+    explicit ShowCommand(QObject *parent = nullptr);
     ~ShowCommand();
 
     QString name() const;
