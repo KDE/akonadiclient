@@ -25,6 +25,7 @@
 #include <AkonadiCore/CollectionCopyJob>
 #include <AkonadiCore/CollectionMoveJob>
 #include <AkonadiCore/CollectionFetchJob>
+#include <AkonadiCore/CollectionFetchScope>
 #include <AkonadiCore/ItemCopyJob>
 #include <AkonadiCore/ItemMoveJob>
 #include <AkonadiCore/ItemFetchJob>
@@ -195,6 +196,7 @@ void CopyCommand::onSourceResolved(KJob *job)
         mSourceCollection = sourceJob->collection();
         CollectionFetchJob *fetchJob = new CollectionFetchJob(mSourceCollection,
                 CollectionFetchJob::FirstLevel, this);
+        fetchJob->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
         fetchJob->setProperty("arg", sourceArg);
         connect(fetchJob, &KJob::result, this, &CopyCommand::onCollectionsFetched);
     } else {

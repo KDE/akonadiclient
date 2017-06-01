@@ -17,12 +17,11 @@
 */
 
 #include "collectionpathjob.h"
+#include "collectionresolvejob.h"
 
 #include <KLocalizedString>
 
 #include <AkonadiCore/CollectionFetchJob>
-
-#include <AkonadiCore/CollectionPathResolver>
 
 using namespace Akonadi;
 
@@ -44,7 +43,7 @@ void CollectionPathJob::start()
         return;
     }
 
-    CollectionPathResolver *resolver = new CollectionPathResolver(mCollection, this);
+    CollectionPathResolver *resolver = new HackedCollectionPathResolver(mCollection, this);
     addSubjob(resolver);
     resolver->start();
 }

@@ -25,6 +25,7 @@
 #include <AkonadiXml/XmlDocument>
 #include <AkonadiCore/collectioncreatejob.h>
 #include <AkonadiCore/collectionfetchjob.h>
+#include <AkonadiCore/collectionfetchscope.h>
 #include <AkonadiCore/itemcreatejob.h>
 
 #include <klocalizedstring.h>
@@ -181,6 +182,7 @@ void ImportCommand::processNextCollection()
 
     if (!mDryRun) {
         CollectionFetchJob *fetchJob = new CollectionFetchJob(parent, CollectionFetchJob::FirstLevel, this);
+        fetchJob->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
         fetchJob->setProperty("rid", collection.remoteId());
         fetchJob->setProperty("parent", QVariant::fromValue<Collection>(parent));
         connect(fetchJob, &KJob::result, this, &ImportCommand::onChildrenFetched);

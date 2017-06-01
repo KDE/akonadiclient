@@ -22,6 +22,7 @@
 #include "errorreporter.h"
 
 #include <AkonadiCore/CollectionCreateJob>
+#include <AkonadiCore/CollectionFetchScope>
 #include <AkonadiCore/CollectionFetchJob>
 #include <AkonadiCore/Item>
 #include <AkonadiCore/ItemCreateJob>
@@ -248,6 +249,7 @@ void AddCommand::processNextDirectory()
                                      QString::number(parent.id()), parent.name(), collection.name()));
 
         CollectionFetchJob *job = new CollectionFetchJob(parent, CollectionFetchJob::FirstLevel);
+        job->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
         job->setProperty("path", path);
         job->setProperty("collection", QVariant::fromValue(collection));
         connect(job, SIGNAL(result(KJob*)), this, SLOT(onCollectionFetched(KJob*)));

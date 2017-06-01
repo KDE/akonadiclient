@@ -21,6 +21,7 @@
 #include "collectionresolvejob.h"
 
 #include <AkonadiCore/CollectionFetchJob>
+#include <AkonadiCore/CollectionFetchScope>
 #include <AkonadiCore/ItemFetchJob>
 #include <AkonadiCore/ItemFetchScope>
 
@@ -127,6 +128,7 @@ void ListCommand::fetchCollections()
     Q_ASSERT(mResolveJob != nullptr  && mResolveJob->collection().isValid());
 
     CollectionFetchJob *job = new CollectionFetchJob(mResolveJob->collection(), CollectionFetchJob::FirstLevel, this);
+    job->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
     connect(job, &KJob::result, this, &ListCommand::onCollectionsFetched);
 }
 

@@ -21,7 +21,19 @@
 
 #include <AkonadiCore/Collection>
 #include <AkonadiCore/Item>
+#include <AkonadiCore/collectionpathresolver.h>
 #include <KCompositeJob>
+
+class HackedCollectionPathResolver : public Akonadi::CollectionPathResolver
+{
+    Q_OBJECT
+public:
+    explicit HackedCollectionPathResolver(const QString &path, QObject *parent = nullptr);
+    explicit HackedCollectionPathResolver(const Akonadi::Collection &col, QObject *parent = nullptr);
+
+protected:
+    bool addSubjob(KJob *job) Q_DECL_OVERRIDE;
+};
 
 class CollectionResolveJob : public KCompositeJob
 {

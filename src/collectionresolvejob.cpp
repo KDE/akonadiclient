@@ -19,6 +19,7 @@
 #include "collectionresolvejob.h"
 
 #include <AkonadiCore/CollectionFetchJob>
+#include <AkonadiCore/CollectionFetchScope>
 
 #include <AkonadiCore/collectionpathresolver.h>
 
@@ -28,6 +29,28 @@
 #include "errorreporter.h"
 
 using namespace Akonadi;
+
+HackedCollectionPathResolver::HackedCollectionPathResolver(const QString &path, QObject *parent)
+    : CollectionPathResolver(path, parent)
+{}
+
+HackedCollectionPathResolver::HackedCollectionPathResolver(const Collection &col, QObject *parent)
+    : CollectionPathResolver(col, parent)
+{}
+
+bool HackedCollectionPathResolver::addSubjob(KJob *job)
+{
+    if (auto akjob = qobject_cast<Akonadi::Job*>(job)) {
+        connect(akjob, &Job::aboutToStart,
+                [](Akonadi::Job *subjob) {
+                    if (auto fetchJob = qobject_cast<CollectionFetchJob*>(subjob)) {
+                        fetchJob->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
+                    }
+                });
+    }
+    return CollectionPathResolver::addSubjob(job);
+}
+
 
 CollectionResolveJob::CollectionResolveJob(const QString &userInput, QObject *parent)
     : KCompositeJob(parent),
@@ -66,7 +89,7 @@ void CollectionResolveJob::start()
     if (mCollection.isValid()) {
         fetchBase();
     } else {
-        CollectionPathResolver *resolver = new CollectionPathResolver(mUserInput, this);
+        CollectionPathResolver *resolver = new HackedCollectionPathResolver(mUserInput, this);
         addSubjob(resolver);
         resolver->start();
     }
@@ -91,6 +114,7 @@ void CollectionResolveJob::fetchBase()
     }
 
     CollectionFetchJob *job = new CollectionFetchJob(mCollection, CollectionFetchJob::Base, this);
+    job->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
     addSubjob(job);
 }
 
