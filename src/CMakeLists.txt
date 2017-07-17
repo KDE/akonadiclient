@@ -36,6 +36,7 @@ set(libakonadiclient_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/exportcommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/importcommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/commandshell.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dumpcommand.cpp
 )
 
 set(akonadiclient_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
