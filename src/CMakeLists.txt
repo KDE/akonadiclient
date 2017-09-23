@@ -4,9 +4,6 @@ option(AKONADICLIENT_BUILD_TESTS "Whether to build the automatic tests" ${KDE4_B
 
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
-add_definitions(-DVERSION=\\"${VERSION}\\")
-
-
 ###### target ######
 
 set(libakonadiclient_SRCS
@@ -33,6 +30,7 @@ set(libakonadiclient_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/exportcommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/importcommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/commandshell.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dumpcommand.cpp
 )
 
 set(akonadiclient_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
