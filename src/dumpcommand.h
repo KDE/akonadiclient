@@ -48,6 +48,8 @@ protected:
 private:
     bool mDryRun;
     bool mMaildir;
+    bool mAkonadiCategories;
+
     CollectionResolveJob *mResolveJob;
     QString mDirectoryArg;
     Akonadi::Item::List mItemList;

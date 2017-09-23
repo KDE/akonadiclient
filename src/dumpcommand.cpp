@@ -68,6 +68,7 @@ void DumpCommand::setupCommandOptions(KCmdLineOptions& options)
     options.add("+directory", ki18nc("@info:shell", "The directory to dump to"));
     addOptionSeparator(options);
     options.add("m").add("maildir", ki18nc("@info:shell", "Dump email messages in maildir directory structure"));
+    options.add("a").add("akonadi-categories", ki18nc("@info:shell", "Dump items with Akonadi categories, otherwise text"));
     options.add("f").add("force", ki18nc("@info:shell", "Operate even if destination directory is not empty"));
     addDryRunOption(options);
 }
@@ -97,6 +98,7 @@ int DumpCommand::initCommand(KCmdLineArgs *parsedArgs)
 
     mDryRun = parsedArgs->isSet("dryrun");
     mMaildir = parsedArgs->isSet("maildir");
+    mAkonadiCategories = parsedArgs->isSet("akonadi-categories");
 
     mDirectoryArg = parsedArgs->arg(2);
     QDir dir(mDirectoryArg);
@@ -309,17 +311,31 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
     if (!mDryRun)
     {
         QByteArray data = item.payloadData();		// the raw item payload
-        if (mimeType=="text/directory")			// need to fix up tags?
-        {
+        if (mimeType=="text/directory" || mimeType=="text/vcard")
+        {						// need to fix up tags?
             // Rewrite the "CATGEORIES" line to use the external tag names
-            // as opposed to the internal Akonadi URLs.
+            // as opposed to the internal Akonadi URLs.  Also hide any
+            // "UID" lines so as not to confuse the receiver.
 
             bool changed = false;			// not yet, anyway
             QList<QByteArray> oldLines = data.split('\n');
             QStringList newLines;
             foreach (const QByteArray &line, oldLines)
             {
-                if (!line.startsWith("CATEGORIES:"))	// not interested in this line
+                if (line.startsWith("UID:"))		// hide internal details
+                {
+                    newLines.append(QByteArray("X-AKONADI-")+line);
+                    changed = true;
+                    continue;
+                }
+
+                if (!line.startsWith("CATEGORIES:"))
+                {					// not interested in this line
+                    newLines.append(QString::fromUtf8(line));
+                    continue;
+                }
+
+                if (mAkonadiCategories)			// don't want to rewrite
                 {
                     newLines.append(QString::fromUtf8(line));
                     continue;
