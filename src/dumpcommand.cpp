@@ -346,7 +346,7 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
                 foreach (const QString &cat, oldCats)
                 {
                     QString newCat = cat;
-                    const Akonadi::Tag::Id catId = Akonadi::Tag::fromUrl(cat).id();
+                    const Akonadi::Tag::Id catId = Akonadi::Tag::fromUrl(QUrl(cat)).id();
 							// category tag ID from URL
                     foreach (const Akonadi::Tag &tag, mTagList)
                     {
