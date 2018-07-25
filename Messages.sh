@@ -1,2 +1,2 @@
 #! /bin/sh
-$XGETTEXT `find . -name \*.cpp` -o $podir/akonadiclient.pot
+$XGETTEXT `find . -name \*.cpp | grep -v '/tests/'` -o $podir/akonadiclient.pot
