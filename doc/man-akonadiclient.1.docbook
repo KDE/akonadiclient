@@ -246,7 +246,7 @@ For example, adding items, collections, renaming or moving collections and also 
 				<term><option>export</option></term>
 				<listitem>
 				<para>akonadiclient export [OPTIONS] COLLECTION FILE</para>
-				<para>Import an XML file inside the collection specified by PARENT. If the collection already exists, it's contents are merged with the contents of the collection in the XML file.</para>
+				<para>Import an XML file inside the collection specified by PARENT. If the collection already exists, its contents are merged with the contents of the collection in the XML file.</para>
 				<para>Options:</para>
 				<variablelist>
 
@@ -263,7 +263,7 @@ For example, adding items, collections, renaming or moving collections and also 
 				<term><option>import</option></term>
 				<listitem>
 				<para>akonadiclient import [OPTIONS] PARENT FILE</para>
-				<para>Imports an XML file inside the collection specified by PARENT. If the collection already exists, it's contents are merged with the contents of the collection in the XML file.</para>
+				<para>Imports an XML file inside the collection specified by PARENT. If the collection already exists, its contents are merged with the contents of the collection in the XML file.</para>
 				<para>Options:</para>
 				<variablelist>
 
