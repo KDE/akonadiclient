@@ -6,12 +6,12 @@
 <refentry lang="&language;">
 <refentryinfo>
 <title>akonadiclient man page</title>
-<author><personname>
+<author>
 <firstname>Bhaskar</firstname>
 <surname>Kandiyal</surname>
-</personname>
+<contrib>akonadiclient man page.</contrib>
 <email>bkandiyal@gmail.com</email></author>
-<date>2014-08-17</date>
+<date>2018-07-26</date>
 <productname>AkonadiClient</productname>
 </refentryinfo>
 
@@ -208,6 +208,38 @@ For example, adding items, collections, renaming or moving collections and also 
 				</listitem>
 			</varlistentry>
 
+                        <varlistentry>
+				<term><option>dump</option></term>
+				<listitem>
+				<para>akonadiclient dump [OPTIONS] COLLECTION DIRECTORY</para>
+				<para>Dump a COLLECTION to a DIRECTORY structure</para>
+				<para>Options:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term><option>-m, --maildir</option></term>
+					<listitem><para>Dump email messages in maildir directory structure</para></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term><option>-a, --akonadi-categories</option></term>
+					<listitem><para>Dump items with Akonadi categories, otherwise text</para></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term><option>-f, --force</option></term>
+					<listitem><para>Operate even if destination directory is not empty</para></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term><option>-n, --dryrun</option></term>
+					<listitem><para>Run without making any actual changes</para></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
 			<varlistentry>
 				<term><option>edit</option></term>
 				<listitem>
@@ -246,7 +278,7 @@ For example, adding items, collections, renaming or moving collections and also 
 				<term><option>export</option></term>
 				<listitem>
 				<para>akonadiclient export [OPTIONS] COLLECTION FILE</para>
-				<para>Import an XML file inside the collection specified by PARENT. If the collection already exists, its contents are merged with the contents of the collection in the XML file.</para>
+				<para>Export the collection specified by COLLECTION to an XML file specified by FILE.</para>
 				<para>Options:</para>
 				<variablelist>
 
@@ -258,6 +290,54 @@ For example, adding items, collections, renaming or moving collections and also 
 				</variablelist>
 				</listitem>
 			</varlistentry>
+                        
+                        <varlistentry>
+				<term><option>group</option></term>
+				<listitem>
+				<para>akonadiclient group [OPTIONS] GROUP ARGS</para>
+				<para>Expand or modify a contact GROUP</para>
+				<para>Options:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term><option>-e, --expand</option></term>
+					<listitem><para>Show the expanded contact group (the default operation)</para></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term><option>-a, --add</option></term>
+					<listitem><para>Add a contact to the group</para></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term><option>-d, --delete</option></term>
+					<listitem><para>Delete a contact from the group</para></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term><option>-C, --clean</option></term>
+					<listitem><para>Remove unknown item references from the group</para></listitem>
+					</varlistentry>
+
+					<varlistentry>
+                                            <term><option>-c, --comment <replaceable>name</replaceable></option></term>
+					<listitem><para>Email comment (name) for an added item</para></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term><option>-b, --brief</option></term>
+					<listitem><para>Brief output (for 'expand', email addresses only)</para></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term><option>-n, --dryrun</option></term>
+					<listitem><para>Run without making any actual changes</para></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
 
 			<varlistentry>
 				<term><option>import</option></term>
@@ -402,6 +482,13 @@ For example, adding items, collections, renaming or moving collections and also 
 				</listitem>
 			</varlistentry>
 
+			<varlistentry>
+				<term><option>shell</option></term>
+				<listitem>
+					<para>akonadiclient shell</para>
+					<para>Enter commands in an interactive shell</para>
+				</listitem>
+			</varlistentry>
 		</variablelist>
 	</refsect2>
 </refsect1>
