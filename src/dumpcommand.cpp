@@ -325,6 +325,7 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
                 if (line.startsWith("UID:"))		// hide internal details
                 {
                     newLines.append(QByteArray("X-AKONADI-")+line);
+                    newLines.append(QString("X-AKONADI-ITEM:%1").arg(item.id()));
                     changed = true;
                     continue;
                 }
