@@ -313,12 +313,14 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
         QByteArray data = item.payloadData();		// the raw item payload
         if (mimeType=="text/directory" || mimeType=="text/vcard")
         {						// need to fix up tags?
+            data.replace('\r', "");			// remove trailing CR from lines
+
             // Rewrite the "CATGEORIES" line to use the external tag names
             // as opposed to the internal Akonadi URLs.  Also hide any
             // "UID" lines so as not to confuse the receiver.
 
             bool changed = false;			// not yet, anyway
-            QList<QByteArray> oldLines = data.split('\n');
+            const QList<QByteArray> oldLines = data.split('\n');
             QStringList newLines;
             foreach (const QByteArray &line, oldLines)
             {
@@ -329,6 +331,9 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
                     changed = true;
                     continue;
                 }
+							// ignore old data from these
+                if (line.startsWith("X-AKONADI-UID:")) continue;
+                if (line.startsWith("X-AKONADI-ITEM:")) continue;
 
                 if (!line.startsWith("CATEGORIES:"))
                 {					// not interested in this line
