@@ -112,7 +112,7 @@ void TagsCommand::onTagsFetched(KJob *job)
             writeColumn(tag.id(), 8);
         }
         if (!mBriefOutput || mUrlsOutput) {
-            writeColumn(tag.url().path(), 25);
+            writeColumn(tag.url().toDisplayString(), 25);
         }
         if (!mUrlsOutput) {
             writeColumn(tag.name());
