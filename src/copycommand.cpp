@@ -32,7 +32,6 @@
 #include <AkonadiCore/ItemFetchScope>
 
 #include <KCmdLineOptions>
-#include <KUrl>
 
 #include <iostream>
 

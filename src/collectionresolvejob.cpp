@@ -24,7 +24,6 @@
 #include <AkonadiCore/collectionpathresolver.h>
 
 #include <KLocalizedString>
-#include <KUrl>
 
 #include "errorreporter.h"
 
@@ -165,7 +164,7 @@ Akonadi::Item CollectionResolveJob::parseItem(const QString &userInput, bool ver
         item = Item(id);    // conversion succeeded
     } else {
         // Otherwise check if we have an Akonadi URL
-        const KUrl url = QUrl::fromUserInput(userInput);
+        const QUrl url = QUrl::fromUserInput(userInput);
         if (url.isValid() && url.scheme() == QLatin1String("akonadi")) {
             // valid Akonadi URL
             item = Item::fromUrl(url);
@@ -199,7 +198,7 @@ Akonadi::Collection CollectionResolveJob::parseCollection(const QString &userInp
             coll = Collection::root();
         } else {
             // Next check if we have an Akonadi URL
-            const KUrl url = QUrl::fromUserInput(userInput);
+            const QUrl url = QUrl::fromUserInput(userInput);
             if (url.isValid() && url.scheme() == QLatin1String("akonadi")) {
                 // valid Akonadi URL
                 coll = Collection::fromUrl(url);

@@ -29,7 +29,6 @@
 
 #include <KCmdLineOptions>
 #include <KGlobal>
-#include <KUrl>
 #include <KMimeType>
 
 #include <QDir>
