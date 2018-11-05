@@ -26,10 +26,11 @@
 
 #include <qdir.h>
 #include <qfile.h>
+#include <qmimetype.h>
+#include <qmimedatabase.h>
 
 #include <klocalizedstring.h>
 #include <kcmdlineargs.h>
-#include <kmimetype.h>
 
 #include <recursiveitemfetchjob.h>
 #include <tagfetchjob.h>
@@ -250,10 +251,11 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
     }
 
     const QString mimeType = item.mimeType();
-    KMimeType::Ptr mime = KMimeType::mimeType(mimeType);
-    QString ext = mime->mainExtension();
+    QMimeDatabase db;
+    QMimeType mime = db.mimeTypeForName(mimeType);
+    QString ext = mime.preferredSuffix();
     // No extension is registered for contact groups
-    if (ext.isEmpty() && mimeType=="application/x-vnd.kde.contactgroup") ext = ".group";
+    if (ext.isEmpty() && mimeType=="application/x-vnd.kde.contactgroup") ext = "group";
 
     // std::cout << "  " << qPrintable(QString::number(item.id()))
               // << "  " << qPrintable(mimeType)
@@ -305,7 +307,7 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
 
     QString destPath = destDir+"/";			// make path of item file
     destPath += QString("%1").arg(item.id(), 8, 10, QLatin1Char('0'));
-    destPath += ext;
+    if (!ext.isEmpty()) destPath += '.'+ext;
 
     std::cout << qPrintable(QString("%1").arg(item.id(), -8)) << " -> " << qPrintable(destPath) << std::endl;
     if (!mDryRun)

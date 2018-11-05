@@ -29,11 +29,11 @@
 
 #include <KCmdLineOptions>
 #include <KGlobal>
-#include <KMimeType>
 
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QMimeDatabase>
 
 #include <iostream>
 
@@ -106,8 +106,9 @@ int AddCommand::initCommand(KCmdLineArgs *parsedArgs)
 
     const QString mimeTypeArg = parsedArgs->getOption("mime");
     if (!mimeTypeArg.isEmpty()) {
-        mMimeType = KMimeType::mimeType(mimeTypeArg);
-        if (mMimeType.isNull() /*|| !mMimeType->isValid() FIXME */) {
+        QMimeDatabase db;
+        mMimeType = db.mimeTypeForName(mimeTypeArg);
+        if (!mMimeType.isValid()) {
             emit error(ki18nc("@info:shell",
                               "Invalid MIME type argument '%1'").subs(mimeTypeArg).toString());
             return InvalidUsage;
@@ -292,9 +293,9 @@ void AddCommand::processNextFile()
         return;
     }
 
-    KMimeType::Ptr mimeType = !mMimeType.isNull() ? mMimeType
-                              : KMimeType::findByNameAndContent(fileName, &file);
-    if (mimeType.isNull() /*|| !mimeType->isValid() FIXME*/) {
+    QMimeDatabase db;
+    QMimeType mimeType = mMimeType.isValid() ? mMimeType : db.mimeTypeForFileNameAndData(fileName, &file);
+    if (!mimeType.isValid()) {
         emit error(i18nc("@info:shell", "Cannot determine MIME type of file ‘%1’", fileName));
         QMetaObject::invokeMethod(this, "processNextFile", Qt::QueuedConnection);
         return;
@@ -315,7 +316,7 @@ void AddCommand::processNextFile()
                                  QDir(mBasePath).relativeFilePath(fileName),
                                  KGlobal::locale()->formatByteSize(fileInfo.size())));
     Item item;
-    item.setMimeType(mimeType->name());
+    item.setMimeType(mimeType.name());
 
     file.reset();
     item.setPayloadFromData(file.readAll());

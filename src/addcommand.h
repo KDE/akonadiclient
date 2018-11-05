@@ -23,11 +23,10 @@
 
 #include <AkonadiCore/Collection>
 
-#include <KMimeType>
-
 #include <QHash>
 #include <QMap>
 #include <QSet>
+#include <QMimeType>
 
 class CollectionResolveJob;
 class KJob;
@@ -65,7 +64,7 @@ private:
     bool mFlatMode;
     bool mDryRun;
     Akonadi::Collection mBaseCollection;
-    KMimeType::Ptr mMimeType;
+    QMimeType mMimeType;
 
 private Q_SLOTS:
     void processNextDirectory();
