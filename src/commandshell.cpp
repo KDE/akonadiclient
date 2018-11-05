@@ -23,8 +23,6 @@
 #include "errorreporter.h"
 
 #include <kcmdlineargs.h>
-#include <kglobal.h>
-#include <kcomponentdata.h>
 
 #include <QTextStream>
 #include <QCoreApplication>
@@ -157,7 +155,12 @@ bool CommandShell::enterCommandLoop()
 KCmdLineArgs *CommandShell::getParsedArgs(int argc, char **argv)
 {
     KCmdLineArgs::reset();
-    KCmdLineArgs::init(argc, argv, KGlobal::mainComponent().aboutData(), KCmdLineArgs::CmdLineArgNone);
+    KCmdLineArgs::init(argc, argv,
+                       QCoreApplication::applicationName().toLocal8Bit(),
+                       QByteArray(),
+                       ki18nc("@title program name", "Akonadi Client"),
+                       QCoreApplication::applicationVersion().toLocal8Bit());
+    KCmdLineArgs::addStdCmdLineOptions(KCmdLineArgs::CmdLineArgNone);
 
     KCmdLineOptions options;
     options.add("!+command", ki18nc("@info:shell", "Command to execute"));

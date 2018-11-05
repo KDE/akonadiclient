@@ -20,12 +20,10 @@
 #include "commandrunner.h"
 #include "errorreporter.h"
 
-#include <K4AboutData>
+#include <KAboutData>
 #include <KCmdLineArgs>
 #include <QCoreApplication>
-#include <qprocess.h>
 
-#include <cstdlib>
 #include <iostream>
 
 #include "version.h"
@@ -34,20 +32,32 @@ const char *appname = "akonadiclient";
 
 int main(int argc, char **argv)
 {
-    K4AboutData aboutData(appname, 0, ki18nc("@title program name", "Akonadi Client"),
+    // Need this before any use of i18n() or similar
+    // TODO: should we allow commands to optionally support GUI?
+    QCoreApplication application(argc, argv);
+
+    KAboutData aboutData(appname,							// componentName
+                         i18nc("@title program name", "Akonadi Client"),		// displayName
 #ifdef VCS_HAVE_VERSION
-                          (VERSION " (" VCS_TYPE_STRING " " VCS_REVISION_STRING ")"),
+                         (VERSION " (" VCS_TYPE_STRING " " VCS_REVISION_STRING ")"),	// version
 #else
-                          VERSION,
+                         VERSION,							// version
 #endif
-                          ki18nc("@info:shell short description", "A command-line/shell client for Akonadi"),
-                          K4AboutData::License_GPL);
+                         i18nc("@info:shell short description", "A command-line/shell client for Akonadi"),
+								                         // shortDescription
+                         KAboutLicense::GPL);						 // licenseType
 
-    aboutData.addAuthor(ki18n("Kevin Krammer"), ki18nc("@title about data task", "Original Author"), "krammer@kde.org");
-    aboutData.addAuthor(ki18n("Jonathan Marten"), ki18nc("@title about data task", "Additions and new commands"), "jjm@keelhaul.me.uk");
-    aboutData.addAuthor(ki18n("Bhaskar Kandiyal"), ki18nc("@title about data task", "New commands, GSOC 2014"), "bkandiyal@gmail.com");
+    aboutData.addAuthor(i18n("Kevin Krammer"), i18nc("@title about data task", "Original Author"), "krammer@kde.org");
+    aboutData.addAuthor(i18n("Jonathan Marten"), i18nc("@title about data task", "Additions and new commands"), "jjm@keelhaul.me.uk");
+    aboutData.addAuthor(i18n("Bhaskar Kandiyal"), i18nc("@title about data task", "New commands, GSOC 2014"), "bkandiyal@gmail.com");
 
-    KCmdLineArgs::init(argc, argv, &aboutData);
+    KAboutData::setApplicationData(aboutData);
+
+    KCmdLineArgs::init(argc, argv,
+                       QCoreApplication::applicationName().toLocal8Bit(),
+                       QByteArray(),
+                       ki18nc("@title program name", "Akonadi Client"),
+                       QCoreApplication::applicationVersion().toLocal8Bit());
     KCmdLineArgs::addStdCmdLineOptions(KCmdLineArgs::CmdLineArgNone);
 
     KCmdLineOptions options;
@@ -62,12 +72,6 @@ int main(int argc, char **argv)
                            " for more information on a specific command.").subs(appname));
     KCmdLineArgs::addCmdLineOptions(options);
 
-    // Need this before any use of i18n() or similar
-    // TODO: should we allow commands to optionally support GUI?
-    QCoreApplication application(KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv());
-    application.setApplicationName(aboutData.appName());
-    application.setApplicationVersion(aboutData.version());
-    application.setOrganizationDomain(aboutData.organizationDomain());
 
     // call right away so standard options like --version can terminate the program right here
     KCmdLineArgs *parsedArgs = KCmdLineArgs::parsedArgs();
