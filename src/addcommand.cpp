@@ -28,7 +28,9 @@
 #include <AkonadiCore/ItemCreateJob>
 
 #include <KCmdLineOptions>
-#include <KGlobal>
+#ifdef USE_KIO_CONVERTSIZE
+#include <kio/global.h>
+#endif
 
 #include <QDir>
 #include <QFile>
@@ -311,10 +313,15 @@ void AddCommand::processNextFile()
         return;
     }
 
+#ifdef USE_KIO_CONVERTSIZE
+    const QString size = KIO::convertSize(fileInfo.size());
+#else
+    const QString size = QLocale::system().formattedDataSize(fileInfo.size());
+#endif
     ErrorReporter::progress(i18n("Creating item in collection %1 \"%2\" from '%3' size %4",
                                  QString::number(parent.id()), parent.name(),
                                  QDir(mBasePath).relativeFilePath(fileName),
-                                 KGlobal::locale()->formatByteSize(fileInfo.size())));
+                                 size));
     Item item;
     item.setMimeType(mimeType.name());
 

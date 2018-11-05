@@ -31,8 +31,9 @@
 #include <qdatetime.h>
 
 #include <kcmdlineargs.h>
-#include <kglobal.h>
-#include <kurl.h>
+#ifdef USE_KIO_CONVERTSIZE
+#include <kio/global.h>
+#endif
 
 #include <iostream>
 
@@ -249,7 +250,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
         Q_ASSERT(mInfoCollection->isValid());
 
         writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoCollection->id()));
-        writeInfo(i18nc("@info:shell", "URL"), mInfoCollection->url().path());
+        writeInfo(i18nc("@info:shell", "URL"), mInfoCollection->url().toDisplayString());
         writeInfo(i18nc("@info:shell", "Parent"), parentString);
         writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Collection"));
         writeInfo(i18nc("@info:shell", "Name"), mInfoCollection->name());
@@ -289,12 +290,17 @@ void InfoCommand::onParentPathFetched(KJob *job)
         writeInfo(i18nc("@info:shell", "Rights"), rightsList.join(" "));
 
         Q_ASSERT(mInfoStatistics != nullptr);
-        writeInfo(i18nc("@info:shell", "Count"), KGlobal::locale()->formatNumber(mInfoStatistics->count(), 0));
-        writeInfo(i18nc("@info:shell", "Unread"), KGlobal::locale()->formatNumber(mInfoStatistics->unreadCount(), 0));
-        writeInfo(i18nc("@info:shell", "Size"), KGlobal::locale()->formatByteSize(mInfoStatistics->size()));
+        writeInfo(i18nc("@info:shell", "Count"), QLocale::system().toString(mInfoStatistics->count()));
+        writeInfo(i18nc("@info:shell", "Unread"), QLocale::system().toString(mInfoStatistics->unreadCount()));
+#ifdef USE_KIO_CONVERTSIZE
+        const QString size = KIO::convertSize(mInfoStatistics->size());
+#else
+        const QString size = QLocale::system().formattedDataSize(mInfoStatistics->size());
+#endif
+        writeInfo(i18nc("@info:shell", "Size"), size);
     } else if (mInfoItem != nullptr) {        // for an item
         writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoItem->id()));
-        writeInfo(i18nc("@info:shell", "URL"), mInfoItem->url().path());
+        writeInfo(i18nc("@info:shell", "URL"), mInfoItem->url().toDisplayString());
         writeInfo(i18nc("@info:shell", "Parent"), parentString);
         writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Item"));
         writeInfo(i18nc("@info:shell", "MIME"), mInfoItem->mimeType());
@@ -324,7 +330,12 @@ void InfoCommand::onParentPathFetched(KJob *job)
         }
         writeInfo(i18nc("@info:shell", "Tags"), tagDisp.join(" "));
 
-        writeInfo(i18nc("@info:shell", "Size"), KGlobal::locale()->formatByteSize(mInfoItem->size()));
+#ifdef USE_KIO_CONVERTSIZE
+        const QString size = KIO::convertSize(mInfoItem->size());
+#else
+        const QString size = QLocale::system().formattedDataSize(mInfoItem->size());
+#endif
+        writeInfo(i18nc("@info:shell", "Size"), size);
     } else {                      // neither collection nor item?
         // should never happen
         writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Unknown"));

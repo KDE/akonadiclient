@@ -31,8 +31,6 @@
 #include <KCodecs/kemailaddress.h>
 
 #include <kcmdlineargs.h>
-#include <kglobal.h>
-#include <kurl.h>
 
 #include <iostream>
 

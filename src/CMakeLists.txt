@@ -39,6 +39,11 @@ target_link_libraries(libakonadiclient KF5::AkonadiCore KF5::AkonadiXml KF5::Ako
 target_link_libraries(libakonadiclient KF5::KDELibs4Support)
 target_link_libraries(libakonadiclient Qt5::Core)
 
+if (USE_KIO_CONVERTSIZE)
+  add_definitions("-DUSE_KIO_CONVERTSIZE")
+  target_link_libraries(libakonadiclient KF5::KIOCore)
+endif()
+
 set_target_properties(libakonadiclient PROPERTIES ENABLE_EXPORTS TRUE)
 
 add_executable(akonadiclient ${akonadiclient_SRCS})

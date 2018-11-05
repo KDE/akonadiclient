@@ -26,7 +26,7 @@
 #include <AkonadiCore/itemmodifyjob.h>
 
 #include <kcmdlineargs.h>
-#include <kurl.h>
+
 #include <qfile.h>
 
 #include <iostream>

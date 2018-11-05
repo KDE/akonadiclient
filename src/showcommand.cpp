@@ -24,7 +24,6 @@
 #include <AkonadiCore/itemfetchscope.h>
 
 #include <kcmdlineargs.h>
-#include <kurl.h>
 
 #include <iostream>
 

@@ -34,7 +34,15 @@ set (KDE_APPLICATIONS_VERSION "${KDE_APPLICATIONS_VERSION_MAJOR}.${KDE_APPLICATI
 find_package(KF5Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(KF5AkonadiContact ${AKONADI_CONTACT_VERSION} CONFIG REQUIRED)
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Test)
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Widgets Test)
+message(STATUS "Qt version: ${Qt5Core_VERSION}")
+if (Qt5Core_VERSION VERSION_LESS 5.10.0)
+  message(STATUS "Using KIO::convertSize() for size formatting")
+  set(USE_KIO_CONVERTSIZE ON)
+else()
+  message(STATUS "Using QLocale::formattedDataSize() for size formatting")
+endif()
+
 find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS
     CoreAddons
     Config
@@ -44,6 +52,7 @@ find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS
     ItemViews
     KDELibs4Support
     DocTools
+    KIO
     Completion)
 
 

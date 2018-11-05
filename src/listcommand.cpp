@@ -28,7 +28,9 @@
 #include <QDateTime>
 
 #include <KCmdLineOptions>
-#include <KGlobal>
+#ifdef USE_KIO_CONVERTSIZE
+#include <kio/global.h>
+#endif
 
 #include <iostream>
 
@@ -245,7 +247,12 @@ void ListCommand::onItemsFetched(KJob *job)
             if (mListDetails) {
                 writeColumn(item.id(), 8);
                 writeColumn(item.mimeType(), 20);
-                writeColumn(KGlobal::locale()->formatByteSize(item.size()), 10);
+#ifdef USE_KIO_CONVERTSIZE
+                const QString size = KIO::convertSize(item.size());
+#else
+                const QString size = QLocale::system().formattedDataSize(item.size());
+#endif
+                writeColumn(size, 10);
                 // from kdepim/akonadiconsole/browserwidget.cpp BrowserWidget::setItem()
                 writeColumn((item.modificationTime().toString() + " UTC"));
             } else {
