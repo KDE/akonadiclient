@@ -19,53 +19,51 @@
 #ifndef COMMANDFACTORY_H
 #define COMMANDFACTORY_H
 
-#include <QHash>
 #include <QObject>
+
+#include <KLocalizedString>
 
 class AbstractCommand;
 struct CommandData;
 
-class KCmdLineArgs;
-class KLocalizedString;
-
 class QString;
 
-#define DEFINE_COMMAND(commandName, className, shortHelp)           \
-    class className##Factory                        \
-    {                                   \
-    public:                                 \
-        className##Factory();                         \
-    };                                  \
-    static className##Factory sFactory;                 \
-    static AbstractCommand *className##Creator(QObject *parent)     \
-    {                                   \
-        return (new className(parent));                   \
-    }                                   \
-    className##Factory::className##Factory()                \
-    {                                   \
-        CommandFactory::registerCommand(QLatin1String(commandName),       \
-                                        ki18nc("@info:shell", shortHelp), \
-                                        &className##Creator);         \
-    }                                   \
-    QString className::name() const                     \
-    {                                   \
-        return (QLatin1String(commandName));                \
+#define DEFINE_COMMAND(commandName, className, shortHelp)			\
+    class className##Factory							\
+    {										\
+    public:									\
+        className##Factory();							\
+    };										\
+    static className##Factory sFactory;						\
+    static AbstractCommand *className##Creator(QObject *parent)			\
+    {										\
+        return (new className(parent));						\
+    }										\
+    className##Factory::className##Factory()					\
+    {										\
+        CommandFactory::registerCommand(QLatin1String(commandName),		\
+                                        i18nc("@info:shell", shortHelp),	\
+                                        &className##Creator);			\
+    }										\
+    QString className::name() const						\
+    {										\
+        return (QLatin1String(commandName));					\
     }
 
 class CommandFactory
 {
 public:
-    explicit CommandFactory(KCmdLineArgs *parsedArgs);
-    ~CommandFactory();
+    explicit CommandFactory(const QStringList *parsedArgs);
+    ~CommandFactory() = default;
 
     AbstractCommand *createCommand();
 
     typedef AbstractCommand *(*creatorFunction)(QObject *parent);
     static void registerCommand(const QString &name,
-                                const KLocalizedString &shortHelp,
+                                const QString &shortHelp,
                                 CommandFactory::creatorFunction creator);
 private:
-    KCmdLineArgs *mParsedArgs;
+    const QStringList *mParsedArgs;
 
 private:
     void checkAndHandleHelp();

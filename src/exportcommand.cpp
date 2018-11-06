@@ -22,9 +22,9 @@
 #include <AkonadiXml/XmlWriteJob>
 
 #include <klocalizedstring.h>
-#include <kcmdlineargs.h>
 
 #include "commandfactory.h"
+#include "collectionresolvejob.h"
 
 using namespace Akonadi;
 
@@ -42,36 +42,34 @@ ExportCommand::~ExportCommand()
     delete mResolveJob;
 }
 
-void ExportCommand::setupCommandOptions(KCmdLineOptions &options)
+void ExportCommand::setupCommandOptions(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
+    addOptionsOption(parser);
+    addDryRunOption(parser);
 
-    addOptionsOption(options);
-    options.add("+collection", ki18nc("@info:shell", "The collection to export"));
-    options.add("+file", ki18nc("@info:shell", "The file to export to"));
-    addOptionSeparator(options);
-    addDryRunOption(options);
+    parser->addPositionalArgument("collection", i18nc("@info:shell", "The collection to export: an ID, path or Akonadi URL"));
+    parser->addPositionalArgument("file", i18nc("@info:shell", "The file to export to"));
 }
 
-int ExportCommand::initCommand(KCmdLineArgs *parsedArgs)
+int ExportCommand::initCommand(QCommandLineParser *parser)
 {
-    if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No collection specified"));
+    const QStringList args = parser->positionalArguments();
+    if (args.isEmpty()) {
+        emitErrorSeeHelp(i18nc("@info:shell", "No collection specified"));
         return InvalidUsage;
     }
 
-    if (parsedArgs->count() == 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No export file specified"));
+    if (args.count()<2) {
+        emitErrorSeeHelp(i18nc("@info:shell", "No export file specified"));
         return InvalidUsage;
     }
 
-    mDryRun = parsedArgs->isSet("dryrun");
-    QString collectionArg = parsedArgs->arg(1);
-    mFileArg = parsedArgs->arg(2);
+    mDryRun = parser->isSet("dryrun");
+    QString collectionArg = args.at(0);
+    mFileArg = args.at(1);
+
     mResolveJob = new CollectionResolveJob(collectionArg, this);
-
     if (!mResolveJob->hasUsableInput()) {
-
         emit error(mResolveJob->errorString());
         return InvalidUsage;
     }

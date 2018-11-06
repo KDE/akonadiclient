@@ -31,7 +31,7 @@ class EditCommand : public AbstractCommand
 
 public:
     explicit EditCommand(QObject *parent = nullptr);
-    ~EditCommand();
+    virtual ~EditCommand();
 
     QString name() const;
 
@@ -39,8 +39,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
-    void setupCommandOptions(KCmdLineOptions &options);
+    int initCommand(QCommandLineParser *parser);
+    void setupCommandOptions(QCommandLineParser *parser);
 
 private:
     QString mItemArg;

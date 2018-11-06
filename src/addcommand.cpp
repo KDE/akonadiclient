@@ -27,7 +27,6 @@
 #include <AkonadiCore/Item>
 #include <AkonadiCore/ItemCreateJob>
 
-#include <KCmdLineOptions>
 #ifdef USE_KIO_CONVERTSIZE
 #include <kio/global.h>
 #endif
@@ -51,10 +50,6 @@ AddCommand::AddCommand(QObject *parent)
 {
 }
 
-AddCommand::~AddCommand()
-{
-}
-
 void AddCommand::start()
 {
     Q_ASSERT(mResolveJob != nullptr);
@@ -63,77 +58,70 @@ void AddCommand::start()
     mResolveJob->start();
 }
 
-void AddCommand::setupCommandOptions(KCmdLineOptions &options)
+void AddCommand::setupCommandOptions(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
+    addOptionsOption(parser);
+    parser->addOption(QCommandLineOption((QStringList() << "b" << "base"), i18n("Base directory for input files/directories, default is current"), i18n("directory")));
+    parser->addOption(QCommandLineOption((QStringList() << "f" << "flat"), i18n("Flat mode, do not duplicate subdirectory structure")));
+    parser->addOption(QCommandLineOption((QStringList() << "m" << "mime"), i18n("MIME type of added items, default is to auto-detect"), i18n("mimetype")));
+    addDryRunOption(parser);
 
-    addOptionsOption(options);
-    options.add("+collection", ki18nc("@info:shell", "The collection to add to, either as a path or akonadi URL"));
-    options.add("+files...", ki18nc("@info:shell", "The files or directories to add to the collection."));
-    addOptionSeparator(options);
-    options.add("b").add("base <dir>", ki18nc("@info:shell", "Base directory for input files/directories, default is current"));
-    options.add("f").add("flat", ki18nc("@info:shell", "Flat mode, do not duplicate subdirectory structure"));
-    options.add("m").add("mime <mime-type>", ki18nc("@info:shell", "MIME type to use (instead of auto-detection)"));
-    addDryRunOption(options);
+    parser->addPositionalArgument("collection", i18nc("@info:shell", "The collection to add to: an ID, path or Akonadi URL"));
+    parser->addPositionalArgument("files", i18nc("@info:shell", "Files or directories to add to the collection"), i18n("files..."));
 }
 
-int AddCommand::initCommand(KCmdLineArgs *parsedArgs)
+int AddCommand::initCommand(QCommandLineParser *parser)
 {
-    if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "Missing collection argument"));
+    const QStringList args = parser->positionalArguments();
+    if (args.isEmpty()) {
+        emitErrorSeeHelp(i18nc("@info:shell", "Missing collection argument"));
         return InvalidUsage;
     }
 
-    if (parsedArgs->count() < 3) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No file or directory arguments"));
+    const int parsedArgsCount = args.count();
+    if (parsedArgsCount<2) {
+        emitErrorSeeHelp(i18nc("@info:shell", "No file or directory arguments"));
         return InvalidUsage;
     }
 
-    const QString collectionArg = parsedArgs->arg(1);
+    const QString collectionArg = args.first();
     mResolveJob = new CollectionResolveJob(collectionArg, this);
-
     if (!mResolveJob->hasUsableInput()) {
-        emit error(ki18nc("@info:shell",
-                          "Invalid collection argument '%1', %2")
-                   .subs(collectionArg)
-                   .subs(mResolveJob->errorString()).toString());
+        emit error(i18nc("@info:shell", "Invalid collection argument '%1', %2", collectionArg, mResolveJob->errorString()));
         delete mResolveJob;
         mResolveJob = nullptr;
 
         return InvalidUsage;
     }
 
-    mFlatMode = parsedArgs->isSet("flat");
-    mDryRun = parsedArgs->isSet("dryrun");
+    mFlatMode = parser->isSet("flat");
+    mDryRun = parser->isSet("dryrun");
 
-    const QString mimeTypeArg = parsedArgs->getOption("mime");
-    if (!mimeTypeArg.isEmpty()) {
+    const QString mimeTypeArg = parser->value("mime");
+    if (!mimeTypeArg.isEmpty()) {			// MIME type is specified
         QMimeDatabase db;
         mMimeType = db.mimeTypeForName(mimeTypeArg);
         if (!mMimeType.isValid()) {
-            emit error(ki18nc("@info:shell",
-                              "Invalid MIME type argument '%1'").subs(mimeTypeArg).toString());
+            emit error(i18nc("@info:shell", "Invalid MIME type argument '%1'", mimeTypeArg));
             return InvalidUsage;
         }
     }
 
-    mBasePath = parsedArgs->getOption("base");
-    if (!mBasePath.isEmpty()) {                // base is specified
+    mBasePath = parser->value("base");
+    if (!mBasePath.isEmpty()) {				// base directory is specified
         QDir dir(mBasePath);
         if (!dir.exists()) {
-            emit error(ki18nc("@info:shell",
-                              "Base directory '%1' not found").subs(mBasePath).toString());
+            emit error(i18nc("@info:shell", "Base directory '%1' not found", mBasePath));
             return InvalidUsage;
         }
         mBasePath = dir.absolutePath();
-    } else {                      // base is not specified
+    } else {						// base is not specified
         mBasePath = QDir::currentPath();
     }
 
-    const int parsedArgsCount(parsedArgs->count());
-    for (int i = 2; i < parsedArgsCount; ++i) {
-        QString path = parsedArgs->arg(i);
-        while (path.endsWith(QLatin1Char('/'))) {         // gives null collection name later
+    for (int i = 1; i<parsedArgsCount; ++i) {		// process all file/dir arguments
+        QString path = args.at(i);
+        while (path.endsWith(QLatin1Char('/'))) {	// gives null collection name later
             path.chop(1);
         }
 
@@ -153,9 +141,9 @@ int AddCommand::initCommand(KCmdLineArgs *parsedArgs)
         const QString absolutePath = fileInfo.absoluteFilePath();
 
         if (fileInfo.isDir()) {
-            mDirectories[ absolutePath ] = AddRecursive;
+            mDirectories[absolutePath] = AddRecursive;
         } else {
-            mDirectories[ fileInfo.absolutePath() ] = AddDirOnly;
+            mDirectories[fileInfo.absolutePath()] = AddDirOnly;
             mFiles.insert(absolutePath);
         }
 
@@ -174,7 +162,7 @@ int AddCommand::initCommand(KCmdLineArgs *parsedArgs)
     }
 
     if (mFiles.isEmpty() && mDirectories.isEmpty()) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No valid file or directory arguments"));
+        emitErrorSeeHelp(i18nc("@info:shell", "No valid file or directory arguments"));
         return InvalidUsage;
     }
 
@@ -340,9 +328,7 @@ void AddCommand::processNextFile()
 void AddCommand::onTargetFetched(KJob *job)
 {
     if (job->error() != 0) {
-        emit error(ki18nc("@info:shell",
-                          "Cannot fetch target collection, %1")
-                   .subs(job->errorString()).toString());
+        emit error(i18nc("@info:shell", "Cannot fetch target collection, %1", job->errorString()));
         emit finished(RuntimeError);
         return;
     }

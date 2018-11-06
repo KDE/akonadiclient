@@ -18,7 +18,6 @@
  */
 
 #include "importcommand.h"
-#include "errorreporter.h"
 
 #include <AkonadiCore/collection.h>
 #include <AkonadiXml/XmlWriteJob>
@@ -29,11 +28,11 @@
 #include <AkonadiCore/itemcreatejob.h>
 
 #include <klocalizedstring.h>
-#include <kcmdlineargs.h>
 
 #include <qfile.h>
 
 #include "commandfactory.h"
+#include "errorreporter.h"
 
 using namespace Akonadi;
 
@@ -52,42 +51,40 @@ ImportCommand::~ImportCommand()
     delete mDocument;
 }
 
-void ImportCommand::setupCommandOptions(KCmdLineOptions &options)
+void ImportCommand::setupCommandOptions(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
+    addOptionsOption(parser);
+    addDryRunOption(parser);
 
-    addOptionsOption(options);
-    options.add("+parent", ki18nc("@info:shell", "The parent collection under which this file should be imported"));
-    options.add("+file", ki18nc("@info:shell", "The file to import"));
-    options.add(":", ki18nc("@info:shell", "Options for the command"));
-    addOptionSeparator(options);
-    addDryRunOption(options);
+    parser->addPositionalArgument("parent", i18nc("@info:shell", "The parent collection under which to import the file"));
+    parser->addPositionalArgument("file", i18nc("@info:shell", "The file to import"));
 }
 
-int ImportCommand::initCommand(KCmdLineArgs *parsedArgs)
+int ImportCommand::initCommand(QCommandLineParser *parser)
 {
-    if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No parent collection specified"));
+    const QStringList args = parser->positionalArguments();
+    if (args.isEmpty()) {
+        emitErrorSeeHelp(i18nc("@info:shell", "No parent collection specified"));
         return InvalidUsage;
     }
 
-    if (parsedArgs->count() == 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No import file specified"));
+    if (args.count()<2) {
+        emitErrorSeeHelp(i18nc("@info:shell", "No import file specified"));
         return InvalidUsage;
     }
 
-    mDryRun = parsedArgs->isSet("dryrun");
-    QString fileArg = parsedArgs->arg(2);
+    mDryRun = parser->isSet("dryrun");
+    QString fileArg = args.at(1);
 
-    mResolveJob = new CollectionResolveJob(parsedArgs->arg(1), this);
+    mResolveJob = new CollectionResolveJob(args.first(), this);
     if (!mResolveJob->hasUsableInput()) {
-        emit error(ki18nc("@info:shell", "Invalid collection argument specified").toString());
+        emit error(i18nc("@info:shell", "Invalid collection argument specified"));
         return InvalidUsage;
     }
 
     mDocument = new XmlDocument(fileArg);
     if (!mDocument->isValid()) {
-        emit error(ki18nc("@info:shell", "Invalid XML file '%1'").subs(mDocument->lastError()).toString());
+        emit error(i18nc("@info:shell", "Invalid XML file, %1", mDocument->lastError()));
         return InvalidUsage;
     }
 
@@ -105,8 +102,7 @@ void ImportCommand::start()
 void ImportCommand::onParentFetched(KJob *job)
 {
     if (job->error() != 0) {
-        emit error(ki18nc("@info:shell", "Unable to fetch parent collection: '%1'")
-                   .subs(job->errorString()).toString());
+        emit error(i18nc("@info:shell", "Unable to fetch parent collection, %1", job->errorString()));
         emit finished(RuntimeError);
     }
 
@@ -117,8 +113,7 @@ void ImportCommand::onParentFetched(KJob *job)
 void ImportCommand::onChildrenFetched(KJob *job)
 {
     if (job->error() != 0) {
-        emit error(ki18nc("@info:shell", "Unable to fetch children of parent collection: '%1'")
-                   .subs(job->errorString()).toString());
+        emit error(i18nc("@info:shell", "Unable to fetch children of parent collection, %1", job->errorString()));
         emit finished(RuntimeError);
         return;
     }
@@ -139,13 +134,11 @@ void ImportCommand::onChildrenFetched(KJob *job)
     }
 
     if (found) {
-        ErrorReporter::progress(ki18nc("@info:shell", "Collection '%1' already exists")
-                                .subs(collection.name()).toString());
+        ErrorReporter::progress(i18nc("@info:shell", "Collection '%1' already exists", collection.name()));
         mCollectionMap.insert(rid, newCol);
         QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
     } else {
-        ErrorReporter::progress(ki18nc("@info:shell", "Creating collection '%1'")
-                                .subs(collection.name()).toString());
+        ErrorReporter::progress(i18nc("@info:shell", "Creating collection '%1'", collection.name()));
         collection.setParentCollection(parent);
         if (!mDryRun) {
             CollectionCreateJob *createJob = new CollectionCreateJob(collection, this);
@@ -167,15 +160,15 @@ void ImportCommand::processNextCollection()
     Collection collection = mCollections.takeFirst();
     Collection parent;
 
-    ErrorReporter::progress(ki18nc("@info:shell", "Processing collection '%1'").subs(collection.name()).toString());
+    ErrorReporter::progress(i18nc("@info:shell", "Processing collection '%1'", collection.name()));
 
     if (collection.parentCollection().remoteId().isEmpty()) {
         parent = mParentCollection;
     } else {
         parent = mCollectionMap.value(collection.parentCollection().remoteId());
         if (!parent.isValid() && !mDryRun) {
-            ErrorReporter::warning(ki18nc("@info:shell", "Invalid parent collection for collection with remote ID '%1'")
-                                   .subs(collection.remoteId()).toString());
+            ErrorReporter::warning(i18nc("@info:shell", "Invalid parent for collection with remote ID '%1'",
+                                         collection.remoteId()));
             QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
         }
     }
@@ -196,8 +189,8 @@ void ImportCommand::onCollectionFetched(KJob *job)
     Collection collection = job->property("collection").value<Collection>();
 
     if (job->error() != 0) {
-        ErrorReporter::warning(ki18nc("@info:shell", "Unable to fetch collection with remote ID '%1'. Error: '%2'")
-                               .subs(collection.remoteId()).subs(job->errorString()).toString());
+        ErrorReporter::warning(i18nc("@info:shell", "Unable to fetch collection with remote ID '%1', %2",
+                                     collection.remoteId(), job->errorString()));
 
         if (!mDryRun) {
             CollectionCreateJob *createJob = new CollectionCreateJob(collection, this);
@@ -216,8 +209,7 @@ void ImportCommand::onCollectionFetched(KJob *job)
 void ImportCommand::onCollectionCreated(KJob *job)
 {
     if (job->error() != 0) {
-        emit error(ki18nc("@info:shell", "Unable to create collection with remote ID '%1'")
-                   .subs(job->property("rid").toString()).toString());
+        emit error(i18nc("@info:shell", "Unable to create collection with remote ID '%1'", job->property("rid").toString()));
         emit finished(RuntimeError);
         return;
     }
@@ -238,7 +230,7 @@ void ImportCommand::processNextCollectionFromMap()
     Collection newCollection = mCollectionMap.take(rid);
     Collection oldCollection = mDocument->collectionByRemoteId(rid);
 
-    ErrorReporter::progress(ki18nc("@info:shell", "Processing items for '%1'").subs(newCollection.name()).toString());
+    ErrorReporter::progress(i18nc("@info:shell", "Processing items for '%1'", newCollection.name()));
 
     mItemQueue = mDocument->items(oldCollection, true);
     mCurrentCollection = newCollection;
@@ -261,11 +253,11 @@ void ImportCommand::processNextItemFromQueue()
 void ImportCommand::onItemCreated(KJob *job)
 {
     if (job->error() != 0) {
-        emit error(ki18nc("@info:shell", "Error creating item: '%1'").subs(job->errorString()).toString());
+        emit error(i18nc("@info:shell", "Error creating item, %1", job->errorString()));
         emit finished(RuntimeError);
         return;
     }
     ItemCreateJob *itemCreateJob = qobject_cast<ItemCreateJob *>(job);
-    ErrorReporter::progress(ki18nc("@info:shell", "Created item '%1'").subs(itemCreateJob->item().remoteId()).toString());
+    ErrorReporter::progress(i18nc("@info:shell", "Created item '%1'", itemCreateJob->item().remoteId()));
     QMetaObject::invokeMethod(this, "processNextItemFromQueue", Qt::QueuedConnection);
 }

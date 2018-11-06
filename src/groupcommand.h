@@ -21,7 +21,6 @@
 
 #include "abstractcommand.h"
 
-#include <qstringlist.h>
 #include <AkonadiCore/item.h>
 #include <kcontacts/contactgroup.h>
 
@@ -41,8 +40,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    void setupCommandOptions(KCmdLineOptions &options);
-    int initCommand(KCmdLineArgs *parsedArgs);
+    void setupCommandOptions(QCommandLineParser *parser);
+    int initCommand(QCommandLineParser *parser);
 
 private:
     enum Mode {

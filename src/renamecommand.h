@@ -31,7 +31,7 @@ class RenameCommand : public AbstractCommand
 
 public:
     explicit RenameCommand(QObject *parent = nullptr);
-    ~RenameCommand();
+    virtual ~RenameCommand();
 
     QString name() const;
 
@@ -39,8 +39,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
-    void setupCommandOptions(KCmdLineOptions &options);
+    int initCommand(QCommandLineParser *parser);
+    void setupCommandOptions(QCommandLineParser *parser);
 
 private:
     bool mDryRun;

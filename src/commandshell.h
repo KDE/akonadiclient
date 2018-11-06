@@ -20,12 +20,8 @@
 #ifndef COMMANDSHELL_H
 #define COMMANDSHELL_H
 
-#include <QObject>
-#include <QVarLengthArray>
-
 #include "abstractcommand.h"
 
-class KCmdLineArgs;
 class QTextStream;
 
 class CommandShell : public AbstractCommand
@@ -34,35 +30,28 @@ class CommandShell : public AbstractCommand
 
 public:
     explicit CommandShell(QObject *parent = nullptr);
-    ~CommandShell();
+    virtual ~CommandShell();
 
     QString name() const;
 
 public:
-    static bool isActive()
-    {
-        return (sIsActive);
-    }
+    static bool isActive()			 { return (sIsActive); }
 
 public Q_SLOTS:
     void start();
 
 protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
+    void setupCommandOptions(QCommandLineParser *parser);
+    int initCommand(QCommandLineParser *parser);
 
 private:
-    AbstractCommand *mCommand;
     QTextStream *mTextStream;
-
     static bool sIsActive;
 
 private:
-    KCmdLineArgs *getParsedArgs(int argc, char **argv);
-    void freeArguments(const QVarLengthArray<char *> &args);
     bool enterCommandLoop();
 
 private Q_SLOTS:
-    void onCommandFinished(int exitCode);
     void onCommandError(const QString &error);
 };
 

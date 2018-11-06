@@ -21,7 +21,6 @@
 #define AGENTSCOMMAND_H
 
 #include "abstractcommand.h"
-#include <qstringlist.h>
 
 namespace Akonadi
 {
@@ -34,7 +33,7 @@ class AgentsCommand : public AbstractCommand
 
 public:
     explicit AgentsCommand(QObject *parent = nullptr);
-    ~AgentsCommand();
+    virtual ~AgentsCommand() = default;
 
     QString name() const;
 
@@ -42,8 +41,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
-    void setupCommandOptions(KCmdLineOptions &options);
+    int initCommand(QCommandLineParser *parser);
+    void setupCommandOptions(QCommandLineParser *parser);
 
 private:
     void getState();

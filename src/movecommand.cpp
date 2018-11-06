@@ -20,8 +20,6 @@
 
 #include "errorreporter.h"
 
-#include <KCmdLineOptions>
-
 #include "commandfactory.h"
 
 using namespace Akonadi;
@@ -34,18 +32,13 @@ MoveCommand::MoveCommand(QObject *parent)
     mMoving = true;
 }
 
-MoveCommand::~MoveCommand()
+void MoveCommand::setupCommandOptions(QCommandLineParser *parser)
 {
-}
+    addOptionsOption(parser);
+    addDryRunOption(parser);
 
-void MoveCommand::setupCommandOptions(KCmdLineOptions &options)
-{
-    AbstractCommand::setupCommandOptions(options);
-
-    addOptionsOption(options);
-    options.add("+source...", ki18nc("@info:shell", "Existing collections or items to move"));
-    options.add("+destination", ki18nc("@info:shell", "Destination collection to move into"));
-    addDryRunOption(options);
+    parser->addPositionalArgument("source", i18nc("@info:shell", "Existing collections or items to move"), i18n("source..."));
+    parser->addPositionalArgument("destination", i18nc("@info:shell", "Destination collection to move into"));
 }
 
 void MoveCommand::start()

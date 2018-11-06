@@ -42,7 +42,7 @@ public:
     };
 
     explicit AddCommand(QObject *parent = nullptr);
-    ~AddCommand();
+    virtual ~AddCommand() = default;
 
     QString name() const;
 
@@ -50,8 +50,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    void setupCommandOptions(KCmdLineOptions &options);
-    int initCommand(KCmdLineArgs *parsedArgs);
+    void setupCommandOptions(QCommandLineParser *parser);
+    int initCommand(QCommandLineParser *parser);
 
 private:
     CollectionResolveJob *mResolveJob;

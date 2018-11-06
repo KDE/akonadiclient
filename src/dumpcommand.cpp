@@ -30,7 +30,6 @@
 #include <qmimedatabase.h>
 
 #include <klocalizedstring.h>
-#include <kcmdlineargs.h>
 
 #include <recursiveitemfetchjob.h>
 #include <tagfetchjob.h>
@@ -40,6 +39,7 @@
 #include "commandfactory.h"
 #include "errorreporter.h"
 #include "collectionpathjob.h"
+#include "collectionresolvejob.h"
 
 using namespace Akonadi;
 
@@ -60,36 +60,35 @@ DumpCommand::~DumpCommand()
 }
 
 
-void DumpCommand::setupCommandOptions(KCmdLineOptions& options)
+void DumpCommand::setupCommandOptions(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
+    addOptionsOption(parser);
+    parser->addOption(QCommandLineOption((QStringList() << "m" << "maildir"), i18n("Dump email messages in maildir directory structure")));
+    parser->addOption(QCommandLineOption((QStringList() << "a" << "akonadi-categories"), i18n("Dump items with Akonadi category URLs, otherwise text names")));
+    parser->addOption(QCommandLineOption((QStringList() << "f" << "force"), i18n("Operate even if destination directory is not empty")));
+    addDryRunOption(parser);
 
-    addOptionsOption(options);
-    options.add("+collection", ki18nc("@info:shell", "The collection to dump"));
-    options.add("+directory", ki18nc("@info:shell", "The directory to dump to"));
-    addOptionSeparator(options);
-    options.add("m").add("maildir", ki18nc("@info:shell", "Dump email messages in maildir directory structure"));
-    options.add("a").add("akonadi-categories", ki18nc("@info:shell", "Dump items with Akonadi categories, otherwise text"));
-    options.add("f").add("force", ki18nc("@info:shell", "Operate even if destination directory is not empty"));
-    addDryRunOption(options);
+    parser->addPositionalArgument("collection", i18nc("@info:shell", "The collection to dump: an ID, path or Akonadi URL"));
+    parser->addPositionalArgument("directory", i18nc("@info:shell", "The destination directory to dump to"));
 }
 
 
-int DumpCommand::initCommand(KCmdLineArgs *parsedArgs)
+int DumpCommand::initCommand(QCommandLineParser *parser)
 {
-    if (parsedArgs->count()<2)
+    const QStringList args = parser->positionalArguments();
+    if (args.isEmpty())
     {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No collection specified"));
+        emitErrorSeeHelp(i18nc("@info:shell", "No collection specified"));
         return (InvalidUsage);
     }
 
-    if (parsedArgs->count()==2)
+    if (args.count()<2)
     {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No dump directory specified"));
+        emitErrorSeeHelp(i18nc("@info:shell", "No destination directory specified"));
         return (InvalidUsage);
     }
 
-    QString collectionArg = parsedArgs->arg(1);
+    const QString collectionArg = args.at(0);
     mResolveJob = new CollectionResolveJob(collectionArg, this);
     if (!mResolveJob->hasUsableInput())
     {
@@ -97,23 +96,23 @@ int DumpCommand::initCommand(KCmdLineArgs *parsedArgs)
         return (InvalidUsage);
     }
 
-    mDryRun = parsedArgs->isSet("dryrun");
-    mMaildir = parsedArgs->isSet("maildir");
-    mAkonadiCategories = parsedArgs->isSet("akonadi-categories");
+    mDryRun = parser->isSet("dryrun");
+    mMaildir = parser->isSet("maildir");
+    mAkonadiCategories = parser->isSet("akonadi-categories");
 
-    mDirectoryArg = parsedArgs->arg(2);
+    mDirectoryArg = args.at(1);
     QDir dir(mDirectoryArg);
     if (!dir.exists())
     {
-        emit error(ki18nc("@info:shell", "Directory '%1' not found or is not a directory").subs(mDirectoryArg).toString());
+        emit error(i18nc("@info:shell", "Directory '%1' not found or not a directory", mDirectoryArg));
         return (InvalidUsage);
     }
 
     mDirectoryArg = dir.canonicalPath();
-    if (!parsedArgs->isSet("force") &&
+    if (!parser->isSet("force") &&
         !dir.entryList(QDir::AllEntries|QDir::Hidden|QDir::System|QDir::NoDotAndDotDot).isEmpty())
     {
-        emit error(ki18nc("@info:shell", "Directory '%1' is not empty (use '-f' to force operation)").subs(mDirectoryArg).toString());
+        emit error(i18nc("@info:shell", "Directory '%1' is not empty (use '-f' to force operation)", mDirectoryArg));
         return (InvalidUsage);
     }
 
@@ -256,12 +255,6 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
     QString ext = mime.preferredSuffix();
     // No extension is registered for contact groups
     if (ext.isEmpty() && mimeType=="application/x-vnd.kde.contactgroup") ext = "group";
-
-    // std::cout << "  " << qPrintable(QString::number(item.id()))
-              // << "  " << qPrintable(mimeType)
-              // << "  " << qPrintable(ext)
-              // << "  " << qPrintable(parent)
-              // << std::endl;
 
     QString destDir = mDirectoryArg+"/";
     if (mMaildir && mimeType=="message/rfc822")		// an email message,

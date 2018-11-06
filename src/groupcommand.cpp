@@ -30,8 +30,6 @@
 
 #include <KCodecs/kemailaddress.h>
 
-#include <kcmdlineargs.h>
-
 #include <iostream>
 
 #include "commandfactory.h"
@@ -55,104 +53,95 @@ GroupCommand::~GroupCommand()
     delete mGroupItem;
 }
 
-void GroupCommand::setupCommandOptions(KCmdLineOptions &options)
+void GroupCommand::setupCommandOptions(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
+    addOptionsOption(parser);
+    parser->addOption(QCommandLineOption((QStringList() << "e" << "expand"), i18n("Show the expanded contact group (the default operation)")));
+    parser->addOption(QCommandLineOption((QStringList() << "a" << "add"), i18n("Add a contact to the group")));
+    parser->addOption(QCommandLineOption((QStringList() << "d" << "delete"), i18n("Delete a contact from the group")));
+    parser->addOption(QCommandLineOption((QStringList() << "C" << "clean"), i18n("Remove unknown item references from the group")));
+    parser->addOption(QCommandLineOption((QStringList() << "c" << "comment"), i18n("Email comment (name) for an added item"), i18n("name")));
+    parser->addOption(QCommandLineOption((QStringList() << "b" << "brief"), i18n("Brief output (for 'expand', email addresses only)")));
+    addDryRunOption(parser);
 
-    addOptionsOption(options);
-    options.add("+group", ki18nc("@info:shell", "The contact group item"));
-    options.add("+args", ki18nc("@info:shell", "Arguments for the operation"));
-    addOptionSeparator(options);
-
-    options.add("e").add("expand", ki18nc("@info:shell", "Show the expanded contact group (the default operation)"));
-    options.add("a").add("add", ki18nc("@info:shell", "Add a contact to the group"));
-    options.add("d").add("delete", ki18nc("@info:shell", "Delete a contact from the group"));
-    options.add("C").add("clean", ki18nc("@info:shell", "Remove unknown item references from the group"));
-    options.add("c").add("comment <name>", ki18nc("@info:shell", "Email comment (name) for an added item"));
-    options.add("b").add("brief", ki18nc("@info:shell", "Brief output (for 'expand', email addresses only)"));
-    addDryRunOption(options);
+    parser->addPositionalArgument("item", i18nc("@info:shell", "The contact group item, an ID or Akonadi URL"));
+    parser->addPositionalArgument("args", i18nc("@info:shell", "Arguments for the operation"), i18n("args..."));
 }
 
-int GroupCommand::initCommand(KCmdLineArgs *parsedArgs)
+int GroupCommand::initCommand(QCommandLineParser *parser)
 {
-    if (parsedArgs->count() < 2) {            // all modes take GROUP argument
-        emitErrorSeeHelp(ki18nc("@info:shell", "Missing group argument"));
+    mItemArgs = parser->positionalArguments();
+    if (mItemArgs.isEmpty()) {				// all modes take GROUP argument
+        emitErrorSeeHelp(i18nc("@info:shell", "Missing group argument"));
         return (InvalidUsage);
     }
 
     int modeCount = 0;
-    if (parsedArgs->isSet("expand")) {
+    if (parser->isSet("expand")) {
         ++modeCount;
     }
-    if (parsedArgs->isSet("add")) {
+    if (parser->isSet("add")) {
         ++modeCount;
     }
-    if (parsedArgs->isSet("delete")) {
+    if (parser->isSet("delete")) {
         ++modeCount;
     }
-    if (parsedArgs->isSet("clean")) {
+    if (parser->isSet("clean")) {
         ++modeCount;
     }
     if (modeCount > 1) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"));
+        emitErrorSeeHelp(i18nc("@info:shell", "Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"));
         return (InvalidUsage);
     }
 
-    if (parsedArgs->isSet("expand")) {        // see if "Expand" mode
+    if (parser->isSet("expand")) {			// see if "Expand" mode
         // expand GROUP
-
         mOperationMode = ModeExpand;
-    } else if (parsedArgs->isSet("add")) {        // see if "Add" mode
+    } else if (parser->isSet("add")) {			// see if "Add" mode
         // add GROUP EMAIL|ID...
         // add GROUP -c NAME EMAIL|ID
-
-        if (parsedArgs->count() < 3) {          // missing GROUP was checked above
-            emitErrorSeeHelp(ki18nc("@info:shell", "No items specified to add"));
+        if (mItemArgs.count()<2) {				// missing GROUP was checked above
+            emitErrorSeeHelp(i18nc("@info:shell", "No items specified to add"));
             return (InvalidUsage);
         }
 
-        mNameArg = parsedArgs->getOption("comment");
+        mNameArg = parser->value("comment");
         if (!mNameArg.isEmpty()) {
             // if the "comment" option is specified,
             // then only one EMAIL|ID argument may be given.
-            if (parsedArgs->count() > 3) {
-                emitErrorSeeHelp(ki18nc("@info:shell", "Only one item may be specified to add with 'comment'"));
+            if (mItemArgs.count()>2) {
+                emitErrorSeeHelp(i18nc("@info:shell", "Only one item may be specified to add with 'comment'"));
                 return (InvalidUsage);
             }
         }
 
         mOperationMode = ModeAdd;
-    } else if (parsedArgs->isSet("delete")) {     // see if "Delete" mode
+    } else if (parser->isSet("delete")) {		// see if "Delete" mode
         // delete GROUP EMAIL|ID...
-
-        if (parsedArgs->count() < 3) {          // missing GROUP was checked above
-            emitErrorSeeHelp(ki18nc("@info:shell", "No items specified to delete"));
+        if (mItemArgs.count()<2) {			// missing GROUP was checked above
+            emitErrorSeeHelp(i18nc("@info:shell", "No items specified to delete"));
             return (InvalidUsage);
         }
 
         mOperationMode = ModeDelete;
-    } else if (parsedArgs->isSet("clean")) {      // see if "Clean" mode
+    } else if (parser->isSet("clean")) {		// see if "Clean" mode
         // clean GROUP
-
         mOperationMode = ModeClean;
-    } else {                      // no mode option specified
+    } else {						// no mode option specified
         mOperationMode = ModeExpand;
     }
 
     if (mOperationMode != ModeAdd) {
-        if (parsedArgs->isSet("comment")) {
-            emitErrorSeeHelp(ki18nc("@info:shell", "The 'comment' option is only allowed with 'add'"));
+        if (parser->isSet("comment")) {
+            emitErrorSeeHelp(i18nc("@info:shell", "The 'comment' option is only allowed with 'add'"));
             return (InvalidUsage);
         }
     }
 
-    mBriefMode = parsedArgs->isSet("brief");      // brief/quiet output
-    mDryRun = parsedArgs->isSet("dryrun");        // dry run option
+    mBriefMode = parser->isSet("brief");		// brief/quiet output
+    mDryRun = parser->isSet("dryrun");			// dry run option
 
-    mGroupArg = parsedArgs->arg(1);           // contact group collection
-    for (int i = 2; i < parsedArgs->count(); ++i) {   // save following item arguments
-        mItemArgs.append(parsedArgs->arg(i));
-    }
+    mGroupArg = mItemArgs.takeFirst();			// contact group collection
 
     Akonadi::Item item = CollectionResolveJob::parseItem(mGroupArg, true);
     if (!item.isValid()) {
@@ -217,7 +206,7 @@ void GroupCommand::onItemsFetched(KJob *job)
 
     KContacts::ContactGroup group = mGroupItem->payload<KContacts::ContactGroup>();
 
-    AbstractCommand::Errors status;
+    AbstractCommand::Errors status = RuntimeError;
     switch (mOperationMode) {             // perform the requested operation
     case ModeExpand:
         status = showExpandedGroup(group);

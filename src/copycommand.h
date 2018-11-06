@@ -21,7 +21,6 @@
 
 #include "abstractcommand.h"
 
-#include <qstringlist.h>
 #include <AkonadiCore/collection.h>
 
 class CollectionResolveJob;
@@ -33,7 +32,7 @@ class CopyCommand : public AbstractCommand
 
 public:
     explicit CopyCommand(QObject *parent = nullptr);
-    ~CopyCommand();
+    virtual ~CopyCommand() = default;
 
     QString name() const;
 
@@ -44,8 +43,8 @@ protected:
     bool mMoving;
 
 protected:
-    virtual void setupCommandOptions(KCmdLineOptions &options);
-    virtual int initCommand(KCmdLineArgs *parsedArgs);
+    virtual void setupCommandOptions(QCommandLineParser *parser);
+    virtual int initCommand(QCommandLineParser *parser);
 
 private:
     CollectionResolveJob *mResolveJob;

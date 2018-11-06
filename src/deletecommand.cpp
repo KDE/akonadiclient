@@ -19,22 +19,21 @@
 
 #include "deletecommand.h"
 
-#include "collectionresolvejob.h"
-
 #include <AkonadiCore/item.h>
 #include <AkonadiCore/itemdeletejob.h>
 #include <AkonadiCore/itemfetchjob.h>
-
 #include <AkonadiCore/collectiondeletejob.h>
 #include <AkonadiCore/CollectionPathResolver>
 
-#include <kcmdlineargs.h>
 #include <klocalizedstring.h>
 
 #include <QUrl>
+
 #include <iostream>
 
 #include "commandfactory.h"
+#include "collectionresolvejob.h"
+
 
 using namespace Akonadi;
 
@@ -55,34 +54,33 @@ DeleteCommand::~DeleteCommand()
     delete mResolveJob;
 }
 
-void DeleteCommand::setupCommandOptions(KCmdLineOptions &options)
+void DeleteCommand::setupCommandOptions(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
+    addOptionsOption(parser);
+    addCollectionItemOptions(parser);
+    addDryRunOption(parser);
 
-    addOptionsOption(options);
-    options.add("+collection|item", ki18nc("@info:shell", "The collection or item"));
-    addOptionSeparator(options);
-    addCollectionItemOptions(options);
-    addDryRunOption(options);
+    parser->addPositionalArgument("entity", i18nc("@info:shell", "The collection or item"));
 }
 
-int DeleteCommand::initCommand(KCmdLineArgs *parsedArgs)
+int DeleteCommand::initCommand(QCommandLineParser *parser)
 {
-    if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "Missing collection/item argument"));
+    const QStringList args = parser->positionalArguments();
+    if (args.isEmpty()) {
+        emitErrorSeeHelp(i18nc("@info:shell", "Missing collection/item argument"));
         return InvalidUsage;
     }
 
-    mIsItem = parsedArgs->isSet("item");
-    mIsCollection = parsedArgs->isSet("collection");
-    mDryRun = parsedArgs->isSet("dryrun");
+    mIsItem = parser->isSet("item");
+    mIsCollection = parser->isSet("collection");
+    mDryRun = parser->isSet("dryrun");
 
     if (mIsItem && mIsCollection) {
         emit error(i18nc("@info:shell", "Cannot specify as both an item and collection"));
         return InvalidUsage;
     }
 
-    mEntityArg = parsedArgs->arg(1);
+    mEntityArg = args.first();
     mResolveJob = new CollectionResolveJob(mEntityArg, this);
     // TODO: does this work for deleting ITEMs?
     if (!mResolveJob->hasUsableInput()) {

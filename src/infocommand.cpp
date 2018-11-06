@@ -18,9 +18,6 @@
 
 #include "infocommand.h"
 
-#include "collectionresolvejob.h"
-#include "collectionpathjob.h"
-
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
 #include <AkonadiCore/collectionstatisticsjob.h>
@@ -30,7 +27,6 @@
 
 #include <qdatetime.h>
 
-#include <kcmdlineargs.h>
 #ifdef USE_KIO_CONVERTSIZE
 #include <kio/global.h>
 #endif
@@ -38,6 +34,8 @@
 #include <iostream>
 
 #include "commandfactory.h"
+#include "collectionresolvejob.h"
+#include "collectionpathjob.h"
 
 using namespace Akonadi;
 
@@ -59,31 +57,30 @@ InfoCommand::~InfoCommand()
     delete mInfoStatistics;
 }
 
-void InfoCommand::setupCommandOptions(KCmdLineOptions &options)
+void InfoCommand::setupCommandOptions(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
+    addOptionsOption(parser);
+    addCollectionItemOptions(parser);
 
-    addOptionsOption(options);
-    options.add("+collection|item", ki18nc("@info:shell", "The collection or item"));
-    addOptionSeparator(options);
-    addCollectionItemOptions(options);
+    parser->addPositionalArgument("entity", i18nc("@info:shell", "The collection or item"));
 }
 
-int InfoCommand::initCommand(KCmdLineArgs *parsedArgs)
+int InfoCommand::initCommand(QCommandLineParser *parser)
 {
-    if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "Missing collection/item argument"));
+    const QStringList args = parser->positionalArguments();
+    if (args.isEmpty()) {
+        emitErrorSeeHelp(i18nc("@info:shell", "Missing collection/item argument"));
         return InvalidUsage;
     }
 
-    mIsItem = parsedArgs->isSet("item");
-    mIsCollection = parsedArgs->isSet("collection");
+    mIsItem = parser->isSet("item");
+    mIsCollection = parser->isSet("collection");
     if (mIsItem && mIsCollection) {
         emit error(i18nc("@info:shell", "Cannot specify as both an item and collection"));
         return InvalidUsage;
     }
 
-    mEntityArg = parsedArgs->arg(1);
+    mEntityArg = args.first();
     mResolveJob = new CollectionResolveJob(mEntityArg, this);
     // TODO: does this work for ITEMs specified as an Akonadi URL?
     //       "akonadiclient info 10175" works,

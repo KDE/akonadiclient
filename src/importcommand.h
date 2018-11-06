@@ -38,7 +38,7 @@ class ImportCommand : public AbstractCommand
 
 public:
     explicit ImportCommand(QObject *parent = nullptr);
-    ~ImportCommand();
+    virtual ~ImportCommand();
 
     QString name() const;
 
@@ -46,8 +46,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
-    void setupCommandOptions(KCmdLineOptions &options);
+    int initCommand(QCommandLineParser *parser);
+    void setupCommandOptions(QCommandLineParser *parser);
 
 private:
     bool mDryRun;

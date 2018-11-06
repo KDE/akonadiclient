@@ -20,8 +20,6 @@
 
 #include <iostream>
 
-#include <kcmdlineargs.h>
-
 #include <AkonadiCore/tagfetchjob.h>
 
 #include "commandfactory.h"
@@ -37,27 +35,20 @@ TagsCommand::TagsCommand(QObject *parent)
 {
 }
 
-TagsCommand::~TagsCommand()
+void TagsCommand::setupCommandOptions(QCommandLineParser *parser)
 {
+    addOptionsOption(parser);
+    parser->addOption(QCommandLineOption((QStringList() << "b" << "brief"), i18n("Brief output, tag names only")));
+    parser->addOption(QCommandLineOption((QStringList() << "u" << "urls"), i18n("Brief output, tag URLs only")));
 }
 
-void TagsCommand::setupCommandOptions(KCmdLineOptions &options)
+int TagsCommand::initCommand(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
-
-    addOptionsOption(options);
-    addOptionSeparator(options);
-    options.add("b").add("brief", ki18nc("@info:shell", "Brief output, tag names only"));
-    options.add("u").add("urls", ki18nc("@info:shell", "Brief output, tag URLs only"));
-}
-
-int TagsCommand::initCommand(KCmdLineArgs *parsedArgs)
-{
-    mBriefOutput = parsedArgs->isSet("brief");
-    mUrlsOutput = parsedArgs->isSet("urls");
+    mBriefOutput = parser->isSet("brief");
+    mUrlsOutput = parser->isSet("urls");
 
     if (mBriefOutput && mUrlsOutput) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "The 'brief' and 'urls' options cannot both be specified"));
+        emitErrorSeeHelp(i18nc("@info:shell", "The 'brief' and 'urls' options cannot both be specified"));
         return InvalidUsage;
     }
 

@@ -23,7 +23,6 @@
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
 #include <AkonadiCore/itemmodifyjob.h>
-#include <kcmdlineargs.h>
 #include <kprocess.h>
 #include <qprocess.h>
 #include <qtemporaryfile.h>
@@ -49,24 +48,24 @@ EditCommand::~EditCommand()
     delete mTempFile;
 }
 
-void EditCommand::setupCommandOptions(KCmdLineOptions &options)
+void EditCommand::setupCommandOptions(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
+    addOptionsOption(parser);
+    addDryRunOption(parser);
 
-    options.add("+item", ki18nc("@info:shell", "The item to edit"));
-    addOptionSeparator(options);
-    addDryRunOption(options);
+    parser->addPositionalArgument("item", i18nc("@info:shell", "The item to edit"));
 }
 
-int EditCommand::initCommand(KCmdLineArgs *parsedArgs)
+int EditCommand::initCommand(QCommandLineParser *parser)
 {
-    if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No item specified"));
+    const QStringList args = parser->positionalArguments();
+    if (args.isEmpty()) {
+        emitErrorSeeHelp(i18nc("@info:shell", "No item specified"));
         return InvalidUsage;
     }
 
-    mItemArg = parsedArgs->arg(1);
-    mDryRun = parsedArgs->isSet("dryrun");
+    mItemArg = args.first();
+    mDryRun = parser->isSet("dryrun");
 
     return NoError;
 }

@@ -27,7 +27,6 @@
 
 #include <QDateTime>
 
-#include <KCmdLineOptions>
 #ifdef USE_KIO_CONVERTSIZE
 #include <kio/global.h>
 #endif
@@ -46,37 +45,32 @@ ListCommand::ListCommand(QObject *parent)
 {
 }
 
-ListCommand::~ListCommand()
+void ListCommand::setupCommandOptions(QCommandLineParser *parser)
 {
+    addOptionsOption(parser);
+    parser->addOption(QCommandLineOption((QStringList() << "l" << "details"), i18n("List more detailed information")));
+    parser->addOption(QCommandLineOption((QStringList() << "c" << "collections"), i18n("List only sub-collections")));
+    parser->addOption(QCommandLineOption((QStringList() << "i" << "items"), i18n("List only contained items")));
+
+    parser->addPositionalArgument("collection", i18nc("@info:shell", "The collection to list: an ID, path or Akonadi URL"));
 }
 
-void ListCommand::setupCommandOptions(KCmdLineOptions &options)
+int ListCommand::initCommand(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
-
-    addOptionsOption(options);
-    options.add("+collection", ki18nc("@info:shell", "The collection to list, either as a path or akonadi URL"));
-    addOptionSeparator(options);
-    options.add("l").add("details", ki18n("List more detailed information"));
-    options.add("c").add("collections", ki18n("List only sub-collections"));
-    options.add("i").add("items", ki18n("List only contained items"));
-}
-
-int ListCommand::initCommand(KCmdLineArgs *parsedArgs)
-{
-    if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "Missing collection argument"));
+    const QStringList args = parser->positionalArguments();
+    if (args.count()<1) {
+        emitErrorSeeHelp(i18nc("@info:shell", "Missing collection argument"));
         return InvalidUsage;
     }
 
-    mListItems = parsedArgs->isSet("items");       // selection options specified
-    mListCollections = parsedArgs->isSet("collections");
-    if (!mListCollections && !mListItems) {        // if none given, then
-        mListCollections = mListItems = true;       // list both by default
+    mListItems = parser->isSet("items");		// selection options specified
+    mListCollections = parser->isSet("collections");
+    if (!mListCollections && !mListItems) {		// if none given, then
+        mListCollections = mListItems = true;		// list both by default
     }
-    mListDetails = parsedArgs->isSet("details");   // listing option specified
+    mListDetails = parser->isSet("details");		// listing option specified
 
-    const QString collectionArg = parsedArgs->arg(1);
+    const QString collectionArg = args.first();
     mResolveJob = new CollectionResolveJob(collectionArg, this);
 
     if (!mResolveJob->hasUsableInput()) {

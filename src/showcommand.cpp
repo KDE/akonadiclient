@@ -23,8 +23,6 @@
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
 
-#include <kcmdlineargs.h>
-
 #include <iostream>
 
 #include "commandfactory.h"
@@ -38,26 +36,17 @@ ShowCommand::ShowCommand(QObject *parent)
 {
 }
 
-ShowCommand::~ShowCommand()
+void ShowCommand::setupCommandOptions(QCommandLineParser *parser)
 {
+    parser->addPositionalArgument("item", i18nc("@info:shell", "The items to show"), i18nc("@info:shell", "item..."));
 }
 
-void ShowCommand::setupCommandOptions(KCmdLineOptions &options)
+int ShowCommand::initCommand(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
-
-    options.add("+item...", ki18nc("@info:shell", "The items to show"));
-}
-
-int ShowCommand::initCommand(KCmdLineArgs *parsedArgs)
-{
-    if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@show:shell", "No items specified"));
+    mItemArgs = parser->positionalArguments();
+    if (mItemArgs.isEmpty()) {
+        emitErrorSeeHelp(i18nc("@info:shell", "No items specified"));
         return InvalidUsage;
-    }
-
-    for (int i = 1; i < parsedArgs->count(); ++i) {
-        mItemArgs.append(parsedArgs->arg(i));
     }
 
     return NoError;

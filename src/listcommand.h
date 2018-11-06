@@ -30,7 +30,7 @@ class ListCommand : public AbstractCommand
 
 public:
     explicit ListCommand(QObject *parent = nullptr);
-    ~ListCommand();
+    virtual ~ListCommand() = default;
 
     QString name() const;
 
@@ -38,8 +38,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    void setupCommandOptions(KCmdLineOptions &options);
-    int initCommand(KCmdLineArgs *parsedArgs);
+    void setupCommandOptions(QCommandLineParser *parser);
+    int initCommand(QCommandLineParser *parser);
 
 private:
     CollectionResolveJob *mResolveJob;

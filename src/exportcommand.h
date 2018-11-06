@@ -21,7 +21,9 @@
 #define EXPORTCOMMAND_H
 
 #include "abstractcommand.h"
-#include "collectionresolvejob.h"
+
+class CollectionResolveJob;
+class KJob;
 
 class ExportCommand : public AbstractCommand
 {
@@ -29,7 +31,7 @@ class ExportCommand : public AbstractCommand
 
 public:
     explicit ExportCommand(QObject *parent = nullptr);
-    ~ExportCommand();
+    virtual ~ExportCommand();
 
     QString name() const;
 
@@ -37,8 +39,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
-    void setupCommandOptions(KCmdLineOptions &options);
+    int initCommand(QCommandLineParser *parser);
+    void setupCommandOptions(QCommandLineParser *parser);
 
 private:
     bool mDryRun;

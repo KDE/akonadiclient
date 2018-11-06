@@ -31,7 +31,7 @@ class ShowCommand : public AbstractCommand
 
 public:
     explicit ShowCommand(QObject *parent = nullptr);
-    ~ShowCommand();
+    virtual ~ShowCommand() = default;
 
     QString name() const;
 
@@ -39,8 +39,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    void setupCommandOptions(KCmdLineOptions &options);
-    int initCommand(KCmdLineArgs *parsedArgs);
+    void setupCommandOptions(QCommandLineParser *parser);
+    int initCommand(QCommandLineParser *parser);
 
 private:
     QStringList mItemArgs;

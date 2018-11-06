@@ -37,7 +37,7 @@ class InfoCommand : public AbstractCommand
 
 public:
     explicit InfoCommand(QObject *parent = nullptr);
-    ~InfoCommand();
+    virtual ~InfoCommand();
 
     QString name() const;
 
@@ -45,8 +45,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    void setupCommandOptions(KCmdLineOptions &options);
-    int initCommand(KCmdLineArgs *parsedArgs);
+    void setupCommandOptions(QCommandLineParser *parser);
+    int initCommand(QCommandLineParser *parser);
 
 private:
     CollectionResolveJob *mResolveJob;

@@ -17,15 +17,15 @@
  *
  */
 
-#include "collectionresolvejob.h"
 #include "renamecommand.h"
 
 #include <AkonadiCore/collectionmodifyjob.h>
-#include <kcmdlineargs.h>
+
 #include <klocalizedstring.h>
 
 #include <iostream>
 
+#include "collectionresolvejob.h"
 #include "commandfactory.h"
 
 using namespace Akonadi;
@@ -44,41 +44,38 @@ RenameCommand::~RenameCommand()
     delete mResolveJob;
 }
 
-void RenameCommand::setupCommandOptions(KCmdLineOptions &options)
+void RenameCommand::setupCommandOptions(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
+    addOptionsOption(parser);
+    addDryRunOption(parser);
 
-    options.add("+collection", ki18nc("@info:shell", "The collection to rename"));
-    options.add("+name", ki18nc("@info:shell", "New name for collection"));
-    addOptionSeparator(options);
-    addDryRunOption(options);
+    parser->addPositionalArgument("collection", i18nc("@info:shell", "The collection to rename"));
+    parser->addPositionalArgument("name", i18nc("@info:shell", "New name for collection"));
 }
 
-int RenameCommand::initCommand(KCmdLineArgs *parsedArgs)
+int RenameCommand::initCommand(QCommandLineParser *parser)
 {
-    if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No collection specified"));
+    const QStringList args = parser->positionalArguments();
+    if (args.isEmpty()) {
+        emitErrorSeeHelp(i18nc("@info:shell", "No collection specified"));
         return InvalidUsage;
     }
 
-    if (parsedArgs->count() < 3) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "New collection name not specified"));
+    if (args.count()<2) {
+        emitErrorSeeHelp(i18nc("@info:shell", "New collection name not specified"));
         return InvalidUsage;
     }
 
-    mDryRun = parsedArgs->isSet("dryrun");
-    QString oldCollectionNameArg = parsedArgs->arg(1);
-    mNewCollectionNameArg = parsedArgs->arg(2);
+    mDryRun = parser->isSet("dryrun");
+    QString oldCollectionNameArg = args.first();
+    mNewCollectionNameArg = args.at(1);
 
     mResolveJob = new CollectionResolveJob(oldCollectionNameArg, this);
     if (!mResolveJob->hasUsableInput()) {
-        emit error(ki18nc("@info:shell",
-                          "Invalid collection argument '%1', '%2'")
-                   .subs(oldCollectionNameArg)
-                   .subs(mResolveJob->errorString()).toString());
+        emit error(i18nc("@info:shell", "Invalid collection argument '%1', '%2'",
+                         oldCollectionNameArg, mResolveJob->errorString()));
         delete mResolveJob;
         mResolveJob = nullptr;
-
         return InvalidUsage;
     }
 

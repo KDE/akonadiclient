@@ -19,23 +19,20 @@
 
 #include "updatecommand.h"
 
-#include "collectionresolvejob.h"
-
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
 #include <AkonadiCore/itemmodifyjob.h>
-
-#include <kcmdlineargs.h>
 
 #include <qfile.h>
 
 #include <iostream>
 
+#include "collectionresolvejob.h"
 #include "commandfactory.h"
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("update", UpdateCommand, "Update an item's payload with the file specified");
+DEFINE_COMMAND("update", UpdateCommand, "Update an item's payload from a file");
 
 UpdateCommand::UpdateCommand(QObject *parent)
     : AbstractCommand(parent),
@@ -49,29 +46,31 @@ UpdateCommand::~UpdateCommand()
     delete mFile;
 }
 
-void UpdateCommand::setupCommandOptions(KCmdLineOptions &options)
+void UpdateCommand::setupCommandOptions(QCommandLineParser *parser)
 {
-    options.add("+item", ki18nc("@info:shell", "The item to update"));
-    options.add("+file", ki18nc("@info:shell", "File to update the item from"));
-    addOptionSeparator(options);
-    addDryRunOption(options);
+    addOptionsOption(parser);
+    addDryRunOption(parser);
+
+    parser->addPositionalArgument("item", i18nc("@info:shell", "The item to update, an ID or Akonadi URL"));
+    parser->addPositionalArgument("file", i18nc("@info:shell", "File to update the item from"));
 }
 
-int UpdateCommand::initCommand(KCmdLineArgs *parsedArgs)
+int UpdateCommand::initCommand(QCommandLineParser *parser)
 {
-    if (parsedArgs->count() < 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No item specified"));
+    const QStringList args = parser->positionalArguments();
+    if (args.isEmpty()) {
+        emitErrorSeeHelp(i18nc("@info:shell", "No item specified"));
         return InvalidUsage;
     }
 
-    if (parsedArgs->count() == 2) {
-        emitErrorSeeHelp(ki18nc("@info:shell", "No file specified"));
+    if (args.count()<2) {
+        emitErrorSeeHelp(i18nc("@info:shell", "No file specified"));
         return InvalidUsage;
     }
 
-    mItemArg = parsedArgs->arg(1);
-    mFileArg = parsedArgs->arg(2);
-    mDryRun = parsedArgs->isSet("dryrun");
+    mItemArg = args.at(0);
+    mFileArg = args.at(1);
+    mDryRun = parser->isSet("dryrun");
 
     return NoError;
 }
@@ -147,6 +146,6 @@ void UpdateCommand::onItemUpdated(KJob *job)
         return;
     }
 
-    std::cout << i18nc("@info:shell", "Item updated successfully").toLocal8Bit().data() << std::endl;
+    std::cout << qPrintable(i18nc("@info:shell", "Item updated successfully")) << std::endl;
     emit finished(NoError);
 }

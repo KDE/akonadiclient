@@ -20,7 +20,7 @@
 #include "agentscommand.h"
 
 #include <klocalizedstring.h>
-#include <kcmdlineargs.h>
+
 #include <AkonadiCore/agentmanager.h>
 #include <AkonadiCore/agentinstance.h>
 
@@ -44,61 +44,52 @@ AgentsCommand::AgentsCommand(QObject *parent)
 {
 }
 
-AgentsCommand::~AgentsCommand()
+void AgentsCommand::setupCommandOptions(QCommandLineParser *parser)
 {
+    addOptionsOption(parser);
+    parser->addOption(QCommandLineOption((QStringList() << "l" << "list"), i18n("List all agents")));
+    parser->addOption(QCommandLineOption((QStringList() << "s" << "setstate"), i18n("Set state \"online\" or \"offline\" for specified agents"), i18nc("@info:shell", "state")));
+    parser->addOption(QCommandLineOption((QStringList() << "g" << "getstate"), i18n("Get state for the specified agent")));
+    parser->addOption(QCommandLineOption((QStringList() << "i" << "info"), i18n("Show information about the specified agent")));
+    parser->addOption(QCommandLineOption((QStringList() << "r" << "restart"), i18n("Restart the specified agent")));
+    addDryRunOption(parser);
+
+    parser->addPositionalArgument("agents", i18nc("@info:shell", "Agents to operate on"), i18nc("@info:shell", "[agents...]"));
 }
 
-void AgentsCommand::setupCommandOptions(KCmdLineOptions &options)
+int AgentsCommand::initCommand(QCommandLineParser *parser)
 {
-    AbstractCommand::setupCommandOptions(options);
+    mDryRun = parser->isSet("dryrun");
+    mArguments = parser->positionalArguments();
 
-    addOptionsOption(options);
-    options.add("+[agents]...", ki18nc("@info:shell", "Agents to operate on"));
-    addOptionSeparator(options);
-    options.add("l").add("list", ki18nc("@info:shell", "List all agents"));
-    options.add("s").add("setstate <state>", ki18nc("@info:shell", "Set state \"online\" or \"offline\" for specified agents"));
-    options.add("g").add("getstate", ki18nc("@info:shell", "Get state for the specified agent"));
-    options.add("i").add("info", ki18nc("@info:shell", "Show information about the specified agent"));
-    options.add("r").add("restart", ki18nc("@info:shell", "Restart the specified agent"));
-    addDryRunOption(options);
-}
-
-int AgentsCommand::initCommand(KCmdLineArgs *parsedArgs)
-{
-    mDryRun = parsedArgs->isSet("dryrun");
-
-    for (int i = 1; i < parsedArgs->count(); i++) {
-        mArguments.append(parsedArgs->arg(i));
-    }
-
-    if (parsedArgs->isSet("list")) {
+    if (parser->isSet("list")) {
         mOption = LIST;
     } else {
         if (mArguments.length() == 0) {
-            emitErrorSeeHelp(ki18nc("@info:shell", "No agents or options specified"));
+            emitErrorSeeHelp(i18nc("@info:shell", "No agents or options specified"));
             return InvalidUsage;
         }
 
-        if (parsedArgs->isSet("info")) {
+        if (parser->isSet("info")) {
             mOption = INFO;
-        } else if (parsedArgs->isSet("restart")) {
+        } else if (parser->isSet("restart")) {
             mOption = RESTART;
-        } else if (parsedArgs->isSet("getstate")) {
+        } else if (parser->isSet("getstate")) {
             mOption = GETSTATE;
-        } else if (parsedArgs->isSet("setstate")) {
+        } else if (parser->isSet("setstate")) {
             mOption = SETSTATE;
-            QString state = parsedArgs->getOption("setstate");
+            QString state = parser->value("setstate");
 
             if (state.compare("online") == 0) {
                 mStateArg = ONLINE;
             } else if (state.compare("offline") == 0) {
                 mStateArg = OFFLINE;
             } else {
-                emitErrorSeeHelp(ki18nc("@info:shell", "Invalid state '%1'").subs(parsedArgs->getOption("setstate")));;
+                emitErrorSeeHelp(i18nc("@info:shell", "Invalid state '%1'", state));
                 return InvalidUsage;
             }
         } else {
-            emitErrorSeeHelp(ki18nc("@info:shell", "No option specified"));
+            emitErrorSeeHelp(i18nc("@info:shell", "No option specified"));
             return InvalidUsage;
         }
     }
@@ -133,7 +124,7 @@ void AgentsCommand::start()
     }
 
     default: {
-        emitErrorSeeHelp(ki18nc("@info:shell", "Invalid parameters"));
+        emitErrorSeeHelp(i18nc("@info:shell", "Invalid parameters"));
         emit finished(InvalidUsage);
         break;
     }
@@ -169,7 +160,7 @@ void AgentsCommand::setState()
     for (int i = 0; i < mArguments.length(); i++) {
         AgentInstance instance = manager->instance(mArguments.at(i));
         if (!instance.isValid()) {
-            emit error(ki18nc("@info:shell", "No agent exists with the identifier '%1'").subs(mArguments.at(i)).toString());
+            emit error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
             emit finished(RuntimeError);
             return;
         }
@@ -201,7 +192,7 @@ void AgentsCommand::getState()
     for (int i = 0; i < mArguments.length(); i++) {
         AgentInstance instance = manager->instance(mArguments.at(i));
         if (!instance.isValid()) {
-            emit error(ki18nc("@info:shell", "No agent exists with the identifier '%1'").subs(mArguments.at(i)).toString());
+            emit error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
             emit finished(RuntimeError);
             return;
         }
@@ -219,7 +210,7 @@ void AgentsCommand::showInfo()
     for (int i = 0; i < mArguments.length(); i++) {
         AgentInstance instance = manager->instance(mArguments.at(i));
         if (!instance.isValid()) {
-            emit error(ki18nc("@info:shell", "No agent exists with the identifier '%1'").subs(mArguments.at(i)).toString());
+            emit error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
             emit finished(RuntimeError);
             return;
         }
@@ -228,9 +219,9 @@ void AgentsCommand::showInfo()
 
     for (int i = 0; i < agentList.length(); i++) {
         AgentInstance instance = agentList.at(i);
-        std::cout << ki18nc("@info:shell", "ID:      ").toString().toLocal8Bit().constData() << instance.identifier().toLocal8Bit().data() << std::endl;
-        std::cout << ki18nc("@info:shell", "Name:    ").toString().toLocal8Bit().constData() << instance.name().toLocal8Bit().data() << std::endl;
-        std::cout << ki18nc("@info:shell", "Status:  ").toString().toLocal8Bit().constData() << instance.statusMessage().toLocal8Bit().data() << std::endl;
+        std::cout << qPrintable(i18nc("@info:shell", "ID:      ")) << qPrintable(instance.identifier()) << std::endl;
+        std::cout << qPrintable(i18nc("@info:shell", "Name:    ")) << qPrintable(instance.name()) << std::endl;
+        std::cout << qPrintable(i18nc("@info:shell", "Status:  ")) << qPrintable(instance.statusMessage()) << std::endl;
         if ((i + 1) < mArguments.length()) {
             std::cout << std::endl;
         }
@@ -245,7 +236,7 @@ void AgentsCommand::restartAgents()
     for (int i = 0; i < mArguments.length(); i++) {
         AgentInstance instance = manager->instance(mArguments.at(i));
         if (!instance.isValid()) {
-            emit error(ki18nc("@info:shell", "No agent exists with the identifier '%1'").subs(mArguments.at(i)).toString());
+            emit error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
             emit finished(RuntimeError);
             return;
         }

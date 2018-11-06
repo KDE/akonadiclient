@@ -38,7 +38,7 @@ class DeleteCommand :  public AbstractCommand
 
 public:
     explicit DeleteCommand(QObject *parent = nullptr);
-    ~DeleteCommand();
+    virtual ~DeleteCommand();
 
     QString name() const;
 
@@ -46,8 +46,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
-    void setupCommandOptions(KCmdLineOptions &options);
+    int initCommand(QCommandLineParser *parser);
+    void setupCommandOptions(QCommandLineParser *parser);
 
 private:
     Akonadi::CollectionDeleteJob *mDeleteJob;

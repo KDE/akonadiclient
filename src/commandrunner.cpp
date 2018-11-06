@@ -22,16 +22,13 @@
 #include "commandfactory.h"
 #include "errorreporter.h"
 
-#include <KCmdLineArgs>
-
 #include <QCoreApplication>
 
 #include <iostream>
 
-CommandRunner::CommandRunner(KCmdLineArgs *parsedArgs)
+CommandRunner::CommandRunner(const QStringList *args)
     : mCommand(nullptr),
-      mParsedArgs(parsedArgs),
-      mFactory(parsedArgs)
+      mParsedArgs(args)
 {
 }
 
@@ -42,12 +39,13 @@ CommandRunner::~CommandRunner()
 
 int CommandRunner::start()
 {
-    mCommand = mFactory.createCommand();
+    CommandFactory factory(mParsedArgs);
+    mCommand = factory.createCommand();
     Q_ASSERT(mCommand != nullptr);
 
     connect(mCommand, &AbstractCommand::error, this, &CommandRunner::onCommandError);
 
-    if (mCommand->init(mParsedArgs) == AbstractCommand::InvalidUsage) {
+    if (mCommand->init(*mParsedArgs) == AbstractCommand::InvalidUsage) {
         delete mCommand;
         mCommand = nullptr;
         return AbstractCommand::InvalidUsage;

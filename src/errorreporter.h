@@ -27,6 +27,7 @@ void error(const QString &msg);
 void warning(const QString &msg);
 void fatal(const QString &msg);
 void progress(const QString &msg);
+void setRunningApplication(bool running = true);
 };
 
 #endif // ERRORREPORTER_H

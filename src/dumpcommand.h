@@ -26,15 +26,17 @@
 #include <tag.h>
 
 #include "abstractcommand.h"
-#include "collectionresolvejob.h"
+
+class CollectionResolveJob;
+
 
 class DumpCommand : public AbstractCommand
 {
     Q_OBJECT
 
 public:
-    explicit DumpCommand(QObject *parent = 0);
-    ~DumpCommand();
+    explicit DumpCommand(QObject *parent = nullptr);
+    virtual ~DumpCommand();
 
     QString name() const;
 
@@ -42,8 +44,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
-    void setupCommandOptions(KCmdLineOptions &options);
+    int initCommand(QCommandLineParser *parser);
+    void setupCommandOptions(QCommandLineParser *parser);
 
 private:
     bool mDryRun;

@@ -31,7 +31,7 @@ class UpdateCommand : public AbstractCommand
 
 public:
     explicit UpdateCommand(QObject *parent = nullptr);
-    ~UpdateCommand();
+    virtual ~UpdateCommand();
 
     QString name() const;
 
@@ -39,8 +39,8 @@ public Q_SLOTS:
     void start();
 
 protected:
-    int initCommand(KCmdLineArgs *parsedArgs);
-    void setupCommandOptions(KCmdLineOptions &options);
+    int initCommand(QCommandLineParser *parser);
+    void setupCommandOptions(QCommandLineParser *parser);
 
 private:
     bool mDryRun;

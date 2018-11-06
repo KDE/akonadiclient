@@ -19,28 +19,23 @@
 #ifndef COMMANDRUNNER_H
 #define COMMANDRUNNER_H
 
-#include "commandfactory.h"
-
 #include <QObject>
 
 class AbstractCommand;
-
-class KCmdLineArgs;
 
 class CommandRunner : public QObject
 {
     Q_OBJECT
 
 public:
-    CommandRunner(KCmdLineArgs *parsedArgs);
-    ~CommandRunner();
+    explicit CommandRunner(const QStringList *args);
+    virtual ~CommandRunner();
 
     int start();
 
 private:
     AbstractCommand *mCommand;
-    KCmdLineArgs *mParsedArgs;
-    CommandFactory mFactory;
+    const QStringList *mParsedArgs;
 
 private Q_SLOTS:
     void onCommandFinished(int exitCode);

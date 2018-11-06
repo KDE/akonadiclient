@@ -20,10 +20,8 @@
 #define ABSTRACTCOMMAND_H
 
 #include <QObject>
+#include <QCommandLineParser>
 
-class KCmdLineArgs;
-class KCmdLineOptions;
-class KLocalizedString;
 
 class AbstractCommand : public QObject
 {
@@ -37,9 +35,9 @@ public:
     };
 
     explicit AbstractCommand(QObject *parent = nullptr);
-    ~AbstractCommand();
+    virtual ~AbstractCommand() = default;
 
-    int init(KCmdLineArgs *parsedArgs);
+    int init(const QStringList &parsedArgs, bool showHelp = false);
 
     virtual QString name() const = 0;
 
@@ -51,16 +49,16 @@ Q_SIGNALS:
     void error(const QString &message);
 
 protected:
-    virtual void setupCommandOptions(KCmdLineOptions &options);
-    virtual int initCommand(KCmdLineArgs *parsedArgs) = 0;
+    virtual void setupCommandOptions(QCommandLineParser *parser) = 0;
+    // TODO: return type should be the enum
+    virtual int initCommand(QCommandLineParser *parser) = 0;
 
-    void emitErrorSeeHelp(const KLocalizedString &msg);
+    void emitErrorSeeHelp(const QString &msg);
     bool allowDangerousOperation() const;
 
-    void addOptionsOption(KCmdLineOptions &options);
-    void addOptionSeparator(KCmdLineOptions &options);
-    void addCollectionItemOptions(KCmdLineOptions &options);
-    void addDryRunOption(KCmdLineOptions &options);
+    void addOptionsOption(QCommandLineParser *parser);
+    void addCollectionItemOptions(QCommandLineParser *parser);
+    void addDryRunOption(QCommandLineParser *parser);
 };
 
 #endif // ABSTRACTCOMMAND_H
