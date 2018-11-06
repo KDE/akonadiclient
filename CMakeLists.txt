@@ -43,17 +43,7 @@ else()
   message(STATUS "Using QLocale::formattedDataSize() for size formatting")
 endif()
 
-find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS
-    CoreAddons
-    Config
-    DBusAddons
-    I18n
-    WidgetsAddons
-    ItemViews
-    KDELibs4Support
-    DocTools
-    KIO
-    Completion)
+find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS CoreAddons I18n DocTools KIO)
 
 
 add_custom_target(vcsversion

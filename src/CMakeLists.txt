@@ -36,7 +36,7 @@ set(libakonadiclient_SRCS
 set(akonadiclient_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
 add_library(libakonadiclient STATIC ${libakonadiclient_SRCS})
 target_link_libraries(libakonadiclient KF5::AkonadiCore KF5::AkonadiXml KF5::AkonadiContact)
-target_link_libraries(libakonadiclient KF5::KDELibs4Support)
+target_link_libraries(libakonadiclient KF5::I18n)
 target_link_libraries(libakonadiclient Qt5::Core)
 
 if (USE_KIO_CONVERTSIZE)
