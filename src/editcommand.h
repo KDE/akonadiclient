@@ -33,14 +33,14 @@ public:
     explicit EditCommand(QObject *parent = nullptr);
     virtual ~EditCommand();
 
-    QString name() const;
+    QString name() const override;
 
 public Q_SLOTS:
-    void start();
+    void start() override;
 
 protected:
-    int initCommand(QCommandLineParser *parser);
-    void setupCommandOptions(QCommandLineParser *parser);
+    int initCommand(QCommandLineParser *parser) override;
+    void setupCommandOptions(QCommandLineParser *parser) override;
 
 private:
     QString mItemArg;

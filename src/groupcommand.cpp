@@ -229,10 +229,10 @@ void GroupCommand::onItemsFetched(KJob *job)
         if (status == NoError) {            // only if there were no errors
             if (!mDryRun) {
                 mGroupItem->setPayload<KContacts::ContactGroup>(group);
-                Akonadi::ItemModifyJob *job = new Akonadi::ItemModifyJob(*mGroupItem);
-                job->exec();
-                if (job->error() != 0) {
-                    emit error(job->errorString());
+                Akonadi::ItemModifyJob *modifyJob = new Akonadi::ItemModifyJob(*mGroupItem);
+                modifyJob->exec();
+                if (modifyJob->error() != 0) {
+                    emit error(modifyJob->errorString());
                     status = RuntimeError;
                 }
             }

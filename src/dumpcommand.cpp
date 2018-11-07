@@ -287,11 +287,11 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
         else
         {
             const QString dirName = dir.dirName();	// this is awkward, why doesn't
-            QDir parent(destDir+"/..");			// Qt just have QDir::mkpath()
-            if (!parent.mkpath(dirName))		// with no subdirectory name?
+            QDir parentDir(destDir+"/..");		// Qt just have QDir::mkpath()
+            if (!parentDir.mkpath(dirName))		// with no subdirectory name?
             {
                 ErrorReporter::fatal(i18nc("@info:shell", "Cannot create directory '%1/%2'",
-                                           parent.canonicalPath(), dirName));
+                                           parentDir.canonicalPath(), dirName));
                 emit finished(RuntimeError);
                 return;
             }

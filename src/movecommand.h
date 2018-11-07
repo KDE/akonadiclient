@@ -29,13 +29,13 @@ public:
     explicit MoveCommand(QObject *parent = nullptr);
     virtual ~MoveCommand() = default;
 
-    QString name() const;
+    QString name() const override;
 
 public Q_SLOTS:
-    virtual void start();
+    virtual void start() override;
 
 protected:
-    virtual void setupCommandOptions(QCommandLineParser *parser);
+    virtual void setupCommandOptions(QCommandLineParser *parser) override;
 };
 
 #endif                          // MOVECOMMAND_H

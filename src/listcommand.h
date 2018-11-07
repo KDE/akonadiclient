@@ -32,14 +32,14 @@ public:
     explicit ListCommand(QObject *parent = nullptr);
     virtual ~ListCommand() = default;
 
-    QString name() const;
+    QString name() const override;
 
 public Q_SLOTS:
-    void start();
+    void start() override;
 
 protected:
-    void setupCommandOptions(QCommandLineParser *parser);
-    int initCommand(QCommandLineParser *parser);
+    void setupCommandOptions(QCommandLineParser *parser) override;
+    int initCommand(QCommandLineParser *parser) override;
 
 private:
     CollectionResolveJob *mResolveJob;

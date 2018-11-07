@@ -34,17 +34,17 @@ public:
     explicit CopyCommand(QObject *parent = nullptr);
     virtual ~CopyCommand() = default;
 
-    QString name() const;
+    QString name() const override;
 
 public Q_SLOTS:
-    virtual void start();
+    virtual void start() override;
 
 protected:
     bool mMoving;
 
 protected:
-    virtual void setupCommandOptions(QCommandLineParser *parser);
-    virtual int initCommand(QCommandLineParser *parser);
+    virtual void setupCommandOptions(QCommandLineParser *parser) override;
+    virtual int initCommand(QCommandLineParser *parser) override;
 
 private:
     CollectionResolveJob *mResolveJob;

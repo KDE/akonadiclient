@@ -32,10 +32,6 @@ CollectionPathJob::CollectionPathJob(const Akonadi::Collection &collection, QObj
     setAutoDelete(false);
 }
 
-CollectionPathJob::~CollectionPathJob()
-{
-}
-
 void CollectionPathJob::start()
 {
     if (!mCollection.isValid()) {

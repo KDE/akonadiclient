@@ -65,9 +65,9 @@ int AbstractCommand::init(const QStringList &parsedArgs, bool showHelp)
         // to be removed.  Again, cannot use a regular expression replacement
         // because only the first instance needs to be changed.
         if (CommandShell::isActive()) {
-            int idx1 = s.indexOf(": ");
+            idx1 = s.indexOf(": ");
             if (idx1!=-1) {
-                int idx2 = s.indexOf(' ', idx1+2);
+                idx2 = s.indexOf(' ', idx1+2);
                 if (idx2!=-1) s = s.left(idx1+1)+s.mid(idx2);
             }
         }

@@ -189,13 +189,13 @@ void CopyCommand::onSourceResolved(KJob *job)
         // recursively into the destination collection, under the
         // original collection name.  This case is simpler!
 
-        Akonadi::Job *job;
+        Akonadi::Job *copyMovejob;
         if (mMoving) {
             ErrorReporter::progress(i18n("Moving collection %1 -> %2",
                                          sourceJob->formattedCollectionName(),
                                          mResolveJob->formattedCollectionName()));
             if (!mDryRun) {
-                job = new CollectionMoveJob(sourceCollection, mDestinationCollection, this);
+                copyMovejob = new CollectionMoveJob(sourceCollection, mDestinationCollection, this);
             }
         } else {
             ErrorReporter::progress(i18n("Copying collection %1 -> %2",
@@ -203,13 +203,13 @@ void CopyCommand::onSourceResolved(KJob *job)
                                          mResolveJob->formattedCollectionName()));
 
             if (!mDryRun) {
-                job = new CollectionCopyJob(sourceCollection, mDestinationCollection, this);
+                copyMovejob = new CollectionCopyJob(sourceCollection, mDestinationCollection, this);
             }
         }
 
         if (!mDryRun) {
-            job->setProperty("arg", sourceArg);
-            connect(job, &KJob::result, this, &CopyCommand::onRecursiveCopyFinished);
+            copyMovejob->setProperty("arg", sourceArg);
+            connect(copyMovejob, &KJob::result, this, &CopyCommand::onRecursiveCopyFinished);
         } else {
             doNextSource();
         }

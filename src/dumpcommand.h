@@ -38,14 +38,14 @@ public:
     explicit DumpCommand(QObject *parent = nullptr);
     virtual ~DumpCommand();
 
-    QString name() const;
+    QString name() const override;
 
 public Q_SLOTS:
-    void start();
+    void start() override;
 
 protected:
-    int initCommand(QCommandLineParser *parser);
-    void setupCommandOptions(QCommandLineParser *parser);
+    int initCommand(QCommandLineParser *parser) override;
+    void setupCommandOptions(QCommandLineParser *parser) override;
 
 private:
     bool mDryRun;

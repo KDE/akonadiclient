@@ -29,15 +29,15 @@ class CollectionPathJob : public KCompositeJob
 
 public:
     explicit CollectionPathJob(const Akonadi::Collection &collection, QObject *parent = nullptr);
-    ~CollectionPathJob();
+    virtual ~CollectionPathJob() = default;
 
-    void start();
+    void start() override;
 
     QString collectionPath() const;
     QString formattedCollectionPath() const;
 
 protected Q_SLOTS:
-    void slotResult(KJob *job);
+    void slotResult(KJob *job) override;
 
 private:
     Akonadi::Collection mCollection;

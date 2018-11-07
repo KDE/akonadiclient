@@ -74,10 +74,6 @@ CollectionResolveJob::CollectionResolveJob(const QString &userInput, QObject *pa
     mCollection = parseCollection(in);
 }
 
-CollectionResolveJob::~CollectionResolveJob()
-{
-}
-
 void CollectionResolveJob::start()
 {
     if (!hasUsableInput()) {

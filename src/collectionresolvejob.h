@@ -27,6 +27,7 @@
 class HackedCollectionPathResolver : public Akonadi::CollectionPathResolver
 {
     Q_OBJECT
+
 public:
     explicit HackedCollectionPathResolver(const QString &path, QObject *parent = nullptr);
     explicit HackedCollectionPathResolver(const Akonadi::Collection &col, QObject *parent = nullptr);
@@ -41,9 +42,9 @@ class CollectionResolveJob : public KCompositeJob
 
 public:
     explicit CollectionResolveJob(const QString &userInput, QObject *parent = nullptr);
-    ~CollectionResolveJob();
+    virtual ~CollectionResolveJob() = default;
 
-    void start();
+    void start() override;
 
     bool hasUsableInput();
     bool hadSlash() const
@@ -60,7 +61,7 @@ public:
     static Akonadi::Collection parseCollection(const QString &userInput);
 
 protected Q_SLOTS:
-    void slotResult(KJob *job);
+    void slotResult(KJob *job) override;
 
 private:
     const QString mUserInput;
