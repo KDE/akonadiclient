@@ -44,10 +44,7 @@ void ShowCommand::setupCommandOptions(QCommandLineParser *parser)
 int ShowCommand::initCommand(QCommandLineParser *parser)
 {
     mItemArgs = parser->positionalArguments();
-    if (mItemArgs.isEmpty()) {
-        emitErrorSeeHelp(i18nc("@info:shell", "No items specified"));
-        return InvalidUsage;
-    }
+    if (!checkArgCount(mItemArgs, 1, i18nc("@info:shell", "No items specified"))) return InvalidUsage;
 
     return NoError;
 }

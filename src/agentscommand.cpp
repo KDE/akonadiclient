@@ -38,7 +38,6 @@ DEFINE_COMMAND("agents", AgentsCommand, "Manage Akonadi agents");
 
 AgentsCommand::AgentsCommand(QObject *parent)
     : AbstractCommand(parent),
-      mDryRun(false),
       mStateArg(ONLINE),
       mOption(LIST)
 {
@@ -59,16 +58,14 @@ void AgentsCommand::setupCommandOptions(QCommandLineParser *parser)
 
 int AgentsCommand::initCommand(QCommandLineParser *parser)
 {
-    mDryRun = parser->isSet("dryrun");
     mArguments = parser->positionalArguments();
+
+    if (!getCommonOptions(parser)) return InvalidUsage;
 
     if (parser->isSet("list")) {
         mOption = LIST;
     } else {
-        if (mArguments.length() == 0) {
-            emitErrorSeeHelp(i18nc("@info:shell", "No agents or options specified"));
-            return InvalidUsage;
-        }
+        if (!checkArgCount(mArguments, 1, i18nc("@info:shell", "No agents or options specified"))) return InvalidUsage;
 
         if (parser->isSet("info")) {
             mOption = INFO;
@@ -167,7 +164,7 @@ void AgentsCommand::setState()
         agentList.append(instance);
     }
 
-    if (!mDryRun) {
+    if (!isDryRun()) {
         for (int i = 0; i < agentList.length(); i++) {
             AgentInstance instance = agentList.at(i);
             switch (mStateArg) {
@@ -243,7 +240,7 @@ void AgentsCommand::restartAgents()
         agentList.append(instance);
     }
 
-    if (!mDryRun) {
+    if (!isDryRun()) {
         for (int i = 0; i < agentList.length(); i++) {
             AgentInstance instance = agentList.at(i);
             instance.restart();

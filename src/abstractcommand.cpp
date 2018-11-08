@@ -31,7 +31,12 @@
 #define ENV_VAL_DANGEROUS   "enabled"
 
 AbstractCommand::AbstractCommand(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      mDryRun(false),
+      mWantCollection(false),
+      mWantItem(false),
+      mSetDryRun(false),
+      mSetCollectionItem(false)
 {
 }
 
@@ -91,12 +96,41 @@ void AbstractCommand::addCollectionItemOptions(QCommandLineParser *parser)
 
     parser->addOption(QCommandLineOption((QStringList() << "i" << "item"),
                                          i18nc("@info:shell", "Assume that an item is specified")));
+    mSetCollectionItem = true;
 }
 
 void AbstractCommand::addDryRunOption(QCommandLineParser *parser)
 {
     parser->addOption(QCommandLineOption((QStringList() << "n" << "dryrun"),
                                          i18nc("@info:shell", "Run without making any actual changes")));
+    mSetDryRun = true;
+}
+
+bool AbstractCommand::getCommonOptions(QCommandLineParser *parser)
+{
+    if (mSetDryRun) {
+        mDryRun = parser->isSet("dryrun");
+    }
+
+    if (mSetCollectionItem)
+    {
+        mWantCollection = parser->isSet("collection");
+        mWantItem = parser->isSet("item");
+
+        if (mWantItem && mWantCollection) {
+            emit error(i18nc("@info:shell", "Cannot specify as both an item and a collection"));
+            return (false);
+        }
+    }
+
+    return (true);
+}
+
+bool AbstractCommand::checkArgCount(const QStringList &args, int min, const QString &errorText)
+{
+    if (args.count()>=min) return (true);		// enough arguments provided
+    emitErrorSeeHelp(errorText);
+    return (false);
 }
 
 void AbstractCommand::emitErrorSeeHelp(const QString &msg)

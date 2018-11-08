@@ -36,7 +36,6 @@ DEFINE_COMMAND("update", UpdateCommand, "Update an item's payload from a file");
 
 UpdateCommand::UpdateCommand(QObject *parent)
     : AbstractCommand(parent),
-      mDryRun(false),
       mFile(nullptr)
 {
 }
@@ -58,19 +57,13 @@ void UpdateCommand::setupCommandOptions(QCommandLineParser *parser)
 int UpdateCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (args.isEmpty()) {
-        emitErrorSeeHelp(i18nc("@info:shell", "No item specified"));
-        return InvalidUsage;
-    }
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "No item specified"))) return InvalidUsage;
+    if (!checkArgCount(args, 2, i18nc("@info:shell", "No file specified"))) return InvalidUsage;
 
-    if (args.count()<2) {
-        emitErrorSeeHelp(i18nc("@info:shell", "No file specified"));
-        return InvalidUsage;
-    }
+    if (!getCommonOptions(parser)) return InvalidUsage;
 
     mItemArg = args.at(0);
     mFileArg = args.at(1);
-    mDryRun = parser->isSet("dryrun");
 
     return NoError;
 }
@@ -127,7 +120,7 @@ void UpdateCommand::onItemFetched(KJob *job)
         return;
     }
 
-    if (!mDryRun) {
+    if (!isDryRun()) {
         Item item = items.first();
         QByteArray data = mFile->readAll();
         item.setPayloadFromData(data);

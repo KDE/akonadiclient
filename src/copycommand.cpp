@@ -68,15 +68,12 @@ void CopyCommand::setupCommandOptions(QCommandLineParser *parser)
 int CopyCommand::initCommand(QCommandLineParser *parser)
 {
     mSourceArgs = parser->positionalArguments();
-    if (mSourceArgs.count()<2) {
-        emitErrorSeeHelp(i18nc("@info:shell", "Missing source/destination arguments"));
-        return (InvalidUsage);
-    }
+    if (!checkArgCount(mSourceArgs, 2, i18nc("@info:shell", "Missing source/destination arguments"))) return InvalidUsage;
+
+    if (!getCommonOptions(parser)) return InvalidUsage;
 
     mDestinationArg = mSourceArgs.takeLast();		// extract the destination
     Q_ASSERT(!mSourceArgs.isEmpty());			// must have some left
-
-    mDryRun = parser->isSet("dryrun");
 
     mResolveJob = new CollectionResolveJob(mDestinationArg, this);
     if (!mResolveJob->hasUsableInput()) {
@@ -194,7 +191,7 @@ void CopyCommand::onSourceResolved(KJob *job)
             ErrorReporter::progress(i18n("Moving collection %1 -> %2",
                                          sourceJob->formattedCollectionName(),
                                          mResolveJob->formattedCollectionName()));
-            if (!mDryRun) {
+            if (!isDryRun()) {
                 copyMovejob = new CollectionMoveJob(sourceCollection, mDestinationCollection, this);
             }
         } else {
@@ -202,12 +199,12 @@ void CopyCommand::onSourceResolved(KJob *job)
                                          sourceJob->formattedCollectionName(),
                                          mResolveJob->formattedCollectionName()));
 
-            if (!mDryRun) {
+            if (!isDryRun()) {
                 copyMovejob = new CollectionCopyJob(sourceCollection, mDestinationCollection, this);
             }
         }
 
-        if (!mDryRun) {
+        if (!isDryRun()) {
             copyMovejob->setProperty("arg", sourceArg);
             connect(copyMovejob, &KJob::result, this, &CopyCommand::onRecursiveCopyFinished);
         } else {
@@ -275,16 +272,16 @@ void CopyCommand::processNextSubcollection(const QString &sourceArg)
     Akonadi::Job *job;
 
     if (mMoving) {
-        if (!mDryRun) {
+        if (!isDryRun()) {
             job = new CollectionMoveJob(collection, mDestinationCollection, this);
         }
     } else {
-        if (!mDryRun) {
+        if (!isDryRun()) {
             job = new CollectionCopyJob(collection, mDestinationCollection, this);
         }
     }
 
-    if (!mDryRun) {
+    if (!isDryRun()) {
         job->setProperty("arg", sourceArg);
         job->setProperty("collection", collection.name());
 
@@ -340,16 +337,16 @@ void CopyCommand::onItemsFetched(KJob *job)
     Akonadi::Job *copyJob;
     if (mMoving) {
         ErrorReporter::progress(i18nc("@info:shell", "Moving %1 items", items.count()));
-        if (!mDryRun) {
+        if (!isDryRun()) {
             copyJob = new ItemMoveJob(items, mDestinationCollection, this);
         }
     } else {
         ErrorReporter::progress(i18nc("@info:shell", "Copying %1 items", items.count()));
-        if (!mDryRun) {
+        if (!isDryRun()) {
             copyJob = new ItemCopyJob(items, mDestinationCollection, this);
         }
     }
-    if (!mDryRun) {
+    if (!isDryRun()) {
         copyJob->setProperty("arg", sourceArg);
         connect(copyJob, &KJob::result, this, &CopyCommand::onItemCopyFinished);
     } else {

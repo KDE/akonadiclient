@@ -43,7 +43,6 @@ protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
 
 private:
-    bool mDryRun;
     CollectionResolveJob *mResolveJob;
     QString mNewCollectionNameArg;
 

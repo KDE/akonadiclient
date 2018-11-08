@@ -76,17 +76,12 @@ void DumpCommand::setupCommandOptions(QCommandLineParser *parser)
 int DumpCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (args.isEmpty())
-    {
-        emitErrorSeeHelp(i18nc("@info:shell", "No collection specified"));
-        return (InvalidUsage);
-    }
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "No collection specified"))) return InvalidUsage;
+    if (!checkArgCount(args, 2, i18nc("@info:shell", "No destination directory specified"))) return InvalidUsage;
 
-    if (args.count()<2)
-    {
-        emitErrorSeeHelp(i18nc("@info:shell", "No destination directory specified"));
-        return (InvalidUsage);
-    }
+    if (!getCommonOptions(parser)) return InvalidUsage;
+    mMaildir = parser->isSet("maildir");
+    mAkonadiCategories = parser->isSet("akonadi-categories");
 
     const QString collectionArg = args.at(0);
     mResolveJob = new CollectionResolveJob(collectionArg, this);
@@ -95,10 +90,6 @@ int DumpCommand::initCommand(QCommandLineParser *parser)
         emit error(mResolveJob->errorString());
         return (InvalidUsage);
     }
-
-    mDryRun = parser->isSet("dryrun");
-    mMaildir = parser->isSet("maildir");
-    mAkonadiCategories = parser->isSet("akonadi-categories");
 
     mDirectoryArg = args.at(1);
     QDir dir(mDirectoryArg);
@@ -280,7 +271,7 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
             std::cout << "mkdir       " << qPrintable(destDir) << std::endl;
         }
 
-        if (mDryRun)					// not actually doing anything
+        if (isDryRun())					// not actually doing anything
         {
             mCreatedDirs.append(destDir);		// so that only reported once
         }
@@ -303,7 +294,7 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
     if (!ext.isEmpty()) destPath += '.'+ext;
 
     std::cout << qPrintable(QString("%1").arg(item.id(), -8)) << " -> " << qPrintable(destPath) << std::endl;
-    if (!mDryRun)
+    if (!isDryRun())
     {
         QByteArray data = item.payloadData();		// the raw item payload
         if (mimeType=="text/directory" || mimeType=="text/vcard")

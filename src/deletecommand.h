@@ -52,9 +52,6 @@ protected:
 private:
     Akonadi::CollectionDeleteJob *mDeleteJob;
     CollectionResolveJob *mResolveJob;
-    bool mDryRun;
-    bool mIsCollection;
-    bool mIsItem;
     QString mEntityArg;
 
 private:

@@ -58,10 +58,7 @@ void ListCommand::setupCommandOptions(QCommandLineParser *parser)
 int ListCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (args.count()<1) {
-        emitErrorSeeHelp(i18nc("@info:shell", "Missing collection argument"));
-        return InvalidUsage;
-    }
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument"))) return InvalidUsage;
 
     mListItems = parser->isSet("items");		// selection options specified
     mListCollections = parser->isSet("collections");

@@ -48,7 +48,6 @@ protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
 
 private:
-    bool mDryRun;
     bool mMaildir;
     bool mAkonadiCategories;
 

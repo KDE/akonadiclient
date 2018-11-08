@@ -38,8 +38,7 @@ DEFINE_COMMAND("edit", EditCommand, "Edit the raw payload for the specified item
 
 EditCommand::EditCommand(QObject *parent)
     : AbstractCommand(parent),
-      mTempFile(nullptr),
-      mDryRun(false)
+      mTempFile(nullptr)
 {
 }
 
@@ -59,13 +58,11 @@ void EditCommand::setupCommandOptions(QCommandLineParser *parser)
 int EditCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (args.isEmpty()) {
-        emitErrorSeeHelp(i18nc("@info:shell", "No item specified"));
-        return InvalidUsage;
-    }
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "No item specified"))) return InvalidUsage;
+
+    if (!getCommonOptions(parser)) return InvalidUsage;
 
     mItemArg = args.first();
-    mDryRun = parser->isSet("dryrun");
 
     return NoError;
 }
@@ -133,7 +130,7 @@ void EditCommand::onItemFetched(KJob *job)
         return;
     }
 
-    if (!mDryRun) {
+    if (!isDryRun()) {
         mTempFile->open();
         mTempFile->seek(0); // Seek to the beginning of the file
         item.setPayloadFromData(mTempFile->readAll());

@@ -59,6 +59,21 @@ protected:
     void addOptionsOption(QCommandLineParser *parser);
     void addCollectionItemOptions(QCommandLineParser *parser);
     void addDryRunOption(QCommandLineParser *parser);
+
+    bool getCommonOptions(QCommandLineParser *parser);
+    bool checkArgCount(const QStringList &args, int min, const QString &errorText);
+
+    bool isDryRun() const			{ return (mDryRun); }
+    bool wantCollection() const			{ return (mWantCollection); }
+    bool wantItem() const			{ return (mWantItem); }
+
+private:
+    bool mDryRun;
+    bool mWantCollection;
+    bool mWantItem;
+
+    bool mSetDryRun;
+    bool mSetCollectionItem;
 };
 
 #endif // ABSTRACTCOMMAND_H

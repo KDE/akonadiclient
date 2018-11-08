@@ -52,7 +52,6 @@ private:
     void setState();
 
 private:
-    bool mDryRun;
     enum Option {
         LIST = 0,
         SETSTATE = 1,

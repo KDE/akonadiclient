@@ -73,16 +73,11 @@ void AddCommand::setupCommandOptions(QCommandLineParser *parser)
 int AddCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (args.isEmpty()) {
-        emitErrorSeeHelp(i18nc("@info:shell", "Missing collection argument"));
-        return InvalidUsage;
-    }
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument"))) return InvalidUsage;
+    if (!checkArgCount(args, 2, i18nc("@info:shell", "No file or directory arguments"))) return InvalidUsage;
 
-    const int parsedArgsCount = args.count();
-    if (parsedArgsCount<2) {
-        emitErrorSeeHelp(i18nc("@info:shell", "No file or directory arguments"));
-        return InvalidUsage;
-    }
+    if (!getCommonOptions(parser)) return InvalidUsage;
+    mFlatMode = parser->isSet("flat");
 
     const QString collectionArg = args.first();
     mResolveJob = new CollectionResolveJob(collectionArg, this);
@@ -93,9 +88,6 @@ int AddCommand::initCommand(QCommandLineParser *parser)
 
         return InvalidUsage;
     }
-
-    mFlatMode = parser->isSet("flat");
-    mDryRun = parser->isSet("dryrun");
 
     const QString mimeTypeArg = parser->value("mime");
     if (!mimeTypeArg.isEmpty()) {			// MIME type is specified
@@ -119,6 +111,7 @@ int AddCommand::initCommand(QCommandLineParser *parser)
         mBasePath = QDir::currentPath();
     }
 
+    const int parsedArgsCount = args.count();
     for (int i = 1; i<parsedArgsCount; ++i) {		// process all file/dir arguments
         QString path = args.at(i);
         while (path.endsWith(QLatin1Char('/'))) {	// gives null collection name later
@@ -316,7 +309,7 @@ void AddCommand::processNextFile()
     file.reset();
     item.setPayloadFromData(file.readAll());
 
-    if (!mDryRun) {
+    if (!isDryRun()) {
         ItemCreateJob *job = new ItemCreateJob(item, parent);
         job->setProperty("fileName", fileName);
         connect(job, SIGNAL(result(KJob*)), this, SLOT(onItemCreated(KJob*)));
@@ -407,7 +400,7 @@ void AddCommand::onCollectionFetched(KJob *job)
             }
         }
 
-        if (!mDryRun) {
+        if (!isDryRun()) {
             CollectionCreateJob *createJob = new CollectionCreateJob(newCollection);
             createJob->setProperty("path", path);
 

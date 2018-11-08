@@ -54,7 +54,6 @@ private:
     Akonadi::Collection mDestinationCollection;
     Akonadi::Collection mSourceCollection;
     Akonadi::Collection::List mSubCollections;
-    bool mDryRun;
 
 private:
     void doNextSource();

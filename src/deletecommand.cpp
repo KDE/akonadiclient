@@ -42,10 +42,7 @@ DEFINE_COMMAND("delete", DeleteCommand, "Delete a collection or an item");
 DeleteCommand::DeleteCommand(QObject *parent)
     : AbstractCommand(parent),
       mDeleteJob(nullptr),
-      mResolveJob(nullptr),
-      mDryRun(false),
-      mIsCollection(false),
-      mIsItem(false)
+      mResolveJob(nullptr)
 {
 }
 
@@ -66,19 +63,9 @@ void DeleteCommand::setupCommandOptions(QCommandLineParser *parser)
 int DeleteCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (args.isEmpty()) {
-        emitErrorSeeHelp(i18nc("@info:shell", "Missing collection/item argument"));
-        return InvalidUsage;
-    }
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection/item argument"))) return InvalidUsage;
 
-    mIsItem = parser->isSet("item");
-    mIsCollection = parser->isSet("collection");
-    mDryRun = parser->isSet("dryrun");
-
-    if (mIsItem && mIsCollection) {
-        emit error(i18nc("@info:shell", "Cannot specify as both an item and collection"));
-        return InvalidUsage;
-    }
+    if (!getCommonOptions(parser)) return InvalidUsage;
 
     mEntityArg = args.first();
     mResolveJob = new CollectionResolveJob(mEntityArg, this);
@@ -101,7 +88,7 @@ void DeleteCommand::start()
 
     Q_ASSERT(mResolveJob != nullptr);
 
-    if (mIsItem) {
+    if (wantItem()) {
         fetchItems();
     } else {
         connect(mResolveJob, &KJob::result, this, &DeleteCommand::onBaseFetched);
@@ -115,7 +102,7 @@ void DeleteCommand::onBaseFetched(KJob *job)
 
     if (job->error() != 0) {
         if (job->error() == CollectionPathResolver::Unknown) {
-            if (!mIsCollection) {
+            if (!wantCollection()) {
                 fetchItems();
                 return;
             }
@@ -132,7 +119,7 @@ void DeleteCommand::onBaseFetched(KJob *job)
         return;
     }
 
-    if (!mDryRun) {
+    if (!isDryRun()) {
         mDeleteJob = new CollectionDeleteJob(mResolveJob->collection());
         connect(mDeleteJob, &KJob::result, this, &DeleteCommand::onCollectionDeleted);
     } else {
@@ -161,7 +148,7 @@ void DeleteCommand::fetchItems()
         return;
     }
 
-    if (!mDryRun) {
+    if (!isDryRun()) {
         ItemDeleteJob *deleteJob = new ItemDeleteJob(item, this);
         connect(deleteJob, &KJob::result, this, &DeleteCommand::onItemsDeleted);
     } else {

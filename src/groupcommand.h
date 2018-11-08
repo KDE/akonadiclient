@@ -57,7 +57,6 @@ private:
     QString mNameArg;
     QStringList mItemArgs;
     bool mBriefMode;
-    bool mDryRun;
     GroupCommand::Mode mOperationMode;
 
 private:

@@ -32,7 +32,6 @@ DEFINE_COMMAND("export", ExportCommand, "Export a collection to an XML file");
 
 ExportCommand::ExportCommand(QObject *parent)
     : AbstractCommand(parent),
-      mDryRun(false),
       mResolveJob(nullptr)
 {
 }
@@ -54,17 +53,11 @@ void ExportCommand::setupCommandOptions(QCommandLineParser *parser)
 int ExportCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (args.isEmpty()) {
-        emitErrorSeeHelp(i18nc("@info:shell", "No collection specified"));
-        return InvalidUsage;
-    }
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "No collection specified"))) return InvalidUsage;
+    if (!checkArgCount(args, 2, i18nc("@info:shell", "No export file specified"))) return InvalidUsage;
 
-    if (args.count()<2) {
-        emitErrorSeeHelp(i18nc("@info:shell", "No export file specified"));
-        return InvalidUsage;
-    }
+    if (!getCommonOptions(parser)) return InvalidUsage;
 
-    mDryRun = parser->isSet("dryrun");
     QString collectionArg = args.at(0);
     mFileArg = args.at(1);
 
@@ -91,7 +84,7 @@ void ExportCommand::onCollectionFetched(KJob *job)
         return;
     }
 
-    if (!mDryRun) {
+    if (!isDryRun()) {
         XmlWriteJob *writeJob = new XmlWriteJob(mResolveJob->collection(), mFileArg);
         connect(writeJob, &KJob::result, this, &ExportCommand::onWriteFinished);
     } else {

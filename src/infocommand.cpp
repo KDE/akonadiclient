@@ -68,17 +68,9 @@ void InfoCommand::setupCommandOptions(QCommandLineParser *parser)
 int InfoCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (args.isEmpty()) {
-        emitErrorSeeHelp(i18nc("@info:shell", "Missing collection/item argument"));
-        return InvalidUsage;
-    }
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection/item argument"))) return InvalidUsage;
 
-    mIsItem = parser->isSet("item");
-    mIsCollection = parser->isSet("collection");
-    if (mIsItem && mIsCollection) {
-        emit error(i18nc("@info:shell", "Cannot specify as both an item and collection"));
-        return InvalidUsage;
-    }
+    if (!getCommonOptions(parser)) return InvalidUsage;
 
     mEntityArg = args.first();
     mResolveJob = new CollectionResolveJob(mEntityArg, this);
@@ -100,8 +92,8 @@ void InfoCommand::start()
 {
     Q_ASSERT(mResolveJob != nullptr);
 
-    if (mIsItem) {                    // user forced as an item
-        fetchItems();                   // do this immediately
+    if (wantItem()) {					// user forced as an item
+        fetchItems();					// do this immediately
     } else {
         // User specified that the input is a collection, or
         // didn't specify at all what sort of entity it is.
@@ -118,8 +110,8 @@ void InfoCommand::onBaseFetched(KJob *job)
     if (job->error() != 0) {
         if (job->error() == CollectionPathResolver::Unknown) {
             // failed to resolve as collection
-            if (!mIsCollection) {             // not forced as a collection
-                fetchItems();                   // try it as an item
+            if (!wantCollection()) {			// not forced as a collection
+                fetchItems();				// try it as an item
                 return;
             }
         }

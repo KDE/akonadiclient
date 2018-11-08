@@ -43,7 +43,6 @@ GroupCommand::GroupCommand(QObject *parent)
     : AbstractCommand(parent),
       mGroupItem(nullptr),
       mBriefMode(false),
-      mDryRun(false),
       mOperationMode(ModeExpand)
 {
 }
@@ -71,10 +70,9 @@ void GroupCommand::setupCommandOptions(QCommandLineParser *parser)
 int GroupCommand::initCommand(QCommandLineParser *parser)
 {
     mItemArgs = parser->positionalArguments();
-    if (mItemArgs.isEmpty()) {				// all modes take GROUP argument
-        emitErrorSeeHelp(i18nc("@info:shell", "Missing group argument"));
-        return (InvalidUsage);
-    }
+    if (!checkArgCount(mItemArgs, 1, i18nc("@info:shell", "Missing group argument"))) return InvalidUsage;
+
+    if (!getCommonOptions(parser)) return InvalidUsage;
 
     int modeCount = 0;
     if (parser->isSet("expand")) {
@@ -139,7 +137,6 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
     }
 
     mBriefMode = parser->isSet("brief");		// brief/quiet output
-    mDryRun = parser->isSet("dryrun");			// dry run option
 
     mGroupArg = mItemArgs.takeFirst();			// contact group collection
 
@@ -154,7 +151,7 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
 void GroupCommand::start()
 {
     if (mOperationMode == ModeDelete || mOperationMode == ModeClean) {
-        if (!mDryRun) {                 // allow if not doing anything
+        if (!isDryRun()) {				// allow if not doing anything
             if (!allowDangerousOperation()) {
                 emit finished(RuntimeError);
             }
@@ -225,9 +222,9 @@ void GroupCommand::onItemsFetched(KJob *job)
         break;
     }
 
-    if (mOperationMode != ModeExpand) {       // need to write back?
-        if (status == NoError) {            // only if there were no errors
-            if (!mDryRun) {
+    if (mOperationMode != ModeExpand) {			// need to write back?
+        if (status == NoError) {			// only if there were no errors
+            if (!isDryRun()) {
                 mGroupItem->setPayload<KContacts::ContactGroup>(group);
                 Akonadi::ItemModifyJob *modifyJob = new Akonadi::ItemModifyJob(*mGroupItem);
                 modifyJob->exec();

@@ -62,7 +62,6 @@ private:
     QString mBasePath;
     QHash<QString, QString> mBasePaths;
     bool mFlatMode;
-    bool mDryRun;
     Akonadi::Collection mBaseCollection;
     QMimeType mMimeType;
 

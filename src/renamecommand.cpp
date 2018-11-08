@@ -34,7 +34,6 @@ DEFINE_COMMAND("rename", RenameCommand, "Rename a collection");
 
 RenameCommand::RenameCommand(QObject *parent)
     : AbstractCommand(parent),
-      mDryRun(false),
       mResolveJob(nullptr)
 {
 }
@@ -56,17 +55,11 @@ void RenameCommand::setupCommandOptions(QCommandLineParser *parser)
 int RenameCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (args.isEmpty()) {
-        emitErrorSeeHelp(i18nc("@info:shell", "No collection specified"));
-        return InvalidUsage;
-    }
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument"))) return InvalidUsage;
+    if (!checkArgCount(args, 2, i18nc("@info:shell", "New name not specified"))) return InvalidUsage;
 
-    if (args.count()<2) {
-        emitErrorSeeHelp(i18nc("@info:shell", "New collection name not specified"));
-        return InvalidUsage;
-    }
+    if (!getCommonOptions(parser)) return InvalidUsage;
 
-    mDryRun = parser->isSet("dryrun");
     QString oldCollectionNameArg = args.first();
     mNewCollectionNameArg = args.at(1);
 
@@ -99,7 +92,7 @@ void RenameCommand::onCollectionFetched(KJob *job)
 
     Q_ASSERT(job == mResolveJob && mResolveJob->collection().isValid());
 
-    if (!mDryRun) {
+    if (!isDryRun()) {
         Collection collection = mResolveJob->collection();
         collection.setName(mNewCollectionNameArg);
 

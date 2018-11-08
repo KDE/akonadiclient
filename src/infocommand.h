@@ -50,8 +50,6 @@ protected:
 
 private:
     CollectionResolveJob *mResolveJob;
-    bool mIsCollection;
-    bool mIsItem;
 
     QString mEntityArg;
     Akonadi::Collection *mInfoCollection;

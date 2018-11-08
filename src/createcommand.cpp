@@ -60,10 +60,9 @@ void CreateCommand::setupCommandOptions(QCommandLineParser *parser)
 int CreateCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (args.isEmpty()) {
-        emitErrorSeeHelp(i18nc("@info:shell", "Missing collection argument"));
-        return InvalidUsage;
-    }
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument"))) return InvalidUsage;
+
+    if (!getCommonOptions(parser)) return InvalidUsage;
 
     const QString collectionArg = args.first();
     if (parser->isSet("parent")) {
@@ -102,8 +101,6 @@ int CreateCommand::initCommand(QCommandLineParser *parser)
         return InvalidUsage;
     }
 
-    mDryRun = parser->isSet("dryrun");
-
     mResolveJob = new CollectionResolveJob(mParentCollection, this);
     if (!mResolveJob->hasUsableInput()) {
         emit error(i18nc("@info:shell", "Invalid parent collection '%1', %2", mParentCollection, mResolveJob->errorString()));
@@ -140,7 +137,7 @@ void CreateCommand::onTargetFetched(KJob *job)
     newCollection.setParentCollection(parentCollection);
     newCollection.setName(mNewCollectionName);
     newCollection.setContentMimeTypes(parentCollection.contentMimeTypes());
-    if (!mDryRun) {
+    if (!isDryRun()) {
         CollectionCreateJob *createJob = new CollectionCreateJob(newCollection);
         connect(createJob, &KJob::result, this, &CreateCommand::onCollectionCreated);
     } else {

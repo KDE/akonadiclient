@@ -63,18 +63,10 @@ void ImportCommand::setupCommandOptions(QCommandLineParser *parser)
 int ImportCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (args.isEmpty()) {
-        emitErrorSeeHelp(i18nc("@info:shell", "No parent collection specified"));
-        return InvalidUsage;
-    }
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "No parent collection specified"))) return InvalidUsage;
+    if (!checkArgCount(args, 2, i18nc("@info:shell", "No import file specified"))) return InvalidUsage;
 
-    if (args.count()<2) {
-        emitErrorSeeHelp(i18nc("@info:shell", "No import file specified"));
-        return InvalidUsage;
-    }
-
-    mDryRun = parser->isSet("dryrun");
-    QString fileArg = args.at(1);
+    if (!getCommonOptions(parser)) return InvalidUsage;
 
     mResolveJob = new CollectionResolveJob(args.first(), this);
     if (!mResolveJob->hasUsableInput()) {
@@ -82,6 +74,7 @@ int ImportCommand::initCommand(QCommandLineParser *parser)
         return InvalidUsage;
     }
 
+    const QString fileArg = args.at(1);
     mDocument = new XmlDocument(fileArg);
     if (!mDocument->isValid()) {
         emit error(i18nc("@info:shell", "Invalid XML file, %1", mDocument->lastError()));
@@ -140,7 +133,7 @@ void ImportCommand::onChildrenFetched(KJob *job)
     } else {
         ErrorReporter::progress(i18nc("@info:shell", "Creating collection '%1'", collection.name()));
         collection.setParentCollection(parent);
-        if (!mDryRun) {
+        if (!isDryRun()) {
             CollectionCreateJob *createJob = new CollectionCreateJob(collection, this);
             createJob->setProperty("rid", rid);
             connect(createJob, &KJob::result, this, &ImportCommand::onCollectionCreated);
@@ -166,14 +159,14 @@ void ImportCommand::processNextCollection()
         parent = mParentCollection;
     } else {
         parent = mCollectionMap.value(collection.parentCollection().remoteId());
-        if (!parent.isValid() && !mDryRun) {
+        if (!parent.isValid() && !isDryRun()) {
             ErrorReporter::warning(i18nc("@info:shell", "Invalid parent for collection with remote ID '%1'",
                                          collection.remoteId()));
             QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
         }
     }
 
-    if (!mDryRun) {
+    if (!isDryRun()) {
         CollectionFetchJob *fetchJob = new CollectionFetchJob(parent, CollectionFetchJob::FirstLevel, this);
         fetchJob->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
         fetchJob->setProperty("rid", collection.remoteId());
@@ -192,7 +185,7 @@ void ImportCommand::onCollectionFetched(KJob *job)
         ErrorReporter::warning(i18nc("@info:shell", "Unable to fetch collection with remote ID '%1', %2",
                                      collection.remoteId(), job->errorString()));
 
-        if (!mDryRun) {
+        if (!isDryRun()) {
             CollectionCreateJob *createJob = new CollectionCreateJob(collection, this);
             createJob->setProperty("rid", collection.remoteId());
             connect(createJob, &KJob::result, this, &ImportCommand::onCollectionCreated);

@@ -50,7 +50,6 @@ protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
 
 private:
-    bool mDryRun;
     CollectionResolveJob *mResolveJob;
     Akonadi::Collection mParentCollection;
     Akonadi::Collection mCurrentCollection;
