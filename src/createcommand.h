@@ -21,7 +21,6 @@
 
 #include "abstractcommand.h"
 
-class CollectionResolveJob;
 class KJob;
 
 class CreateCommand : public AbstractCommand
@@ -42,7 +41,6 @@ protected:
     int initCommand(QCommandLineParser *parser) override;
 
 private:
-    CollectionResolveJob *mResolveJob;
     QString mNewCollectionName;
     QString mParentCollection;
 

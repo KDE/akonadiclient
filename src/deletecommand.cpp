@@ -41,14 +41,8 @@ DEFINE_COMMAND("delete", DeleteCommand, "Delete a collection or an item");
 
 DeleteCommand::DeleteCommand(QObject *parent)
     : AbstractCommand(parent),
-      mDeleteJob(nullptr),
-      mResolveJob(nullptr)
+      mDeleteJob(nullptr)
 {
-}
-
-DeleteCommand::~DeleteCommand()
-{
-    delete mResolveJob;
 }
 
 void DeleteCommand::setupCommandOptions(QCommandLineParser *parser)
@@ -68,14 +62,7 @@ int DeleteCommand::initCommand(QCommandLineParser *parser)
     if (!getCommonOptions(parser)) return InvalidUsage;
 
     mEntityArg = args.first();
-    mResolveJob = new CollectionResolveJob(mEntityArg, this);
-    // TODO: does this work for deleting ITEMs?
-    if (!mResolveJob->hasUsableInput()) {
-        emit error(mResolveJob->errorString());
-        delete mResolveJob;
-        mResolveJob = nullptr;
-        return InvalidUsage;
-    }
+    if (!getResolveJob(mEntityArg)) return InvalidUsage;
 
     return NoError;
 }
@@ -86,19 +73,18 @@ void DeleteCommand::start()
         emit finished(RuntimeError);
     }
 
-    Q_ASSERT(mResolveJob != nullptr);
-
     if (wantItem()) {
         fetchItems();
     } else {
-        connect(mResolveJob, &KJob::result, this, &DeleteCommand::onBaseFetched);
-        mResolveJob->start();
+        connect(resolveJob(), &KJob::result, this, &DeleteCommand::onBaseFetched);
+        resolveJob()->start();
     }
 }
 
 void DeleteCommand::onBaseFetched(KJob *job)
 {
-    Q_ASSERT(job == mResolveJob);
+    CollectionResolveJob *res = resolveJob();
+    Q_ASSERT(job == res);
 
     if (job->error() != 0) {
         if (job->error() == CollectionPathResolver::Unknown) {
@@ -113,14 +99,14 @@ void DeleteCommand::onBaseFetched(KJob *job)
         return;
     }
 
-    if (mResolveJob->collection() == Collection::root()) {
+    if (res->collection() == Collection::root()) {
         emit error(i18nc("@info:shell", "Cannot delete the root collection"));
         emit finished(RuntimeError);
         return;
     }
 
     if (!isDryRun()) {
-        mDeleteJob = new CollectionDeleteJob(mResolveJob->collection());
+        mDeleteJob = new CollectionDeleteJob(res->collection(), this);
         connect(mDeleteJob, &KJob::result, this, &DeleteCommand::onCollectionDeleted);
     } else {
         onCollectionDeleted(job);

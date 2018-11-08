@@ -48,15 +48,8 @@ DEFINE_COMMAND("dump", DumpCommand, "Dump a collection to a directory structure"
 
 
 DumpCommand::DumpCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mResolveJob(NULL)
+    : AbstractCommand(parent)
 {
-}
-
-
-DumpCommand::~DumpCommand()
-{
-    delete mResolveJob;
 }
 
 
@@ -84,12 +77,7 @@ int DumpCommand::initCommand(QCommandLineParser *parser)
     mAkonadiCategories = parser->isSet("akonadi-categories");
 
     const QString collectionArg = args.at(0);
-    mResolveJob = new CollectionResolveJob(collectionArg, this);
-    if (!mResolveJob->hasUsableInput())
-    {
-        emit error(mResolveJob->errorString());
-        return (InvalidUsage);
-    }
+    if (!getResolveJob(collectionArg)) return (InvalidUsage);
 
     mDirectoryArg = args.at(1);
     QDir dir(mDirectoryArg);
@@ -113,8 +101,8 @@ int DumpCommand::initCommand(QCommandLineParser *parser)
 
 void DumpCommand::start()
 {
-    connect(mResolveJob, SIGNAL(result(KJob *)), SLOT(onCollectionFetched(KJob *)));
-    mResolveJob->start();
+    connect(resolveJob(), SIGNAL(result(KJob *)), SLOT(onCollectionFetched(KJob *)));
+    resolveJob()->start();
 }
 
 
@@ -127,19 +115,20 @@ void DumpCommand::onCollectionFetched(KJob *job)
         return;
     }
 
-    Q_ASSERT(qobject_cast<CollectionResolveJob *>(job)==mResolveJob);
+    CollectionResolveJob *res = resolveJob();
+    Q_ASSERT(job==res);
 
     // only attempt item listing if collection has non-collection content MIME types
-    QStringList contentMimeTypes = mResolveJob->collection().contentMimeTypes();
+    QStringList contentMimeTypes = res->collection().contentMimeTypes();
     contentMimeTypes.removeAll(Collection::mimeType());
     if (contentMimeTypes.isEmpty())
     {
         ErrorReporter::fatal(i18nc("@info:shell", "Collection %1 cannot contain items",
-                                   mResolveJob->formattedCollectionName()));
+                                   res->formattedCollectionName()));
         return;
     }
 
-    RecursiveItemFetchJob *fetchJob = new RecursiveItemFetchJob(mResolveJob->collection(), QStringList(), this);
+    RecursiveItemFetchJob *fetchJob = new RecursiveItemFetchJob(res->collection(), QStringList(), this);
     fetchJob->fetchScope().setFetchModificationTime(true);
     fetchJob->fetchScope().fetchAllAttributes(false);
     fetchJob->fetchScope().fetchFullPayload(true);
@@ -166,7 +155,7 @@ void DumpCommand::onItemsFetched(KJob *job)
     if (items.isEmpty())
     {
         ErrorReporter::fatal(i18nc("@info:shell", "Collection %1 contains no items",
-                                   mResolveJob->formattedCollectionName()));
+                                   resolveJob()->formattedCollectionName()));
         emit finished(RuntimeError);
     }
 

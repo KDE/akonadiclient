@@ -27,16 +27,13 @@
 
 #include "abstractcommand.h"
 
-class CollectionResolveJob;
-
-
 class DumpCommand : public AbstractCommand
 {
     Q_OBJECT
 
 public:
     explicit DumpCommand(QObject *parent = nullptr);
-    virtual ~DumpCommand();
+    virtual ~DumpCommand() = default;
 
     QString name() const override;
 
@@ -51,7 +48,6 @@ private:
     bool mMaildir;
     bool mAkonadiCategories;
 
-    CollectionResolveJob *mResolveJob;
     QString mDirectoryArg;
     Akonadi::Item::List mItemList;
     Akonadi::Tag::List mTagList;

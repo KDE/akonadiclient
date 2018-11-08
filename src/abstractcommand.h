@@ -23,6 +23,9 @@
 #include <QCommandLineParser>
 
 
+class CollectionResolveJob;
+
+
 class AbstractCommand : public QObject
 {
     Q_OBJECT
@@ -67,6 +70,9 @@ protected:
     bool wantCollection() const			{ return (mWantCollection); }
     bool wantItem() const			{ return (mWantItem); }
 
+    bool getResolveJob(const QString &arg);
+    CollectionResolveJob *resolveJob() const	{ Q_ASSERT(mResolveJob!=nullptr); return (mResolveJob); }
+
 private:
     bool mDryRun;
     bool mWantCollection;
@@ -74,6 +80,8 @@ private:
 
     bool mSetDryRun;
     bool mSetCollectionItem;
+
+    CollectionResolveJob *mResolveJob;
 };
 
 #endif // ABSTRACTCOMMAND_H

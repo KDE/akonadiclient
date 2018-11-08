@@ -22,7 +22,6 @@
 
 #include "abstractcommand.h"
 
-class CollectionResolveJob;
 class KJob;
 
 class RenameCommand : public AbstractCommand
@@ -31,7 +30,7 @@ class RenameCommand : public AbstractCommand
 
 public:
     explicit RenameCommand(QObject *parent = nullptr);
-    virtual ~RenameCommand();
+    virtual ~RenameCommand() = default;
 
     QString name() const override;
 
@@ -43,7 +42,6 @@ protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
 
 private:
-    CollectionResolveJob *mResolveJob;
     QString mNewCollectionNameArg;
 
 private Q_SLOTS:

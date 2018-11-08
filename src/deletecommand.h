@@ -29,7 +29,6 @@ class Item;
 class CollectionDeleteJob;
 };
 
-class CollectionResolveJob;
 class KJob;
 
 class DeleteCommand :  public AbstractCommand
@@ -38,7 +37,7 @@ class DeleteCommand :  public AbstractCommand
 
 public:
     explicit DeleteCommand(QObject *parent = nullptr);
-    virtual ~DeleteCommand();
+    virtual ~DeleteCommand() = default;
 
     QString name() const override;
 
@@ -51,7 +50,6 @@ protected:
 
 private:
     Akonadi::CollectionDeleteJob *mDeleteJob;
-    CollectionResolveJob *mResolveJob;
     QString mEntityArg;
 
 private:

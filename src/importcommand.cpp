@@ -19,7 +19,6 @@
 
 #include "importcommand.h"
 
-#include <AkonadiCore/collection.h>
 #include <AkonadiXml/XmlWriteJob>
 #include <AkonadiXml/XmlDocument>
 #include <AkonadiCore/collectioncreatejob.h>
@@ -33,6 +32,7 @@
 
 #include "commandfactory.h"
 #include "errorreporter.h"
+#include "collectionresolvejob.h"
 
 using namespace Akonadi;
 
@@ -40,14 +40,12 @@ DEFINE_COMMAND("import", ImportCommand, "Import an XML file");
 
 ImportCommand::ImportCommand(QObject *parent)
     : AbstractCommand(parent),
-      mResolveJob(nullptr),
       mDocument(nullptr)
 {
 }
 
 ImportCommand::~ImportCommand()
 {
-    delete mResolveJob;
     delete mDocument;
 }
 
@@ -68,11 +66,7 @@ int ImportCommand::initCommand(QCommandLineParser *parser)
 
     if (!getCommonOptions(parser)) return InvalidUsage;
 
-    mResolveJob = new CollectionResolveJob(args.first(), this);
-    if (!mResolveJob->hasUsableInput()) {
-        emit error(i18nc("@info:shell", "Invalid collection argument specified"));
-        return InvalidUsage;
-    }
+    if (!getResolveJob(args.first())) return InvalidUsage;
 
     const QString fileArg = args.at(1);
     mDocument = new XmlDocument(fileArg);
@@ -88,8 +82,8 @@ int ImportCommand::initCommand(QCommandLineParser *parser)
 
 void ImportCommand::start()
 {
-    connect(mResolveJob, &KJob::result, this, &ImportCommand::onParentFetched);
-    mResolveJob->start();
+    connect(resolveJob(), &KJob::result, this, &ImportCommand::onParentFetched);
+    resolveJob()->start();
 }
 
 void ImportCommand::onParentFetched(KJob *job)
@@ -99,7 +93,7 @@ void ImportCommand::onParentFetched(KJob *job)
         emit finished(RuntimeError);
     }
 
-    mParentCollection = mResolveJob->collection();
+    mParentCollection = resolveJob()->collection();
     QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
 }
 

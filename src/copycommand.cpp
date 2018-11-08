@@ -40,20 +40,17 @@ using namespace Akonadi;
 DEFINE_COMMAND("copy", CopyCommand, "Copy collections or items into a new collection");
 
 CopyCommand::CopyCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mResolveJob(nullptr)
+    : AbstractCommand(parent)
 {
     mMoving = false;
 }
 
 void CopyCommand::start()
 {
-    Q_ASSERT(mResolveJob != nullptr);
-
     mAnyErrors = false;                   // not yet, anyway
 
-    connect(mResolveJob, &KJob::result, this, &CopyCommand::onTargetFetched);
-    mResolveJob->start();
+    connect(resolveJob(), &KJob::result, this, &CopyCommand::onTargetFetched);
+    resolveJob()->start();
 }
 
 void CopyCommand::setupCommandOptions(QCommandLineParser *parser)
@@ -74,17 +71,9 @@ int CopyCommand::initCommand(QCommandLineParser *parser)
 
     mDestinationArg = mSourceArgs.takeLast();		// extract the destination
     Q_ASSERT(!mSourceArgs.isEmpty());			// must have some left
+    if (!getResolveJob(mDestinationArg)) return InvalidUsage;
 
-    mResolveJob = new CollectionResolveJob(mDestinationArg, this);
-    if (!mResolveJob->hasUsableInput()) {
-        emit error(i18nc("@info:shell", "Invalid destination collection '%1', %2",
-                         mDestinationArg, mResolveJob->errorString()));
-        delete mResolveJob;
-        mResolveJob = nullptr;
-        return (InvalidUsage);
-    }
-
-    return (NoError);
+    return NoError;
 }
 
 void CopyCommand::onTargetFetched(KJob *job)
@@ -96,8 +85,9 @@ void CopyCommand::onTargetFetched(KJob *job)
         return;
     }
 
-    Q_ASSERT(job == mResolveJob);
-    mDestinationCollection = mResolveJob->collection();
+    CollectionResolveJob *res = resolveJob();
+    Q_ASSERT(job == res);
+    mDestinationCollection = res->collection();
     Q_ASSERT(mDestinationCollection.isValid());
 
     doNextSource();
@@ -126,7 +116,6 @@ void CopyCommand::processNextSource()
 
 void CopyCommand::onSourceResolved(KJob *job)
 {
-    Q_ASSERT(mResolveJob != nullptr);
     Q_ASSERT(mDestinationCollection.isValid());
 
     const QString sourceArg = job->property("arg").toString();
@@ -167,11 +156,11 @@ void CopyCommand::onSourceResolved(KJob *job)
         if (mMoving) {
             ErrorReporter::progress(i18n("Moving contents of %1 -> %2",
                                          sourceJob->formattedCollectionName(),
-                                         mResolveJob->formattedCollectionName()));
+                                         resolveJob()->formattedCollectionName()));
         } else {
             ErrorReporter::progress(i18n("Copying contents of %1 -> %2",
                                          sourceJob->formattedCollectionName(),
-                                         mResolveJob->formattedCollectionName()));
+                                         resolveJob()->formattedCollectionName()));
         }
 
         mSourceCollection = sourceJob->collection();
@@ -190,14 +179,14 @@ void CopyCommand::onSourceResolved(KJob *job)
         if (mMoving) {
             ErrorReporter::progress(i18n("Moving collection %1 -> %2",
                                          sourceJob->formattedCollectionName(),
-                                         mResolveJob->formattedCollectionName()));
+                                         resolveJob()->formattedCollectionName()));
             if (!isDryRun()) {
                 copyMovejob = new CollectionMoveJob(sourceCollection, mDestinationCollection, this);
             }
         } else {
             ErrorReporter::progress(i18n("Copying collection %1 -> %2",
                                          sourceJob->formattedCollectionName(),
-                                         mResolveJob->formattedCollectionName()));
+                                         resolveJob()->formattedCollectionName()));
 
             if (!isDryRun()) {
                 copyMovejob = new CollectionCopyJob(sourceCollection, mDestinationCollection, this);

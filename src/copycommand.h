@@ -23,7 +23,6 @@
 
 #include <AkonadiCore/collection.h>
 
-class CollectionResolveJob;
 class KJob;
 
 class CopyCommand : public AbstractCommand
@@ -47,7 +46,6 @@ protected:
     virtual int initCommand(QCommandLineParser *parser) override;
 
 private:
-    CollectionResolveJob *mResolveJob;
     QString mDestinationArg;
     QStringList mSourceArgs;
     bool mAnyErrors;

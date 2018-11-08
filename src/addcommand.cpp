@@ -45,17 +45,14 @@ using namespace Akonadi;
 DEFINE_COMMAND("add", AddCommand, "Add items to a collection");
 
 AddCommand::AddCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mResolveJob(nullptr)
+    : AbstractCommand(parent)
 {
 }
 
 void AddCommand::start()
 {
-    Q_ASSERT(mResolveJob != nullptr);
-
-    connect(mResolveJob, &KJob::result, this, &AddCommand::onTargetFetched);
-    mResolveJob->start();
+    connect(resolveJob(), &KJob::result, this, &AddCommand::onTargetFetched);
+    resolveJob()->start();
 }
 
 void AddCommand::setupCommandOptions(QCommandLineParser *parser)
@@ -80,14 +77,7 @@ int AddCommand::initCommand(QCommandLineParser *parser)
     mFlatMode = parser->isSet("flat");
 
     const QString collectionArg = args.first();
-    mResolveJob = new CollectionResolveJob(collectionArg, this);
-    if (!mResolveJob->hasUsableInput()) {
-        emit error(i18nc("@info:shell", "Invalid collection argument '%1', %2", collectionArg, mResolveJob->errorString()));
-        delete mResolveJob;
-        mResolveJob = nullptr;
-
-        return InvalidUsage;
-    }
+    if (!getResolveJob(collectionArg)) return InvalidUsage;
 
     const QString mimeTypeArg = parser->value("mime");
     if (!mimeTypeArg.isEmpty()) {			// MIME type is specified
@@ -326,9 +316,10 @@ void AddCommand::onTargetFetched(KJob *job)
         return;
     }
 
-    Q_ASSERT(job == mResolveJob && mResolveJob->collection().isValid());
+    CollectionResolveJob *res = resolveJob();
+    Q_ASSERT(job == res && res->collection().isValid());
 
-    mBaseCollection = mResolveJob->collection();
+    mBaseCollection = res->collection();
     mCollectionsByPath[ mBasePath ] = mBaseCollection;
     mBasePaths[ mBasePath ] = mBasePath;
 

@@ -28,7 +28,6 @@
 #include <QSet>
 #include <QMimeType>
 
-class CollectionResolveJob;
 class KJob;
 
 class AddCommand : public AbstractCommand
@@ -54,8 +53,6 @@ protected:
     int initCommand(QCommandLineParser *parser) override;
 
 private:
-    CollectionResolveJob *mResolveJob;
-
     QSet<QString> mFiles;
     QMap<QString, AddDirectoryMode> mDirectories;
     QHash<QString, Akonadi::Collection> mCollectionsByPath;

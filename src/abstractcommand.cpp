@@ -22,6 +22,7 @@
 
 #include <QCommandLineParser>
 
+#include "collectionresolvejob.h"
 #include "errorreporter.h"
 #include "commandshell.h"
 
@@ -36,7 +37,8 @@ AbstractCommand::AbstractCommand(QObject *parent)
       mWantCollection(false),
       mWantItem(false),
       mSetDryRun(false),
-      mSetCollectionItem(false)
+      mSetCollectionItem(false),
+      mResolveJob(nullptr)
 {
 }
 
@@ -124,6 +126,21 @@ bool AbstractCommand::getCommonOptions(QCommandLineParser *parser)
     }
 
     return (true);
+}
+
+bool AbstractCommand::getResolveJob(const QString &arg)
+{
+    mResolveJob = new CollectionResolveJob(arg, this);
+    // TODO: does this work for ITEMs specified as an Akonadi URL?
+    //       "akonadiclient info 10175" works,
+    //       but "akonadiclient info 'akonadi://?item=10175'" doesn't
+
+    if (mResolveJob->hasUsableInput()) return (true);
+
+    error(i18nc("@info:shell", "Invalid collection/item argument '%1', %2", arg, mResolveJob->errorString()));
+    delete mResolveJob;
+    mResolveJob = nullptr;
+    return (false);
 }
 
 bool AbstractCommand::checkArgCount(const QStringList &args, int min, const QString &errorText)

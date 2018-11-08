@@ -28,7 +28,6 @@ class Item;
 class CollectionStatistics;
 };
 
-class CollectionResolveJob;
 class KJob;
 
 class InfoCommand : public AbstractCommand
@@ -49,8 +48,6 @@ protected:
     int initCommand(QCommandLineParser *parser) override;
 
 private:
-    CollectionResolveJob *mResolveJob;
-
     QString mEntityArg;
     Akonadi::Collection *mInfoCollection;
     Akonadi::Item *mInfoItem;

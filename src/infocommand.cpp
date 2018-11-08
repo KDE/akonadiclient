@@ -43,7 +43,6 @@ DEFINE_COMMAND("info", InfoCommand, "Show full information for a collection or i
 
 InfoCommand::InfoCommand(QObject *parent)
     : AbstractCommand(parent),
-      mResolveJob(nullptr),
       mInfoCollection(nullptr),
       mInfoItem(nullptr),
       mInfoStatistics(nullptr)
@@ -73,39 +72,29 @@ int InfoCommand::initCommand(QCommandLineParser *parser)
     if (!getCommonOptions(parser)) return InvalidUsage;
 
     mEntityArg = args.first();
-    mResolveJob = new CollectionResolveJob(mEntityArg, this);
-    // TODO: does this work for ITEMs specified as an Akonadi URL?
-    //       "akonadiclient info 10175" works,
-    //       but "akonadiclient info 'akonadi://?item=10175'" doesn't
-
-    if (!mResolveJob->hasUsableInput()) {
-        emit error(mResolveJob->errorString());
-        delete mResolveJob;
-        mResolveJob = nullptr;
-        return InvalidUsage;
-    }
+    if (!getResolveJob(mEntityArg)) return InvalidUsage;
 
     return NoError;
 }
 
 void InfoCommand::start()
 {
-    Q_ASSERT(mResolveJob != nullptr);
-
     if (wantItem()) {					// user forced as an item
         fetchItems();					// do this immediately
     } else {
         // User specified that the input is a collection, or
         // didn't specify at all what sort of entity it is.
         // First try to resolve it as a collection.
-        connect(mResolveJob, &KJob::result, this, &InfoCommand::onBaseFetched);
-        mResolveJob->start();
+        CollectionResolveJob *res = resolveJob();
+        connect(res, &KJob::result, this, &InfoCommand::onBaseFetched);
+        res->start();
     }
 }
 
 void InfoCommand::onBaseFetched(KJob *job)
 {
-    Q_ASSERT(job == mResolveJob);
+    CollectionResolveJob *res = resolveJob();
+    Q_ASSERT(job == res);
 
     if (job->error() != 0) {
         if (job->error() == CollectionPathResolver::Unknown) {
@@ -121,7 +110,7 @@ void InfoCommand::onBaseFetched(KJob *job)
         return;
     }
 
-    if (mResolveJob->collection() == Collection::root()) {
+    if (res->collection() == Collection::root()) {
         emit error(i18nc("@info:shell", "No information available for collection root"));
         emit finished(RuntimeError);
         return;
@@ -132,9 +121,8 @@ void InfoCommand::onBaseFetched(KJob *job)
 
 void InfoCommand::fetchStatistics()
 {
-    Q_ASSERT(mResolveJob != nullptr && mResolveJob->collection().isValid());
-
-    CollectionStatisticsJob *job = new CollectionStatisticsJob(mResolveJob->collection(), this);
+    Q_ASSERT(resolveJob()->collection().isValid());
+    CollectionStatisticsJob *job = new CollectionStatisticsJob(resolveJob()->collection(), this);
     connect(job, &KJob::result, this, &InfoCommand::onStatisticsFetched);
 }
 
@@ -150,7 +138,7 @@ void InfoCommand::onStatisticsFetched(KJob *job)
     Q_ASSERT(statsJob != nullptr);
     mInfoStatistics = new CollectionStatistics(statsJob->statistics());
 
-    mInfoCollection = new Collection(mResolveJob->collection());
+    mInfoCollection = new Collection(resolveJob()->collection());
     fetchParentPath(mInfoCollection->parentCollection());
 }
 

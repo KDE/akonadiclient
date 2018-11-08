@@ -22,7 +22,6 @@
 
 #include "abstractcommand.h"
 
-class CollectionResolveJob;
 class KJob;
 
 class ExportCommand : public AbstractCommand
@@ -31,7 +30,7 @@ class ExportCommand : public AbstractCommand
 
 public:
     explicit ExportCommand(QObject *parent = nullptr);
-    virtual ~ExportCommand();
+    virtual ~ExportCommand() = default;
 
     QString name() const override;
 
@@ -43,7 +42,6 @@ protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
 
 private:
-    CollectionResolveJob *mResolveJob;
     QString mFileArg;
 
 private Q_SLOTS:

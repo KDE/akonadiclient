@@ -21,16 +21,17 @@
 #define IMPORTCOMMAND_H
 
 #include "abstractcommand.h"
-#include "collectionresolvejob.h"
+
+#include <AkonadiCore/collection.h>
+#include <AkonadiCore/item.h>
 
 namespace Akonadi
 {
 class XmlDocument;
-class Collection;
-class Item;
 };
 
 class QFile;
+class KJob;
 
 class ImportCommand : public AbstractCommand
 {
@@ -50,7 +51,6 @@ protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
 
 private:
-    CollectionResolveJob *mResolveJob;
     Akonadi::Collection mParentCollection;
     Akonadi::Collection mCurrentCollection;
     QVector<Akonadi::Item> mItemQueue;

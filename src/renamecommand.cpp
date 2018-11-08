@@ -33,14 +33,8 @@ using namespace Akonadi;
 DEFINE_COMMAND("rename", RenameCommand, "Rename a collection");
 
 RenameCommand::RenameCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mResolveJob(nullptr)
+    : AbstractCommand(parent)
 {
-}
-
-RenameCommand::~RenameCommand()
-{
-    delete mResolveJob;
 }
 
 void RenameCommand::setupCommandOptions(QCommandLineParser *parser)
@@ -63,23 +57,15 @@ int RenameCommand::initCommand(QCommandLineParser *parser)
     QString oldCollectionNameArg = args.first();
     mNewCollectionNameArg = args.at(1);
 
-    mResolveJob = new CollectionResolveJob(oldCollectionNameArg, this);
-    if (!mResolveJob->hasUsableInput()) {
-        emit error(i18nc("@info:shell", "Invalid collection argument '%1', '%2'",
-                         oldCollectionNameArg, mResolveJob->errorString()));
-        delete mResolveJob;
-        mResolveJob = nullptr;
-        return InvalidUsage;
-    }
+    if (!getResolveJob(oldCollectionNameArg)) return InvalidUsage;
 
     return NoError;
 }
 
 void RenameCommand::start()
 {
-    Q_ASSERT(mResolveJob != nullptr);
-    connect(mResolveJob, &KJob::result, this, &RenameCommand::onCollectionFetched);
-    mResolveJob->start();
+    connect(resolveJob(), &KJob::result, this, &RenameCommand::onCollectionFetched);
+    resolveJob()->start();
 }
 
 void RenameCommand::onCollectionFetched(KJob *job)
@@ -90,10 +76,11 @@ void RenameCommand::onCollectionFetched(KJob *job)
         return;
     }
 
-    Q_ASSERT(job == mResolveJob && mResolveJob->collection().isValid());
+    CollectionResolveJob *res = resolveJob();
+    Q_ASSERT(job == res && res->collection().isValid());
 
     if (!isDryRun()) {
-        Collection collection = mResolveJob->collection();
+        Collection collection = res->collection();
         collection.setName(mNewCollectionNameArg);
 
         CollectionModifyJob *modifyJob = new CollectionModifyJob(collection);
@@ -109,7 +96,7 @@ void RenameCommand::onCollectionModified(KJob *job)
         emit error(job->errorString());
         emit finished(RuntimeError);
     } else {
-        std::cout << i18nc("@info:shell", "Collection renamed successfully").toLocal8Bit().data() << std::endl;
+        std::cout << qPrintable(i18nc("@info:shell", "Collection renamed successfully")) << std::endl;
         emit finished(NoError);
     }
 }

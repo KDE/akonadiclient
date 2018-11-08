@@ -40,8 +40,7 @@ using namespace Akonadi;
 DEFINE_COMMAND("list", ListCommand, "List sub-collections and/or items in a specified collection");
 
 ListCommand::ListCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mResolveJob(nullptr)
+    : AbstractCommand(parent)
 {
 }
 
@@ -68,25 +67,15 @@ int ListCommand::initCommand(QCommandLineParser *parser)
     mListDetails = parser->isSet("details");		// listing option specified
 
     const QString collectionArg = args.first();
-    mResolveJob = new CollectionResolveJob(collectionArg, this);
-
-    if (!mResolveJob->hasUsableInput()) {
-        emit error(mResolveJob->errorString());
-        delete mResolveJob;
-        mResolveJob = nullptr;
-
-        return InvalidUsage;
-    }
+    if (!getResolveJob(collectionArg)) return InvalidUsage;
 
     return NoError;
 }
 
 void ListCommand::start()
 {
-    Q_ASSERT(mResolveJob != nullptr);
-
-    connect(mResolveJob, SIGNAL(result(KJob*)), this, SLOT(onBaseFetched(KJob*)));
-    mResolveJob->start();
+    connect(resolveJob(), SIGNAL(result(KJob*)), this, SLOT(onBaseFetched(KJob*)));
+    resolveJob()->start();
 }
 
 static void writeColumn(const QString &data, int width = 0)
@@ -107,7 +96,7 @@ void ListCommand::onBaseFetched(KJob *job)
         return;
     }
 
-    Q_ASSERT(job == mResolveJob);
+    Q_ASSERT(job == resolveJob());
 
     if (mListCollections) {
         fetchCollections();
@@ -118,9 +107,10 @@ void ListCommand::onBaseFetched(KJob *job)
 
 void ListCommand::fetchCollections()
 {
-    Q_ASSERT(mResolveJob != nullptr  && mResolveJob->collection().isValid());
+    CollectionResolveJob *res = resolveJob();
+    Q_ASSERT(res->collection().isValid());
 
-    CollectionFetchJob *job = new CollectionFetchJob(mResolveJob->collection(), CollectionFetchJob::FirstLevel, this);
+    CollectionFetchJob *job = new CollectionFetchJob(res->collection(), CollectionFetchJob::FirstLevel, this);
     job->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
     connect(job, &KJob::result, this, &ListCommand::onCollectionsFetched);
 }
@@ -139,19 +129,19 @@ void ListCommand::onCollectionsFetched(KJob *job)
     Collection::List collections = fetchJob->collections();
     if (collections.isEmpty()) {
         if (mListCollections) {                  // message only if collections requested
-            std::cout << i18nc("@info:shell",
-                               "Collection %1 has no sub-collections",
-                               mResolveJob->formattedCollectionName()).toLocal8Bit().constData() << std::endl;
+            std::cout << qPrintable(i18nc("@info:shell",
+                                          "Collection %1 has no sub-collections",
+                                          resolveJob()->formattedCollectionName())) << std::endl;
         }
     } else {
         // This works because Akonadi::Entity implements operator<
         // which compares item IDs numerically
         qSort(collections);
 
-        std::cout << i18nc("@info:shell output section header 1=count, 2=collection",
-                           "Collection %2 has %1 sub-collections:",
-                           collections.count(),
-                           mResolveJob->formattedCollectionName()).toLocal8Bit().constData() << std::endl;
+        std::cout << qPrintable(i18nc("@info:shell output section header 1=count, 2=collection",
+                                      "Collection %2 has %1 sub-collections:",
+                                      collections.count(),
+                                      resolveJob()->formattedCollectionName())) << std::endl;
         if (mListDetails) {
             std::cout << "  ";
             writeColumn(i18nc("@info:shell column header", "ID"), 8);
@@ -165,7 +155,7 @@ void ListCommand::onCollectionsFetched(KJob *job)
                 writeColumn(collection.id(), 8);
                 writeColumn(collection.name());
             } else {
-                std::cout << collection.name().toLocal8Bit().constData();
+                std::cout << qPrintable(collection.name());
             }
             std::cout << std::endl;
         }
@@ -180,21 +170,22 @@ void ListCommand::onCollectionsFetched(KJob *job)
 
 void ListCommand::fetchItems()
 {
-    Q_ASSERT(mResolveJob != nullptr  && mResolveJob->collection().isValid());
+    Collection coll = resolveJob()->collection();
+    Q_ASSERT(coll.isValid());
 
     // only attempt item listing if collection has non-collection content MIME types
-    QStringList contentMimeTypes = mResolveJob->collection().contentMimeTypes();
+    QStringList contentMimeTypes = coll.contentMimeTypes();
     contentMimeTypes.removeAll(Collection::mimeType());
     if (!contentMimeTypes.isEmpty()) {
-        ItemFetchJob *job = new ItemFetchJob(mResolveJob->collection(), this);
+        ItemFetchJob *job = new ItemFetchJob(coll, this);
         job->fetchScope().setFetchModificationTime(true);
         job->fetchScope().fetchAllAttributes(false);
         job->fetchScope().fetchFullPayload(false);
         connect(job, &KJob::result, this, &ListCommand::onItemsFetched);
     } else {
-        std::cout << i18nc("@info:shell",
-                           "Collection %1 cannot contain items",
-                           mResolveJob->formattedCollectionName()).toLocal8Bit().constData() << std::endl;
+        std::cout << qPrintable(i18nc("@info:shell",
+                                      "Collection %1 cannot contain items",
+                                      resolveJob()->formattedCollectionName())) << std::endl;
         emit finished(NoError);
     }
 }
@@ -213,17 +204,17 @@ void ListCommand::onItemsFetched(KJob *job)
 
     if (items.isEmpty()) {
         if (mListItems) {                    // message only if items requested
-            std::cout << i18nc("@info:shell",
-                               "Collection %1 has no items",
-                               mResolveJob->formattedCollectionName()).toLocal8Bit().constData() << std::endl;
+            std::cout << qPrintable(i18nc("@info:shell",
+                                          "Collection %1 has no items",
+                                          resolveJob()->formattedCollectionName())) << std::endl;
         }
     } else {
         qSort(items);
 
-        std::cout << i18nc("@info:shell output section header 1=count, 2=collection",
-                           "Collection %2 has %1 items:",
-                           items.count(),
-                           mResolveJob->formattedCollectionName()).toLocal8Bit().constData() << std::endl;
+        std::cout << qPrintable(i18nc("@info:shell output section header 1=count, 2=collection",
+                                      "Collection %2 has %1 items:",
+                                      items.count(),
+                                      resolveJob()->formattedCollectionName())) << std::endl;
         if (mListDetails) {
             std::cout << "  ";
             writeColumn(i18nc("@info:shell column header", "ID"), 8);

@@ -31,14 +31,8 @@ using namespace Akonadi;
 DEFINE_COMMAND("export", ExportCommand, "Export a collection to an XML file");
 
 ExportCommand::ExportCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mResolveJob(nullptr)
+    : AbstractCommand(parent)
 {
-}
-
-ExportCommand::~ExportCommand()
-{
-    delete mResolveJob;
 }
 
 void ExportCommand::setupCommandOptions(QCommandLineParser *parser)
@@ -61,19 +55,15 @@ int ExportCommand::initCommand(QCommandLineParser *parser)
     QString collectionArg = args.at(0);
     mFileArg = args.at(1);
 
-    mResolveJob = new CollectionResolveJob(collectionArg, this);
-    if (!mResolveJob->hasUsableInput()) {
-        emit error(mResolveJob->errorString());
-        return InvalidUsage;
-    }
+    if (!getResolveJob(collectionArg)) return InvalidUsage;
 
     return NoError;
 }
 
 void ExportCommand::start()
 {
-    connect(mResolveJob, &KJob::result, this, &ExportCommand::onCollectionFetched);
-    mResolveJob->start();
+    connect(resolveJob(), &KJob::result, this, &ExportCommand::onCollectionFetched);
+    resolveJob()->start();
 }
 
 void ExportCommand::onCollectionFetched(KJob *job)
@@ -85,7 +75,7 @@ void ExportCommand::onCollectionFetched(KJob *job)
     }
 
     if (!isDryRun()) {
-        XmlWriteJob *writeJob = new XmlWriteJob(mResolveJob->collection(), mFileArg);
+        XmlWriteJob *writeJob = new XmlWriteJob(resolveJob()->collection(), mFileArg);
         connect(writeJob, &KJob::result, this, &ExportCommand::onWriteFinished);
     } else {
         emit finished(NoError);
