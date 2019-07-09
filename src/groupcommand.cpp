@@ -337,7 +337,7 @@ bool GroupCommand::removeReferenceById(KContacts::ContactGroup &group, const QSt
     bool somethingFound = false;
 
     // Remove any existing reference with the same ID from the group.
-    for (unsigned int i = 0; i < group.contactReferenceCount();) {
+    for (int i = 0; i < group.contactReferenceCount();) {
         KContacts::ContactGroup::ContactReference existingRef = group.contactReference(i);
         if (existingRef.uid() == id) {
             group.remove(existingRef);
@@ -358,7 +358,7 @@ bool GroupCommand::removeDataByEmail(KContacts::ContactGroup &group, const QStri
     bool somethingFound = false;
 
     // Remove any existing data with the same email address from the group.
-    for (unsigned int i = 0; i < group.dataCount();) {
+    for (int i = 0; i < group.dataCount();) {
         const KContacts::ContactGroup::Data data = group.data(i);
         if (QString::compare(data.email(), email, Qt::CaseInsensitive) == 0) {
             group.remove(data);
@@ -641,7 +641,7 @@ AbstractCommand::Errors GroupCommand::deleteGroupItems(KContacts::ContactGroup &
 
             // Remove any references to that Akonadi ID
             const QString itemId = QString::number(item.id());
-            for (unsigned int i = 0; i < group.contactReferenceCount();) {
+            for (int i = 0; i < group.contactReferenceCount();) {
                 KContacts::ContactGroup::ContactReference existingRef = group.contactReference(i);
                 if (existingRef.uid() == itemId) {
                     displayContactReference(item.id());
@@ -677,7 +677,7 @@ AbstractCommand::Errors GroupCommand::cleanGroupItems(KContacts::ContactGroup &g
     }
 
     // Remove any reference items with an unknown or invalid ID from the group.
-    for (unsigned int i = 0; i < group.contactReferenceCount();) {
+    for (int i = 0; i < group.contactReferenceCount();) {
         KContacts::ContactGroup::ContactReference ref = group.contactReference(i);
 
         bool doDelete = false;

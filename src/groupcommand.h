@@ -64,7 +64,7 @@ private:
 
     void displayContactData(const KContacts::ContactGroup::Data &data);
     void displayContactReference(Akonadi::Item::Id id);
-    void displayContactReference(const Akonadi::Item &item, const QString &email = QString::null);
+    void displayContactReference(const Akonadi::Item &item, const QString &email = QString());
     void displayReferenceError(Akonadi::Item::Id id);
 
     bool removeDataByEmail(KContacts::ContactGroup &group, const QString &email, bool verbose = false);
