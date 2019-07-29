@@ -22,6 +22,7 @@
 
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
+#include <KMime/Message>
 
 #include <iostream>
 
@@ -32,19 +33,23 @@ using namespace Akonadi;
 DEFINE_COMMAND("show", ShowCommand, "Show the raw payload of an item");
 
 ShowCommand::ShowCommand(QObject *parent)
-    : AbstractCommand(parent)
+    : AbstractCommand(parent),
+      mRawOption(QStringLiteral("raw"), i18nc("@info:shell", "Use raw payload (disables quoted-printable decoding)"))
 {
 }
 
 void ShowCommand::setupCommandOptions(QCommandLineParser *parser)
 {
     parser->addPositionalArgument("item", i18nc("@info:shell", "The items to show"), i18nc("@info:shell", "item..."));
+    parser->addOption(mRawOption);
 }
 
 int ShowCommand::initCommand(QCommandLineParser *parser)
 {
     mItemArgs = parser->positionalArguments();
     if (!checkArgCount(mItemArgs, 1, i18nc("@info:shell", "No items specified"))) return InvalidUsage;
+
+    mRaw = parser->isSet(mRawOption);
 
     return NoError;
 }
@@ -96,11 +101,24 @@ void ShowCommand::onItemFetched(KJob *job)
             if (!item.hasPayload()) {
                 emit error(i18nc("@info:shell", "Item '%1' has no payload", job->property("arg").toString()));
                 mExitStatus = RuntimeError;
-            } else {
+            } else if (mRaw) {
                 std::cout << item.payloadData().constData();    // output the raw payload
-                if (!mItemArgs.isEmpty()) {         // not the last item
-                    std::cout << "\n";                // blank line to separate
+            } else {
+                if (item.hasPayload<KMime::Message::Ptr>()) {
+                    const KMime::Message::Ptr mail = item.payload<KMime::Message::Ptr>();
+                    std::cout << qPrintable(mail->head());
+                    const auto mainPart = mail->mainBodyPart();
+                    if (mainPart) {
+                        std::cout << qPrintable(mainPart->decodedText());
+                    } else {
+                        std::cout << "ERROR: no main body part";
+                    }
+                } else {
+                    std::cout << qPrintable(QString::fromUtf8(item.payloadData().constData()));
                 }
+            }
+            if (!mItemArgs.isEmpty()) {         // not the last item
+                std::cout << "\n";                // blank line to separate
             }
         }
     }

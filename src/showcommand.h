@@ -45,6 +45,8 @@ protected:
 private:
     QStringList mItemArgs;
     AbstractCommand::Errors mExitStatus;
+    QCommandLineOption mRawOption;
+    bool mRaw = false;
 
 private Q_SLOTS:
     void processNextItem();
