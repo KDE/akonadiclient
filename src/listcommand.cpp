@@ -136,7 +136,7 @@ void ListCommand::onCollectionsFetched(KJob *job)
     } else {
         // This works because Akonadi::Entity implements operator<
         // which compares item IDs numerically
-        qSort(collections);
+        std::sort(collections.begin(), collections.end());
 
         std::cout << qPrintable(i18nc("@info:shell output section header 1=count, 2=collection",
                                       "Collection %2 has %1 sub-collections:",
@@ -209,7 +209,7 @@ void ListCommand::onItemsFetched(KJob *job)
                                           resolveJob()->formattedCollectionName())) << std::endl;
         }
     } else {
-        qSort(items);
+        std::sort(items.begin(), items.end());
 
         std::cout << qPrintable(i18nc("@info:shell output section header 1=count, 2=collection",
                                       "Collection %2 has %1 items:",

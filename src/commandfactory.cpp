@@ -121,7 +121,7 @@ void CommandFactory::printHelpAndExit(bool userRequestedHelp)
 {
     int maxNameLength = 0;
     QStringList commands = sCommands->keys();
-    qSort(commands);
+    std::sort(commands.begin(), commands.end());
     Q_FOREACH (const QString &commandName, commands) {
         maxNameLength = qMax(maxNameLength, commandName.length());
     }

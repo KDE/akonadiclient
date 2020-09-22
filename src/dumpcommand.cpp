@@ -159,7 +159,7 @@ void DumpCommand::onItemsFetched(KJob *job)
         emit finished(RuntimeError);
     }
 
-    qSort(items);					// for predictable ordering
+    std::sort(items.begin(), items.end());		// for predictable ordering
     mItemList = items;					// save items as fetched
 
     TagFetchJob *tagJob = new TagFetchJob(this);
