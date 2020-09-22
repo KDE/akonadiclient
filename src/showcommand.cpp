@@ -34,7 +34,7 @@ DEFINE_COMMAND("show", ShowCommand, "Show the raw payload of an item");
 
 ShowCommand::ShowCommand(QObject *parent)
     : AbstractCommand(parent),
-      mRawOption(QStringLiteral("raw"), i18nc("@info:shell", "Use raw payload (disables quoted-printable decoding)"))
+      mRawOption((QStringList() << QStringLiteral("r") << QStringLiteral("raw")), i18nc("@info:shell", "Use raw payload (disables quoted-printable decoding)"))
 {
 }
 
