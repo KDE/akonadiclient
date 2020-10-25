@@ -2,7 +2,7 @@ project(akonadiclient)
 
 cmake_minimum_required (VERSION 3.0 FATAL_ERROR)
 
-set(QT_MIN_VERSION "5.5.0")
+set(QT_MIN_VERSION "5.10.0")
 set(KF5_VERSION "5.18.0")
 set(AKONADI_VERSION "5.19.0")
 set(AKONADI_CONTACT_VERSION "5.19.0")
@@ -36,15 +36,7 @@ find_package(KF5AkonadiContact ${AKONADI_CONTACT_VERSION} CONFIG REQUIRED)
 find_package(KF5Mime ${AKONADI_VERSION} CONFIG REQUIRED)
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Widgets Test)
-message(STATUS "Qt version: ${Qt5Core_VERSION}")
-if (Qt5Core_VERSION VERSION_LESS 5.10.0)
-  message(STATUS "Using KIO::convertSize() for size formatting")
-  set(USE_KIO_CONVERTSIZE ON)
-else()
-  message(STATUS "Using QLocale::formattedDataSize() for size formatting")
-endif()
-
-find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS CoreAddons I18n DocTools KIO)
+find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS CoreAddons I18n DocTools)
 
 
 add_custom_target(vcsversion

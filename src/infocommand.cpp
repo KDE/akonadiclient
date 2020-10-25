@@ -27,10 +27,6 @@
 
 #include <qdatetime.h>
 
-#ifdef USE_KIO_CONVERTSIZE
-#include <kio/global.h>
-#endif
-
 #include <iostream>
 
 #include "commandfactory.h"
@@ -264,11 +260,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
         Q_ASSERT(mInfoStatistics != nullptr);
         writeInfo(i18nc("@info:shell", "Count"), QLocale::system().toString(mInfoStatistics->count()));
         writeInfo(i18nc("@info:shell", "Unread"), QLocale::system().toString(mInfoStatistics->unreadCount()));
-#ifdef USE_KIO_CONVERTSIZE
-        const QString size = KIO::convertSize(mInfoStatistics->size());
-#else
         const QString size = QLocale::system().formattedDataSize(mInfoStatistics->size());
-#endif
         writeInfo(i18nc("@info:shell", "Size"), size);
     } else if (mInfoItem != nullptr) {			// for an item
         writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoItem->id()));
@@ -302,11 +294,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
         }
         writeInfo(i18nc("@info:shell", "Tags"), tagDisp.join(" "));
 
-#ifdef USE_KIO_CONVERTSIZE
-        const QString size = KIO::convertSize(mInfoItem->size());
-#else
         const QString size = QLocale::system().formattedDataSize(mInfoItem->size());
-#endif
         writeInfo(i18nc("@info:shell", "Size"), size);
     } else {                      // neither collection nor item?
         // should never happen
