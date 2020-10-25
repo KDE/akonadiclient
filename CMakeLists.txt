@@ -3,11 +3,11 @@ project(akonadiclient)
 cmake_minimum_required (VERSION 3.0 FATAL_ERROR)
 
 set(QT_MIN_VERSION "5.10.0")
-set(KF5_VERSION "5.18.0")
+set(KF5_MIN_VERSION "5.18.0")
 set(AKONADI_VERSION "5.19.0")
 set(AKONADI_CONTACT_VERSION "5.19.0")
 
-find_package(ECM ${KF5_VERSION} REQUIRED CONFIG)
+find_package(ECM ${KF5_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
     
@@ -36,7 +36,7 @@ find_package(KF5AkonadiContact ${AKONADI_CONTACT_VERSION} CONFIG REQUIRED)
 find_package(KF5Mime ${AKONADI_VERSION} CONFIG REQUIRED)
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Widgets Test)
-find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS CoreAddons I18n DocTools)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DocTools)
 
 
 add_custom_target(vcsversion
