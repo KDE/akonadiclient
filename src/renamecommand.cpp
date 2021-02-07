@@ -30,7 +30,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("rename", RenameCommand, "Rename a collection");
+DEFINE_COMMAND("rename", RenameCommand, I18N_NOOP("Rename a collection"));
 
 RenameCommand::RenameCommand(QObject *parent)
     : AbstractCommand(parent)

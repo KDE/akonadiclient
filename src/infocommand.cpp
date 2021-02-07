@@ -39,7 +39,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("info", InfoCommand, "Show full information for a collection or item");
+DEFINE_COMMAND("info", InfoCommand, I18N_NOOP("Show full information for a collection or item"));
 
 InfoCommand::InfoCommand(QObject *parent)
     : AbstractCommand(parent),

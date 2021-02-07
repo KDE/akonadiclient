@@ -36,7 +36,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("import", ImportCommand, "Import an XML file");
+DEFINE_COMMAND("import", ImportCommand, I18N_NOOP("Import an XML file"));
 
 ImportCommand::ImportCommand(QObject *parent)
     : AbstractCommand(parent),

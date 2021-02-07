@@ -32,7 +32,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("create", CreateCommand, "Create a new collection");
+DEFINE_COMMAND("create", CreateCommand, I18N_NOOP("Create a new collection"));
 
 CreateCommand::CreateCommand(QObject *parent)
     : AbstractCommand(parent)

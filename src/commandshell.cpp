@@ -28,7 +28,7 @@
 #include <QCoreApplication>
 #include <QTextCodec>
 
-DEFINE_COMMAND("shell", CommandShell, "Enter commands in an interactive shell");
+DEFINE_COMMAND("shell", CommandShell, I18N_NOOP("Enter commands in an interactive shell"));
 
 bool CommandShell::sIsActive = false;
 

@@ -44,7 +44,7 @@
 using namespace Akonadi;
 
 
-DEFINE_COMMAND("dump", DumpCommand, "Dump a collection to a directory structure");
+DEFINE_COMMAND("dump", DumpCommand, I18N_NOOP("Dump a collection to a directory structure"));
 
 
 DumpCommand::DumpCommand(QObject *parent)

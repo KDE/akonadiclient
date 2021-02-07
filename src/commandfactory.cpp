@@ -28,7 +28,7 @@
 #include <iostream>
 
 struct CommandData {
-    QString shortHelp;
+    KLocalizedString shortHelp;
     CommandFactory::creatorFunction creator;
 };
 
@@ -58,7 +58,7 @@ AbstractCommand *CommandFactory::createCommand()
 }
 
 void CommandFactory::registerCommand(const QString &name,
-                                     const QString &shortHelp,
+                                     const KLocalizedString &shortHelp,
                                      CommandFactory::creatorFunction creator)
 {
     CommandData *data = new CommandData;
@@ -139,7 +139,7 @@ void CommandFactory::printHelpAndExit(bool userRequestedHelp)
         if (commandName == "shell" && shellActive) continue;
 
         stream << qPrintable(linePattern.arg(commandName.leftJustified(maxNameLength),
-                                             sCommands->value(commandName)->shortHelp))
+                                             sCommands->value(commandName)->shortHelp.toString(Kuit::TermText)))
                << std::endl;
     }
 

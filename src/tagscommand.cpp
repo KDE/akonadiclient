@@ -26,7 +26,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("tags", TagsCommand, "List all known tags");
+DEFINE_COMMAND("tags", TagsCommand, I18N_NOOP("List all known tags"));
 
 TagsCommand::TagsCommand(QObject *parent)
     : AbstractCommand(parent),

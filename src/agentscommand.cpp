@@ -34,7 +34,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("agents", AgentsCommand, "Manage Akonadi agents");
+DEFINE_COMMAND("agents", AgentsCommand, I18N_NOOP("Manage Akonadi agents"));
 
 AgentsCommand::AgentsCommand(QObject *parent)
     : AbstractCommand(parent),

@@ -37,7 +37,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("group", GroupCommand, "Expand or modify a contact group");
+DEFINE_COMMAND("group", GroupCommand, I18N_NOOP("Expand or modify a contact group"));
 
 GroupCommand::GroupCommand(QObject *parent)
     : AbstractCommand(parent),

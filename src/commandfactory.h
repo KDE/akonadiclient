@@ -42,7 +42,7 @@ class QString;
     className##Factory::className##Factory()					\
     {										\
         CommandFactory::registerCommand(QLatin1String(commandName),		\
-                                        i18nc("@info:shell", shortHelp),	\
+                                        ki18nc("@info:shell", shortHelp),	\
                                         &className##Creator);			\
     }										\
     QString className::name() const						\
@@ -60,7 +60,7 @@ public:
 
     typedef AbstractCommand *(*creatorFunction)(QObject *parent);
     static void registerCommand(const QString &name,
-                                const QString &shortHelp,
+                                const KLocalizedString &shortHelp,
                                 CommandFactory::creatorFunction creator);
 private:
     const QStringList *mParsedArgs;
