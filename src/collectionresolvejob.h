@@ -33,7 +33,7 @@ public:
     explicit HackedCollectionPathResolver(const Akonadi::Collection &col, QObject *parent = nullptr);
 
 protected:
-    bool addSubjob(KJob *job) Q_DECL_OVERRIDE;
+    bool addSubjob(KJob *job) override;
 };
 
 class CollectionResolveJob : public KCompositeJob
