@@ -21,7 +21,7 @@
 
 #include <KLocalizedString>
 
-#include <AkonadiCore/CollectionFetchJob>
+#include <akonadi/collectionfetchjob.h>
 
 using namespace Akonadi;
 

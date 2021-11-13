@@ -20,15 +20,15 @@
 
 #include "collectionresolvejob.h"
 
-#include <AkonadiCore/itemfetchjob.h>
-#include <AkonadiCore/itemfetchscope.h>
-#include <AkonadiCore/itemmodifyjob.h>
+#include <akonadi/itemfetchjob.h>
+#include <akonadi/itemfetchscope.h>
+#include <akonadi/itemmodifyjob.h>
 
 #include <akonadi/contact/contactsearchjob.h>
 
 #include <kcontacts/addressee.h>
 
-#include <KCodecs/kemailaddress.h>
+#include <kemailaddress.h>
 
 #include <iostream>
 

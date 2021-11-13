@@ -20,8 +20,9 @@
 
 #include "collectionresolvejob.h"
 
-#include <AkonadiCore/itemfetchjob.h>
-#include <AkonadiCore/itemfetchscope.h>
+#include <akonadi/itemfetchjob.h>
+#include <akonadi/itemfetchscope.h>
+
 #include <KMime/Message>
 
 #include <iostream>

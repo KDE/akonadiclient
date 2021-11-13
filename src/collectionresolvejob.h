@@ -19,9 +19,9 @@
 #ifndef COLLECTIONRESOLVEJOB_H
 #define COLLECTIONRESOLVEJOB_H
 
-#include <AkonadiCore/Collection>
-#include <AkonadiCore/Item>
-#include <AkonadiCore/collectionpathresolver.h>
+#include <akonadi/collection.h>
+#include <akonadi/item.h>
+#include <akonadi/collectionpathresolver.h>
 #include <KCompositeJob>
 
 class HackedCollectionPathResolver : public Akonadi::CollectionPathResolver

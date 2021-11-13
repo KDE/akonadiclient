@@ -20,7 +20,7 @@
 
 #include <iostream>
 
-#include <AkonadiCore/tagfetchjob.h>
+#include <akonadi/tagfetchjob.h>
 
 #include "commandfactory.h"
 

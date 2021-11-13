@@ -22,14 +22,14 @@
 #include "collectionpathjob.h"
 #include "errorreporter.h"
 
-#include <AkonadiCore/CollectionCopyJob>
-#include <AkonadiCore/CollectionMoveJob>
-#include <AkonadiCore/CollectionFetchJob>
-#include <AkonadiCore/CollectionFetchScope>
-#include <AkonadiCore/ItemCopyJob>
-#include <AkonadiCore/ItemMoveJob>
-#include <AkonadiCore/ItemFetchJob>
-#include <AkonadiCore/ItemFetchScope>
+#include <akonadi/collectioncopyjob.h>
+#include <akonadi/collectionmovejob.h>
+#include <akonadi/collectionfetchjob.h>
+#include <akonadi/collectionfetchscope.h>
+#include <akonadi/itemcopyjob.h>
+#include <akonadi/itemmovejob.h>
+#include <akonadi/itemfetchjob.h>
+#include <akonadi/itemfetchscope.h>
 
 #include <iostream>
 

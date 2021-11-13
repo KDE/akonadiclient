@@ -22,9 +22,9 @@
 #include "collectionpathjob.h"
 #include "errorreporter.h"
 
-#include <AkonadiCore/Collection>
-#include <AkonadiCore/CollectionCreateJob>
-#include <AkonadiCore/CollectionFetchJob>
+#include <akonadi/collection.h>
+#include <akonadi/collectioncreatejob.h>
+#include <akonadi/collectionfetchjob.h>
 
 #include <iostream>
 

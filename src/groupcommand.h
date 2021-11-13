@@ -21,7 +21,7 @@
 
 #include "abstractcommand.h"
 
-#include <AkonadiCore/item.h>
+#include <akonadi/item.h>
 #include <kcontacts/contactgroup.h>
 
 class KJob;

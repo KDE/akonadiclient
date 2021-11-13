@@ -21,7 +21,7 @@
 
 #include "abstractcommand.h"
 
-#include <AkonadiCore/Collection>
+#include <akonadi/collection.h>
 
 #include <QHash>
 #include <QMap>

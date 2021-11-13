@@ -21,7 +21,7 @@
 
 #include "abstractcommand.h"
 
-#include <AkonadiCore/collection.h>
+#include <akonadi/collection.h>
 
 class KJob;
 

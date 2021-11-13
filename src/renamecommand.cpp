@@ -19,7 +19,7 @@
 
 #include "renamecommand.h"
 
-#include <AkonadiCore/collectionmodifyjob.h>
+#include <akonadi/collectionmodifyjob.h>
 
 #include <klocalizedstring.h>
 

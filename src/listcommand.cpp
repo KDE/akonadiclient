@@ -20,10 +20,10 @@
 
 #include "collectionresolvejob.h"
 
-#include <AkonadiCore/CollectionFetchJob>
-#include <AkonadiCore/CollectionFetchScope>
-#include <AkonadiCore/ItemFetchJob>
-#include <AkonadiCore/ItemFetchScope>
+#include <akonadi/collectionfetchjob.h>
+#include <akonadi/collectionfetchscope.h>
+#include <akonadi/itemfetchjob.h>
+#include <akonadi/itemfetchscope.h>
 
 #include <QDateTime>
 
