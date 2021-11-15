@@ -236,9 +236,15 @@ void CopyCommand::onCollectionsFetched(KJob *job)
     }
 
     if (mMoving) {
-        ErrorReporter::progress(i18nc("@info:shell", "Moving %1 sub-collections", mSubCollections.count()));
+        ErrorReporter::progress(i18ncp("@info:shell",
+                                       "Moving %1 sub-collection",
+                                       "Moving %1 sub-collections",
+                                       mSubCollections.count()));
     } else {
-        ErrorReporter::progress(i18nc("@info:shell", "Copying %1 sub-collections", mSubCollections.count()));
+        ErrorReporter::progress(i18ncp("@info:shell",
+                                       "Copying %1 sub-collection",
+                                       "Copying %1 sub-collections",
+                                       mSubCollections.count()));
     }
     doNextSubcollection(sourceArg);           // start processing them
 }
@@ -325,12 +331,12 @@ void CopyCommand::onItemsFetched(KJob *job)
 
     Akonadi::Job *copyJob;
     if (mMoving) {
-        ErrorReporter::progress(i18nc("@info:shell", "Moving %1 items", items.count()));
+        ErrorReporter::progress(i18ncp("@info:shell", "Moving %1 item", "Moving %1 items", items.count()));
         if (!isDryRun()) {
             copyJob = new ItemMoveJob(items, mDestinationCollection, this);
         }
     } else {
-        ErrorReporter::progress(i18nc("@info:shell", "Copying %1 items", items.count()));
+        ErrorReporter::progress(i18ncp("@info:shell", "Copying %1 item", "Copying %1 items", items.count()));
         if (!isDryRun()) {
             copyJob = new ItemCopyJob(items, mDestinationCollection, this);
         }

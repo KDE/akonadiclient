@@ -138,7 +138,8 @@ void ListCommand::onCollectionsFetched(KJob *job)
         // which compares item IDs numerically
         std::sort(collections.begin(), collections.end());
 
-        std::cout << qPrintable(i18nc("@info:shell output section header 1=count, 2=collection",
+        std::cout << qPrintable(i18ncp("@info:shell output section header 1=count, 2=collection",
+                                      "Collection %2 has %1 sub-collection:",
                                       "Collection %2 has %1 sub-collections:",
                                       collections.count(),
                                       resolveJob()->formattedCollectionName())) << std::endl;
@@ -211,7 +212,8 @@ void ListCommand::onItemsFetched(KJob *job)
     } else {
         std::sort(items.begin(), items.end());
 
-        std::cout << qPrintable(i18nc("@info:shell output section header 1=count, 2=collection",
+        std::cout << qPrintable(i18ncp("@info:shell output section header 1=count, 2=collection",
+                                      "Collection %2 has %1 item:",
                                       "Collection %2 has %1 items:",
                                       items.count(),
                                       resolveJob()->formattedCollectionName())) << std::endl;
