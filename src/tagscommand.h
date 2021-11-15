@@ -21,6 +21,8 @@
 
 #include "abstractcommand.h"
 
+#include <akonadi/tag.h>
+
 class KJob;
 
 class TagsCommand : public AbstractCommand
@@ -41,11 +43,29 @@ protected:
     int initCommand(QCommandLineParser *parser) override;
 
 private:
+    enum Mode {
+        ModeList,
+        ModeAdd,
+        ModeDelete
+    };
+
     bool mBriefOutput;
     bool mUrlsOutput;
+    TagsCommand::Mode mOperationMode;
+    QStringList mTagArgs;
+    int mAddForceId;
+    QString mCurrentTag;
+    Akonadi::Tag::List mFetchedTags;
+
+private:
+    void listTags();
 
 private Q_SLOTS:
     void onTagsFetched(KJob *job);
+    void addNextTag();
+    void onTagAdded(KJob *job);
+    void deleteNextTag();
+    void onTagDeleted(KJob *job);
 };
 
 #endif                          // TAGSCOMMAND_H

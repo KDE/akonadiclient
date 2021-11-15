@@ -154,6 +154,7 @@ void GroupCommand::start()
         if (!isDryRun()) {				// allow if not doing anything
             if (!allowDangerousOperation()) {
                 emit finished(RuntimeError);
+                return;
             }
         }
     }
