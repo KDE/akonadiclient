@@ -23,6 +23,7 @@
 #include <QCommandLineParser>
 
 
+class KJob;
 class CollectionResolveJob;
 
 
@@ -72,6 +73,22 @@ protected:
 
     bool getResolveJob(const QString &arg);
     CollectionResolveJob *resolveJob() const	{ Q_ASSERT(mResolveJob!=nullptr); return (mResolveJob); }
+
+    /**
+     * Check the result status of a KIO job.
+     *
+     * Call this first of all in a slot connected to
+     * a job's @c result() signal.  If the job had an error then
+     * the @c error() and then the @c finished() signals will
+     * be emitted.
+     *
+     * @param job The job that has just run
+     * @param message An error message, or a null string to use the
+     * job's @c errorString() message.
+     * @result @c true if the job completed without error,
+     * @c false otherwise.
+     **/
+    bool checkJobResult(KJob *job, const QString &message = QString());
 
 private:
     bool mDryRun;

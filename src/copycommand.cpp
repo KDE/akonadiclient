@@ -78,13 +78,8 @@ int CopyCommand::initCommand(QCommandLineParser *parser)
 
 void CopyCommand::onTargetFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(i18nc("@info:shell", "Cannot resolve destination collection '%1', %2",
-                         mDestinationArg, job->errorString()));
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job, i18nc("@info:shell", "Cannot resolve destination collection '%1', %2",
+                                   mDestinationArg, job->errorString()))) return;
     CollectionResolveJob *res = resolveJob();
     Q_ASSERT(job == res);
     mDestinationCollection = res->collection();

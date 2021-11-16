@@ -115,12 +115,7 @@ void DeleteCommand::onBaseFetched(KJob *job)
 
 void DeleteCommand::onCollectionDeleted(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     std::cout << i18n("Collection deleted successfully").toLocal8Bit().constData() << std::endl;
     emit finished(NoError);
 }
@@ -145,14 +140,10 @@ void DeleteCommand::fetchItems()
 
 void DeleteCommand::onItemsFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
+
     Item::List items = fetchJob->items();
     if (items.count() < 0) {
         emit error(i18nc("@info:shell", "Cannot find '%1' as a collection or item", mEntityArg));
@@ -165,12 +156,7 @@ void DeleteCommand::onItemsFetched(KJob *job)
 
 void DeleteCommand::onItemsDeleted(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(i18nc("@info:shell", "Error: %1", job->errorString()));
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     std::cout << i18n("Item deleted successfully").toLocal8Bit().constData() << std::endl;
     emit finished(NoError);
 }

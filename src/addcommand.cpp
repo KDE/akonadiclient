@@ -310,22 +310,19 @@ void AddCommand::processNextFile()
 
 void AddCommand::onTargetFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(i18nc("@info:shell", "Cannot fetch target collection, %1", job->errorString()));
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job, i18nc("@info:shell",
+                                   "Cannot fetch target collection, %1",
+                                   job->errorString()))) return;
     CollectionResolveJob *res = resolveJob();
-    Q_ASSERT(job == res && res->collection().isValid());
+    Q_ASSERT(job == res);
 
     mBaseCollection = res->collection();
+    Q_ASSERT(mBaseCollection.isValid());
     mCollectionsByPath[ mBasePath ] = mBaseCollection;
     mBasePaths[ mBasePath ] = mBasePath;
 
     ErrorReporter::progress(i18n("Root folder is %1 \"%2\"",
                                  QString::number(mBaseCollection.id()), mBaseCollection.name()));
-
     processNextDirectory();
 }
 
@@ -416,11 +413,10 @@ void AddCommand::onItemCreated(KJob *job)
 {
     const QString fileName = job->property("fileName").toString();
 
-    if (job->error() != 0) {
-        const QString msg = i18nc("@info:shell", "Failed to add ‘%1’, %2", fileName, job->errorString());
-        emit error(msg);
-    } else {
-
+    if (checkJobResult(job, i18nc("@info:shell",
+                                  "Failed to add ‘%1’, %2",
+                                  fileName, job->errorString())))
+    {
         ItemCreateJob *createJob = qobject_cast<ItemCreateJob *>(job);
         Q_ASSERT(createJob != nullptr);
 

@@ -68,11 +68,7 @@ void ExportCommand::start()
 
 void ExportCommand::onCollectionFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
+    if (!checkJobResult(job)) return;
 
     if (!isDryRun()) {
         XmlWriteJob *writeJob = new XmlWriteJob(resolveJob()->collection(), mFileArg);
@@ -84,11 +80,6 @@ void ExportCommand::onCollectionFetched(KJob *job)
 
 void ExportCommand::onWriteFinished(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     emit finished(NoError);
 }

@@ -108,13 +108,7 @@ void DumpCommand::start()
 
 void DumpCommand::onCollectionFetched(KJob *job)
 {
-    if (job->error()!=0)
-    {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     CollectionResolveJob *res = resolveJob();
     Q_ASSERT(job==res);
 
@@ -142,15 +136,10 @@ void DumpCommand::onCollectionFetched(KJob *job)
 
 void DumpCommand::onItemsFetched(KJob *job)
 {
-    if (job->error()!=0)
-    {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     RecursiveItemFetchJob *fetchJob = qobject_cast<RecursiveItemFetchJob *>(job);
     Q_ASSERT(fetchJob!=NULL);
+
     Item::List items = fetchJob->items();
     if (items.isEmpty())
     {
@@ -172,13 +161,7 @@ void DumpCommand::onItemsFetched(KJob *job)
 
 void DumpCommand::onTagsFetched(KJob *job)
 {
-    if (job->error()!=0)
-    {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     TagFetchJob *tagJob = qobject_cast<TagFetchJob *>(job);
     Q_ASSERT(tagJob!=NULL);
 
@@ -204,13 +187,7 @@ void DumpCommand::processNextItem()
 
 void DumpCommand::onParentPathFetched(KJob *job)
 {
-    if (job->error()!=0)
-    {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     CollectionPathJob *pathJob = qobject_cast<CollectionPathJob *>(job);
     Q_ASSERT(pathJob!=NULL);
 

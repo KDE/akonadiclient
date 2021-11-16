@@ -105,12 +105,10 @@ int CreateCommand::initCommand(QCommandLineParser *parser)
 
 void CreateCommand::onTargetFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(i18nc("@info:shell", "Cannot fetch parent collection '%1', %2", mParentCollection, job->errorString()));
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job, i18nc("@info:shell",
+                                   "Cannot fetch parent collection '%1', %2",
+                                   mParentCollection,
+                                   job->errorString()))) return;
     CollectionResolveJob *res = resolveJob();
     Q_ASSERT(job == res);
     Akonadi::Collection parentCollection = res->collection();
@@ -139,15 +137,10 @@ void CreateCommand::onTargetFetched(KJob *job)
 
 void CreateCommand::onCollectionCreated(KJob *job)
 {
-    if (job->error() != 0) {
-        ErrorReporter::error(i18n("Error creating collection '%1' under '%2', %3",
+    if (!checkJobResult(job, i18n("Error creating collection '%1' under '%2', %3",
                                   mNewCollectionName,
                                   resolveJob()->formattedCollectionName(),
-                                  job->errorString()));
-        emit finished(RuntimeError);
-        return;
-    }
-
+                                  job->errorString()))) return;
     CollectionCreateJob *createJob = qobject_cast<CollectionCreateJob *>(job);
     Q_ASSERT(createJob != nullptr);
 
@@ -158,12 +151,7 @@ void CreateCommand::onCollectionCreated(KJob *job)
 
 void CreateCommand::onPathFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        ErrorReporter::error(i18n("Error getting path of new collection, %1", job->errorString()));
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job, i18n("Error getting path of new collection, %1", job->errorString()))) return;
     CollectionPathJob *pathJob = qobject_cast<CollectionPathJob *>(job);
     Q_ASSERT(pathJob != nullptr);
 

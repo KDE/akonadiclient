@@ -182,3 +182,14 @@ bool AbstractCommand::allowDangerousOperation() const
                               QLatin1String(ENV_VAL_DANGEROUS)));
     return false;
 }
+
+bool AbstractCommand::checkJobResult(KJob *job, const QString &message)
+{
+    if (job->error() != 0) {
+        emit error(!message.isEmpty() ? message : job->errorString());
+        emit finished(RuntimeError);
+        return (false);
+    }
+
+    return (true);
+}

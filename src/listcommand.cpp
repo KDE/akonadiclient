@@ -117,12 +117,7 @@ void ListCommand::fetchCollections()
 
 void ListCommand::onCollectionsFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
 
@@ -193,12 +188,7 @@ void ListCommand::fetchItems()
 
 void ListCommand::onItemsFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
     Item::List items = fetchJob->items();

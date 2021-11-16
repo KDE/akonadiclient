@@ -128,12 +128,7 @@ void InfoCommand::fetchStatistics()
 
 void InfoCommand::onStatisticsFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     CollectionStatisticsJob *statsJob = qobject_cast<CollectionStatisticsJob *>(job);
     Q_ASSERT(statsJob != nullptr);
     mInfoStatistics = new CollectionStatistics(statsJob->statistics());
@@ -168,12 +163,7 @@ void InfoCommand::fetchItems()
 
 void InfoCommand::onItemsFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
     Item::List items = fetchJob->items();
@@ -211,17 +201,12 @@ static void writeInfo(const QString &tag, quint64 data)
 
 void InfoCommand::onParentPathFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
-    // Finally we have fetched all of the information to display.
-
+    if (!checkJobResult(job)) return;
     CollectionPathJob *pathJob = qobject_cast<CollectionPathJob *>(job);
     Q_ASSERT(pathJob != nullptr);
     const QString parentString = pathJob->formattedCollectionPath();
+
+    // Finally we have fetched all of the information to display.
 
     if (mInfoCollection != nullptr) {         // for a collection
         Q_ASSERT(mInfoCollection->isValid());

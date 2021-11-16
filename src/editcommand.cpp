@@ -85,12 +85,7 @@ void EditCommand::start()
 
 void EditCommand::onItemFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
 
@@ -111,7 +106,6 @@ void EditCommand::onItemFetched(KJob *job)
     }
 
     QString editor = QString::fromLocal8Bit(qgetenv("EDITOR"));
-
     if (editor.isEmpty()) {
         emit error(i18nc("@info:shell", "EDITOR environment variable needs to be set"));
         emit finished(RuntimeError);
@@ -145,12 +139,7 @@ void EditCommand::onItemFetched(KJob *job)
 
 void EditCommand::onItemModified(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     std::cout << i18nc("@info:shell", "Changes to item '%1' have been saved", mItemArg).toLocal8Bit().constData() << std::endl;
     emit finished(NoError);
 }

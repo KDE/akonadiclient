@@ -88,10 +88,7 @@ void ImportCommand::start()
 
 void ImportCommand::onParentFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(i18nc("@info:shell", "Unable to fetch parent collection, %1", job->errorString()));
-        emit finished(RuntimeError);
-    }
+    if (!checkJobResult(job, i18nc("@info:shell", "Unable to fetch parent collection, %1", job->errorString()))) return;
 
     mParentCollection = resolveJob()->collection();
     QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
@@ -99,11 +96,7 @@ void ImportCommand::onParentFetched(KJob *job)
 
 void ImportCommand::onChildrenFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(i18nc("@info:shell", "Unable to fetch children of parent collection, %1", job->errorString()));
-        emit finished(RuntimeError);
-        return;
-    }
+    if (!checkJobResult(job, i18nc("@info:shell", "Unable to fetch children of parent collection, %1", job->errorString()))) return;
 
     QString rid = job->property("rid").toString();
     Collection parent = job->property("parent").value<Collection>();
@@ -195,12 +188,7 @@ void ImportCommand::onCollectionFetched(KJob *job)
 
 void ImportCommand::onCollectionCreated(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(i18nc("@info:shell", "Unable to create collection with remote ID '%1'", job->property("rid").toString()));
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job, i18nc("@info:shell", "Unable to create collection with remote ID '%1'", job->property("rid").toString()))) return;
     CollectionCreateJob *createJob = qobject_cast<CollectionCreateJob *>(job);
     mCollectionMap.insert(job->property("rid").toString(), createJob->collection());
     QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
@@ -239,11 +227,7 @@ void ImportCommand::processNextItemFromQueue()
 
 void ImportCommand::onItemCreated(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(i18nc("@info:shell", "Error creating item, %1", job->errorString()));
-        emit finished(RuntimeError);
-        return;
-    }
+    if (!checkJobResult(job, i18nc("@info:shell", "Error creating item, %1", job->errorString()))) return;
     ItemCreateJob *itemCreateJob = qobject_cast<ItemCreateJob *>(job);
     ErrorReporter::progress(i18nc("@info:shell", "Created item '%1'", itemCreateJob->item().remoteId()));
     QMetaObject::invokeMethod(this, "processNextItemFromQueue", Qt::QueuedConnection);

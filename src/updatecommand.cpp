@@ -104,12 +104,7 @@ void UpdateCommand::start()
 
 void UpdateCommand::onItemFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
 
@@ -133,12 +128,7 @@ void UpdateCommand::onItemFetched(KJob *job)
 
 void UpdateCommand::onItemUpdated(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     std::cout << qPrintable(i18nc("@info:shell", "Item updated successfully")) << std::endl;
     emit finished(NoError);
 }

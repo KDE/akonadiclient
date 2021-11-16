@@ -70,12 +70,7 @@ void RenameCommand::start()
 
 void RenameCommand::onCollectionFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     CollectionResolveJob *res = resolveJob();
     Q_ASSERT(job == res && res->collection().isValid());
 
@@ -92,11 +87,7 @@ void RenameCommand::onCollectionFetched(KJob *job)
 
 void RenameCommand::onCollectionModified(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-    } else {
-        std::cout << qPrintable(i18nc("@info:shell", "Collection renamed successfully")) << std::endl;
-        emit finished(NoError);
-    }
+    if (!checkJobResult(job)) return;
+    std::cout << qPrintable(i18nc("@info:shell", "Collection renamed successfully")) << std::endl;
+    emit finished(NoError);
 }

@@ -172,12 +172,7 @@ void TagsCommand::addNextTag()
 
 void TagsCommand::onTagAdded(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     TagCreateJob *createJob = qobject_cast<TagCreateJob *>(job);
     Q_ASSERT(createJob != nullptr);
 
@@ -295,12 +290,7 @@ void TagsCommand::deleteNextTag()
 
 void TagsCommand::onTagDeleted(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     TagDeleteJob *deleteJob = qobject_cast<TagDeleteJob *>(job);
     Q_ASSERT(deleteJob != nullptr);
 
@@ -324,12 +314,7 @@ static void writeColumn(quint64 data, int width = 0)
 
 void TagsCommand::onTagsFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     TagFetchJob *fetchJob = qobject_cast<TagFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
     mFetchedTags = fetchJob->tags();

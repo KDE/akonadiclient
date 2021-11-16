@@ -174,14 +174,10 @@ void GroupCommand::fetchItems()
 
 void GroupCommand::onItemsFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
-        return;
-    }
-
+    if (!checkJobResult(job)) return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
+
     Item::List items = fetchJob->items();
     if (items.count() < 1) {
         emit error(i18nc("@info:shell", "Cannot find '%1' as an item", mGroupArg));
