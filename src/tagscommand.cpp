@@ -91,7 +91,7 @@ int TagsCommand::initCommand(QCommandLineParser *parser)
         return (InvalidUsage);
     }
 
-    mTagArgs = parser->positionalArguments();
+    const QStringList tagArgs = parser->positionalArguments();
 
     if (parser->isSet("list")) {			// see if "List" mode
         // expand
@@ -101,13 +101,13 @@ int TagsCommand::initCommand(QCommandLineParser *parser)
         // add NAME...
         mOperationMode = ModeAdd;
 
-        if (mTagArgs.count()<1)
+        if (tagArgs.isEmpty())
         {
             emitErrorSeeHelp(i18nc("@info:shell", "No tags specified to add"));
             return (InvalidUsage);
         }
 
-        if (mTagArgs.count()>1 && mAddForceId!=0)
+        if (tagArgs.count()>1 && mAddForceId!=0)
         {
             emitErrorSeeHelp(i18nc("@info:shell", "Multiple tags cannot be specified to add with 'id'"));
             return (InvalidUsage);
@@ -118,13 +118,14 @@ int TagsCommand::initCommand(QCommandLineParser *parser)
         // delete NAME|ID|URL...
         mOperationMode = ModeDelete;
 
-        if (mTagArgs.count()<1)
+        if (tagArgs.isEmpty())
         {
             emitErrorSeeHelp(i18nc("@info:shell", "No tags specified to delete"));
             return (InvalidUsage);
         }
     }
 
+    initProcessLoop(tagArgs);
     return NoError;
 }
 
@@ -145,26 +146,19 @@ void TagsCommand::start()
 
 void TagsCommand::addNextTag()
 {
-    if (mTagArgs.isEmpty())				// all arguments processed
-    {
-        emit finished(NoError);
-        return;
-    }
-
-    mCurrentTag = mTagArgs.takeFirst();			// tag argument being processed
-
     // See whether a tag with that name or ID already exists
     for (const Tag &tag : mFetchedTags)
     {
-        if (tag.name()==mCurrentTag || (mAddForceId!=0 && tag.id()==mAddForceId))
+        if (tag.name()==currentArg() || (mAddForceId!=0 && tag.id()==mAddForceId))
         {
-            emit error(i18nc("@info:shell", "A tag named '%1' ID %2 already exists", tag.name(), tag.id()));
-            QMetaObject::invokeMethod(this, "addNextTag", Qt::QueuedConnection);
-            return;					// ignore the conflicting tag
+            emit error(i18nc("@info:shell", "A tag named '%1' ID %2 already exists",
+                             tag.name(), QString::number(tag.id())));
+            processNext();				// ignore the conflicting tag
+            return;
         }
     }
 
-    Tag newTag(mCurrentTag);
+    Tag newTag(currentArg());
     if (mAddForceId!=0) newTag.setId(mAddForceId);
     TagCreateJob *createJob = new TagCreateJob(newTag, this);
     connect(createJob, &KJob::result, this, &TagsCommand::onTagAdded);
@@ -181,17 +175,12 @@ void TagsCommand::onTagAdded(KJob *job)
     {
         if (mAddForceId!=0)
         {
-            emit error(i18nc("@info:shell", "Cannot add tag '%1' ID %2", mCurrentTag, mAddForceId));
+            emit error(i18nc("@info:shell", "Cannot add tag '%1' ID %2",
+                             currentArg(), QString::number(mAddForceId)));
         }
         else
         {
-            emit error(i18nc("@info:shell", "Cannot add tag '%1'", mCurrentTag));
-        }
-
-        if (mTagArgs.isEmpty())				// all arguments processed
-        {
-            emit finished(RuntimeError);
-            return;
+            emit error(i18nc("@info:shell", "Cannot add tag '%1'", currentArg()));
         }
     }
     else
@@ -200,29 +189,21 @@ void TagsCommand::onTagAdded(KJob *job)
         else if (mUrlsOutput) std::cout << qPrintable(addedTag.url().toDisplayString()) << std::endl;
         else std::cout << "Added tag '" << qPrintable(addedTag.name()) << "' ID " << addedTag.id() << std::endl;
     }
-							// continue to do next
-    QMetaObject::invokeMethod(this, "addNextTag", Qt::QueuedConnection);
+
+    processNext();					// continue to do next
 }
 
 void TagsCommand::deleteNextTag()
 {
-    if (mTagArgs.isEmpty())				// all arguments processed
-    {
-        emit finished(NoError);
-        return;
-    }
-
-    mCurrentTag = mTagArgs.takeFirst();			// tag argument being processed
-
     Tag delTag;
     // See if user input is a valid integer as a tag ID
     bool ok;
-    unsigned int id = mCurrentTag.toUInt(&ok);
+    unsigned int id = currentArg().toUInt(&ok);
     if (ok) delTag = Tag(id);				// conversion succeeded
     else
     {
         // Otherwise check if we have an Akonadi URL
-        const QUrl url = QUrl::fromUserInput(mCurrentTag);
+        const QUrl url = QUrl::fromUserInput(currentArg());
         if (url.isValid() && url.scheme() == QLatin1String("akonadi"))
         {						// valid Akonadi URL
             delTag = Tag::fromUrl(url);
@@ -237,7 +218,7 @@ void TagsCommand::deleteNextTag()
             // tag with that name in the fetched list and use its ID.
             for (const Tag &tag : mFetchedTags)
             {
-                if (mCurrentTag==tag.name())
+                if (tag.name() == currentArg())
                 {
                     delTag = Tag(tag.id());
                     break;
@@ -247,9 +228,9 @@ void TagsCommand::deleteNextTag()
             // Check now whether the named tag currently exists.
             if (delTag.id()==-1)			// no tag found by loop above
             {
-                emit error(i18nc("@info:shell", "Tag to delete '%1' does not exist", mCurrentTag));
-                QMetaObject::invokeMethod(this, "deleteNextTag", Qt::QueuedConnection);
-                return;					// ignore the missing tag
+                emit error(i18nc("@info:shell", "Tag to delete '%1' does not exist", currentArg()));
+                processNext();				// ignore the missing tag
+                return;
             }
         }
     }
@@ -284,9 +265,9 @@ void TagsCommand::deleteNextTag()
         }
     }
 
-    emit error(i18nc("@info:shell", "Tag to delete ID %1 does not exist", delTag.id()));
-    QMetaObject::invokeMethod(this, "deleteNextTag", Qt::QueuedConnection);
-}							// ignore the missing tag
+    emit error(i18nc("@info:shell", "Tag to delete ID %1 does not exist", QString::number(delTag.id())));
+    processNext();					// ignore the missing tag
+}
 
 void TagsCommand::onTagDeleted(KJob *job)
 {
@@ -298,8 +279,7 @@ void TagsCommand::onTagDeleted(KJob *job)
     if (mBriefOutput) std::cout << deletedTag.id() << std::endl;
     else if (mUrlsOutput) std::cout << qPrintable(deletedTag.url().toDisplayString()) << std::endl;
     else std::cout << "Deleted tag '" << qPrintable(deletedTag.name()) << "' ID " << deletedTag.id() << std::endl;
-							// continue to do next
-    QMetaObject::invokeMethod(this, "deleteNextTag", Qt::QueuedConnection);
+    processNext();					// continue to do next
 }
 
 static void writeColumn(const QString &data, int width = 0)
@@ -323,17 +303,15 @@ void TagsCommand::onTagsFetched(KJob *job)
     // look at what to do.
     if (mOperationMode == ModeList)
     {
-        if (mFetchedTags.count()<1)
+        if (mFetchedTags.isEmpty())
         {
             emit error(i18nc("@info:shell", "No tags found"));
             emit finished(NoError);
-            return;
         }
-
-        listTags();
+        else listTags();
     }
-    else if (mOperationMode == ModeAdd) addNextTag();
-    else if (mOperationMode == ModeDelete) deleteNextTag();
+    else if (mOperationMode == ModeAdd) startProcessLoop("addNextTag");
+    else if (mOperationMode == ModeDelete) startProcessLoop("deleteNextTag");
 }
 
 void TagsCommand::listTags()
@@ -345,10 +323,8 @@ void TagsCommand::listTags()
         std::cout << std::endl;
     }
 
-    for (Tag::List::const_iterator it = mFetchedTags.constBegin(), end = mFetchedTags.constEnd(); it != end; ++it)
+    for (const Tag &tag : qAsConst(mFetchedTags))
     {
-        const Tag tag = (*it);
-
         if (!mBriefOutput && !mUrlsOutput) {
             writeColumn(tag.id(), 8);
         }
@@ -361,5 +337,5 @@ void TagsCommand::listTags()
         std::cout << std::endl;
     }
 
-    emit finished(NoError);
+    emit finished();
 }

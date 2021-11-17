@@ -52,9 +52,7 @@ private:
     bool mBriefOutput;
     bool mUrlsOutput;
     TagsCommand::Mode mOperationMode;
-    QStringList mTagArgs;
     int mAddForceId;
-    QString mCurrentTag;
     Akonadi::Tag::List mFetchedTags;
 
 private:
