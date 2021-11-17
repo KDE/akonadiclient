@@ -105,5 +105,13 @@ int main(int argc, char **argv)
     if (ret != AbstractCommand::NoError) return ret;
 
     ErrorReporter::setRunningApplication();
-    return (application.exec());
+    // Something odd seems to happen here.  If the processing loop is run
+    // with multiple (more than 1) arguments then the exit code eventually
+    // given to QCoreApplication::exit() by CommandRunner::onCommandFinished()
+    // is not returned by QCoreApplication::exec(), it always returns 0.
+    // If there is only one argument then the code is returned correctly.
+    // Retrieve the accumulated exit code directly from the CommandRunner
+    // instead.
+    application.exec();
+    return (runner.exitCode());
 }

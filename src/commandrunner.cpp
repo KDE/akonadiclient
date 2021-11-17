@@ -51,6 +51,8 @@ int CommandRunner::start()
         return AbstractCommand::InvalidUsage;
     }
 
+    mExitCode = AbstractCommand::NoError;		// no errors reported yet
+
     connect(mCommand, &AbstractCommand::finished, this, &CommandRunner::onCommandFinished);
 
     QMetaObject::invokeMethod(mCommand, "start", Qt::QueuedConnection);
@@ -60,10 +62,16 @@ int CommandRunner::start()
 
 void CommandRunner::onCommandFinished(int exitCode)
 {
+    // If no exit code is emplicitly specified, use the accumulated
+    // exit code from the processing loop.
+    if (exitCode == AbstractCommand::DefaultError) exitCode = mExitCode;
     QCoreApplication::exit(exitCode);
 }
 
 void CommandRunner::onCommandError(const QString &error)
 {
-    ErrorReporter::fatal(error);
+    ErrorReporter::error(error);
+    // Set the eventual exit code to RuntimeError, but only if
+    // it is not already set.
+    if (mExitCode == AbstractCommand::NoError) mExitCode = AbstractCommand::RuntimeError;
 }

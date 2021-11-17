@@ -33,6 +33,7 @@ class AbstractCommand : public QObject
 
 public:
     enum Errors {
+        DefaultError = -1,
         NoError = 0,
         InvalidUsage = 1,
         RuntimeError = 2
@@ -49,7 +50,7 @@ public Q_SLOTS:
     virtual void start() = 0;
 
 Q_SIGNALS:
-    void finished(int exitCode);
+    void finished(AbstractCommand::Errors exitCode = AbstractCommand::DefaultError);
     void error(const QString &message);
 
 protected:
@@ -79,8 +80,10 @@ protected:
      *
      * Call this first of all in a slot connected to
      * a job's @c result() signal.  If the job had an error then
-     * the @c error() and then the @c finished() signals will
-     * be emitted.
+     * the @c error() signal will be emitted, and then @c processNext()
+     * called to process the next loop argument.  If the processing
+     * loop is not being used then the @c finished() signal will
+     * be emitted to end the command.
      *
      * @param job The job that has just run
      * @param message An error message, or a null string to use the
@@ -89,6 +92,48 @@ protected:
      * @c false otherwise.
      **/
     bool checkJobResult(KJob *job, const QString &message = QString());
+
+    /**
+     * Prepare to run a loop to process multiple command arguments.
+     *
+     * @param args The list of arguments to be processed, usually
+     * the @c positionalArguments() from the @c CommandParser after
+     * removing any initial ones with special meaning.
+     **/
+    void initProcessLoop(const QStringList &args);
+
+    /**
+     * Run a loop to process multiple command arguments.
+     *
+     * The @p slot function will be called to start processing.
+     * While processing, the current argument can be accessed
+     * by @c currentArg().  The processing may run any number of
+     * asynchronous jobs or event loops, and when finished should
+     * call @c processNext() to continue with the next command argument.
+     * Any errors should be reported via the @c error() signal, which
+     * will track the overall return code and report it when finished.
+     *
+     * @param slot The name of the processing slot to perform an
+     * action for a single argument.
+     **/
+    void startProcessLoop(const char *slot);
+
+    /**
+     * Process the next command argument, if there are any remaining.
+     *
+     * If there are arguments remaining, then the @c slot specified
+     * to @c startProcessLoop() will be called again.  If the arguments
+     * are all processed then the @c finished() signal will be emitted
+     * to indicate that the command is finished.
+     **/
+    void processNext();
+
+    /**
+     * Get the command argument currently being processed.
+     *
+     * @return the current argument.
+     **/
+    const QString &currentArg() const			{ return (mCurrentArg); };
 
 private:
     bool mDryRun;
@@ -99,6 +144,10 @@ private:
     bool mSetCollectionItem;
 
     CollectionResolveJob *mResolveJob;
+
+    QStringList mProcessLoopArgs;
+    const char *mProcessLoopSlot;
+    QString mCurrentArg;
 };
 
 #endif // ABSTRACTCOMMAND_H

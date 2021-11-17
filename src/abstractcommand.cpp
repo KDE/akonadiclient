@@ -38,7 +38,8 @@ AbstractCommand::AbstractCommand(QObject *parent)
       mWantItem(false),
       mSetDryRun(false),
       mSetCollectionItem(false),
-      mResolveJob(nullptr)
+      mResolveJob(nullptr),
+      mProcessLoopSlot(nullptr)
 {
 }
 
@@ -187,9 +188,36 @@ bool AbstractCommand::checkJobResult(KJob *job, const QString &message)
 {
     if (job->error() != 0) {
         emit error(!message.isEmpty() ? message : job->errorString());
-        emit finished(RuntimeError);
+        // This will work even if the process loop is not in use
+        // (in which case mProcessLoopArgs will be empty and finished()
+        // will use the return code set by the error() signal above).
+        processNext();
         return (false);
     }
 
     return (true);
+}
+
+void AbstractCommand::initProcessLoop(const QStringList &args)
+{
+    mProcessLoopArgs = args;
+}
+
+void AbstractCommand::startProcessLoop(const char *slot)
+{
+    mProcessLoopSlot = slot;
+    processNext();
+}
+
+void AbstractCommand::processNext()
+{
+    if (mProcessLoopArgs.isEmpty())			// all arguments processed,
+    {							// loop is finished
+        emit finished();				// with accumulated error code
+        return;
+    }
+
+    Q_ASSERT(mProcessLoopSlot!=nullptr);
+    mCurrentArg = mProcessLoopArgs.takeFirst();
+    QMetaObject::invokeMethod(this, mProcessLoopSlot, Qt::QueuedConnection);
 }

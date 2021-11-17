@@ -32,10 +32,12 @@ public:
     virtual ~CommandRunner();
 
     int start();
+    int exitCode() const				{ return (mExitCode); }
 
 private:
     AbstractCommand *mCommand;
     const QStringList *mParsedArgs;
+    int mExitCode;
 
 private Q_SLOTS:
     void onCommandFinished(int exitCode);
