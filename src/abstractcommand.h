@@ -99,8 +99,10 @@ protected:
      * @param args The list of arguments to be processed, usually
      * the @c positionalArguments() from the @c CommandParser after
      * removing any initial ones with special meaning.
+     * @param finishedMessage A progress message to display when the
+     * loop is finished.  A null string means to display nothing.
      **/
-    void initProcessLoop(const QStringList &args);
+    void initProcessLoop(const QStringList &args, const QString &finishedMessage = QString());
 
     /**
      * Run a loop to process multiple command arguments.
@@ -148,6 +150,7 @@ private:
     QStringList mProcessLoopArgs;
     const char *mProcessLoopSlot;
     QString mCurrentArg;
+    QString mFinishedLoopMessage;
 };
 
 #endif // ABSTRACTCOMMAND_H

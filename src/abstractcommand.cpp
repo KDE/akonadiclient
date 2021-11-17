@@ -198,9 +198,10 @@ bool AbstractCommand::checkJobResult(KJob *job, const QString &message)
     return (true);
 }
 
-void AbstractCommand::initProcessLoop(const QStringList &args)
+void AbstractCommand::initProcessLoop(const QStringList &args, const QString &finishedMessage)
 {
     mProcessLoopArgs = args;
+    mFinishedLoopMessage = finishedMessage;
 }
 
 void AbstractCommand::startProcessLoop(const char *slot)
@@ -213,6 +214,10 @@ void AbstractCommand::processNext()
 {
     if (mProcessLoopArgs.isEmpty())			// all arguments processed,
     {							// loop is finished
+        if (!mFinishedLoopMessage.isEmpty()) {
+            ErrorReporter::progress(mFinishedLoopMessage);
+        }
+
         emit finished();				// with accumulated error code
         return;
     }

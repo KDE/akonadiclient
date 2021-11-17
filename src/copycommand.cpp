@@ -47,8 +47,6 @@ CopyCommand::CopyCommand(QObject *parent)
 
 void CopyCommand::start()
 {
-    mAnyErrors = false;                   // not yet, anyway
-
     connect(resolveJob(), &KJob::result, this, &CopyCommand::onTargetFetched);
     resolveJob()->start();
 }
@@ -64,15 +62,16 @@ void CopyCommand::setupCommandOptions(QCommandLineParser *parser)
 
 int CopyCommand::initCommand(QCommandLineParser *parser)
 {
-    mSourceArgs = parser->positionalArguments();
-    if (!checkArgCount(mSourceArgs, 2, i18nc("@info:shell", "Missing source/destination arguments"))) return InvalidUsage;
-
     if (!getCommonOptions(parser)) return InvalidUsage;
 
-    mDestinationArg = mSourceArgs.takeLast();		// extract the destination
-    Q_ASSERT(!mSourceArgs.isEmpty());			// must have some left
+    QStringList sourceArgs = parser->positionalArguments();
+    if (!checkArgCount(sourceArgs, 2, i18nc("@info:shell", "Missing source/destination arguments"))) return InvalidUsage;
+
+    mDestinationArg = sourceArgs.takeLast();		// extract the destination
+    Q_ASSERT(!sourceArgs.isEmpty());			// must have some left
     if (!getResolveJob(mDestinationArg)) return InvalidUsage;
 
+    initProcessLoop(sourceArgs, i18n("No more sources to process"));
     return NoError;
 }
 
@@ -85,23 +84,12 @@ void CopyCommand::onTargetFetched(KJob *job)
     mDestinationCollection = res->collection();
     Q_ASSERT(mDestinationCollection.isValid());
 
-    doNextSource();
-}
-
-inline void CopyCommand::doNextSource()
-{
-    QMetaObject::invokeMethod(this, "processNextSource", Qt::QueuedConnection);
+    startProcessLoop("processNextSource");
 }
 
 void CopyCommand::processNextSource()
 {
-    if (mSourceArgs.isEmpty()) {              // no more to do
-        ErrorReporter::progress(i18n("No more sources to process"));
-        emit finished(!mAnyErrors ? NoError : RuntimeError);
-        return;
-    }
-
-    const QString sourceArg = mSourceArgs.takeFirst();
+    const QString &sourceArg = currentArg();
 
     CollectionResolveJob *sourceJob = new CollectionResolveJob(sourceArg, this);
     sourceJob->setProperty("arg", sourceArg);
@@ -124,8 +112,7 @@ void CopyCommand::onSourceResolved(KJob *job)
         if (!item.isValid()) {              // couldn't parse as item either
             emit error(i18nc("@info:shell", "Cannot resolve source '%1', %2",
                              sourceArg, job->errorString()));
-            mAnyErrors = true;                // note for exit status
-            doNextSource();
+            processNext();
             return;
         }
 
@@ -192,7 +179,7 @@ void CopyCommand::onSourceResolved(KJob *job)
             copyMovejob->setProperty("arg", sourceArg);
             connect(copyMovejob, &KJob::result, this, &CopyCommand::onRecursiveCopyFinished);
         } else {
-            doNextSource();
+            processNext();
         }
     }
 }
@@ -200,25 +187,16 @@ void CopyCommand::onSourceResolved(KJob *job)
 void CopyCommand::onRecursiveCopyFinished(KJob *job)
 {
     const QString sourceArg = job->property("arg").toString();
-    if (job->error() != 0) {
-        emit error(i18nc("@info:shell", "Cannot copy/move from '%1', %2",
-                         sourceArg, job->errorString()));
-        mAnyErrors = true;                  // note for exit status
-    }
-
-    doNextSource();
+    if (!checkJobResult(job, i18nc("@info:shell", "Cannot copy/move from '%1', %2",
+                                   sourceArg, job->errorString()))) return;
+    processNext();
 }
 
 void CopyCommand::onCollectionsFetched(KJob *job)
 {
     const QString sourceArg = job->property("arg").toString();
-    if (job->error() != 0) {
-        emit error(i18nc("@info:shell", "Cannot fetch subcollections of '%1', %2",
-                         sourceArg, job->errorString()));
-        mAnyErrors = true;                  // note for exit status
-        doNextSource();
-        return;
-    }
+    if (!checkJobResult(job, i18nc("@info:shell", "Cannot fetch subcollections of '%1', %2",
+                                   sourceArg, job->errorString()))) return;
 
     CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
@@ -285,11 +263,8 @@ void CopyCommand::onCollectionCopyFinished(KJob *job)
 {
     const QString sourceArg = job->property("arg").toString();
     if (job->error() != 0) {
-        ErrorReporter::error(i18nc("@info:shell", "Cannot copy/move sub-collection '%2' from '%1', %3",
-                                   sourceArg,
-                                   job->property("collection").toString(),
-                                   job->errorString()));
-        mAnyErrors = true;                  // note for exit status
+        emit error(i18nc("@info:shell", "Cannot copy/move sub-collection '%2' from '%1', %3",
+                         sourceArg, job->property("collection").toString(), job->errorString()));
     }
 
     doNextSubcollection(sourceArg);           // copy the next one
@@ -306,13 +281,8 @@ void CopyCommand::fetchItems(const QString &sourceArg)
 void CopyCommand::onItemsFetched(KJob *job)
 {
     const QString sourceArg = job->property("arg").toString();
-    if (job->error() != 0) {
-        ErrorReporter::error(i18nc("@info:shell", "Cannot fetch items of '%1', %2",
-                                   sourceArg, job->errorString()));
-        mAnyErrors = true;                  // note for exit status
-        doNextSource();
-        return;
-    }
+    if (!checkJobResult(job, i18nc("@info:shell", "Cannot fetch items of '%1', %2",
+                                   sourceArg, job->errorString()))) return;
 
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
@@ -320,7 +290,7 @@ void CopyCommand::onItemsFetched(KJob *job)
     Akonadi::Item::List items = fetchJob->items();
     if (items.isEmpty()) {                // no items, no problem
         ErrorReporter::progress(i18n("No items to process"));
-        doNextSource();
+        processNext();
         return;
     }
 
@@ -340,18 +310,14 @@ void CopyCommand::onItemsFetched(KJob *job)
         copyJob->setProperty("arg", sourceArg);
         connect(copyJob, &KJob::result, this, &CopyCommand::onItemCopyFinished);
     } else {
-        doNextSource();
+        processNext();
     }
 }
 
 void CopyCommand::onItemCopyFinished(KJob *job)
 {
     const QString sourceArg = job->property("arg").toString();
-    if (job->error() != 0) {
-        ErrorReporter::error(i18nc("@info:shell", "Cannot copy/move items from '%1', %2",
-                                   sourceArg, job->errorString()));
-        mAnyErrors = true;                  // note for exit status
-    }
-
-    doNextSource();
+    if (!checkJobResult(job, i18nc("@info:shell", "Cannot copy/move items from '%1', %2",
+                                   sourceArg, job->errorString()))) return;
+    processNext();
 }

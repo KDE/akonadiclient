@@ -47,14 +47,11 @@ protected:
 
 private:
     QString mDestinationArg;
-    QStringList mSourceArgs;
-    bool mAnyErrors;
     Akonadi::Collection mDestinationCollection;
     Akonadi::Collection mSourceCollection;
     Akonadi::Collection::List mSubCollections;
 
 private:
-    void doNextSource();
     void doNextSubcollection(const QString &sourceArg);
     void fetchItems(const QString &sourceArg);
 
