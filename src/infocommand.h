@@ -48,7 +48,6 @@ protected:
     int initCommand(QCommandLineParser *parser) override;
 
 private:
-    QString mEntityArg;
     Akonadi::Collection *mInfoCollection;
     Akonadi::Item *mInfoItem;
     Akonadi::CollectionStatistics *mInfoStatistics;
@@ -59,6 +58,8 @@ private:
     void fetchParentPath(const Akonadi::Collection &collection);
 
 private Q_SLOTS:
+    void infoForNext();
+
     void onBaseFetched(KJob *job);
     void onStatisticsFetched(KJob *job);
     void onItemsFetched(KJob *job);

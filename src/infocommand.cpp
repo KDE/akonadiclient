@@ -61,27 +61,37 @@ void InfoCommand::setupCommandOptions(QCommandLineParser *parser)
     addOptionsOption(parser);
     addCollectionItemOptions(parser);
 
-    parser->addPositionalArgument("entity", i18nc("@info:shell", "The collection or item"));
+    parser->addPositionalArgument("entity", i18nc("@info:shell", "Collections or items to display"), i18n("entity..."));
 }
 
 int InfoCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection/item argument"))) return InvalidUsage;
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "No collections or items specified"))) return InvalidUsage;
 
     if (!getCommonOptions(parser)) return InvalidUsage;
 
-    mEntityArg = args.first();
-    if (!getResolveJob(mEntityArg)) return InvalidUsage;
-
+    initProcessLoop(args);
     return NoError;
 }
 
 void InfoCommand::start()
 {
+    startProcessLoop("infoForNext");
+}
+
+void InfoCommand::infoForNext()
+{
     if (wantItem()) {					// user forced as an item
         fetchItems();					// do this immediately
-    } else {
+    } else
+    {
+        if (!getResolveJob(currentArg()))
+        {
+            processNext();
+            return;
+        }
+
         // User specified that the input is a collection, or
         // didn't specify at all what sort of entity it is.
         // First try to resolve it as a collection.
@@ -106,13 +116,13 @@ void InfoCommand::onBaseFetched(KJob *job)
         }
 
         emit error(job->errorString());
-        emit finished(RuntimeError);
+        processNext();
         return;
     }
 
     if (res->collection() == Collection::root()) {
         emit error(i18nc("@info:shell", "No information available for collection root"));
-        emit finished(RuntimeError);
+        processNext();
         return;
     }
 
@@ -139,10 +149,10 @@ void InfoCommand::onStatisticsFetched(KJob *job)
 
 void InfoCommand::fetchItems()
 {
-    Item item = CollectionResolveJob::parseItem(mEntityArg);
+    Item item = CollectionResolveJob::parseItem(currentArg());
     if (!item.isValid()) {
-        emit error(i18nc("@info:shell", "Invalid item/collection syntax"));
-        emit finished(RuntimeError);
+        emit error(i18nc("@info:shell", "Invalid item/collection syntax '%1'", currentArg()));
+        processNext();
         return;
     }
 
@@ -168,8 +178,8 @@ void InfoCommand::onItemsFetched(KJob *job)
     Q_ASSERT(fetchJob != nullptr);
     Item::List items = fetchJob->items();
     if (items.count() < 1) {
-        emit error(i18nc("@info:shell", "Cannot find '%1' as a collection or item", mEntityArg));
-        emit finished(RuntimeError);
+        emit error(i18nc("@info:shell", "Cannot find '%1' as a collection or item", currentArg()));
+        processNext();
         return;
     }
 
@@ -208,7 +218,8 @@ void InfoCommand::onParentPathFetched(KJob *job)
 
     // Finally we have fetched all of the information to display.
 
-    if (mInfoCollection != nullptr) {         // for a collection
+    std::cout << std::endl;
+    if (mInfoCollection != nullptr) {			// for a collection
         Q_ASSERT(mInfoCollection->isValid());
 
         writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoCollection->id()));
@@ -260,7 +271,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
         const QString size = QLocale::system().formattedDataSize(mInfoStatistics->size());
 #endif
         writeInfo(i18nc("@info:shell", "Size"), size);
-    } else if (mInfoItem != nullptr) {        // for an item
+    } else if (mInfoItem != nullptr) {			// for an item
         writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoItem->id()));
         writeInfo(i18nc("@info:shell", "URL"), mInfoItem->url().toDisplayString());
         writeInfo(i18nc("@info:shell", "Parent"), parentString);
@@ -303,5 +314,5 @@ void InfoCommand::onParentPathFetched(KJob *job)
         writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Unknown"));
     }
 
-    emit finished(NoError);
+    processNext();
 }

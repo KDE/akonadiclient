@@ -131,6 +131,7 @@ bool AbstractCommand::getCommonOptions(QCommandLineParser *parser)
 
 bool AbstractCommand::getResolveJob(const QString &arg)
 {
+    if (mResolveJob != nullptr) delete mResolveJob;
     mResolveJob = new CollectionResolveJob(arg, this);
     // TODO: does this work for ITEMs specified as an Akonadi URL?
     //       "akonadiclient info 10175" works,
