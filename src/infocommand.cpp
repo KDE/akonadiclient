@@ -218,7 +218,6 @@ void InfoCommand::onParentPathFetched(KJob *job)
 
     // Finally we have fetched all of the information to display.
 
-    std::cout << std::endl;
     if (mInfoCollection != nullptr) {			// for a collection
         Q_ASSERT(mInfoCollection->isValid());
 
@@ -312,6 +311,10 @@ void InfoCommand::onParentPathFetched(KJob *job)
     } else {                      // neither collection nor item?
         // should never happen
         writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Unknown"));
+    }
+
+    if (!isProcessLoopFinished()) {			// not the last item
+        std::cout << "\n";				// blank line to separate
     }
 
     processNext();

@@ -43,9 +43,6 @@ protected:
     int initCommand(QCommandLineParser *parser) override;
 
 private:
-    QStringList mItemArgs;
-    AbstractCommand::Errors mExitStatus;
-    QCommandLineOption mRawOption;
     bool mRaw = false;
 
 private Q_SLOTS:

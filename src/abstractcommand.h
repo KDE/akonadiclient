@@ -137,6 +137,14 @@ protected:
      **/
     const QString &currentArg() const			{ return (mCurrentArg); };
 
+    /**
+     * Check whether the processing loop is finished.
+     *
+     * @return @c true if there are no more arguments to process,
+     * @c false if there are any more remaining.
+     **/
+    bool isProcessLoopFinished() const			{ return (mProcessLoopArgs.isEmpty()); }
+
 private:
     bool mDryRun;
     bool mWantCollection;

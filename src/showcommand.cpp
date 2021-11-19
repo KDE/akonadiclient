@@ -28,52 +28,44 @@
 #include <iostream>
 
 #include "commandfactory.h"
+#include "errorreporter.h"
 
 using namespace Akonadi;
 
 DEFINE_COMMAND("show", ShowCommand, I18N_NOOP("Show the raw payload of an item"));
 
 ShowCommand::ShowCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mRawOption((QStringList() << QStringLiteral("r") << QStringLiteral("raw")), i18nc("@info:shell", "Use raw payload (disables quoted-printable decoding)"))
+    : AbstractCommand(parent)
 {
 }
 
 void ShowCommand::setupCommandOptions(QCommandLineParser *parser)
 {
     parser->addPositionalArgument("item", i18nc("@info:shell", "The items to show"), i18nc("@info:shell", "item..."));
-    parser->addOption(mRawOption);
+    parser->addOption(QCommandLineOption((QStringList() << QStringLiteral("r") << QStringLiteral("raw")), i18nc("@info:shell", "Use raw payload (disables quoted-printable decoding)")));
 }
 
 int ShowCommand::initCommand(QCommandLineParser *parser)
 {
-    mItemArgs = parser->positionalArguments();
-    if (!checkArgCount(mItemArgs, 1, i18nc("@info:shell", "No items specified"))) return InvalidUsage;
+    const QStringList itemArgs = parser->positionalArguments();
+    if (!checkArgCount(itemArgs, 1, i18nc("@info:shell", "No items specified"))) return InvalidUsage;
 
-    mRaw = parser->isSet(mRawOption);
+    mRaw = parser->isSet("raw");
 
+    initProcessLoop(itemArgs);
     return NoError;
 }
 
 void ShowCommand::start()
 {
-    mExitStatus = NoError;                // not yet, anyway
-    processNextItem();                    // start off the process
+    startProcessLoop("processNextItem");
 }
 
 void ShowCommand::processNextItem()
 {
-    if (mItemArgs.isEmpty()) {            // any more items?
-        // no, all done
-        emit finished(mExitStatus);
-        return;
-    }
-    QString arg = mItemArgs.takeFirst();
-
-    Item item = CollectionResolveJob::parseItem(arg, true);
+    Item item = CollectionResolveJob::parseItem(currentArg(), true);
     if (!item.isValid()) {
-        mExitStatus = RuntimeError;
-        QMetaObject::invokeMethod(this, "processNextItem", Qt::QueuedConnection);
+        processNext();
         return;
     }
 
@@ -81,27 +73,23 @@ void ShowCommand::processNextItem()
     job->fetchScope().setFetchModificationTime(false);
     job->fetchScope().fetchAllAttributes(false);
     job->fetchScope().fetchFullPayload(true);
-    job->setProperty("arg", arg);
     connect(job, &KJob::result, this, &ShowCommand::onItemFetched);
 }
 
 void ShowCommand::onItemFetched(KJob *job)
 {
-    if (job->error() != 0) {
-        emit error(job->errorString());
-        mExitStatus = RuntimeError;
+    if (!checkJobResult(job)) {
+        return;
     } else {
         ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
         Q_ASSERT(fetchJob != nullptr);
         Item::List items = fetchJob->items();
-        if (items.count() < 1) {
-            emit error(i18nc("@info:shell", "No result returned for item '%1'", job->property("arg").toString()));
-            mExitStatus = RuntimeError;
+        if (items.isEmpty()) {
+            emit error(i18nc("@info:shell", "No result returned for item '%1'", currentArg()));
         } else {
             Akonadi::Item item = items.first();
             if (!item.hasPayload()) {
-                emit error(i18nc("@info:shell", "Item '%1' has no payload", job->property("arg").toString()));
-                mExitStatus = RuntimeError;
+                emit error(i18nc("@info:shell", "Item '%1' has no payload", currentArg()));
             } else if (mRaw) {
                 std::cout << item.payloadData().constData();    // output the raw payload
             } else {
@@ -112,17 +100,18 @@ void ShowCommand::onItemFetched(KJob *job)
                     if (mainPart) {
                         std::cout << qPrintable(mainPart->decodedText());
                     } else {
-                        std::cout << "ERROR: no main body part";
+                        ErrorReporter::warning(i18n("Item has no main body part"));
                     }
                 } else {
                     std::cout << qPrintable(QString::fromUtf8(item.payloadData().constData()));
                 }
             }
-            if (!mItemArgs.isEmpty()) {         // not the last item
-                std::cout << "\n";                // blank line to separate
+
+            if (!isProcessLoopFinished()) {		// not the last item
+                std::cout << "\n";			// blank line to separate
             }
         }
     }
 
-    QMetaObject::invokeMethod(this, "processNextItem", Qt::QueuedConnection);
+    processNext();
 }
