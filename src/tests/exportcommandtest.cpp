@@ -20,8 +20,8 @@
 #include "exportcommandtest.h"
 #include "../exportcommand.h"
 
-#include <AkonadiCore/control.h>
-#include <akonadi/xml/xmlwritejob.h>
+#include <Akonadi/Control>
+#include <Akonadi/XmlWriteJob>
 #include <akonadi/qtest_akonadi.h>
 
 using namespace Akonadi;

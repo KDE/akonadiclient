@@ -22,8 +22,8 @@
 
 #include <qstringlist.h>
 
-#include <item.h>
-#include <tag.h>
+#include <Akonadi/Item>
+#include <Akonadi/Tag>
 
 #include "abstractcommand.h"
 

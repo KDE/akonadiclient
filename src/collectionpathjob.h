@@ -20,7 +20,7 @@
 #ifndef COLLECTIONPATHJOB_H
 #define COLLECTIONPATHJOB_H
 
-#include <AkonadiCore/Collection>
+#include <Akonadi/Collection>
 #include <KCompositeJob>
 
 class CollectionPathJob : public KCompositeJob

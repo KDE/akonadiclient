@@ -22,9 +22,9 @@
 #include "../collectionresolvejob.h"
 #include "../renamecommand.h"
 
-#include <AkonadiCore/collectionfetchjob.h>
-#include <AkonadiCore/collectionfetchscope.h>
-#include <AkonadiCore/control.h>
+#include <Akonadi/CollectionFetchJob>
+#include <Akonadi/CollectionFetchScope>
+#include <Akonadi/Control>
 #include <akonadi/qtest_akonadi.h>
 
 using namespace Akonadi;

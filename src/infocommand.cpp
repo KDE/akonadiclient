@@ -18,12 +18,12 @@
 
 #include "infocommand.h"
 
-#include <AkonadiCore/itemfetchjob.h>
-#include <AkonadiCore/itemfetchscope.h>
-#include <AkonadiCore/collectionstatisticsjob.h>
-#include <AkonadiCore/collectionstatistics.h>
+#include <Akonadi/ItemFetchJob>
+#include <Akonadi/ItemFetchScope>
+#include <Akonadi/CollectionStatisticsJob>
+#include <Akonadi/CollectionStatistics>
 
-#include <AkonadiCore/CollectionPathResolver>   // just for error code
+#include <Akonadi/CollectionPathResolver>   // just for error code
 
 #include <qdatetime.h>
 

@@ -19,12 +19,12 @@
 
 #include "importcommand.h"
 
-#include <AkonadiXml/XmlWriteJob>
-#include <AkonadiXml/XmlDocument>
-#include <AkonadiCore/collectioncreatejob.h>
-#include <AkonadiCore/collectionfetchjob.h>
-#include <AkonadiCore/collectionfetchscope.h>
-#include <AkonadiCore/itemcreatejob.h>
+#include <Akonadi/XmlWriteJob>
+#include <Akonadi/XmlDocument>
+#include <Akonadi/CollectionCreateJob>
+#include <Akonadi/CollectionFetchJob>
+#include <Akonadi/CollectionFetchScope>
+#include <Akonadi/ItemCreateJob>
 
 #include <klocalizedstring.h>
 

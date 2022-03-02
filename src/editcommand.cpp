@@ -19,10 +19,10 @@
 
 #include "editcommand.h"
 
-#include <AkonadiCore/item.h>
-#include <AkonadiCore/itemfetchjob.h>
-#include <AkonadiCore/itemfetchscope.h>
-#include <AkonadiCore/itemmodifyjob.h>
+#include <Akonadi/Item>
+#include <Akonadi/ItemFetchJob>
+#include <Akonadi/ItemFetchScope>
+#include <Akonadi/ItemModifyJob>
 #include <kprocess.h>
 #include <qprocess.h>
 #include <qtemporaryfile.h>

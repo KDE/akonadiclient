@@ -31,10 +31,10 @@
 
 #include <klocalizedstring.h>
 
-#include <recursiveitemfetchjob.h>
-#include <tagfetchjob.h>
-#include <itemfetchscope.h>
-#include <tagfetchscope.h>
+#include <Akonadi/ItemFetchScope>
+#include <Akonadi/RecursiveItemFetchJob>
+#include <Akonadi/TagFetchJob>
+#include <Akonadi/TagFetchScope>
 
 #include "commandfactory.h"
 #include "errorreporter.h"

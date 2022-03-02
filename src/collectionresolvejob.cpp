@@ -18,10 +18,10 @@
 
 #include "collectionresolvejob.h"
 
-#include <AkonadiCore/CollectionFetchJob>
-#include <AkonadiCore/CollectionFetchScope>
+#include <Akonadi/CollectionFetchJob>
+#include <Akonadi/CollectionFetchScope>
 
-#include <AkonadiCore/collectionpathresolver.h>
+#include <Akonadi/CollectionPathResolver>
 
 #include <KLocalizedString>
 
