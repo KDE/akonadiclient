@@ -21,8 +21,8 @@
 
 #include <klocalizedstring.h>
 
-#include <akonadi/agentmanager.h>
-#include <akonadi/agentinstance.h>
+#include <Akonadi/AgentManager>
+#include <Akonadi/AgentInstance>
 
 #include <qstringlist.h>
 #include <QVector>

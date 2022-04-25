@@ -19,7 +19,7 @@
 
 #include "exportcommand.h"
 
-#include <akonadi/xmlwritejob.h>
+#include <Akonadi/XmlWriteJob>
 
 #include <klocalizedstring.h>
 

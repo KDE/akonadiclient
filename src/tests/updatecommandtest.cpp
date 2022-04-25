@@ -22,11 +22,11 @@
 #include "../collectionresolvejob.h"
 #include "../updatecommand.h"
 
-#include <AkonadiCore/control.h>
-#include <AkonadiCore/itemcreatejob.h>
-#include <AkonadiCore/itemfetchjob.h>
+#include <Akonadi/Control>
+#include <Akonadi/ItemCreateJob>
+#include <Akonadi/ItemFetchJob>
 #include <akonadi/qtest_akonadi.h>
-#include <AkonadiCore/itemfetchscope.h>
+#include <Akonadi/ItemFetchScope>
 
 using namespace Akonadi;
 

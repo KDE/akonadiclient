@@ -21,11 +21,11 @@
 #include "collectionresolvejob.h"
 #include "errorreporter.h"
 
-#include <akonadi/collectioncreatejob.h>
-#include <akonadi/collectionfetchscope.h>
-#include <akonadi/collectionfetchjob.h>
-#include <akonadi/item.h>
-#include <akonadi/itemcreatejob.h>
+#include <Akonadi/CollectionCreateJob>
+#include <Akonadi/CollectionFetchScope>
+#include <Akonadi/CollectionFetchJob>
+#include <Akonadi/Item>
+#include <Akonadi/ItemCreateJob>
 
 #ifdef USE_KIO_CONVERTSIZE
 #include <kio/global.h>

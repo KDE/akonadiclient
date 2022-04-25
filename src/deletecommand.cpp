@@ -19,11 +19,11 @@
 
 #include "deletecommand.h"
 
-#include <akonadi/item.h>
-#include <akonadi/itemdeletejob.h>
-#include <akonadi/itemfetchjob.h>
-#include <akonadi/collectiondeletejob.h>
-#include <akonadi/collectionpathresolver.h>
+#include <Akonadi/Item>
+#include <Akonadi/ItemDeleteJob>
+#include <Akonadi/ItemFetchJob>
+#include <Akonadi/CollectionDeleteJob>
+#include <Akonadi/CollectionPathResolver>
 
 #include <klocalizedstring.h>
 

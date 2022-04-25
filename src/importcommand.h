@@ -22,8 +22,8 @@
 
 #include "abstractcommand.h"
 
-#include <akonadi/collection.h>
-#include <akonadi/item.h>
+#include <Akonadi/Collection>
+#include <Akonadi/Item>
 
 namespace Akonadi
 {

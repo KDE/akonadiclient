@@ -20,9 +20,9 @@
 
 #include <iostream>
 
-#include <akonadi/tagfetchjob.h>
-#include <akonadi/tagcreatejob.h>
-#include <akonadi/tagdeletejob.h>
+#include <Akonadi/TagFetchJob>
+#include <Akonadi/TagCreateJob>
+#include <Akonadi/TagDeleteJob>
 
 #include "commandfactory.h"
 
