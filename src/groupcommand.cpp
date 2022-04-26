@@ -23,8 +23,7 @@
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/ItemModifyJob>
-
-#include <Akonadi/Contact/ContactSearchJob>
+#include <Akonadi/ContactSearchJob>
 
 #include <KContacts/Addressee>
 
