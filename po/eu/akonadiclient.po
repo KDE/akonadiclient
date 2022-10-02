@@ -1,0 +1,1804 @@
+# Translation for akonadiclient.po to Euskara/Basque (eu).
+# Copyright (C) 2020-2022, This file is copyright:
+# This file is distributed under the same license as the akonadiclient package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
+#
+# Translators:
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadiclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-04-27 00:46+0000\n"
+"PO-Revision-Date: 2022-07-14 18:21+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.04.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Iñigo Salvador Azurmendi"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xalba@ni.eus"
+
+#: src/abstractcommand.cpp:49
+#, kde-format
+msgctxt "@info:shell"
+msgid "The name of the command"
+msgstr "Komandoaren izena"
+
+#: src/abstractcommand.cpp:92 src/main.cpp:65
+#, kde-format
+msgctxt "@info:shell"
+msgid "Options for command"
+msgstr "Komandoaren aukerak"
+
+#: src/abstractcommand.cpp:92 src/main.cpp:66
+#, kde-format
+msgctxt "@info:shell"
+msgid "[options]"
+msgstr "[aukerak]"
+
+#: src/abstractcommand.cpp:98
+#, kde-format
+msgctxt "@info:shell"
+msgid "Assume that a collection is specified"
+msgstr "Demagun bilduma bat zehaztu dela"
+
+#: src/abstractcommand.cpp:101
+#, kde-format
+msgctxt "@info:shell"
+msgid "Assume that an item is specified"
+msgstr "Demagun elementu bat zehaztu dela "
+
+#: src/abstractcommand.cpp:108
+#, kde-format
+msgctxt "@info:shell"
+msgid "Run without making any actual changes"
+msgstr "Exekutatu benetako aldaketarik egin gabe"
+
+#: src/abstractcommand.cpp:124
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot specify as both an item and a collection"
+msgstr "Ezin dira biak, elementu gisa eta bilduma gisa zehaztu"
+
+#: src/abstractcommand.cpp:142
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid collection/item argument '%1', %2"
+msgstr "Bilduma/elementu argumentu baliogabea «%1», %2"
+
+#: src/abstractcommand.cpp:160
+#, kde-format
+msgctxt "@info:shell %1 is subcommand name, %2 is error message"
+msgid "%2. See 'help %1'"
+msgstr "%2. Begiratu «help %1»"
+
+#: src/abstractcommand.cpp:165
+#, kde-format
+msgctxt ""
+"@info:shell %1 is application name, %2 is subcommand name, %3 is error "
+"message"
+msgid "%3. See '%1 help %2'"
+msgstr "%3. Begiratu «%1 help %2»"
+
+#: src/abstractcommand.cpp:181
+#, kde-format
+msgctxt "@info:shell"
+msgid "Dangerous or destructive operations are not allowed"
+msgstr "Ez da onartzen eragiketa arriskutsu edo suntsitzailerik"
+
+#: src/abstractcommand.cpp:182
+#, kde-format
+msgctxt "@info:shell"
+msgid "Set %1=\"%2\" in environment"
+msgstr "Ingurunean %1=\"%2\" ezarri"
+
+#: src/addcommand.cpp:45
+#, kde-format
+msgid "Add items to a collection"
+msgstr "Gehitu elementuak bilduma bati"
+
+#: src/addcommand.cpp:61
+#, kde-format
+msgid "Base directory for input files/directories, default is current"
+msgstr ""
+"Sarrerako fitxategien/direktorioen oinarri direktorioa, lehenetsitakoa "
+"unekoa da"
+
+#: src/addcommand.cpp:61
+#, kde-format
+msgid "directory"
+msgstr "direktorioa"
+
+#: src/addcommand.cpp:62
+#, kde-format
+msgid "Flat mode, do not duplicate subdirectory structure"
+msgstr "Modu laua, ez bikoiztu azpidirektorioen egitura"
+
+#: src/addcommand.cpp:63
+#, kde-format
+msgid "MIME type of added items, default is to auto-detect"
+msgstr "Gehitutako elementuen MIME mota, lehenetsia hautemate automatikoa da"
+
+#: src/addcommand.cpp:63
+#, kde-format
+msgid "mimetype"
+msgstr "MIME-mota"
+
+#: src/addcommand.cpp:66
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection to add to: an ID, path or Akonadi URL"
+msgstr "Gehitu behar den bilduma: ID, bide-izen edo Akonari-ren URL bat"
+
+#: src/addcommand.cpp:67
+#, kde-format
+msgctxt "@info:shell"
+msgid "Files or directories to add to the collection"
+msgstr "Bildumara gehitu beharreko fitxategiak edo direktorioak"
+
+#: src/addcommand.cpp:67
+#, kde-format
+msgid "files..."
+msgstr "fitxategiak..."
+
+#: src/addcommand.cpp:73 src/createcommand.cpp:60 src/listcommand.cpp:60
+#: src/renamecommand.cpp:52
+#, kde-format
+msgctxt "@info:shell"
+msgid "Missing collection argument"
+msgstr "Bildumaren argumentua falta da"
+
+#: src/addcommand.cpp:74
+#, kde-format
+msgctxt "@info:shell"
+msgid "No file or directory arguments"
+msgstr "Ez dago fitxategi edo direktorio argumenturik"
+
+#: src/addcommand.cpp:87
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid MIME type argument '%1'"
+msgstr "«%1» MIME-mota argumentu baliogabea"
+
+#: src/addcommand.cpp:96
+#, kde-format
+msgctxt "@info:shell"
+msgid "Base directory '%1' not found"
+msgstr "«%1» oinarri direktorioa ez da aurkitu"
+
+#: src/addcommand.cpp:117
+#, kde-format
+msgid "File '%1' does not exist"
+msgstr "«%1» fitxategia ez da existitzen"
+
+#: src/addcommand.cpp:120
+#, kde-format
+msgid "Error accessing file '%1'"
+msgstr "«%1» fitxategia atzitzeko errorea"
+
+#: src/addcommand.cpp:148
+#, kde-format
+msgctxt "@info:shell"
+msgid "No valid file or directory arguments"
+msgstr "Ez dago artxibo- edo direktorio-argumentu baliodunik"
+
+#: src/addcommand.cpp:158
+#, kde-format
+msgid "No more directories to process"
+msgstr "Ez dago prozesatu beharreko direktorio gehiago"
+
+#: src/addcommand.cpp:182 src/addcommand.cpp:204
+#, kde-format
+msgid "Directory ‘%1’ no longer exists"
+msgstr "«%1» direktorioa jada ez da existitzen"
+
+#: src/addcommand.cpp:221
+#, kde-format
+msgid "Fetching collection \"%3\" in parent %1 \"%2\""
+msgstr "%1 «%2» gurasoko «%3» bilduma ekartzen"
+
+#: src/addcommand.cpp:234
+#, kde-format
+msgid "Need to create collection for '%1'"
+msgstr "«%1»(e)rako bilduma sortu beharra"
+
+#: src/addcommand.cpp:247
+#, kde-format
+msgid "No more files to process"
+msgstr "Ez dago prozesatu beharreko fitxategi gehiago"
+
+#: src/addcommand.cpp:258 src/updatecommand.cpp:84
+#, kde-format
+msgctxt "@info:shell"
+msgid "File ‘%1’ does not exist"
+msgstr "«%1» fitxategia ez da existitzen"
+
+#: src/addcommand.cpp:264 src/updatecommand.cpp:92
+#, kde-format
+msgctxt "@info:shell"
+msgid "File ‘%1’ cannot be read"
+msgstr "«%1» fitxategia ezin da irakurri"
+
+#: src/addcommand.cpp:272
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot determine MIME type of file ‘%1’"
+msgstr "Ezain da zehaztu «%1» fitxategiaren MIME-mota"
+
+#: src/addcommand.cpp:281
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot determine parent collection for file ‘%1’"
+msgstr "Ezin da zehaztu «%1» fitxategiaren guraso bilduma"
+
+#: src/addcommand.cpp:292
+#, kde-format
+msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
+msgstr "«%3»(e)ko %1 «%2» bilduman %4 neurriko elementua sortzen"
+
+#: src/addcommand.cpp:314
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot fetch target collection, %1"
+msgstr "Ezin da helburu bilduma ekarri, %1"
+
+#: src/addcommand.cpp:324
+#, kde-format
+msgid "Root folder is %1 \"%2\""
+msgstr "Erro karpeta %1 \"%2\" da"
+
+#: src/addcommand.cpp:372
+#, kde-format
+msgid "Error fetching collection %1 \"%2\", %3"
+msgstr "Errorea %1 «%2» bilduma ekartzean, %3"
+
+#: src/addcommand.cpp:387
+#, kde-format
+msgid "Changed maildir folder name to '%1'"
+msgstr "Maildir karpetaren izena «%1»(e)ra aldatu da"
+
+#: src/addcommand.cpp:396
+#, kde-format
+msgid "Creating collection \"%3\" under parent %1 \"%2\""
+msgstr "%1 «%2» gurasopean «%3» bilduma sortzen"
+
+#: src/addcommand.cpp:417
+#, kde-format
+msgctxt "@info:shell"
+msgid "Failed to add ‘%1’, %2"
+msgstr "«%1» gehitzea huts egin du, %2"
+
+#: src/addcommand.cpp:423
+#, kde-format
+msgid "Added file '%2' as item %1"
+msgstr "«%2» fitxategia %1 elementu gisa gehitu da"
+
+#: src/agentscommand.cpp:37
+#, kde-format
+msgid "Manage Akonadi agents"
+msgstr "Kudeatu Akonadi-ren agenteak"
+
+#: src/agentscommand.cpp:49
+#, kde-format
+msgid "List all agents"
+msgstr "Zerrendatu agente guztiak"
+
+#: src/agentscommand.cpp:50
+#, kde-format
+msgid "Set state \"online\" or \"offline\" for specified agents"
+msgstr "Ezarri «lerroan» edo «lerroz kanpo» egoera zehaztutako agentetan"
+
+#: src/agentscommand.cpp:50
+#, kde-format
+msgctxt "@info:shell"
+msgid "state"
+msgstr "egoera"
+
+#: src/agentscommand.cpp:51
+#, kde-format
+msgid "Get state for the specified agent"
+msgstr "Lortu zehaztutako agentearen egoera"
+
+#: src/agentscommand.cpp:52
+#, kde-format
+msgid "Show information about the specified agent"
+msgstr "Erakutsi zehaztutako agenteari buruzko informazioa"
+
+#: src/agentscommand.cpp:53
+#, kde-format
+msgid "Restart the specified agent"
+msgstr "Berrabiarazi zehaztutako agentea"
+
+#: src/agentscommand.cpp:56
+#, kde-format
+msgctxt "@info:shell"
+msgid "Agents to operate on"
+msgstr "Zein agenteetan eragin"
+
+#: src/agentscommand.cpp:56
+#, kde-format
+msgctxt "@info:shell"
+msgid "[agents...]"
+msgstr "[agenteak...]"
+
+#: src/agentscommand.cpp:68
+#, kde-format
+msgctxt "@info:shell"
+msgid "No agents or options specified"
+msgstr "Ez da agenterik ez aukerarik zehaztu"
+
+#: src/agentscommand.cpp:85
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid state '%1'"
+msgstr "«%1» egoera baliogabea"
+
+#: src/agentscommand.cpp:89
+#, kde-format
+msgctxt "@info:shell"
+msgid "No option specified"
+msgstr "Ez da aukerarik zehaztu"
+
+#: src/agentscommand.cpp:124
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid parameters"
+msgstr "Parametro baliogabeak"
+
+#: src/agentscommand.cpp:160 src/agentscommand.cpp:192
+#: src/agentscommand.cpp:210 src/agentscommand.cpp:236
+#, kde-format
+msgctxt "@info:shell"
+msgid "No agent exists with the identifier '%1'"
+msgstr "Ez da existitzen «%1» identifikatzailea duen agenterik"
+
+#: src/agentscommand.cpp:219
+#, kde-format
+msgctxt "@info:shell"
+msgid "ID:      "
+msgstr "ID:      "
+
+#: src/agentscommand.cpp:220
+#, kde-format
+msgctxt "@info:shell"
+msgid "Name:    "
+msgstr "Izena:    "
+
+#: src/agentscommand.cpp:221
+#, kde-format
+msgctxt "@info:shell"
+msgid "Status:  "
+msgstr "Egoera:  "
+
+#: src/collectionpathjob.cpp:71
+#, kde-format
+msgctxt "@info:shell 1=collection ID, 2=collection path"
+msgid "%1 (\"/%2\")"
+msgstr "%1 («/%2»)"
+
+#: src/collectionresolvejob.cpp:99
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unknown Akonadi collection format '%1'"
+msgstr "Akonadi-ren bilduma formatu ezezaguna «%1»"
+
+#: src/collectionresolvejob.cpp:143
+#, kde-format
+msgctxt "@info:shell 1=collection ID"
+msgid "%1 (root)"
+msgstr "%1 (erroa)"
+
+#: src/collectionresolvejob.cpp:146
+#, kde-format
+msgctxt "@info:shell 1=collection ID, 2=collection name"
+msgid "%1 (\"%2\")"
+msgstr "%1 («%2»)"
+
+#: src/collectionresolvejob.cpp:171
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid item syntax '%1'"
+msgstr "Elementu-sintaxi baliogabea «%1»"
+
+#: src/commandfactory.cpp:50 src/commandfactory.cpp:105
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unknown command '%1'"
+msgstr "Komando ezezaguna «%1»"
+
+#: src/commandfactory.cpp:92
+#, kde-format
+msgctxt "@info:shell"
+msgid "No command specified (try '%1 --help')"
+msgstr "Ez da komandorik zehaztu (probatu «%1 --help»)"
+
+#: src/commandfactory.cpp:136
+#, kde-format
+msgctxt "@info:shell"
+msgid "Available commands are:"
+msgstr "Komando erabilgarriak dira:"
+
+#: src/commandshell.cpp:31
+#, kde-format
+msgid "Enter commands in an interactive shell"
+msgstr "Sartu komandoak oskol elkarreragile batean"
+
+#: src/commandshell.cpp:76
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid command"
+msgstr "Komando baliogabea"
+
+#: src/copycommand.cpp:40
+#, kde-format
+msgid "Copy collections or items into a new collection"
+msgstr "Kopiatu bildumak edo elementuak bilduma berri batean"
+
+#: src/copycommand.cpp:59 src/movecommand.cpp:40
+#, kde-format
+msgid "source..."
+msgstr "sorburua..."
+
+#: src/copycommand.cpp:59
+#, kde-format
+msgctxt "@info:shell"
+msgid "Existing collections or items to copy"
+msgstr "Kopiatzeko dauden bildumak edo elementuak"
+
+#: src/copycommand.cpp:60
+#, kde-format
+msgctxt "@info:shell"
+msgid "Destination collection to copy into"
+msgstr "Kopia jasoko duen jomugako bilduma"
+
+#: src/copycommand.cpp:68
+#, kde-format
+msgctxt "@info:shell"
+msgid "Missing source/destination arguments"
+msgstr "sorburu/jomuga argumentuak falta dira"
+
+#: src/copycommand.cpp:74
+#, kde-format
+msgid "No more sources to process"
+msgstr "Ez dago prozesatzeko sorburu gehiago"
+
+#: src/copycommand.cpp:80
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot resolve destination collection '%1', %2"
+msgstr "Ezin da ebatzi jomugako bilduma «%1», %2"
+
+#: src/copycommand.cpp:113
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot resolve source '%1', %2"
+msgstr "Ezin da sorburua ebatzi «%1», %2"
+
+#: src/copycommand.cpp:139
+#, kde-format
+msgid "Moving contents of %1 -> %2"
+msgstr "%1(r)en edukia mugitzen -> %2"
+
+#: src/copycommand.cpp:143
+#, kde-format
+msgid "Copying contents of %1 -> %2"
+msgstr "%1(r)en edukia kopiatzen -> %2"
+
+#: src/copycommand.cpp:162
+#, kde-format
+msgid "Moving collection %1 -> %2"
+msgstr "%1 bilduma mugitzen -> %2"
+
+#: src/copycommand.cpp:169
+#, kde-format
+msgid "Copying collection %1 -> %2"
+msgstr "%1 bilduma kopiatzen -> %2"
+
+#: src/copycommand.cpp:190
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot copy/move from '%1', %2"
+msgstr "Ezin da «%1»(e)tik kopiatu/mugitu, %2"
+
+#: src/copycommand.cpp:198
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot fetch subcollections of '%1', %2"
+msgstr "Ezin dira ekarri «%1»(r)en azpibildumak, %2"
+
+#: src/copycommand.cpp:206
+#, kde-format
+msgid "No sub-collections to copy/move"
+msgstr "Ez dago kopiatzeko/mugitzeko azpibildumarik"
+
+#: src/copycommand.cpp:213
+#, kde-format
+msgctxt "@info:shell"
+msgid "Moving %1 sub-collection"
+msgid_plural "Moving %1 sub-collections"
+msgstr[0] "Azpibilduma %1 mugitzen"
+msgstr[1] "%1 azpibilduma mugitzen"
+
+#: src/copycommand.cpp:218
+#, kde-format
+msgctxt "@info:shell"
+msgid "Copying %1 sub-collection"
+msgid_plural "Copying %1 sub-collections"
+msgstr[0] "Azpibilduma %1 kopiatzen"
+msgstr[1] "%1 azpibilduma kopiatzen"
+
+#: src/copycommand.cpp:234
+#, kde-format
+msgid "No more sub-collections to process"
+msgstr "Ez dago prozesatzeko azpibilduma gehiago"
+
+#: src/copycommand.cpp:266
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
+msgstr "Ezin da «%1»(e)ko «%2» azpibilduma kopiatu/mugitu, %3"
+
+#: src/copycommand.cpp:284
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot fetch items of '%1', %2"
+msgstr "Ezin dira ekarri «%1»(e)ko elementuak, %2"
+
+#: src/copycommand.cpp:292
+#, kde-format
+msgid "No items to process"
+msgstr "Ez dago prozesatzeko elementurik"
+
+#: src/copycommand.cpp:299
+#, kde-format
+msgctxt "@info:shell"
+msgid "Moving %1 item"
+msgid_plural "Moving %1 items"
+msgstr[0] "Elementu %1 mugitzen"
+msgstr[1] "%1 elementu mugitzen"
+
+#: src/copycommand.cpp:304
+#, kde-format
+msgctxt "@info:shell"
+msgid "Copying %1 item"
+msgid_plural "Copying %1 items"
+msgstr[0] "Elementu %1 kopiatzen"
+msgstr[1] "%1 elementu kopiatzen"
+
+#: src/copycommand.cpp:320
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot copy/move items from '%1', %2"
+msgstr "Ezin dira elementuak «%1»(e)tik kopiatu/mugitu, %2"
+
+#: src/createcommand.cpp:35
+#, kde-format
+msgid "Create a new collection"
+msgstr "Sortu bilduma berri bat"
+
+#: src/createcommand.cpp:51
+#, kde-format
+msgid "Parent collection to create in"
+msgstr "Zein guraso bildumatan sortu"
+
+#: src/createcommand.cpp:51
+#, kde-format
+msgid "collection"
+msgstr "bilduma"
+
+#: src/createcommand.cpp:54
+#, kde-format
+msgctxt "@info:shell"
+msgid ""
+"The collection to create, either as a path or a name (with a parent "
+"specified)"
+msgstr ""
+"Sortu beharreko bilduma, bide-izen gisa edo izen (guraso bat zehaztuta) gisa"
+
+#: src/createcommand.cpp:71
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection argument (with parent) cannot be a path"
+msgstr "Bildumaren argumentua (gurasoarekin) ezin da bide-izen bat izan"
+
+#: src/createcommand.cpp:88
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection argument (without parent) must be a path"
+msgstr "Bildumaren argumentua (gurasorik gabe) bide-izen bat izan behar da"
+
+#: src/createcommand.cpp:97
+#, kde-format
+msgctxt "@info:shell"
+msgid "New collection name not specified"
+msgstr "Bilduma berriaren izena ez da zehaztu"
+
+#: src/createcommand.cpp:109
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot fetch parent collection '%1', %2"
+msgstr "Ezin da ekarri «%1» guraso bilduma, %2"
+
+#: src/createcommand.cpp:121
+#, kde-format
+msgid "Creating a maildir folder named '%1' may not work"
+msgstr "Baliteke «%1» izeneko maildir direktorio bat sortzea ez ibiltzea"
+
+#: src/createcommand.cpp:140
+#, kde-format
+msgid "Error creating collection '%1' under '%2', %3"
+msgstr "Errorea «%2»pean «%1» bilduma sortzean, %3"
+
+#: src/createcommand.cpp:154
+#, kde-format
+msgid "Error getting path of new collection, %1"
+msgstr "Bilduma berriaren bide-izena lortzeko errorea, %1"
+
+#: src/createcommand.cpp:158
+#, kde-format
+msgid "Created new collection '%1'"
+msgstr "Sortu bilduma berria «%1»"
+
+#: src/deletecommand.cpp:40
+#, kde-format
+msgid "Delete a collection or an item"
+msgstr "Ezabatu bilduma bat edo elementu bat"
+
+#: src/deletecommand.cpp:54
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection or item"
+msgstr "Bilduma edo elementua"
+
+#: src/deletecommand.cpp:60
+#, kde-format
+msgctxt "@info:shell"
+msgid "Missing collection/item argument"
+msgstr "Bildumaren/elementuaren argumentua falta da"
+
+#: src/deletecommand.cpp:103
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot delete the root collection"
+msgstr "Ezin da erro bilduma ezabatu"
+
+#: src/deletecommand.cpp:119
+#, kde-format
+msgid "Collection deleted successfully"
+msgstr "Bilduma ondo ezabatu da"
+
+#: src/deletecommand.cpp:127 src/infocommand.cpp:154
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid item/collection syntax '%1'"
+msgstr "Elementuaren/bildumaren sintaxi baliogabea «%1»"
+
+#: src/deletecommand.cpp:149 src/infocommand.cpp:181
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot find '%1' as a collection or item"
+msgstr "Ezin da «%1» aurkitu bilduma edo elementu gisa"
+
+#: src/deletecommand.cpp:160
+#, kde-format
+msgid "Item deleted successfully"
+msgstr "Elementua ondo ezabatu da"
+
+#: src/dumpcommand.cpp:47
+#, kde-format
+msgid "Dump a collection to a directory structure"
+msgstr "Irauli bilduma bat direktorio egitura batera"
+
+#: src/dumpcommand.cpp:59
+#, kde-format
+msgid "Dump email messages in maildir directory structure"
+msgstr "Irauli e-posta mezuak maildir direktorio egituran"
+
+#: src/dumpcommand.cpp:60
+#, kde-format
+msgid "Dump items with Akonadi category URLs, otherwise text names"
+msgstr ""
+"Irauli Akonadi kategoriako URLak dituzten elementuak, bestela testu-izenak"
+
+#: src/dumpcommand.cpp:61
+#, kde-format
+msgid "Operate even if destination directory is not empty"
+msgstr "Eragiketa egin helburuko direktorioa hutsik ez badago ere"
+
+#: src/dumpcommand.cpp:64
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection to dump: an ID, path or Akonadi URL"
+msgstr "Irauli beharreko bilduma: ID, bide-izen edo Akonadi URL bat"
+
+#: src/dumpcommand.cpp:65
+#, kde-format
+msgctxt "@info:shell"
+msgid "The destination directory to dump to"
+msgstr "Irauli beharreko helburuko direktorioa"
+
+#: src/dumpcommand.cpp:72 src/exportcommand.cpp:50
+#, kde-format
+msgctxt "@info:shell"
+msgid "No collection specified"
+msgstr "Ez da bildumarik zehaztu"
+
+#: src/dumpcommand.cpp:73
+#, kde-format
+msgctxt "@info:shell"
+msgid "No destination directory specified"
+msgstr "Ez da jomugako direktoriorik zehaztu"
+
+#: src/dumpcommand.cpp:86
+#, kde-format
+msgctxt "@info:shell"
+msgid "Directory '%1' not found or not a directory"
+msgstr "«%1» direktorioa ez da aurkitu edo ez da direktorio bat"
+
+#: src/dumpcommand.cpp:94
+#, kde-format
+msgctxt "@info:shell"
+msgid "Directory '%1' is not empty (use '-f' to force operation)"
+msgstr "«%1» direktorioa ez dago hutsik (erabili «-f» eragiketa behartzeko)"
+
+#: src/dumpcommand.cpp:120 src/listcommand.cpp:183
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %1 cannot contain items"
+msgstr "%1 bildumak ezin du elementurik izan"
+
+#: src/dumpcommand.cpp:146
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %1 contains no items"
+msgstr "%1 bilduman ez du elementurik"
+
+#: src/dumpcommand.cpp:205 src/editcommand.cpp:101 src/showcommand.cpp:91
+#, kde-format
+msgctxt "@info:shell"
+msgid "Item '%1' has no payload"
+msgstr "«%1» elementuak ez du zama erabilgarririk"
+
+#: src/dumpcommand.cpp:250
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot create directory '%1/%2'"
+msgstr "Ezin da sortu «%1/%2» direktorioa"
+
+#: src/dumpcommand.cpp:332
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot save file '%1'"
+msgstr "Ezin da gorde «%1» fitxategia"
+
+#: src/editcommand.cpp:37
+#, kde-format
+msgid "Edit the raw payload for the specified item using $EDITOR"
+msgstr ""
+"Editatu zehaztutako elementuaren zama erabilgarri gordina $EDITOR erabiliz"
+
+#: src/editcommand.cpp:55
+#, kde-format
+msgctxt "@info:shell"
+msgid "The item to edit"
+msgstr "Editatu beharreko elementua"
+
+#: src/editcommand.cpp:61 src/updatecommand.cpp:60
+#, kde-format
+msgctxt "@info:shell"
+msgid "No item specified"
+msgstr "Ez da elementurik zehaztu"
+
+#: src/editcommand.cpp:93
+#, kde-format
+msgctxt "@info:shell"
+msgid "No result found for item '%1'"
+msgstr "Ez da «%1» elementuaren emaitzarik aurkitu"
+
+#: src/editcommand.cpp:108
+#, kde-format
+msgctxt "@info:shell"
+msgid "EDITOR environment variable needs to be set"
+msgstr "EDITOR ingurune-aldagaia ezarri beharra dago"
+
+#: src/editcommand.cpp:122
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot launch text editor '%1'"
+msgstr "Ezin da abiarazi «%1» testu editorea"
+
+#: src/editcommand.cpp:141
+#, kde-format
+msgctxt "@info:shell"
+msgid "Changes to item '%1' have been saved"
+msgstr "«%1» elementuari egindako aldaketak gorde dira"
+
+#: src/exportcommand.cpp:31
+#, kde-format
+msgid "Export a collection to an XML file"
+msgstr "Esportatu bilduma bat XML fitxategi batera"
+
+#: src/exportcommand.cpp:43
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection to export: an ID, path or Akonadi URL"
+msgstr "Esportatu beharreko bilduma: ID, bide-izen edo Akonadi-ren URL bat"
+
+#: src/exportcommand.cpp:44
+#, kde-format
+msgctxt "@info:shell"
+msgid "The file to export to"
+msgstr "Zein fitxategira esportatu"
+
+#: src/exportcommand.cpp:51
+#, kde-format
+msgctxt "@info:shell"
+msgid "No export file specified"
+msgstr "Ez da esportatzeko fitxategirik zehaztu"
+
+#: src/groupcommand.cpp:39
+#, kde-format
+msgid "Expand or modify a contact group"
+msgstr "Zabaldu edo aldatu kontaktu talde bat"
+
+#: src/groupcommand.cpp:57
+#, kde-format
+msgid "Show the expanded contact group (the default operation)"
+msgstr "Erakutsi kontaktu talde hedatua (lehenetsitako eragiketa)"
+
+#: src/groupcommand.cpp:58
+#, kde-format
+msgid "Add a contact to the group"
+msgstr "Gehitu kontaktu bat taldera"
+
+#: src/groupcommand.cpp:59
+#, kde-format
+msgid "Delete a contact from the group"
+msgstr "Ezabatu kontaktu bat taldetik"
+
+#: src/groupcommand.cpp:60
+#, kde-format
+msgid "Remove unknown item references from the group"
+msgstr "Kendu taldetik elementu ezezagunen erreferentziak"
+
+#: src/groupcommand.cpp:61
+#, kde-format
+msgid "Email comment (name) for an added item"
+msgstr "Gehitutako elementu batentzako e-posta iruzkina (izena)"
+
+#: src/groupcommand.cpp:61
+#, kde-format
+msgid "name"
+msgstr "izena"
+
+#: src/groupcommand.cpp:62
+#, kde-format
+msgid "Brief output (for 'expand', email addresses only)"
+msgstr "Irteerako laburra («expand»erako, e-posta helbideak bakarrik)"
+
+#: src/groupcommand.cpp:65
+#, kde-format
+msgctxt "@info:shell"
+msgid "The contact group item, an ID or Akonadi URL"
+msgstr "kontaktu-talde elementua, ID edo Akonadi URL bat"
+
+#: src/groupcommand.cpp:66
+#, kde-format
+msgctxt "@info:shell"
+msgid "Arguments for the operation"
+msgstr "Eragiketarako argumentuak"
+
+#: src/groupcommand.cpp:66
+#, kde-format
+msgid "args..."
+msgstr "argumentuak..."
+
+#: src/groupcommand.cpp:72
+#, kde-format
+msgctxt "@info:shell"
+msgid "Missing group argument"
+msgstr "Talde argumentua falta da"
+
+#: src/groupcommand.cpp:90
+#, kde-format
+msgctxt "@info:shell"
+msgid ""
+"Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"
+msgstr ""
+"«expand», «add», «delete» edo «clean» aukeren arteko bakarra zehaztu daiteke"
+
+#: src/groupcommand.cpp:101
+#, kde-format
+msgctxt "@info:shell"
+msgid "No items specified to add"
+msgstr "Ez da gehitzeko elementurik zehaztu"
+
+#: src/groupcommand.cpp:110
+#, kde-format
+msgctxt "@info:shell"
+msgid "Only one item may be specified to add with 'comment'"
+msgstr "«comment»ekin gehitzeko elementu bakarra zehaztu daiteke"
+
+#: src/groupcommand.cpp:119
+#, kde-format
+msgctxt "@info:shell"
+msgid "No items specified to delete"
+msgstr "Ez da ezabatzeko elementurik zehaztu"
+
+#: src/groupcommand.cpp:133
+#, kde-format
+msgctxt "@info:shell"
+msgid "The 'comment' option is only allowed with 'add'"
+msgstr "«comment» aukera «add»ekin baino ezin da erabili"
+
+#: src/groupcommand.cpp:182
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot find '%1' as an item"
+msgstr "Ezin da «%1» elementu gisa aurkitu"
+
+#: src/groupcommand.cpp:189
+#, kde-format
+msgctxt "@info:shell"
+msgid "Item '%1' is not a contact group"
+msgstr "«%1» elementua ez da kontaktu talde bat"
+
+#: src/groupcommand.cpp:195
+#, kde-format
+msgctxt "@info:shell"
+msgid "Item '%1' has no contact group payload"
+msgstr "«%1» elementuak ez dauka kontaktu-talde zama-erabilgarririk"
+
+#: src/groupcommand.cpp:233
+#, kde-format
+msgctxt "@info:shell"
+msgid "Errors occurred, group not updated"
+msgstr "Erroreak gertatu dira, taldea ez da eguneratu"
+
+#: src/groupcommand.cpp:277
+#, kde-format
+msgctxt "@info:shell"
+msgid "(unknown referenced item)"
+msgstr "(erreferentziatutako elementu ezezaguna)"
+
+#: src/groupcommand.cpp:284 src/groupcommand.cpp:305
+#, kde-format
+msgctxt "@info:shell"
+msgid "(item has no Addressee payload)"
+msgstr "(elementuak ez dauka Hartzaile zama erabilgarririk)"
+
+#: src/groupcommand.cpp:324
+#, kde-format
+msgctxt "@item:shell"
+msgid "(invalid referenced item)"
+msgstr "(erreferentziatutako elementu baliogabea)"
+
+#: src/groupcommand.cpp:326
+#, kde-format
+msgctxt "@item:shell"
+msgid "(unknown referenced item)"
+msgstr "(erreferentziatutako elementu ezezaguna)"
+
+#: src/groupcommand.cpp:377
+#, kde-format
+msgctxt ""
+"@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
+"5=name"
+msgid "Group %1 \"%5\" has %2 groups, %3 references and %4 data items:"
+msgstr "%1 «%5» taldeak %2 talde, %3 erreferentzia eta %4 datu elementu ditu:"
+
+#: src/groupcommand.cpp:386
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "Type"
+msgstr "Mota"
+
+#: src/groupcommand.cpp:387 src/listcommand.cpp:143 src/listcommand.cpp:212
+#: src/tagscommand.cpp:320
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "ID"
+msgstr "IDa"
+
+#: src/groupcommand.cpp:388
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "Email"
+msgstr "E-posta"
+
+#: src/groupcommand.cpp:389 src/listcommand.cpp:144 src/tagscommand.cpp:322
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "Name"
+msgstr "Izena"
+
+#: src/groupcommand.cpp:423
+#, kde-format
+msgctxt "@info:shell"
+msgid "No items could be fetched"
+msgstr "Ezin izan da elementurik ekarri"
+
+#: src/groupcommand.cpp:483
+#, kde-format
+msgctxt ""
+"@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
+"5=name"
+msgid "Adding to group %1 \"%2\":"
+msgstr "%1 «%2» taldera gehitzen:"
+
+#: src/groupcommand.cpp:497 src/groupcommand.cpp:611
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot search for email '%1', %2"
+msgstr "Ezin da «%1» e-posta bilatu, %2"
+
+#: src/groupcommand.cpp:509
+#, kde-format
+msgctxt "@info:shell"
+msgid "Multiple contacts found for '%1', using the first one"
+msgstr "«%1»(e)rako kontaktu anizkoitzak aurkitu dira; aurrenekoa erabiliko da"
+
+#: src/groupcommand.cpp:544
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot fetch requested item %1, %2"
+msgstr "Ezin da berreskuratu eskatutako elementua %1, %2"
+
+#: src/groupcommand.cpp:555
+#, kde-format
+msgctxt "@info:shell"
+msgid "Item %1 is not a contact item"
+msgstr "%1 elementua ez da kontaktu elementu bat"
+
+#: src/groupcommand.cpp:571 src/groupcommand.cpp:654 src/groupcommand.cpp:702
+#, kde-format
+msgctxt ""
+"@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
+"5=name"
+msgid "Group %1 \"%5\" now has %2 groups, %3 references and %4 data items"
+msgstr ""
+"%1 «%5» taldeak orain %2 talde ditu, %3 erreferentzia eta %4 datu-elementu"
+
+#: src/groupcommand.cpp:589
+#, kde-format
+msgctxt ""
+"@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
+"5=name"
+msgid "Removing from group %1 \"%2\":"
+msgstr "%1 «%2» taldetik kentzen:"
+
+#: src/groupcommand.cpp:626
+#, kde-format
+msgctxt "@info:shell"
+msgid "Nothing to remove for email '%1'"
+msgstr "Ez dago «%1» e-postari dagokion ezer kentzeko"
+
+#: src/groupcommand.cpp:670
+#, kde-format
+msgctxt ""
+"@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
+"5=name"
+msgid "Cleaning references from group %1 \"%2\":"
+msgstr "%1 «%2» taldeko erreferentziak garbitzen:"
+
+#: src/importcommand.cpp:39
+#, kde-format
+msgid "Import an XML file"
+msgstr "Inportatu XML fitxategi bat"
+
+#: src/importcommand.cpp:57
+#, kde-format
+msgctxt "@info:shell"
+msgid "The parent collection under which to import the file"
+msgstr "Fitxategia inportatzeko guraso bilduma"
+
+#: src/importcommand.cpp:58
+#, kde-format
+msgctxt "@info:shell"
+msgid "The file to import"
+msgstr "Inportatu beharreko fitxategia"
+
+#: src/importcommand.cpp:64
+#, kde-format
+msgctxt "@info:shell"
+msgid "No parent collection specified"
+msgstr "Ez da guraso bildumarik zehaztu"
+
+#: src/importcommand.cpp:65
+#, kde-format
+msgctxt "@info:shell"
+msgid "No import file specified"
+msgstr "Ez da inportatzeko fitxategirik zehaztu"
+
+#: src/importcommand.cpp:74
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid XML file, %1"
+msgstr "XML fitxategi baliogabea, %1"
+
+#: src/importcommand.cpp:91
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unable to fetch parent collection, %1"
+msgstr "Ezin da guraso bilduma berreskuratu, %1"
+
+#: src/importcommand.cpp:99
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unable to fetch children of parent collection, %1"
+msgstr "Ezin dira guraso bildumaren umeak berreskuratu, %1"
+
+#: src/importcommand.cpp:117
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection '%1' already exists"
+msgstr "«%1» bilduma dagoeneko existitzen da"
+
+#: src/importcommand.cpp:121
+#, kde-format
+msgctxt "@info:shell"
+msgid "Creating collection '%1'"
+msgstr "«%1» bilduma sortzen"
+
+#: src/importcommand.cpp:143
+#, kde-format
+msgctxt "@info:shell"
+msgid "Processing collection '%1'"
+msgstr "«%1» bilduma prozesatzen"
+
+#: src/importcommand.cpp:150
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid parent for collection with remote ID '%1'"
+msgstr "Urrutiko ID «%1» duen bildumaren guraso baliogabea"
+
+#: src/importcommand.cpp:172
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unable to fetch collection with remote ID '%1', %2"
+msgstr "Ezin da urrutiko ID «%1» duen bildumarik sortu, %2"
+
+#: src/importcommand.cpp:191
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unable to create collection with remote ID '%1'"
+msgstr "Ezin da urrutiko ID «%1» duen bildumarik sortu"
+
+#: src/importcommand.cpp:208
+#, kde-format
+msgctxt "@info:shell"
+msgid "Processing items for '%1'"
+msgstr "«%1»(e)rako elementuak prozesatzen"
+
+#: src/importcommand.cpp:230
+#, kde-format
+msgctxt "@info:shell"
+msgid "Error creating item, %1"
+msgstr "Errorea elementua sortzean, %1"
+
+#: src/importcommand.cpp:232
+#, kde-format
+msgctxt "@info:shell"
+msgid "Created item '%1'"
+msgstr "«%1» elementua sortu da"
+
+#: src/infocommand.cpp:42
+#, kde-format
+msgid "Show full information for a collection or item"
+msgstr "Erakutsi bilduma edo elementu bati buruzko informazio osoa"
+
+#: src/infocommand.cpp:64
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collections or items to display"
+msgstr "Azaldu beharreko bildumak edo elementuak"
+
+#: src/infocommand.cpp:64
+#, kde-format
+msgid "entity..."
+msgstr "entitatea..."
+
+#: src/infocommand.cpp:70
+#, kde-format
+msgctxt "@info:shell"
+msgid "No collections or items specified"
+msgstr "Ez da bildumarik edo elementurik zehaztu"
+
+#: src/infocommand.cpp:124
+#, kde-format
+msgctxt "@info:shell"
+msgid "No information available for collection root"
+msgstr "Ez dago erabilgarri erro bildumaren informaziorik"
+
+#: src/infocommand.cpp:224 src/infocommand.cpp:274
+#, kde-format
+msgctxt "@info:shell"
+msgid "ID"
+msgstr "IDa"
+
+#: src/infocommand.cpp:225 src/infocommand.cpp:275
+#, kde-format
+msgctxt "@info:shell"
+msgid "URL"
+msgstr "URLa"
+
+#: src/infocommand.cpp:226 src/infocommand.cpp:276
+#, kde-format
+msgctxt "@info:shell"
+msgid "Parent"
+msgstr "Gurasoa"
+
+#: src/infocommand.cpp:227 src/infocommand.cpp:277 src/infocommand.cpp:313
+#, kde-format
+msgctxt "@info:shell"
+msgid "Type"
+msgstr "Mota"
+
+#: src/infocommand.cpp:227
+#, kde-format
+msgctxt "@info:shell entity type"
+msgid "Collection"
+msgstr "Bilduma"
+
+#: src/infocommand.cpp:228
+#, kde-format
+msgctxt "@info:shell"
+msgid "Name"
+msgstr "Izena"
+
+#: src/infocommand.cpp:229
+#, kde-format
+msgctxt "@info:shell"
+msgid "Owner"
+msgstr "Jabea"
+
+#: src/infocommand.cpp:230 src/infocommand.cpp:278
+#, kde-format
+msgctxt "@info:shell"
+msgid "MIME"
+msgstr "MIME"
+
+#: src/infocommand.cpp:231 src/infocommand.cpp:282
+#, kde-format
+msgctxt "@info:shell"
+msgid "Remote ID"
+msgstr "Urrutiko ID"
+
+#: src/infocommand.cpp:236
+#, kde-format
+msgctxt "@info:shell"
+msgid "ReadOnly"
+msgstr "IrakurtzekoSoilik"
+
+#: src/infocommand.cpp:239
+#, kde-format
+msgctxt "@info:shell"
+msgid "ChangeItem"
+msgstr "AldatuElementua"
+
+#: src/infocommand.cpp:242
+#, kde-format
+msgctxt "@info:shell"
+msgid "CreateItem"
+msgstr "SortuElementua"
+
+#: src/infocommand.cpp:245
+#, kde-format
+msgctxt "@info:shell"
+msgid "DeleteItem"
+msgstr "EzabatuElementua"
+
+#: src/infocommand.cpp:248
+#, kde-format
+msgctxt "@info:shell"
+msgid "ChangeColl"
+msgstr "AldatuZutabea"
+
+#: src/infocommand.cpp:251
+#, kde-format
+msgctxt "@info:shell"
+msgid "CreateColl"
+msgstr "SortuZutabea"
+
+#: src/infocommand.cpp:254
+#, kde-format
+msgctxt "@info:shell"
+msgid "DeleteColl"
+msgstr "EzabatuZutabea"
+
+#: src/infocommand.cpp:257
+#, kde-format
+msgctxt "@info:shell"
+msgid "LinkItem"
+msgstr "EstekatuElementua"
+
+#: src/infocommand.cpp:260
+#, kde-format
+msgctxt "@info:shell"
+msgid "UnlinkItem"
+msgstr "EstekagetuElementu"
+
+#: src/infocommand.cpp:262
+#, kde-format
+msgctxt "@info:shell"
+msgid "Rights"
+msgstr "Eskubideak"
+
+#: src/infocommand.cpp:265
+#, kde-format
+msgctxt "@info:shell"
+msgid "Count"
+msgstr "Kopurua"
+
+#: src/infocommand.cpp:266
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unread"
+msgstr "Irakurtzeke"
+
+#: src/infocommand.cpp:272 src/infocommand.cpp:310
+#, kde-format
+msgctxt "@info:shell"
+msgid "Size"
+msgstr "Neurria"
+
+#: src/infocommand.cpp:277
+#, kde-format
+msgctxt "@info:shell entity type"
+msgid "Item"
+msgstr "Elementua"
+
+#: src/infocommand.cpp:280
+#, kde-format
+msgctxt "@info:shell"
+msgid "Modified"
+msgstr "Aldatua"
+
+#: src/infocommand.cpp:281
+#, kde-format
+msgctxt "@info:shell"
+msgid "Revision"
+msgstr "Berrikuspena"
+
+#: src/infocommand.cpp:283
+#, kde-format
+msgctxt "@info:shell"
+msgid "Payload"
+msgstr "Zama erabilgarria"
+
+#: src/infocommand.cpp:283
+#, kde-format
+msgctxt "@info:shell"
+msgid "yes"
+msgstr "bai"
+
+#: src/infocommand.cpp:283
+#, kde-format
+msgctxt "@info:shell"
+msgid "no"
+msgstr "ez"
+
+#: src/infocommand.cpp:291 src/infocommand.cpp:301
+#, kde-format
+msgctxt "@info:shell"
+msgid "(none)"
+msgstr "(bat ere ez)"
+
+#: src/infocommand.cpp:293
+#, kde-format
+msgctxt "@info:shell"
+msgid "Flags"
+msgstr "Banderak"
+
+#: src/infocommand.cpp:303
+#, kde-format
+msgctxt "@info:shell"
+msgid "Tags"
+msgstr "Etiketak"
+
+#: src/infocommand.cpp:313
+#, kde-format
+msgctxt "@info:shell entity type"
+msgid "Unknown"
+msgstr "Ezezaguna"
+
+#: src/listcommand.cpp:40
+#, kde-format
+msgid "List sub-collections and/or items in a specified collection"
+msgstr "Zerrendatu bilduma zehatz bateko azpi-bilduma eta/edo elementuak"
+
+#: src/listcommand.cpp:50
+#, kde-format
+msgid "List more detailed information"
+msgstr "Zerrendatu informazio zehatzagoa"
+
+#: src/listcommand.cpp:51
+#, kde-format
+msgid "List only sub-collections"
+msgstr "Zerrendatu soilik azpi-bildumak"
+
+#: src/listcommand.cpp:52
+#, kde-format
+msgid "List only contained items"
+msgstr "Zerrendatu soilik dituen elementuak"
+
+#: src/listcommand.cpp:54
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection to list: an ID, path or Akonadi URL"
+msgstr "Zerrendatu beharreko bilduma: ID, bide-izen edo Akonadi-ren URL bat"
+
+#: src/listcommand.cpp:128
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %1 has no sub-collections"
+msgstr "%1 bildumak ez du azpi-bildumarik"
+
+#: src/listcommand.cpp:137
+#, kde-format
+msgctxt "@info:shell output section header 1=count, 2=collection"
+msgid "Collection %2 has %1 sub-collection:"
+msgid_plural "Collection %2 has %1 sub-collections:"
+msgstr[0] "%2 bildumak azpi-bilduma %1 du:"
+msgstr[1] "%2 bildumak %1 azpi-bilduma ditu:"
+
+#: src/listcommand.cpp:199
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %1 has no items"
+msgstr "%1 bildumak ez du elementurik"
+
+#: src/listcommand.cpp:206
+#, kde-format
+msgctxt "@info:shell output section header 1=count, 2=collection"
+msgid "Collection %2 has %1 item:"
+msgid_plural "Collection %2 has %1 items:"
+msgstr[0] "%2 bildumak elementu %1 du:"
+msgstr[1] "%2 bildumak %1 elementu ditu:"
+
+#: src/listcommand.cpp:213
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "MIME type"
+msgstr "MIME mota"
+
+#: src/listcommand.cpp:214
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "Size"
+msgstr "Neurria"
+
+#: src/listcommand.cpp:215
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "Modification Time"
+msgstr "Aldatze ordua"
+
+#: src/main.cpp:42
+#, kde-format
+msgctxt "@title program name"
+msgid "Akonadi Client"
+msgstr "Akonadi-ren bezeroa"
+
+#: src/main.cpp:48
+#, kde-format
+msgctxt "@info:shell short description"
+msgid "A command-line/shell client for Akonadi"
+msgstr "Akonadi-rako komando-lerro/oskol bezero bat"
+
+#: src/main.cpp:52
+#, kde-format
+msgid "Kevin Krammer"
+msgstr "Kevin Krammer"
+
+#: src/main.cpp:52
+#, kde-format
+msgctxt "@title about data task"
+msgid "Original Author"
+msgstr "Jatorrizko egilea"
+
+#: src/main.cpp:53
+#, kde-format
+msgid "Jonathan Marten"
+msgstr "Jonathan Marten"
+
+#: src/main.cpp:53
+#, kde-format
+msgctxt "@title about data task"
+msgid "Additions and new commands"
+msgstr "Eransketak eta komando berriak"
+
+#: src/main.cpp:54
+#, kde-format
+msgid "Bhaskar Kandiyal"
+msgstr "Bhaskar Kandiyal"
+
+#: src/main.cpp:54
+#, kde-format
+msgctxt "@title about data task"
+msgid "New commands, GSOC 2014"
+msgstr "Komando berriak, GSOC 2014"
+
+#: src/main.cpp:64
+#, kde-format
+msgctxt "@info:shell"
+msgid "Command to execute"
+msgstr "Exekutatu beharreko komandoa"
+
+#: src/main.cpp:67
+#, kde-format
+msgctxt "@info:shell"
+msgid "Arguments for command"
+msgstr "Komandoarentzako argumentuak"
+
+#: src/main.cpp:68
+#, kde-format
+msgctxt "@info:shell"
+msgid "[args]"
+msgstr "[argumentuak]"
+
+#: src/main.cpp:86
+#, kde-format
+msgctxt "@info:shell"
+msgid ""
+"See '%1 help' for available commands.\n"
+"See '%1 help command' for information on a specific command."
+msgstr ""
+"Begiratu '%1 help' komando erabilgarrietarako.\n"
+"Begiratu '%1 help komandoa' komando zehatz baten informaziorako."
+
+#: src/movecommand.cpp:27
+#, kde-format
+msgid "Move collections or items into a new collection"
+msgstr "Eraman bildumak edo elementuak bilduma berri batera"
+
+#: src/movecommand.cpp:40
+#, kde-format
+msgctxt "@info:shell"
+msgid "Existing collections or items to move"
+msgstr "Mugitu beharreko, dauden, bildumak edo elementuak"
+
+#: src/movecommand.cpp:41
+#, kde-format
+msgctxt "@info:shell"
+msgid "Destination collection to move into"
+msgstr "Mugitzeko helmugako bilduma"
+
+#: src/renamecommand.cpp:33
+#, kde-format
+msgid "Rename a collection"
+msgstr "Berrizendatu bilduma bat"
+
+#: src/renamecommand.cpp:45
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection to rename"
+msgstr "Berrizendatu beharreko bilduma"
+
+#: src/renamecommand.cpp:46
+#, kde-format
+msgctxt "@info:shell"
+msgid "New name for collection"
+msgstr "Bildumarentzako izen berria"
+
+#: src/renamecommand.cpp:53
+#, kde-format
+msgctxt "@info:shell"
+msgid "New name not specified"
+msgstr "Izen berria ez da zehaztu"
+
+#: src/renamecommand.cpp:91
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection renamed successfully"
+msgstr "Bilduma ondo berrizendatu da"
+
+#: src/showcommand.cpp:34
+#, kde-format
+msgid "Show the raw payload of an item"
+msgstr "Erakutsi elementu baten zama erabilgarri gordina"
+
+#: src/showcommand.cpp:43
+#, kde-format
+msgctxt "@info:shell"
+msgid "The items to show"
+msgstr "Erakutsi beharreko elementuak"
+
+#: src/showcommand.cpp:43
+#, kde-format
+msgctxt "@info:shell"
+msgid "item..."
+msgstr "elementua..."
+
+#: src/showcommand.cpp:44
+#, kde-format
+msgctxt "@info:shell"
+msgid "Use raw payload (disables quoted-printable decoding)"
+msgstr ""
+"Erabili zama erabilgarri gordina (aipu-inprimagarri deskodetzea ezgaitzen du)"
+
+#: src/showcommand.cpp:50
+#, kde-format
+msgctxt "@info:shell"
+msgid "No items specified"
+msgstr "Ez da elementurik zehaztu"
+
+#: src/showcommand.cpp:87 src/updatecommand.cpp:113
+#, kde-format
+msgctxt "@info:shell"
+msgid "No result returned for item '%1'"
+msgstr "Ez da itzuli «%1» elementuaren emaitzarik"
+
+#: src/showcommand.cpp:102
+#, kde-format
+msgid "Item has no main body part"
+msgstr "Elementuak ez du gorputz atal nagusirik"
+
+#: src/tagscommand.cpp:31
+#, kde-format
+msgid "List or modify tags"
+msgstr "Zerrendatu edo aldatu etiketak"
+
+#: src/tagscommand.cpp:45
+#, kde-format
+msgid "Brief output, tag names or IDs only"
+msgstr "Irteerako laburra, soilik etiketa izenak edo IDak"
+
+#: src/tagscommand.cpp:46
+#, kde-format
+msgid "Brief output, tag URLs only"
+msgstr "Irteerako laburra, soilik URLen etiketak"
+
+#: src/tagscommand.cpp:48
+#, kde-format
+msgid "List all known tags (the default operation)"
+msgstr "Zerrendatu etiketa ezagun guztiak (lehenetsitako eragiketa)"
+
+#: src/tagscommand.cpp:49
+#, kde-format
+msgid "Add named tags"
+msgstr "Gehitu etiketa izendunak"
+
+#: src/tagscommand.cpp:50
+#, kde-format
+msgid "Delete tags"
+msgstr "Ezabatu etiketak"
+
+#. i18n("ID for a tag to be added (default automatic)"), i18n("id")));
+#: src/tagscommand.cpp:55
+#, kde-format
+msgid "TAG"
+msgstr "ETIKETA"
+
+#: src/tagscommand.cpp:55
+#, kde-format
+msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
+msgstr ""
+"Gehitu beharreko etiketa baten izena, edo ezabatu beharreko etiketa baten "
+"IDa edo URLa"
+
+#: src/tagscommand.cpp:55
+#, kde-format
+msgid "[TAG...]"
+msgstr "[ETIKETA...]"
+
+#: src/tagscommand.cpp:75
+#, kde-format
+msgctxt "@info:shell"
+msgid "The 'brief' and 'urls' options cannot both be specified"
+msgstr "«brief» eta «urls» aukerak ezin dira biak batera zehaztu"
+
+#: src/tagscommand.cpp:90
+#, kde-format
+msgctxt "@info:shell"
+msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+msgstr "«list», «add» edo «delete» aukeren arteko bakarra zehaztu daiteke"
+
+#: src/tagscommand.cpp:106
+#, kde-format
+msgctxt "@info:shell"
+msgid "No tags specified to add"
+msgstr "Ez da gehitzeko etiketarik zehaztu"
+
+#: src/tagscommand.cpp:112
+#, kde-format
+msgctxt "@info:shell"
+msgid "Multiple tags cannot be specified to add with 'id'"
+msgstr "Ezin dira «id»rekin gehitzeko etiketa anizkoitzak zehaztu"
+
+#: src/tagscommand.cpp:123
+#, kde-format
+msgctxt "@info:shell"
+msgid "No tags specified to delete"
+msgstr "Ez da ezabatzeko etiketarik zehaztu"
+
+#: src/tagscommand.cpp:154
+#, kde-format
+msgctxt "@info:shell"
+msgid "A tag named '%1' ID %2 already exists"
+msgstr "«%1» izeneko etiketa ID %2 duena lehendik badago"
+
+#: src/tagscommand.cpp:178
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot add tag '%1' ID %2"
+msgstr "Ezin da gehitu «%1» etiketa ID %2"
+
+#: src/tagscommand.cpp:183
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot add tag '%1'"
+msgstr "Ezin da gehitu «%1» etiketa"
+
+#: src/tagscommand.cpp:231
+#, kde-format
+msgctxt "@info:shell"
+msgid "Tag to delete '%1' does not exist"
+msgstr "Ezabatu beharreko «%1» etiketa ez dago"
+
+#: src/tagscommand.cpp:268
+#, kde-format
+msgctxt "@info:shell"
+msgid "Tag to delete ID %1 does not exist"
+msgstr "Ezabatu beharreko etiketaren ID %1 ez dago"
+
+#: src/tagscommand.cpp:308
+#, kde-format
+msgctxt "@info:shell"
+msgid "No tags found"
+msgstr "Ez da etiketarik aurkitu"
+
+#: src/tagscommand.cpp:321
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "URL"
+msgstr "URLa"
+
+#: src/updatecommand.cpp:35
+#, kde-format
+msgid "Update an item's payload from a file"
+msgstr "Eguneratu elementu baten zama erabilgarria fitxategi batetik"
+
+#: src/updatecommand.cpp:53
+#, kde-format
+msgctxt "@info:shell"
+msgid "The item to update, an ID or Akonadi URL"
+msgstr "Eguneratu beharreko elementua, ID edo Akonadi-ren URL bat"
+
+#: src/updatecommand.cpp:54
+#, kde-format
+msgctxt "@info:shell"
+msgid "File to update the item from"
+msgstr "Elementua eguneratzeko fitxategia"
+
+#: src/updatecommand.cpp:61
+#, kde-format
+msgctxt "@info:shell"
+msgid "No file specified"
+msgstr "Ez da fitxategirik zehaztu"
+
+#: src/updatecommand.cpp:132
+#, kde-format
+msgctxt "@info:shell"
+msgid "Item updated successfully"
+msgstr "Elementua ondo eguneratu da"
+
+#~ msgctxt "@info:shell"
+#~ msgid "Error: %1"
+#~ msgstr "Errorea: %1"
+
+#~ msgctxt "@info:shell"
+#~ msgid "Invalid item/collection syntax"
+#~ msgstr "Elementuaren/bildumaren sintaxi baliogabea"

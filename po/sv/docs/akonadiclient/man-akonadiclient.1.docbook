@@ -1,0 +1,921 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Swedish "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manualsida för akonadiclient</title>
+<author
+><firstname
+>Bhaskar</firstname
+> <surname
+>Kandiyal</surname
+> <contrib
+>akonadiclient man page.</contrib
+> <email
+>bkandiyal@gmail.com</email
+></author>
+<date
+>2018-07-26</date>
+<productname
+>AkonadiClient</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>akonadiclient</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>akonadiclient</command
+></refname>
+<refpurpose
+>En kommandoradsklient för Akonadi</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>akonadiclient</command
+> <arg choice="opt"
+>kommando</arg
+> <arg choice="opt"
+>--help</arg
+> <arg choice="opt"
+>--version</arg
+> <arg choice="opt"
+>Allmänna &kde;-väljare</arg
+> <arg choice="opt"
+>Allmänna Qt-väljare</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Beskrivning</title>
+<para
+>akonadiclient är en kommandoradsklient för att manipulera KDE:s Akonadi datalagring. Den erbjuder ett enkelt sätt att manipulera Akonadis data via kommandoraden. Exempelvis, lägga till objekt, samlingar, byta namn eller flytta samlingar och dessutom styra Akonadi-agenterna.</para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Kommandon</title>
+	<refsect2>
+		<title
+>Filsystemkommandon</title>
+		<variablelist>
+
+		<varlistentry>
+		<term
+><option
+>copy</option
+></term>
+		<listitem>
+		<para
+>akonadiclient copy [VÄLJARE] KÄLLA MÅL</para>
+		<para
+>Används för att kopiera samlingar eller objekt från en samling till en annan.</para>
+		<para
+>Väljare:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>create</option
+></term>
+		<listitem>
+		<para
+>akonadiclient create [VÄLJARE] SAMLING</para>
+		<para
+>Skapar en ny samling. Observera att toppnivåsamlingar bara kan skapas av en Akonadi-resurs.</para>
+		<para
+>Väljare:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-p, --parent <replaceable
+>samling</replaceable
+></option
+></term>
+			<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+			</varlistentry>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>delete</option
+></term>
+		<listitem>
+		<para
+>akonadiclient delete [VÄLJARE] SAMLING | OBJEKT</para>
+		<para
+>Tar bort en samling eller ett objekt.</para>
+		<para
+>Väljare:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-c, --collection</option
+></term>
+			<listitem
+><para
+>Anta att en samling anges som ett argument</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --item</option
+></term>
+			<listitem
+><para
+>Anta att ett objekt anges som ett argument</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>list</option
+></term>
+		<listitem>
+		<para
+>akonadiclient list [VÄLJARE] SAMLING</para>
+		<para
+>Tar bort en samling eller ett objekt.</para>
+		<para
+>Väljare:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-l, --details</option
+></term>
+			<listitem
+><para
+>Listar mer detaljerad information.</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-c, --collections</option
+></term>
+			<listitem
+><para
+>Listar bara delsamlingar</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --items</option
+></term>
+			<listitem
+><para
+>Listar bara ingående objekt</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>move</option
+></term>
+		<listitem>
+		<para
+>akonadiclient move [VÄLJARE] KÄLLA MÅL</para>
+		<para
+>Flytta samlingar eller objekt in i en annan samling.</para>
+		<para
+>Väljare:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>rename</option
+></term>
+		<listitem>
+		<para
+>akonadiclient rename [VÄLJARE] SAMLING NAMN</para>
+		<para
+>Byt namn på en angiven samling till NAMN</para>
+		<para
+>Väljare:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Datakommandon</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>add</option
+></term>
+				<listitem>
+				<para
+>akonadiclient add [VÄLJARE] SAMLING FILER</para>
+				<para
+>Lägg till objekt i en angiven samling</para>
+				<para
+>Väljare:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --base <replaceable
+>katalog</replaceable
+></option
+></term>
+					<listitem
+><para
+>Baskatalog för indatafiler och kataloger, förval är nuvarande</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --flat</option
+></term>
+					<listitem
+><para
+>Enkelt läge, duplicera inte underkatalogstrukturen</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-m, --mime <replaceable
+>Mime-typ</replaceable
+></option
+></term>
+					<listitem
+><para
+>Mime-typ att använda (istället för automatisk detektering)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+                        <varlistentry>
+				<term
+><option
+>dump</option
+></term>
+				<listitem>
+				<para
+>akonadiclient dump [VÄLJARE] SAMLING KATALOG</para>
+				<para
+>Dumpa en SAMLING till en KATALOG-struktur</para>
+				<para
+>Väljare:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-m, --maildir</option
+></term>
+					<listitem
+><para
+>Dumpa e-post i en maildir-katalogstruktur</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --akonadi-categories</option
+></term>
+					<listitem
+><para
+>Dumpa objekt med Akonadi-kategorier, annars text</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --force</option
+></term>
+					<listitem
+><para
+>Arbeta även om målkatalogen inte är tom</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>edit</option
+></term>
+				<listitem>
+				<para
+>akonadiclient edit [VÄLJARE] OBJEKT</para>
+				<para
+>Öppnar nyttolasten i OBJEKT med en texteditor angiven av miljövariabeln $EDITOR</para>
+				<para
+>Väljare:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>expand</option
+></term>
+				<listitem>
+				<para
+>akonadiclient expand [VÄLJARE] OBJEKT</para>
+				<para
+>Expanderar ett kontaktgruppobjekt</para>
+				<para
+>Väljare:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Kortfattad utmatning (bara e-postadresser)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>export</option
+></term>
+				<listitem>
+				<para
+>akonadiclient export [VÄLJARE] SAMLING FIL</para>
+				<para
+>Exportera samlingen angiven av SAMLING till en XML-fil angiven av FIL.</para>
+				<para
+>Väljare:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+                        
+                        <varlistentry>
+				<term
+><option
+>group</option
+></term>
+				<listitem>
+				<para
+>akonadiclient group [VÄLJARE] GRUPP ARGUMENT</para>
+				<para
+>Expandera eller ändra en kontakt-GRUPP</para>
+				<para
+>Väljare:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-e, --expand</option
+></term>
+					<listitem
+><para
+>Visa den expanderade kontaktgruppen (förvald åtgärd)</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --add</option
+></term>
+					<listitem
+><para
+>Lägg till en kontakt i gruppen</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-d, --delete</option
+></term>
+					<listitem
+><para
+>Ta bort en kontakt från gruppen</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-C, --clean</option
+></term>
+					<listitem
+><para
+>Ta bort okänd objektreferens från gruppen</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+                                            <term
+><option
+>-c, --comment <replaceable
+>namn</replaceable
+></option
+></term>
+					<listitem
+><para
+>E-postkommentar (namn) för ett tillagt objekt</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Kortfattad utmatning (för 'expand', bara e-postadresser)</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+
+			<varlistentry>
+				<term
+><option
+>import</option
+></term>
+				<listitem>
+				<para
+>akonadiclient import [VÄLJARE] ÖVERLIGGANDE FIL</para>
+				<para
+>Importerar en XML-fil inne i samlingen angiven av ÖVERLIGGANDE. Om samlingen redan finns, sammanfogas dess innehåll med innehållet i samlingen i XML-filen.</para>
+				<para
+>Väljare:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>info</option
+></term>
+				<listitem>
+				<para
+>akonadiclient info [VÄLJARE] SAMLING | OBJEKT</para>
+				<para
+>Visa fullständig information om en samling eller ett objekt</para>
+				<para
+>Väljare:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-c, --collection</option
+></term>
+					<listitem
+><para
+>Anta att en samling anges</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-i, --item</option
+></term>
+					<listitem
+><para
+>Anta att ett objekt anges</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>show</option
+></term>
+				<listitem>
+				<para
+>akonadiclient show OBJEKT</para>
+				<para
+>Visar ett objekts obehandlade nyttolast</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>tags</option
+></term>
+				<listitem>
+				<para
+>akonadiclient tags [VÄLJARE]</para>
+				<para
+>Lista alla kända etiketter</para>
+				<para
+>Väljare:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Kortfattad utmatning: bara etikettnamn</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-u, --urls</option
+></term>
+					<listitem
+><para
+>Kortfattad utmatning: bara etikettwebbadresser</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>update</option
+></term>
+				<listitem>
+				<para
+>akonadiclient update [VÄLJARE] OBJEKT FIL</para>
+				<para
+>Uppdaterar obehandlad nyttolast i OBJEKT med innehållet i FIL</para>
+				<para
+>Väljare:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Diverse kommandon</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>agents</option
+></term>
+				<listitem>
+					<para
+>akonadiclient agents [VÄLJARE] [AGENTER...]</para>
+					<para
+>Tillåter hantering av Akonadi-agenter, såsom att ändra deras tillstånd, starta om en agent eller lista alla agenter och deras tillstånd.</para>
+					<para
+>Väljare:</para>
+					<variablelist>
+
+						<varlistentry>
+							<term
+><option
+>-l, --list</option
+></term>
+							<listitem
+><para
+>Lista alla agenter</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-s, --setstate <replaceable
+>tillstånd</replaceable
+></option
+></term>
+							<listitem
+><para
+>Ställ in tillstånd för angivna agenter. Giltiga tillstånd är 'offline' och 'online'.</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-g, --getstate</option
+></term>
+							<listitem
+><para
+>Hämta tillstånd för angivna agenter</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-i, --info</option
+></term>
+							<listitem
+><para
+>Visa information om de angivna agenterna</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-r, --restart</option
+></term>
+							<listitem
+><para
+>Startar om de angivna agenterna</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-n, --dryrun</option
+></term>
+							<listitem
+><para
+>Kör utan att göra några verkliga ändringar</para
+></listitem>
+						</varlistentry>
+
+					</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>help</option
+></term>
+				<listitem>
+					<para
+>akonadiclient help [KOMMANDO]</para>
+					<para
+>Visar hjälp om KOMMANDO. Om KOMMANDO inte anges listas alla tillgängliga kommandon.</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>shell</option
+></term>
+				<listitem>
+					<para
+>akonadiclient shell</para>
+					<para
+>Mata in kommandon i ett interaktivt skal</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</refsect2>
+</refsect1>
+
+<refsect1>
+<title
+>Exempel</title>
+<para
+><emphasis role="bold"
+>akonadiclient list /</emphasis
+> - Listar alla samlingar under rotsamlingen</para>
+<para
+><emphasis role="bold"
+>akonadiclient export /Notes anteckningar.xml</emphasis
+> - Exporterar alla objekt och delsamlingar i samlingen /Notes till filen 'anteckningar.xml'</para>
+<para
+><emphasis role="bold"
+>akonadiclient agents -l</emphasis
+> - Listar alla agenter</para>
+<para
+><emphasis role="bold"
+>akonadiclient add /Notes anteckning.txt</emphasis
+> - Lägger till innehållet i filen anteckning.txt som ett objekt i samlingen /Notes</para>
+<para
+><emphasis role="bold"
+>akonadiclient add -m application/x-vnd.akonadi.calendar.todo /Todos uppgift.ics</emphasis
+> - Lägger till innehållet i filen uppgift.ics som en TODO kalenderpost i samlingen /Todos</para>
+</refsect1>
+
+</refentry>

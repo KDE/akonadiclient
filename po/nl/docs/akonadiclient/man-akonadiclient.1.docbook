@@ -1,0 +1,921 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Dutch "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>man-pagina van akonadiclient</title>
+<author
+><firstname
+>Bhaskar</firstname
+> <surname
+>Kandiyal</surname
+> <contrib
+>man-pagina van akonadiclient.</contrib
+> <email
+>bkandiyal@gmail.com</email
+></author>
+<date
+>2018-07-26</date>
+<productname
+>AkonadiClient</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>akonadiclient</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>akonadiclient</command
+></refname>
+<refpurpose
+>Een client voor Akonadi op de opdrachtregel</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>akonadiclient</command
+> <arg choice="opt"
+>command</arg
+> <arg choice="opt"
+>--help</arg
+> <arg choice="opt"
+>--version</arg
+> <arg choice="opt"
+>&kde; algemene opties</arg
+> <arg choice="opt"
+>Qt algememe opties</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Beschrijving</title>
+<para
+>akonadiclient is een client voor werken met Akonadi gegevensopslag van KDE op de opdrachtregel. Het biedt een gemakkelijke manier om met de gegevens van Akonadi via de opdrachtregel te verwerken. Items, verzamelingen toevoegen, verzamelingen hernoemen of verplaatsen en ook de agents van Akonadi besturen.</para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Opdrachten</title>
+	<refsect2>
+		<title
+>Opdrachten voor het bestandssysteem</title>
+		<variablelist>
+
+		<varlistentry>
+		<term
+><option
+>kopiëren</option
+></term>
+		<listitem>
+		<para
+>akonadiclient copy [OPTIES] BRON BESTEMMING</para>
+		<para
+>Wordt gebruikt om verzamelingen of items uit één verzameling te kopiëren naar een andere.</para>
+		<para
+>Opties:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>aanmaken</option
+></term>
+		<listitem>
+		<para
+>akonadiclient create [OPTIES] VERZAMELING</para>
+		<para
+>Maakt een nieuwe verzameling aan. Merk op dat verzamelingen op het hoogste niveau alleen door een hulpbron van Akonadi aangemaakt kunnen worden.</para>
+		<para
+>Opties:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-p, --parent <replaceable
+>verzameling</replaceable
+></option
+></term>
+			<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+			</varlistentry>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>verwijderen</option
+></term>
+		<listitem>
+		<para
+>akonadiclient delete [OPTIES] VERZAMELING | ITEM</para>
+		<para
+>Verwijdert een verzameling of een item.</para>
+		<para
+>Opties:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-c, --collection</option
+></term>
+			<listitem
+><para
+>Neemt aan dat een verzameling gespecificeerd wordt als een argument</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --item</option
+></term>
+			<listitem
+><para
+>Neemt aan dat een item gespecificeerd wordt als een argument</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>tonen</option
+></term>
+		<listitem>
+		<para
+>akonadiclient list [OPTIES] VERZAMELING</para>
+		<para
+>Verwijdert een verzameling of een item.</para>
+		<para
+>Opties:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-l, --details</option
+></term>
+			<listitem
+><para
+>Meer gedetailleerde informatie tonen</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-c, --collections</option
+></term>
+			<listitem
+><para
+>Alleen subverzamelingen tonen</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --items</option
+></term>
+			<listitem
+><para
+>Alleen bevattende items tonen</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>verplaatsen</option
+></term>
+		<listitem>
+		<para
+>akonadiclient move [OPTIES] BRON BESTEMMING</para>
+		<para
+>Verplaats verzamelingen of items in een andere verzameling.</para>
+		<para
+>Opties:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>hernoemen</option
+></term>
+		<listitem>
+		<para
+>akonadiclient rename [OPTIES] VERZAMELING NAAM</para>
+		<para
+>Hernoemt een gespecificeerde verzameling naar NAAM</para>
+		<para
+>Opties:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Opdrachten voor gegevens</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>toevoegen</option
+></term>
+				<listitem>
+				<para
+>akonadiclient add [OPTIES] VERZAMELING BESTANDEN</para>
+				<para
+>Voegt items toe aan een gespecificeerde verzameling</para>
+				<para
+>Opties:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --base <replaceable
+>map</replaceable
+></option
+></term>
+					<listitem
+><para
+>Basismap voor invoerbestanden / -mappen, standaard is huidige map</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --flat</option
+></term>
+					<listitem
+><para
+>Vlakke modus, maak geen duplicaat van de submapstructuur</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-m, --mime <replaceable
+>mime-type</replaceable
+></option
+></term>
+					<listitem
+><para
+>Te gebruiken MIME-type (in plaats van automatisch detecteren)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+                        <varlistentry>
+				<term
+><option
+>dump</option
+></term>
+				<listitem>
+				<para
+>akonadiclient dump [OPTIES] VERZAMELING MAP</para>
+				<para
+>Dump een VERZAMELING naar een MAP-structuur</para>
+				<para
+>Opties:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-m, --maildir</option
+></term>
+					<listitem
+><para
+>Dump e-mailberichten in maildir-mapstructuur</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --akonadi-categories</option
+></term>
+					<listitem
+><para
+>Dump items met Akonadi-categorieën, anders tekst</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --force</option
+></term>
+					<listitem
+><para
+>Werk zelfs als bestemmingsmap niet leeg is</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>bewerken</option
+></term>
+				<listitem>
+				<para
+>akonadiclient edit [OPTIES] ITEM</para>
+				<para
+>Opent de inhoud van ITEM in een tekstbewerker gespecificeerd door de omgevingsvariabele $EDITOR</para>
+				<para
+>Opties:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>uitvouwen</option
+></term>
+				<listitem>
+				<para
+>akonadiclient expand [OPTIES] ITEM</para>
+				<para
+>Breidt een contactgroepitem uit</para>
+				<para
+>Opties:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Beperkte uitvoer (alleen e-mailadressen)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>exporteren</option
+></term>
+				<listitem>
+				<para
+>akonadiclient export [OPTIES] VERZAMELING BESTAND</para>
+				<para
+>Exporteer de verzameling gespecificeerd door VERZAMELING naar een XML-bestand gespecificeerd door BESTAND.</para>
+				<para
+>Opties:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+                        
+                        <varlistentry>
+				<term
+><option
+>group</option
+></term>
+				<listitem>
+				<para
+>akonadiclient group [OPTIES] GROEP ARGUMENTEN</para>
+				<para
+>Vouw uit of modificeer een contact-GROEP</para>
+				<para
+>Opties:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-e, --expand</option
+></term>
+					<listitem
+><para
+>Toon de uitgevouwen contactgroep (de standaard verwerking)</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --add</option
+></term>
+					<listitem
+><para
+>Een contactpersoon aan de groep toevoegen</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-d, --delete</option
+></term>
+					<listitem
+><para
+>Verwijder een contactpersoon uit de groep</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-C, --clean</option
+></term>
+					<listitem
+><para
+>Verwijder onbekende item-referenties uit de groep</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+                                            <term
+><option
+>-c, --comment <replaceable
+>naam</replaceable
+></option
+></term>
+					<listitem
+><para
+>E-mailcommentaar (naam) voor een toegevoegd item</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Beperkte uitvoer (voor 'expand', alleen e-mailadressen)</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+
+			<varlistentry>
+				<term
+><option
+>importeren</option
+></term>
+				<listitem>
+				<para
+>akonadiclient import [OPTIES] OUDER BESTAND</para>
+				<para
+>Importeert een XML-bestand in de verzameling gespecificeerd door OUDER. Als de verzameling al bestaat, wordt zijn inhoud gemengd met de inhoud van de verzameling in het XML-bestand.</para>
+				<para
+>Opties:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>info</option
+></term>
+				<listitem>
+				<para
+>akonadiclient info [OPTIES] VERZAMELING | ITEM</para>
+				<para
+>Toon volledige informatie over een verzameling of item</para>
+				<para
+>Opties:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-c, --collection</option
+></term>
+					<listitem
+><para
+>Naam aan dat een verzameling is gespecificeerd</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-i, --item</option
+></term>
+					<listitem
+><para
+>Neem aan dat een item is gespecificeerd</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>tonen</option
+></term>
+				<listitem>
+				<para
+>akonadiclient show ITEM</para>
+				<para
+>Toont de ruwe inhoud van een item</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>tags</option
+></term>
+				<listitem>
+				<para
+>akonadiclient tags [OPTIES]</para>
+				<para
+>Toon alle bekende tags</para>
+				<para
+>Opties:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Beperkte uitvoer - alleen namen van tags</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-u, --urls</option
+></term>
+					<listitem
+><para
+>Beperkte uitvoer - alleen URLs van tags</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>bijwerken</option
+></term>
+				<listitem>
+				<para
+>akonadiclient update [OPTIES] ITEM BESTAND</para>
+				<para
+>Werkt de ruwe inhoud van ITEM bij met de inhoud van BESTAND</para>
+				<para
+>Opties:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Overige opdrachten</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>agents</option
+></term>
+				<listitem>
+					<para
+>akonadiclient agents [OPTIES] [AGENTS...]</para>
+					<para
+>Stelt in staat agents van Akonadi  te beheren, zoals hun status wijzigen, een agent opnieuw starten of alle agents en hun status tonen.</para>
+					<para
+>Opties:</para>
+					<variablelist>
+
+						<varlistentry>
+							<term
+><option
+>-l, --list</option
+></term>
+							<listitem
+><para
+>Toon alle agents</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-s, --setstate <replaceable
+>status</replaceable
+></option
+></term>
+							<listitem
+><para
+>Stelt de status in van gespecificeerde agents. Geldige statussen zijn 'offline' en 'online'.</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-g, --getstate</option
+></term>
+							<listitem
+><para
+>Haal de status van gespecificeerde agents op</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-i, --info</option
+></term>
+							<listitem
+><para
+>Toon informatie over de gespecificeerde agents</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-r, --restart</option
+></term>
+							<listitem
+><para
+>Start de gespecificeerde agents opnieuw op</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-n, --dryrun</option
+></term>
+							<listitem
+><para
+>Uitvoeren zonder enige echte wijziging aan te brengen</para
+></listitem>
+						</varlistentry>
+
+					</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>help</option
+></term>
+				<listitem>
+					<para
+>akonadiclient help [OPDRACHT]</para>
+					<para
+>Toont help voor OPDRACHT. Als OPDRACHT niet is gespecificeerd toon dat alle beschikbare opdrachten</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>shell</option
+></term>
+				<listitem>
+					<para
+>akonadiclient shell</para>
+					<para
+>Voer opdrachten in in een interactieve shell</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</refsect2>
+</refsect1>
+
+<refsect1>
+<title
+>Voorbeelden</title>
+<para
+><emphasis role="bold"
+>akonadiclient list /</emphasis
+> - Toon alle verzamelingen onder de hoofdverzameling</para>
+<para
+><emphasis role="bold"
+>akonadiclient export /Notes notes.xml</emphasis
+> - Exporteert alle items en subverzamelingen van de /Notes-verzameling naar het bestand 'notes.xml'</para>
+<para
+><emphasis role="bold"
+>akonadiclient agents -l</emphasis
+> - toon alle agents</para>
+<para
+><emphasis role="bold"
+>akonadiclient add /Notes note.txt</emphasis
+> - Voegt de inhoud van het bestand note.txt toe aan een item in de verzameling /Notes</para>
+<para
+><emphasis role="bold"
+>akonadiclient add -m application/x-vnd.akonadi.calendar.todo /Todos todo.ics</emphasis
+> - Voegt de inhoud van het bestand todo.ics toe als een TODO-agenda-item in de verzameling /Todos</para>
+</refsect1>
+
+</refentry>

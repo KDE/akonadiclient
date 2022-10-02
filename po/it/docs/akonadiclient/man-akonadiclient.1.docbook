@@ -1,0 +1,921 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Italian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Pagina di manuale di akonadiclient</title>
+<author
+><firstname
+>Bhaskar</firstname
+> <surname
+>Kandiyal</surname
+> <contrib
+>Pagina di manuale di akonadiclient.</contrib
+> <email
+>bkandiyal@gmail.com</email
+></author>
+<date
+>26/7/2018</date>
+<productname
+>AkonadiClient</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>akonadiclient</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>akonadiclient</command
+></refname>
+<refpurpose
+>Un client da riga di comando per Akonadi</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>akonadiclient</command
+> <arg choice="opt"
+>comando</arg
+> <arg choice="opt"
+>--help</arg
+> <arg choice="opt"
+>--version</arg
+> <arg choice="opt"
+>Opzioni generiche di &kde;</arg
+> <arg choice="opt"
+>Opzioni generiche Qt</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descrizione</title>
+<para
+>akonadiclient è un client da riga di comando per manipolare l'archivio di dati Akonadi di KDE. Fornisce un modo semplice per manipolare i dati di Akonadi tramite la riga di comando. Ad esempio, aggiungere elementi, raccolte, rinominare o spostare raccolte e inoltre controllare gli agenti di Akonadi.</para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Comandi</title>
+	<refsect2>
+		<title
+>Comandi del filesystem</title>
+		<variablelist>
+
+		<varlistentry>
+		<term
+><option
+>copia</option
+></term>
+		<listitem>
+		<para
+>akonadiclient copy [OPZIONI] SORGENTE DESTINAZIONE</para>
+		<para
+>Utilizzato per copiare raccolte o elementi da una raccolta a un'altra.</para>
+		<para
+>Opzioni:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>crea</option
+></term>
+		<listitem>
+		<para
+>akonadiclient create [OPZIONI] RACCOLTA</para>
+		<para
+>Crea una nuova raccolta. Nota che le raccolte del livello principale possono essere create solo da una risorsa Akonadi.</para>
+		<para
+>Opzioni:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-p, --parent <replaceable
+>raccolta</replaceable
+></option
+></term>
+			<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+			</varlistentry>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>elimina</option
+></term>
+		<listitem>
+		<para
+>akonadiclient delete [OPZIONI] RACCOLTA | ELEMENTO</para>
+		<para
+>Elimina una raccolta o un elemento.</para>
+		<para
+>Opzioni:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-c, --collection</option
+></term>
+			<listitem
+><para
+>Assumi che una raccolta sia specificata come un argomento</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --item</option
+></term>
+			<listitem
+><para
+>Assumi che un elemento sia specificato come un argomento</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>elenca</option
+></term>
+		<listitem>
+		<para
+>akonadiclient list [OPZIONI] RACCOLTA</para>
+		<para
+>Elimina una raccolta o un elemento.</para>
+		<para
+>Opzioni:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-l, --details</option
+></term>
+			<listitem
+><para
+>Elenca informazioni più dettagliate</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-c, --collections</option
+></term>
+			<listitem
+><para
+>Elenca solo le sotto-raccolte</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --items</option
+></term>
+			<listitem
+><para
+>Elenca solo gli elementi contenuti</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>sposta</option
+></term>
+		<listitem>
+		<para
+>akonadiclient move [OPZIONI] SORGENTE DESTINAZIONE</para>
+		<para
+>Sposta le raccolte o gli elementi in un'altra raccolta.</para>
+		<para
+>Opzioni:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>rinomina</option
+></term>
+		<listitem>
+		<para
+>akonadiclient rename [OPZIONI] RACCOLTA NOME</para>
+		<para
+>Rinomina una raccolta specificata con NOME</para>
+		<para
+>Opzioni:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Comandi di dati</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>add</option
+></term>
+				<listitem>
+				<para
+>akonadiclient add [OPZIONI] RACCOLTA FILE</para>
+				<para
+>Aggiungi elementi a una raccolta specificata</para>
+				<para
+>Opzioni:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --base <replaceable
+>cartella</replaceable
+></option
+></term>
+					<listitem
+><para
+>Cartella di base per i file/cartelle in ingresso, predefinita è l'attuale</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --flat</option
+></term>
+					<listitem
+><para
+>Modalità piatta, non duplica la struttura delle sottocartelle</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-m, --mime <replaceable
+>tipo-mime</replaceable
+></option
+></term>
+					<listitem
+><para
+>Il tipo MIME da utilizzare (invece del rilevamento automatico)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+                        <varlistentry>
+				<term
+><option
+>estrai</option
+></term>
+				<listitem>
+				<para
+>akonadiclient dump [OPZIONI] RACCOLTA CARTELLA</para>
+				<para
+>Estrai una RACCOLTA in una struttura di CARTELLE</para>
+				<para
+>Opzioni:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-m, --maildir</option
+></term>
+					<listitem
+><para
+>Estrai i messaggi di posta in una struttura di cartelle maildir</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --akonadi-categories</option
+></term>
+					<listitem
+><para
+>Estrai gli elementi con categorie di Akonadi, altrimenti testo</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --force</option
+></term>
+					<listitem
+><para
+>Funziona anche se la cartella di destinazione non è vuota</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>modifica</option
+></term>
+				<listitem>
+				<para
+>akonadiclient edit [OPZIONI] ELEMENTO</para>
+				<para
+>Apre il contenuto di ELEMENTO in un editor di testo specificato dalla variabile d'ambiente $EDITOR</para>
+				<para
+>Opzioni:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>espandi</option
+></term>
+				<listitem>
+				<para
+>akonadiclient expand [OPZIONI] ELEMENTO</para>
+				<para
+>Espandi un elemento del gruppo di contatti</para>
+				<para
+>Opzioni:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Risultato breve (solo gli indirizzi di posta)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>esporta</option
+></term>
+				<listitem>
+				<para
+>akonadiclient export [OPZIONI] RACCOLTA FILE</para>
+				<para
+>Esporta la raccolta specificata da RACCOLTA in un file XML specificato da FILE.</para>
+				<para
+>Opzioni:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+                        
+                        <varlistentry>
+				<term
+><option
+>gruppo</option
+></term>
+				<listitem>
+				<para
+>akonadiclient group [OPZIONI] GRUPPO ARGOMENTI</para>
+				<para
+>Espandi o modifica un GRUPPO di contatti</para>
+				<para
+>Opzioni:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-e, --expand</option
+></term>
+					<listitem
+><para
+>Mostra il gruppo di contatti espanso (l'operazione predefinita)</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --add</option
+></term>
+					<listitem
+><para
+>Aggiungi un contatto al gruppo</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-d, --delete</option
+></term>
+					<listitem
+><para
+>Elimina un contatto dal gruppo</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-C, --clean</option
+></term>
+					<listitem
+><para
+>Rimuovi i riferimenti di un elemento sconosciuto dal gruppo</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+                                            <term
+><option
+>-c, --comment <replaceable
+>nome</replaceable
+></option
+></term>
+					<listitem
+><para
+>Il commento di un messaggio (nome) per un elemento aggiunto</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Risultato breve (per «espandi», solo indirizzi di posta)</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+
+			<varlistentry>
+				<term
+><option
+>importa</option
+></term>
+				<listitem>
+				<para
+>akonadiclient import [OPZIONI] ORIGINE FILE</para>
+				<para
+>Importa un file XML nella raccolta specificata da PARENT. Se la raccolta esiste già, il suo contenuto è unito con il contenuto della raccolta nel file XML.</para>
+				<para
+>Opzioni:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>informazioni</option
+></term>
+				<listitem>
+				<para
+>akonadiclient info [OPZIONI] RACCOLTA | ELEMENTO</para>
+				<para
+>Mostra le informazioni complete su una raccolta o su un elemento</para>
+				<para
+>Opzioni:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-c, --collection</option
+></term>
+					<listitem
+><para
+>Assumi che una raccolta sia specificata</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-i, --item</option
+></term>
+					<listitem
+><para
+>Assumi che un elemento sia specificato</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>mostra</option
+></term>
+				<listitem>
+				<para
+>akonadiclient show ELEMENTO</para>
+				<para
+>Mostra il contenuto grezzo di un elemento</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>etichette</option
+></term>
+				<listitem>
+				<para
+>akonadiclient tags [OPZIONI]</para>
+				<para
+>Elenca tutte le etichette conosciute</para>
+				<para
+>Opzioni:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Risultato breve - solo i nomi delle etichette</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-u, --urls</option
+></term>
+					<listitem
+><para
+>Risultato breve - solo gli URL delle etichette</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>aggiorna</option
+></term>
+				<listitem>
+				<para
+>akonadiclient update [OPZIONI] ELEMENTO FILE</para>
+				<para
+>Aggiorna il contenuto grezzo di ELEMENTO con il contenuto di FILE</para>
+				<para
+>Opzioni:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Comandi vari</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>agenti</option
+></term>
+				<listitem>
+					<para
+>akonadiclient agents [OPZIONI] [AGENTI...]</para>
+					<para
+>Consente di gestire gli agenti di Akonadi come cambiare il loro stato, riavviare un agente o elencare tutti gli agenti e il loro stato.</para>
+					<para
+>Opzioni:</para>
+					<variablelist>
+
+						<varlistentry>
+							<term
+><option
+>-l, --list</option
+></term>
+							<listitem
+><para
+>Elenca tutti gli agenti</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-s, --setstate <replaceable
+>stato</replaceable
+></option
+></term>
+							<listitem
+><para
+>Imposta lo stato per gli agenti specificati. Gli stati validi sono «non in linea» e «in linea».</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-g, --getstate</option
+></term>
+							<listitem
+><para
+>Ottieni lo stato per gli agenti specificati</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-i, --info</option
+></term>
+							<listitem
+><para
+>Mostra le informazioni sugli agenti specificati</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-r, --restart</option
+></term>
+							<listitem
+><para
+>Riavvia gli agenti specificati</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-n, --dryrun</option
+></term>
+							<listitem
+><para
+>Esegui senza apportare alcuna modifica effettiva</para
+></listitem>
+						</varlistentry>
+
+					</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>aiuto</option
+></term>
+				<listitem>
+					<para
+>akonadiclient help [COMANDO]</para>
+					<para
+>Visualizza la guida per COMANDO. Se COMANDO non è specificato, elenca tutti i comandi disponibili</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>shell</option
+></term>
+				<listitem>
+					<para
+>akonadiclient shell</para>
+					<para
+>Digita i comandi in una shell interattiva</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</refsect2>
+</refsect1>
+
+<refsect1>
+<title
+>Esempi</title>
+<para
+><emphasis role="bold"
+>akonadiclient list /</emphasis
+> - Elenca tutte le raccolte sotto la raccolta radice</para>
+<para
+><emphasis role="bold"
+>akonadiclient export /Notes notes.xml</emphasis
+> - Esporta tutti gli elementi e le sotto-raccolte della raccolta /Notes nel file 'notes.xml'</para>
+<para
+><emphasis role="bold"
+>akonadiclient agents -l</emphasis
+> - Elenca tutti gli agenti</para>
+<para
+><emphasis role="bold"
+>akonadiclient add /Notes nota.txt</emphasis
+> - Aggiunge il contenuto del file nota.txt come un elemento nella raccolta /Notes</para>
+<para
+><emphasis role="bold"
+>akonadiclient add -m application/x-vnd.akonadi.calendar.todo /Todos dafare.ics</emphasis
+> - Aggiunge il contenuto del file dafare.ics come una voce DA FARE del calendario nella raccolta /Todos</para>
+</refsect1>
+
+</refentry>

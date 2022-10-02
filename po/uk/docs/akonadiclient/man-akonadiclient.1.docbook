@@ -1,0 +1,921 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Ukrainian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Сторінка підручника щодо akonadiclient</title>
+<author
+><firstname
+>Bhaskar</firstname
+> <surname
+>Kandiyal</surname
+> <contrib
+>Сторінка підручника akonadiclient.</contrib
+> <email
+>bkandiyal@gmail.com</email
+></author>
+<date
+>26 липня 2018 року</date>
+<productname
+>AkonadiClient</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>akonadiclient</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>akonadiclient</command
+></refname>
+<refpurpose
+>Керований з командного рядка клієнт для Akonadi</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>akonadiclient</command
+> <arg choice="opt"
+>команда</arg
+> <arg choice="opt"
+>--help</arg
+> <arg choice="opt"
+>--version</arg
+> <arg choice="opt"
+>Загальні параметри &kde;</arg
+> <arg choice="opt"
+>Загальні параметри Qt</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Опис</title>
+<para
+>akonadiclient — клієнт командного рядка для керування сховищем даних Akonadi у KDE. Програма спрощує доступ до керування даними Akonadi за допомогою командного рядка. Програма, наприклад, надає доступ до додавання записів, збірок, перейменування або пересування збірок, а також керування агентами Akonadi.</para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Команди</title>
+	<refsect2>
+		<title
+>Команди файлової системи</title>
+		<variablelist>
+
+		<varlistentry>
+		<term
+><option
+>copy</option
+></term>
+		<listitem>
+		<para
+>akonadiclient copy [ПАРАМЕТРИ] ДЖЕРЕЛО ПРИЗНАЧЕННЯ</para>
+		<para
+>Використовується для копіювання збірок або записів з однієї збірки до іншої.</para>
+		<para
+>Параметри:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>create</option
+></term>
+		<listitem>
+		<para
+>akonadiclient create [ПАРАМЕТРИ] ЗБІРКА</para>
+		<para
+>Створити збірку. Будь ласка, зауважте, що збірки найвищого рівня можна створити лише за допомогою ресурсу Akonadi.</para>
+		<para
+>Параметри:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-p, --parent <replaceable
+>збірка</replaceable
+></option
+></term>
+			<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+			</varlistentry>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>delete</option
+></term>
+		<listitem>
+		<para
+>akonadiclient delete [ПАРАМЕТРИ] ЗБІРКА | ЗАПИС</para>
+		<para
+>Вилучає збірку або запис.</para>
+		<para
+>Параметри:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-c, --collection</option
+></term>
+			<listitem
+><para
+>Задати збірку як аргумент</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --item</option
+></term>
+			<listitem
+><para
+>Задати запис як аргумент</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>list</option
+></term>
+		<listitem>
+		<para
+>akonadiclient list [ПАРАМЕТРИ] ЗБІРКА</para>
+		<para
+>Вилучає збірку або запис.</para>
+		<para
+>Параметри:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-l, --details</option
+></term>
+			<listitem
+><para
+>Вивести список із докладнішими відомостями</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-c, --collections</option
+></term>
+			<listitem
+><para
+>Вивести список лише підлеглих збірок</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --items</option
+></term>
+			<listitem
+><para
+>Вивести список лише записів, що містяться у батьківському</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>move</option
+></term>
+		<listitem>
+		<para
+>akonadiclient move [ПАРАМЕТРИ] ДЖЕРЕЛО ПРИЗНАЧЕННЯ</para>
+		<para
+>Пересунути збірки або запис до іншої збірки.</para>
+		<para
+>Параметри:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>rename</option
+></term>
+		<listitem>
+		<para
+>akonadiclient rename [ПАРАМЕТРИ] ЗБІРКА НАЗВА</para>
+		<para
+>Перейменувати вказану збірку так, щоб вона мала назву НАЗВА</para>
+		<para
+>Параметри:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Команди даних</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>add</option
+></term>
+				<listitem>
+				<para
+>akonadiclient add [ПАРАМЕТРИ] ЗБІРКА ФАЙЛИ</para>
+				<para
+>Додати записи до вказаної збірки</para>
+				<para
+>Параметри:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --base <replaceable
+>каталог</replaceable
+></option
+></term>
+					<listitem
+><para
+>Базовий каталог для вхідних файлів або каталогів. Типовим є поточний каталог.</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --flat</option
+></term>
+					<listitem
+><para
+>Плоский режим. Не дублювати структуру підкаталогів.</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-m, --mime <replaceable
+>тип_MIME</replaceable
+></option
+></term>
+					<listitem
+><para
+>Тип MIME, яким слід скористатися (замість автоматичного виявлення)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+                        <varlistentry>
+				<term
+><option
+>dump</option
+></term>
+				<listitem>
+				<para
+>akonadiclient dump [ПАРАМЕТРИ] ЗБІРКА КАТАЛОГ</para>
+				<para
+>Створити дамп збірки ЗБІРКА у структурі каталогу КАТАЛОГ.</para>
+				<para
+>Параметри:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-m, --maildir</option
+></term>
+					<listitem
+><para
+>Створити дамп повідомлень електронної пошти у структурі каталогів maildir</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --akonadi-categories</option
+></term>
+					<listitem
+><para
+>Створити дамп записів із категоріями Akonadi. Якщо не вказано, дамп буде створено у текстовому режимі.</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --force</option
+></term>
+					<listitem
+><para
+>Виконати обробку, навіть якщо каталог призначення не є порожнім</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>edit</option
+></term>
+				<listitem>
+				<para
+>akonadiclient edit [ПАРАМЕТРИ] ЗАПИС</para>
+				<para
+>Відкрити вміст запису ЗАПИС у текстовому редакторі, вказаному за допомогою змінної середовища $EDITOR</para>
+				<para
+>Параметри:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>expand</option
+></term>
+				<listitem>
+				<para
+>akonadiclient expand [ПАРАМЕТРИ] ЗАПИС</para>
+				<para
+>Розгорнути запис групи контактів</para>
+				<para
+>Параметри:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Скорочене виведення (лише адреси електронної пошти)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>export</option
+></term>
+				<listitem>
+				<para
+>akonadiclient export [ПАРАМЕТРИ] ЗБІРКА ФАЙЛ</para>
+				<para
+>Експортувати збірку, вказану за допомогою параметра ЗБІРКА, до файла XML, вказаного за допомогою параметра ФАЙЛ.</para>
+				<para
+>Параметри:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+                        
+                        <varlistentry>
+				<term
+><option
+>group</option
+></term>
+				<listitem>
+				<para
+>akonadiclient group [ПАРАМЕТРИ] ГРУПА АРГУМЕНТИ</para>
+				<para
+>Розгорнути або змінити групу ГРУПА записів контактів.</para>
+				<para
+>Параметри:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-e, --expand</option
+></term>
+					<listitem
+><para
+>Вивести розгорнуту групу контактів (типова дія)</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --add</option
+></term>
+					<listitem
+><para
+>Додати запис контакту до групи</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-d, --delete</option
+></term>
+					<listitem
+><para
+>Вилучити запис контакту з групи</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-C, --clean</option
+></term>
+					<listitem
+><para
+>Вилучити посилання на невідомі записи з групи</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+                                            <term
+><option
+>-c, --comment <replaceable
+>назва</replaceable
+></option
+></term>
+					<listitem
+><para
+>Коментар до повідомлення електронної пошти (назва) для доданого запису</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Скорочене виведення (для «expand», лише адреси електронної пошти)</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+
+			<varlistentry>
+				<term
+><option
+>import</option
+></term>
+				<listitem>
+				<para
+>akonadiclient import [ПАРАМЕТРИ] БАТЬКІВСЬКА_ЗБІРКА ФАЙЛ</para>
+				<para
+>Імпортувати файл XML до збірки, вказаної за допомогою аргументу БАТЬКІВСЬКА_ЗБІРКА. Якщо імпортована збірка вже існує, її вміст буде об'єднано із вмістом збірки у файлі XML.</para>
+				<para
+>Параметри:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>info</option
+></term>
+				<listitem>
+				<para
+>akonadiclient info [ПАРАМЕТРИ] ЗБІРКА | ЗАПИС</para>
+				<para
+>Виводить відомості щодо збірки або запису повністю</para>
+				<para
+>Параметри:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-c, --collection</option
+></term>
+					<listitem
+><para
+>Задати збірку як аргумент</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-i, --item</option
+></term>
+					<listitem
+><para
+>Задати запис як аргумент</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>show</option
+></term>
+				<listitem>
+				<para
+>akonadiclient show ЗАПИС</para>
+				<para
+>Вивести необроблений вміст запису</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>tags</option
+></term>
+				<listitem>
+				<para
+>akonadiclient tags [ПАРАМЕТР]</para>
+				<para
+>Вивести список усіх відомих міток</para>
+				<para
+>Параметри:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Коротке виведення — лише назви міток</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-u, --urls</option
+></term>
+					<listitem
+><para
+>Коротке виведення — лише адреси міток</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>update</option
+></term>
+				<listitem>
+				<para
+>akonadiclient update [ПАРАМЕТРИ] ЗАПИС ФАЙЛ</para>
+				<para
+>Оновлює необроблений вміст запису ЗАПИС за вмістом файла ФАЙЛ</para>
+				<para
+>Параметри:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Інші команди</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>agents</option
+></term>
+				<listitem>
+					<para
+>akonadiclient agents [ПАРАМЕТРИ] [АГЕНТИ...]</para>
+					<para
+>Уможливлює керування агентами Akonadi, зокрема зміну стану, перезапуск агента або виведення списку усіх агентів та їхнього стану.</para>
+					<para
+>Параметри:</para>
+					<variablelist>
+
+						<varlistentry>
+							<term
+><option
+>-l, --list</option
+></term>
+							<listitem
+><para
+>Вивести список усіх агентів</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-s, --setstate <replaceable
+>стан</replaceable
+></option
+></term>
+							<listitem
+><para
+>Встановити стан вказаних агентів. Коректними станами є «offline» і «online».</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-g, --getstate</option
+></term>
+							<listitem
+><para
+>Отримати стан вказаних агентів</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-i, --info</option
+></term>
+							<listitem
+><para
+>Вивести дані щодо вказаних агентів</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-r, --restart</option
+></term>
+							<listitem
+><para
+>Перезапустити вказані агенти</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-n, --dryrun</option
+></term>
+							<listitem
+><para
+>Запустити без внесення змін насправді</para
+></listitem>
+						</varlistentry>
+
+					</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>help</option
+></term>
+				<listitem>
+					<para
+>akonadiclient help [КОМАНДА]</para>
+					<para
+>Виводить довідку щодо команди КОМАНДА. Якщо команду не вказано, буде виведено список усіх доступних команд.</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>shell</option
+></term>
+				<listitem>
+					<para
+>akonadiclient shell</para>
+					<para
+>Вводити команди у інтерактивній оболонці</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</refsect2>
+</refsect1>
+
+<refsect1>
+<title
+>Приклади</title>
+<para
+><emphasis role="bold"
+>akonadiclient list /</emphasis
+> — виводить список усіх збірок у кореневій збірці</para>
+<para
+><emphasis role="bold"
+>akonadiclient export /Notes notes.xml</emphasis
+> — експортує усі записи і підлеглі збірки збірки /Notes до файла «notes.xml»</para>
+<para
+><emphasis role="bold"
+>akonadiclient agents -l</emphasis
+> — виводить список усіх агентів</para>
+<para
+><emphasis role="bold"
+>akonadiclient add /Notes note.txt</emphasis
+> — додати вміст файла note.txt як запису у збірці /Notes</para>
+<para
+><emphasis role="bold"
+>akonadiclient add -m application/x-vnd.akonadi.calendar.todo /Todos todo.ics</emphasis
+> — додати вміст файла todo.ics як запис календаря завдань до збірки /Todos</para>
+</refsect1>
+
+</refentry>

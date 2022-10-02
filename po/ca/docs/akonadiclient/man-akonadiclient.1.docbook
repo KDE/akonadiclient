@@ -1,0 +1,921 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Catalan  "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Pàgina del manual de l'akonadiclient</title>
+<author
+><firstname
+>Bhaskar</firstname
+> <surname
+>Kandiyal</surname
+> <contrib
+>akonadiclient man page.</contrib
+> <email
+>bkandiyal@gmail.com</email
+></author>
+<date
+>26 de juliol de 2018</date>
+<productname
+>AkonadiClient</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>akonadiclient</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>akonadiclient</command
+></refname>
+<refpurpose
+>Un client de la línia d'ordres per a l'Akonadi</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>akonadiclient</command
+> <arg choice="opt"
+>ordre</arg
+> <arg choice="opt"
+>--help</arg
+> <arg choice="opt"
+>--version</arg
+> <arg choice="opt"
+>Opcions genèriques del &kde;</arg
+> <arg choice="opt"
+>Opcions genèriques de les Qt</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descripció</title>
+<para
+>L'akonadiclient és un client de línia d'ordres per a la manipulació del magatzem de dades Akonadi del KDE. Proporciona una manera senzilla per a manipular les dades de l'Akonadi a través de la línia d'ordres. Per exemple, afegint elements, col·leccions, canviant el nom o movent les col·leccions i també controlant els agents de l'Akonadi.</para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Ordres</title>
+	<refsect2>
+		<title
+>Ordres del sistema de fitxers</title>
+		<variablelist>
+
+		<varlistentry>
+		<term
+><option
+>copy</option
+></term>
+		<listitem>
+		<para
+>akonadiclient copy [OPCIONS] ORIGEN DESTINACIÓ</para>
+		<para
+>S'utilitza per a copiar les col·leccions o elements d'una col·lecció a una altra.</para>
+		<para
+>Opcions:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>create</option
+></term>
+		<listitem>
+		<para
+>akonadiclient create [OPCIONS] COL·LECCIÓ</para>
+		<para
+>Crea una col·lecció nova. Tingueu en compte que un recurs Akonadi només pot crear col·leccions de nivell superior.</para>
+		<para
+>Opcions:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-p, --parent <replaceable
+>col·lecció</replaceable
+></option
+></term>
+			<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+			</varlistentry>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>delete</option
+></term>
+		<listitem>
+		<para
+>akonadiclient delete [OPCIONS] COL·LECCIÓ | ELEMENT</para>
+		<para
+>Elimina una col·lecció o un element.</para>
+		<para
+>Opcions:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-c, --collection</option
+></term>
+			<listitem
+><para
+>Assumeix que s'ha especificat una col·lecció com a argument</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --item</option
+></term>
+			<listitem
+><para
+>Assumeix que s'ha especificat un element com a argument</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>list</option
+></term>
+		<listitem>
+		<para
+>akonadiclient list [OPCIONS] COL·LECCIÓ</para>
+		<para
+>Elimina una col·lecció o un element.</para>
+		<para
+>Opcions:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-l, --details</option
+></term>
+			<listitem
+><para
+>Llista amb informació més detallada</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-c, --collections</option
+></term>
+			<listitem
+><para
+>Llista només les subcol·leccions</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --items</option
+></term>
+			<listitem
+><para
+>Llista només els elements continguts</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>move</option
+></term>
+		<listitem>
+		<para
+>akonadiclient move [OPCIONS] ORIGEN DESTINACIÓ</para>
+		<para
+>Mou les col·leccions o elements a una altra col·lecció.</para>
+		<para
+>Opcions:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>rename</option
+></term>
+		<listitem>
+		<para
+>akonadiclient rename [OPCIONS] COL·LECCIÓ NOM</para>
+		<para
+>Reanomena una col·lecció especificada a NOM</para>
+		<para
+>Opcions:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Ordres de dades</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>add</option
+></term>
+				<listitem>
+				<para
+>akonadiclient add [OPCIONS] COL·LECCIÓ FITXERS</para>
+				<para
+>Afegeix elements a una col·lecció especificada</para>
+				<para
+>Opcions:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --base <replaceable
+>dir</replaceable
+></option
+></term>
+					<listitem
+><para
+>El directori base per als fitxers / directoris d'entrada, el valor predeterminat és l'actual</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --flat</option
+></term>
+					<listitem
+><para
+>Mode pla, no duplica l'estructura del subdirectori</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-m, --mime <replaceable
+>tipus-MIME</replaceable
+></option
+></term>
+					<listitem
+><para
+>Tipus MIME a utilitzar (en comptes de la detecció automàtica)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+                        <varlistentry>
+				<term
+><option
+>dump</option
+></term>
+				<listitem>
+				<para
+>akonadiclient dump [OPCIONS] COL·LECCIÓ DIRECTORI</para>
+				<para
+>Bolca una COL·LECCIÓ a una estructura DIRECTORI</para>
+				<para
+>Opcions:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-m, --maildir</option
+></term>
+					<listitem
+><para
+>Bolca els missatges de correu electrònic a l'estructura del directori maildir</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --akonadi-categories</option
+></term>
+					<listitem
+><para
+>Bolca els elements amb categories Akonadi, altrament text</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --force</option
+></term>
+					<listitem
+><para
+>Opera fins i tot si el directori de destinació no està buit</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>edit</option
+></term>
+				<listitem>
+				<para
+>akonadiclient edit [OPCIONS] ELEMENT</para>
+				<para
+>Obre el contingut de l'ELEMENT en un editor de text especificat per la variable d'entorn $EDITOR</para>
+				<para
+>Opcions:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>expand</option
+></term>
+				<listitem>
+				<para
+>akonadiclient expand [OPCIONS] ELEMENT</para>
+				<para
+>Expandeix un element del grup de contactes</para>
+				<para
+>Opcions:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Resum breu (només adreces de correu electrònic)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>export</option
+></term>
+				<listitem>
+				<para
+>akonadiclient export [OPCIONS] COL·LECCIÓ FITXER</para>
+				<para
+>Exporta una col·lecció especificada per COL·LECCIÓ a un fitxer XML especificat per FITXER.</para>
+				<para
+>Opcions:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+                        
+                        <varlistentry>
+				<term
+><option
+>group</option
+></term>
+				<listitem>
+				<para
+>akonadiclient group [OPCIONS] GRUP ARGS</para>
+				<para
+>Expandeix o modifica un GRUP de contactes</para>
+				<para
+>Opcions:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-e, --expand</option
+></term>
+					<listitem
+><para
+>Mostra expandit el grup de contactes (l'operació predeterminada)</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --add</option
+></term>
+					<listitem
+><para
+>Afegeix un contactes al grup</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-d, --delete</option
+></term>
+					<listitem
+><para
+>Suprimeix un contacte del grup</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-C, --clean</option
+></term>
+					<listitem
+><para
+>Elimina les referències a elements desconeguts del grup</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+                                            <term
+><option
+>-c, --comment <replaceable
+>nom</replaceable
+></option
+></term>
+					<listitem
+><para
+>Comentari (nom) per correu electrònic per a un element afegit</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Resum breu (per a «expand», només adreces de correu electrònic)</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+
+			<varlistentry>
+				<term
+><option
+>import</option
+></term>
+				<listitem>
+				<para
+>akonadiclient import [OPCIONS] FITXER PARE</para>
+				<para
+>Importa un fitxer XML dins de la col·lecció especificada per PARE. Si la col·lecció ja existeix, el seu contingut es fusionarà amb el contingut de la col·lecció al fitxer XML.</para>
+				<para
+>Opcions:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>info</option
+></term>
+				<listitem>
+				<para
+>akonadiclient info [OPCIONS] COL·LECCIÓ | ELEMENT</para>
+				<para
+>Mostra la informació completa sobre una col·lecció o element</para>
+				<para
+>Opcions:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-c, --collection</option
+></term>
+					<listitem
+><para
+>Assumeix que s'ha especificat una col·lecció</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-i, --item</option
+></term>
+					<listitem
+><para
+>Assumeix que s'ha especificat un element</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>show</option
+></term>
+				<listitem>
+				<para
+>akonadiclient show ELEMENT</para>
+				<para
+>Mostra el contingut en brut d'un element</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>tags</option
+></term>
+				<listitem>
+				<para
+>akonadiclient tags [OPCIONS]</para>
+				<para
+>Llista totes les etiquetes conegudes</para>
+				<para
+>Opcions:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Resum breu, només els noms d'etiqueta</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-u, --urls</option
+></term>
+					<listitem
+><para
+>Resum breu, només els noms d'URL</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>update</option
+></term>
+				<listitem>
+				<para
+>akonadiclient update [OPCIONS] ELEMENT FITXER</para>
+				<para
+>Actualitza el contingut en brut de l'ELEMENT amb el contingut del FITXER</para>
+				<para
+>Opcions:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Ordres diverses</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>agents</option
+></term>
+				<listitem>
+					<para
+>akonadiclient agents [OPCIONS] [AGENTS...]</para>
+					<para
+>Permet gestionar els agents de l'Akonadi; com canviar el seu estat, reiniciar un agent o llistar tots els agents i el seu estat.</para>
+					<para
+>Opcions:</para>
+					<variablelist>
+
+						<varlistentry>
+							<term
+><option
+>-l, --list</option
+></term>
+							<listitem
+><para
+>Llista tots els agents</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-s, --setstate <replaceable
+>estat</replaceable
+></option
+></term>
+							<listitem
+><para
+>Estableix l'estat dels agents especificats. Els estats vàlids són «offline» (fora de línia) i «online» (en línia).</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-g, --getstate</option
+></term>
+							<listitem
+><para
+>Obtén l'estat per als agents especificats</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-i, --info</option
+></term>
+							<listitem
+><para
+>Mostra la informació sobre els agents especificats</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-r, --restart</option
+></term>
+							<listitem
+><para
+>Reinicia els agents especificats</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-n, --dryrun</option
+></term>
+							<listitem
+><para
+>Executa sense fer cap canvi real</para
+></listitem>
+						</varlistentry>
+
+					</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>help</option
+></term>
+				<listitem>
+					<para
+>akonadiclient help [ORDRE]</para>
+					<para
+>Mostra l'ajuda per a l'ORDRE. Si no s'especifica ORDRE, llistarà totes les ordres disponibles</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>shell</option
+></term>
+				<listitem>
+					<para
+>akonadiclient shell</para>
+					<para
+>Introduïu ordres en un intèrpret d'ordres interactiu</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</refsect2>
+</refsect1>
+
+<refsect1>
+<title
+>Exemples</title>
+<para
+><emphasis role="bold"
+>akonadiclient list /</emphasis
+> - Llista totes les col·leccions sota la col·lecció arrel</para>
+<para
+><emphasis role="bold"
+>akonadiclient export /Notes notes.xml</emphasis
+> - Exporta tots els elements i subcol·leccions de la col·lecció /Notes al fitxer «notes.xml»</para>
+<para
+><emphasis role="bold"
+>akonadiclient agents -l</emphasis
+> - Llista tots els agents</para>
+<para
+><emphasis role="bold"
+>akonadiclient add /Notes nota.txt</emphasis
+> - Afegeix el contingut del fitxer nota.txt com a element a la col·lecció /Notes</para>
+<para
+><emphasis role="bold"
+>akonadiclient add -m application/x-vnd.akonadi.calendar.todo /Todos todo.ics</emphasis
+> - Afegeix el contingut del fitxer todo.ics com una entrada de tasca pendent de calendari a la col·lecció /Todos</para>
+</refsect1>
+
+</refentry>
