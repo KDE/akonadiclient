@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-04-27 00:46+0000\n"
+"POT-Creation-Date: 2022-10-07 00:46+0000\n"
 "PO-Revision-Date: 2022-05-02 13:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -102,183 +102,183 @@ msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
 msgstr "Çevrede %1=\"%2\" ayarla"
 
-#: src/addcommand.cpp:45
+#: src/addcommand.cpp:41
 #, kde-format
 msgid "Add items to a collection"
 msgstr "Ögeleri bir koleksiyona ekle"
 
-#: src/addcommand.cpp:61
+#: src/addcommand.cpp:57
 #, kde-format
 msgid "Base directory for input files/directories, default is current"
 msgstr ""
 "Girdi dosyaları/koleksiyonları için temel dizin, öntanımlı dizin geçerli "
 "olandır"
 
-#: src/addcommand.cpp:61
+#: src/addcommand.cpp:57
 #, kde-format
 msgid "directory"
 msgstr "dizin"
 
-#: src/addcommand.cpp:62
+#: src/addcommand.cpp:58
 #, kde-format
 msgid "Flat mode, do not duplicate subdirectory structure"
 msgstr "Düz kip, altdizin yapısını yineleme"
 
-#: src/addcommand.cpp:63
+#: src/addcommand.cpp:59
 #, kde-format
 msgid "MIME type of added items, default is to auto-detect"
 msgstr "Eklenen ögelerin MIME türü, öntanımlı ayar kendiliğinden algılamadır"
 
-#: src/addcommand.cpp:63
+#: src/addcommand.cpp:59
 #, kde-format
 msgid "mimetype"
 msgstr "mimetürü"
 
-#: src/addcommand.cpp:66
+#: src/addcommand.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to add to: an ID, path or Akonadi URL"
 msgstr "Eklenecek koleksiyon: Bir kimlik, yol veya Akonadi URL'si"
 
-#: src/addcommand.cpp:67
+#: src/addcommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or directories to add to the collection"
 msgstr "Koleksiyona eklenecek dosyalar veya dizinler"
 
-#: src/addcommand.cpp:67
+#: src/addcommand.cpp:63
 #, kde-format
 msgid "files..."
 msgstr "dosyalar..."
 
-#: src/addcommand.cpp:73 src/createcommand.cpp:60 src/listcommand.cpp:60
+#: src/addcommand.cpp:69 src/createcommand.cpp:60 src/listcommand.cpp:56
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection argument"
 msgstr "Koleksiyon argümanı eksik"
 
-#: src/addcommand.cpp:74
+#: src/addcommand.cpp:70
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file or directory arguments"
 msgstr "Dosya veya dizin argümanı yok"
 
-#: src/addcommand.cpp:87
+#: src/addcommand.cpp:83
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid MIME type argument '%1'"
 msgstr "'%1' argümanı için geçersiz MIME türü argümanı"
 
-#: src/addcommand.cpp:96
+#: src/addcommand.cpp:92
 #, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
 msgstr "Temel dizin '%1' bulunamadı"
 
-#: src/addcommand.cpp:117
+#: src/addcommand.cpp:113
 #, kde-format
 msgid "File '%1' does not exist"
 msgstr "'%1' dosyası yok"
 
-#: src/addcommand.cpp:120
+#: src/addcommand.cpp:116
 #, kde-format
 msgid "Error accessing file '%1'"
 msgstr "'%1' dosyasına erişirken hata"
 
-#: src/addcommand.cpp:148
+#: src/addcommand.cpp:144
 #, kde-format
 msgctxt "@info:shell"
 msgid "No valid file or directory arguments"
 msgstr "Geçerli dosya veya dizin argümanı yok"
 
-#: src/addcommand.cpp:158
+#: src/addcommand.cpp:154
 #, kde-format
 msgid "No more directories to process"
 msgstr "İşleyecek başka dizin yok"
 
-#: src/addcommand.cpp:182 src/addcommand.cpp:204
+#: src/addcommand.cpp:178 src/addcommand.cpp:200
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
 msgstr "'%1' dizini artık yok"
 
-#: src/addcommand.cpp:221
+#: src/addcommand.cpp:217
 #, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
 msgstr "%1 \"%2\" üst ögesinde \"%3\" koleksiyonu getiriliyor"
 
-#: src/addcommand.cpp:234
+#: src/addcommand.cpp:230
 #, kde-format
 msgid "Need to create collection for '%1'"
 msgstr "'%1' için koleksiyon oluşturulmalı"
 
-#: src/addcommand.cpp:247
+#: src/addcommand.cpp:243
 #, kde-format
 msgid "No more files to process"
 msgstr "İşleyecen başka dosya yok"
 
-#: src/addcommand.cpp:258 src/updatecommand.cpp:84
+#: src/addcommand.cpp:254 src/updatecommand.cpp:84
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ does not exist"
 msgstr "\"%1\" dosyası artık yok"
 
-#: src/addcommand.cpp:264 src/updatecommand.cpp:92
+#: src/addcommand.cpp:260 src/updatecommand.cpp:92
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ cannot be read"
 msgstr "\"%1\" dosyası okunamıyor"
 
-#: src/addcommand.cpp:272
+#: src/addcommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine MIME type of file ‘%1’"
 msgstr "'%1' dosyasının MIME türü algılanamıyor"
 
-#: src/addcommand.cpp:281
+#: src/addcommand.cpp:277
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine parent collection for file ‘%1’"
 msgstr "'%1' dosyasının üst koleksiyonu algılanamıyor"
 
-#: src/addcommand.cpp:292
+#: src/addcommand.cpp:284
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
 msgstr "Öge, '%3' konumundan %4 boyutlu %1 \"%2\" koleksiyonunda oluşturuluyor"
 
-#: src/addcommand.cpp:314
+#: src/addcommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch target collection, %1"
 msgstr "Hedef koleksiyon getirilemiyor, %1"
 
-#: src/addcommand.cpp:324
+#: src/addcommand.cpp:316
 #, kde-format
 msgid "Root folder is %1 \"%2\""
 msgstr "Kök klasör %1 \"%2\""
 
-#: src/addcommand.cpp:372
+#: src/addcommand.cpp:364
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
 msgstr "%1 \"%2\" koleksiyonu getirilemiyor, %3"
 
-#: src/addcommand.cpp:387
+#: src/addcommand.cpp:379
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
 msgstr "maildir klasör adı '%1' olarak değiştirildi"
 
-#: src/addcommand.cpp:396
+#: src/addcommand.cpp:388
 #, kde-format
 msgid "Creating collection \"%3\" under parent %1 \"%2\""
 msgstr "\"%3\" koleksiyonu %1 \"%2\" üst ögesi içinde oluşturuluyor"
 
-#: src/addcommand.cpp:417
+#: src/addcommand.cpp:409
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
 msgstr "'%1' eklenemedi, %2"
 
-#: src/addcommand.cpp:423
+#: src/addcommand.cpp:415
 #, kde-format
 msgid "Added file '%2' as item %1"
 msgstr "\"%2\" dosyası %1 ögesi olarak eklendi"
@@ -679,13 +679,13 @@ msgstr "Kök koleksiyon silinemez"
 msgid "Collection deleted successfully"
 msgstr "Koleksiyon başarıyla silindi"
 
-#: src/deletecommand.cpp:127 src/infocommand.cpp:154
+#: src/deletecommand.cpp:127 src/infocommand.cpp:150
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item/collection syntax '%1'"
 msgstr "Geçersiz öge/koleksiyon sözdizimi '%1'"
 
-#: src/deletecommand.cpp:149 src/infocommand.cpp:181
+#: src/deletecommand.cpp:149 src/infocommand.cpp:177
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
@@ -752,7 +752,7 @@ msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr "'%1' dizini boş değil (işlemi zorlamak için '-f' kullanın)"
 
-#: src/dumpcommand.cpp:120 src/listcommand.cpp:183
+#: src/dumpcommand.cpp:120 src/listcommand.cpp:179
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -1004,7 +1004,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "Tür"
 
-#: src/groupcommand.cpp:387 src/listcommand.cpp:143 src/listcommand.cpp:212
+#: src/groupcommand.cpp:387 src/listcommand.cpp:139 src/listcommand.cpp:208
 #: src/tagscommand.cpp:320
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1017,7 +1017,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "E-Posta"
 
-#: src/groupcommand.cpp:389 src/listcommand.cpp:144 src/tagscommand.cpp:322
+#: src/groupcommand.cpp:389 src/listcommand.cpp:140 src/tagscommand.cpp:322
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -1192,259 +1192,259 @@ msgctxt "@info:shell"
 msgid "Created item '%1'"
 msgstr "'%1' ögesi oluşturuldu"
 
-#: src/infocommand.cpp:42
+#: src/infocommand.cpp:38
 #, kde-format
 msgid "Show full information for a collection or item"
 msgstr "Bir koleksiyon veya öge için tüm bilgiyi göster"
 
-#: src/infocommand.cpp:64
+#: src/infocommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
 msgstr "Görüntülenecek koleksiyonlar veya ögeler"
 
-#: src/infocommand.cpp:64
+#: src/infocommand.cpp:60
 #, kde-format
 msgid "entity..."
 msgstr "varlık..."
 
-#: src/infocommand.cpp:70
+#: src/infocommand.cpp:66
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
 msgstr "Koleksiyon veya öge belirtilmedi"
 
-#: src/infocommand.cpp:124
+#: src/infocommand.cpp:120
 #, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
 msgstr "Koleksiyon kökü için bilgi yok"
 
-#: src/infocommand.cpp:224 src/infocommand.cpp:274
+#: src/infocommand.cpp:220 src/infocommand.cpp:266
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID"
 msgstr "Kimlik"
 
-#: src/infocommand.cpp:225 src/infocommand.cpp:275
+#: src/infocommand.cpp:221 src/infocommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "URL"
 msgstr "URL"
 
-#: src/infocommand.cpp:226 src/infocommand.cpp:276
+#: src/infocommand.cpp:222 src/infocommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "Parent"
 msgstr "Üst Öge"
 
-#: src/infocommand.cpp:227 src/infocommand.cpp:277 src/infocommand.cpp:313
+#: src/infocommand.cpp:223 src/infocommand.cpp:269 src/infocommand.cpp:301
 #, kde-format
 msgctxt "@info:shell"
 msgid "Type"
 msgstr "Tür"
 
-#: src/infocommand.cpp:227
+#: src/infocommand.cpp:223
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Collection"
 msgstr "Koleksiyon"
 
-#: src/infocommand.cpp:228
+#: src/infocommand.cpp:224
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name"
 msgstr "Ad"
 
-#: src/infocommand.cpp:229
+#: src/infocommand.cpp:225
 #, kde-format
 msgctxt "@info:shell"
 msgid "Owner"
 msgstr "Sahip"
 
-#: src/infocommand.cpp:230 src/infocommand.cpp:278
+#: src/infocommand.cpp:226 src/infocommand.cpp:270
 #, kde-format
 msgctxt "@info:shell"
 msgid "MIME"
 msgstr "MIME"
 
-#: src/infocommand.cpp:231 src/infocommand.cpp:282
+#: src/infocommand.cpp:227 src/infocommand.cpp:274
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
 msgstr "Uzak Kimlik"
 
-#: src/infocommand.cpp:236
+#: src/infocommand.cpp:232
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
 msgstr "Saltokunur"
 
-#: src/infocommand.cpp:239
+#: src/infocommand.cpp:235
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
 msgstr "Öğeyi Değiştir"
 
-#: src/infocommand.cpp:242
+#: src/infocommand.cpp:238
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
 msgstr "ÖgeOluştur"
 
-#: src/infocommand.cpp:245
+#: src/infocommand.cpp:241
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
 msgstr "ÖgeSil"
 
-#: src/infocommand.cpp:248
+#: src/infocommand.cpp:244
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
 msgstr "KolDeğiştir"
 
-#: src/infocommand.cpp:251
+#: src/infocommand.cpp:247
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
 msgstr "KolOluştur"
 
-#: src/infocommand.cpp:254
+#: src/infocommand.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
 msgstr "KolSil"
 
-#: src/infocommand.cpp:257
+#: src/infocommand.cpp:253
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
 msgstr "ÖgeBağla"
 
-#: src/infocommand.cpp:260
+#: src/infocommand.cpp:256
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
 msgstr "ÖgeBağKes"
 
-#: src/infocommand.cpp:262
+#: src/infocommand.cpp:258
 #, kde-format
 msgctxt "@info:shell"
 msgid "Rights"
 msgstr "Haklar"
 
-#: src/infocommand.cpp:265
+#: src/infocommand.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Count"
 msgstr "Sayım"
 
-#: src/infocommand.cpp:266
+#: src/infocommand.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unread"
 msgstr "Okunmamış"
 
-#: src/infocommand.cpp:272 src/infocommand.cpp:310
+#: src/infocommand.cpp:264 src/infocommand.cpp:298
 #, kde-format
 msgctxt "@info:shell"
 msgid "Size"
 msgstr "Boyut"
 
-#: src/infocommand.cpp:277
+#: src/infocommand.cpp:269
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Item"
 msgstr "Öge"
 
-#: src/infocommand.cpp:280
+#: src/infocommand.cpp:272
 #, kde-format
 msgctxt "@info:shell"
 msgid "Modified"
 msgstr "Değiştirilme"
 
-#: src/infocommand.cpp:281
+#: src/infocommand.cpp:273
 #, kde-format
 msgctxt "@info:shell"
 msgid "Revision"
 msgstr "Revizyon"
 
-#: src/infocommand.cpp:283
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
 msgstr "Yük"
 
-#: src/infocommand.cpp:283
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "yes"
 msgstr "evet"
 
-#: src/infocommand.cpp:283
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "no"
 msgstr "hayır"
 
-#: src/infocommand.cpp:291 src/infocommand.cpp:301
+#: src/infocommand.cpp:283 src/infocommand.cpp:293
 #, kde-format
 msgctxt "@info:shell"
 msgid "(none)"
 msgstr "(hiçbiri)"
 
-#: src/infocommand.cpp:293
+#: src/infocommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "Flags"
 msgstr "Bayraklar"
 
-#: src/infocommand.cpp:303
+#: src/infocommand.cpp:295
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tags"
 msgstr "Etiketler"
 
-#: src/infocommand.cpp:313
+#: src/infocommand.cpp:301
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: src/listcommand.cpp:40
+#: src/listcommand.cpp:36
 #, kde-format
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Belirli bir koleksiyondaki alt koleksiyonları ve/veya ögeleri listele"
 
-#: src/listcommand.cpp:50
+#: src/listcommand.cpp:46
 #, kde-format
 msgid "List more detailed information"
 msgstr "Daha ayrıntılı bilgi göster"
 
-#: src/listcommand.cpp:51
+#: src/listcommand.cpp:47
 #, kde-format
 msgid "List only sub-collections"
 msgstr "Yalnızca alt koleksiyonları listele"
 
-#: src/listcommand.cpp:52
+#: src/listcommand.cpp:48
 #, kde-format
 msgid "List only contained items"
 msgstr "Yalnızca kapsanılan ögeleri listele"
 
-#: src/listcommand.cpp:54
+#: src/listcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr "Bu koleksiyon listeye: Bir kimlik, yol veya Akonadi URL'si"
 
-#: src/listcommand.cpp:128
+#: src/listcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "%1 koleksiyonunda alt koleksiyon yok"
 
-#: src/listcommand.cpp:137
+#: src/listcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
@@ -1452,13 +1452,13 @@ msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] "%2 koleksiyonunda %1 alt öge var:"
 msgstr[1] "%2 koleksiyonunda %1 alt öge var:"
 
-#: src/listcommand.cpp:199
+#: src/listcommand.cpp:195
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "%1 koleksiyonunda öge yok"
 
-#: src/listcommand.cpp:206
+#: src/listcommand.cpp:202
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
@@ -1466,19 +1466,19 @@ msgid_plural "Collection %2 has %1 items:"
 msgstr[0] "%2 koleksiyonunda %1 öge var:"
 msgstr[1] "%2 koleksiyonunda %1 öge var:"
 
-#: src/listcommand.cpp:213
+#: src/listcommand.cpp:209
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "MIME Türü"
 
-#: src/listcommand.cpp:214
+#: src/listcommand.cpp:210
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "Boyut"
 
-#: src/listcommand.cpp:215
+#: src/listcommand.cpp:211
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"

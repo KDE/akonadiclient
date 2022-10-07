@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-04-27 00:46+0000\n"
+"POT-Creation-Date: 2022-10-07 00:46+0000\n"
 "PO-Revision-Date: 2022-05-06 00:45+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -101,181 +101,181 @@ msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
 msgstr "환경 변수에 %1=\"%2\"을(를) 설정하십시오"
 
-#: src/addcommand.cpp:45
+#: src/addcommand.cpp:41
 #, kde-format
 msgid "Add items to a collection"
 msgstr "모음집에 항목 추가"
 
-#: src/addcommand.cpp:61
+#: src/addcommand.cpp:57
 #, kde-format
 msgid "Base directory for input files/directories, default is current"
 msgstr "기본 입력 파일/디렉터리 경로, 기본값은 현재 디렉터리"
 
-#: src/addcommand.cpp:61
+#: src/addcommand.cpp:57
 #, kde-format
 msgid "directory"
 msgstr "디렉터리"
 
-#: src/addcommand.cpp:62
+#: src/addcommand.cpp:58
 #, kde-format
 msgid "Flat mode, do not duplicate subdirectory structure"
 msgstr "평면 모드, 하위 디렉터리 구조를 복제하지 않음"
 
-#: src/addcommand.cpp:63
+#: src/addcommand.cpp:59
 #, kde-format
 msgid "MIME type of added items, default is to auto-detect"
 msgstr "추가할 항목의 MIME 형식, 기본값은 자동 감지"
 
-#: src/addcommand.cpp:63
+#: src/addcommand.cpp:59
 #, kde-format
 msgid "mimetype"
 msgstr "MIME 형식"
 
-#: src/addcommand.cpp:66
+#: src/addcommand.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to add to: an ID, path or Akonadi URL"
 msgstr "추가할 모음집: ID, 경로, Akonadi URL"
 
-#: src/addcommand.cpp:67
+#: src/addcommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or directories to add to the collection"
 msgstr "모음집에 추가할 파일이나 디렉터리"
 
-#: src/addcommand.cpp:67
+#: src/addcommand.cpp:63
 #, kde-format
 msgid "files..."
 msgstr "파일..."
 
-#: src/addcommand.cpp:73 src/createcommand.cpp:60 src/listcommand.cpp:60
+#: src/addcommand.cpp:69 src/createcommand.cpp:60 src/listcommand.cpp:56
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection argument"
 msgstr "모음집 인자가 없음"
 
-#: src/addcommand.cpp:74
+#: src/addcommand.cpp:70
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file or directory arguments"
 msgstr "파일이나 디렉터리 인자가 없음"
 
-#: src/addcommand.cpp:87
+#: src/addcommand.cpp:83
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid MIME type argument '%1'"
 msgstr "잘못된 MIME 형식 인자 '%1'"
 
-#: src/addcommand.cpp:96
+#: src/addcommand.cpp:92
 #, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
 msgstr "기반 디렉터리 '%1'을(를) 찾을 수 없음"
 
-#: src/addcommand.cpp:117
+#: src/addcommand.cpp:113
 #, kde-format
 msgid "File '%1' does not exist"
 msgstr "파일 %1이(가) 없음"
 
-#: src/addcommand.cpp:120
+#: src/addcommand.cpp:116
 #, kde-format
 msgid "Error accessing file '%1'"
 msgstr "파일 '%1'에 접근하는 중 오류 발생"
 
-#: src/addcommand.cpp:148
+#: src/addcommand.cpp:144
 #, kde-format
 msgctxt "@info:shell"
 msgid "No valid file or directory arguments"
 msgstr "올바른 파일이나 디렉터리 인자가 없음"
 
-#: src/addcommand.cpp:158
+#: src/addcommand.cpp:154
 #, kde-format
 msgid "No more directories to process"
 msgstr "더 이상 처리할 디렉터리가 없음"
 
-#: src/addcommand.cpp:182 src/addcommand.cpp:204
+#: src/addcommand.cpp:178 src/addcommand.cpp:200
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
 msgstr "디렉터리 '‘%1'이(가) 없음"
 
-#: src/addcommand.cpp:221
+#: src/addcommand.cpp:217
 #, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
 msgstr "부모 %1 \"%2\"에서 모음집 \"%3\" 가져오는 중"
 
-#: src/addcommand.cpp:234
+#: src/addcommand.cpp:230
 #, kde-format
 msgid "Need to create collection for '%1'"
 msgstr "'%1'의 모음집을 생성해야 함"
 
-#: src/addcommand.cpp:247
+#: src/addcommand.cpp:243
 #, kde-format
 msgid "No more files to process"
 msgstr "더 이상 처리할 파일이 없음"
 
-#: src/addcommand.cpp:258 src/updatecommand.cpp:84
+#: src/addcommand.cpp:254 src/updatecommand.cpp:84
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ does not exist"
 msgstr "파일 '%1'이(가) 없음"
 
-#: src/addcommand.cpp:264 src/updatecommand.cpp:92
+#: src/addcommand.cpp:260 src/updatecommand.cpp:92
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ cannot be read"
 msgstr "파일 '%1'에서 읽을 수 없음"
 
-#: src/addcommand.cpp:272
+#: src/addcommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine MIME type of file ‘%1’"
 msgstr "파일 '%1'의 MIME 형식을 알 수 없음"
 
-#: src/addcommand.cpp:281
+#: src/addcommand.cpp:277
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine parent collection for file ‘%1’"
 msgstr "파일 '%1'의 부모 모음집을 결정할 수 없음"
 
-#: src/addcommand.cpp:292
+#: src/addcommand.cpp:284
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
 msgstr "'%3'에서 모음집 %1 \"%2\"에 크기가 %4인 항목 생성 중"
 
-#: src/addcommand.cpp:314
+#: src/addcommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch target collection, %1"
 msgstr "대상 모음집을 가져올 수 없음, %1"
 
-#: src/addcommand.cpp:324
+#: src/addcommand.cpp:316
 #, kde-format
 msgid "Root folder is %1 \"%2\""
 msgstr "루트 폴더는 %1 \"%2\"임"
 
-#: src/addcommand.cpp:372
+#: src/addcommand.cpp:364
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
 msgstr "모음집 %1 \"%2\"을(를) 가져올 수 없음, %3"
 
-#: src/addcommand.cpp:387
+#: src/addcommand.cpp:379
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
 msgstr "maildir 폴더 이름을 '%1'(으)로 변경함"
 
-#: src/addcommand.cpp:396
+#: src/addcommand.cpp:388
 #, kde-format
 msgid "Creating collection \"%3\" under parent %1 \"%2\""
 msgstr "부모 %1 \"%2\"에 모음집 \"%3\" 생성 중"
 
-#: src/addcommand.cpp:417
+#: src/addcommand.cpp:409
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
 msgstr "%1을(를) 추가할 수 없음, %2"
 
-#: src/addcommand.cpp:423
+#: src/addcommand.cpp:415
 #, kde-format
 msgid "Added file '%2' as item %1"
 msgstr "파일 '%2'을(를) 항목 %1(으)로 추가함"
@@ -669,13 +669,13 @@ msgstr "루트 모음집을 삭제할 수 없음"
 msgid "Collection deleted successfully"
 msgstr "모음집을 삭제함"
 
-#: src/deletecommand.cpp:127 src/infocommand.cpp:154
+#: src/deletecommand.cpp:127 src/infocommand.cpp:150
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item/collection syntax '%1'"
 msgstr "잘못된 항목/모음집 문법 '%1'"
 
-#: src/deletecommand.cpp:149 src/infocommand.cpp:181
+#: src/deletecommand.cpp:149 src/infocommand.cpp:177
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
@@ -742,7 +742,7 @@ msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr "디렉터리 '%1'이(가) 비어 있지 않음('-f'를 지정하면 강제로 실행)"
 
-#: src/dumpcommand.cpp:120 src/listcommand.cpp:183
+#: src/dumpcommand.cpp:120 src/listcommand.cpp:179
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -992,7 +992,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "형식"
 
-#: src/groupcommand.cpp:387 src/listcommand.cpp:143 src/listcommand.cpp:212
+#: src/groupcommand.cpp:387 src/listcommand.cpp:139 src/listcommand.cpp:208
 #: src/tagscommand.cpp:320
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1005,7 +1005,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "이메일"
 
-#: src/groupcommand.cpp:389 src/listcommand.cpp:144 src/tagscommand.cpp:322
+#: src/groupcommand.cpp:389 src/listcommand.cpp:140 src/tagscommand.cpp:322
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -1180,291 +1180,291 @@ msgctxt "@info:shell"
 msgid "Created item '%1'"
 msgstr "항목 '%1' 생성됨"
 
-#: src/infocommand.cpp:42
+#: src/infocommand.cpp:38
 #, kde-format
 msgid "Show full information for a collection or item"
 msgstr "모음집이나 항목의 전체 정보 표시"
 
-#: src/infocommand.cpp:64
+#: src/infocommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
 msgstr "표시할 모음집이나 항목"
 
-#: src/infocommand.cpp:64
+#: src/infocommand.cpp:60
 #, kde-format
 msgid "entity..."
 msgstr "엔티티..."
 
-#: src/infocommand.cpp:70
+#: src/infocommand.cpp:66
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
 msgstr "모음집이나 항목을 지정하지 않았음"
 
-#: src/infocommand.cpp:124
+#: src/infocommand.cpp:120
 #, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
 msgstr "모음집 루트 정보가 없음"
 
-#: src/infocommand.cpp:224 src/infocommand.cpp:274
+#: src/infocommand.cpp:220 src/infocommand.cpp:266
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID"
 msgstr "ID"
 
-#: src/infocommand.cpp:225 src/infocommand.cpp:275
+#: src/infocommand.cpp:221 src/infocommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "URL"
 msgstr "URL"
 
-#: src/infocommand.cpp:226 src/infocommand.cpp:276
+#: src/infocommand.cpp:222 src/infocommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "Parent"
 msgstr "부모"
 
-#: src/infocommand.cpp:227 src/infocommand.cpp:277 src/infocommand.cpp:313
+#: src/infocommand.cpp:223 src/infocommand.cpp:269 src/infocommand.cpp:301
 #, kde-format
 msgctxt "@info:shell"
 msgid "Type"
 msgstr "형식"
 
-#: src/infocommand.cpp:227
+#: src/infocommand.cpp:223
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Collection"
 msgstr "모음집"
 
-#: src/infocommand.cpp:228
+#: src/infocommand.cpp:224
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name"
 msgstr "이름"
 
-#: src/infocommand.cpp:229
+#: src/infocommand.cpp:225
 #, kde-format
 msgctxt "@info:shell"
 msgid "Owner"
 msgstr "소유자"
 
-#: src/infocommand.cpp:230 src/infocommand.cpp:278
+#: src/infocommand.cpp:226 src/infocommand.cpp:270
 #, kde-format
 msgctxt "@info:shell"
 msgid "MIME"
 msgstr "MIME"
 
-#: src/infocommand.cpp:231 src/infocommand.cpp:282
+#: src/infocommand.cpp:227 src/infocommand.cpp:274
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
 msgstr "원격 ID"
 
-#: src/infocommand.cpp:236
+#: src/infocommand.cpp:232
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
 msgstr "읽기 전용"
 
-#: src/infocommand.cpp:239
+#: src/infocommand.cpp:235
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
 msgstr "항목 변경"
 
-#: src/infocommand.cpp:242
+#: src/infocommand.cpp:238
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
 msgstr "항목 생성"
 
-#: src/infocommand.cpp:245
+#: src/infocommand.cpp:241
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
 msgstr "항목 삭제"
 
-#: src/infocommand.cpp:248
+#: src/infocommand.cpp:244
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
 msgstr "모음집 변경"
 
-#: src/infocommand.cpp:251
+#: src/infocommand.cpp:247
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
 msgstr "모음집 생성"
 
-#: src/infocommand.cpp:254
+#: src/infocommand.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
 msgstr "모음집 삭제"
 
-#: src/infocommand.cpp:257
+#: src/infocommand.cpp:253
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
 msgstr "항목 링크"
 
-#: src/infocommand.cpp:260
+#: src/infocommand.cpp:256
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
 msgstr "항목 링크 해제"
 
-#: src/infocommand.cpp:262
+#: src/infocommand.cpp:258
 #, kde-format
 msgctxt "@info:shell"
 msgid "Rights"
 msgstr "권한"
 
-#: src/infocommand.cpp:265
+#: src/infocommand.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Count"
 msgstr "개수"
 
-#: src/infocommand.cpp:266
+#: src/infocommand.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unread"
 msgstr "읽지 않음"
 
-#: src/infocommand.cpp:272 src/infocommand.cpp:310
+#: src/infocommand.cpp:264 src/infocommand.cpp:298
 #, kde-format
 msgctxt "@info:shell"
 msgid "Size"
 msgstr "크기"
 
-#: src/infocommand.cpp:277
+#: src/infocommand.cpp:269
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Item"
 msgstr "항목"
 
-#: src/infocommand.cpp:280
+#: src/infocommand.cpp:272
 #, kde-format
 msgctxt "@info:shell"
 msgid "Modified"
 msgstr "수정됨"
 
-#: src/infocommand.cpp:281
+#: src/infocommand.cpp:273
 #, kde-format
 msgctxt "@info:shell"
 msgid "Revision"
 msgstr "리비전"
 
-#: src/infocommand.cpp:283
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
 msgstr "페이로드"
 
-#: src/infocommand.cpp:283
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "yes"
 msgstr "예"
 
-#: src/infocommand.cpp:283
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "no"
 msgstr "아니요"
 
-#: src/infocommand.cpp:291 src/infocommand.cpp:301
+#: src/infocommand.cpp:283 src/infocommand.cpp:293
 #, kde-format
 msgctxt "@info:shell"
 msgid "(none)"
 msgstr "(없음)"
 
-#: src/infocommand.cpp:293
+#: src/infocommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "Flags"
 msgstr "플래그"
 
-#: src/infocommand.cpp:303
+#: src/infocommand.cpp:295
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tags"
 msgstr "태그"
 
-#: src/infocommand.cpp:313
+#: src/infocommand.cpp:301
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: src/listcommand.cpp:40
+#: src/listcommand.cpp:36
 #, kde-format
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "지정한 모음집의 하위 모음집이나 항목 표시"
 
-#: src/listcommand.cpp:50
+#: src/listcommand.cpp:46
 #, kde-format
 msgid "List more detailed information"
 msgstr "더 자세한 정보 표시"
 
-#: src/listcommand.cpp:51
+#: src/listcommand.cpp:47
 #, kde-format
 msgid "List only sub-collections"
 msgstr "하위 모음집만 표시"
 
-#: src/listcommand.cpp:52
+#: src/listcommand.cpp:48
 #, kde-format
 msgid "List only contained items"
 msgstr "포함된 항목만 표시"
 
-#: src/listcommand.cpp:54
+#: src/listcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr "표시할 모음집: ID, 경로, Akonadi URL"
 
-#: src/listcommand.cpp:128
+#: src/listcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "모음집 %1에 하위 모음집이 없음"
 
-#: src/listcommand.cpp:137
+#: src/listcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] "모음집 %2에 하위 모음집이 %1개 있음:"
 
-#: src/listcommand.cpp:199
+#: src/listcommand.cpp:195
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "모음집 %1에 항목이 없음"
 
-#: src/listcommand.cpp:206
+#: src/listcommand.cpp:202
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
 msgstr[0] "모음집 %2에 항목이 %1개 있음:"
 
-#: src/listcommand.cpp:213
+#: src/listcommand.cpp:209
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "MIME 형식"
 
-#: src/listcommand.cpp:214
+#: src/listcommand.cpp:210
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "크기"
 
-#: src/listcommand.cpp:215
+#: src/listcommand.cpp:211
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"

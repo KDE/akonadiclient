@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-04-27 00:46+0000\n"
+"POT-Creation-Date: 2022-10-07 00:46+0000\n"
 "PO-Revision-Date: 2022-06-28 09:53+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -98,183 +98,183 @@ msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
 msgstr "Задаване %1=\"%2\" като променлива на средата"
 
-#: src/addcommand.cpp:45
+#: src/addcommand.cpp:41
 #, kde-format
 msgid "Add items to a collection"
 msgstr "Добавяне на елементи към колекция"
 
-#: src/addcommand.cpp:61
+#: src/addcommand.cpp:57
 #, kde-format
 msgid "Base directory for input files/directories, default is current"
 msgstr ""
 "Основна директория за входни файлове/директории, по подразбиране е текущата"
 
-#: src/addcommand.cpp:61
+#: src/addcommand.cpp:57
 #, kde-format
 msgid "directory"
 msgstr "директория"
 
-#: src/addcommand.cpp:62
+#: src/addcommand.cpp:58
 #, kde-format
 msgid "Flat mode, do not duplicate subdirectory structure"
 msgstr "Плосък режим, без дублиране на структурата на поддиректориите"
 
-#: src/addcommand.cpp:63
+#: src/addcommand.cpp:59
 #, kde-format
 msgid "MIME type of added items, default is to auto-detect"
 msgstr "Тип MIME на добавени елементи, по подразбиране е автоматично откриване"
 
-#: src/addcommand.cpp:63
+#: src/addcommand.cpp:59
 #, kde-format
 msgid "mimetype"
 msgstr "mimetype"
 
-#: src/addcommand.cpp:66
+#: src/addcommand.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to add to: an ID, path or Akonadi URL"
 msgstr ""
 "Колекцията за добавяне към: идентификатор, път или URL адрес на Akonadi"
 
-#: src/addcommand.cpp:67
+#: src/addcommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or directories to add to the collection"
 msgstr "Файлове или директории за добавяне към колекцията"
 
-#: src/addcommand.cpp:67
+#: src/addcommand.cpp:63
 #, kde-format
 msgid "files..."
 msgstr "файлове..."
 
-#: src/addcommand.cpp:73 src/createcommand.cpp:60 src/listcommand.cpp:60
+#: src/addcommand.cpp:69 src/createcommand.cpp:60 src/listcommand.cpp:56
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection argument"
 msgstr "Липсващ аргумент на колекция"
 
-#: src/addcommand.cpp:74
+#: src/addcommand.cpp:70
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file or directory arguments"
 msgstr "Няма аргументи за файл или директория"
 
-#: src/addcommand.cpp:87
+#: src/addcommand.cpp:83
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid MIME type argument '%1'"
 msgstr "Невалиден аргумент за MIME тип \"%1\""
 
-#: src/addcommand.cpp:96
+#: src/addcommand.cpp:92
 #, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
 msgstr "Базовата директория \"%1\" не е намерена"
 
-#: src/addcommand.cpp:117
+#: src/addcommand.cpp:113
 #, kde-format
 msgid "File '%1' does not exist"
 msgstr "Файл \"%1\" не съществува"
 
-#: src/addcommand.cpp:120
+#: src/addcommand.cpp:116
 #, kde-format
 msgid "Error accessing file '%1'"
 msgstr "Грешка при достъпа до файл \"%1\""
 
-#: src/addcommand.cpp:148
+#: src/addcommand.cpp:144
 #, kde-format
 msgctxt "@info:shell"
 msgid "No valid file or directory arguments"
 msgstr "Няма валидни аргументи за файл или директория"
 
-#: src/addcommand.cpp:158
+#: src/addcommand.cpp:154
 #, kde-format
 msgid "No more directories to process"
 msgstr "Няма повече директории за обработка"
 
-#: src/addcommand.cpp:182 src/addcommand.cpp:204
+#: src/addcommand.cpp:178 src/addcommand.cpp:200
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
 msgstr "Директория \"%1\" вече не съществува"
 
-#: src/addcommand.cpp:221
+#: src/addcommand.cpp:217
 #, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
 msgstr "Извличане на колекция \"%3\" в съдържаща папка %1 \"%2\""
 
-#: src/addcommand.cpp:234
+#: src/addcommand.cpp:230
 #, kde-format
 msgid "Need to create collection for '%1'"
 msgstr "Трябва да се създаде колекция за \"%1\""
 
-#: src/addcommand.cpp:247
+#: src/addcommand.cpp:243
 #, kde-format
 msgid "No more files to process"
 msgstr "Няма повече файлове за обработка"
 
-#: src/addcommand.cpp:258 src/updatecommand.cpp:84
+#: src/addcommand.cpp:254 src/updatecommand.cpp:84
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ does not exist"
 msgstr "Файл \"%1\" не съществува"
 
-#: src/addcommand.cpp:264 src/updatecommand.cpp:92
+#: src/addcommand.cpp:260 src/updatecommand.cpp:92
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ cannot be read"
 msgstr "Файлът \"%1\" не може да бъде прочетен"
 
-#: src/addcommand.cpp:272
+#: src/addcommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine MIME type of file ‘%1’"
 msgstr "Не може да се определи MIME тип на файла \"%1\""
 
-#: src/addcommand.cpp:281
+#: src/addcommand.cpp:277
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine parent collection for file ‘%1’"
 msgstr "Не може да се определи родителската колекция за файл \"%1\""
 
-#: src/addcommand.cpp:292
+#: src/addcommand.cpp:284
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
 msgstr "Създаване на елемент в колекция %1 \"%2\" от '%3' размер %4"
 
-#: src/addcommand.cpp:314
+#: src/addcommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch target collection, %1"
 msgstr "Не може да се извлече целева колекция, %1"
 
-#: src/addcommand.cpp:324
+#: src/addcommand.cpp:316
 #, kde-format
 msgid "Root folder is %1 \"%2\""
 msgstr "Кореновата папка е %1 \"%2\""
 
-#: src/addcommand.cpp:372
+#: src/addcommand.cpp:364
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
 msgstr "Грешка при извличане на колекция %1 \"%2\", %3"
 
-#: src/addcommand.cpp:387
+#: src/addcommand.cpp:379
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
 msgstr "Името на папката на maildir е променено на \"%1\""
 
-#: src/addcommand.cpp:396
+#: src/addcommand.cpp:388
 #, kde-format
 msgid "Creating collection \"%3\" under parent %1 \"%2\""
 msgstr "Създаване на колекция \"%3\" под родителски елемент %1 \"%2\""
 
-#: src/addcommand.cpp:417
+#: src/addcommand.cpp:409
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
 msgstr "Неуспешно добавяне на \"%1\", %2"
 
-#: src/addcommand.cpp:423
+#: src/addcommand.cpp:415
 #, kde-format
 msgid "Added file '%2' as item %1"
 msgstr "Добавен е файл \"%2\" като елемент %1"
@@ -674,13 +674,13 @@ msgstr "Не може да се изтрие основната колекция
 msgid "Collection deleted successfully"
 msgstr "Колекцията е изтрита успешно"
 
-#: src/deletecommand.cpp:127 src/infocommand.cpp:154
+#: src/deletecommand.cpp:127 src/infocommand.cpp:150
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item/collection syntax '%1'"
 msgstr "Невалиден синтаксис на елемент/колекция \"%1\""
 
-#: src/deletecommand.cpp:149 src/infocommand.cpp:181
+#: src/deletecommand.cpp:149 src/infocommand.cpp:177
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
@@ -752,7 +752,7 @@ msgstr ""
 "Директорията \"%1\" не е празна (използвайте \"-f\", за да принудите "
 "операцията)"
 
-#: src/dumpcommand.cpp:120 src/listcommand.cpp:183
+#: src/dumpcommand.cpp:120 src/listcommand.cpp:179
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -1007,7 +1007,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "Тип"
 
-#: src/groupcommand.cpp:387 src/listcommand.cpp:143 src/listcommand.cpp:212
+#: src/groupcommand.cpp:387 src/listcommand.cpp:139 src/listcommand.cpp:208
 #: src/tagscommand.cpp:320
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1020,7 +1020,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "Е-поща"
 
-#: src/groupcommand.cpp:389 src/listcommand.cpp:144 src/tagscommand.cpp:322
+#: src/groupcommand.cpp:389 src/listcommand.cpp:140 src/tagscommand.cpp:322
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -1195,259 +1195,259 @@ msgctxt "@info:shell"
 msgid "Created item '%1'"
 msgstr "Създаден елемент \"%1\""
 
-#: src/infocommand.cpp:42
+#: src/infocommand.cpp:38
 #, kde-format
 msgid "Show full information for a collection or item"
 msgstr "Показване на пълна информация за колекция или елемент"
 
-#: src/infocommand.cpp:64
+#: src/infocommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
 msgstr "Колекции или елементи за показване"
 
-#: src/infocommand.cpp:64
+#: src/infocommand.cpp:60
 #, kde-format
 msgid "entity..."
 msgstr "субект..."
 
-#: src/infocommand.cpp:70
+#: src/infocommand.cpp:66
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
 msgstr "Няма посочени колекции или елементи"
 
-#: src/infocommand.cpp:124
+#: src/infocommand.cpp:120
 #, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
 msgstr "Няма налична информация за root на колекцията"
 
-#: src/infocommand.cpp:224 src/infocommand.cpp:274
+#: src/infocommand.cpp:220 src/infocommand.cpp:266
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID"
 msgstr "ID"
 
-#: src/infocommand.cpp:225 src/infocommand.cpp:275
+#: src/infocommand.cpp:221 src/infocommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "URL"
 msgstr "URL"
 
-#: src/infocommand.cpp:226 src/infocommand.cpp:276
+#: src/infocommand.cpp:222 src/infocommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "Parent"
 msgstr "Родител"
 
-#: src/infocommand.cpp:227 src/infocommand.cpp:277 src/infocommand.cpp:313
+#: src/infocommand.cpp:223 src/infocommand.cpp:269 src/infocommand.cpp:301
 #, kde-format
 msgctxt "@info:shell"
 msgid "Type"
 msgstr "Тип"
 
-#: src/infocommand.cpp:227
+#: src/infocommand.cpp:223
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Collection"
 msgstr "Колекция"
 
-#: src/infocommand.cpp:228
+#: src/infocommand.cpp:224
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name"
 msgstr "Име"
 
-#: src/infocommand.cpp:229
+#: src/infocommand.cpp:225
 #, kde-format
 msgctxt "@info:shell"
 msgid "Owner"
 msgstr "Собственик"
 
-#: src/infocommand.cpp:230 src/infocommand.cpp:278
+#: src/infocommand.cpp:226 src/infocommand.cpp:270
 #, kde-format
 msgctxt "@info:shell"
 msgid "MIME"
 msgstr "MIME"
 
-#: src/infocommand.cpp:231 src/infocommand.cpp:282
+#: src/infocommand.cpp:227 src/infocommand.cpp:274
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
 msgstr "Отдалечен идентификатор"
 
-#: src/infocommand.cpp:236
+#: src/infocommand.cpp:232
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
 msgstr "ReadOnly"
 
-#: src/infocommand.cpp:239
+#: src/infocommand.cpp:235
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
 msgstr "ChangeItem"
 
-#: src/infocommand.cpp:242
+#: src/infocommand.cpp:238
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
 msgstr "CreateItem"
 
-#: src/infocommand.cpp:245
+#: src/infocommand.cpp:241
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
 msgstr "DeleteItem"
 
-#: src/infocommand.cpp:248
+#: src/infocommand.cpp:244
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
 msgstr "ChangeColl"
 
-#: src/infocommand.cpp:251
+#: src/infocommand.cpp:247
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
 msgstr "CreateColl"
 
-#: src/infocommand.cpp:254
+#: src/infocommand.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
 msgstr "DeleteColl"
 
-#: src/infocommand.cpp:257
+#: src/infocommand.cpp:253
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
 msgstr "LinkItem"
 
-#: src/infocommand.cpp:260
+#: src/infocommand.cpp:256
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
 msgstr "UnlinkItem"
 
-#: src/infocommand.cpp:262
+#: src/infocommand.cpp:258
 #, kde-format
 msgctxt "@info:shell"
 msgid "Rights"
 msgstr "Права"
 
-#: src/infocommand.cpp:265
+#: src/infocommand.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Count"
 msgstr "Брой"
 
-#: src/infocommand.cpp:266
+#: src/infocommand.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unread"
 msgstr "Непрочетени"
 
-#: src/infocommand.cpp:272 src/infocommand.cpp:310
+#: src/infocommand.cpp:264 src/infocommand.cpp:298
 #, kde-format
 msgctxt "@info:shell"
 msgid "Size"
 msgstr "Размер"
 
-#: src/infocommand.cpp:277
+#: src/infocommand.cpp:269
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Item"
 msgstr "Елемент"
 
-#: src/infocommand.cpp:280
+#: src/infocommand.cpp:272
 #, kde-format
 msgctxt "@info:shell"
 msgid "Modified"
 msgstr "Променени"
 
-#: src/infocommand.cpp:281
+#: src/infocommand.cpp:273
 #, kde-format
 msgctxt "@info:shell"
 msgid "Revision"
 msgstr "Ревизия"
 
-#: src/infocommand.cpp:283
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
 msgstr "Данни"
 
-#: src/infocommand.cpp:283
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "yes"
 msgstr "да"
 
-#: src/infocommand.cpp:283
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "no"
 msgstr "не"
 
-#: src/infocommand.cpp:291 src/infocommand.cpp:301
+#: src/infocommand.cpp:283 src/infocommand.cpp:293
 #, kde-format
 msgctxt "@info:shell"
 msgid "(none)"
 msgstr "(без)"
 
-#: src/infocommand.cpp:293
+#: src/infocommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "Flags"
 msgstr "Флагове"
 
-#: src/infocommand.cpp:303
+#: src/infocommand.cpp:295
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tags"
 msgstr "Етикети"
 
-#: src/infocommand.cpp:313
+#: src/infocommand.cpp:301
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "Неизвестен"
 
-#: src/listcommand.cpp:40
+#: src/listcommand.cpp:36
 #, kde-format
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Списък на подколекции и/или елементи в определена колекция"
 
-#: src/listcommand.cpp:50
+#: src/listcommand.cpp:46
 #, kde-format
 msgid "List more detailed information"
 msgstr "Списък с по-подробна информация"
 
-#: src/listcommand.cpp:51
+#: src/listcommand.cpp:47
 #, kde-format
 msgid "List only sub-collections"
 msgstr "Списък само с подколекции"
 
-#: src/listcommand.cpp:52
+#: src/listcommand.cpp:48
 #, kde-format
 msgid "List only contained items"
 msgstr "Списък само съдържащи елементи"
 
-#: src/listcommand.cpp:54
+#: src/listcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr "Колекцията за списък: идентификатор, път или URL адрес на Akonadi"
 
-#: src/listcommand.cpp:128
+#: src/listcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "Колекция %1 няма подколекции"
 
-#: src/listcommand.cpp:137
+#: src/listcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
@@ -1455,13 +1455,13 @@ msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] "Колекция %2 има %1 подколекции:"
 msgstr[1] "Колекция %2 има %1 подколекции:"
 
-#: src/listcommand.cpp:199
+#: src/listcommand.cpp:195
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "Колекция %1 няма елементи"
 
-#: src/listcommand.cpp:206
+#: src/listcommand.cpp:202
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
@@ -1469,19 +1469,19 @@ msgid_plural "Collection %2 has %1 items:"
 msgstr[0] "Колекция %2 има %1 елемента:"
 msgstr[1] "Колекция %2 има %1 елемента:"
 
-#: src/listcommand.cpp:213
+#: src/listcommand.cpp:209
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "Тип MIME"
 
-#: src/listcommand.cpp:214
+#: src/listcommand.cpp:210
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "Размер"
 
-#: src/listcommand.cpp:215
+#: src/listcommand.cpp:211
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"
