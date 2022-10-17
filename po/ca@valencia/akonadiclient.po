@@ -851,7 +851,7 @@ msgstr "El fitxer que s'ha d'exportar a"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No export file specified"
-msgstr "No s'ha especificat cap fitxer per a exportar"
+msgstr "No s'ha especificat cap fitxer que s'haja d'exportar"
 
 #: src/groupcommand.cpp:39
 #, kde-format
@@ -1089,7 +1089,7 @@ msgstr "S'està eliminant del grup %1 «%2»:"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Nothing to remove for email '%1'"
-msgstr "No hi ha res a eliminar per al correu electrònic «%1»"
+msgstr "No hi ha res que s'haja d'eliminar per al correu electrònic «%1»"
 
 #: src/groupcommand.cpp:670
 #, kde-format
@@ -1114,7 +1114,7 @@ msgstr "La col·lecció pare davall la qual s'importarà el fitxer"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to import"
-msgstr "El fitxer per a importar"
+msgstr "El fitxer que s'ha d'importar"
 
 #: src/importcommand.cpp:64
 #, kde-format
@@ -1126,7 +1126,7 @@ msgstr "No s'ha especificat la col·lecció pare"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No import file specified"
-msgstr "No s'ha especificat cap fitxer per a importar"
+msgstr "No s'ha especificat cap fitxer que s'haja d'importar"
 
 #: src/importcommand.cpp:74
 #, kde-format
@@ -1692,8 +1692,8 @@ msgstr "ETIQUETA"
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
 msgstr ""
-"El nom d'una etiqueta que s'ha d'afegir, o el nom, ID o URL d'una etiqueta "
-"que s'haja de suprimir"
+"El nom d'una etiqueta que s'afegirà, o el nom, ID o o URL d'una etiqueta que "
+"se suprimirà"
 
 #: src/tagscommand.cpp:55
 #, kde-format
