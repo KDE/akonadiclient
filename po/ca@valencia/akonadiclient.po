@@ -1585,7 +1585,7 @@ msgstr "Col·lecció de destinació a on s'ha de moure"
 #: src/renamecommand.cpp:33
 #, kde-format
 msgid "Rename a collection"
-msgstr "Canvia el nom la col·lecció"
+msgstr "Canvia el nom de la col·lecció"
 
 #: src/renamecommand.cpp:45
 #, kde-format
