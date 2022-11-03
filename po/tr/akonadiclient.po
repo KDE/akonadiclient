@@ -1015,7 +1015,7 @@ msgstr "Kimlik"
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Email"
-msgstr "E-Posta"
+msgstr "E-posta"
 
 #: src/groupcommand.cpp:389 src/listcommand.cpp:140 src/tagscommand.cpp:322
 #, kde-format
@@ -1284,7 +1284,7 @@ msgstr "Saltokunur"
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
-msgstr "Öğeyi Değiştir"
+msgstr "Ögeyi Değiştir"
 
 #: src/infocommand.cpp:238
 #, kde-format
@@ -1631,7 +1631,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified"
-msgstr "Hiçbir öğe belirtilmedi"
+msgstr "Belirtilen öge yok"
 
 #: src/showcommand.cpp:87 src/updatecommand.cpp:113
 #, kde-format
@@ -1793,8 +1793,4 @@ msgstr "Dosya belirtilmedi"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item updated successfully"
-msgstr "Öğe başarıyla güncellendi"
-
-#~ msgctxt "@info:shell"
-#~ msgid "Error: %1"
-#~ msgstr "Hata: %1"
+msgstr "Öge başarıyla güncellendi"
