@@ -3,21 +3,22 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2022.
 # Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
+# Alois Spitzbart <spitz234@hotmail.com>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-07 00:46+0000\n"
-"PO-Revision-Date: 2022-08-20 20:30+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2022-11-14 19:03+0100\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1456,14 +1457,12 @@ msgid "Collection %1 has no sub-collections"
 msgstr "Sammlung „%1“ enthält keine Untersammlungen"
 
 #: src/listcommand.cpp:133
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
-msgstr[0] "Sammlung %2 enthält %1 Unter-Sammlungen:"
-msgstr[1] "Sammlung %2 enthält %1 Unter-Sammlungen:"
+msgstr[0] "Sammlung „%2“ enthält %1 Untersammlung:"
+msgstr[1] "Sammlung „%2“ enthält %1 Untersammlungen:"
 
 #: src/listcommand.cpp:195
 #, kde-format
@@ -1472,14 +1471,12 @@ msgid "Collection %1 has no items"
 msgstr "Sammlung „%1“ enthält keine Einträge"
 
 #: src/listcommand.cpp:202
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 items:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
-msgstr[0] "Die Sammlung %2 enthält %1 Einträge:"
-msgstr[1] "Die Sammlung %2 enthält %1 Einträge:"
+msgstr[0] "Sammlung „%2“ enthält %1 Eintrag:"
+msgstr[1] "Sammlung „%2“ enthält %1 Einträge:"
 
 #: src/listcommand.cpp:209
 #, kde-format
@@ -1657,19 +1654,17 @@ msgstr "Kein Ergebnis für Eintrag „%1“ zurückgegeben"
 #: src/showcommand.cpp:102
 #, kde-format
 msgid "Item has no main body part"
-msgstr ""
+msgstr "Eintrag hat keinen Hauptteil"
 
 #: src/tagscommand.cpp:31
-#, fuzzy, kde-format
-#| msgid "List all known tags"
+#, kde-format
 msgid "List or modify tags"
-msgstr "Zeigt alle bekannten Tags"
+msgstr "Tags anzeigen oder bearbeiten"
 
 #: src/tagscommand.cpp:45
-#, fuzzy, kde-format
-#| msgid "Brief output, tag names only"
+#, kde-format
 msgid "Brief output, tag names or IDs only"
-msgstr "Kurze Ausgabe, nur Tag-Namen"
+msgstr "Kurze Ausgabe, nur Tag-Namen oder Kennungen"
 
 #: src/tagscommand.cpp:46
 #, kde-format
@@ -1677,36 +1672,37 @@ msgid "Brief output, tag URLs only"
 msgstr "Kurze Ausgabe, nur Tag-URLs"
 
 #: src/tagscommand.cpp:48
-#, fuzzy, kde-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-format
 msgid "List all known tags (the default operation)"
-msgstr "Zeigt die erweiterte Kontaktgruppe (Voreinstellung)"
+msgstr "Alle bekannten Tags anzeigen (Voreinstellung)"
 
 #: src/tagscommand.cpp:49
 #, kde-format
 msgid "Add named tags"
-msgstr ""
+msgstr "Benannte Tags hinzufügen"
 
 #: src/tagscommand.cpp:50
 #, kde-format
 msgid "Delete tags"
-msgstr ""
+msgstr "Tags löschen"
 
 #. i18n("ID for a tag to be added (default automatic)"), i18n("id")));
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "TAG"
-msgstr ""
+msgstr "TAG"
 
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
 msgstr ""
+"Der Name des Tags zum Hinzufügen, oder der Name, die Kennung oder die URL "
+"eines Tags zum Löschen"
 
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "[TAG...]"
-msgstr ""
+msgstr "[TAG ...]"
 
 #: src/tagscommand.cpp:75
 #, kde-format
@@ -1717,76 +1713,59 @@ msgstr ""
 "werden"
 
 #: src/tagscommand.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
 msgstr ""
-"Nur eine der Optionen „expand“, „add“, „delete“ oder „clean“ darf angegeben "
-"werden"
+"Nur eine der Optionen „list“, „add“ oder „delete“ darf angegeben werden"
 
 #: src/tagscommand.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
-msgstr "Keine Einträge zum Hinzufügen angegeben"
+msgstr "Keine Tags zum Hinzufügen angegeben"
 
 #: src/tagscommand.cpp:112
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr ""
+msgstr "Bei „id“ dürfen nicht mehrere Tags zum Hinzufügen angegeben werden"
 
 #: src/tagscommand.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
-msgstr "Keine Einträge zum Löschen angegeben"
+msgstr "Keine Tags zum Löschen angegeben"
 
 #: src/tagscommand.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection '%1' already exists"
+#, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr "Die Sammlung „%1“ existiert bereits"
+msgstr "Ein Tag mit dem Namen „%1“ Kennung %2 existiert bereits"
 
 #: src/tagscommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot search for email '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1' ID %2"
-msgstr "Suche nach E-Mail „%1“ nicht möglich, %2"
+msgstr "Tag „%1“ Kennung %2 kann nicht hinzugefügt werden"
 
 #: src/tagscommand.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1'"
-msgstr "Die Datei %1 kann nicht gespeichert werden"
+msgstr "Tag „%1“ kann nicht hinzugefügt werden"
 
 #: src/tagscommand.cpp:231
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
-msgstr "Die Datei %1 ist nicht vorhanden"
+msgstr "Zu löschender Tag „%1“ ist nicht vorhanden"
 
 #: src/tagscommand.cpp:268
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete ID %1 does not exist"
-msgstr "Die Datei %1 ist nicht vorhanden"
+msgstr "Zu löschender Tag mit Kennung %1 ist nicht vorhanden"
 
 #: src/tagscommand.cpp:308
 #, kde-format
