@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-07 00:46+0000\n"
-"PO-Revision-Date: 2022-12-07 12:50+0100\n"
+"PO-Revision-Date: 2022-12-08 11:32+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -244,7 +244,7 @@ msgstr "ფაილისთვის %1 მშობელი კოლექ�
 #: src/addcommand.cpp:284
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
-msgstr ""
+msgstr "კოლექციაში %1 \"%2\" ელემენტის შექმნა \"%3\" ზომით %4"
 
 #: src/addcommand.cpp:306
 #, kde-format
@@ -265,12 +265,12 @@ msgstr "კოლექციის გამოთხოვის შეცდ�
 #: src/addcommand.cpp:379
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
-msgstr ""
+msgstr "საფოსტო ყუთის საქაღალდის ახალი სახელია '%1'"
 
 #: src/addcommand.cpp:388
 #, kde-format
 msgid "Creating collection \"%3\" under parent %1 \"%2\""
-msgstr ""
+msgstr "კოლექციის (\"%3\") შექმნა მშობლის (%1 \"%2\") ქვეშ"
 
 #: src/addcommand.cpp:409
 #, kde-format
