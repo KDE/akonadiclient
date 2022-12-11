@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-07 00:46+0000\n"
-"PO-Revision-Date: 2022-12-08 11:32+0100\n"
+"PO-Revision-Date: 2022-12-10 15:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -281,7 +281,7 @@ msgstr "დამატების შეცდომა ‘%1’, %2"
 #: src/addcommand.cpp:415
 #, kde-format
 msgid "Added file '%2' as item %1"
-msgstr ""
+msgstr "ფაილი '%2' დამატებულია, როგორც ელემენტი %1"
 
 #: src/agentscommand.cpp:37
 #, kde-format
@@ -296,7 +296,7 @@ msgstr "ყველა აგენტის სია"
 #: src/agentscommand.cpp:50
 #, kde-format
 msgid "Set state \"online\" or \"offline\" for specified agents"
-msgstr ""
+msgstr "მითითებული აგენტების მდგომარეობის ჩართულზე ან გამორთულზე დაყენება"
 
 #: src/agentscommand.cpp:50
 #, kde-format
@@ -360,7 +360,7 @@ msgstr "არასწორი პარამეტრები"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agent exists with the identifier '%1'"
-msgstr ""
+msgstr "აგენტი, რომლის იდენტიფიკატორია '%1', არ არსებობს"
 
 #: src/agentscommand.cpp:219
 #, kde-format
@@ -390,7 +390,7 @@ msgstr "%1 (\"/%2\")"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown Akonadi collection format '%1'"
-msgstr ""
+msgstr "Akoladi-ის კოლექციის უცნობი ფორმატი '%1'"
 
 #: src/collectionresolvejob.cpp:143
 #, kde-format
@@ -431,7 +431,7 @@ msgstr "ხელმისაწვდომი ბრძანებები�
 #: src/commandshell.cpp:31
 #, kde-format
 msgid "Enter commands in an interactive shell"
-msgstr ""
+msgstr "შეიყვანეთ ბრძანებები ინტერაქტიურ გარსში"
 
 #: src/commandshell.cpp:76
 #, kde-format
@@ -442,7 +442,7 @@ msgstr "არასწორი ბრძანება"
 #: src/copycommand.cpp:40
 #, kde-format
 msgid "Copy collections or items into a new collection"
-msgstr ""
+msgstr "კოლექციების ან ჩანაწერების ახალ კოლექციაში კოპირება"
 
 #: src/copycommand.cpp:59 src/movecommand.cpp:40
 #, kde-format
@@ -453,19 +453,19 @@ msgstr "წყარო...."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to copy"
-msgstr ""
+msgstr "დასაკოპირებელი არსებული კოლექციები ან ჩანაწერები"
 
 #: src/copycommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to copy into"
-msgstr ""
+msgstr "სამიზნე კოლექციები, დასაკოპირებლად"
 
 #: src/copycommand.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing source/destination arguments"
-msgstr ""
+msgstr "წყაროსა და სამიზნის პარამეტრები მითითებული არაა"
 
 #: src/copycommand.cpp:74
 #, kde-format
@@ -476,7 +476,7 @@ msgstr "დასამუშავებელი წყაროების �
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve destination collection '%1', %2"
-msgstr ""
+msgstr "სამიზნე კოლექციის '%1' ამოხსნის შეცდომა %2"
 
 #: src/copycommand.cpp:113
 #, kde-format
@@ -514,7 +514,7 @@ msgstr "%1-დან %2-მდე კოპირების შეცდომ
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch subcollections of '%1', %2"
-msgstr ""
+msgstr "'%1'-ის ქვეკოლექციის გამოთხოვის შეცდომა %2"
 
 #: src/copycommand.cpp:206
 #, kde-format
@@ -546,13 +546,13 @@ msgstr "მეტი დასამუშავებელი ქვე-კო
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
-msgstr ""
+msgstr "'%1'-დან ქვეკოლექციის ('%2') კოპირების/გადატანის შეცდომა %3"
 
 #: src/copycommand.cpp:284
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch items of '%1', %2"
-msgstr ""
+msgstr "'%1'-ის ჩანაწერების გამოთხოვის შეცდომა, %2"
 
 #: src/copycommand.cpp:292
 #, kde-format
@@ -579,7 +579,7 @@ msgstr[1] "%1 ჩანაწერის კოპირება"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move items from '%1', %2"
-msgstr ""
+msgstr "'%1-დან ჩანაწერების კოპირების/გადატანის შეცდომა, %2"
 
 #: src/createcommand.cpp:35
 #, kde-format
@@ -602,19 +602,19 @@ msgctxt "@info:shell"
 msgid ""
 "The collection to create, either as a path or a name (with a parent "
 "specified)"
-msgstr ""
+msgstr "კოლექციის შექმნა. ან ბილიკით, ან სახელით (საჭიროა მშობლის მითითება)"
 
 #: src/createcommand.cpp:71
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (with parent) cannot be a path"
-msgstr ""
+msgstr "კოლექციის არგუმენტი (მშობლით) ბილიკი არ შეიძლება, იყოს"
 
 #: src/createcommand.cpp:88
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (without parent) must be a path"
-msgstr ""
+msgstr "კოლექციის არგუმენტი (მშობლის გარეშე) ბილიკი არ შეიძლება, იყოს"
 
 #: src/createcommand.cpp:97
 #, kde-format
@@ -626,17 +626,17 @@ msgstr "ახალი კოლექციის სახელი მით
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch parent collection '%1', %2"
-msgstr ""
+msgstr "მშობელი კოლექციის ('%1') გამოთხოვის შეცდომა. %2"
 
 #: src/createcommand.cpp:121
 #, kde-format
 msgid "Creating a maildir folder named '%1' may not work"
-msgstr ""
+msgstr "საფოსტო ყუთი საქაღალდის ('%1') შექმნამ შეიძლება, არ იმუშაოს"
 
 #: src/createcommand.cpp:140
 #, kde-format
 msgid "Error creating collection '%1' under '%2', %3"
-msgstr ""
+msgstr "შეცდომა '%2'-ის ქვეშ კოლექციის ('%1') შექმნიას. %3"
 
 #: src/createcommand.cpp:154
 #, kde-format
@@ -696,34 +696,36 @@ msgstr "ჩანაწერი წარმატებით წაიშა�
 #: src/dumpcommand.cpp:47
 #, kde-format
 msgid "Dump a collection to a directory structure"
-msgstr ""
+msgstr "კოლექციის საქაღალდის სტრუქტურაში ჩაყრა"
 
 #: src/dumpcommand.cpp:59
 #, kde-format
 msgid "Dump email messages in maildir directory structure"
-msgstr ""
+msgstr "ელფოსტის შეტყობინებების ელფოსტის საქაღალდის ტრუქტურაში ჩაყრა"
 
 #: src/dumpcommand.cpp:60
 #, kde-format
 msgid "Dump items with Akonadi category URLs, otherwise text names"
 msgstr ""
+"ჩანაწერების, რომლებსაც Akonadi-ის კატეგორიის ბმულები აქვს, ჩაყრა. წინააღმდეგ "
+"შემთხვევაში, ტექსტური სახელების"
 
 #: src/dumpcommand.cpp:61
 #, kde-format
 msgid "Operate even if destination directory is not empty"
-msgstr ""
+msgstr "მუშაობა მაშინაც კი, თუ სამიზნე საქაღალდე ცარიელი არაა"
 
 #: src/dumpcommand.cpp:64
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to dump: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "ჩასაყრელი კოლექციები: ID, ბილიკი ან Akonadi-ის ბმული"
 
 #: src/dumpcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "The destination directory to dump to"
-msgstr ""
+msgstr "სამიზნე საქაღალდე ჩასაყრელად"
 
 #: src/dumpcommand.cpp:72 src/exportcommand.cpp:50
 #, kde-format
@@ -753,25 +755,25 @@ msgstr "საქაღალდე %1 ცარიელი არაა (ძ�
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
-msgstr ""
+msgstr "კოლექცია %1 არ შეიძლება, ჩანაწერებს შეიცავდეს"
 
 #: src/dumpcommand.cpp:146
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 contains no items"
-msgstr ""
+msgstr "კოლექცია %1 ჩანაწერებს არ შეიცავს"
 
 #: src/dumpcommand.cpp:205 src/editcommand.cpp:101 src/showcommand.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no payload"
-msgstr ""
+msgstr "ჩანაწერს '%1' შემცველობა არ გააჩნია"
 
 #: src/dumpcommand.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create directory '%1/%2'"
-msgstr ""
+msgstr "საქაღალდის ('%1/%2') შექმნა შეუძლებელია"
 
 #: src/dumpcommand.cpp:332
 #, kde-format
@@ -818,7 +820,7 @@ msgstr "ტექსტური რედაქტორის, '%1', გაშ
 #, kde-format
 msgctxt "@info:shell"
 msgid "Changes to item '%1' have been saved"
-msgstr ""
+msgstr "ჩანაწერის '%1' ცვლილებები შენახულია"
 
 #: src/exportcommand.cpp:31
 #, kde-format
@@ -871,7 +873,7 @@ msgstr ""
 #: src/groupcommand.cpp:61
 #, kde-format
 msgid "Email comment (name) for an added item"
-msgstr ""
+msgstr "დამატებული ჩანაწერის ელფოსტის კომენტარი (სახელი)"
 
 #: src/groupcommand.cpp:61
 #, kde-format
@@ -935,43 +937,43 @@ msgstr "წასაშლელი ელემენტები მითი�
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'comment' option is only allowed with 'add'"
-msgstr ""
+msgstr "პარამეტრი 'კომენტარი' მხოლოდ 'დამატებასთან' ერთადაა ნებადართული"
 
 #: src/groupcommand.cpp:182
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as an item"
-msgstr ""
+msgstr "'%1'-ის ჩანაწერის სახით პოვნა შეუძლებელია"
 
 #: src/groupcommand.cpp:189
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' is not a contact group"
-msgstr ""
+msgstr "ჩანაწერი '%1' კონტაქტების ჯგუფი არაა"
 
 #: src/groupcommand.cpp:195
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no contact group payload"
-msgstr ""
+msgstr "ჩანაწერს '%1' კონტაქტების ჯგუფის შემცველობა არ გააჩნია"
 
 #: src/groupcommand.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "Errors occurred, group not updated"
-msgstr ""
+msgstr "დაფიქსირებულია შეცდომები. ჯგუფი არ განახლებულა"
 
 #: src/groupcommand.cpp:277
 #, kde-format
 msgctxt "@info:shell"
 msgid "(unknown referenced item)"
-msgstr ""
+msgstr "(უცნობი მიმართული ელემენტი)"
 
 #: src/groupcommand.cpp:284 src/groupcommand.cpp:305
 #, kde-format
 msgctxt "@info:shell"
 msgid "(item has no Addressee payload)"
-msgstr ""
+msgstr "(ჩანაწერს სამიზნე მისამართი გაწერილი არ აქვს)"
 
 #: src/groupcommand.cpp:324
 #, kde-format
@@ -1022,7 +1024,7 @@ msgstr "სახელი"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items could be fetched"
-msgstr ""
+msgstr "ჩანაწერების გამოთხოვის შეცდომა"
 
 #: src/groupcommand.cpp:483
 #, kde-format
@@ -1042,7 +1044,7 @@ msgstr "'%1' ელფოსტის ძებნის შეცდომა, 
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple contacts found for '%1', using the first one"
-msgstr ""
+msgstr "'%1'-სთვის ნაპოვნია ერთზე მეტი კონტაქტი. გამოიყენება მხოლოდ პირველი"
 
 #: src/groupcommand.cpp:544
 #, kde-format
@@ -1070,13 +1072,13 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Removing from group %1 \"%2\":"
-msgstr ""
+msgstr "ჯგუფიდან %1 წაშლა \"%2\":"
 
 #: src/groupcommand.cpp:626
 #, kde-format
 msgctxt "@info:shell"
 msgid "Nothing to remove for email '%1'"
-msgstr ""
+msgstr "ელფოსტისთვის '%1' წასაშლელი არაფერია"
 
 #: src/groupcommand.cpp:670
 #, kde-format
@@ -1084,7 +1086,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Cleaning references from group %1 \"%2\":"
-msgstr ""
+msgstr "ჯგუფიდან %1 მიმართვის გაწმენდა \"%2\":"
 
 #: src/importcommand.cpp:39
 #, kde-format
@@ -1095,7 +1097,7 @@ msgstr "XML ფაილის შემოტანა"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The parent collection under which to import the file"
-msgstr ""
+msgstr "მშობელი კოლექცია, რომლის ქვეშაც შემოტანა მოხდება"
 
 #: src/importcommand.cpp:58
 #, kde-format
@@ -1125,13 +1127,13 @@ msgstr "არასწორი XML ფაილი: %1"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch parent collection, %1"
-msgstr ""
+msgstr "მშობელი კოლექციის ('%1') გამოთხოვის შეცდომა"
 
 #: src/importcommand.cpp:99
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch children of parent collection, %1"
-msgstr ""
+msgstr "მშობელი კოლექციის (%1) შვილების გამოთხოვის შეცდომა"
 
 #: src/importcommand.cpp:117
 #, kde-format
@@ -1155,19 +1157,19 @@ msgstr "კოლექციის დამუშავება %1"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parent for collection with remote ID '%1'"
-msgstr ""
+msgstr "არასწორი მშობელი კოლექციისთვის, რომლის დაშორებული ID '%1'-ია"
 
 #: src/importcommand.cpp:172
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
-msgstr ""
+msgstr "შეცდომა კოლექციის გამოთხოვისას, რომლის დაშორებული ID '%1'-ია. %2"
 
 #: src/importcommand.cpp:191
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
-msgstr ""
+msgstr "კოლექციის, დაშორებული ID-ით '%1', შექმნა შეუძლებელია"
 
 #: src/importcommand.cpp:208
 #, kde-format
@@ -1190,13 +1192,13 @@ msgstr "ელემენტი '%1' შეიქმნა"
 #: src/infocommand.cpp:38
 #, kde-format
 msgid "Show full information for a collection or item"
-msgstr ""
+msgstr "კოლექციის ან ჩანაწერის შესახებ სრული ინფორმაციის ჩვენება"
 
 #: src/infocommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
-msgstr ""
+msgstr "საჩვენებელი კოლექციები და ჩანაწერები"
 
 #: src/infocommand.cpp:60
 #, kde-format
@@ -1207,13 +1209,13 @@ msgstr "ცარიელი..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
-msgstr ""
+msgstr "კოლექციები და ჩანაწერები მითითებული არაა"
 
 #: src/infocommand.cpp:120
 #, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
-msgstr ""
+msgstr "კოლექციის საწყისისთვის ინფორმაცია ხელმისაწვდომი არაა"
 
 #: src/infocommand.cpp:220 src/infocommand.cpp:266
 #, kde-format
@@ -1437,15 +1439,15 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
-msgstr ""
+msgstr "კოლექციას %1 ქვეკოლექციები არ გააჩნია"
 
 #: src/listcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "კოლექციას %2 %1 ცალი ქვეკოლექცია გააჩნია:"
+msgstr[1] "კოლექციას %2 %1 ცალი ქვეკოლექცია გააჩნია:"
 
 #: src/listcommand.cpp:195
 #, kde-format
@@ -1553,19 +1555,19 @@ msgstr ""
 #: src/movecommand.cpp:27
 #, kde-format
 msgid "Move collections or items into a new collection"
-msgstr ""
+msgstr "კოლექციების ან ჩანაწერების ახალ კოლექციაშ გადატანა"
 
 #: src/movecommand.cpp:40
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to move"
-msgstr ""
+msgstr "გადასატანი კოლექციები და ჩანაწერები"
 
 #: src/movecommand.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to move into"
-msgstr ""
+msgstr "სამიზნე კოლექცია, გადასატანად"
 
 #: src/renamecommand.cpp:33
 #, kde-format
@@ -1594,12 +1596,12 @@ msgstr "ახალი სახელი მითითებული არ
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection renamed successfully"
-msgstr ""
+msgstr "კოლექციის სახელი წარმატებით შეიცვალა"
 
 #: src/showcommand.cpp:34
 #, kde-format
 msgid "Show the raw payload of an item"
-msgstr ""
+msgstr "ჩანაწერის შემცველობის ჩვენება"
 
 #: src/showcommand.cpp:43
 #, kde-format
@@ -1618,6 +1620,8 @@ msgstr "ჩანაწერი..."
 msgctxt "@info:shell"
 msgid "Use raw payload (disables quoted-printable decoding)"
 msgstr ""
+"დაუმუშავებელი შემცველობის გამოყენება (ბრჭყალებით-დაბეჭდვადი დეკოდირება "
+"გაითიშება)"
 
 #: src/showcommand.cpp:50
 #, kde-format
@@ -1629,12 +1633,12 @@ msgstr "ელემენტები მითითებული არა�
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result returned for item '%1'"
-msgstr ""
+msgstr "ელემენტისთვის '%1' შედეგი არ დაბრუნებულა"
 
 #: src/showcommand.cpp:102
 #, kde-format
 msgid "Item has no main body part"
-msgstr ""
+msgstr "ჩანაწერს სხეულის მთავარი ნაწილი არ გააჩნია"
 
 #: src/tagscommand.cpp:31
 #, kde-format
@@ -1644,12 +1648,12 @@ msgstr "ჭდეების შეცვლა ან სია"
 #: src/tagscommand.cpp:45
 #, kde-format
 msgid "Brief output, tag names or IDs only"
-msgstr ""
+msgstr "მოკლე გამოტანა. მხოლოდ ჭდის სახელები ან ID-ები"
 
 #: src/tagscommand.cpp:46
 #, kde-format
 msgid "Brief output, tag URLs only"
-msgstr ""
+msgstr "მოკლე გამოტანა. მხოლოდ ჭდის ბმულები"
 
 #: src/tagscommand.cpp:48
 #, kde-format
@@ -1698,7 +1702,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
-msgstr ""
+msgstr "დასამატებელი ჭდეები აღმოჩენილი არაა"
 
 #: src/tagscommand.cpp:112
 #, kde-format
@@ -1710,19 +1714,19 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
-msgstr ""
+msgstr "წასაშლელი ჭდეები მითითებული არაა"
 
 #: src/tagscommand.cpp:154
 #, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr ""
+msgstr "ჭდე სახელით '%1' და ID-ით '%2' უკვე არსებობს"
 
 #: src/tagscommand.cpp:178
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1' ID %2"
-msgstr ""
+msgstr "ჭდის სახელით '%1' და ID-ით %2 დამატება შეუძლებელია"
 
 #: src/tagscommand.cpp:183
 #, kde-format
@@ -1757,19 +1761,19 @@ msgstr "URL"
 #: src/updatecommand.cpp:35
 #, kde-format
 msgid "Update an item's payload from a file"
-msgstr ""
+msgstr "ჩანაწერის შემცველობის ფაილიდან განახლება"
 
 #: src/updatecommand.cpp:53
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to update, an ID or Akonadi URL"
-msgstr ""
+msgstr "გასაახლებელი ჩანაწერი, ID ან Akonadi-ის URL"
 
 #: src/updatecommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to update the item from"
-msgstr ""
+msgstr "ჩანაწერის განსაახლებელი ფაილის სახელი"
 
 #: src/updatecommand.cpp:61
 #, kde-format
