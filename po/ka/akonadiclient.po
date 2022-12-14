@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-07 00:46+0000\n"
-"PO-Revision-Date: 2022-12-10 15:35+0100\n"
+"PO-Revision-Date: 2022-12-13 11:31+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -785,6 +785,7 @@ msgstr "ფაილის შენახვის შეცდომა: %1"
 #, kde-format
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr ""
+"ჩაასწორეთ მითითებული ელემენტის დაუმუშავებელი შემცველობა $EDITOR-ის საშუალებით"
 
 #: src/editcommand.cpp:55
 #, kde-format
@@ -831,7 +832,7 @@ msgstr "კოლექციის XML ფაილში გატანა"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to export: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "გასატანი კოლექცია: ID, ბილიკი ან Akonadi-ის URL"
 
 #: src/exportcommand.cpp:44
 #, kde-format
@@ -853,7 +854,7 @@ msgstr "გაზარდეთ ან შეცვალეთ კონტა
 #: src/groupcommand.cpp:57
 #, kde-format
 msgid "Show the expanded contact group (the default operation)"
-msgstr ""
+msgstr "გაფართოებული კონტაქტების ჯგუფის ჩვენება (ნაგულისხმები ოპერაცია)"
 
 #: src/groupcommand.cpp:58
 #, kde-format
@@ -868,7 +869,7 @@ msgstr "ჯგუფიდან კონტაქტის წაშლა"
 #: src/groupcommand.cpp:60
 #, kde-format
 msgid "Remove unknown item references from the group"
-msgstr ""
+msgstr "ჯგუფიდან უცნობ ელემენტზე მიმართვის წაშლა"
 
 #: src/groupcommand.cpp:61
 #, kde-format
@@ -883,13 +884,13 @@ msgstr "სახელი"
 #: src/groupcommand.cpp:62
 #, kde-format
 msgid "Brief output (for 'expand', email addresses only)"
-msgstr ""
+msgstr "მოკლე გამოტანა ('გაფართოებისთვის'. მხოლოდ ელფოსტის მისამართები)"
 
 #: src/groupcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
-msgstr ""
+msgstr "კონტაქტის ჯგუფის ელემენტი, ID ან Akonadi-ის URL"
 
 #: src/groupcommand.cpp:66
 #, kde-format
@@ -914,6 +915,8 @@ msgctxt "@info:shell"
 msgid ""
 "Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"
 msgstr ""
+"შეგიძლიათ მიუთითოთ მხოლოდ ერთი სიიდან: 'expand' (გაფართოება), "
+"'add' (დამატება) და 'clean' (გასუფთავება)"
 
 #: src/groupcommand.cpp:101
 #, kde-format
@@ -926,6 +929,7 @@ msgstr "დასამატებელი ელემენტები მ�
 msgctxt "@info:shell"
 msgid "Only one item may be specified to add with 'comment'"
 msgstr ""
+"'comment' (კომენტართან) ერთად მხოლოდ ერთი ელემენტის მითითებაა შესაძლებელი"
 
 #: src/groupcommand.cpp:119
 #, kde-format
@@ -994,6 +998,7 @@ msgctxt ""
 "5=name"
 msgid "Group %1 \"%5\" has %2 groups, %3 references and %4 data items:"
 msgstr ""
+"ჯგუფს %1 \"%5\" %2 ჯგუფი, %3 მიმართვა და %4 მონაცემის ელემენტი გააჩნია:"
 
 #: src/groupcommand.cpp:386
 #, kde-format
@@ -1032,7 +1037,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Adding to group %1 \"%2\":"
-msgstr ""
+msgstr "ჯგუფში (%1 \"%2\") დამატება:"
 
 #: src/groupcommand.cpp:497 src/groupcommand.cpp:611
 #, kde-format
@@ -1065,6 +1070,7 @@ msgctxt ""
 "5=name"
 msgid "Group %1 \"%5\" now has %2 groups, %3 references and %4 data items"
 msgstr ""
+"ჯგუფს %1 \"%5\" ახლა %2 ჯგუფი, %3 მიმართვა და %4 მონაცემის ელემენტი გააჩნია"
 
 #: src/groupcommand.cpp:589
 #, kde-format
@@ -1412,7 +1418,7 @@ msgstr "უცნობი"
 #: src/listcommand.cpp:36
 #, kde-format
 msgid "List sub-collections and/or items in a specified collection"
-msgstr ""
+msgstr "მითითებული კოლექციის ქვეკოლექციების ან/და ელემენტების სია"
 
 #: src/listcommand.cpp:46
 #, kde-format
@@ -1433,7 +1439,7 @@ msgstr "მხოლოდ კოლექციების შემცვე�
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "ჩამოსათვლელი კოლექცია: ID, ბილიკი ან Akonadi-ის URL"
 
 #: src/listcommand.cpp:124
 #, kde-format
@@ -1491,7 +1497,7 @@ msgstr "Akonadi -ის კლიენტი"
 #, kde-format
 msgctxt "@info:shell short description"
 msgid "A command-line/shell client for Akonadi"
-msgstr ""
+msgstr "ბრძანების სტრიქონის /გარსის კლიენტი Akonadi-სთვის"
 
 #: src/main.cpp:52
 #, kde-format
@@ -1551,6 +1557,8 @@ msgid ""
 "See '%1 help' for available commands.\n"
 "See '%1 help command' for information on a specific command."
 msgstr ""
+"ბრძანებების სის გამოსატანად იხილეთ '%1 help'.\n"
+"მითითებული ბრძანების შესახებ ინფორმაციისთვის იხილეთ '%1 help command'."
 
 #: src/movecommand.cpp:27
 #, kde-format
@@ -1679,7 +1687,7 @@ msgstr "ჭდე"
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
-msgstr ""
+msgstr "დასამატებელი ჭდის სახელი, ან წასაშლელი ჭდის სახელი, ID ან URL"
 
 #: src/tagscommand.cpp:55
 #, kde-format
@@ -1690,13 +1698,15 @@ msgstr "[ჭდე...]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr ""
+msgstr "'brief' და 'urls' პარამეტრებს ერთდროულად ვერ მიუთითებთ"
 
 #: src/tagscommand.cpp:90
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
 msgstr ""
+"შეგიძლიათ მიუთითოთ მხოლოდ ერთი სიიდან: 'list' (ჩამონათვალი), "
+"'add' (დამატება) და 'delete' (წაშლა)"
 
 #: src/tagscommand.cpp:106
 #, kde-format
@@ -1708,7 +1718,7 @@ msgstr "დასამატებელი ჭდეები აღმოჩ�
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr ""
+msgstr "დასამატებელად ბევრი ჭდის მითითება 'id'-ით შესაძლებელია"
 
 #: src/tagscommand.cpp:123
 #, kde-format
