@@ -1,13 +1,14 @@
 # translation of akonadiclient.po to Slovak
 # Roman Paholik <wizzardsk@gmail.com>, 2018, 2022.
+# Ferdinand Galko <galko.ferdinand@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-07 00:46+0000\n"
-"PO-Revision-Date: 2022-04-07 17:48+0200\n"
-"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
-"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"PO-Revision-Date: 2022-12-19 18:08+0100\n"
+"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
+"Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,71 +16,69 @@ msgstr ""
 "X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Roman Paholík"
+msgstr "Roman Paholík,Ferdinand Galko"
 
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "wizzardsk@gmail.com"
+msgstr "wizzardsk@gmail.com,galko.ferdinand@gmail.com"
 
 #: src/abstractcommand.cpp:49
 #, kde-format
 msgctxt "@info:shell"
 msgid "The name of the command"
-msgstr ""
+msgstr "Názov príkazu"
 
 #: src/abstractcommand.cpp:92 src/main.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "Options for command"
-msgstr ""
+msgstr "Voľby pre príkaz"
 
 #: src/abstractcommand.cpp:92 src/main.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "[options]"
-msgstr "Možnosti"
+msgstr "[voľby]"
 
 #: src/abstractcommand.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that a collection is specified"
-msgstr ""
+msgstr "Predpokladať, že je zadaná kolekcia"
 
 #: src/abstractcommand.cpp:101
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that an item is specified"
-msgstr ""
+msgstr "Predpokladať, že je zadaná položka"
 
 #: src/abstractcommand.cpp:108
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run without making any actual changes"
-msgstr ""
+msgstr "Spustiť bez vykonania skutočných zmien"
 
 #: src/abstractcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot specify as both an item and a collection"
-msgstr ""
+msgstr "Nie je možné zadať ako položku aj kolekciu"
 
 #: src/abstractcommand.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid parent collection '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Invalid collection/item argument '%1', %2"
-msgstr "Neplatná rodičovská kolekcia '%1', %2"
+msgstr "Neplatný argument kolekcie/položky '%1', %2"
 
 #: src/abstractcommand.cpp:160
 #, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2. See 'help %1'"
-msgstr ""
+msgstr "%2. Pozrite si 'help %1'"
 
 #: src/abstractcommand.cpp:165
 #, kde-format
@@ -87,29 +86,29 @@ msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3. See '%1 help %2'"
-msgstr ""
+msgstr "%3. Pozrite si '%1 help %2'"
 
 #: src/abstractcommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
 msgid "Dangerous or destructive operations are not allowed"
-msgstr ""
+msgstr "Nebezpečné alebo deštruktívne operácie nie sú povolené"
 
 #: src/abstractcommand.cpp:182
 #, kde-format
 msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
-msgstr ""
+msgstr "Nastaviť %1=\"%2\" v prostredí"
 
 #: src/addcommand.cpp:41
 #, kde-format
 msgid "Add items to a collection"
-msgstr ""
+msgstr "Pridať položky do kolekcie"
 
 #: src/addcommand.cpp:57
 #, kde-format
 msgid "Base directory for input files/directories, default is current"
-msgstr ""
+msgstr "Základný adresár pre vstupné súbory/adresáre, predvolený je aktuálny"
 
 #: src/addcommand.cpp:57
 #, kde-format
@@ -119,12 +118,13 @@ msgstr "adresár"
 #: src/addcommand.cpp:58
 #, kde-format
 msgid "Flat mode, do not duplicate subdirectory structure"
-msgstr ""
+msgstr "Plochý režim, neduplikovať štruktúru podadresárov"
 
 #: src/addcommand.cpp:59
 #, kde-format
 msgid "MIME type of added items, default is to auto-detect"
 msgstr ""
+"Typ MIME pridaných položiek, predvolené nastavenie je automatická detekcia"
 
 #: src/addcommand.cpp:59
 #, kde-format
@@ -135,43 +135,43 @@ msgstr "typ MIME"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to add to: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "Kolekcia, do ktorej sa má pridať: ID, cesta alebo Akonadi URL"
 
 #: src/addcommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or directories to add to the collection"
-msgstr ""
+msgstr "Súbory alebo adresáre, ktoré sa majú pridať do kolekcie"
 
 #: src/addcommand.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgid "files..."
-msgstr "Súbory"
+msgstr "súbory..."
 
 #: src/addcommand.cpp:69 src/createcommand.cpp:60 src/listcommand.cpp:56
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection argument"
-msgstr ""
+msgstr "Chýbajúci argument kolekcie"
 
 #: src/addcommand.cpp:70
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file or directory arguments"
-msgstr ""
+msgstr "Žiadne súborové alebo adresárové argumenty"
 
 #: src/addcommand.cpp:83
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid MIME type argument '%1'"
-msgstr ""
+msgstr "Neplatný argument typu MIME '%1'"
 
 #: src/addcommand.cpp:92
 #, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
-msgstr ""
+msgstr "Základný adresár '%1' nebol nájdený"
 
 #: src/addcommand.cpp:113
 #, kde-format
@@ -181,38 +181,38 @@ msgstr "Súbor '%1' neexistuje."
 #: src/addcommand.cpp:116
 #, kde-format
 msgid "Error accessing file '%1'"
-msgstr ""
+msgstr "Chyba prístupu k súboru '%1'"
 
 #: src/addcommand.cpp:144
 #, kde-format
 msgctxt "@info:shell"
 msgid "No valid file or directory arguments"
-msgstr ""
+msgstr "Žiadne platné súborové alebo adresárové argumenty"
 
 #: src/addcommand.cpp:154
 #, kde-format
 msgid "No more directories to process"
-msgstr ""
+msgstr "Žiadne ďalšie adresáre na spracovanie"
 
 #: src/addcommand.cpp:178 src/addcommand.cpp:200
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
-msgstr ""
+msgstr "Adresár '%1' už neexistuje"
 
 #: src/addcommand.cpp:217
 #, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
-msgstr ""
+msgstr "Načítanie kolekcie \"%3\" v rodičovi %1 \"%2\""
 
 #: src/addcommand.cpp:230
 #, kde-format
 msgid "Need to create collection for '%1'"
-msgstr ""
+msgstr "Je potrebné vytvoriť kolekciu pre '%1'"
 
 #: src/addcommand.cpp:243
 #, kde-format
 msgid "No more files to process"
-msgstr ""
+msgstr "Žiadne ďalšie súbory na spracovanie"
 
 #: src/addcommand.cpp:254 src/updatecommand.cpp:84
 #, kde-format
@@ -230,44 +230,44 @@ msgstr "Nemôžem prečítať súbor '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine MIME type of file ‘%1’"
-msgstr ""
+msgstr "Nie je možné určiť typ MIME súboru '%1'"
 
 #: src/addcommand.cpp:277
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine parent collection for file ‘%1’"
-msgstr ""
+msgstr "Nie je možné určiť rodičovskú kolekciu pre súbor '%1'"
 
 #: src/addcommand.cpp:284
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
-msgstr ""
+msgstr "Vytvorenie položky v kolekcii %1 \"%2\" z \"%3\" veľkosti %4"
 
 #: src/addcommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch target collection, %1"
-msgstr ""
+msgstr "Nie je možné načítať cieľovú kolekciu, %1"
 
 #: src/addcommand.cpp:316
 #, kde-format
 msgid "Root folder is %1 \"%2\""
-msgstr ""
+msgstr "Koreňový priečinok je %1 \"%2\""
 
 #: src/addcommand.cpp:364
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
-msgstr ""
+msgstr "Chyba načítania kolekcie %1 \"%2\", %3"
 
 #: src/addcommand.cpp:379
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
-msgstr ""
+msgstr "Zmenený názov priečinka maildir na '%1'"
 
 #: src/addcommand.cpp:388
 #, kde-format
 msgid "Creating collection \"%3\" under parent %1 \"%2\""
-msgstr ""
+msgstr "Vytvorenie kolekcie \"%3\" pod rodičom %1 \"%2\""
 
 #: src/addcommand.cpp:409
 #, kde-format
@@ -278,61 +278,61 @@ msgstr "Zlyhalo pridanie ‘%1’, %2"
 #: src/addcommand.cpp:415
 #, kde-format
 msgid "Added file '%2' as item %1"
-msgstr ""
+msgstr "Pridaný súbor '%2' ako položka %1"
 
 #: src/agentscommand.cpp:37
 #, kde-format
 msgid "Manage Akonadi agents"
-msgstr ""
+msgstr "Spravovať agentov Akonadi"
 
 #: src/agentscommand.cpp:49
 #, kde-format
 msgid "List all agents"
-msgstr ""
+msgstr "Vypísať zoznam všetkých agentov"
 
 #: src/agentscommand.cpp:50
 #, kde-format
 msgid "Set state \"online\" or \"offline\" for specified agents"
-msgstr ""
+msgstr "Nastaviť stav \"online\" alebo \"offline\" pre zadaných agentov"
 
 #: src/agentscommand.cpp:50
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "state"
-msgstr "Stav"
+msgstr "stav"
 
 #: src/agentscommand.cpp:51
 #, kde-format
 msgid "Get state for the specified agent"
-msgstr ""
+msgstr "Získať stav pre zadaného agenta"
 
 #: src/agentscommand.cpp:52
 #, kde-format
 msgid "Show information about the specified agent"
-msgstr ""
+msgstr "Zobraziť informácie o zadanom agentovi"
 
 #: src/agentscommand.cpp:53
 #, kde-format
 msgid "Restart the specified agent"
-msgstr ""
+msgstr "Reštartovať zadaného agenta"
 
 #: src/agentscommand.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "Agents to operate on"
-msgstr ""
+msgstr "Agenti, ktorí bežia na"
 
 #: src/agentscommand.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "[agents...]"
-msgstr ""
+msgstr "[agenti...]"
 
 #: src/agentscommand.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agents or options specified"
-msgstr ""
+msgstr "Nie sú zadaní žiadni agenti ani voľby"
 
 #: src/agentscommand.cpp:85
 #, kde-format
@@ -344,7 +344,7 @@ msgstr "Neplatný stav '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No option specified"
-msgstr ""
+msgstr "Nie je zadaná žiadna voľba"
 
 #: src/agentscommand.cpp:124
 #, kde-format
@@ -357,7 +357,7 @@ msgstr "Neplatné parametre"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agent exists with the identifier '%1'"
-msgstr ""
+msgstr "Neexistuje žiadny agent s identifikátorom '%1'"
 
 #: src/agentscommand.cpp:219
 #, kde-format
@@ -387,7 +387,7 @@ msgstr "%1 (\"/%2\")"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown Akonadi collection format '%1'"
-msgstr ""
+msgstr "Neznámy formát kolekcie Akonadi '%1'"
 
 #: src/collectionresolvejob.cpp:143
 #, kde-format
@@ -405,7 +405,7 @@ msgstr "%1 (\"%2\")"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
-msgstr ""
+msgstr "Nesprávna syntax položky '%1'"
 
 #: src/commandfactory.cpp:50 src/commandfactory.cpp:105
 #, kde-format
@@ -417,18 +417,18 @@ msgstr "Neznámy príkaz '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
-msgstr ""
+msgstr "Nie je zadaný žiadny príkaz (skúste '%1 --help')"
 
 #: src/commandfactory.cpp:136
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
-msgstr ""
+msgstr "Dostupné príkazy sú:"
 
 #: src/commandshell.cpp:31
 #, kde-format
 msgid "Enter commands in an interactive shell"
-msgstr ""
+msgstr "Zadávať príkazy v interaktívnom rozhraní shell"
 
 #: src/commandshell.cpp:76
 #, kde-format
@@ -439,150 +439,148 @@ msgstr "Neplatný príkaz"
 #: src/copycommand.cpp:40
 #, kde-format
 msgid "Copy collections or items into a new collection"
-msgstr ""
+msgstr "Skopírovať kolekcie alebo položky do novej kolekcie"
 
 #: src/copycommand.cpp:59 src/movecommand.cpp:40
-#, fuzzy, kde-format
+#, kde-format
 msgid "source..."
-msgstr "Zdroj"
+msgstr "zdroj..."
 
 #: src/copycommand.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to copy"
-msgstr ""
+msgstr "Existujúce kolekcie alebo položky na kopírovanie"
 
 #: src/copycommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to copy into"
-msgstr ""
+msgstr "Cieľová kolekcia, do ktorej sa má kopírovať"
 
 #: src/copycommand.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing source/destination arguments"
-msgstr ""
+msgstr "Chýbajúce zdrojové/cieľové argumenty"
 
 #: src/copycommand.cpp:74
 #, kde-format
 msgid "No more sources to process"
-msgstr ""
+msgstr "Žiadne ďalšie zdroje na spracovanie"
 
 #: src/copycommand.cpp:80
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve destination collection '%1', %2"
-msgstr ""
+msgstr "Nie je možné určiť cieľovú kolekciu '%1', %2"
 
 #: src/copycommand.cpp:113
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve source '%1', %2"
-msgstr ""
+msgstr "Nie je možné určiť zdroj '%1', %2"
 
 #: src/copycommand.cpp:139
 #, kde-format
 msgid "Moving contents of %1 -> %2"
-msgstr ""
+msgstr "Presúvanie obsahu %1 -> %2"
 
 #: src/copycommand.cpp:143
 #, kde-format
 msgid "Copying contents of %1 -> %2"
-msgstr ""
+msgstr "Kopírovanie obsahu %1 -> %2"
 
 #: src/copycommand.cpp:162
 #, kde-format
 msgid "Moving collection %1 -> %2"
-msgstr ""
+msgstr "Presúvanie kolekcie %1 -> %2"
 
 #: src/copycommand.cpp:169
 #, kde-format
 msgid "Copying collection %1 -> %2"
-msgstr ""
+msgstr "Kopírovanie kolekcie %1 -> %2"
 
 #: src/copycommand.cpp:190
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move from '%1', %2"
-msgstr ""
+msgstr "Nie je možné kopírovať/presúvať z '%1', %2"
 
 #: src/copycommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch subcollections of '%1', %2"
-msgstr ""
+msgstr "Nie je možné načítať podkolekcie '%1', %2"
 
 #: src/copycommand.cpp:206
 #, kde-format
 msgid "No sub-collections to copy/move"
-msgstr ""
+msgstr "Žiadne podkolekcie na kopírovanie/presúvanie"
 
 #: src/copycommand.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@info:shell entity type"
-#| msgid "Collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 sub-collection"
 msgid_plural "Moving %1 sub-collections"
-msgstr[0] "Kolekcia"
-msgstr[1] "Kolekcia"
-msgstr[2] "Kolekcia"
+msgstr[0] "Presúvanie %1 podkolekcie"
+msgstr[1] "Presúvanie %1 podkolekcií"
+msgstr[2] "Presúvanie %1 podkolekcií"
 
 #: src/copycommand.cpp:218
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 sub-collection"
 msgid_plural "Copying %1 sub-collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Kopírovanie %1 podkolekcie"
+msgstr[1] "Kopírovanie %1 podkolekcií"
+msgstr[2] "Kopírovanie %1 podkolekcií"
 
 #: src/copycommand.cpp:234
 #, kde-format
 msgid "No more sub-collections to process"
-msgstr ""
+msgstr "Žiadne ďalšie podkolekcie na spracovanie"
 
 #: src/copycommand.cpp:266
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
-msgstr ""
+msgstr "Nie je možné kopírovať/presúvať podkolekciu '%2' z '%1', %3"
 
 #: src/copycommand.cpp:284
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch items of '%1', %2"
-msgstr ""
+msgstr "Nie je možné načítať položky '%1', %2"
 
 #: src/copycommand.cpp:292
 #, kde-format
 msgid "No items to process"
-msgstr ""
+msgstr "Žiadne položky na spracovanie"
 
 #: src/copycommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 item"
 msgid_plural "Moving %1 items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Presúvanie %1 položky"
+msgstr[1] "Presúvanie %1 položiek"
+msgstr[2] "Presúvanie %1 položiek"
 
 #: src/copycommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 item"
 msgid_plural "Copying %1 items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Kopírovanie %1 položky"
+msgstr[1] "Kopírovanie %1 položiek"
+msgstr[2] "Kopírovanie %1 položiek"
 
 #: src/copycommand.cpp:320
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move items from '%1', %2"
-msgstr ""
+msgstr "Nie je možné kopírovať/presúvať položky z '%1', %2"
 
 #: src/createcommand.cpp:35
 #, kde-format
@@ -592,14 +590,12 @@ msgstr "Vytvoriť novú kolekciu"
 #: src/createcommand.cpp:51
 #, kde-format
 msgid "Parent collection to create in"
-msgstr ""
+msgstr "Rodičovská kolekcia, ktorá sa má vytvoriť v"
 
 #: src/createcommand.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@info:shell entity type"
-#| msgid "Collection"
+#, kde-format
 msgid "collection"
-msgstr "Kolekcia"
+msgstr "kolekcia"
 
 #: src/createcommand.cpp:54
 #, kde-format
@@ -608,171 +604,171 @@ msgid ""
 "The collection to create, either as a path or a name (with a parent "
 "specified)"
 msgstr ""
+"Kolekcia, ktorá sa má vytvoriť, buď ako cesta, alebo ako názov (so zadaným "
+"rodičom)"
 
 #: src/createcommand.cpp:71
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (with parent) cannot be a path"
-msgstr ""
+msgstr "Argumentom kolekcie (s rodičom) nemôže byť cesta"
 
 #: src/createcommand.cpp:88
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (without parent) must be a path"
-msgstr ""
+msgstr "Argumentom kolekcie (bez rodiča) musí byť cesta"
 
 #: src/createcommand.cpp:97
 #, kde-format
 msgctxt "@info:shell"
 msgid "New collection name not specified"
-msgstr ""
+msgstr "Nie je zadaný názov novej kolekcie"
 
 #: src/createcommand.cpp:109
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch parent collection '%1', %2"
-msgstr ""
+msgstr "Nie je možné načítať rodičovskú kolekciu '%1', %2"
 
 #: src/createcommand.cpp:121
 #, kde-format
 msgid "Creating a maildir folder named '%1' may not work"
-msgstr ""
+msgstr "Vytvorenie priečinka maildir s názvom '%1' nemusí fungovať"
 
 #: src/createcommand.cpp:140
 #, kde-format
 msgid "Error creating collection '%1' under '%2', %3"
-msgstr ""
+msgstr "Chyba pri vytváraní kolekcie '%1' pod '%2', %3"
 
 #: src/createcommand.cpp:154
 #, kde-format
 msgid "Error getting path of new collection, %1"
-msgstr ""
+msgstr "Chyba pri získavaní cesty k novej kolekcii, %1"
 
 #: src/createcommand.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid parent collection '%1', %2"
+#, kde-format
 msgid "Created new collection '%1'"
-msgstr "Neplatná rodičovská kolekcia '%1', %2"
+msgstr "Vytvorená nová kolekcia '%1'"
 
 #: src/deletecommand.cpp:40
 #, kde-format
 msgid "Delete a collection or an item"
-msgstr ""
+msgstr "Vymazať kolekciu alebo položku"
 
 #: src/deletecommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection or item"
-msgstr ""
+msgstr "Kolekcia alebo položka"
 
 #: src/deletecommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection/item argument"
-msgstr ""
+msgstr "Chýbajúci argument kolekcie/položky"
 
 #: src/deletecommand.cpp:103
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot delete the root collection"
-msgstr ""
+msgstr "Nie je možné vymazať koreňovú kolekciu"
 
 #: src/deletecommand.cpp:119
 #, kde-format
 msgid "Collection deleted successfully"
-msgstr ""
+msgstr "Kolekcia úspešne vymazaná"
 
 #: src/deletecommand.cpp:127 src/infocommand.cpp:150
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item/collection syntax '%1'"
-msgstr ""
+msgstr "Nesprávna syntax položky/kolekcie '%1'"
 
 #: src/deletecommand.cpp:149 src/infocommand.cpp:177
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
-msgstr ""
+msgstr "Nie je možné nájsť '%1' ako kolekciu alebo položku"
 
 #: src/deletecommand.cpp:160
 #, kde-format
 msgid "Item deleted successfully"
-msgstr ""
+msgstr "Položka úspešne vymazaná"
 
 #: src/dumpcommand.cpp:47
 #, kde-format
 msgid "Dump a collection to a directory structure"
-msgstr ""
+msgstr "Výpis kolekcie do adresárovej štruktúry"
 
 #: src/dumpcommand.cpp:59
 #, kde-format
 msgid "Dump email messages in maildir directory structure"
-msgstr ""
+msgstr "Výpis emailových správ v adresárovej štruktúre maildir"
 
 #: src/dumpcommand.cpp:60
 #, kde-format
 msgid "Dump items with Akonadi category URLs, otherwise text names"
-msgstr ""
+msgstr "Výpis položiek s adresami URL kategórie Akonadi, inak textové názvy"
 
 #: src/dumpcommand.cpp:61
 #, kde-format
 msgid "Operate even if destination directory is not empty"
-msgstr ""
+msgstr "Spustenie aj v prípade, že cieľový adresár nie je prázdny"
 
 #: src/dumpcommand.cpp:64
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to dump: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "Kolekcia, ktorá sa má vypísať: ID, cesta alebo Akonadi URL"
 
 #: src/dumpcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "The destination directory to dump to"
-msgstr ""
+msgstr "Cieľový adresár, do ktorého sa má vykonať výpis"
 
 #: src/dumpcommand.cpp:72 src/exportcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
-msgstr ""
+msgstr "Žiadna kolekcia nie je zadaná"
 
 #: src/dumpcommand.cpp:73
 #, kde-format
 msgctxt "@info:shell"
 msgid "No destination directory specified"
-msgstr ""
+msgstr "Nie je zadaný žiadny cieľový adresár"
 
 #: src/dumpcommand.cpp:86
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' not found or not a directory"
-msgstr ""
+msgstr "Adresár '%1' nebol nájdený alebo nie je adresárom"
 
 #: src/dumpcommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
-msgstr ""
+msgstr "Adresár '%1' nie je prázdny (na vynútenie operácie použite '-f')"
 
 #: src/dumpcommand.cpp:120 src/listcommand.cpp:179
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
-msgstr ""
+msgstr "Kolekcia %1 nemôže obsahovať položky"
 
 #: src/dumpcommand.cpp:146
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 contains no items"
-msgstr ""
+msgstr "Kolekcia %1 neobsahuje žiadne položky"
 
 #: src/dumpcommand.cpp:205 src/editcommand.cpp:101 src/showcommand.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no payload"
-msgstr ""
+msgstr "Položka '%1' nemá žiadny dátový obsah"
 
 #: src/dumpcommand.cpp:250
 #, kde-format
@@ -789,129 +785,129 @@ msgstr "Nedá sa uložiť súbor '%1'"
 #: src/editcommand.cpp:37
 #, kde-format
 msgid "Edit the raw payload for the specified item using $EDITOR"
-msgstr ""
+msgstr "Upraviť nespracovaný dátový obsah pre zadanú položku pomocou $EDITOR"
 
 #: src/editcommand.cpp:55
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to edit"
-msgstr ""
+msgstr "Položka na úpravu"
 
 #: src/editcommand.cpp:61 src/updatecommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "No item specified"
-msgstr ""
+msgstr "Nie je zadaná žiadna položka"
 
 #: src/editcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result found for item '%1'"
-msgstr ""
+msgstr "Pre položku '%1' sa nenašiel žiadny výsledok"
 
 #: src/editcommand.cpp:108
 #, kde-format
 msgctxt "@info:shell"
 msgid "EDITOR environment variable needs to be set"
-msgstr ""
+msgstr "Je potrebné nastaviť premennú prostredia EDITOR"
 
 #: src/editcommand.cpp:122
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot launch text editor '%1'"
-msgstr ""
+msgstr "Nie je možné spustiť textový editor '%1'"
 
 #: src/editcommand.cpp:141
 #, kde-format
 msgctxt "@info:shell"
 msgid "Changes to item '%1' have been saved"
-msgstr ""
+msgstr "Zmeny položky '%1' boli uložené"
 
 #: src/exportcommand.cpp:31
 #, kde-format
 msgid "Export a collection to an XML file"
-msgstr ""
+msgstr "Exportovať kolekciu do súboru XML"
 
 #: src/exportcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to export: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "Kolekcia, ktorá sa má exportovať: ID, cesta alebo Akonadi URL"
 
 #: src/exportcommand.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to export to"
-msgstr ""
+msgstr "Súbor, do ktorého sa má exportovať"
 
 #: src/exportcommand.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "No export file specified"
-msgstr ""
+msgstr "Nie je zadaný žiadny súbor na export"
 
 #: src/groupcommand.cpp:39
 #, kde-format
 msgid "Expand or modify a contact group"
-msgstr ""
+msgstr "Rozbaliť alebo zmeniť skupinu kontaktov"
 
 #: src/groupcommand.cpp:57
 #, kde-format
 msgid "Show the expanded contact group (the default operation)"
-msgstr ""
+msgstr "Zobraziť rozbalenú skupinu kontaktov (predvolená operácia)"
 
 #: src/groupcommand.cpp:58
 #, kde-format
 msgid "Add a contact to the group"
-msgstr ""
+msgstr "Pridať kontakt do skupiny"
 
 #: src/groupcommand.cpp:59
 #, kde-format
 msgid "Delete a contact from the group"
-msgstr ""
+msgstr "Vymazať kontakt zo skupiny"
 
 #: src/groupcommand.cpp:60
 #, kde-format
 msgid "Remove unknown item references from the group"
-msgstr ""
+msgstr "Odstrániť neznáme odkazy na položky zo skupiny"
 
 #: src/groupcommand.cpp:61
 #, kde-format
 msgid "Email comment (name) for an added item"
-msgstr ""
+msgstr "Emailový komentár (názov) pre pridanú položku"
 
 #: src/groupcommand.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgid "name"
 msgstr "názov"
 
 #: src/groupcommand.cpp:62
 #, kde-format
 msgid "Brief output (for 'expand', email addresses only)"
-msgstr ""
+msgstr "Stručný výstup (pre 'expand' len emailové adresy)"
 
 #: src/groupcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
-msgstr ""
+msgstr "Položka skupiny kontaktov, ID alebo Akonadi URL"
 
 #: src/groupcommand.cpp:66
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for the operation"
-msgstr ""
+msgstr "Arguments for the operation"
 
 #: src/groupcommand.cpp:66
 #, kde-format
 msgid "args..."
-msgstr ""
+msgstr "argumenty..."
 
 #: src/groupcommand.cpp:72
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing group argument"
-msgstr ""
+msgstr "Chýbajúci skupinový argument"
 
 #: src/groupcommand.cpp:90
 #, kde-format
@@ -919,78 +915,80 @@ msgctxt "@info:shell"
 msgid ""
 "Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"
 msgstr ""
+"Môže byť zadaná len jedna z možností  'expand', 'add', 'delete' alebo "
+"'clean'."
 
 #: src/groupcommand.cpp:101
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to add"
-msgstr ""
+msgstr "Nie sú zadané žiadne položky na pridanie"
 
 #: src/groupcommand.cpp:110
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one item may be specified to add with 'comment'"
-msgstr ""
+msgstr "Iba jedna položka môže byť zadaná na pridanie s 'comment'"
 
 #: src/groupcommand.cpp:119
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to delete"
-msgstr ""
+msgstr "Nie sú zadané žiadne položky na vymazanie"
 
 #: src/groupcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'comment' option is only allowed with 'add'"
-msgstr ""
+msgstr "Voľba 'comment' je povolená len s 'add'"
 
 #: src/groupcommand.cpp:182
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as an item"
-msgstr ""
+msgstr "Nie je možné nájsť '%1' ako položku"
 
 #: src/groupcommand.cpp:189
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' is not a contact group"
-msgstr ""
+msgstr "Položka '%1' nie je skupina kontaktov"
 
 #: src/groupcommand.cpp:195
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no contact group payload"
-msgstr ""
+msgstr "Položka '%1' nemá žiadny dátový obsah skupiny kontaktov"
 
 #: src/groupcommand.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "Errors occurred, group not updated"
-msgstr ""
+msgstr "Vyskytli sa chyby, skupina nebola aktualizovaná"
 
 #: src/groupcommand.cpp:277
 #, kde-format
 msgctxt "@info:shell"
 msgid "(unknown referenced item)"
-msgstr ""
+msgstr "(neznáma položka, na ktorú sa odkazuje)"
 
 #: src/groupcommand.cpp:284 src/groupcommand.cpp:305
 #, kde-format
 msgctxt "@info:shell"
 msgid "(item has no Addressee payload)"
-msgstr ""
+msgstr "(položka nemá žiadny dátový obsah adresáta)"
 
 #: src/groupcommand.cpp:324
 #, kde-format
 msgctxt "@item:shell"
 msgid "(invalid referenced item)"
-msgstr ""
+msgstr "(neplatná položka, na ktorú sa odkazuje)"
 
 #: src/groupcommand.cpp:326
 #, kde-format
 msgctxt "@item:shell"
 msgid "(unknown referenced item)"
-msgstr ""
+msgstr "(neznáma položka, na ktorú sa odkazuje)"
 
 #: src/groupcommand.cpp:377
 #, kde-format
@@ -998,10 +996,10 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" has %2 groups, %3 references and %4 data items:"
-msgstr ""
+msgstr "Skupina %1 \"%5\" má %2 skupiny, %3 odkazy a %4 dátové položky:"
 
 #: src/groupcommand.cpp:386
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "Typ"
@@ -1029,7 +1027,7 @@ msgstr "Názov"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items could be fetched"
-msgstr ""
+msgstr "Nebolo možné načítať žiadne položky"
 
 #: src/groupcommand.cpp:483
 #, kde-format
@@ -1037,31 +1035,31 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Adding to group %1 \"%2\":"
-msgstr ""
+msgstr "Pridanie do skupiny %1 \"%2\":"
 
 #: src/groupcommand.cpp:497 src/groupcommand.cpp:611
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot search for email '%1', %2"
-msgstr ""
+msgstr "Nie je možné vyhľadať email '%1', %2"
 
 #: src/groupcommand.cpp:509
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple contacts found for '%1', using the first one"
-msgstr ""
+msgstr "Pre '%1' sa našlo viac kontaktov, použije sa prvý z nich"
 
 #: src/groupcommand.cpp:544
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch requested item %1, %2"
-msgstr ""
+msgstr "Nie je možné načítať požadovanú položku %1, %2"
 
 #: src/groupcommand.cpp:555
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item %1 is not a contact item"
-msgstr ""
+msgstr "Položka %1 nie je položkou kontaktu"
 
 #: src/groupcommand.cpp:571 src/groupcommand.cpp:654 src/groupcommand.cpp:702
 #, kde-format
@@ -1069,7 +1067,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" now has %2 groups, %3 references and %4 data items"
-msgstr ""
+msgstr "Skupina %1 \"%5\" má teraz %2 skupiny, %3 odkazy a %4 dátové položky"
 
 #: src/groupcommand.cpp:589
 #, kde-format
@@ -1077,13 +1075,13 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Removing from group %1 \"%2\":"
-msgstr ""
+msgstr "Odstránenie zo skupiny %1 \"%2\":"
 
 #: src/groupcommand.cpp:626
 #, kde-format
 msgctxt "@info:shell"
 msgid "Nothing to remove for email '%1'"
-msgstr ""
+msgstr "Nič na odstránenie pre email '%1'"
 
 #: src/groupcommand.cpp:670
 #, kde-format
@@ -1091,148 +1089,136 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Cleaning references from group %1 \"%2\":"
-msgstr ""
+msgstr "Čistenie odkazov zo skupiny %1 \"%2\":"
 
 #: src/importcommand.cpp:39
 #, kde-format
 msgid "Import an XML file"
-msgstr ""
+msgstr "Importovať súbor XML"
 
 #: src/importcommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "The parent collection under which to import the file"
-msgstr ""
+msgstr "Rodičovská kolekcia, pod ktorú sa má importovať súbor"
 
 #: src/importcommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to import"
-msgstr ""
+msgstr "Súbor pre import"
 
 #: src/importcommand.cpp:64
 #, kde-format
 msgctxt "@info:shell"
 msgid "No parent collection specified"
-msgstr ""
+msgstr "Žiadna rodičovská kolekcia nie je zadaná"
 
 #: src/importcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "No import file specified"
-msgstr ""
+msgstr "Nie je zadaný žiadny súbor na import"
 
 #: src/importcommand.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid state '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Invalid XML file, %1"
-msgstr "Neplatný stav '%1'"
+msgstr "Neplatný súbor XML, %1"
 
 #: src/importcommand.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid parent collection '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch parent collection, %1"
-msgstr "Neplatná rodičovská kolekcia '%1', %2"
+msgstr "Nie je možné načítať rodičovskú kolekciu, %1"
 
 #: src/importcommand.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid parent collection '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch children of parent collection, %1"
-msgstr "Neplatná rodičovská kolekcia '%1', %2"
+msgstr "Nie je možné načítať potomka rodičovskej kolekcie, %1"
 
 #: src/importcommand.cpp:117
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection '%1' already exists"
-msgstr ""
+msgstr "Kolekcia '%1' už existuje"
 
 #: src/importcommand.cpp:121
 #, kde-format
 msgctxt "@info:shell"
 msgid "Creating collection '%1'"
-msgstr ""
+msgstr "Vytvorenie kolekcie '%1'"
 
 #: src/importcommand.cpp:143
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing collection '%1'"
-msgstr ""
+msgstr "Spracovanie kolekcie '%1'"
 
 #: src/importcommand.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid parent collection '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parent for collection with remote ID '%1'"
-msgstr "Neplatná rodičovská kolekcia '%1', %2"
+msgstr "Neplatný rodič pre kolekciu so vzdialeným ID '%1'"
 
 #: src/importcommand.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid parent collection '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
-msgstr "Neplatná rodičovská kolekcia '%1', %2"
+msgstr "Nie je možné načítať kolekciu so vzdialeným ID '%1', %2"
 
 #: src/importcommand.cpp:191
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
-msgstr ""
+msgstr "Nie je možné vytvoriť kolekciu so vzdialeným ID '%1'"
 
 #: src/importcommand.cpp:208
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing items for '%1'"
-msgstr ""
+msgstr "Spracovanie položiek pre '%1'"
 
 #: src/importcommand.cpp:230
 #, kde-format
 msgctxt "@info:shell"
 msgid "Error creating item, %1"
-msgstr ""
+msgstr "Chyba pri vytváraní položky, %1"
 
 #: src/importcommand.cpp:232
 #, kde-format
 msgctxt "@info:shell"
 msgid "Created item '%1'"
-msgstr ""
+msgstr "Vytvorená položka '%1'"
 
 #: src/infocommand.cpp:38
 #, kde-format
 msgid "Show full information for a collection or item"
-msgstr ""
+msgstr "Zobraziť úplné informácie o kolekcii alebo položke"
 
 #: src/infocommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
-msgstr ""
+msgstr "Kolekcie alebo položky, ktoré sa majú zobraziť"
 
 #: src/infocommand.cpp:60
 #, kde-format
 msgid "entity..."
-msgstr ""
+msgstr "entita..."
 
 #: src/infocommand.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No file specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
-msgstr "Nezadaný súbor"
+msgstr "Nie sú zadané žiadne kolekcie alebo položky"
 
 #: src/infocommand.cpp:120
 #, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
-msgstr ""
+msgstr "Nie sú k dispozícii žiadne informácie pre koreňovú kolekciu"
 
 #: src/infocommand.cpp:220 src/infocommand.cpp:266
 #, kde-format
@@ -1280,7 +1266,7 @@ msgstr "Vlastník"
 #, kde-format
 msgctxt "@info:shell"
 msgid "MIME"
-msgstr ""
+msgstr "MIME"
 
 #: src/infocommand.cpp:227 src/infocommand.cpp:274
 #, kde-format
@@ -1292,55 +1278,55 @@ msgstr "Vzdialené ID"
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
-msgstr ""
+msgstr "LenNaČítanie"
 
 #: src/infocommand.cpp:235
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
-msgstr ""
+msgstr "ZmeniťPoložku"
 
 #: src/infocommand.cpp:238
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
-msgstr ""
+msgstr "VytvoriťPoložku"
 
 #: src/infocommand.cpp:241
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
-msgstr ""
+msgstr "VymazaťPoložku"
 
 #: src/infocommand.cpp:244
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
-msgstr ""
+msgstr "ZmeniťKolekciu"
 
 #: src/infocommand.cpp:247
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
-msgstr ""
+msgstr "VytvoriťKolekciu"
 
 #: src/infocommand.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
-msgstr ""
+msgstr "VymazaťKolekciu"
 
 #: src/infocommand.cpp:253
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
-msgstr ""
+msgstr "PrepojiťPoložku"
 
 #: src/infocommand.cpp:256
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
-msgstr ""
+msgstr "OdpojiťPoložku"
 
 #: src/infocommand.cpp:258
 #, kde-format
@@ -1388,7 +1374,7 @@ msgstr "Revízia"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
-msgstr ""
+msgstr "Dátový obsah"
 
 #: src/infocommand.cpp:275
 #, kde-format
@@ -1429,58 +1415,58 @@ msgstr "Neznáme"
 #: src/listcommand.cpp:36
 #, kde-format
 msgid "List sub-collections and/or items in a specified collection"
-msgstr ""
+msgstr "Vypísať zoznam podkolekcií a/alebo položiek v zadanej kolekcii"
 
 #: src/listcommand.cpp:46
 #, kde-format
 msgid "List more detailed information"
-msgstr ""
+msgstr "Vypísať zoznam podrobnejších informácií"
 
 #: src/listcommand.cpp:47
 #, kde-format
 msgid "List only sub-collections"
-msgstr ""
+msgstr "Vypísať zoznam iba podkolekcií"
 
 #: src/listcommand.cpp:48
 #, kde-format
 msgid "List only contained items"
-msgstr ""
+msgstr "Vypísať zoznam iba obsiahnutých položiek"
 
 #: src/listcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "Kolekcia, ktorej zoznam sa má vypísať: ID, cesta alebo Akonadi URL"
 
 #: src/listcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
-msgstr ""
+msgstr "Kolekcia %1 nemá žiadne podkolekcie"
 
 #: src/listcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Kolekcia %2 má %1 podkolekciu:"
+msgstr[1] "Kolekcia %2 má %1 podkolekcie:"
+msgstr[2] "Kolekcia %2 má %1 podkolekcií:"
 
 #: src/listcommand.cpp:195
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
-msgstr ""
+msgstr "Kolekcia %1 nemá žiadne položky"
 
 #: src/listcommand.cpp:202
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Kolekcia %2 má %1 položku:"
+msgstr[1] "Kolekcia %2 má %1 položky:"
+msgstr[2] "Kolekcia %2 má %1 položkiek:"
 
 #: src/listcommand.cpp:209
 #, kde-format
@@ -1504,13 +1490,13 @@ msgstr "Čas zmeny"
 #, kde-format
 msgctxt "@title program name"
 msgid "Akonadi Client"
-msgstr ""
+msgstr "Klient Akonadi"
 
 #: src/main.cpp:48
 #, kde-format
 msgctxt "@info:shell short description"
 msgid "A command-line/shell client for Akonadi"
-msgstr ""
+msgstr "Klient príkazového riadku/shell pre Akonadi"
 
 #: src/main.cpp:52
 #, kde-format
@@ -1532,18 +1518,18 @@ msgstr "Jonathan Marten"
 #, kde-format
 msgctxt "@title about data task"
 msgid "Additions and new commands"
-msgstr ""
+msgstr "Doplnky a nové príkazy"
 
 #: src/main.cpp:54
 #, kde-format
 msgid "Bhaskar Kandiyal"
-msgstr ""
+msgstr "Bhaskar Kandiyal"
 
 #: src/main.cpp:54
 #, kde-format
 msgctxt "@title about data task"
 msgid "New commands, GSOC 2014"
-msgstr ""
+msgstr "Nové príkazy, GSOC 2014"
 
 #: src/main.cpp:64
 #, kde-format
@@ -1561,7 +1547,7 @@ msgstr "Argumenty pre príkaz"
 #, kde-format
 msgctxt "@info:shell"
 msgid "[args]"
-msgstr ""
+msgstr "[argumenty]"
 
 #: src/main.cpp:86
 #, kde-format
@@ -1570,214 +1556,202 @@ msgid ""
 "See '%1 help' for available commands.\n"
 "See '%1 help command' for information on a specific command."
 msgstr ""
+"Dostupné príkazy nájdete pomocou '%1 help'.\n"
+"Informácie o konkrétnom príkaze nájdete pomocou '%1 help command'."
 
 #: src/movecommand.cpp:27
 #, kde-format
 msgid "Move collections or items into a new collection"
-msgstr ""
+msgstr "Presunúť kolekcie alebo položky do novej kolekcie"
 
 #: src/movecommand.cpp:40
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to move"
-msgstr ""
+msgstr "Existujúce kolekcie alebo položky na presun"
 
 #: src/movecommand.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to move into"
-msgstr ""
+msgstr "Cieľová kolekcia, do ktorej sa má presunúť"
 
 #: src/renamecommand.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@info:shell entity type"
-#| msgid "Collection"
+#, kde-format
 msgid "Rename a collection"
-msgstr "Kolekcia"
+msgstr "Premenovať kolekciu"
 
 #: src/renamecommand.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to rename"
-msgstr ""
+msgstr "Kolekcia, ktorá sa má premenovať"
 
 #: src/renamecommand.cpp:46
 #, kde-format
 msgctxt "@info:shell"
 msgid "New name for collection"
-msgstr ""
+msgstr "Nový názov kolekcie"
 
 #: src/renamecommand.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No file specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "New name not specified"
-msgstr "Nezadaný súbor"
+msgstr "Nie je zadaný nový názov"
 
 #: src/renamecommand.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection renamed successfully"
-msgstr ""
+msgstr "Kolekcia úspešne premenovaná"
 
 #: src/showcommand.cpp:34
 #, kde-format
 msgid "Show the raw payload of an item"
-msgstr ""
+msgstr "Zobraziť nespracovaný dátový obsah"
 
 #: src/showcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The items to show"
-msgstr ""
+msgstr "Položky, ktoré sa majú zobraziť"
 
 #: src/showcommand.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "item..."
-msgstr "Položka"
+msgstr "položka..."
 
 #: src/showcommand.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "Use raw payload (disables quoted-printable decoding)"
-msgstr ""
+msgstr "Použiť nespracovaný dátový obsah (zakáže quoted-printable dekódovanie)"
 
 #: src/showcommand.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No file specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No items specified"
-msgstr "Nezadaný súbor"
+msgstr "Nie sú zadané žiadne položky"
 
 #: src/showcommand.cpp:87 src/updatecommand.cpp:113
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result returned for item '%1'"
-msgstr ""
+msgstr "Pre položku '%1' nebol vrátený žiadny výsledok"
 
 #: src/showcommand.cpp:102
 #, kde-format
 msgid "Item has no main body part"
-msgstr ""
+msgstr "Položka nemá žiadnu hlavnú časť tela"
 
 #: src/tagscommand.cpp:31
 #, kde-format
 msgid "List or modify tags"
-msgstr ""
+msgstr "Vypísať zoznam alebo zmeniť značky"
 
 #: src/tagscommand.cpp:45
 #, kde-format
 msgid "Brief output, tag names or IDs only"
-msgstr ""
+msgstr "Stručný výstup, iba názvy značiek alebo ID"
 
 #: src/tagscommand.cpp:46
 #, kde-format
 msgid "Brief output, tag URLs only"
-msgstr ""
+msgstr "Stručný výstup, iba URL značiek"
 
 #: src/tagscommand.cpp:48
 #, kde-format
 msgid "List all known tags (the default operation)"
-msgstr ""
+msgstr "Vypísať zoznam všetkých známych značiek (predvolená operácia)"
 
 #: src/tagscommand.cpp:49
 #, kde-format
 msgid "Add named tags"
-msgstr ""
+msgstr "Pridať pomenované značky"
 
 #: src/tagscommand.cpp:50
 #, kde-format
 msgid "Delete tags"
-msgstr ""
+msgstr "Vymazať značky"
 
 #. i18n("ID for a tag to be added (default automatic)"), i18n("id")));
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "TAG"
-msgstr ""
+msgstr "ZNAČKA"
 
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
 msgstr ""
+"Názov značky, ktorá sa má pridať, alebo názov, ID alebo URL značky, ktorá sa "
+"má odstrániť"
 
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "[TAG...]"
-msgstr ""
+msgstr "[ZNAČKA...]"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr ""
+msgstr "Nemôžu byť zadané obe možnosti 'brief' aj 'urls'"
 
 #: src/tagscommand.cpp:90
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
-msgstr ""
+msgstr "Môže byť zadaná len jedna z možností  'list', 'add' alebo 'delete'"
 
 #: src/tagscommand.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No file specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
-msgstr "Nezadaný súbor"
+msgstr "Nie sú zadané žiadne značky na pridanie"
 
 #: src/tagscommand.cpp:112
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr ""
+msgstr "Nie je možné zadať viacero značiek na pridanie s 'id'"
 
 #: src/tagscommand.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No file specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
-msgstr "Nezadaný súbor"
+msgstr "Nie sú zadané žiadne značky na vymazanie"
 
 #: src/tagscommand.cpp:154
 #, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr ""
+msgstr "Značka s názvom '%1' ID %2 už existuje"
 
 #: src/tagscommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1' ID %2"
-msgstr "Nedá sa uložiť súbor '%1'"
+msgstr "Nie je možné pridať značku '%1' ID %2"
 
 #: src/tagscommand.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1'"
-msgstr "Nedá sa uložiť súbor '%1'"
+msgstr "Nie je možné pridať značku '%1'"
 
 #: src/tagscommand.cpp:231
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
-msgstr "Súbor '%1' neexistuje."
+msgstr "Značka na vymazanie '%1' neexistuje"
 
 #: src/tagscommand.cpp:268
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete ID %1 does not exist"
-msgstr "Súbor '%1' neexistuje."
+msgstr "Značka na vymazanie ID %1 neexistuje"
 
 #: src/tagscommand.cpp:308
 #, kde-format
@@ -1794,19 +1768,19 @@ msgstr "URL"
 #: src/updatecommand.cpp:35
 #, kde-format
 msgid "Update an item's payload from a file"
-msgstr ""
+msgstr "Aktualizovať dátový obsah položky zo súboru"
 
 #: src/updatecommand.cpp:53
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to update, an ID or Akonadi URL"
-msgstr ""
+msgstr "Položka, ktorá sa má aktualizovať: ID alebo Akonadi URL"
 
 #: src/updatecommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to update the item from"
-msgstr ""
+msgstr "Súbor, z ktorého sa má aktualizovať položka"
 
 #: src/updatecommand.cpp:61
 #, kde-format
@@ -1818,7 +1792,7 @@ msgstr "Nezadaný súbor"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item updated successfully"
-msgstr ""
+msgstr "Položka úspešne aktualizovaná"
 
 #~ msgctxt "@info:shell"
 #~ msgid "Error: %1"
