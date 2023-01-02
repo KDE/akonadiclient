@@ -1444,7 +1444,7 @@ msgstr "Llista només els elements continguts"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
-msgstr "La col·lecció a la llista: un ID, camí o URL d'Akonadi"
+msgstr "La col·lecció en la llista: un ID, camí o URL d'Akonadi"
 
 #: src/listcommand.cpp:124
 #, kde-format
