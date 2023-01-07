@@ -1,85 +1,85 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-07 00:46+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-01-07 05:11+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Kisaragi Hiu"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "mail@kisaragi-hiu.com"
 
 #: src/abstractcommand.cpp:49
 #, kde-format
 msgctxt "@info:shell"
 msgid "The name of the command"
-msgstr ""
+msgstr "命令的名稱"
 
 #: src/abstractcommand.cpp:92 src/main.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "Options for command"
-msgstr ""
+msgstr "命令的選項"
 
 #: src/abstractcommand.cpp:92 src/main.cpp:66
 #, kde-format
 msgctxt "@info:shell"
 msgid "[options]"
-msgstr ""
+msgstr "[選項]"
 
 #: src/abstractcommand.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that a collection is specified"
-msgstr ""
+msgstr "假定有指定收藏"
 
 #: src/abstractcommand.cpp:101
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that an item is specified"
-msgstr ""
+msgstr "假定有指定項目"
 
 #: src/abstractcommand.cpp:108
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run without making any actual changes"
-msgstr ""
+msgstr "執行但不實際作出更動"
 
 #: src/abstractcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot specify as both an item and a collection"
-msgstr ""
+msgstr "無法同時指定為項目與收藏"
 
 #: src/abstractcommand.cpp:142
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid collection/item argument '%1', %2"
-msgstr ""
+msgstr "無效的收藏/項目引數 '%1'，%2"
 
 #: src/abstractcommand.cpp:160
 #, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2. See 'help %1'"
-msgstr ""
+msgstr "%2。見 'help %1'"
 
 #: src/abstractcommand.cpp:165
 #, kde-format
@@ -87,507 +87,507 @@ msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3. See '%1 help %2'"
-msgstr ""
+msgstr "%3。見 '%1 help %2'"
 
 #: src/abstractcommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
 msgid "Dangerous or destructive operations are not allowed"
-msgstr ""
+msgstr "不允許危險或破壞性的操作"
 
 #: src/abstractcommand.cpp:182
 #, kde-format
 msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
-msgstr ""
+msgstr "在環境設定 %1=\"%2\""
 
 #: src/addcommand.cpp:41
 #, kde-format
 msgid "Add items to a collection"
-msgstr ""
+msgstr "新增項目到收藏"
 
 #: src/addcommand.cpp:57
 #, kde-format
 msgid "Base directory for input files/directories, default is current"
-msgstr ""
+msgstr "輸入檔案/目錄的基礎目錄，預設是目前目錄"
 
 #: src/addcommand.cpp:57
 #, kde-format
 msgid "directory"
-msgstr ""
+msgstr "目錄"
 
 #: src/addcommand.cpp:58
 #, kde-format
 msgid "Flat mode, do not duplicate subdirectory structure"
-msgstr ""
+msgstr "扁平模式，不重製子目錄結構"
 
 #: src/addcommand.cpp:59
 #, kde-format
 msgid "MIME type of added items, default is to auto-detect"
-msgstr ""
+msgstr "新增項目的 MIME 類型，預設是自動偵測"
 
 #: src/addcommand.cpp:59
 #, kde-format
 msgid "mimetype"
-msgstr ""
+msgstr "MIME類型"
 
 #: src/addcommand.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to add to: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "要新增到的收藏：一個 ID、路徑或 Akonadi URL"
 
 #: src/addcommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or directories to add to the collection"
-msgstr ""
+msgstr "要新增到收藏的檔案或目錄"
 
 #: src/addcommand.cpp:63
 #, kde-format
 msgid "files..."
-msgstr ""
+msgstr "檔案..."
 
 #: src/addcommand.cpp:69 src/createcommand.cpp:60 src/listcommand.cpp:56
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection argument"
-msgstr ""
+msgstr "缺乏收藏引數"
 
 #: src/addcommand.cpp:70
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file or directory arguments"
-msgstr ""
+msgstr "缺乏檔案或目錄引數"
 
 #: src/addcommand.cpp:83
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid MIME type argument '%1'"
-msgstr ""
+msgstr "無效的 MIME 類型引數 '%1'"
 
 #: src/addcommand.cpp:92
 #, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
-msgstr ""
+msgstr "找不到基礎目錄 '%1'"
 
 #: src/addcommand.cpp:113
 #, kde-format
 msgid "File '%1' does not exist"
-msgstr ""
+msgstr "檔案 '%1 不存在"
 
 #: src/addcommand.cpp:116
 #, kde-format
 msgid "Error accessing file '%1'"
-msgstr ""
+msgstr "存取檔案 '%1' 時發生錯誤"
 
 #: src/addcommand.cpp:144
 #, kde-format
 msgctxt "@info:shell"
 msgid "No valid file or directory arguments"
-msgstr ""
+msgstr "缺乏有效的檔案或目錄引數"
 
 #: src/addcommand.cpp:154
 #, kde-format
 msgid "No more directories to process"
-msgstr ""
+msgstr "沒有更多要處理的目錄了"
 
 #: src/addcommand.cpp:178 src/addcommand.cpp:200
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
-msgstr ""
+msgstr "目錄 '%1' 已不存在"
 
 #: src/addcommand.cpp:217
 #, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
-msgstr ""
+msgstr "正在取得親收藏 %1「%2」內的收藏「%3」"
 
 #: src/addcommand.cpp:230
 #, kde-format
 msgid "Need to create collection for '%1'"
-msgstr ""
+msgstr "需要為 '%1' 建立收藏"
 
 #: src/addcommand.cpp:243
 #, kde-format
 msgid "No more files to process"
-msgstr ""
+msgstr "沒有更多要處理的檔案了"
 
 #: src/addcommand.cpp:254 src/updatecommand.cpp:84
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ does not exist"
-msgstr ""
+msgstr "檔案 '%1' 不存在"
 
 #: src/addcommand.cpp:260 src/updatecommand.cpp:92
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ cannot be read"
-msgstr ""
+msgstr "無法讀取檔案 '%1'"
 
 #: src/addcommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine MIME type of file ‘%1’"
-msgstr ""
+msgstr "無法決定檔案 '%1' 的 MIME 類型"
 
 #: src/addcommand.cpp:277
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine parent collection for file ‘%1’"
-msgstr ""
+msgstr "無法決定檔案 '%1' 的親收藏"
 
 #: src/addcommand.cpp:284
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
-msgstr ""
+msgstr "正在從 '%3'（大小 %4）建立在集合 %1「%2」內的項目"
 
 #: src/addcommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch target collection, %1"
-msgstr ""
+msgstr "無法取得目標收藏，%1"
 
 #: src/addcommand.cpp:316
 #, kde-format
 msgid "Root folder is %1 \"%2\""
-msgstr ""
+msgstr "根資料夾是 %1「%2」"
 
 #: src/addcommand.cpp:364
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
-msgstr ""
+msgstr "取得收藏 %1「%2」時發生錯誤，%3"
 
 #: src/addcommand.cpp:379
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
-msgstr ""
+msgstr "已修改 maildir 資料夾名稱為 '%1'"
 
 #: src/addcommand.cpp:388
 #, kde-format
 msgid "Creating collection \"%3\" under parent %1 \"%2\""
-msgstr ""
+msgstr "正在建立親收藏 %1「%2」下的收藏「%3」"
 
 #: src/addcommand.cpp:409
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
-msgstr ""
+msgstr "新增 '%1' 失敗，%2"
 
 #: src/addcommand.cpp:415
 #, kde-format
 msgid "Added file '%2' as item %1"
-msgstr ""
+msgstr "已將檔案 '%2' 新增為項目 %1"
 
 #: src/agentscommand.cpp:37
 #, kde-format
 msgid "Manage Akonadi agents"
-msgstr ""
+msgstr "管理 Akonadi 代理程式"
 
 #: src/agentscommand.cpp:49
 #, kde-format
 msgid "List all agents"
-msgstr ""
+msgstr "列出所有代理程式"
 
 #: src/agentscommand.cpp:50
 #, kde-format
 msgid "Set state \"online\" or \"offline\" for specified agents"
-msgstr ""
+msgstr "為指定代理程式設定狀態為 \"online\" 或 \"offline\""
 
 #: src/agentscommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "state"
-msgstr ""
+msgstr "狀態"
 
 #: src/agentscommand.cpp:51
 #, kde-format
 msgid "Get state for the specified agent"
-msgstr ""
+msgstr "取得指定代理程式的狀態"
 
 #: src/agentscommand.cpp:52
 #, kde-format
 msgid "Show information about the specified agent"
-msgstr ""
+msgstr "顯示指定代理程式的資訊"
 
 #: src/agentscommand.cpp:53
 #, kde-format
 msgid "Restart the specified agent"
-msgstr ""
+msgstr "重新啟動指定的 agent"
 
 #: src/agentscommand.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "Agents to operate on"
-msgstr ""
+msgstr "要操作的代理程式"
 
 #: src/agentscommand.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "[agents...]"
-msgstr ""
+msgstr "[代理程式...]"
 
 #: src/agentscommand.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agents or options specified"
-msgstr ""
+msgstr "未指定代理程式或選項"
 
 #: src/agentscommand.cpp:85
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid state '%1'"
-msgstr ""
+msgstr "無效的狀態 '%1'"
 
 #: src/agentscommand.cpp:89
 #, kde-format
 msgctxt "@info:shell"
 msgid "No option specified"
-msgstr ""
+msgstr "未指定選項"
 
 #: src/agentscommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parameters"
-msgstr ""
+msgstr "無效的參數"
 
 #: src/agentscommand.cpp:160 src/agentscommand.cpp:192
 #: src/agentscommand.cpp:210 src/agentscommand.cpp:236
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agent exists with the identifier '%1'"
-msgstr ""
+msgstr "沒有 ID 為 '%1' 的代理程式"
 
 #: src/agentscommand.cpp:219
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID:      "
-msgstr ""
+msgstr "ID："
 
 #: src/agentscommand.cpp:220
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name:    "
-msgstr ""
+msgstr "名稱："
 
 #: src/agentscommand.cpp:221
 #, kde-format
 msgctxt "@info:shell"
 msgid "Status:  "
-msgstr ""
+msgstr "狀態："
 
 #: src/collectionpathjob.cpp:71
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection path"
 msgid "%1 (\"/%2\")"
-msgstr ""
+msgstr "%1 (\"/%2\")"
 
 #: src/collectionresolvejob.cpp:99
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown Akonadi collection format '%1'"
-msgstr ""
+msgstr "不明的 Akonadi 收藏格式 '%1'"
 
 #: src/collectionresolvejob.cpp:143
 #, kde-format
 msgctxt "@info:shell 1=collection ID"
 msgid "%1 (root)"
-msgstr ""
+msgstr "%1 (根)"
 
 #: src/collectionresolvejob.cpp:146
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection name"
 msgid "%1 (\"%2\")"
-msgstr ""
+msgstr "%1 (\"%2\")"
 
 #: src/collectionresolvejob.cpp:171
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
-msgstr ""
+msgstr "無效的項目語法 '%1'"
 
 #: src/commandfactory.cpp:50 src/commandfactory.cpp:105
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
-msgstr ""
+msgstr "未知的命令 '%1'"
 
 #: src/commandfactory.cpp:92
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
-msgstr ""
+msgstr "未指定命令（試試看 '%1 --help'）"
 
 #: src/commandfactory.cpp:136
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
-msgstr ""
+msgstr "可供的命令有："
 
 #: src/commandshell.cpp:31
 #, kde-format
 msgid "Enter commands in an interactive shell"
-msgstr ""
+msgstr "在互動式 shell 中執行命令"
 
 #: src/commandshell.cpp:76
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid command"
-msgstr ""
+msgstr "無效的命令"
 
 #: src/copycommand.cpp:40
 #, kde-format
 msgid "Copy collections or items into a new collection"
-msgstr ""
+msgstr "複製收藏或項目到新收藏裡"
 
 #: src/copycommand.cpp:59 src/movecommand.cpp:40
 #, kde-format
 msgid "source..."
-msgstr ""
+msgstr "來源..."
 
 #: src/copycommand.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to copy"
-msgstr ""
+msgstr "要複製的既存收藏或項目"
 
 #: src/copycommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to copy into"
-msgstr ""
+msgstr "要複製到的目標收藏"
 
 #: src/copycommand.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing source/destination arguments"
-msgstr ""
+msgstr "缺乏來源/目標引數"
 
 #: src/copycommand.cpp:74
 #, kde-format
 msgid "No more sources to process"
-msgstr ""
+msgstr "沒有更多要處理的來源了"
 
 #: src/copycommand.cpp:80
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve destination collection '%1', %2"
-msgstr ""
+msgstr "無法剖析目標收藏 '%1'，%2"
 
 #: src/copycommand.cpp:113
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve source '%1', %2"
-msgstr ""
+msgstr "無法剖析來源 '%1'，%2"
 
 #: src/copycommand.cpp:139
 #, kde-format
 msgid "Moving contents of %1 -> %2"
-msgstr ""
+msgstr "正在移動 %1 的內容 -> %2"
 
 #: src/copycommand.cpp:143
 #, kde-format
 msgid "Copying contents of %1 -> %2"
-msgstr ""
+msgstr "正在複製 %1 的內容 -> %2"
 
 #: src/copycommand.cpp:162
 #, kde-format
 msgid "Moving collection %1 -> %2"
-msgstr ""
+msgstr "正在移動收藏 %1 -> %2"
 
 #: src/copycommand.cpp:169
 #, kde-format
 msgid "Copying collection %1 -> %2"
-msgstr ""
+msgstr "正在複製收藏 %1 -> %2"
 
 #: src/copycommand.cpp:190
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move from '%1', %2"
-msgstr ""
+msgstr "無法從 '%1' 進行複製/移動，%2"
 
 #: src/copycommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch subcollections of '%1', %2"
-msgstr ""
+msgstr "無法取得 '%1' 的子收藏，%2"
 
 #: src/copycommand.cpp:206
 #, kde-format
 msgid "No sub-collections to copy/move"
-msgstr ""
+msgstr "沒有要複製/移動的子收藏"
 
 #: src/copycommand.cpp:213
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 sub-collection"
 msgid_plural "Moving %1 sub-collections"
-msgstr[0] ""
+msgstr[0] "正在移動 %1 個子收藏"
 
 #: src/copycommand.cpp:218
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 sub-collection"
 msgid_plural "Copying %1 sub-collections"
-msgstr[0] ""
+msgstr[0] "正在複製 %1 個子收藏"
 
 #: src/copycommand.cpp:234
 #, kde-format
 msgid "No more sub-collections to process"
-msgstr ""
+msgstr "沒有更多要處理的子收藏了"
 
 #: src/copycommand.cpp:266
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
-msgstr ""
+msgstr "無法從 '%1' 複製/移動子收藏 '%2'，%3"
 
 #: src/copycommand.cpp:284
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch items of '%1', %2"
-msgstr ""
+msgstr "無法取得 '%1' 的項目，%2"
 
 #: src/copycommand.cpp:292
 #, kde-format
 msgid "No items to process"
-msgstr ""
+msgstr "沒有要處理的項目"
 
 #: src/copycommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 item"
 msgid_plural "Moving %1 items"
-msgstr[0] ""
+msgstr[0] "正在移動 %1 個項目"
 
 #: src/copycommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 item"
 msgid_plural "Copying %1 items"
-msgstr[0] ""
+msgstr[0] "正在複製 %1 個項目"
 
 #: src/copycommand.cpp:320
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move items from '%1', %2"
-msgstr ""
+msgstr "無法從 '%1' 複製/移動項目，%2"
 
 #: src/createcommand.cpp:35
 #, kde-format
 msgid "Create a new collection"
-msgstr ""
+msgstr "建立新收藏"
 
 #: src/createcommand.cpp:51
 #, kde-format
 msgid "Parent collection to create in"
-msgstr ""
+msgstr "要在哪個親收藏下建立"
 
 #: src/createcommand.cpp:51
 #, kde-format
 msgid "collection"
-msgstr ""
+msgstr "收藏"
 
 #: src/createcommand.cpp:54
 #, kde-format
@@ -595,388 +595,388 @@ msgctxt "@info:shell"
 msgid ""
 "The collection to create, either as a path or a name (with a parent "
 "specified)"
-msgstr ""
+msgstr "要建立的收藏，路徑或是名稱（指定親收藏）"
 
 #: src/createcommand.cpp:71
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (with parent) cannot be a path"
-msgstr ""
+msgstr "收藏引數（包含親收藏）不能是路徑"
 
 #: src/createcommand.cpp:88
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (without parent) must be a path"
-msgstr ""
+msgstr "收藏引數（不包含親收藏）必須是路徑"
 
 #: src/createcommand.cpp:97
 #, kde-format
 msgctxt "@info:shell"
 msgid "New collection name not specified"
-msgstr ""
+msgstr "未指定新收藏名稱"
 
 #: src/createcommand.cpp:109
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch parent collection '%1', %2"
-msgstr ""
+msgstr "無法取得親收藏 '%1'，%2"
 
 #: src/createcommand.cpp:121
 #, kde-format
 msgid "Creating a maildir folder named '%1' may not work"
-msgstr ""
+msgstr "建立叫做 '%1' 的 maildir 資料夾可能無法正常運作"
 
 #: src/createcommand.cpp:140
 #, kde-format
 msgid "Error creating collection '%1' under '%2', %3"
-msgstr ""
+msgstr "在 '%2' 下建立收藏 '%1' 時發生錯誤，%3"
 
 #: src/createcommand.cpp:154
 #, kde-format
 msgid "Error getting path of new collection, %1"
-msgstr ""
+msgstr "取得新收藏的路徑時發生錯誤，%1"
 
 #: src/createcommand.cpp:158
 #, kde-format
 msgid "Created new collection '%1'"
-msgstr ""
+msgstr "已建立新收藏 '%1'"
 
 #: src/deletecommand.cpp:40
 #, kde-format
 msgid "Delete a collection or an item"
-msgstr ""
+msgstr "刪除一個收藏或項目"
 
 #: src/deletecommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection or item"
-msgstr ""
+msgstr "收藏或項目"
 
 #: src/deletecommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection/item argument"
-msgstr ""
+msgstr "缺乏收藏/項目引數"
 
 #: src/deletecommand.cpp:103
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot delete the root collection"
-msgstr ""
+msgstr "無法刪除根收藏"
 
 #: src/deletecommand.cpp:119
 #, kde-format
 msgid "Collection deleted successfully"
-msgstr ""
+msgstr "成功刪除收藏"
 
 #: src/deletecommand.cpp:127 src/infocommand.cpp:150
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item/collection syntax '%1'"
-msgstr ""
+msgstr "無效的項目/收藏語法 '%1'"
 
 #: src/deletecommand.cpp:149 src/infocommand.cpp:177
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
-msgstr ""
+msgstr "找不到 '%1' 這個收藏或項目"
 
 #: src/deletecommand.cpp:160
 #, kde-format
 msgid "Item deleted successfully"
-msgstr ""
+msgstr "成功刪除項目"
 
 #: src/dumpcommand.cpp:47
 #, kde-format
 msgid "Dump a collection to a directory structure"
-msgstr ""
+msgstr "將收藏傾印至一個目錄結構"
 
 #: src/dumpcommand.cpp:59
 #, kde-format
 msgid "Dump email messages in maildir directory structure"
-msgstr ""
+msgstr "將電郵信件傾印至 maildir 目錄結構"
 
 #: src/dumpcommand.cpp:60
 #, kde-format
 msgid "Dump items with Akonadi category URLs, otherwise text names"
-msgstr ""
+msgstr "使用 Akonadi 分類 URL 傾印項目，否則使用文字名稱"
 
 #: src/dumpcommand.cpp:61
 #, kde-format
 msgid "Operate even if destination directory is not empty"
-msgstr ""
+msgstr "即使目的地目錄非空白也繼續進行操作"
 
 #: src/dumpcommand.cpp:64
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to dump: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "要傾印的收藏：一個 ID、路徑或 Akonadi URL"
 
 #: src/dumpcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "The destination directory to dump to"
-msgstr ""
+msgstr "要傾印到的目的地目錄"
 
 #: src/dumpcommand.cpp:72 src/exportcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
-msgstr ""
+msgstr "未指定收藏"
 
 #: src/dumpcommand.cpp:73
 #, kde-format
 msgctxt "@info:shell"
 msgid "No destination directory specified"
-msgstr ""
+msgstr "未指定目的地目錄"
 
 #: src/dumpcommand.cpp:86
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' not found or not a directory"
-msgstr ""
+msgstr "目錄 '%1' 不存在或不是目錄"
 
 #: src/dumpcommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
-msgstr ""
+msgstr "目錄 '%1' 非空白（用 '-f' 來強制執行操作）"
 
 #: src/dumpcommand.cpp:120 src/listcommand.cpp:179
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
-msgstr ""
+msgstr "收藏 %1 不能包含項目"
 
 #: src/dumpcommand.cpp:146
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 contains no items"
-msgstr ""
+msgstr "收藏 %1 沒有包含任何項目"
 
 #: src/dumpcommand.cpp:205 src/editcommand.cpp:101 src/showcommand.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no payload"
-msgstr ""
+msgstr "項目 '%1' 沒有負載"
 
 #: src/dumpcommand.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create directory '%1/%2'"
-msgstr ""
+msgstr "無法建立目錄 '%1/%2'"
 
 #: src/dumpcommand.cpp:332
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save file '%1'"
-msgstr ""
+msgstr "無法儲存檔案 '%1'"
 
 #: src/editcommand.cpp:37
 #, kde-format
 msgid "Edit the raw payload for the specified item using $EDITOR"
-msgstr ""
+msgstr "用 $EDITOR 環境變數內的編輯器編輯指定項目的原始負載 (payload)"
 
 #: src/editcommand.cpp:55
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to edit"
-msgstr ""
+msgstr "要編輯的項目"
 
 #: src/editcommand.cpp:61 src/updatecommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "No item specified"
-msgstr ""
+msgstr "未指定項目"
 
 #: src/editcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result found for item '%1'"
-msgstr ""
+msgstr "找不到項目 '%1' 的結果"
 
 #: src/editcommand.cpp:108
 #, kde-format
 msgctxt "@info:shell"
 msgid "EDITOR environment variable needs to be set"
-msgstr ""
+msgstr "必須設定 EDITOR 環境變數"
 
 #: src/editcommand.cpp:122
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot launch text editor '%1'"
-msgstr ""
+msgstr "無法啟動文字編輯器 '%1'"
 
 #: src/editcommand.cpp:141
 #, kde-format
 msgctxt "@info:shell"
 msgid "Changes to item '%1' have been saved"
-msgstr ""
+msgstr "項目 '%1' 的變更已儲存"
 
 #: src/exportcommand.cpp:31
 #, kde-format
 msgid "Export a collection to an XML file"
-msgstr ""
+msgstr "將收藏匯出到 XML 檔"
 
 #: src/exportcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to export: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "要匯出的收藏：一個 ID、路徑或 Akonadi URL"
 
 #: src/exportcommand.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to export to"
-msgstr ""
+msgstr "要匯出到的檔案"
 
 #: src/exportcommand.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "No export file specified"
-msgstr ""
+msgstr "未指定匯出檔案"
 
 #: src/groupcommand.cpp:39
 #, kde-format
 msgid "Expand or modify a contact group"
-msgstr ""
+msgstr "展開或修改一個聯絡人群組"
 
 #: src/groupcommand.cpp:57
 #, kde-format
 msgid "Show the expanded contact group (the default operation)"
-msgstr ""
+msgstr "顯示展開後的聯絡人群組（預設操作）"
 
 #: src/groupcommand.cpp:58
 #, kde-format
 msgid "Add a contact to the group"
-msgstr ""
+msgstr "將聯絡人加入到群組裡"
 
 #: src/groupcommand.cpp:59
 #, kde-format
 msgid "Delete a contact from the group"
-msgstr ""
+msgstr "從群組刪除一個聯絡人"
 
 #: src/groupcommand.cpp:60
 #, kde-format
 msgid "Remove unknown item references from the group"
-msgstr ""
+msgstr "從群組移除未知的項目參照"
 
 #: src/groupcommand.cpp:61
 #, kde-format
 msgid "Email comment (name) for an added item"
-msgstr ""
+msgstr "已新增項目的電郵註解（名稱）"
 
 #: src/groupcommand.cpp:61
 #, kde-format
 msgid "name"
-msgstr ""
+msgstr "名稱"
 
 #: src/groupcommand.cpp:62
 #, kde-format
 msgid "Brief output (for 'expand', email addresses only)"
-msgstr ""
+msgstr "簡短輸出（'expand' 用，僅電子郵件地址）"
 
 #: src/groupcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
-msgstr ""
+msgstr "聯絡人群組項目，一個 ID 或 Akonadi URL"
 
 #: src/groupcommand.cpp:66
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for the operation"
-msgstr ""
+msgstr "操作的引數"
 
 #: src/groupcommand.cpp:66
 #, kde-format
 msgid "args..."
-msgstr ""
+msgstr "引數..."
 
 #: src/groupcommand.cpp:72
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing group argument"
-msgstr ""
+msgstr "缺乏群組引數"
 
 #: src/groupcommand.cpp:90
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"
-msgstr ""
+msgstr "'expand'、'add'、'delete' 與 'clean' 選項一次只能指定一個"
 
 #: src/groupcommand.cpp:101
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to add"
-msgstr ""
+msgstr "未指定要新增的項目"
 
 #: src/groupcommand.cpp:110
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one item may be specified to add with 'comment'"
-msgstr ""
+msgstr "用 'comment' 時只能指定一個要新增的項目"
 
 #: src/groupcommand.cpp:119
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to delete"
-msgstr ""
+msgstr "未指定要刪除的項目"
 
 #: src/groupcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'comment' option is only allowed with 'add'"
-msgstr ""
+msgstr "'comment' 項目只在使用 'add' 時才能使用"
 
 #: src/groupcommand.cpp:182
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as an item"
-msgstr ""
+msgstr "找不到 '%1' 這個項目"
 
 #: src/groupcommand.cpp:189
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' is not a contact group"
-msgstr ""
+msgstr "項目 '%1' 不是聯絡人群組"
 
 #: src/groupcommand.cpp:195
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no contact group payload"
-msgstr ""
+msgstr "項目 '%1' 沒有聯絡人群組負載"
 
 #: src/groupcommand.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "Errors occurred, group not updated"
-msgstr ""
+msgstr "發生錯誤，群組沒有被更新"
 
 #: src/groupcommand.cpp:277
 #, kde-format
 msgctxt "@info:shell"
 msgid "(unknown referenced item)"
-msgstr ""
+msgstr "（未知的參照項目）"
 
 #: src/groupcommand.cpp:284 src/groupcommand.cpp:305
 #, kde-format
 msgctxt "@info:shell"
 msgid "(item has no Addressee payload)"
-msgstr ""
+msgstr "（項目沒有 Addressee 負載）"
 
 #: src/groupcommand.cpp:324
 #, kde-format
 msgctxt "@item:shell"
 msgid "(invalid referenced item)"
-msgstr ""
+msgstr "（無效的參照項目）"
 
 #: src/groupcommand.cpp:326
 #, kde-format
 msgctxt "@item:shell"
 msgid "(unknown referenced item)"
-msgstr ""
+msgstr "（未知的參照項目）"
 
 #: src/groupcommand.cpp:377
 #, kde-format
@@ -984,38 +984,38 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" has %2 groups, %3 references and %4 data items:"
-msgstr ""
+msgstr "群組 %1「%5」有 %2 個群組、%3 個參照和 %4 個資料項目："
 
 #: src/groupcommand.cpp:386
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Type"
-msgstr ""
+msgstr "類型"
 
 #: src/groupcommand.cpp:387 src/listcommand.cpp:139 src/listcommand.cpp:208
 #: src/tagscommand.cpp:320
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: src/groupcommand.cpp:388
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Email"
-msgstr ""
+msgstr "電子郵件"
 
 #: src/groupcommand.cpp:389 src/listcommand.cpp:140 src/tagscommand.cpp:322
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #: src/groupcommand.cpp:423
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items could be fetched"
-msgstr ""
+msgstr "沒有可取得的項目"
 
 #: src/groupcommand.cpp:483
 #, kde-format
@@ -1023,31 +1023,31 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Adding to group %1 \"%2\":"
-msgstr ""
+msgstr "正在加入到群組 %1「%2」："
 
 #: src/groupcommand.cpp:497 src/groupcommand.cpp:611
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot search for email '%1', %2"
-msgstr ""
+msgstr "無法搜尋 email '%1'，%2"
 
 #: src/groupcommand.cpp:509
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple contacts found for '%1', using the first one"
-msgstr ""
+msgstr "為 '%1' 找到了多個聯絡人，使用第一個"
 
 #: src/groupcommand.cpp:544
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch requested item %1, %2"
-msgstr ""
+msgstr "無法取得要求的項目 %1，%2"
 
 #: src/groupcommand.cpp:555
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item %1 is not a contact item"
-msgstr ""
+msgstr "項目 %1 不是聯絡人項目"
 
 #: src/groupcommand.cpp:571 src/groupcommand.cpp:654 src/groupcommand.cpp:702
 #, kde-format
@@ -1055,7 +1055,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" now has %2 groups, %3 references and %4 data items"
-msgstr ""
+msgstr "群組 %1「%5」現在有 %2 個群組、%3 個參照和 %4 個資料項目"
 
 #: src/groupcommand.cpp:589
 #, kde-format
@@ -1063,13 +1063,13 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Removing from group %1 \"%2\":"
-msgstr ""
+msgstr "正在從群組 %1「%2」移除："
 
 #: src/groupcommand.cpp:626
 #, kde-format
 msgctxt "@info:shell"
 msgid "Nothing to remove for email '%1'"
-msgstr ""
+msgstr "沒有可為 email '%1' 移除的東西"
 
 #: src/groupcommand.cpp:670
 #, kde-format
@@ -1077,461 +1077,461 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Cleaning references from group %1 \"%2\":"
-msgstr ""
+msgstr "正在清理群組 %1「%2」內的參照："
 
 #: src/importcommand.cpp:39
 #, kde-format
 msgid "Import an XML file"
-msgstr ""
+msgstr "匯入 XML 檔"
 
 #: src/importcommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "The parent collection under which to import the file"
-msgstr ""
+msgstr "要將檔案匯入到的親收藏"
 
 #: src/importcommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to import"
-msgstr ""
+msgstr "要匯入的檔案"
 
 #: src/importcommand.cpp:64
 #, kde-format
 msgctxt "@info:shell"
 msgid "No parent collection specified"
-msgstr ""
+msgstr "未指定親收藏名稱"
 
 #: src/importcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "No import file specified"
-msgstr ""
+msgstr "未指定匯入檔案"
 
 #: src/importcommand.cpp:74
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid XML file, %1"
-msgstr ""
+msgstr "無效的 XML 檔，%1"
 
 #: src/importcommand.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch parent collection, %1"
-msgstr ""
+msgstr "無法取得親收藏，%1"
 
 #: src/importcommand.cpp:99
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch children of parent collection, %1"
-msgstr ""
+msgstr "無法取得親收藏下的子項目，%1"
 
 #: src/importcommand.cpp:117
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection '%1' already exists"
-msgstr ""
+msgstr "收藏 '%1' 已存在"
 
 #: src/importcommand.cpp:121
 #, kde-format
 msgctxt "@info:shell"
 msgid "Creating collection '%1'"
-msgstr ""
+msgstr "正在建立收藏 '%1'"
 
 #: src/importcommand.cpp:143
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing collection '%1'"
-msgstr ""
+msgstr "正在處理收藏 '%1'"
 
 #: src/importcommand.cpp:150
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parent for collection with remote ID '%1'"
-msgstr ""
+msgstr "對於遠端 ID 是 '%1' 的收藏是無效的親收藏"
 
 #: src/importcommand.cpp:172
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
-msgstr ""
+msgstr "無法取得遠端 ID 是 '%1' 的收藏，%2"
 
 #: src/importcommand.cpp:191
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
-msgstr ""
+msgstr "無法建立遠端 ID 是 '%1' 的收藏"
 
 #: src/importcommand.cpp:208
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing items for '%1'"
-msgstr ""
+msgstr "正在為 '%1' 處理項目"
 
 #: src/importcommand.cpp:230
 #, kde-format
 msgctxt "@info:shell"
 msgid "Error creating item, %1"
-msgstr ""
+msgstr "建立項目時發生錯誤，%1"
 
 #: src/importcommand.cpp:232
 #, kde-format
 msgctxt "@info:shell"
 msgid "Created item '%1'"
-msgstr ""
+msgstr "已建立項目 '%1'"
 
 #: src/infocommand.cpp:38
 #, kde-format
 msgid "Show full information for a collection or item"
-msgstr ""
+msgstr "為收藏或項目顯示完整資訊"
 
 #: src/infocommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
-msgstr ""
+msgstr "要顯示的收藏或項目"
 
 #: src/infocommand.cpp:60
 #, kde-format
 msgid "entity..."
-msgstr ""
+msgstr "實體..."
 
 #: src/infocommand.cpp:66
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
-msgstr ""
+msgstr "未指定收藏或項目"
 
 #: src/infocommand.cpp:120
 #, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
-msgstr ""
+msgstr "收藏根沒有可用的資訊"
 
 #: src/infocommand.cpp:220 src/infocommand.cpp:266
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: src/infocommand.cpp:221 src/infocommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: src/infocommand.cpp:222 src/infocommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "Parent"
-msgstr ""
+msgstr "親"
 
 #: src/infocommand.cpp:223 src/infocommand.cpp:269 src/infocommand.cpp:301
 #, kde-format
 msgctxt "@info:shell"
 msgid "Type"
-msgstr ""
+msgstr "類型"
 
 #: src/infocommand.cpp:223
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Collection"
-msgstr ""
+msgstr "收藏"
 
 #: src/infocommand.cpp:224
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #: src/infocommand.cpp:225
 #, kde-format
 msgctxt "@info:shell"
 msgid "Owner"
-msgstr ""
+msgstr "擁有者"
 
 #: src/infocommand.cpp:226 src/infocommand.cpp:270
 #, kde-format
 msgctxt "@info:shell"
 msgid "MIME"
-msgstr ""
+msgstr "MIME"
 
 #: src/infocommand.cpp:227 src/infocommand.cpp:274
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
-msgstr ""
+msgstr "遠端 ID"
 
 #: src/infocommand.cpp:232
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
-msgstr ""
+msgstr "唯讀"
 
 #: src/infocommand.cpp:235
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
-msgstr ""
+msgstr "變更項目"
 
 #: src/infocommand.cpp:238
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
-msgstr ""
+msgstr "建立項目"
 
 #: src/infocommand.cpp:241
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
-msgstr ""
+msgstr "刪除項目"
 
 #: src/infocommand.cpp:244
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
-msgstr ""
+msgstr "變更收藏"
 
 #: src/infocommand.cpp:247
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
-msgstr ""
+msgstr "建立收藏"
 
 #: src/infocommand.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
-msgstr ""
+msgstr "刪除收藏"
 
 #: src/infocommand.cpp:253
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
-msgstr ""
+msgstr "連結項目"
 
 #: src/infocommand.cpp:256
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
-msgstr ""
+msgstr "取消項目連結"
 
 #: src/infocommand.cpp:258
 #, kde-format
 msgctxt "@info:shell"
 msgid "Rights"
-msgstr ""
+msgstr "權限"
 
 #: src/infocommand.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Count"
-msgstr ""
+msgstr "數量"
 
 #: src/infocommand.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unread"
-msgstr ""
+msgstr "未讀"
 
 #: src/infocommand.cpp:264 src/infocommand.cpp:298
 #, kde-format
 msgctxt "@info:shell"
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: src/infocommand.cpp:269
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Item"
-msgstr ""
+msgstr "項目"
 
 #: src/infocommand.cpp:272
 #, kde-format
 msgctxt "@info:shell"
 msgid "Modified"
-msgstr ""
+msgstr "修改時間"
 
 #: src/infocommand.cpp:273
 #, kde-format
 msgctxt "@info:shell"
 msgid "Revision"
-msgstr ""
+msgstr "版本"
 
 #: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
-msgstr ""
+msgstr "負載 (payload)"
 
 #: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "yes"
-msgstr ""
+msgstr "是"
 
 #: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "no"
-msgstr ""
+msgstr "否"
 
 #: src/infocommand.cpp:283 src/infocommand.cpp:293
 #, kde-format
 msgctxt "@info:shell"
 msgid "(none)"
-msgstr ""
+msgstr "（無）"
 
 #: src/infocommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "Flags"
-msgstr ""
+msgstr "旗標"
 
 #: src/infocommand.cpp:295
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tags"
-msgstr ""
+msgstr "標籤"
 
 #: src/infocommand.cpp:301
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: src/listcommand.cpp:36
 #, kde-format
 msgid "List sub-collections and/or items in a specified collection"
-msgstr ""
+msgstr "列出指定的收藏內的子收藏和/或項目"
 
 #: src/listcommand.cpp:46
 #, kde-format
 msgid "List more detailed information"
-msgstr ""
+msgstr "列出更多詳細資訊"
 
 #: src/listcommand.cpp:47
 #, kde-format
 msgid "List only sub-collections"
-msgstr ""
+msgstr "只列出子收藏"
 
 #: src/listcommand.cpp:48
 #, kde-format
 msgid "List only contained items"
-msgstr ""
+msgstr "只列出包含的項目"
 
 #: src/listcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "要列出的收藏：一個 ID、路徑或 Akonadi URL"
 
 #: src/listcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
-msgstr ""
+msgstr "收藏 %1 沒有子收藏"
 
 #: src/listcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
-msgstr[0] ""
+msgstr[0] "收藏 %2 有 %1 個子收藏："
 
 #: src/listcommand.cpp:195
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
-msgstr ""
+msgstr "收藏 %1 沒有項目"
 
 #: src/listcommand.cpp:202
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
-msgstr[0] ""
+msgstr[0] "收藏 %2 有 %1 個項目："
 
 #: src/listcommand.cpp:209
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
-msgstr ""
+msgstr "MIME 類型"
 
 #: src/listcommand.cpp:210
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: src/listcommand.cpp:211
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"
-msgstr ""
+msgstr "變更時間"
 
 #: src/main.cpp:42
 #, kde-format
 msgctxt "@title program name"
 msgid "Akonadi Client"
-msgstr ""
+msgstr "Akonadi 用戶端"
 
 #: src/main.cpp:48
 #, kde-format
 msgctxt "@info:shell short description"
 msgid "A command-line/shell client for Akonadi"
-msgstr ""
+msgstr "Akonadi 用的命令列用戶端"
 
 #: src/main.cpp:52
 #, kde-format
 msgid "Kevin Krammer"
-msgstr ""
+msgstr "Kevin Krammer"
 
 #: src/main.cpp:52
 #, kde-format
 msgctxt "@title about data task"
 msgid "Original Author"
-msgstr ""
+msgstr "原始作者"
 
 #: src/main.cpp:53
 #, kde-format
 msgid "Jonathan Marten"
-msgstr ""
+msgstr "Jonathan Marten"
 
 #: src/main.cpp:53
 #, kde-format
 msgctxt "@title about data task"
 msgid "Additions and new commands"
-msgstr ""
+msgstr "新功能和新命令"
 
 #: src/main.cpp:54
 #, kde-format
 msgid "Bhaskar Kandiyal"
-msgstr ""
+msgstr "Bhaskar Kandiyal"
 
 #: src/main.cpp:54
 #, kde-format
 msgctxt "@title about data task"
 msgid "New commands, GSOC 2014"
-msgstr ""
+msgstr "新命令，GSOC 2014"
 
 #: src/main.cpp:64
 #, kde-format
 msgctxt "@info:shell"
 msgid "Command to execute"
-msgstr ""
+msgstr "要執行的命令"
 
 #: src/main.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for command"
-msgstr ""
+msgstr "命令的引數"
 
 #: src/main.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "[args]"
-msgstr ""
+msgstr "[引數]"
 
 #: src/main.cpp:86
 #, kde-format
@@ -1540,236 +1540,238 @@ msgid ""
 "See '%1 help' for available commands.\n"
 "See '%1 help command' for information on a specific command."
 msgstr ""
+"可用命令請參見 '%1 help'。\n"
+"指定命令的資訊請參見 '%1 help 命令'。"
 
 #: src/movecommand.cpp:27
 #, kde-format
 msgid "Move collections or items into a new collection"
-msgstr ""
+msgstr "移動收藏或項目到新收藏裡"
 
 #: src/movecommand.cpp:40
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to move"
-msgstr ""
+msgstr "要移動的既存收藏或項目"
 
 #: src/movecommand.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to move into"
-msgstr ""
+msgstr "要移動到的目標收藏"
 
 #: src/renamecommand.cpp:33
 #, kde-format
 msgid "Rename a collection"
-msgstr ""
+msgstr "重新命名收藏"
 
 #: src/renamecommand.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to rename"
-msgstr ""
+msgstr "要重新命名的收藏"
 
 #: src/renamecommand.cpp:46
 #, kde-format
 msgctxt "@info:shell"
 msgid "New name for collection"
-msgstr ""
+msgstr "收藏的新名稱"
 
 #: src/renamecommand.cpp:53
 #, kde-format
 msgctxt "@info:shell"
 msgid "New name not specified"
-msgstr ""
+msgstr "未指定新名稱"
 
 #: src/renamecommand.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection renamed successfully"
-msgstr ""
+msgstr "成功為收藏進行重新命名"
 
 #: src/showcommand.cpp:34
 #, kde-format
 msgid "Show the raw payload of an item"
-msgstr ""
+msgstr "顯示項目的原始負載 (payload)"
 
 #: src/showcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The items to show"
-msgstr ""
+msgstr "要顯示的項目"
 
 #: src/showcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "item..."
-msgstr ""
+msgstr "項目..."
 
 #: src/showcommand.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "Use raw payload (disables quoted-printable decoding)"
-msgstr ""
+msgstr "使用原始負載（停用「加上引號、可印」的解碼）"
 
 #: src/showcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified"
-msgstr ""
+msgstr "未指定項目"
 
 #: src/showcommand.cpp:87 src/updatecommand.cpp:113
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result returned for item '%1'"
-msgstr ""
+msgstr "沒有回傳項目「%1」的結果"
 
 #: src/showcommand.cpp:102
 #, kde-format
 msgid "Item has no main body part"
-msgstr ""
+msgstr "項目沒有主要內文部分"
 
 #: src/tagscommand.cpp:31
 #, kde-format
 msgid "List or modify tags"
-msgstr ""
+msgstr "列出或修改標籤"
 
 #: src/tagscommand.cpp:45
 #, kde-format
 msgid "Brief output, tag names or IDs only"
-msgstr ""
+msgstr "簡短輸出，僅標籤名稱或 ID"
 
 #: src/tagscommand.cpp:46
 #, kde-format
 msgid "Brief output, tag URLs only"
-msgstr ""
+msgstr "簡短輸出，僅標籤的 URL"
 
 #: src/tagscommand.cpp:48
 #, kde-format
 msgid "List all known tags (the default operation)"
-msgstr ""
+msgstr "列出所有已知標籤（預設操作）"
 
 #: src/tagscommand.cpp:49
 #, kde-format
 msgid "Add named tags"
-msgstr ""
+msgstr "新增具名標籤"
 
 #: src/tagscommand.cpp:50
 #, kde-format
 msgid "Delete tags"
-msgstr ""
+msgstr "刪除標籤"
 
 #. i18n("ID for a tag to be added (default automatic)"), i18n("id")));
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "TAG"
-msgstr ""
+msgstr "標籤"
 
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
-msgstr ""
+msgstr "要新增的標籤的名稱，或者是要刪除的標籤的名稱、ID 或 URL"
 
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "[TAG...]"
-msgstr ""
+msgstr "[標籤...]"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr ""
+msgstr "'brief' 與 'urls' 選項不能兩者同時指定"
 
 #: src/tagscommand.cpp:90
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
-msgstr ""
+msgstr "'list'、'add' 與 'delete' 選項一次只能指定一個"
 
 #: src/tagscommand.cpp:106
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
-msgstr ""
+msgstr "未指定要新增的標籤"
 
 #: src/tagscommand.cpp:112
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr ""
+msgstr "不能用 'id' 指定要新增多個標籤"
 
 #: src/tagscommand.cpp:123
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
-msgstr ""
+msgstr "未指定要刪除的標籤"
 
 #: src/tagscommand.cpp:154
 #, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr ""
+msgstr "名為「%1」(ID %2) 的標籤已經存在"
 
 #: src/tagscommand.cpp:178
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1' ID %2"
-msgstr ""
+msgstr "無法新增標籤「%1」ID %2"
 
 #: src/tagscommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1'"
-msgstr ""
+msgstr "無法新增標籤「%1」"
 
 #: src/tagscommand.cpp:231
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
-msgstr ""
+msgstr "要刪除的標籤「%1」不存在"
 
 #: src/tagscommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete ID %1 does not exist"
-msgstr ""
+msgstr "要刪除的標籤 (ID %1) 不存在"
 
 #: src/tagscommand.cpp:308
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags found"
-msgstr ""
+msgstr "找不到標籤"
 
 #: src/tagscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: src/updatecommand.cpp:35
 #, kde-format
 msgid "Update an item's payload from a file"
-msgstr ""
+msgstr "從檔案更新一個項目的負載"
 
 #: src/updatecommand.cpp:53
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to update, an ID or Akonadi URL"
-msgstr ""
+msgstr "要更新的項目，一個 ID 或 Akonadi URL"
 
 #: src/updatecommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to update the item from"
-msgstr ""
+msgstr "要從哪個檔案更新項目"
 
 #: src/updatecommand.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file specified"
-msgstr ""
+msgstr "未指定檔案"
 
 #: src/updatecommand.cpp:132
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item updated successfully"
-msgstr ""
+msgstr "成功更新項目"
