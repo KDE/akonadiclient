@@ -1,19 +1,20 @@
 # Simon Depiets <sdepiets@gmail.com>, 2018, 2019.
 # Xavier Besnard <xavier.besnard@neuf.fr>, 2020, 2021, 2022.
+# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-07 00:46+0000\n"
-"PO-Revision-Date: 2022-04-28 13:51+0200\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2023-01-27 18:51+0100\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -718,7 +719,7 @@ msgstr "Vider une collection dans la structure de dossiers"
 #, kde-format
 msgid "Dump email messages in maildir directory structure"
 msgstr ""
-"Copier (dump) les messages de courriel dans la structure de dossiers maildir"
+"Recopier les messages de courriels dans la structure de dossiers « maildir »"
 
 #: src/dumpcommand.cpp:60
 #, kde-format
@@ -738,7 +739,7 @@ msgctxt "@info:shell"
 msgid "The collection to dump: an ID, path or Akonadi URL"
 msgstr ""
 "La collection à laquelle les éléments doivent être ajoutés : ID, emplacement "
-"ou URL d'Akonadi"
+"ou URL associée à Akonadi"
 
 #: src/dumpcommand.cpp:65
 #, kde-format
@@ -904,7 +905,7 @@ msgstr "nom"
 #: src/groupcommand.cpp:62
 #, kde-format
 msgid "Brief output (for 'expand', email addresses only)"
-msgstr "Sortie brève (pour « expand », uniquement les adresses de courriel)"
+msgstr "Sortie brève (pour « expand », uniquement les adresses de courriels)"
 
 #: src/groupcommand.cpp:65
 #, kde-format
@@ -1185,19 +1186,21 @@ msgstr "Traitement de la collection « %1 »"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parent for collection with remote ID '%1'"
-msgstr "Parent non valable pour la collection portant l'ID distant « %1 »."
+msgstr ""
+"Parent non valable pour la collection avec l'identifiant distant « %1 »."
 
 #: src/importcommand.cpp:172
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
-msgstr "Impossible de recevoir la collection portant l'ID distant « %1 », %2"
+msgstr ""
+"Impossible de recevoir la collection avec l'identifiant distant « %1 », %2"
 
 #: src/importcommand.cpp:191
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
-msgstr "Impossible de créer la collection portant l'ID distant « %1 »"
+msgstr "Impossible de créer la collection avec l'identifiant distant « %1 »"
 
 #: src/importcommand.cpp:208
 #, kde-format
@@ -1463,7 +1466,7 @@ msgstr "Lister uniquement les éléments contenus"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
-msgstr "La collection à lister : ID, emplacement ou URL d'Akonadi"
+msgstr "La collection à lister : ID, emplacement ou URL associée à Akonadi"
 
 #: src/listcommand.cpp:124
 #, kde-format
@@ -1727,7 +1730,7 @@ msgstr "[ÉTIQUETTE...]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr "Impossible de spécifié simultanément les options « brief » et « urls »"
+msgstr "Impossible de spécifié simultanément les options « brief » et « url »"
 
 #: src/tagscommand.cpp:90
 #, kde-format
