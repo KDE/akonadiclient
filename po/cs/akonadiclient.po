@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Vit Pelcak <vit@pelcak.org>, 2018, 2019, 2021.
+# Vit Pelcak <vit@pelcak.org>, 2018, 2019, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-07 00:46+0000\n"
-"PO-Revision-Date: 2021-09-15 22:38+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2023-02-03 16:56+0100\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -523,18 +523,18 @@ msgstr ""
 msgctxt "@info:shell"
 msgid "Moving %1 sub-collection"
 msgid_plural "Moving %1 sub-collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Přesunuji %1 podsbírku"
+msgstr[1] "Přesunuji %1 podsbírky"
+msgstr[2] "Přesunuji %1 podsbírek"
 
 #: src/copycommand.cpp:218
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 sub-collection"
 msgid_plural "Copying %1 sub-collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Kopíruji %1 podsbírku"
+msgstr[1] "Kopíruji %1 podsbírky"
+msgstr[2] "Kopíruji %1 podsbírek"
 
 #: src/copycommand.cpp:234
 #, kde-format
@@ -563,18 +563,18 @@ msgstr ""
 msgctxt "@info:shell"
 msgid "Moving %1 item"
 msgid_plural "Moving %1 items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Přesunuji %1 položku"
+msgstr[1] "Přesunuji %1 položky"
+msgstr[2] "Přesunuji %1 položek"
 
 #: src/copycommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 item"
 msgid_plural "Copying %1 items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Kopíruji %1 položku"
+msgstr[1] "Kopíruji %1 položky"
+msgstr[2] "Kopíruji %1 položek"
 
 #: src/copycommand.cpp:320
 #, kde-format
@@ -1202,7 +1202,7 @@ msgstr ""
 #: src/infocommand.cpp:60
 #, kde-format
 msgid "entity..."
-msgstr ""
+msgstr "entita..."
 
 #: src/infocommand.cpp:66
 #, kde-format
@@ -1667,7 +1667,7 @@ msgstr ""
 #: src/tagscommand.cpp:50
 #, kde-format
 msgid "Delete tags"
-msgstr ""
+msgstr "Smazat značky"
 
 #. i18n("ID for a tag to be added (default automatic)"), i18n("id")));
 #: src/tagscommand.cpp:55
