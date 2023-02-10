@@ -1,0 +1,921 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Spanish "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Página man de akonadiclient</title>
+<author
+><firstname
+>Bhaskar</firstname
+> <surname
+>Kandiyal</surname
+> <contrib
+>akonadiclient man page.</contrib
+> <email
+>bkandiyal@gmail.com</email
+></author>
+<date
+>2018-07-26</date>
+<productname
+>AkonadiClient</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>akonadiclient</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>akonadiclient</command
+></refname>
+<refpurpose
+>Un cliente de la línea de órdenes para Akonadi</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>akonadiclient</command
+> <arg choice="opt"
+>orden</arg
+> <arg choice="opt"
+>--help</arg
+> <arg choice="opt"
+>--version</arg
+> <arg choice="opt"
+>Opciones generales de &kde;</arg
+> <arg choice="opt"
+>Opciones generales de Qt</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descripción</title>
+<para
+>akonadiclient es un cliente de la línea de órdenes para manejar el almacén de datos de Akonadi de KDE. Proporciona un método fácil para manejar los datos de Akonadi usando la línea de órdenes. Por ejemplo, añadir elementos, colecciones, cambiar de nombre o mover colecciones, además de controlar los agentes de Akonadi.</para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Órdenes</title>
+	<refsect2>
+		<title
+>Órdenes del sistema de archivos</title>
+		<variablelist>
+
+		<varlistentry>
+		<term
+><option
+>copy</option
+></term>
+		<listitem>
+		<para
+>akonadiclient copy [OPCIONES] ORIGEN DESTINO</para>
+		<para
+>Se usa para copiar colecciones o elementos de una colección a otra.</para>
+		<para
+>Opciones:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>create</option
+></term>
+		<listitem>
+		<para
+>akonadiclient create [OPCIONES] COLECCIÓN</para>
+		<para
+>Crea una nueva colección. Tenga en cuenta que las colecciones de nivel superior solo las puede crear un recurso de Akonadi.</para>
+		<para
+>Opciones:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-p, --parent <replaceable
+>colección</replaceable
+></option
+></term>
+			<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+			</varlistentry>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>delete</option
+></term>
+		<listitem>
+		<para
+>akonadiclient delete [OPCIONES] COLECCIÓN | ELEMENTO</para>
+		<para
+>Borra una colección o un elemento.</para>
+		<para
+>Opciones:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-c, --collection</option
+></term>
+			<listitem
+><para
+>Asumir que se ha indicado una colección como argumento</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --item</option
+></term>
+			<listitem
+><para
+>Asumir que se ha indicado un elemento como argumento</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>list</option
+></term>
+		<listitem>
+		<para
+>akonadiclient list [OPCIONES] COLECCIÓN</para>
+		<para
+>Borra una colección o un elemento.</para>
+		<para
+>Opciones:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-l, --details</option
+></term>
+			<listitem
+><para
+>Listar información más detallada</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-c, --collections</option
+></term>
+			<listitem
+><para
+>Listar solo las subcolecciones</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --items</option
+></term>
+			<listitem
+><para
+>Listar solo los elementos que contiene</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>move</option
+></term>
+		<listitem>
+		<para
+>akonadiclient move [OPCIONES] ORIGEN DESTINO</para>
+		<para
+>Mover colecciones o elementos a otra colección.</para>
+		<para
+>Opciones:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>rename</option
+></term>
+		<listitem>
+		<para
+>akonadiclient rename [OPCIONES] COLECCIÓN NOMBRE</para>
+		<para
+>Cambia el nombre de una colección a NOMBRE</para>
+		<para
+>Opciones:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Órdenes de datos</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>add</option
+></term>
+				<listitem>
+				<para
+>akonadiclient add [OPCIONES] COLECCIÓN ARCHIVOS</para>
+				<para
+>Añadir elementos a la colección indicada</para>
+				<para
+>Opciones:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --base <replaceable
+>directorio</replaceable
+></option
+></term>
+					<listitem
+><para
+>Directorio base para archivos/directorios de entrada; el actual por omisión</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --flat</option
+></term>
+					<listitem
+><para
+>Modo plano; no duplicar la estructura de subdirectorios</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-m, --mime <replaceable
+>tipo-MIME</replaceable
+></option
+></term>
+					<listitem
+><para
+>Tipo MIME a usar (en lugar de detectarlo automáticamente)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+                        <varlistentry>
+				<term
+><option
+>dump</option
+></term>
+				<listitem>
+				<para
+>akonadiclient dump [OPCIONES] COLECCIÓN DIRECTORIO</para>
+				<para
+>Volcar una colección en una estructura de directorios</para>
+				<para
+>Opciones:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-m, --maildir</option
+></term>
+					<listitem
+><para
+>Volcar mensajes de correo electrónico en la estructura de directorios maildir</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --akonadi-categories</option
+></term>
+					<listitem
+><para
+>Volcar elementos con categorías de Akonadi, o texto en caso contrario</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --force</option
+></term>
+					<listitem
+><para
+>Operar incluso si el directorio de destino no está vacío</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>edit</option
+></term>
+				<listitem>
+				<para
+>akonadiclient edit [OPCIONES] ELEMENTO</para>
+				<para
+>Abre la carga útil del ELEMENTO en el editor de texto indicado por la variable de entorno $EDITOR</para>
+				<para
+>Opciones:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>expand</option
+></term>
+				<listitem>
+				<para
+>akonadiclient expand [OPCIONES] ELEMENTO</para>
+				<para
+>Expande un elemento de grupo de contactos</para>
+				<para
+>Opciones:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Salida breve (solo direcciones de correo electrónico)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>export</option
+></term>
+				<listitem>
+				<para
+>akonadiclient export [OPCIONES] COLECCIÓN ARCHIVO</para>
+				<para
+>Exportar la colección indicada por COLECCIÓN en un archivo XML indicado por ARCHIVO.</para>
+				<para
+>Opciones:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+                        
+                        <varlistentry>
+				<term
+><option
+>group</option
+></term>
+				<listitem>
+				<para
+>akonadiclient group [OPCIONES] GRUPO ARGUMENTOS</para>
+				<para
+>Expandir o modificar un GRUPO de contactos</para>
+				<para
+>Opciones:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-e, --expand</option
+></term>
+					<listitem
+><para
+>Mostrar el grupo de contactos expandido (la operación predeterminada)</para
+></listitem>
+					</varlistentry>
+                                        
+                                        <varlistentry>
+					<term
+><option
+>-a, --add</option
+></term>
+					<listitem
+><para
+>Añadir un contacto al grupo</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-d, --delete</option
+></term>
+					<listitem
+><para
+>Borrar un contacto del grupo</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-C, --clean</option
+></term>
+					<listitem
+><para
+>Eliminar las referencias de elementos desconocidas del grupo</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+                                            <term
+><option
+>-c, --comment <replaceable
+>nombre</replaceable
+></option
+></term>
+					<listitem
+><para
+>Comentario de correo electrónico (nombre) para un elemento añadido</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Salida breve (para «expand», solo direcciones de correo electrónico)</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+
+			<varlistentry>
+				<term
+><option
+>import</option
+></term>
+				<listitem>
+				<para
+>akonadiclient import [OPCIONES] PADRE ARCHIVO</para>
+				<para
+>Importa un archivo XML dentro de la colección indicada por PADRE. Si la colección ya existiera, su contenido se fusiona con el contenido de la colección del archivo XML.</para>
+				<para
+>Opciones:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>info</option
+></term>
+				<listitem>
+				<para
+>akonadiclient info [OPCIONES] COLECCIÓN | ELEMENTO</para>
+				<para
+>Mostrar información completa sobre una colección o elemento.</para>
+				<para
+>Opciones:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-c, --collection</option
+></term>
+					<listitem
+><para
+>Asumir que se ha indicado una colección</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-i, --item</option
+></term>
+					<listitem
+><para
+>Asumir que se ha indicado un elemento</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>show</option
+></term>
+				<listitem>
+				<para
+>akonadiclient show ELEMENTO</para>
+				<para
+>Muestra la carga útil en bruto de un elemento.</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>tags</option
+></term>
+				<listitem>
+				<para
+>akonadiclient tags [OPCIONES]</para>
+				<para
+>Listar todas las etiquetas conocidas</para>
+				<para
+>Opciones:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Salida breve (solo nombres de etiquetas)</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-u, --urls</option
+></term>
+					<listitem
+><para
+>Salida breve (solo URL de etiquetas)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>update</option
+></term>
+				<listitem>
+				<para
+>akonadiclient update [OPCIONES] ELEMENTO ARCHIVO</para>
+				<para
+>Actualiza la carga útil en bruto de un ELEMENTO con el contenido del ARCHIVO.</para>
+				<para
+>Opciones:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Órdenes diversas</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>agents</option
+></term>
+				<listitem>
+					<para
+>akonadiclient agents [OPCIONES] [AGENTES...]</para>
+					<para
+>Permite la gestión de agentes de Akonadi para cambiar su estado, restaurar un agente o listar todos los agentes y su estado.</para>
+					<para
+>Opciones:</para>
+					<variablelist>
+
+						<varlistentry>
+							<term
+><option
+>-l, --list</option
+></term>
+							<listitem
+><para
+>Lista de agentes</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-s, --setstate <replaceable
+>estado</replaceable
+></option
+></term>
+							<listitem
+><para
+>Definir el estado de los agentes indicados. Los estados válidos son «offline» y «online».</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-g, --getstate</option
+></term>
+							<listitem
+><para
+>Obtener el estado de los agentes indicados</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-i, --info</option
+></term>
+							<listitem
+><para
+>Mostrar información sobre los agentes indicados</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-r, --restart</option
+></term>
+							<listitem
+><para
+>Reinicia los agentes indicados</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-n, --dryrun</option
+></term>
+							<listitem
+><para
+>Ejecutar si hacer ningún cambio real</para
+></listitem>
+						</varlistentry>
+
+					</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>help</option
+></term>
+				<listitem>
+					<para
+>akonadiclient help [ORDEN]</para>
+					<para
+>Muestra ayuda para la ORDEN. Si la ORDEN no se indica, se listan todas las órdenes disponibles.</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>shell</option
+></term>
+				<listitem>
+					<para
+>akonadiclient shell</para>
+					<para
+>Introducir órdenes en un intérprete interactivo.</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</refsect2>
+</refsect1>
+
+<refsect1>
+<title
+>Ejemplos</title>
+<para
+><emphasis role="bold"
+>akonadiclient list /</emphasis
+> - Lista todas las colecciones por debajo de la colección raíz.</para>
+<para
+><emphasis role="bold"
+>akonadiclient export /Notes notes.xml</emphasis
+> - Exporta todos los elementos y subcolecciones de la colección «/Notes» en el archivo «notes.xml».</para>
+<para
+><emphasis role="bold"
+>akonadiclient agents -l</emphasis
+> - Lista todos los agentes</para>
+<para
+><emphasis role="bold"
+>akonadiclient add /Notes note.txt</emphasis
+> - Añade el contenido del archivo «note.txt» como un elemento en la colección «/Notes».</para>
+<para
+><emphasis role="bold"
+>akonadiclient add -m application/x-vnd.akonadi.calendar.todo /Todos todo.ics</emphasis
+> - Añade el contenido del archivo «todo.ics» como una entrada TODO de calendario en la colección «/Todos».</para>
+</refsect1>
+
+</refentry>
