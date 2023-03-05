@@ -75,11 +75,11 @@ int AgentsCommand::initCommand(QCommandLineParser *parser)
             mOption = GETSTATE;
         } else if (parser->isSet("setstate")) {
             mOption = SETSTATE;
-            QString state = parser->value("setstate");
+            const QString state = parser->value("setstate");
 
-            if (state.compare("online") == 0) {
+            if (state.length()>=2 && state.compare(QStringLiteral("online").left(state.length())) == 0) {
                 mStateArg = ONLINE;
-            } else if (state.compare("offline") == 0) {
+            } else if (state.length()>=2 && state.compare(QStringLiteral("offline").left(state.length())) == 0) {
                 mStateArg = OFFLINE;
             } else {
                 emitErrorSeeHelp(i18nc("@info:shell", "Invalid state '%1'", state));
