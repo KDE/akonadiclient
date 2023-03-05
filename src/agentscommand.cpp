@@ -94,11 +94,17 @@ int AgentsCommand::initCommand(QCommandLineParser *parser)
     return NoError;
 }
 
+static bool instanceLessThan(const AgentInstance &a, const AgentInstance &b)
+{
+    return (a.identifier() < b.identifier());
+}
+
 void AgentsCommand::start()
 {
     switch (mOption) {
     case LIST: {
         QVector<AgentInstance> instances = AgentManager::self()->instances();
+        std::sort(instances.begin(), instances.end(), &instanceLessThan);
         printAgentStatus(instances);
         break;
     }
