@@ -101,7 +101,7 @@ int DumpCommand::initCommand(QCommandLineParser *parser)
 
 void DumpCommand::start()
 {
-    connect(resolveJob(), SIGNAL(result(KJob *)), SLOT(onCollectionFetched(KJob *)));
+    connect(resolveJob(), &KJob::result, this, &DumpCommand::onCollectionFetched);
     resolveJob()->start();
 }
 
@@ -129,7 +129,7 @@ void DumpCommand::onCollectionFetched(KJob *job)
     // Need this so that parentCollection() will be valid
     fetchJob->fetchScope().setAncestorRetrieval(ItemFetchScope::Parent);
 
-    connect(fetchJob, SIGNAL(result(KJob *)), SLOT(onItemsFetched(KJob *)));
+    connect(fetchJob, &KJob::result, this, &DumpCommand::onItemsFetched);
     fetchJob->start();
 }
 
@@ -154,7 +154,7 @@ void DumpCommand::onItemsFetched(KJob *job)
     TagFetchJob *tagJob = new TagFetchJob(this);
     tagJob->fetchScope().setFetchIdOnly(false);
 
-    connect(tagJob, SIGNAL(result(KJob *)), SLOT(onTagsFetched(KJob *)));
+    connect(tagJob, &KJob::result, this, &DumpCommand::onTagsFetched);
     tagJob->start();
 }
 
@@ -180,7 +180,7 @@ void DumpCommand::processNextItem()
     }
 
     CollectionPathJob *job = new CollectionPathJob(mItemList.first().parentCollection());
-    connect(job, SIGNAL(result(KJob *)), SLOT(onParentPathFetched(KJob *)));
+    connect(job, &KJob::result, this, &DumpCommand::onParentPathFetched);
     job->start();
 }
 

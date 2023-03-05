@@ -221,7 +221,7 @@ void AddCommand::processNextDirectory()
         job->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
         job->setProperty("path", path);
         job->setProperty("collection", QVariant::fromValue(collection));
-        connect(job, SIGNAL(result(KJob*)), this, SLOT(onCollectionFetched(KJob*)));
+        connect(job, &KJob::result, this, &AddCommand::onCollectionFetched);
         return;
     }
 
@@ -294,7 +294,7 @@ void AddCommand::processNextFile()
     if (!isDryRun()) {
         ItemCreateJob *job = new ItemCreateJob(item, parent);
         job->setProperty("fileName", fileName);
-        connect(job, SIGNAL(result(KJob*)), this, SLOT(onItemCreated(KJob*)));
+        connect(job, &KJob::result, this, &AddCommand::onItemCreated);
     } else {
         processNextFile();
     }
@@ -389,7 +389,7 @@ void AddCommand::onCollectionFetched(KJob *job)
                                          QString::number(parent.id()), parent.name(),
                                          newCollection.name()));
 
-            connect(createJob, SIGNAL(result(KJob*)), this, SLOT(onCollectionCreated(KJob*)));
+            connect(createJob, &KJob::result, this, &AddCommand::onCollectionCreated);
         } else {
             QMetaObject::invokeMethod(this, "processNextDirectory", Qt::QueuedConnection);
         }

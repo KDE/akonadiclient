@@ -70,7 +70,7 @@ int ListCommand::initCommand(QCommandLineParser *parser)
 
 void ListCommand::start()
 {
-    connect(resolveJob(), SIGNAL(result(KJob*)), this, SLOT(onBaseFetched(KJob*)));
+    connect(resolveJob(), &KJob::result, this, &ListCommand::onBaseFetched);
     resolveJob()->start();
 }
 

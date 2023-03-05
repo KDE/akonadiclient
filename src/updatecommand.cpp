@@ -120,7 +120,7 @@ void UpdateCommand::onItemFetched(KJob *job)
         QByteArray data = mFile->readAll();
         item.setPayloadFromData(data);
         ItemModifyJob *modifyJob = new ItemModifyJob(item, this);
-        connect(modifyJob, SIGNAL(result(KJob*)), SLOT(onItemUpdated(KJob*)));
+        connect(modifyJob, &KJob::result, this, &UpdateCommand::onItemUpdated);
     } else {
         onItemUpdated(job);
     }
