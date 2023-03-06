@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-07 00:46+0000\n"
+"POT-Creation-Date: 2023-03-06 00:48+0000\n"
 "PO-Revision-Date: 2023-02-24 12:42\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -346,32 +346,32 @@ msgctxt "@info:shell"
 msgid "No option specified"
 msgstr "未指定选项"
 
-#: src/agentscommand.cpp:124
+#: src/agentscommand.cpp:130
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parameters"
 msgstr "无效的参数"
 
-#: src/agentscommand.cpp:160 src/agentscommand.cpp:192
-#: src/agentscommand.cpp:210 src/agentscommand.cpp:236
+#: src/agentscommand.cpp:166 src/agentscommand.cpp:198
+#: src/agentscommand.cpp:216 src/agentscommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agent exists with the identifier '%1'"
 msgstr "标识符为 %1 的代理不存在"
 
-#: src/agentscommand.cpp:219
+#: src/agentscommand.cpp:225
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID:      "
 msgstr "编码:      "
 
-#: src/agentscommand.cpp:220
+#: src/agentscommand.cpp:226
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name:    "
 msgstr "名称:    "
 
-#: src/agentscommand.cpp:221
+#: src/agentscommand.cpp:227
 #, kde-format
 msgctxt "@info:shell"
 msgid "Status:  "

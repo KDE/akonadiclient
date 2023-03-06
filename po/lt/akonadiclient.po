@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-07 00:46+0000\n"
+"POT-Creation-Date: 2023-03-06 00:48+0000\n"
 "PO-Revision-Date: 2018-11-09 04:04+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -347,32 +347,32 @@ msgctxt "@info:shell"
 msgid "No option specified"
 msgstr ""
 
-#: src/agentscommand.cpp:124
+#: src/agentscommand.cpp:130
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parameters"
 msgstr ""
 
-#: src/agentscommand.cpp:160 src/agentscommand.cpp:192
-#: src/agentscommand.cpp:210 src/agentscommand.cpp:236
+#: src/agentscommand.cpp:166 src/agentscommand.cpp:198
+#: src/agentscommand.cpp:216 src/agentscommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agent exists with the identifier '%1'"
 msgstr ""
 
-#: src/agentscommand.cpp:219
+#: src/agentscommand.cpp:225
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID:      "
 msgstr ""
 
-#: src/agentscommand.cpp:220
+#: src/agentscommand.cpp:226
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name:    "
 msgstr ""
 
-#: src/agentscommand.cpp:221
+#: src/agentscommand.cpp:227
 #, kde-format
 msgctxt "@info:shell"
 msgid "Status:  "
