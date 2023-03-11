@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
-# Tommi Nieminen <translator@legisign.org>, 2019, 2020, 2021.
+# Tommi Nieminen <translator@legisign.org>, 2019, 2020, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-06 00:48+0000\n"
-"PO-Revision-Date: 2021-08-10 13:53+0300\n"
+"PO-Revision-Date: 2023-03-02 18:53+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -522,23 +522,19 @@ msgid "No sub-collections to copy/move"
 msgstr "Ei kopioitavia tai siirrettäviä alikokoelmia"
 
 #: src/copycommand.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Moving %1 sub-collections"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 sub-collection"
 msgid_plural "Moving %1 sub-collections"
-msgstr[0] "Siirretään %1 alikokoelmaa"
+msgstr[0] "Siirretään %1 alikokoelma"
 msgstr[1] "Siirretään %1 alikokoelmaa"
 
 #: src/copycommand.cpp:218
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Copying %1 sub-collections"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 sub-collection"
 msgid_plural "Copying %1 sub-collections"
-msgstr[0] "Kopioidaan %1 alikokoelmaa"
+msgstr[0] "Kopioidaan %1 alikokoelma"
 msgstr[1] "Kopioidaan %1 alikokoelmaa"
 
 #: src/copycommand.cpp:234
@@ -564,23 +560,19 @@ msgid "No items to process"
 msgstr "Ei käsiteltäviä tietueita"
 
 #: src/copycommand.cpp:299
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Moving %1 items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 item"
 msgid_plural "Moving %1 items"
-msgstr[0] "Siirretään %1 tietuetta"
+msgstr[0] "Siirretään %1 tietue"
 msgstr[1] "Siirretään %1 tietuetta"
 
 #: src/copycommand.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Copying %1 items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 item"
 msgid_plural "Copying %1 items"
-msgstr[0] "Kopioidaan %1 tietuetta"
+msgstr[0] "Kopioidaan %1 tietue"
 msgstr[1] "Kopioidaan %1 tietuetta"
 
 #: src/copycommand.cpp:320
@@ -1202,12 +1194,10 @@ msgid "Show full information for a collection or item"
 msgstr "Näytä kokoelman tai tietueen kaikki tiedot"
 
 #: src/infocommand.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Existing collections or items to copy"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
-msgstr "Kopioitavat kokoelmat tai tietueet"
+msgstr "Näytettävät kokoelmat tai tietueet"
 
 #: src/infocommand.cpp:60
 #, kde-format
@@ -1215,12 +1205,10 @@ msgid "entity..."
 msgstr ""
 
 #: src/infocommand.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No collection specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
-msgstr "Kokoelmaa ei määritetty"
+msgstr "Kokoelmaa tai tietueita ei määritetty"
 
 #: src/infocommand.cpp:120
 #, kde-format
@@ -1453,14 +1441,12 @@ msgid "Collection %1 has no sub-collections"
 msgstr "Kokoelmalla %1 ei ole alikokoelmia"
 
 #: src/listcommand.cpp:133
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
-msgstr[0] "Kokoelmalla %2 on %1 alikokoelmaa:"
-msgstr[1] "Kokoelmalla %2 on %1 alikokoelmaa:"
+msgstr[0] "Kokoelmassa %2 on %1 alikokoelma:"
+msgstr[1] "Kokoelmassa %2 on %1 alikokoelmaa:"
 
 #: src/listcommand.cpp:195
 #, kde-format
@@ -1469,13 +1455,11 @@ msgid "Collection %1 has no items"
 msgstr "Kokoelmassa %1 ei ole tietueita"
 
 #: src/listcommand.cpp:202
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 items:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
-msgstr[0] "Kokoelmassa %2 on %1 tietuetta:"
+msgstr[0] "Kokoelmassa %2 on %1 tietue:"
 msgstr[1] "Kokoelmassa %2 on %1 tietuetta:"
 
 #: src/listcommand.cpp:209
@@ -1655,19 +1639,17 @@ msgstr "Ei tuloksia tietueelle ”%1”"
 #: src/showcommand.cpp:102
 #, kde-format
 msgid "Item has no main body part"
-msgstr ""
+msgstr "Tietueella ei ole päärunko-osaa"
 
 #: src/tagscommand.cpp:31
-#, fuzzy, kde-format
-#| msgid "List all known tags"
+#, kde-format
 msgid "List or modify tags"
-msgstr "Luettele tunnetut luokitukset"
+msgstr "Luettele tai muuta luokituksia"
 
 #: src/tagscommand.cpp:45
-#, fuzzy, kde-format
-#| msgid "Brief output, tag names only"
+#, kde-format
 msgid "Brief output, tag names or IDs only"
-msgstr "Lyhyt tuloste: vain luokitusten nimet"
+msgstr "Lyhyt tuloste, vain luokitusten nimet tai tunnisteet"
 
 #: src/tagscommand.cpp:46
 #, kde-format
@@ -1675,36 +1657,37 @@ msgid "Brief output, tag URLs only"
 msgstr "Lyhyt tulosta: vain luokitusten verkko-osoitteet"
 
 #: src/tagscommand.cpp:48
-#, fuzzy, kde-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-format
 msgid "List all known tags (the default operation)"
-msgstr "Näytä yhteystietoryhmä laajennettuna (oletustoiminto)"
+msgstr "Luettele kaikki tunnetut luokitukset (oletustoiminto)"
 
 #: src/tagscommand.cpp:49
 #, kde-format
 msgid "Add named tags"
-msgstr ""
+msgstr "Lisää nimettyjä luokituksia"
 
 #: src/tagscommand.cpp:50
 #, kde-format
 msgid "Delete tags"
-msgstr ""
+msgstr "Poista luokituksia"
 
 #. i18n("ID for a tag to be added (default automatic)"), i18n("id")));
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "TAG"
-msgstr ""
+msgstr "LUOKITUS"
 
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
 msgstr ""
+"Lisättävän luokituksen nimi tai poistettavan luokituksen nimi, tunniste tai "
+"verkko-osoite"
 
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "[TAG...]"
-msgstr ""
+msgstr "[LUOKITUS…]"
 
 #: src/tagscommand.cpp:75
 #, kde-format
@@ -1713,77 +1696,58 @@ msgid "The 'brief' and 'urls' options cannot both be specified"
 msgstr "Yhtä aikaa ei voi asettaa ”brief” ja ”urls”"
 
 #: src/tagscommand.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
-msgstr ""
-"Vain yksi vaihtoehdoista ”expand”, ”add”, ”delete” tai ”clean” kerrallaan"
+msgstr "Vain yhden komennoista ”list”, ”add” tai ”delete” voi antaa kerrallaan"
 
 #: src/tagscommand.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
-msgstr "Lisättäviä tietueita ei annettu"
+msgstr "Lisättäviä luokituksia ei annettu"
 
 #: src/tagscommand.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one item may be specified to add with 'comment'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr "Vain yhden tietueen voi antaa lisättäväksi ”comment”-valitsimella"
+msgstr "”id”-valitsimella ei voi lisätä useampia luokituksia"
 
 #: src/tagscommand.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
-msgstr "Poistettavia tietueita ei annettu"
+msgstr "Poistettavia luokituksia ei annettu"
 
 #: src/tagscommand.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection '%1' already exists"
+#, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr "Kokoelma ”%1” on jo olemassa"
+msgstr "Luokitus ”%1” (tunniste %2) on jo olemassa"
 
 #: src/tagscommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot search for email '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1' ID %2"
-msgstr "Sähköpostia ”%1” ei voi etsiä, %2"
+msgstr "Luokitusta %1 (tunniste %2) ei voi lisätä"
 
 #: src/tagscommand.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1'"
-msgstr "Tiedostoa ”%1” ei voi tallentaa"
+msgstr "Luokitusta ”%1” ei voi lisätä"
 
 #: src/tagscommand.cpp:231
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
-msgstr "Tiedostoa ”%1” ei ole olemassa"
+msgstr "Poistettavaa luokitusta ”%1” ei ole olemassa"
 
 #: src/tagscommand.cpp:268
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete ID %1 does not exist"
-msgstr "Tiedostoa ”%1” ei ole olemassa"
+msgstr "Poistettavaa luokitusta (tunniste %1) ei ole olemassa"
 
 #: src/tagscommand.cpp:308
 #, kde-format
