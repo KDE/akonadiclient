@@ -1750,7 +1750,7 @@ msgstr "Aucune étiquette spécifiée à ajouter"
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
 msgstr ""
-"Il est impossible de spécifier plusieurs étiquettes à ajouter avec  « Id »"
+"Il est impossible de spécifier plusieurs étiquettes à ajouter avec « Id »"
 
 #: src/tagscommand.cpp:123
 #, kde-format
