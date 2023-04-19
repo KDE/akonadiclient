@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-06 00:48+0000\n"
-"PO-Revision-Date: 2023-03-02 18:53+0200\n"
+"PO-Revision-Date: 2023-04-14 17:24+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1280,19 +1280,19 @@ msgstr "Vain luku"
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
-msgstr ""
+msgstr "MuutaTietuetta"
 
 #: src/infocommand.cpp:238
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
-msgstr ""
+msgstr "LuoTietue"
 
 #: src/infocommand.cpp:241
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
-msgstr ""
+msgstr "PoistaTietue"
 
 #: src/infocommand.cpp:244
 #, kde-format
@@ -1316,13 +1316,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
-msgstr ""
+msgstr "LinkitäTietue"
 
 #: src/infocommand.cpp:256
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
-msgstr ""
+msgstr "PoistaTietueenLinkitys"
 
 #: src/infocommand.cpp:258
 #, kde-format
