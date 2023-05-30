@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
 #
-# Kheyyam Gojayev <xxmn77@gmail.com>, 2020, 2021, 2022.
+# Kheyyam Gojayev <xxmn77@gmail.com>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-06 00:48+0000\n"
-"PO-Revision-Date: 2022-07-06 17:53+0400\n"
+"PO-Revision-Date: 2023-05-29 19:06+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -540,7 +540,7 @@ msgstr[1] "%1 alt-kolleksiya kopyalanır"
 #: src/copycommand.cpp:234
 #, kde-format
 msgid "No more sub-collections to process"
-msgstr "İşləməək üçün artıq alt kolleksiyalar yoxdur"
+msgstr "İşləmək üçün artıq alt kolleksiyalar yoxdur"
 
 #: src/copycommand.cpp:266
 #, kde-format
@@ -559,7 +559,7 @@ msgstr "'%1' elementlərinin alınması mümkün deyil, %2"
 #: src/copycommand.cpp:292
 #, kde-format
 msgid "No items to process"
-msgstr "İşləəmək üçün elementlər yoxdur"
+msgstr "İşləmək üçün elementlər yoxdur"
 
 #: src/copycommand.cpp:299
 #, kde-format
