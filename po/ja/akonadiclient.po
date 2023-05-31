@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
@@ -521,7 +521,6 @@ msgctxt "@info:shell"
 msgid "Moving %1 sub-collection"
 msgid_plural "Moving %1 sub-collections"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/copycommand.cpp:218
 #, kde-format
@@ -529,7 +528,6 @@ msgctxt "@info:shell"
 msgid "Copying %1 sub-collection"
 msgid_plural "Copying %1 sub-collections"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/copycommand.cpp:234
 #, kde-format
@@ -559,7 +557,6 @@ msgctxt "@info:shell"
 msgid "Moving %1 item"
 msgid_plural "Moving %1 items"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/copycommand.cpp:304
 #, kde-format
@@ -567,7 +564,6 @@ msgctxt "@info:shell"
 msgid "Copying %1 item"
 msgid_plural "Copying %1 items"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/copycommand.cpp:320
 #, kde-format
@@ -1439,7 +1435,6 @@ msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/listcommand.cpp:195
 #, kde-format
@@ -1453,7 +1448,6 @@ msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/listcommand.cpp:209
 #, kde-format
