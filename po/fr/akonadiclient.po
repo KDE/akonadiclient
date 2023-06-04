@@ -7,7 +7,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-06 00:48+0000\n"
 "PO-Revision-Date: 2023-01-27 18:51+0100\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -1718,7 +1718,7 @@ msgstr "ÉTIQUETTE"
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
 msgstr ""
-"Le nom d’une étiquette à ajouter ou le nom, l’identifiant ou l’URL d’une "
+"Le nom d'une étiquette à ajouter ou le nom, l'identifiant ou l'URL d'une "
 "étiquette à supprimer"
 
 #: src/tagscommand.cpp:55
