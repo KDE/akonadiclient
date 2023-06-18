@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-06 00:48+0000\n"
-"PO-Revision-Date: 2023-06-05 12:44+0200\n"
+"PO-Revision-Date: 2023-06-17 14:06+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1100,7 +1100,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Cleaning references from group %1 \"%2\":"
-msgstr "Borrando referencias do grupo %1 «%2»:"
+msgstr "Limpando as referencias do grupo %1 «%2»:"
 
 #: src/importcommand.cpp:39
 #, kde-format
@@ -1308,6 +1308,7 @@ msgid "CreateItem"
 msgstr "CrearElemento"
 
 # well-spelled: EliminarElemento
+# skip-rule: PT-2011-dual_delete
 #: src/infocommand.cpp:241
 #, kde-format
 msgctxt "@info:shell"
@@ -1330,6 +1331,7 @@ msgid "CreateColl"
 msgstr "CrearCol"
 
 # well-spelled: EliminarCol
+# skip-rule: PT-2011-dual_delete
 #: src/infocommand.cpp:250
 #, kde-format
 msgctxt "@info:shell"
