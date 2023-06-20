@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-06 00:48+0000\n"
-"PO-Revision-Date: 2023-06-17 14:06+0200\n"
+"PO-Revision-Date: 2023-06-19 12:41+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -99,7 +99,7 @@ msgstr "Non se permiten operacións perigosas ou destrutivas"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
-msgstr "Estabeleza %1=\"%2\" no ambiente"
+msgstr "Defina %1=\"%2\" no contorno"
 
 #: src/addcommand.cpp:41
 #, kde-format
@@ -299,8 +299,8 @@ msgstr "Listar todos os axentes"
 #, kde-format
 msgid "Set state \"online\" or \"offline\" for specified agents"
 msgstr ""
-"Estabelecer o estado como «online» (en liña) ou «offline» (desconectado) "
-"para os axentes indicados"
+"Definir o estado como «online» (en liña) ou «offline» (desconectado) para os "
+"axentes indicados"
 
 #: src/agentscommand.cpp:50
 #, kde-format
@@ -316,7 +316,7 @@ msgstr "Obter o estado do axente indicado"
 #: src/agentscommand.cpp:52
 #, kde-format
 msgid "Show information about the specified agent"
-msgstr "Mostrar información sobre o axente indicado"
+msgstr "Amosar información sobre o axente indicado"
 
 #: src/agentscommand.cpp:53
 #, kde-format
@@ -817,7 +817,7 @@ msgstr "Non se atoparon resultados para o elemento «%1»"
 #, kde-format
 msgctxt "@info:shell"
 msgid "EDITOR environment variable needs to be set"
-msgstr "Debe estabelecerse a variábel de contorno EDITOR"
+msgstr "A variábel de contorno EDITOR debe estar definida."
 
 #: src/editcommand.cpp:122
 #, kde-format
@@ -863,7 +863,7 @@ msgstr "Expandir ou modificar un grupo de contactos"
 #: src/groupcommand.cpp:57
 #, kde-format
 msgid "Show the expanded contact group (the default operation)"
-msgstr "Mostrar o grupo de contactos expandido (a operación predeterminada)"
+msgstr "Amosar o grupo de contactos expandido (a operación predeterminada)"
 
 #: src/groupcommand.cpp:58
 #, kde-format
@@ -1206,13 +1206,13 @@ msgstr "Creouse o elemento «%1»"
 #: src/infocommand.cpp:38
 #, kde-format
 msgid "Show full information for a collection or item"
-msgstr "Mostrar información completa dunha colección ou dun elemento"
+msgstr "Amosar información completa dunha colección ou dun elemento"
 
 #: src/infocommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
-msgstr "Coleccións ou elementos para mostrar"
+msgstr "Coleccións ou elementos para amosar"
 
 #: src/infocommand.cpp:60
 #, kde-format
@@ -1520,7 +1520,7 @@ msgstr "Cliente de Akonadi"
 #, kde-format
 msgctxt "@info:shell short description"
 msgid "A command-line/shell client for Akonadi"
-msgstr "Un cliente da liña de ordes ou intérprete de ordes para Akonadi"
+msgstr "Un cliente da liña de ordes ou intérprete de ordes para Akonadi."
 
 #: src/main.cpp:52
 #, kde-format
@@ -1632,13 +1632,13 @@ msgstr "O nome da colección cambiouse correctamente"
 #: src/showcommand.cpp:34
 #, kde-format
 msgid "Show the raw payload of an item"
-msgstr "Mostrar os datos en bruto dun elemento"
+msgstr "Amosar os datos en bruto dun elemento"
 
 #: src/showcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The items to show"
-msgstr "Os elementos para mostrar"
+msgstr "Os elementos para amosar"
 
 #: src/showcommand.cpp:43
 #, kde-format
