@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-06 00:48+0000\n"
-"PO-Revision-Date: 2023-06-19 12:41+0200\n"
+"PO-Revision-Date: 2023-06-23 20:45+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -110,18 +110,18 @@ msgstr "Engadir elementos a unha colección"
 #, kde-format
 msgid "Base directory for input files/directories, default is current"
 msgstr ""
-"Directorio base para os ficheiros e directorios de entrada, o actual de "
-"maneira predeterminada"
+"Cartafol base para os ficheiros e cartafoles de entrada, o actual de maneira "
+"predeterminada."
 
 #: src/addcommand.cpp:57
 #, kde-format
 msgid "directory"
-msgstr "directorio"
+msgstr "cartafol"
 
 #: src/addcommand.cpp:58
 #, kde-format
 msgid "Flat mode, do not duplicate subdirectory structure"
-msgstr "Modo plano, non duplicar a estrutura de subdirectorios"
+msgstr "Modo plano, non duplicar a estrutura de subcartafoles."
 
 #: src/addcommand.cpp:59
 #, kde-format
@@ -146,7 +146,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or directories to add to the collection"
-msgstr "Ficheiros ou directorios para engadir á colección"
+msgstr "Ficheiros ou cartafoles para engadir á colección."
 
 #: src/addcommand.cpp:63
 #, kde-format
@@ -164,7 +164,7 @@ msgstr "Falta o argumento da colección"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file or directory arguments"
-msgstr "Faltan os argumentos de ficheiro ou directorio"
+msgstr "Faltan os argumentos de ficheiro ou cartafol."
 
 #: src/addcommand.cpp:83
 #, kde-format
@@ -176,7 +176,7 @@ msgstr "O argumento de tipo MIME «%1» é incorrecto"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
-msgstr "Non se atopou o directorio base «%1»"
+msgstr "Non se atopou o cartafol base «%1»."
 
 #: src/addcommand.cpp:113
 #, kde-format
@@ -192,17 +192,17 @@ msgstr "Erro ao acceder ao ficheiro «%1»"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No valid file or directory arguments"
-msgstr "Faltan argumentos válidos de ficheiro ou directorio"
+msgstr "Faltan argumentos válidos de ficheiro ou cartafol."
 
 #: src/addcommand.cpp:154
 #, kde-format
 msgid "No more directories to process"
-msgstr "Non hai máis directorios para procesar"
+msgstr "Non hai máis cartafoles para procesar."
 
 #: src/addcommand.cpp:178 src/addcommand.cpp:200
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
-msgstr "O directorio «%1» xa non existe"
+msgstr "O cartafol «%1» xa non existe."
 
 #: src/addcommand.cpp:217
 #, kde-format
@@ -702,14 +702,14 @@ msgstr "O elemento eliminouse correctamente"
 #: src/dumpcommand.cpp:47
 #, kde-format
 msgid "Dump a collection to a directory structure"
-msgstr "Envorcar unha colección nunha estrutura de directorios"
+msgstr "Envorcar unha colección nunha estrutura de cartafoles."
 
 #: src/dumpcommand.cpp:59
 #, kde-format
 msgid "Dump email messages in maildir directory structure"
 msgstr ""
-"Envorcar as mensaxes de correo electrónico na estrutura de directorios de "
-"maildir"
+"Envorcar as mensaxes de correo electrónico na estrutura de cartafoles de "
+"maildir."
 
 #: src/dumpcommand.cpp:60
 #, kde-format
@@ -721,7 +721,7 @@ msgstr ""
 #: src/dumpcommand.cpp:61
 #, kde-format
 msgid "Operate even if destination directory is not empty"
-msgstr "Operar incluso cando o directorio de destino non estea baleiro"
+msgstr "Operar incluso cando o cartafol de destino non estea baleiro."
 
 #: src/dumpcommand.cpp:64
 #, kde-format
@@ -734,7 +734,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "The destination directory to dump to"
-msgstr "O directorio de destino no que envorcar"
+msgstr "O cartafol de destino no que envorcar."
 
 #: src/dumpcommand.cpp:72 src/exportcommand.cpp:50
 #, kde-format
@@ -746,19 +746,19 @@ msgstr "Non se indicou unha colección"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No destination directory specified"
-msgstr "Non se indicou un directorio de destino"
+msgstr "Non se indicou un cartafol de destino."
 
 #: src/dumpcommand.cpp:86
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' not found or not a directory"
-msgstr "O directorio «%1» non se atopou ou non é un directorio"
+msgstr "O cartafol «%1» non se atopou ou non é un cartafol."
 
 #: src/dumpcommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
-msgstr "O directorio «%1» non está baleiro (use «-f» para forzar a operación)"
+msgstr "O cartafol «%1» non está baleiro (use «-f» para forzar a operación)."
 
 #: src/dumpcommand.cpp:120 src/listcommand.cpp:179
 #, kde-format
@@ -782,7 +782,7 @@ msgstr "O elemento «%1» non ten corpo"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create directory '%1/%2'"
-msgstr "Non se pode crear o directorio «%1/%2»"
+msgstr "Non se pode crear o cartafol «%1/%2»."
 
 #: src/dumpcommand.cpp:332
 #, kde-format
@@ -1603,13 +1603,13 @@ msgstr "Colección de destino na que mover"
 #: src/renamecommand.cpp:33
 #, kde-format
 msgid "Rename a collection"
-msgstr "Cambiar o nome dunha colección"
+msgstr "Renomear unha colección"
 
 #: src/renamecommand.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to rename"
-msgstr "A colección para cambiar de nome"
+msgstr "A colección para renomear"
 
 #: src/renamecommand.cpp:46
 #, kde-format
@@ -1627,7 +1627,7 @@ msgstr "Non se indicou o novo nome"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection renamed successfully"
-msgstr "O nome da colección cambiouse correctamente"
+msgstr "Renomeouse a colección"
 
 #: src/showcommand.cpp:34
 #, kde-format
