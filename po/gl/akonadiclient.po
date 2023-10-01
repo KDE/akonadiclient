@@ -67,7 +67,7 @@ msgstr "Executar sen facer ningún cambio"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot specify as both an item and a collection"
-msgstr "Non se pode indicar tanto como un elemento como unha colección"
+msgstr "Non é posíbel indicar tanto como un elemento como unha colección"
 
 #: src/abstractcommand.cpp:142
 #, kde-format
@@ -229,19 +229,19 @@ msgstr "O ficheiro «‘%1» non existe"
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ cannot be read"
-msgstr "Non se pode ler o ficheiro «%1»"
+msgstr "Non é posíbel ler o ficheiro «%1»"
 
 #: src/addcommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine MIME type of file ‘%1’"
-msgstr "Non se pode determinar o tipo MIME do ficheiro «%1»"
+msgstr "Non é posíbel determinar o tipo MIME do ficheiro «%1»"
 
 #: src/addcommand.cpp:277
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine parent collection for file ‘%1’"
-msgstr "Non se pode determinar a colección pai para o ficheiro «%1»"
+msgstr "Non é posíbel determinar a colección pai para o ficheiro «%1»"
 
 #: src/addcommand.cpp:284
 #, kde-format
@@ -252,7 +252,7 @@ msgstr "Creando un elemento na colección %1 «%2» desde «%3» con tamaño %4"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch target collection, %1"
-msgstr "Non se pode obter a colección de destino, %1"
+msgstr "Non é posíbel obter a colección de destino, %1"
 
 #: src/addcommand.cpp:316
 #, kde-format
@@ -278,7 +278,7 @@ msgstr "Creando a colección «%3» baixo o pai %1 «%2»"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
-msgstr "Non se puido engadir «%1», %2"
+msgstr "Non foi posíbel engadir «%1», %2"
 
 #: src/addcommand.cpp:415
 #, kde-format
@@ -480,13 +480,13 @@ msgstr "Non hai máis fontes para procesar"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve destination collection '%1', %2"
-msgstr "Non se pode resolver a colección de destino «%1», %2"
+msgstr "Non é posíbel resolver a colección de destino «%1», %2"
 
 #: src/copycommand.cpp:113
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve source '%1', %2"
-msgstr "Non se pode resolver a fonte «%1», %2"
+msgstr "Non é posíbel resolver a fonte «%1», %2"
 
 #: src/copycommand.cpp:139
 #, kde-format
@@ -512,13 +512,13 @@ msgstr "Copiando a colección %1 → %2"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move from '%1', %2"
-msgstr "Non se pode copiar ou mover desde «%1», %2"
+msgstr "Non é posíbel copiar ou mover desde «%1», %2"
 
 #: src/copycommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch subcollections of '%1', %2"
-msgstr "Non se poden obter as subcoleccións de «%1», %2"
+msgstr "Non é posíbel obter as subcoleccións de «%1», %2"
 
 #: src/copycommand.cpp:206
 #, kde-format
@@ -550,13 +550,13 @@ msgstr "Non hai máis subcoleccións para procesar"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
-msgstr "Non se pode copiar ou mover a subcolección «%2» desde «%1», %3"
+msgstr "Non é posíbel copiar ou mover a subcolección «%2» desde «%1», %3"
 
 #: src/copycommand.cpp:284
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch items of '%1', %2"
-msgstr "Non se poden obter os elementos de «%1», %2"
+msgstr "Non é posíbel obter os elementos de «%1», %2"
 
 #: src/copycommand.cpp:292
 #, kde-format
@@ -583,7 +583,7 @@ msgstr[1] "Copiando %1 elementos"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move items from '%1', %2"
-msgstr "Non se poden copiar ou mover elementos desde «%1», %2"
+msgstr "Non é posíbel copiar ou mover elementos desde «%1», %2"
 
 #: src/createcommand.cpp:35
 #, kde-format
@@ -632,7 +632,7 @@ msgstr "Non se indicou o novo nome da colección"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch parent collection '%1', %2"
-msgstr "Non se pode obter a colección pai «%1», %2"
+msgstr "Non é posíbel obter a colección pai «%1», %2"
 
 #: src/createcommand.cpp:121
 #, kde-format
@@ -675,7 +675,7 @@ msgstr "Falta o argumento da colección ou o elemento"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot delete the root collection"
-msgstr "Non se pode eliminar a colección raíz"
+msgstr "Non é posíbel eliminar a colección raíz"
 
 #: src/deletecommand.cpp:119
 #, kde-format
@@ -692,7 +692,7 @@ msgstr "A sintaxe de elemento ou colección «%1» é incorrecta"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
-msgstr "Non se pode atopar «%1» como unha colección ou elemento"
+msgstr "Non é posíbel atopar «%1» como unha colección ou elemento"
 
 #: src/deletecommand.cpp:160
 #, kde-format
@@ -782,13 +782,13 @@ msgstr "O elemento «%1» non ten corpo"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create directory '%1/%2'"
-msgstr "Non se pode crear o cartafol «%1/%2»."
+msgstr "Non é posíbel crear o cartafol «%1/%2»."
 
 #: src/dumpcommand.cpp:332
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save file '%1'"
-msgstr "Non se pode gardar o ficheiro «%1»"
+msgstr "Non é posíbel gardar o ficheiro «%1»"
 
 #: src/editcommand.cpp:37
 #, kde-format
@@ -823,7 +823,7 @@ msgstr "A variábel de contorno EDITOR debe estar definida."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot launch text editor '%1'"
-msgstr "Non se pode iniciar o editor de texto «%1»"
+msgstr "Non é posíbel iniciar o editor de texto «%1»"
 
 #: src/editcommand.cpp:141
 #, kde-format
@@ -956,7 +956,7 @@ msgstr "A opción «comment» só se permite con «add» (engadir)"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as an item"
-msgstr "Non se pode atopar «%1» como un elemento"
+msgstr "Non é posíbel atopar «%1» como un elemento"
 
 #: src/groupcommand.cpp:189
 #, kde-format
@@ -1037,7 +1037,7 @@ msgstr "Nome"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items could be fetched"
-msgstr "Non se puideron obter elementos"
+msgstr "Non foi posíbel obter elementos"
 
 #: src/groupcommand.cpp:483
 #, kde-format
@@ -1051,7 +1051,7 @@ msgstr "Engadindo ao grupo %1 «%2»:"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot search for email '%1', %2"
-msgstr "Non se pode buscar o correo electrónico «%1», %2"
+msgstr "Non é posíbel buscar o correo electrónico «%1», %2"
 
 #: src/groupcommand.cpp:509
 #, kde-format
@@ -1063,7 +1063,7 @@ msgstr "Atopáronse varios contactos para «%1», usarase o primeiro"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch requested item %1, %2"
-msgstr "Non se pode obter o elemento solicitado %1, %2"
+msgstr "Non é posíbel obter o elemento solicitado %1, %2"
 
 #: src/groupcommand.cpp:555
 #, kde-format
@@ -1141,13 +1141,13 @@ msgstr "O ficheiro XML é incorrecto, %1"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch parent collection, %1"
-msgstr "Non se pode obter a colección pai, %1"
+msgstr "Non é posíbel obter a colección pai, %1"
 
 #: src/importcommand.cpp:99
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch children of parent collection, %1"
-msgstr "Non se poden obter os fillos da colección pai, %1"
+msgstr "Non é posíbel obter os fillos da colección pai, %1"
 
 #: src/importcommand.cpp:117
 #, kde-format
@@ -1177,13 +1177,13 @@ msgstr "Pai incorrecto para a colección co identificador remoto «%1»"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
-msgstr "Non se pode obter a colección co identificador remoto «%1», %2"
+msgstr "Non é posíbel obter a colección co identificador remoto «%1», %2"
 
 #: src/importcommand.cpp:191
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
-msgstr "Non se pode crear a colección co identificador remoto «%1»"
+msgstr "Non é posíbel crear a colección co identificador remoto «%1»"
 
 #: src/importcommand.cpp:208
 #, kde-format
@@ -1759,13 +1759,13 @@ msgstr "Xa hai unha etiqueta chamada «%1» con identificador %2"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1' ID %2"
-msgstr "Non se pode engadir a etiqueta «%1» con identificador «%2»"
+msgstr "Non é posíbel engadir a etiqueta «%1» con identificador «%2»"
 
 #: src/tagscommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1'"
-msgstr "Non se pode engadir a etiqueta «%1»"
+msgstr "Non é posíbel engadir a etiqueta «%1»"
 
 #: src/tagscommand.cpp:231
 #, kde-format
