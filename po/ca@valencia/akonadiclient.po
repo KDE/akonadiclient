@@ -1535,7 +1535,7 @@ msgstr "Bhaskar Kandiyal"
 #, kde-format
 msgctxt "@title about data task"
 msgid "New commands, GSOC 2014"
-msgstr "Ordres noves, GSOC 2014"
+msgstr "Ordres noves, GSoC de 2014"
 
 #: src/main.cpp:64
 #, kde-format
