@@ -1132,7 +1132,7 @@ msgstr "No s'ha especificat cap fitxer que s'haja d'importar"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid XML file, %1"
-msgstr "Fitxer XML no vàlid, %1"
+msgstr "Fitxer en XML no vàlid, %1"
 
 #: src/importcommand.cpp:91
 #, kde-format
