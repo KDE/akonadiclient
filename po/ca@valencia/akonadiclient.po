@@ -845,7 +845,7 @@ msgstr "La col·lecció que s'ha d'exportar: un ID, camí o URL d'Akonadi"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to export to"
-msgstr "El fitxer que s'ha d'exportar a"
+msgstr "El fitxer que s'ha d'exportar cap a"
 
 #: src/exportcommand.cpp:51
 #, kde-format
@@ -1568,7 +1568,7 @@ msgstr ""
 #: src/movecommand.cpp:27
 #, kde-format
 msgid "Move collections or items into a new collection"
-msgstr "Mou les col·leccions o els elements a dins d'una col·lecció nova"
+msgstr "Mou les col·leccions o els elements cap a dins d'una col·lecció nova"
 
 #: src/movecommand.cpp:40
 #, kde-format
