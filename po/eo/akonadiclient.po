@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:35+0000\n"
-"PO-Revision-Date: 2023-07-28 18:58+0100\n"
+"PO-Revision-Date: 2023-11-26 20:12+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1528,7 +1528,7 @@ msgstr "Novaj komandoj, GSOC 2014"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Command to execute"
-msgstr "Ordono por ekzekuti"
+msgstr "Komando plenumenda"
 
 #: src/main.cpp:67
 #, kde-format
