@@ -1,13 +1,13 @@
 # Simon Depiets <sdepiets@gmail.com>, 2018, 2019.
-# Xavier Besnard <xavier.besnard@neuf.fr>, 2020, 2021, 2022.
-# Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
+# Xavier Besnard <xavier.besnard@kde.org>, 2020, 2021, 2022.
+# Xavier BESNARD <xavier.besnard@kde.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:35+0000\n"
 "PO-Revision-Date: 2023-01-27 18:51+0100\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -28,8 +28,8 @@ msgstr "Geoffray Levasseur, Matthieu Robin, Xavier Besnard"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-"geoffray.levasseurbrandin@numericable.fr, kde@macolu.org, xavier."
-"besnard@neuf.fr"
+"geoffray.levasseurbrandin@numericable.fr, kde@macolu.org, xavier.besnard@kde."
+"org"
 
 #: src/abstractcommand.cpp:49
 #, kde-format
