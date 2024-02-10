@@ -1,14 +1,14 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2021.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:35+0000\n"
-"PO-Revision-Date: 2023-09-03 21:05+0300\n"
+"PO-Revision-Date: 2024-02-09 17:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.01.95\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -138,7 +138,7 @@ msgstr "mimetürü"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to add to: an ID, path or Akonadi URL"
-msgstr "Eklenecek koleksiyon: Bir kimlik, yol veya Akonadi URL'si"
+msgstr "Eklenecek koleksiyon: Bir kimlik, yol veya Akonadi URL’si"
 
 #: src/addcommand.cpp:63
 #, kde-format
@@ -709,7 +709,7 @@ msgstr "maildir dizin yapısında e-posta iletilerini dök"
 #: src/dumpcommand.cpp:60
 #, kde-format
 msgid "Dump items with Akonadi category URLs, otherwise text names"
-msgstr "Akonadi kategori URL'si olan ögeleri dök, yoksa metin adlarını dök"
+msgstr "Akonadi kategori URL’si olan ögeleri dök, yoksa metin adlarını dök"
 
 #: src/dumpcommand.cpp:61
 #, kde-format
@@ -720,7 +720,7 @@ msgstr "Hedef dizin boş olsa bile çalış"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to dump: an ID, path or Akonadi URL"
-msgstr "Dökülecek koleksiyon: Bir kimlik, yol veya Akonadi URL'si"
+msgstr "Dökülecek koleksiyon: Bir kimlik, yol veya Akonadi URL’si"
 
 #: src/dumpcommand.cpp:65
 #, kde-format
@@ -832,7 +832,7 @@ msgstr "Koleksiyonu bir XML dosyasına dışa aktar"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to export: an ID, path or Akonadi URL"
-msgstr "Dışa aktarılacak koleksiyon: Bir kimlik, yol veya Akonadi URL'si"
+msgstr "Dışa aktarılacak koleksiyon: Bir kimlik, yol veya Akonadi URL’si"
 
 #: src/exportcommand.cpp:44
 #, kde-format
@@ -890,7 +890,7 @@ msgstr "Yalın çıktı ('expand' için, yalnızca e-posta adresleri)"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
-msgstr "Kişi grubu ögesi, bir kimlik veya Akonadi URL'si"
+msgstr "Kişi grubu ögesi, bir kimlik veya Akonadi URL’si"
 
 #: src/groupcommand.cpp:66
 #, kde-format
@@ -1436,7 +1436,7 @@ msgstr "Yalnızca kapsanılan ögeleri listele"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
-msgstr "Bu koleksiyon listeye: Bir kimlik, yol veya Akonadi URL'si"
+msgstr "Bu koleksiyon listeye: Bir kimlik, yol veya Akonadi URL’si"
 
 #: src/listcommand.cpp:124
 #, kde-format
@@ -1657,7 +1657,7 @@ msgstr "Yalın çıktı, yalnızca etiket adları veya kimlikleri"
 #: src/tagscommand.cpp:46
 #, kde-format
 msgid "Brief output, tag URLs only"
-msgstr "Yalın çıktı, yalnızca etiket URL'leri"
+msgstr "Yalın çıktı, yalnızca etiket URL’leri"
 
 #: src/tagscommand.cpp:48
 #, kde-format
@@ -1685,7 +1685,7 @@ msgstr "ETİKET"
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
 msgstr ""
 "Eklenecek bir etiketin adı veya silinecek bir etiketin adı, kimliği veya "
-"URL'si"
+"URL’si"
 
 #: src/tagscommand.cpp:55
 #, kde-format
@@ -1775,7 +1775,7 @@ msgstr "Bir dosyadan ögenin yükünü güncelle"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to update, an ID or Akonadi URL"
-msgstr "Güncellenecek öge, kimlik veya Akonadi URL'si"
+msgstr "Güncellenecek öge, kimlik veya Akonadi URL’si"
 
 #: src/updatecommand.cpp:54
 #, kde-format
