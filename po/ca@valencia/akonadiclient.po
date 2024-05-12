@@ -152,7 +152,7 @@ msgstr "Els fitxers o directoris que s'afegiran a la col·lecció"
 #: src/addcommand.cpp:63
 #, kde-format
 msgid "files..."
-msgstr "fitxers..."
+msgstr "fitxers…"
 
 #: src/addcommand.cpp:69 src/createcommand.cpp:60 src/listcommand.cpp:56
 #: src/renamecommand.cpp:52
@@ -333,7 +333,7 @@ msgstr "Agents per a operar"
 #, kde-format
 msgctxt "@info:shell"
 msgid "[agents...]"
-msgstr "[agents...]"
+msgstr "[agents…]"
 
 #: src/agentscommand.cpp:68
 #, kde-format
@@ -451,7 +451,7 @@ msgstr "Copia les col·leccions o els elements a dins d'una col·lecció nova"
 #: src/copycommand.cpp:59 src/movecommand.cpp:40
 #, kde-format
 msgid "source..."
-msgstr "origen..."
+msgstr "origen…"
 
 #: src/copycommand.cpp:59
 #, kde-format
@@ -908,7 +908,7 @@ msgstr "Arguments per a l'operació"
 #: src/groupcommand.cpp:66
 #, kde-format
 msgid "args..."
-msgstr "arguments..."
+msgstr "arguments…"
 
 #: src/groupcommand.cpp:72
 #, kde-format
@@ -1214,7 +1214,7 @@ msgstr "Col·leccions o elements que s'han de mostrar"
 #: src/infocommand.cpp:60
 #, kde-format
 msgid "entity..."
-msgstr "entitat..."
+msgstr "entitat…"
 
 #: src/infocommand.cpp:66
 #, kde-format
@@ -1626,7 +1626,7 @@ msgstr "Els elements que s'han de mostrar"
 #, kde-format
 msgctxt "@info:shell"
 msgid "item..."
-msgstr "element..."
+msgstr "element…"
 
 #: src/showcommand.cpp:44
 #, kde-format
@@ -1698,7 +1698,7 @@ msgstr ""
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "[TAG...]"
-msgstr "[ETIQUETA...]"
+msgstr "[ETIQUETA…]"
 
 #: src/tagscommand.cpp:75
 #, kde-format
