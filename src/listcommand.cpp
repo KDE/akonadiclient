@@ -33,7 +33,10 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("list", ListCommand, I18N_NOOP("List sub-collections and/or items in a specified collection"));
+DEFINE_COMMAND(
+    "list", ListCommand,
+    kli18nc("info:shell",
+            "List sub-collections and/or items in a specified collection"));
 
 ListCommand::ListCommand(QObject *parent)
     : AbstractCommand(parent)

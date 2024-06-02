@@ -24,7 +24,9 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("move", MoveCommand, I18N_NOOP("Move collections or items into a new collection"));
+DEFINE_COMMAND("move", MoveCommand,
+               kli18nc("info:shell",
+                       "Move collections or items into a new collection"));
 
 MoveCommand::MoveCommand(QObject *parent)
     : CopyCommand(parent)

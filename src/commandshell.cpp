@@ -26,9 +26,9 @@
 
 #include <QTextStream>
 #include <QCoreApplication>
-#include <QTextCodec>
 
-DEFINE_COMMAND("shell", CommandShell, I18N_NOOP("Enter commands in an interactive shell"));
+DEFINE_COMMAND("shell", CommandShell,
+               kli18n("Enter commands in an interactive shell"));
 
 bool CommandShell::sIsActive = false;
 
@@ -36,7 +36,6 @@ CommandShell::CommandShell(QObject *parent)
     : AbstractCommand(parent)
 {
     mTextStream = new QTextStream(stdin);
-    mTextStream->setCodec(QTextCodec::codecForLocale());
 }
 
 CommandShell::~CommandShell()

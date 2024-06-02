@@ -31,7 +31,8 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("show", ShowCommand, I18N_NOOP("Show the raw payload of an item"));
+DEFINE_COMMAND("show", ShowCommand,
+               kli18nc("info:shell", "Show the raw payload of an item"));
 
 ShowCommand::ShowCommand(QObject *parent)
     : AbstractCommand(parent)

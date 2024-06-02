@@ -34,7 +34,10 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("edit", EditCommand, I18N_NOOP("Edit the raw payload for the specified item using $EDITOR"));
+DEFINE_COMMAND(
+    "edit", EditCommand,
+    kli18nc("info:shell",
+            "Edit the raw payload for the specified item using $EDITOR"));
 
 EditCommand::EditCommand(QObject *parent)
     : AbstractCommand(parent),

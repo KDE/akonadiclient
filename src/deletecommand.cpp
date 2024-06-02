@@ -37,7 +37,8 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("delete", DeleteCommand, I18N_NOOP("Delete a collection or an item"));
+DEFINE_COMMAND("delete", DeleteCommand,
+               kli18nc("info:shell", "Delete a collection or an item"));
 
 DeleteCommand::DeleteCommand(QObject *parent)
     : AbstractCommand(parent),

@@ -37,7 +37,9 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("copy", CopyCommand, I18N_NOOP("Copy collections or items into a new collection"));
+DEFINE_COMMAND("copy", CopyCommand,
+               kli18nc("info:shell",
+                       "Copy collections or items into a new collection"));
 
 CopyCommand::CopyCommand(QObject *parent)
     : AbstractCommand(parent)

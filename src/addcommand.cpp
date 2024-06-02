@@ -38,7 +38,8 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("add", AddCommand, I18N_NOOP("Add items to a collection"));
+DEFINE_COMMAND("add", AddCommand,
+               kli18nc("info:shell", "Add items to a collection"));
 
 AddCommand::AddCommand(QObject *parent)
     : AbstractCommand(parent)

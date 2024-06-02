@@ -28,7 +28,8 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("tags", TagsCommand, I18N_NOOP("List or modify tags"));
+DEFINE_COMMAND("tags", TagsCommand,
+               kli18nc("info:shell", "List or modify tags"));
 
 TagsCommand::TagsCommand(QObject *parent)
     : AbstractCommand(parent),
@@ -323,7 +324,7 @@ void TagsCommand::listTags()
         std::cout << std::endl;
     }
 
-    for (const Tag &tag : qAsConst(mFetchedTags))
+    for (const Tag &tag : std::as_const(mFetchedTags))
     {
         if (!mBriefOutput && !mUrlsOutput) {
             writeColumn(tag.id(), 8);

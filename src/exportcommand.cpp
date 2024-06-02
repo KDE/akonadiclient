@@ -28,7 +28,8 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("export", ExportCommand, I18N_NOOP("Export a collection to an XML file"));
+DEFINE_COMMAND("export", ExportCommand,
+               kli18nc("info:shell", "Export a collection to an XML file"));
 
 ExportCommand::ExportCommand(QObject *parent)
     : AbstractCommand(parent)

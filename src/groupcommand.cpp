@@ -27,7 +27,7 @@
 
 #include <KContacts/Addressee>
 
-#include <KCodecs/KEmailAddress>
+#include <KEmailAddress>
 
 #include <iostream>
 
@@ -36,7 +36,8 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("group", GroupCommand, I18N_NOOP("Expand or modify a contact group"));
+DEFINE_COMMAND("group", GroupCommand,
+               kli18nc("info:shell", "Expand or modify a contact group"));
 
 GroupCommand::GroupCommand(QObject *parent)
     : AbstractCommand(parent),

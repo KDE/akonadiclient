@@ -43,9 +43,9 @@
 
 using namespace Akonadi;
 
-
-DEFINE_COMMAND("dump", DumpCommand, I18N_NOOP("Dump a collection to a directory structure"));
-
+DEFINE_COMMAND("dump", DumpCommand,
+               kli18nc("info:shell",
+                       "Dump a collection to a directory structure"));
 
 DumpCommand::DumpCommand(QObject *parent)
     : AbstractCommand(parent)
@@ -278,8 +278,8 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
             {
                 if (line.startsWith("UID:"))		// hide internal details
                 {
-                    newLines.append(QByteArray("X-AKONADI-")+line);
-                    newLines.append(QString("X-AKONADI-ITEM:%1").arg(item.id()));
+                    newLines.append(QStringLiteral("X-AKONADI-") + QString::fromUtf8(line));
+                    newLines.append(QStringLiteral("X-AKONADI-ITEM:%1").arg(item.id()));
                     changed = true;
                     continue;
                 }
@@ -339,9 +339,9 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
 
 #ifdef Q_OS_UNIX
         struct utimbuf times;				// stamp with item modification time
-        times.modtime = item.modificationTime().toTime_t();
+        times.modtime = item.modificationTime().toSecsSinceEpoch();
         times.actime = time(NULL);
-        utime(QFile::encodeName(destPath), &times);
+        utime(QFile::encodeName(destPath).constData(), &times);
 #endif
     }
 }

@@ -21,34 +21,27 @@
 
 #include <QObject>
 
-#include <KLocalizedString>
+#include <KLazyLocalizedString>
 
 class AbstractCommand;
 struct CommandData;
 
 class QString;
 
-#define DEFINE_COMMAND(commandName, className, shortHelp)			\
-    class className##Factory							\
-    {										\
-    public:									\
-        className##Factory();							\
-    };										\
-    static className##Factory sFactory;						\
-    static AbstractCommand *className##Creator(QObject *parent)			\
-    {										\
-        return (new className(parent));						\
-    }										\
-    className##Factory::className##Factory()					\
-    {										\
-        CommandFactory::registerCommand(QLatin1String(commandName),		\
-                                        ki18nc("@info:shell", shortHelp),	\
-                                        &className##Creator);			\
-    }										\
-    QString className::name() const						\
-    {										\
-        return (QLatin1String(commandName));					\
-    }
+#define DEFINE_COMMAND(commandName, className, shortHelp)                      \
+  class className##Factory {                                                   \
+  public:                                                                      \
+    className##Factory();                                                      \
+  };                                                                           \
+  static className##Factory sFactory;                                          \
+  static AbstractCommand *className##Creator(QObject *parent) {                \
+    return (new className(parent));                                            \
+  }                                                                            \
+  className##Factory::className##Factory() {                                   \
+    CommandFactory::registerCommand(QLatin1String(commandName), shortHelp,     \
+                                    &className##Creator);                      \
+  }                                                                            \
+  QString className::name() const { return (QLatin1String(commandName)); }
 
 class CommandFactory
 {
