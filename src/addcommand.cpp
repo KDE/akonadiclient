@@ -181,7 +181,7 @@ void AddCommand::processNextDirectory()
         }
 
         const QFileInfoList children = dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
-        Q_FOREACH (const QFileInfo &fileInfo, children) {
+        for (const QFileInfo &fileInfo : children) {
             if (fileInfo.isDir()) {
                 mDirectories[ fileInfo.absoluteFilePath() ] = AddRecursive;
                 mBasePaths[ fileInfo.absoluteFilePath() ] = fileInfo.absoluteFilePath();
@@ -351,8 +351,8 @@ void AddCommand::onCollectionFetched(KJob *job)
     Q_ASSERT(fetchJob != nullptr);
 
     bool found = false;
-    Collection::List collections = fetchJob->collections();
-    Q_FOREACH (const Collection &col, collections) {
+    const Collection::List collections = fetchJob->collections();
+    for (const Collection &col : collections) {
         if (col.name() == newCollection.name()) {
             found = true;
             newCollection = col;

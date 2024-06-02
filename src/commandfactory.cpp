@@ -122,7 +122,7 @@ void CommandFactory::printHelpAndExit(bool userRequestedHelp)
     int maxNameLength = 0;
     QStringList commands = sCommands->keys();
     std::sort(commands.begin(), commands.end());
-    Q_FOREACH (const QString &commandName, commands) {
+    for (const QString &commandName : std::as_const(commands)) {
         maxNameLength = qMax(maxNameLength, commandName.length());
     }
 
@@ -135,7 +135,7 @@ void CommandFactory::printHelpAndExit(bool userRequestedHelp)
 
     stream << std::endl << qPrintable(i18nc("@info:shell", "Available commands are:")) << std::endl;
 
-    Q_FOREACH (const QString &commandName, commands) {
+    for (const QString &commandName : std::as_const(commands)) {
         if (commandName == "shell" && shellActive) continue;
 
         stream << qPrintable(linePattern.arg(commandName.leftJustified(maxNameLength),

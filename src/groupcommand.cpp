@@ -455,7 +455,7 @@ AbstractCommand::Errors GroupCommand::showExpandedGroup(const KContacts::Contact
             }
         }
 
-        foreach (const Item::Id id, fetchIds) {     // error for any that remain
+        for (const Item::Id id : std::as_const(fetchIds)) {     // error for any that remain
             displayReferenceError(id);
         }
     }
@@ -486,7 +486,7 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KContacts::ContactGroup &gro
     }
 
     bool hadError = false;                // not yet, anyway
-    foreach (const QString &arg, mItemArgs) {
+    for (const QString &arg : std::as_const(mItemArgs)) {
         // Look to see whether the argument is an email address
         if (KEmailAddress::isValidSimpleAddress(arg)) {
             const QString email = arg.toLower();      // email addresses are case-insensitive
@@ -592,7 +592,7 @@ AbstractCommand::Errors GroupCommand::deleteGroupItems(KContacts::ContactGroup &
     }
 
     bool hadError = false;                // not yet, anyway
-    foreach (const QString &arg, mItemArgs) {
+    for (const QString &arg : std::as_const(mItemArgs)) {
         // Look to see whether the argument is an email address
         if (KEmailAddress::isValidSimpleAddress(arg)) {
             bool somethingFound = false;

@@ -216,11 +216,11 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
     QString destDir = mDirectoryArg+"/";
     if (mMaildir && mimeType=="message/rfc822")		// an email message,
     {							// replicate maildir structure
-        QStringList dirs = parent.split('/');
+        const QStringList dirs = parent.split('/');
         Q_ASSERT(!dirs.isEmpty());
-        foreach (const QString &dir, dirs)
+        for (const QString &dir : dirs)
         {
-            destDir += "."+dir+".directory/";
+            destDir += "." + dir + ".directory/";
         }
         destDir += "cur";
     }
@@ -274,7 +274,7 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
             bool changed = false;			// not yet, anyway
             const QList<QByteArray> oldLines = data.split('\n');
             QStringList newLines;
-            foreach (const QByteArray &line, oldLines)
+            for (const QByteArray &line : oldLines)
             {
                 if (line.startsWith("UID:"))		// hide internal details
                 {
@@ -299,14 +299,14 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
                     continue;
                 }
 
-                QStringList oldCats = QString::fromUtf8(line.constData()).mid(11).split(',');
+                const QStringList oldCats = QString::fromUtf8(line.constData()).mid(11).split(',');
                 QStringList newCats;
-                foreach (const QString &cat, oldCats)
+                for (const QString &cat : oldCats)
                 {
                     QString newCat = cat;
                     const Akonadi::Tag::Id catId = Akonadi::Tag::fromUrl(QUrl(cat)).id();
 							// category tag ID from URL
-                    foreach (const Akonadi::Tag &tag, mTagList)
+                    for (const Akonadi::Tag &tag : std::as_const(mTagList))
                     {
                         if (tag.id()==catId)
                         {

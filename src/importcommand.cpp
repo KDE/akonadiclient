@@ -102,10 +102,10 @@ void ImportCommand::onChildrenFetched(KJob *job)
     Collection parent = job->property("parent").value<Collection>();
     Collection collection = mDocument->collectionByRemoteId(rid);
     Collection newCol;
-    Collection::List collections = qobject_cast<CollectionFetchJob *>(job)->collections();
+    const Collection::List collections = qobject_cast<CollectionFetchJob *>(job)->collections();
     bool found = false;
 
-    Q_FOREACH (const Collection &col, collections) {
+    for (const Collection &col : collections) {
         if (collection.name() == col.name()) {
             found = true;
             newCol = col;

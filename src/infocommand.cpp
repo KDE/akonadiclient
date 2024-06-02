@@ -274,9 +274,9 @@ void InfoCommand::onParentPathFetched(KJob *job)
         writeInfo(i18nc("@info:shell", "Remote ID"), mInfoItem->remoteId());
         writeInfo(i18nc("@info:shell", "Payload"), (mInfoItem->hasPayload() ? i18nc("@info:shell", "yes") : i18nc("@info:shell", "no")));
 
-        Item::Flags flags = mInfoItem->flags();
+        const Item::Flags flags = mInfoItem->flags();
         QStringList flagDisp;
-        foreach (const QByteArray &flag, flags) {
+        for (const QByteArray &flag : flags) {
             flagDisp << flag;
         }
         if (flagDisp.isEmpty()) {
@@ -284,9 +284,9 @@ void InfoCommand::onParentPathFetched(KJob *job)
         }
         writeInfo(i18nc("@info:shell", "Flags"), flagDisp.join(" "));
 
-        Tag::List tags = mInfoItem->tags();
+        const Tag::List tags = mInfoItem->tags();
         QStringList tagDisp;
-        foreach (const Akonadi::Tag &tag, tags) {
+        for (const Akonadi::Tag &tag : tags) {
             tagDisp << tag.url().url();
         }
         if (tagDisp.isEmpty()) {

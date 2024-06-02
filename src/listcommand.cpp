@@ -141,7 +141,7 @@ void ListCommand::onCollectionsFetched(KJob *job)
             std::cout << std::endl;
         }
 
-        Q_FOREACH (const Collection &collection, collections) {
+        for (const Collection &collection : std::as_const(collections)) {
             std::cout << "  ";
             if (mListDetails) {
                 writeColumn(collection.id(), 8);
@@ -212,7 +212,7 @@ void ListCommand::onItemsFetched(KJob *job)
             std::cout << std::endl;
         }
 
-        Q_FOREACH (const Item &item, items) {
+        for (const Item &item : std::as_const(items)) {
             std::cout << "  ";
             if (mListDetails) {
                 writeColumn(item.id(), 8);
