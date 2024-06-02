@@ -74,12 +74,12 @@ void ExportCommand::onCollectionFetched(KJob *job)
         XmlWriteJob *writeJob = new XmlWriteJob(resolveJob()->collection(), mFileArg);
         connect(writeJob, &KJob::result, this, &ExportCommand::onWriteFinished);
     } else {
-        emit finished(NoError);
+        Q_EMIT finished(NoError);
     }
 }
 
 void ExportCommand::onWriteFinished(KJob *job)
 {
     if (!checkJobResult(job)) return;
-    emit finished(NoError);
+    Q_EMIT finished(NoError);
 }

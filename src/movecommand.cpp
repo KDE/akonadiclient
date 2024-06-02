@@ -44,7 +44,7 @@ void MoveCommand::setupCommandOptions(QCommandLineParser *parser)
 void MoveCommand::start()
 {
     if (!allowDangerousOperation()) {
-        emit finished(RuntimeError);
+        Q_EMIT finished(RuntimeError);
     }
     CopyCommand::start();
 }

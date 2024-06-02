@@ -111,13 +111,13 @@ void InfoCommand::onBaseFetched(KJob *job)
             }
         }
 
-        emit error(job->errorString());
+        Q_EMIT error(job->errorString());
         processNext();
         return;
     }
 
     if (res->collection() == Collection::root()) {
-        emit error(i18nc("@info:shell", "No information available for collection root"));
+        Q_EMIT error(i18nc("@info:shell", "No information available for collection root"));
         processNext();
         return;
     }
@@ -147,7 +147,7 @@ void InfoCommand::fetchItems()
 {
     Item item = CollectionResolveJob::parseItem(currentArg());
     if (!item.isValid()) {
-        emit error(i18nc("@info:shell", "Invalid item/collection syntax '%1'", currentArg()));
+        Q_EMIT error(i18nc("@info:shell", "Invalid item/collection syntax '%1'", currentArg()));
         processNext();
         return;
     }
@@ -174,7 +174,7 @@ void InfoCommand::onItemsFetched(KJob *job)
     Q_ASSERT(fetchJob != nullptr);
     Item::List items = fetchJob->items();
     if (items.count() < 1) {
-        emit error(i18nc("@info:shell", "Cannot find '%1' as a collection or item", currentArg()));
+        Q_EMIT error(i18nc("@info:shell", "Cannot find '%1' as a collection or item", currentArg()));
         processNext();
         return;
     }

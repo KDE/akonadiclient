@@ -121,7 +121,7 @@ bool AbstractCommand::getCommonOptions(QCommandLineParser *parser)
         mWantItem = parser->isSet("item");
 
         if (mWantItem && mWantCollection) {
-            emit error(i18nc("@info:shell", "Cannot specify as both an item and a collection"));
+            Q_EMIT error(i18nc("@info:shell", "Cannot specify as both an item and a collection"));
             return (false);
         }
     }
@@ -168,7 +168,7 @@ void AbstractCommand::emitErrorSeeHelp(const QString &msg)
                   msg);
     }
 
-    emit error(s);
+    Q_EMIT error(s);
 }
 
 bool AbstractCommand::allowDangerousOperation() const
@@ -188,7 +188,7 @@ bool AbstractCommand::allowDangerousOperation() const
 bool AbstractCommand::checkJobResult(KJob *job, const QString &message)
 {
     if (job->error() != 0) {
-        emit error(!message.isEmpty() ? message : job->errorString());
+        Q_EMIT error(!message.isEmpty() ? message : job->errorString());
         // This will work even if the process loop is not in use
         // (in which case mProcessLoopArgs will be empty and finished()
         // will use the return code set by the error() signal above).
@@ -219,7 +219,7 @@ void AbstractCommand::processNext()
             ErrorReporter::progress(mFinishedLoopMessage);
         }
 
-        emit finished();				// with accumulated error code
+        Q_EMIT finished();				// with accumulated error code
         return;
     }
 

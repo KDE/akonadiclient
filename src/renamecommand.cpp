@@ -89,5 +89,5 @@ void RenameCommand::onCollectionModified(KJob *job)
 {
     if (!checkJobResult(job)) return;
     std::cout << qPrintable(i18nc("@info:shell", "Collection renamed successfully")) << std::endl;
-    emit finished(NoError);
+    Q_EMIT finished(NoError);
 }

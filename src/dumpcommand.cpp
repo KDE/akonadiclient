@@ -83,7 +83,7 @@ int DumpCommand::initCommand(QCommandLineParser *parser)
     QDir dir(mDirectoryArg);
     if (!dir.exists())
     {
-        emit error(i18nc("@info:shell", "Directory '%1' not found or not a directory", mDirectoryArg));
+        Q_EMIT error(i18nc("@info:shell", "Directory '%1' not found or not a directory", mDirectoryArg));
         return (InvalidUsage);
     }
 
@@ -91,7 +91,7 @@ int DumpCommand::initCommand(QCommandLineParser *parser)
     if (!parser->isSet("force") &&
         !dir.entryList(QDir::AllEntries|QDir::Hidden|QDir::System|QDir::NoDotAndDotDot).isEmpty())
     {
-        emit error(i18nc("@info:shell", "Directory '%1' is not empty (use '-f' to force operation)", mDirectoryArg));
+        Q_EMIT error(i18nc("@info:shell", "Directory '%1' is not empty (use '-f' to force operation)", mDirectoryArg));
         return (InvalidUsage);
     }
 
@@ -145,7 +145,7 @@ void DumpCommand::onItemsFetched(KJob *job)
     {
         ErrorReporter::fatal(i18nc("@info:shell", "Collection %1 contains no items",
                                    resolveJob()->formattedCollectionName()));
-        emit finished(RuntimeError);
+        Q_EMIT finished(RuntimeError);
     }
 
     std::sort(items.begin(), items.end());		// for predictable ordering
@@ -175,7 +175,7 @@ void DumpCommand::processNextItem()
 {
     if (mItemList.isEmpty())				// everything done
     {
-        emit finished(NoError);
+        Q_EMIT finished(NoError);
         return;
     }
 
@@ -249,7 +249,7 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
             {
                 ErrorReporter::fatal(i18nc("@info:shell", "Cannot create directory '%1/%2'",
                                            parentDir.canonicalPath(), dirName));
-                emit finished(RuntimeError);
+                Q_EMIT finished(RuntimeError);
                 return;
             }
         }
@@ -330,7 +330,7 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
         if (!file.open(QIODevice::WriteOnly|QIODevice::Truncate))
         {
             ErrorReporter::fatal(i18nc("@info:shell", "Cannot save file '%1'", destPath));
-            emit finished(RuntimeError);
+            Q_EMIT finished(RuntimeError);
             return;
         }
 

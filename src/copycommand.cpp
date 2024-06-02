@@ -110,7 +110,7 @@ void CopyCommand::onSourceResolved(KJob *job)
         }
 
         if (!item.isValid()) {              // couldn't parse as item either
-            emit error(i18nc("@info:shell", "Cannot resolve source '%1', %2",
+            Q_EMIT error(i18nc("@info:shell", "Cannot resolve source '%1', %2",
                              sourceArg, job->errorString()));
             processNext();
             return;
@@ -263,7 +263,7 @@ void CopyCommand::onCollectionCopyFinished(KJob *job)
 {
     const QString sourceArg = job->property("arg").toString();
     if (job->error() != 0) {
-        emit error(i18nc("@info:shell", "Cannot copy/move sub-collection '%2' from '%1', %3",
+        Q_EMIT error(i18nc("@info:shell", "Cannot copy/move sub-collection '%2' from '%1', %3",
                          sourceArg, job->property("collection").toString(), job->errorString()));
     }
 

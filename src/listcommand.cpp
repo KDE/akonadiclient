@@ -87,8 +87,8 @@ static void writeColumn(quint64 data, int width = 0)
 void ListCommand::onBaseFetched(KJob *job)
 {
     if (job->error() != 0) {
-        emit error(job->errorString());
-        emit finished(RuntimeError);
+        Q_EMIT error(job->errorString());
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
@@ -156,7 +156,7 @@ void ListCommand::onCollectionsFetched(KJob *job)
     if (mListItems) {
         fetchItems();
     } else {
-        emit finished(NoError);
+        Q_EMIT finished(NoError);
     }
 }
 
@@ -178,7 +178,7 @@ void ListCommand::fetchItems()
         std::cout << qPrintable(i18nc("@info:shell",
                                       "Collection %1 cannot contain items",
                                       resolveJob()->formattedCollectionName())) << std::endl;
-        emit finished(NoError);
+        Q_EMIT finished(NoError);
     }
 }
 
@@ -228,5 +228,5 @@ void ListCommand::onItemsFetched(KJob *job)
         }
     }
 
-    emit finished(NoError);
+    Q_EMIT finished(NoError);
 }

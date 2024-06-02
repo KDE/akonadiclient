@@ -71,26 +71,26 @@ int UpdateCommand::initCommand(QCommandLineParser *parser)
 void UpdateCommand::start()
 {
     if (!allowDangerousOperation()) {
-        emit finished(RuntimeError);
+        Q_EMIT finished(RuntimeError);
     }
 
     Item item = CollectionResolveJob::parseItem(mItemArg, true);
     if (!item.isValid()) {
-        emit finished(RuntimeError);
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
     if (!QFile::exists(mFileArg)) {
-        emit error(i18nc("@info:shell", "File ‘%1’ does not exist", mFileArg));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "File ‘%1’ does not exist", mFileArg));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
     // TODO: report strerror(errno), then above is superfluous
     mFile = new QFile(mFileArg);
     if (!mFile->open(QIODevice::ReadOnly)) {
-        emit error(i18nc("@info:shell", "File ‘%1’ cannot be read", mFileArg));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "File ‘%1’ cannot be read", mFileArg));
+        Q_EMIT finished(RuntimeError);
         delete mFile;
         mFile = nullptr;
         return;
@@ -110,8 +110,8 @@ void UpdateCommand::onItemFetched(KJob *job)
 
     Item::List items = fetchJob->items();
     if (items.count() < 1) {
-        emit error(i18nc("@info:shell", "No result returned for item '%1'", job->property("arg").toString()));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "No result returned for item '%1'", job->property("arg").toString()));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
@@ -130,5 +130,5 @@ void UpdateCommand::onItemUpdated(KJob *job)
 {
     if (!checkJobResult(job)) return;
     std::cout << qPrintable(i18nc("@info:shell", "Item updated successfully")) << std::endl;
-    emit finished(NoError);
+    Q_EMIT finished(NoError);
 }

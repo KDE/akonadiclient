@@ -128,12 +128,12 @@ void AgentsCommand::start()
 
     default: {
         emitErrorSeeHelp(i18nc("@info:shell", "Invalid parameters"));
-        emit finished(InvalidUsage);
+        Q_EMIT finished(InvalidUsage);
         break;
     }
     }
 
-    emit finished(NoError);
+    Q_EMIT finished(NoError);
 }
 
 void AgentsCommand::printAgentStatus(const QVector<AgentInstance> &agents)
@@ -163,8 +163,8 @@ void AgentsCommand::setState()
     for (int i = 0; i < mArguments.length(); i++) {
         AgentInstance instance = manager->instance(mArguments.at(i));
         if (!instance.isValid()) {
-            emit error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
-            emit finished(RuntimeError);
+            Q_EMIT error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
+            Q_EMIT finished(RuntimeError);
             return;
         }
         agentList.append(instance);
@@ -195,8 +195,8 @@ void AgentsCommand::getState()
     for (int i = 0; i < mArguments.length(); i++) {
         AgentInstance instance = manager->instance(mArguments.at(i));
         if (!instance.isValid()) {
-            emit error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
-            emit finished(RuntimeError);
+            Q_EMIT error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
+            Q_EMIT finished(RuntimeError);
             return;
         }
         agentList.append(instance);
@@ -213,8 +213,8 @@ void AgentsCommand::showInfo()
     for (int i = 0; i < mArguments.length(); i++) {
         AgentInstance instance = manager->instance(mArguments.at(i));
         if (!instance.isValid()) {
-            emit error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
-            emit finished(RuntimeError);
+            Q_EMIT error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
+            Q_EMIT finished(RuntimeError);
             return;
         }
         agentList.append(instance);
@@ -239,8 +239,8 @@ void AgentsCommand::restartAgents()
     for (int i = 0; i < mArguments.length(); i++) {
         AgentInstance instance = manager->instance(mArguments.at(i));
         if (!instance.isValid()) {
-            emit error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
-            emit finished(RuntimeError);
+            Q_EMIT error(i18nc("@info:shell", "No agent exists with the identifier '%1'", mArguments.at(i)));
+            Q_EMIT finished(RuntimeError);
             return;
         }
         agentList.append(instance);

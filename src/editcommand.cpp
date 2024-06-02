@@ -71,7 +71,7 @@ void EditCommand::start()
 {
     Item item = CollectionResolveJob::parseItem(mItemArg, true);
     if (!item.isValid()) {
-        emit finished(InvalidUsage);
+        Q_EMIT finished(InvalidUsage);
     }
 
     ItemFetchJob *job = new ItemFetchJob(item, this);
@@ -90,23 +90,23 @@ void EditCommand::onItemFetched(KJob *job)
     Item::List items = fetchJob->items();
 
     if (items.count() < 1) {
-        emit error(i18nc("@info:shell", "No result found for item '%1'", job->property("arg").toString()));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "No result found for item '%1'", job->property("arg").toString()));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
     Akonadi::Item item = items.first();
 
     if (!item.hasPayload()) {
-        emit error(i18nc("@info:shell", "Item '%1' has no payload", job->property("arg").toString()));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "Item '%1' has no payload", job->property("arg").toString()));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
     QString editor = QString::fromLocal8Bit(qgetenv("EDITOR"));
     if (editor.isEmpty()) {
-        emit error(i18nc("@info:shell", "EDITOR environment variable needs to be set"));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "EDITOR environment variable needs to be set"));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
@@ -119,8 +119,8 @@ void EditCommand::onItemFetched(KJob *job)
     /* Using system() because KProcess / QProcess does not behave properly with console commands that expect input from stdin */
     int ret = system(QString(editor + " " + mTempFile->fileName()).toLocal8Bit().data());
     if (ret != 0) {
-        emit error(i18nc("@info:shell", "Cannot launch text editor '%1'", editor));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "Cannot launch text editor '%1'", editor));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
@@ -139,5 +139,5 @@ void EditCommand::onItemModified(KJob *job)
 {
     if (!checkJobResult(job)) return;
     std::cout << i18nc("@info:shell", "Changes to item '%1' have been saved", mItemArg).toLocal8Bit().constData() << std::endl;
-    emit finished(NoError);
+    Q_EMIT finished(NoError);
 }

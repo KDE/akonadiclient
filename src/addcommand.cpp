@@ -80,7 +80,7 @@ int AddCommand::initCommand(QCommandLineParser *parser)
         QMimeDatabase db;
         mMimeType = db.mimeTypeForName(mimeTypeArg);
         if (!mMimeType.isValid()) {
-            emit error(i18nc("@info:shell", "Invalid MIME type argument '%1'", mimeTypeArg));
+            Q_EMIT error(i18nc("@info:shell", "Invalid MIME type argument '%1'", mimeTypeArg));
             return InvalidUsage;
         }
     }
@@ -89,7 +89,7 @@ int AddCommand::initCommand(QCommandLineParser *parser)
     if (!mBasePath.isEmpty()) {				// base directory is specified
         QDir dir(mBasePath);
         if (!dir.exists()) {
-            emit error(i18nc("@info:shell", "Base directory '%1' not found", mBasePath));
+            Q_EMIT error(i18nc("@info:shell", "Base directory '%1' not found", mBasePath));
             return InvalidUsage;
         }
         mBasePath = dir.absolutePath();
@@ -110,10 +110,10 @@ int AddCommand::initCommand(QCommandLineParser *parser)
         }
 
         if (!fileInfo.exists()) {
-            emit error(i18n("File '%1' does not exist", path));
+            Q_EMIT error(i18n("File '%1' does not exist", path));
             return InvalidUsage;
         } else if (!fileInfo.isReadable()) {
-            emit error(i18n("Error accessing file '%1'", path));
+            Q_EMIT error(i18n("Error accessing file '%1'", path));
             return InvalidUsage;
         }
 
@@ -241,7 +241,7 @@ void AddCommand::processNextFile()
 {
     if (mFiles.isEmpty()) {
         ErrorReporter::progress(i18n("No more files to process"));
-        emit finished(NoError);
+        Q_EMIT finished(NoError);
         return;
     }
 
@@ -251,13 +251,13 @@ void AddCommand::processNextFile()
 
     QFile file(fileName);
     if (!file.exists()) {
-        emit error(i18nc("@info:shell", "File ‘%1’ does not exist", fileName));
+        Q_EMIT error(i18nc("@info:shell", "File ‘%1’ does not exist", fileName));
         QMetaObject::invokeMethod(this, "processNextFile", Qt::QueuedConnection);
         return;
     }
 
     if (!file.open(QIODevice::ReadOnly)) {
-        emit error(i18nc("@info:shell", "File ‘%1’ cannot be read", fileName));
+        Q_EMIT error(i18nc("@info:shell", "File ‘%1’ cannot be read", fileName));
         QMetaObject::invokeMethod(this, "processNextFile", Qt::QueuedConnection);
         return;
     }
@@ -265,7 +265,7 @@ void AddCommand::processNextFile()
     QMimeDatabase db;
     QMimeType mimeType = mMimeType.isValid() ? mMimeType : db.mimeTypeForFileNameAndData(fileName, &file);
     if (!mimeType.isValid()) {
-        emit error(i18nc("@info:shell", "Cannot determine MIME type of file ‘%1’", fileName));
+        Q_EMIT error(i18nc("@info:shell", "Cannot determine MIME type of file ‘%1’", fileName));
         QMetaObject::invokeMethod(this, "processNextFile", Qt::QueuedConnection);
         return;
     }
@@ -274,7 +274,7 @@ void AddCommand::processNextFile()
 
     const Collection parent = mCollectionsByPath.value(mBasePaths[ fileInfo.absolutePath() ]);
     if (!parent.isValid()) {
-        emit error(i18nc("@info:shell", "Cannot determine parent collection for file ‘%1’",
+        Q_EMIT error(i18nc("@info:shell", "Cannot determine parent collection for file ‘%1’",
                          QDir(mBasePath).relativeFilePath(fileName)));
         QMetaObject::invokeMethod(this, "processNextFile", Qt::QueuedConnection);
         return;

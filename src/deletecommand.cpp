@@ -70,7 +70,7 @@ int DeleteCommand::initCommand(QCommandLineParser *parser)
 void DeleteCommand::start()
 {
     if (!allowDangerousOperation()) {
-        emit finished(RuntimeError);
+        Q_EMIT finished(RuntimeError);
     }
 
     if (wantItem()) {
@@ -94,14 +94,14 @@ void DeleteCommand::onBaseFetched(KJob *job)
             }
         }
 
-        emit error(job->errorString());
-        emit finished(RuntimeError);
+        Q_EMIT error(job->errorString());
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
     if (res->collection() == Collection::root()) {
-        emit error(i18nc("@info:shell", "Cannot delete the root collection"));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "Cannot delete the root collection"));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
@@ -117,15 +117,15 @@ void DeleteCommand::onCollectionDeleted(KJob *job)
 {
     if (!checkJobResult(job)) return;
     std::cout << i18n("Collection deleted successfully").toLocal8Bit().constData() << std::endl;
-    emit finished(NoError);
+    Q_EMIT finished(NoError);
 }
 
 void DeleteCommand::fetchItems()
 {
     Item item = CollectionResolveJob::parseItem(mEntityArg);
     if (!item.isValid()) {
-        emit error(i18nc("@info:shell", "Invalid item/collection syntax '%1'", mEntityArg));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "Invalid item/collection syntax '%1'", mEntityArg));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
@@ -146,17 +146,17 @@ void DeleteCommand::onItemsFetched(KJob *job)
 
     Item::List items = fetchJob->items();
     if (items.count() < 0) {
-        emit error(i18nc("@info:shell", "Cannot find '%1' as a collection or item", mEntityArg));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "Cannot find '%1' as a collection or item", mEntityArg));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
-    emit finished(NoError);
+    Q_EMIT finished(NoError);
 }
 
 void DeleteCommand::onItemsDeleted(KJob *job)
 {
     if (!checkJobResult(job)) return;
     std::cout << i18n("Item deleted successfully").toLocal8Bit().constData() << std::endl;
-    emit finished(NoError);
+    Q_EMIT finished(NoError);
 }

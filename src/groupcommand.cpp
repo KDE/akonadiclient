@@ -152,7 +152,7 @@ void GroupCommand::start()
     if (mOperationMode == ModeDelete || mOperationMode == ModeClean) {
         if (!isDryRun()) {				// allow if not doing anything
             if (!allowDangerousOperation()) {
-                emit finished(RuntimeError);
+                Q_EMIT finished(RuntimeError);
                 return;
             }
         }
@@ -179,21 +179,21 @@ void GroupCommand::onItemsFetched(KJob *job)
 
     Item::List items = fetchJob->items();
     if (items.count() < 1) {
-        emit error(i18nc("@info:shell", "Cannot find '%1' as an item", mGroupArg));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "Cannot find '%1' as an item", mGroupArg));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
     mGroupItem = new Item(items.first());
     if (mGroupItem->mimeType() != KContacts::ContactGroup::mimeType()) {
-        emit error(i18nc("@info:shell", "Item '%1' is not a contact group", mGroupArg));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "Item '%1' is not a contact group", mGroupArg));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
     if (!mGroupItem->hasPayload<KContacts::ContactGroup>()) { // should never happen?
-        emit error(i18nc("@info:shell", "Item '%1' has no contact group payload", mGroupArg));
-        emit finished(RuntimeError);
+        Q_EMIT error(i18nc("@info:shell", "Item '%1' has no contact group payload", mGroupArg));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
@@ -225,16 +225,16 @@ void GroupCommand::onItemsFetched(KJob *job)
                 Akonadi::ItemModifyJob *modifyJob = new Akonadi::ItemModifyJob(*mGroupItem);
                 modifyJob->exec();
                 if (modifyJob->error() != 0) {
-                    emit error(modifyJob->errorString());
+                    Q_EMIT error(modifyJob->errorString());
                     status = RuntimeError;
                 }
             }
         } else {
-            emit error(i18nc("@info:shell", "Errors occurred, group not updated"));
+            Q_EMIT error(i18nc("@info:shell", "Errors occurred, group not updated"));
         }
     }
 
-    emit finished(status);
+    Q_EMIT finished(status);
 }
 
 static void writeColumn(const QString &data, int width = 0)
@@ -415,12 +415,12 @@ AbstractCommand::Errors GroupCommand::showExpandedGroup(const KContacts::Contact
         itemJob->exec();
         if (itemJob->error() != 0) {
             std::cout << std::endl;
-            emit error(itemJob->errorString());
+            Q_EMIT error(itemJob->errorString());
         }
 
         Item::List fetchedItems = itemJob->items();
         if (fetchedItems.isEmpty()) {
-            emit error(i18nc("@info:shell", "No items could be fetched"));
+            Q_EMIT error(i18nc("@info:shell", "No items could be fetched"));
         }
 
         for (Item::List::const_iterator it = fetchedItems.constBegin();

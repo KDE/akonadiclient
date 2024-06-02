@@ -71,7 +71,7 @@ int ImportCommand::initCommand(QCommandLineParser *parser)
     const QString fileArg = args.at(1);
     mDocument = new XmlDocument(fileArg);
     if (!mDocument->isValid()) {
-        emit error(i18nc("@info:shell", "Invalid XML file, %1", mDocument->lastError()));
+        Q_EMIT error(i18nc("@info:shell", "Invalid XML file, %1", mDocument->lastError()));
         return InvalidUsage;
     }
 
@@ -197,7 +197,7 @@ void ImportCommand::onCollectionCreated(KJob *job)
 void ImportCommand::processNextCollectionFromMap()
 {
     if (mCollectionMap.isEmpty()) {
-        emit finished(NoError);
+        Q_EMIT finished(NoError);
         return;
     }
 

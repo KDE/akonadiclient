@@ -84,11 +84,11 @@ void ShowCommand::onItemFetched(KJob *job)
         Q_ASSERT(fetchJob != nullptr);
         Item::List items = fetchJob->items();
         if (items.isEmpty()) {
-            emit error(i18nc("@info:shell", "No result returned for item '%1'", currentArg()));
+            Q_EMIT error(i18nc("@info:shell", "No result returned for item '%1'", currentArg()));
         } else {
             Akonadi::Item item = items.first();
             if (!item.hasPayload()) {
-                emit error(i18nc("@info:shell", "Item '%1' has no payload", currentArg()));
+                Q_EMIT error(i18nc("@info:shell", "Item '%1' has no payload", currentArg()));
             } else if (mRaw) {
                 std::cout << item.payloadData().constData();    // output the raw payload
             } else {

@@ -134,7 +134,7 @@ void TagsCommand::start()
     if (mOperationMode == ModeDelete) {
         if (!isDryRun()) {				// allow if not doing anything
             if (!allowDangerousOperation()) {
-                emit finished(RuntimeError);
+                Q_EMIT finished(RuntimeError);
                 return;
             }
         }
@@ -151,7 +151,7 @@ void TagsCommand::addNextTag()
     {
         if (tag.name()==currentArg() || (mAddForceId!=0 && tag.id()==mAddForceId))
         {
-            emit error(i18nc("@info:shell", "A tag named '%1' ID %2 already exists",
+            Q_EMIT error(i18nc("@info:shell", "A tag named '%1' ID %2 already exists",
                              tag.name(), QString::number(tag.id())));
             processNext();				// ignore the conflicting tag
             return;
@@ -175,12 +175,12 @@ void TagsCommand::onTagAdded(KJob *job)
     {
         if (mAddForceId!=0)
         {
-            emit error(i18nc("@info:shell", "Cannot add tag '%1' ID %2",
+            Q_EMIT error(i18nc("@info:shell", "Cannot add tag '%1' ID %2",
                              currentArg(), QString::number(mAddForceId)));
         }
         else
         {
-            emit error(i18nc("@info:shell", "Cannot add tag '%1'", currentArg()));
+            Q_EMIT error(i18nc("@info:shell", "Cannot add tag '%1'", currentArg()));
         }
     }
     else
@@ -228,7 +228,7 @@ void TagsCommand::deleteNextTag()
             // Check now whether the named tag currently exists.
             if (delTag.id()==-1)			// no tag found by loop above
             {
-                emit error(i18nc("@info:shell", "Tag to delete '%1' does not exist", currentArg()));
+                Q_EMIT error(i18nc("@info:shell", "Tag to delete '%1' does not exist", currentArg()));
                 processNext();				// ignore the missing tag
                 return;
             }
@@ -265,7 +265,7 @@ void TagsCommand::deleteNextTag()
         }
     }
 
-    emit error(i18nc("@info:shell", "Tag to delete ID %1 does not exist", QString::number(delTag.id())));
+    Q_EMIT error(i18nc("@info:shell", "Tag to delete ID %1 does not exist", QString::number(delTag.id())));
     processNext();					// ignore the missing tag
 }
 
@@ -305,8 +305,8 @@ void TagsCommand::onTagsFetched(KJob *job)
     {
         if (mFetchedTags.isEmpty())
         {
-            emit error(i18nc("@info:shell", "No tags found"));
-            emit finished(NoError);
+            Q_EMIT error(i18nc("@info:shell", "No tags found"));
+            Q_EMIT finished(NoError);
         }
         else listTags();
     }
@@ -337,5 +337,5 @@ void TagsCommand::listTags()
         std::cout << std::endl;
     }
 
-    emit finished();
+    Q_EMIT finished();
 }

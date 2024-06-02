@@ -68,7 +68,7 @@ int CreateCommand::initCommand(QCommandLineParser *parser)
         // any '/'es).
 
         if (collectionArg.contains(QLatin1Char('/'))) {
-            emit error(i18nc("@info:shell", "Collection argument (with parent) cannot be a path"));
+            Q_EMIT error(i18nc("@info:shell", "Collection argument (with parent) cannot be a path"));
             return InvalidUsage;
         }
 
@@ -85,7 +85,7 @@ int CreateCommand::initCommand(QCommandLineParser *parser)
 
         int i = collectionArg.lastIndexOf(QLatin1Char('/'));
         if (i == -1) {
-            emit error(i18nc("@info:shell", "Collection argument (without parent) must be a path"));
+            Q_EMIT error(i18nc("@info:shell", "Collection argument (without parent) must be a path"));
             return InvalidUsage;
         }
 
@@ -131,7 +131,7 @@ void CreateCommand::onTargetFetched(KJob *job)
         CollectionCreateJob *createJob = new CollectionCreateJob(newCollection);
         connect(createJob, &KJob::result, this, &CreateCommand::onCollectionCreated);
     } else {
-        emit finished(NoError);
+        Q_EMIT finished(NoError);
     }
 }
 
@@ -158,5 +158,5 @@ void CreateCommand::onPathFetched(KJob *job)
     std::cout << qPrintable(i18n("Created new collection '%1'", pathJob->formattedCollectionPath()))
               << std::endl;
 
-    emit finished(NoError);
+    Q_EMIT finished(NoError);
 }
