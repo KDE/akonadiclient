@@ -17,8 +17,7 @@
  *
  */
 
-#ifndef RENAMECOMMAND_H
-#define RENAMECOMMAND_H
+#pragma once
 
 #include "abstractcommand.h"
 
@@ -49,4 +48,3 @@ private Q_SLOTS:
     void onCollectionModified(KJob *job);
 };
 
-#endif // RENAMECOMMAND_H

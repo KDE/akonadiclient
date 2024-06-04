@@ -17,8 +17,7 @@
  *
  */
 
-#ifndef UPDATECOMMAND_H
-#define UPDATECOMMAND_H
+#pragma once
 
 #include "abstractcommand.h"
 
@@ -52,4 +51,3 @@ private Q_SLOTS:
     void onItemUpdated(KJob *job);
 };
 
-#endif // UPDATECOMMAND_H

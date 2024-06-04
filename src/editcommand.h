@@ -17,8 +17,7 @@
  *
  */
 
-#ifndef EDITCOMMAND_H
-#define EDITCOMMAND_H
+#pragma once
 
 #include "abstractcommand.h"
 
@@ -51,4 +50,3 @@ private Q_SLOTS:
     void onItemModified(KJob *job);
 };
 
-#endif // EDITCOMMAND_H

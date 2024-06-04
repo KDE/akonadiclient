@@ -17,8 +17,7 @@
  *
  */
 
-#ifndef AGENTSCOMMAND_H
-#define AGENTSCOMMAND_H
+#pragma once
 
 #include "abstractcommand.h"
 
@@ -70,4 +69,3 @@ private:
     QStringList mArguments;
 };
 
-#endif // AGENTSCOMMAND_H

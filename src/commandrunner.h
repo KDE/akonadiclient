@@ -16,8 +16,7 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef COMMANDRUNNER_H
-#define COMMANDRUNNER_H
+#pragma once
 
 #include <QObject>
 
@@ -44,4 +43,3 @@ private Q_SLOTS:
     void onCommandError(const QString &error);
 };
 
-#endif // COMMANDRUNNER_H

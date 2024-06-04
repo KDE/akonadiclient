@@ -17,8 +17,7 @@
  *
  */
 
-#ifndef DUMPCOMMAND_H
-#define DUMPCOMMAND_H
+#pragma once
 
 #include <qstringlist.h>
 
@@ -64,4 +63,3 @@ private Q_SLOTS:
     void processNextItem();
 };
 
-#endif							// DUMPCOMMAND_H

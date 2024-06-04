@@ -17,8 +17,7 @@
  *
  */
 
-#ifndef COMMANDSHELL_H
-#define COMMANDSHELL_H
+#pragma once
 
 #include "abstractcommand.h"
 
@@ -55,4 +54,3 @@ private Q_SLOTS:
     void onCommandError(const QString &error);
 };
 
-#endif // COMMANDSHELL_H

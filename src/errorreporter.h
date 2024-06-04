@@ -16,8 +16,7 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef ERRORREPORTER_H
-#define ERRORREPORTER_H
+#pragma once
 
 class QString;
 
@@ -30,4 +29,3 @@ void progress(const QString &msg);
 void setRunningApplication(bool running = true);
 };
 
-#endif // ERRORREPORTER_H

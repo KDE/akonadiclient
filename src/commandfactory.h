@@ -16,8 +16,7 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef COMMANDFACTORY_H
-#define COMMANDFACTORY_H
+#pragma once
 
 #include <QObject>
 
@@ -63,4 +62,3 @@ private:
     void printHelpAndExit(bool userRequestedHelp);
 };
 
-#endif // COMMANDFACTORY_H

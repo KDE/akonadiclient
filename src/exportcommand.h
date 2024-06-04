@@ -17,8 +17,7 @@
  *
  */
 
-#ifndef EXPORTCOMMAND_H
-#define EXPORTCOMMAND_H
+#pragma once
 
 #include "abstractcommand.h"
 
@@ -49,4 +48,3 @@ private Q_SLOTS:
     void onWriteFinished(KJob *);
 };
 
-#endif // EXPORTCOMMAND_H

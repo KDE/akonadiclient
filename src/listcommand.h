@@ -16,8 +16,7 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef LISTCOMMAND_H
-#define LISTCOMMAND_H
+#pragma once
 
 #include "abstractcommand.h"
 
@@ -55,4 +54,3 @@ private Q_SLOTS:
     void onItemsFetched(KJob *job);
 };
 
-#endif // LISTCOMMAND_H

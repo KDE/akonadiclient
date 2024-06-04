@@ -17,8 +17,7 @@
  *
  */
 
-#ifndef IMPORTCOMMAND_H
-#define IMPORTCOMMAND_H
+#pragma once
 
 #include "abstractcommand.h"
 
@@ -69,4 +68,3 @@ private Q_SLOTS:
     void processNextItemFromQueue();
 };
 
-#endif // IMPORTCOMMAND_H

@@ -16,8 +16,7 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef MOVECOMMAND_H
-#define MOVECOMMAND_H
+#pragma once
 
 #include "copycommand.h"
 
@@ -38,4 +37,3 @@ protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
 };
 
-#endif                          // MOVECOMMAND_H

@@ -17,8 +17,7 @@
  *
  */
 
-#ifndef DELETECOMMAND_H
-#define DELETECOMMAND_H
+#pragma once
 
 #include "abstractcommand.h"
 
@@ -62,4 +61,3 @@ private Q_SLOTS:
     void onItemsFetched(KJob *job);
 };
 
-#endif // DELETECOMMAND_H

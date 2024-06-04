@@ -16,8 +16,7 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef COLLECTIONRESOLVEJOB_H
-#define COLLECTIONRESOLVEJOB_H
+#pragma once
 
 #include <Akonadi/Collection>
 #include <Akonadi/CollectionPathResolver>
@@ -72,4 +71,3 @@ private:
     void fetchBase();
 };
 
-#endif                          // COLLECTIONRESOLVEJOB_H
