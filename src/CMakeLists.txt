@@ -35,7 +35,7 @@ set(akonadiclient_SRCS main.cpp)
 add_library(libakonadiclient STATIC ${libakonadiclient_SRCS})
 target_link_libraries(libakonadiclient KPim6::AkonadiCore KPim6::AkonadiXml KPim6::AkonadiContactCore KPim6::Mime)
 target_link_libraries(libakonadiclient KF6::I18n KF6::Codecs)
-target_link_libraries(libakonadiclient Qt6::Core)
+target_link_libraries(libakonadiclient Qt::Core)
 
 set_target_properties(libakonadiclient PROPERTIES ENABLE_EXPORTS TRUE)
 
