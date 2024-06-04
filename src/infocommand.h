@@ -37,7 +37,7 @@ public:
     explicit InfoCommand(QObject *parent = nullptr);
     ~InfoCommand() override;
 
-    QString name() const override;
+    [[nodiscard]] QString name() const override;
 
 public Q_SLOTS:
     void start() override;

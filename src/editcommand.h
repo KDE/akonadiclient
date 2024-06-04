@@ -32,7 +32,7 @@ public:
     explicit EditCommand(QObject *parent = nullptr);
     ~EditCommand() override;
 
-    QString name() const override;
+    [[nodiscard]] QString name() const override;
 
 public Q_SLOTS:
     void start() override;

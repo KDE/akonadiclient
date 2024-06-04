@@ -37,9 +37,9 @@ public:
     enum AddDirectoryMode { AddDirOnly = 0, AddRecursive };
 
     explicit AddCommand(QObject *parent = nullptr);
-    virtual ~AddCommand() = default;
+    ~AddCommand() = default;
 
-    QString name() const override;
+    [[nodiscard]] QString name() const override;
 
 public Q_SLOTS:
     void start() override;

@@ -32,7 +32,7 @@ public:
     explicit UpdateCommand(QObject *parent = nullptr);
     ~UpdateCommand() override;
 
-    QString name() const override;
+    [[nodiscard]] QString name() const override;
 
 public Q_SLOTS:
     void start() override;

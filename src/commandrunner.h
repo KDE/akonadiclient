@@ -30,8 +30,8 @@ public:
     explicit CommandRunner(const QStringList *args);
     ~CommandRunner() override;
 
-    int start();
-    int exitCode() const
+    [[nodiscard]] int start();
+    [[nodiscard]] int exitCode() const
     {
         return (mExitCode);
     }

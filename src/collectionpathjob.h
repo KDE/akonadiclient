@@ -32,8 +32,8 @@ public:
 
     void start() override;
 
-    QString collectionPath() const;
-    QString formattedCollectionPath() const;
+    [[nodiscard]] QString collectionPath() const;
+    [[nodiscard]] QString formattedCollectionPath() const;
 
 protected Q_SLOTS:
     void slotResult(KJob *job) override;

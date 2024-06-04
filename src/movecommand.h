@@ -28,7 +28,7 @@ public:
     explicit MoveCommand(QObject *parent = nullptr);
     ~MoveCommand() override = default;
 
-    QString name() const override;
+    [[nodiscard]] QString name() const override;
 
 public Q_SLOTS:
     void start() override;

@@ -32,10 +32,10 @@ public:
     explicit CopyCommand(QObject *parent = nullptr);
     ~CopyCommand() override = default;
 
-    QString name() const override;
+    [[nodiscard]] QString name() const override;
 
 public Q_SLOTS:
-    virtual void start() override;
+    void start() override;
 
 protected:
     bool mMoving;

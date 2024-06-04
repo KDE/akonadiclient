@@ -41,20 +41,20 @@ class CollectionResolveJob : public KCompositeJob
 
 public:
     explicit CollectionResolveJob(const QString &userInput, QObject *parent = nullptr);
-    virtual ~CollectionResolveJob() = default;
+    ~CollectionResolveJob() override = default;
 
     void start() override;
 
-    bool hasUsableInput();
-    bool hadSlash() const
+    [[nodiscard]] bool hasUsableInput();
+    [[nodiscard]] bool hadSlash() const
     {
         return (mHadSlash);
     }
-    Akonadi::Collection collection() const
+    [[nodiscard]] Akonadi::Collection collection() const
     {
         return (mCollection);
     }
-    QString formattedCollectionName() const;
+    [[nodiscard]] QString formattedCollectionName() const;
 
     static Akonadi::Item parseItem(const QString &userInput, bool showError = false);
     static Akonadi::Collection parseCollection(const QString &userInput);

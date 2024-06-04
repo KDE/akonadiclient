@@ -34,7 +34,7 @@ public:
     explicit DumpCommand(QObject *parent = nullptr);
     ~DumpCommand() override = default;
 
-    QString name() const override;
+    [[nodiscard]] QString name() const override;
 
 public Q_SLOTS:
     void start() override;

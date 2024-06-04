@@ -38,7 +38,7 @@ public:
     explicit DeleteCommand(QObject *parent = nullptr);
     ~DeleteCommand() override = default;
 
-    QString name() const override;
+    [[nodiscard]] QString name() const override;
 
 public Q_SLOTS:
     void start() override;

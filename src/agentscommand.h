@@ -32,9 +32,9 @@ class AgentsCommand : public AbstractCommand
 
 public:
     explicit AgentsCommand(QObject *parent = nullptr);
-    virtual ~AgentsCommand() = default;
+    ~AgentsCommand() override = default;
 
-    QString name() const override;
+    [[nodiscard]] QString name() const override;
 
 public Q_SLOTS:
     void start() override;

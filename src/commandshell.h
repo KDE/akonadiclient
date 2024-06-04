@@ -31,7 +31,7 @@ public:
     explicit CommandShell(QObject *parent = nullptr);
     ~CommandShell() override;
 
-    QString name() const override;
+    [[nodiscard]] QString name() const override;
 
 public:
     static bool isActive()
