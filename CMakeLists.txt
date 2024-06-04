@@ -48,6 +48,6 @@ add_custom_target(vcsversion
 
 
 add_subdirectory(src)
-# TODO add_subdirectory(doc)
+add_subdirectory(doc)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
