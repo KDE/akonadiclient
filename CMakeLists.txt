@@ -18,6 +18,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 include(ECMAddTests)
 include(ECMQtDeclareLoggingCategory)
+include(ECMDeprecationSettings)
 
 add_definitions(-DQT_USE_QSTRINGBUILDER -DQT_USE_FAST_OPERATOR_PLUS -DQT_NO_URL_CAST_FROM_STRING)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
@@ -38,7 +39,10 @@ find_package(KPim6Mime ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Widgets Test)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DocTools)
 
-
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+ecm_set_disabled_deprecation_versions(QT 6.5
+    KF 6.3.0
+    )
 add_custom_target(vcsversion
   ALL
   COMMENT "Checking VCS type and version"
