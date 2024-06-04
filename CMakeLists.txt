@@ -40,7 +40,7 @@ find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Widgets Te
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DocTools)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
-ecm_set_disabled_deprecation_versions(QT 6.5
+ecm_set_disabled_deprecation_versions(QT 6.7
     KF 6.3.0
     )
 add_custom_target(vcsversion
