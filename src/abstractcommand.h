@@ -32,7 +32,7 @@ public:
     enum Errors { DefaultError = -1, NoError = 0, InvalidUsage = 1, RuntimeError = 2 };
 
     explicit AbstractCommand(QObject *parent = nullptr);
-    virtual ~AbstractCommand() = default;
+    ~AbstractCommand() override = default;
 
     int init(const QStringList &parsedArgs, bool showHelp = false);
 
