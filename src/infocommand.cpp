@@ -309,3 +309,5 @@ void InfoCommand::onParentPathFetched(KJob *job)
 
     processNext();
 }
+
+#include "moc_infocommand.cpp"

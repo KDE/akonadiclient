@@ -161,3 +161,5 @@ void CreateCommand::onPathFetched(KJob *job)
 
     Q_EMIT finished(NoError);
 }
+
+#include "moc_createcommand.cpp"

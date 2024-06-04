@@ -254,3 +254,5 @@ void AgentsCommand::restartAgents()
         }
     }
 }
+
+#include "moc_agentscommand.cpp"

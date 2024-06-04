@@ -75,3 +75,5 @@ void CommandRunner::onCommandError(const QString &error)
     // it is not already set.
     if (mExitCode == AbstractCommand::NoError) mExitCode = AbstractCommand::RuntimeError;
 }
+
+#include "moc_commandrunner.cpp"

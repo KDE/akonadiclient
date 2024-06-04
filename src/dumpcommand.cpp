@@ -345,3 +345,5 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
 #endif
     }
 }
+
+#include "moc_dumpcommand.cpp"

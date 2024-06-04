@@ -133,3 +133,5 @@ void UpdateCommand::onItemUpdated(KJob *job)
     std::cout << qPrintable(i18nc("@info:shell", "Item updated successfully")) << std::endl;
     Q_EMIT finished(NoError);
 }
+
+#include "moc_updatecommand.cpp"

@@ -92,3 +92,5 @@ void RenameCommand::onCollectionModified(KJob *job)
     std::cout << qPrintable(i18nc("@info:shell", "Collection renamed successfully")) << std::endl;
     Q_EMIT finished(NoError);
 }
+
+#include "moc_renamecommand.cpp"

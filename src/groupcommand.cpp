@@ -711,3 +711,5 @@ AbstractCommand::Errors GroupCommand::cleanGroupItems(KContacts::ContactGroup &g
 
     return (NoError);
 }
+
+#include "moc_groupcommand.cpp"

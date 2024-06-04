@@ -115,3 +115,5 @@ void ShowCommand::onItemFetched(KJob *job)
 
     processNext();
 }
+
+#include "moc_showcommand.cpp"

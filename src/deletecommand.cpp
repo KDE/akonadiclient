@@ -161,3 +161,5 @@ void DeleteCommand::onItemsDeleted(KJob *job)
     std::cout << i18n("Item deleted successfully").toLocal8Bit().constData() << std::endl;
     Q_EMIT finished(NoError);
 }
+
+#include "moc_deletecommand.cpp"

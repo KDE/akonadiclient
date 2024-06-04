@@ -144,3 +144,5 @@ void EditCommand::onItemModified(KJob *job)
     std::cout << i18nc("@info:shell", "Changes to item '%1' have been saved", mItemArg).toLocal8Bit().constData() << std::endl;
     Q_EMIT finished(NoError);
 }
+
+#include "moc_editcommand.cpp"
