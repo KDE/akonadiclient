@@ -33,7 +33,7 @@
 using namespace Akonadi;
 
 DEFINE_COMMAND("create", CreateCommand, kli18nc("info:shell", "Create a new collection"));
-
+using namespace Qt::Literals::StringLiterals;
 CreateCommand::CreateCommand(QObject *parent)
     : AbstractCommand(parent)
 {
@@ -119,7 +119,7 @@ void CreateCommand::onTargetFetched(KJob *job)
     Q_ASSERT(parentCollection.isValid());
 
     // Warning for bug 319513
-    if ((mNewCollectionName == "cur") || (mNewCollectionName == "new") || (mNewCollectionName == "tmp")) {
+    if ((mNewCollectionName == "cur"_L1) || (mNewCollectionName == "new"_L1) || (mNewCollectionName == "tmp"_L1)) {
         QString parentResource = parentCollection.resource();
         if (parentResource.startsWith(QLatin1String("akonadi_maildir_resource"))) {
             ErrorReporter::warning(i18n("Creating a maildir folder named '%1' may not work", mNewCollectionName));

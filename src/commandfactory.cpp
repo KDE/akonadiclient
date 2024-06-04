@@ -26,7 +26,7 @@
 #include <QHash>
 
 #include <iostream>
-
+using namespace Qt::Literals::StringLiterals;
 struct CommandData {
     KLocalizedString shortHelp;
     CommandFactory::creatorFunction creator;
@@ -134,7 +134,7 @@ void CommandFactory::printHelpAndExit(bool userRequestedHelp)
     stream << std::endl << qPrintable(i18nc("@info:shell", "Available commands are:")) << std::endl;
 
     for (const QString &commandName : std::as_const(commands)) {
-        if (commandName == "shell" && shellActive)
+        if (commandName == "shell"_L1 && shellActive)
             continue;
 
         stream << qPrintable(linePattern.arg(commandName.leftJustified(maxNameLength), sCommands->value(commandName)->shortHelp.toString(Kuit::TermText)))

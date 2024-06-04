@@ -26,7 +26,7 @@
 
 #include <QCoreApplication>
 #include <QTextStream>
-
+using namespace Qt::Literals::StringLiterals;
 DEFINE_COMMAND("shell", CommandShell, kli18n("Enter commands in an interactive shell"));
 
 bool CommandShell::sIsActive = false;
@@ -75,12 +75,12 @@ bool CommandShell::enterCommandLoop()
     } // but continue command loop
     else if (!args.isEmpty()) { // non-empty input line
         const QString cmd = args.first(); // look at command name
-        if (cmd == "quit" || cmd == "exit") { // exit shell on these
+        if (cmd == "quit"_L1 || cmd == "exit"_L1) { // exit shell on these
             return (false);
         }
 
         CommandFactory factory(&args);
-        if (cmd == "help")
+        if (cmd == "help"_L1)
             return (true); // handled above by CommandFactory
 
         toInvoke = factory.createCommand();

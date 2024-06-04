@@ -30,7 +30,7 @@
 #include "errorreporter.h"
 
 using namespace Akonadi;
-
+using namespace Qt::Literals::StringLiterals;
 DEFINE_COMMAND("show", ShowCommand, kli18nc("info:shell", "Show the raw payload of an item"));
 
 ShowCommand::ShowCommand(QObject *parent)
@@ -51,7 +51,7 @@ int ShowCommand::initCommand(QCommandLineParser *parser)
     if (!checkArgCount(itemArgs, 1, i18nc("@info:shell", "No items specified")))
         return InvalidUsage;
 
-    mRaw = parser->isSet("raw");
+    mRaw = parser->isSet("raw"_L1);
 
     initProcessLoop(itemArgs);
     return NoError;

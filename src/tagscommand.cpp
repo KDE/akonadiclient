@@ -27,7 +27,7 @@
 #include "commandfactory.h"
 
 using namespace Akonadi;
-
+using namespace Qt::Literals::StringLiterals;
 DEFINE_COMMAND("tags", TagsCommand, kli18nc("info:shell", "List or modify tags"));
 
 TagsCommand::TagsCommand(QObject *parent)
@@ -67,8 +67,8 @@ void TagsCommand::setupCommandOptions(QCommandLineParser *parser)
 
 int TagsCommand::initCommand(QCommandLineParser *parser)
 {
-    mBriefOutput = parser->isSet("brief");
-    mUrlsOutput = parser->isSet("urls");
+    mBriefOutput = parser->isSet("brief"_L1);
+    mUrlsOutput = parser->isSet("urls"_L1);
 
     // if (parser->isSet("id"))
     //{
@@ -87,13 +87,13 @@ int TagsCommand::initCommand(QCommandLineParser *parser)
     }
 
     int modeCount = 0;
-    if (parser->isSet("list")) {
+    if (parser->isSet("list"_L1)) {
         ++modeCount;
     }
-    if (parser->isSet("add")) {
+    if (parser->isSet("add"_L1)) {
         ++modeCount;
     }
-    if (parser->isSet("delete")) {
+    if (parser->isSet("delete"_L1)) {
         ++modeCount;
     }
     if (modeCount > 1) {
@@ -103,10 +103,10 @@ int TagsCommand::initCommand(QCommandLineParser *parser)
 
     const QStringList tagArgs = parser->positionalArguments();
 
-    if (parser->isSet("list")) { // see if "List" mode
+    if (parser->isSet("list"_L1)) { // see if "List" mode
         // expand
         mOperationMode = ModeList;
-    } else if (parser->isSet("add")) { // see if "Add" mode
+    } else if (parser->isSet("add"_L1)) { // see if "Add" mode
         // add [-i ID] NAME
         // add NAME...
         mOperationMode = ModeAdd;
@@ -120,7 +120,7 @@ int TagsCommand::initCommand(QCommandLineParser *parser)
             emitErrorSeeHelp(i18nc("@info:shell", "Multiple tags cannot be specified to add with 'id'"));
             return (InvalidUsage);
         }
-    } else if (parser->isSet("delete")) // see if "Delete" mode
+    } else if (parser->isSet("delete"_L1)) // see if "Delete" mode
     {
         // delete NAME|ID|URL...
         mOperationMode = ModeDelete;

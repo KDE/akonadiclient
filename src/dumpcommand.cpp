@@ -42,7 +42,7 @@
 #include "errorreporter.h"
 
 using namespace Akonadi;
-
+using namespace Qt::Literals::StringLiterals;
 DEFINE_COMMAND("dump", DumpCommand, kli18nc("info:shell", "Dump a collection to a directory structure"));
 
 DumpCommand::DumpCommand(QObject *parent)
@@ -78,7 +78,7 @@ int DumpCommand::initCommand(QCommandLineParser *parser)
 
     if (!getCommonOptions(parser))
         return InvalidUsage;
-    mMaildir = parser->isSet("maildir");
+    mMaildir = parser->isSet("maildir"_L1);
     mAkonadiCategories = parser->isSet("akonadi-categories");
 
     const QString collectionArg = args.at(0);
@@ -93,7 +93,7 @@ int DumpCommand::initCommand(QCommandLineParser *parser)
     }
 
     mDirectoryArg = dir.canonicalPath();
-    if (!parser->isSet("force") && !dir.entryList(QDir::AllEntries | QDir::Hidden | QDir::System | QDir::NoDotAndDotDot).isEmpty()) {
+    if (!parser->isSet("force"_L1) && !dir.entryList(QDir::AllEntries | QDir::Hidden | QDir::System | QDir::NoDotAndDotDot).isEmpty()) {
         Q_EMIT error(i18nc("@info:shell", "Directory '%1' is not empty (use '-f' to force operation)", mDirectoryArg));
         return (InvalidUsage);
     }
@@ -209,8 +209,8 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
     if (ext.isEmpty() && mimeType == "application/x-vnd.kde.contactgroup")
         ext = "group";
 
-    QString destDir = mDirectoryArg + "/";
-    if (mMaildir && mimeType == "message/rfc822") // an email message,
+    QString destDir = mDirectoryArg + "/"_L1;
+    if (mMaildir && mimeType == "message/rfc822"_L1) // an email message,
     { // replicate maildir structure
         const QStringList dirs = parent.split('/');
         Q_ASSERT(!dirs.isEmpty());
@@ -273,12 +273,12 @@ void DumpCommand::writeItem(const Akonadi::Item &item, const QString &parent)
                     continue;
                 }
                 // ignore old data from these
-                if (line.startsWith("X-AKONADI-UID:"))
+                if (line.startsWith("X-AKONADI-UID:"_L1))
                     continue;
-                if (line.startsWith("X-AKONADI-ITEM:"))
+                if (line.startsWith("X-AKONADI-ITEM:"_L1))
                     continue;
 
-                if (!line.startsWith("CATEGORIES:")) { // not interested in this line
+                if (!line.startsWith("CATEGORIES:"_L1)) { // not interested in this line
                     newLines.append(QString::fromUtf8(line));
                     continue;
                 }

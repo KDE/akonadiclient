@@ -35,7 +35,7 @@
 #include "errorreporter.h"
 
 using namespace Akonadi;
-
+using namespace Qt::Literals::StringLiterals;
 DEFINE_COMMAND("group", GroupCommand, kli18nc("info:shell", "Expand or modify a contact group"));
 
 GroupCommand::GroupCommand(QObject *parent)
@@ -88,16 +88,16 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
         return InvalidUsage;
 
     int modeCount = 0;
-    if (parser->isSet("expand")) {
+    if (parser->isSet("expand"_L1)) {
         ++modeCount;
     }
-    if (parser->isSet("add")) {
+    if (parser->isSet("add"_L1)) {
         ++modeCount;
     }
-    if (parser->isSet("delete")) {
+    if (parser->isSet("delete"_L1)) {
         ++modeCount;
     }
-    if (parser->isSet("clean")) {
+    if (parser->isSet("clean"_L1)) {
         ++modeCount;
     }
     if (modeCount > 1) {
@@ -105,10 +105,10 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
         return (InvalidUsage);
     }
 
-    if (parser->isSet("expand")) { // see if "Expand" mode
+    if (parser->isSet("expand"_L1)) { // see if "Expand" mode
         // expand GROUP
         mOperationMode = ModeExpand;
-    } else if (parser->isSet("add")) { // see if "Add" mode
+    } else if (parser->isSet("add"_L1)) { // see if "Add" mode
         // add GROUP EMAIL|ID...
         // add GROUP -c NAME EMAIL|ID
         if (mItemArgs.count() < 2) { // missing GROUP was checked above
@@ -116,7 +116,7 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
             return (InvalidUsage);
         }
 
-        mNameArg = parser->value("comment");
+        mNameArg = parser->value("comment"_L1);
         if (!mNameArg.isEmpty()) {
             // if the "comment" option is specified,
             // then only one EMAIL|ID argument may be given.
@@ -127,7 +127,7 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
         }
 
         mOperationMode = ModeAdd;
-    } else if (parser->isSet("delete")) { // see if "Delete" mode
+    } else if (parser->isSet("delete"_L1)) { // see if "Delete" mode
         // delete GROUP EMAIL|ID...
         if (mItemArgs.count() < 2) { // missing GROUP was checked above
             emitErrorSeeHelp(i18nc("@info:shell", "No items specified to delete"));
@@ -135,7 +135,7 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
         }
 
         mOperationMode = ModeDelete;
-    } else if (parser->isSet("clean")) { // see if "Clean" mode
+    } else if (parser->isSet("clean"_L1)) { // see if "Clean" mode
         // clean GROUP
         mOperationMode = ModeClean;
     } else { // no mode option specified
@@ -143,13 +143,13 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
     }
 
     if (mOperationMode != ModeAdd) {
-        if (parser->isSet("comment")) {
+        if (parser->isSet("comment"_L1)) {
             emitErrorSeeHelp(i18nc("@info:shell", "The 'comment' option is only allowed with 'add'"));
             return (InvalidUsage);
         }
     }
 
-    mBriefMode = parser->isSet("brief"); // brief/quiet output
+    mBriefMode = parser->isSet("brief"_L1); // brief/quiet output
 
     mGroupArg = mItemArgs.takeFirst(); // contact group collection
 

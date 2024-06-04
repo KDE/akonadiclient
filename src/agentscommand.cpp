@@ -33,7 +33,7 @@
 #include "commandfactory.h"
 
 using namespace Akonadi;
-
+using namespace Qt::Literals::StringLiterals;
 DEFINE_COMMAND("agents", AgentsCommand, kli18nc("info:shell", "Manage Akonadi agents"));
 
 AgentsCommand::AgentsCommand(QObject *parent)
@@ -82,13 +82,13 @@ int AgentsCommand::initCommand(QCommandLineParser *parser)
 
         if (parser->isSet("info")) {
             mOption = INFO;
-        } else if (parser->isSet("restart")) {
+        } else if (parser->isSet("restart"_L1)) {
             mOption = RESTART;
-        } else if (parser->isSet("getstate")) {
+        } else if (parser->isSet("getstate"_L1)) {
             mOption = GETSTATE;
-        } else if (parser->isSet("setstate")) {
+        } else if (parser->isSet("setstate"_L1)) {
             mOption = SETSTATE;
-            const QString state = parser->value("setstate");
+            const QString state = parser->value("setstate"_L1);
 
             if (state.length() >= 2 && state.compare(QStringLiteral("online").left(state.length())) == 0) {
                 mStateArg = ONLINE;

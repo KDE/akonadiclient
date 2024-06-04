@@ -57,7 +57,7 @@ int RenameCommand::initCommand(QCommandLineParser *parser)
     if (!getCommonOptions(parser))
         return InvalidUsage;
 
-    QString oldCollectionNameArg = args.first();
+    const QString oldCollectionNameArg = args.constFirst();
     mNewCollectionNameArg = args.at(1);
 
     if (!getResolveJob(oldCollectionNameArg))

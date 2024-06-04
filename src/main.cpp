@@ -49,9 +49,9 @@ int main(int argc, char **argv)
                          // shortDescription
                          KAboutLicense::GPL); // licenseType
 
-    aboutData.addAuthor(i18n("Kevin Krammer"), i18nc("@title about data task", "Original Author"), "krammer@kde.org");
-    aboutData.addAuthor(i18n("Jonathan Marten"), i18nc("@title about data task", "Additions and new commands"), "jjm@keelhaul.me.uk");
-    aboutData.addAuthor(i18n("Bhaskar Kandiyal"), i18nc("@title about data task", "New commands, GSOC 2014"), "bkandiyal@gmail.com");
+    aboutData.addAuthor(i18nc("@info:credit", "Kevin Krammer"), i18nc("@title about data task", "Original Author"), "krammer@kde.org");
+    aboutData.addAuthor(i18nc("@info:credit", "Jonathan Marten"), i18nc("@title about data task", "Additions and new commands"), "jjm@keelhaul.me.uk");
+    aboutData.addAuthor(i18nc("@info:credit", "Bhaskar Kandiyal"), i18nc("@title about data task", "New commands, GSOC 2014"), "bkandiyal@gmail.com");
 
     KAboutData::setApplicationData(aboutData);
 
