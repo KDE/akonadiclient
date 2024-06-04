@@ -19,6 +19,8 @@ include(KDECMakeSettings)
 include(ECMAddTests)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
+include(KDEGitCommitHooks)
+include(KDEClangFormat)
 
 add_definitions(-DQT_USE_QSTRINGBUILDER -DQT_USE_FAST_OPERATOR_PLUS -DQT_NO_URL_CAST_FROM_STRING)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
@@ -53,5 +55,5 @@ add_custom_target(vcsversion
 
 add_subdirectory(src)
 add_subdirectory(doc)
-
+kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
