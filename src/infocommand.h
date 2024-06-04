@@ -48,9 +48,9 @@ protected:
     int initCommand(QCommandLineParser *parser) override;
 
 private:
-    Akonadi::Collection *mInfoCollection;
-    Akonadi::Item *mInfoItem;
-    Akonadi::CollectionStatistics *mInfoStatistics;
+    Akonadi::Collection *mInfoCollection = nullptr;
+    Akonadi::Item *mInfoItem = nullptr;
+    Akonadi::CollectionStatistics *mInfoStatistics = nullptr;
 
 private:
     void fetchStatistics();

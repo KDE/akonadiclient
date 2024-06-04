@@ -40,8 +40,7 @@ DEFINE_COMMAND(
             "Edit the raw payload for the specified item using $EDITOR"));
 
 EditCommand::EditCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mTempFile(nullptr)
+    : AbstractCommand(parent)
 {
 }
 

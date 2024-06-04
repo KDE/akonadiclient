@@ -49,7 +49,7 @@ protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
 
 private:
-    Akonadi::CollectionDeleteJob *mDeleteJob;
+    Akonadi::CollectionDeleteJob *mDeleteJob = nullptr;
     QString mEntityArg;
 
 private:

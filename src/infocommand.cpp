@@ -40,10 +40,7 @@ DEFINE_COMMAND("info", InfoCommand,
                        "Show full information for a collection or item"));
 
 InfoCommand::InfoCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mInfoCollection(nullptr),
-      mInfoItem(nullptr),
-      mInfoStatistics(nullptr)
+    : AbstractCommand(parent)
 {
 }
 

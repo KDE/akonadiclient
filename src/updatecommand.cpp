@@ -36,8 +36,7 @@ DEFINE_COMMAND("update", UpdateCommand,
                kli18nc("info:shell", "Update an item's payload from a file"));
 
 UpdateCommand::UpdateCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mFile(nullptr)
+    : AbstractCommand(parent)
 {
 }
 

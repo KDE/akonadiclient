@@ -51,7 +51,7 @@ private:
         ModeClean
     };
 
-    Akonadi::Item *mGroupItem;
+    Akonadi::Item *mGroupItem = nullptr;
 
     QString mGroupArg;
     QString mNameArg;

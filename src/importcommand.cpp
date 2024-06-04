@@ -40,8 +40,7 @@ DEFINE_COMMAND("import", ImportCommand,
                kli18nc("info:shell", "Import an XML file"));
 
 ImportCommand::ImportCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mDocument(nullptr)
+    : AbstractCommand(parent)
 {
 }
 

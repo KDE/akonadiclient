@@ -41,8 +41,7 @@ DEFINE_COMMAND("delete", DeleteCommand,
                kli18nc("info:shell", "Delete a collection or an item"));
 
 DeleteCommand::DeleteCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mDeleteJob(nullptr)
+    : AbstractCommand(parent)
 {
 }
 

@@ -43,7 +43,7 @@ protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
 
 private:
-    QFile *mFile;
+    QFile *mFile = nullptr;
     QString mFileArg;
     QString mItemArg;
 

@@ -27,8 +27,7 @@
 #include <iostream>
 
 CommandRunner::CommandRunner(const QStringList *args)
-    : mCommand(nullptr),
-      mParsedArgs(args)
+    : mParsedArgs(args)
 {
 }
 

@@ -45,7 +45,7 @@ protected:
     int initCommand(QCommandLineParser *parser) override;
 
 private:
-    QTextStream *mTextStream;
+    QTextStream *const mTextStream;
     static bool sIsActive;
 
 private:

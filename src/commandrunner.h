@@ -35,7 +35,7 @@ public:
     int exitCode() const				{ return (mExitCode); }
 
 private:
-    AbstractCommand *mCommand;
+    AbstractCommand *mCommand = nullptr;
     const QStringList *mParsedArgs;
     int mExitCode;
 

@@ -41,7 +41,6 @@ DEFINE_COMMAND("group", GroupCommand,
 
 GroupCommand::GroupCommand(QObject *parent)
     : AbstractCommand(parent),
-      mGroupItem(nullptr),
       mBriefMode(false),
       mOperationMode(ModeExpand)
 {

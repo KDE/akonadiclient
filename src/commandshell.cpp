@@ -34,8 +34,8 @@ bool CommandShell::sIsActive = false;
 
 CommandShell::CommandShell(QObject *parent)
     : AbstractCommand(parent)
+    , mTextStream(new QTextStream(stdin))
 {
-    mTextStream = new QTextStream(stdin);
 }
 
 CommandShell::~CommandShell()

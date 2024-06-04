@@ -44,7 +44,7 @@ protected:
 
 private:
     QString mItemArg;
-    QTemporaryFile *mTempFile;
+    QTemporaryFile *mTempFile = nullptr;
 
 private Q_SLOTS:
     void onItemFetched(KJob *job);

@@ -153,7 +153,7 @@ private:
     bool mSetDryRun;
     bool mSetCollectionItem;
 
-    CollectionResolveJob *mResolveJob;
+    CollectionResolveJob *mResolveJob = nullptr;
 
     QStringList mProcessLoopArgs;
     const char *mProcessLoopSlot;

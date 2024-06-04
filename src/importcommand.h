@@ -56,7 +56,7 @@ private:
     QVector<Akonadi::Item> mItemQueue;
     QVector<Akonadi::Collection> mCollections;
     QMap<QString, Akonadi::Collection> mCollectionMap;
-    Akonadi::XmlDocument *mDocument;
+    Akonadi::XmlDocument *mDocument = nullptr;
 
 private Q_SLOTS:
     void onCollectionCreated(KJob *job);
