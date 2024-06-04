@@ -18,25 +18,18 @@
 
 #pragma once
 
-#include <QObject>
 #include <QCommandLineParser>
-
+#include <QObject>
 
 class KJob;
 class CollectionResolveJob;
-
 
 class AbstractCommand : public QObject
 {
     Q_OBJECT
 
 public:
-    enum Errors {
-        DefaultError = -1,
-        NoError = 0,
-        InvalidUsage = 1,
-        RuntimeError = 2
-    };
+    enum Errors { DefaultError = -1, NoError = 0, InvalidUsage = 1, RuntimeError = 2 };
 
     explicit AbstractCommand(QObject *parent = nullptr);
     virtual ~AbstractCommand() = default;
@@ -67,12 +60,25 @@ protected:
     bool getCommonOptions(QCommandLineParser *parser);
     bool checkArgCount(const QStringList &args, int min, const QString &errorText);
 
-    bool isDryRun() const			{ return (mDryRun); }
-    bool wantCollection() const			{ return (mWantCollection); }
-    bool wantItem() const			{ return (mWantItem); }
+    bool isDryRun() const
+    {
+        return (mDryRun);
+    }
+    bool wantCollection() const
+    {
+        return (mWantCollection);
+    }
+    bool wantItem() const
+    {
+        return (mWantItem);
+    }
 
     bool getResolveJob(const QString &arg);
-    CollectionResolveJob *resolveJob() const	{ Q_ASSERT(mResolveJob!=nullptr); return (mResolveJob); }
+    CollectionResolveJob *resolveJob() const
+    {
+        Q_ASSERT(mResolveJob != nullptr);
+        return (mResolveJob);
+    }
 
     /**
      * Check the result status of a KIO job.
@@ -134,7 +140,10 @@ protected:
      *
      * @return the current argument.
      **/
-    const QString &currentArg() const			{ return (mCurrentArg); };
+    const QString &currentArg() const
+    {
+        return (mCurrentArg);
+    };
 
     /**
      * Check whether the processing loop is finished.
@@ -142,7 +151,10 @@ protected:
      * @return @c true if there are no more arguments to process,
      * @c false if there are any more remaining.
      **/
-    bool isProcessLoopFinished() const			{ return (mProcessLoopArgs.isEmpty()); }
+    bool isProcessLoopFinished() const
+    {
+        return (mProcessLoopArgs.isEmpty());
+    }
 
 private:
     bool mDryRun;
@@ -159,4 +171,3 @@ private:
     QString mCurrentArg;
     QString mFinishedLoopMessage;
 };
-

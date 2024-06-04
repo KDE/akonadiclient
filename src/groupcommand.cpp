@@ -20,10 +20,10 @@
 
 #include "collectionresolvejob.h"
 
+#include <Akonadi/ContactSearchJob>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/ItemModifyJob>
-#include <Akonadi/ContactSearchJob>
 
 #include <KContacts/Addressee>
 
@@ -36,13 +36,12 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("group", GroupCommand,
-               kli18nc("info:shell", "Expand or modify a contact group"));
+DEFINE_COMMAND("group", GroupCommand, kli18nc("info:shell", "Expand or modify a contact group"));
 
 GroupCommand::GroupCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mBriefMode(false),
-      mOperationMode(ModeExpand)
+    : AbstractCommand(parent)
+    , mBriefMode(false)
+    , mOperationMode(ModeExpand)
 {
 }
 
@@ -54,12 +53,25 @@ GroupCommand::~GroupCommand()
 void GroupCommand::setupCommandOptions(QCommandLineParser *parser)
 {
     addOptionsOption(parser);
-    parser->addOption(QCommandLineOption((QStringList() << "e" << "expand"), i18n("Show the expanded contact group (the default operation)")));
-    parser->addOption(QCommandLineOption((QStringList() << "a" << "add"), i18n("Add a contact to the group")));
-    parser->addOption(QCommandLineOption((QStringList() << "d" << "delete"), i18n("Delete a contact from the group")));
-    parser->addOption(QCommandLineOption((QStringList() << "C" << "clean"), i18n("Remove unknown item references from the group")));
-    parser->addOption(QCommandLineOption((QStringList() << "c" << "comment"), i18n("Email comment (name) for an added item"), i18n("name")));
-    parser->addOption(QCommandLineOption((QStringList() << "b" << "brief"), i18n("Brief output (for 'expand', email addresses only)")));
+    parser->addOption(QCommandLineOption((QStringList() << "e"
+                                                        << "expand"),
+                                         i18n("Show the expanded contact group (the default operation)")));
+    parser->addOption(QCommandLineOption((QStringList() << "a"
+                                                        << "add"),
+                                         i18n("Add a contact to the group")));
+    parser->addOption(QCommandLineOption((QStringList() << "d"
+                                                        << "delete"),
+                                         i18n("Delete a contact from the group")));
+    parser->addOption(QCommandLineOption((QStringList() << "C"
+                                                        << "clean"),
+                                         i18n("Remove unknown item references from the group")));
+    parser->addOption(QCommandLineOption((QStringList() << "c"
+                                                        << "comment"),
+                                         i18n("Email comment (name) for an added item"),
+                                         i18n("name")));
+    parser->addOption(QCommandLineOption((QStringList() << "b"
+                                                        << "brief"),
+                                         i18n("Brief output (for 'expand', email addresses only)")));
     addDryRunOption(parser);
 
     parser->addPositionalArgument("item", i18nc("@info:shell", "The contact group item, an ID or Akonadi URL"));
@@ -69,9 +81,11 @@ void GroupCommand::setupCommandOptions(QCommandLineParser *parser)
 int GroupCommand::initCommand(QCommandLineParser *parser)
 {
     mItemArgs = parser->positionalArguments();
-    if (!checkArgCount(mItemArgs, 1, i18nc("@info:shell", "Missing group argument"))) return InvalidUsage;
+    if (!checkArgCount(mItemArgs, 1, i18nc("@info:shell", "Missing group argument")))
+        return InvalidUsage;
 
-    if (!getCommonOptions(parser)) return InvalidUsage;
+    if (!getCommonOptions(parser))
+        return InvalidUsage;
 
     int modeCount = 0;
     if (parser->isSet("expand")) {
@@ -91,13 +105,13 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
         return (InvalidUsage);
     }
 
-    if (parser->isSet("expand")) {			// see if "Expand" mode
+    if (parser->isSet("expand")) { // see if "Expand" mode
         // expand GROUP
         mOperationMode = ModeExpand;
-    } else if (parser->isSet("add")) {			// see if "Add" mode
+    } else if (parser->isSet("add")) { // see if "Add" mode
         // add GROUP EMAIL|ID...
         // add GROUP -c NAME EMAIL|ID
-        if (mItemArgs.count()<2) {				// missing GROUP was checked above
+        if (mItemArgs.count() < 2) { // missing GROUP was checked above
             emitErrorSeeHelp(i18nc("@info:shell", "No items specified to add"));
             return (InvalidUsage);
         }
@@ -106,25 +120,25 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
         if (!mNameArg.isEmpty()) {
             // if the "comment" option is specified,
             // then only one EMAIL|ID argument may be given.
-            if (mItemArgs.count()>2) {
+            if (mItemArgs.count() > 2) {
                 emitErrorSeeHelp(i18nc("@info:shell", "Only one item may be specified to add with 'comment'"));
                 return (InvalidUsage);
             }
         }
 
         mOperationMode = ModeAdd;
-    } else if (parser->isSet("delete")) {		// see if "Delete" mode
+    } else if (parser->isSet("delete")) { // see if "Delete" mode
         // delete GROUP EMAIL|ID...
-        if (mItemArgs.count()<2) {			// missing GROUP was checked above
+        if (mItemArgs.count() < 2) { // missing GROUP was checked above
             emitErrorSeeHelp(i18nc("@info:shell", "No items specified to delete"));
             return (InvalidUsage);
         }
 
         mOperationMode = ModeDelete;
-    } else if (parser->isSet("clean")) {		// see if "Clean" mode
+    } else if (parser->isSet("clean")) { // see if "Clean" mode
         // clean GROUP
         mOperationMode = ModeClean;
-    } else {						// no mode option specified
+    } else { // no mode option specified
         mOperationMode = ModeExpand;
     }
 
@@ -135,9 +149,9 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
         }
     }
 
-    mBriefMode = parser->isSet("brief");		// brief/quiet output
+    mBriefMode = parser->isSet("brief"); // brief/quiet output
 
-    mGroupArg = mItemArgs.takeFirst();			// contact group collection
+    mGroupArg = mItemArgs.takeFirst(); // contact group collection
 
     Akonadi::Item item = CollectionResolveJob::parseItem(mGroupArg, true);
     if (!item.isValid()) {
@@ -150,7 +164,7 @@ int GroupCommand::initCommand(QCommandLineParser *parser)
 void GroupCommand::start()
 {
     if (mOperationMode == ModeDelete || mOperationMode == ModeClean) {
-        if (!isDryRun()) {				// allow if not doing anything
+        if (!isDryRun()) { // allow if not doing anything
             if (!allowDangerousOperation()) {
                 Q_EMIT finished(RuntimeError);
                 return;
@@ -173,7 +187,8 @@ void GroupCommand::fetchItems()
 
 void GroupCommand::onItemsFetched(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
 
@@ -200,7 +215,7 @@ void GroupCommand::onItemsFetched(KJob *job)
     KContacts::ContactGroup group = mGroupItem->payload<KContacts::ContactGroup>();
 
     AbstractCommand::Errors status = RuntimeError;
-    switch (mOperationMode) {             // perform the requested operation
+    switch (mOperationMode) { // perform the requested operation
     case ModeExpand:
         status = showExpandedGroup(group);
         break;
@@ -218,8 +233,8 @@ void GroupCommand::onItemsFetched(KJob *job)
         break;
     }
 
-    if (mOperationMode != ModeExpand) {			// need to write back?
-        if (status == NoError) {			// only if there were no errors
+    if (mOperationMode != ModeExpand) { // need to write back?
+        if (status == NoError) { // only if there were no errors
             if (!isDryRun()) {
                 mGroupItem->setPayload<KContacts::ContactGroup>(group);
                 Akonadi::ItemModifyJob *modifyJob = new Akonadi::ItemModifyJob(*mGroupItem);
@@ -423,10 +438,9 @@ AbstractCommand::Errors GroupCommand::showExpandedGroup(const KContacts::Contact
             Q_EMIT error(i18nc("@info:shell", "No items could be fetched"));
         }
 
-        for (Item::List::const_iterator it = fetchedItems.constBegin();
-                it != fetchedItems.constEnd(); ++it) {
+        for (Item::List::const_iterator it = fetchedItems.constBegin(); it != fetchedItems.constEnd(); ++it) {
             const Item item = (*it);
-            fetchIds.removeAll(item.id());            // note that we've fetched this
+            fetchIds.removeAll(item.id()); // note that we've fetched this
 
             QString email;
             if (item.hasPayload<KContacts::Addressee>()) {
@@ -447,7 +461,7 @@ AbstractCommand::Errors GroupCommand::showExpandedGroup(const KContacts::Contact
                 }
             }
 
-            if (mBriefMode) {                 // only show email
+            if (mBriefMode) { // only show email
                 std::cout << qPrintable(email);
                 std::cout << std::endl;
             } else {
@@ -455,7 +469,7 @@ AbstractCommand::Errors GroupCommand::showExpandedGroup(const KContacts::Contact
             }
         }
 
-        for (const Item::Id id : std::as_const(fetchIds)) {     // error for any that remain
+        for (const Item::Id id : std::as_const(fetchIds)) { // error for any that remain
             displayReferenceError(id);
         }
     }
@@ -463,11 +477,11 @@ AbstractCommand::Errors GroupCommand::showExpandedGroup(const KContacts::Contact
     c = group.dataCount();
     for (int i = 0; i < c; ++i) {
         const KContacts::ContactGroup::Data data = group.data(i);
-        if (mBriefMode) {               // only show email
+        if (mBriefMode) { // only show email
             std::cout << qPrintable(data.email());
             std::cout << std::endl;
         } else {
-            displayContactData(data);    // show full information
+            displayContactData(data); // show full information
         }
     }
 
@@ -481,21 +495,21 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KContacts::ContactGroup &gro
     if (!mBriefMode) {
         std::cout << qPrintable(i18nc("@info:shell section header 1=item 2=groupref count 3=ref count 4=data count 5=name",
                                       "Adding to group %1 \"%2\":",
-                                      QString::number(mGroupItem->id()), group.name()));
+                                      QString::number(mGroupItem->id()),
+                                      group.name()));
         std::cout << std::endl;
     }
 
-    bool hadError = false;                // not yet, anyway
+    bool hadError = false; // not yet, anyway
     for (const QString &arg : std::as_const(mItemArgs)) {
         // Look to see whether the argument is an email address
         if (KEmailAddress::isValidSimpleAddress(arg)) {
-            const QString email = arg.toLower();      // email addresses are case-insensitive
+            const QString email = arg.toLower(); // email addresses are case-insensitive
 
             Akonadi::ContactSearchJob *job = new Akonadi::ContactSearchJob();
             job->setQuery(Akonadi::ContactSearchJob::Email, email);
             if (!job->exec()) {
-                ErrorReporter::error(i18nc("@info:shell", "Cannot search for email '%1', %2",
-                                           email, job->errorString()));
+                ErrorReporter::error(i18nc("@info:shell", "Cannot search for email '%1', %2", email, job->errorString()));
                 hadError = true;
                 continue;
             }
@@ -517,18 +531,18 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KContacts::ContactGroup &gro
                 // doesn't exist already", because e.g. the old reference may have
                 // a preferred email set whereas the new one may be different.
 
-                removeReferenceById(group, ref.uid());      // remove any existing
-                group.append(ref);              // then add new reference
-                displayContactReference(item);          // report what was added
+                removeReferenceById(group, ref.uid()); // remove any existing
+                group.append(ref); // then add new reference
+                displayContactReference(item); // report what was added
             } else {
                 // If no Akonadi contact matching the specified email could be found,
                 // add the email (with the comment, if specified) as contact data.
 
-                removeDataByEmail(group, email);        // remove existing with that email
+                removeDataByEmail(group, email); // remove existing with that email
                 QString name = (mNameArg.isEmpty() ? arg : mNameArg);
                 KContacts::ContactGroup::Data data(name, email);
-                group.append(data);             // add new contact data
-                displayContactData(data);           // report what was added
+                group.append(data); // add new contact data
+                displayContactData(data); // report what was added
             }
         } else {
             // Not an email address, see if an Akonadi URL or numeric item ID
@@ -541,8 +555,7 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KContacts::ContactGroup &gro
             Akonadi::ItemFetchJob *job = new Akonadi::ItemFetchJob(item);
             job->fetchScope().fetchFullPayload();
             if (!job->exec()) {
-                ErrorReporter::error(i18nc("@info:shell", "Cannot fetch requested item %1, %2",
-                                           QString::number(item.id()), job->errorString()));
+                ErrorReporter::error(i18nc("@info:shell", "Cannot fetch requested item %1, %2", QString::number(item.id()), job->errorString()));
                 hadError = true;
                 continue;
             }
@@ -552,17 +565,16 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KContacts::ContactGroup &gro
             const Akonadi::Item fetchedItem = fetchedItems.first();
 
             if (!fetchedItem.hasPayload<KContacts::Addressee>()) {
-                ErrorReporter::error(i18nc("@info:shell", "Item %1 is not a contact item",
-                                           QString::number(item.id())));
+                ErrorReporter::error(i18nc("@info:shell", "Item %1 is not a contact item", QString::number(item.id())));
                 hadError = true;
                 continue;
             }
 
             KContacts::ContactGroup::ContactReference ref(QString::number(fetchedItem.id()));
 
-            removeReferenceById(group, ref.uid());        // remove any existing
-            group.append(ref);                // then add new reference
-            displayContactReference(fetchedItem);     // report what was added
+            removeReferenceById(group, ref.uid()); // remove any existing
+            group.append(ref); // then add new reference
+            displayContactReference(fetchedItem); // report what was added
         }
     }
 
@@ -587,11 +599,12 @@ AbstractCommand::Errors GroupCommand::deleteGroupItems(KContacts::ContactGroup &
     if (!mBriefMode) {
         std::cout << qPrintable(i18nc("@info:shell section header 1=item 2=groupref count 3=ref count 4=data count 5=name",
                                       "Removing from group %1 \"%2\":",
-                                      QString::number(mGroupItem->id()), group.name()));
+                                      QString::number(mGroupItem->id()),
+                                      group.name()));
         std::cout << std::endl;
     }
 
-    bool hadError = false;                // not yet, anyway
+    bool hadError = false; // not yet, anyway
     for (const QString &arg : std::as_const(mItemArgs)) {
         // Look to see whether the argument is an email address
         if (KEmailAddress::isValidSimpleAddress(arg)) {
@@ -601,15 +614,14 @@ AbstractCommand::Errors GroupCommand::deleteGroupItems(KContacts::ContactGroup &
             // data items having that email address.
 
             if (removeDataByEmail(group, arg, true)) {
-                somethingFound = true;              // note that did something
+                somethingFound = true; // note that did something
             }
 
             // Then remove any references to any item containing that email address.
             Akonadi::ContactSearchJob *job = new Akonadi::ContactSearchJob();
             job->setQuery(Akonadi::ContactSearchJob::Email, arg);
             if (!job->exec()) {
-                ErrorReporter::error(i18nc("@info:shell", "Cannot search for email '%1', %2",
-                                           arg, job->errorString()));
+                ErrorReporter::error(i18nc("@info:shell", "Cannot search for email '%1', %2", arg, job->errorString()));
                 hadError = true;
                 continue;
             }
@@ -618,11 +630,11 @@ AbstractCommand::Errors GroupCommand::deleteGroupItems(KContacts::ContactGroup &
             for (int itemIndex = 0; itemIndex < resultItems.count(); ++itemIndex) {
                 const Akonadi::Item item = resultItems[itemIndex];
                 if (removeReferenceById(group, QString::number(item.id()), true)) {
-                    somethingFound = true;            // note that did something
+                    somethingFound = true; // note that did something
                 }
             }
 
-            if (!somethingFound) {            // nothing found to remove
+            if (!somethingFound) { // nothing found to remove
                 ErrorReporter::warning(i18nc("@info:shell", "Nothing to remove for email '%1'", arg));
                 hadError = true;
                 continue;
@@ -668,7 +680,8 @@ AbstractCommand::Errors GroupCommand::cleanGroupItems(KContacts::ContactGroup &g
     if (!mBriefMode) {
         std::cout << qPrintable(i18nc("@info:shell section header 1=item 2=groupref count 3=ref count 4=data count 5=name",
                                       "Cleaning references from group %1 \"%2\":",
-                                      QString::number(mGroupItem->id()), group.name()));
+                                      QString::number(mGroupItem->id()),
+                                      group.name()));
         std::cout << std::endl;
     }
 
@@ -679,18 +692,18 @@ AbstractCommand::Errors GroupCommand::cleanGroupItems(KContacts::ContactGroup &g
         bool doDelete = false;
         qint64 id = ref.uid().toLong();
         if (id == -1) {
-            doDelete = true;    // invalid, always remove this
+            doDelete = true; // invalid, always remove this
         } else {
             Akonadi::Item item(id);
             Akonadi::ItemFetchJob *job = new Akonadi::ItemFetchJob(item);
             // no need for payload
-            if (!job->exec() || job->count() == 0) {  // if fetch failed or nothing returned
+            if (!job->exec() || job->count() == 0) { // if fetch failed or nothing returned
                 doDelete = true;
             }
         }
 
-        if (doDelete) {                 // reference is to be deleted
-            group.remove(ref);                // remove it from group
+        if (doDelete) { // reference is to be deleted
+            group.remove(ref); // remove it from group
             displayReferenceError(id);
         } else {
             ++i;

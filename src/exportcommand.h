@@ -47,4 +47,3 @@ private Q_SLOTS:
     void onCollectionFetched(KJob *);
     void onWriteFinished(KJob *);
 };
-

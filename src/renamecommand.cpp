@@ -30,8 +30,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("rename", RenameCommand,
-               kli18nc("info:shell", "Rename a collection"));
+DEFINE_COMMAND("rename", RenameCommand, kli18nc("info:shell", "Rename a collection"));
 
 RenameCommand::RenameCommand(QObject *parent)
     : AbstractCommand(parent)
@@ -50,15 +49,19 @@ void RenameCommand::setupCommandOptions(QCommandLineParser *parser)
 int RenameCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument"))) return InvalidUsage;
-    if (!checkArgCount(args, 2, i18nc("@info:shell", "New name not specified"))) return InvalidUsage;
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument")))
+        return InvalidUsage;
+    if (!checkArgCount(args, 2, i18nc("@info:shell", "New name not specified")))
+        return InvalidUsage;
 
-    if (!getCommonOptions(parser)) return InvalidUsage;
+    if (!getCommonOptions(parser))
+        return InvalidUsage;
 
     QString oldCollectionNameArg = args.first();
     mNewCollectionNameArg = args.at(1);
 
-    if (!getResolveJob(oldCollectionNameArg)) return InvalidUsage;
+    if (!getResolveJob(oldCollectionNameArg))
+        return InvalidUsage;
 
     return NoError;
 }
@@ -71,7 +74,8 @@ void RenameCommand::start()
 
 void RenameCommand::onCollectionFetched(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     CollectionResolveJob *res = resolveJob();
     Q_ASSERT(job == res && res->collection().isValid());
 
@@ -88,7 +92,8 @@ void RenameCommand::onCollectionFetched(KJob *job)
 
 void RenameCommand::onCollectionModified(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     std::cout << qPrintable(i18nc("@info:shell", "Collection renamed successfully")) << std::endl;
     Q_EMIT finished(NoError);
 }

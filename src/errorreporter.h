@@ -28,4 +28,3 @@ void fatal(const QString &msg);
 void progress(const QString &msg);
 void setRunningApplication(bool running = true);
 };
-

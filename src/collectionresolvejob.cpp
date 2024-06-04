@@ -30,30 +30,30 @@ using namespace Akonadi;
 
 HackedCollectionPathResolver::HackedCollectionPathResolver(const QString &path, QObject *parent)
     : CollectionPathResolver(path, parent)
-{}
+{
+}
 
 HackedCollectionPathResolver::HackedCollectionPathResolver(const Collection &col, QObject *parent)
     : CollectionPathResolver(col, parent)
-{}
+{
+}
 
 bool HackedCollectionPathResolver::addSubjob(KJob *job)
 {
-    if (auto akjob = qobject_cast<Akonadi::Job*>(job)) {
-        connect(akjob, &Job::aboutToStart,
-                [](Akonadi::Job *subjob) {
-                    if (auto fetchJob = qobject_cast<CollectionFetchJob*>(subjob)) {
-                        fetchJob->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
-                    }
-                });
+    if (auto akjob = qobject_cast<Akonadi::Job *>(job)) {
+        connect(akjob, &Job::aboutToStart, [](Akonadi::Job *subjob) {
+            if (auto fetchJob = qobject_cast<CollectionFetchJob *>(subjob)) {
+                fetchJob->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
+            }
+        });
     }
     return CollectionPathResolver::addSubjob(job);
 }
 
-
 CollectionResolveJob::CollectionResolveJob(const QString &userInput, QObject *parent)
-    : KCompositeJob(parent),
-      mUserInput(userInput),
-      mHadSlash(false)
+    : KCompositeJob(parent)
+    , mUserInput(userInput)
+    , mHadSlash(false)
 {
     setAutoDelete(false);
 
@@ -139,12 +139,9 @@ void CollectionResolveJob::slotResult(KJob *job)
 QString CollectionResolveJob::formattedCollectionName() const
 {
     if (mCollection == Collection::root()) {
-        return (i18nc("@info:shell 1=collection ID",
-                      "%1 (root)", QString::number(mCollection.id())));
+        return (i18nc("@info:shell 1=collection ID", "%1 (root)", QString::number(mCollection.id())));
     } else {
-        return (i18nc("@info:shell 1=collection ID, 2=collection name",
-                      "%1 (\"%2\")",
-                      QString::number(mCollection.id()), mCollection.name()));
+        return (i18nc("@info:shell 1=collection ID, 2=collection name", "%1 (\"%2\")", QString::number(mCollection.id()), mCollection.name()));
     }
 }
 
@@ -156,7 +153,7 @@ Akonadi::Item CollectionResolveJob::parseItem(const QString &userInput, bool ver
     bool ok;
     unsigned int id = userInput.toUInt(&ok);
     if (ok) {
-        item = Item(id);    // conversion succeeded
+        item = Item(id); // conversion succeeded
     } else {
         // Otherwise check if we have an Akonadi URL
         const QUrl url = QUrl::fromUserInput(userInput);
@@ -167,7 +164,7 @@ Akonadi::Item CollectionResolveJob::parseItem(const QString &userInput, bool ver
     }
     // Otherwise return an invalid Item
 
-    if (!item.isValid() && verbose) {         // report error if required
+    if (!item.isValid() && verbose) { // report error if required
         ErrorReporter::error(i18nc("@info:shell", "Invalid item syntax '%1'", userInput));
     }
 
@@ -181,11 +178,11 @@ Akonadi::Collection CollectionResolveJob::parseCollection(const QString &userInp
     // First see if user input is a valid integer as a collection ID
     bool ok;
     unsigned int id = userInput.toUInt(&ok);
-    if (ok) {                     // conversion succeeded
+    if (ok) { // conversion succeeded
         if (id == 0) {
-            coll = Collection::root();    // the root collection
+            coll = Collection::root(); // the root collection
         } else {
-            coll = Collection(id);    // the specified collection
+            coll = Collection(id); // the specified collection
         }
     } else {
         // Then quickly check for a path of "/", meaning the root

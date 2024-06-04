@@ -29,15 +29,12 @@
 
 #include <iostream>
 
-#include "commandfactory.h"
 #include "collectionresolvejob.h"
+#include "commandfactory.h"
 
 using namespace Akonadi;
 
-DEFINE_COMMAND(
-    "edit", EditCommand,
-    kli18nc("info:shell",
-            "Edit the raw payload for the specified item using $EDITOR"));
+DEFINE_COMMAND("edit", EditCommand, kli18nc("info:shell", "Edit the raw payload for the specified item using $EDITOR"));
 
 EditCommand::EditCommand(QObject *parent)
     : AbstractCommand(parent)
@@ -60,9 +57,11 @@ void EditCommand::setupCommandOptions(QCommandLineParser *parser)
 int EditCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (!checkArgCount(args, 1, i18nc("@info:shell", "No item specified"))) return InvalidUsage;
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "No item specified")))
+        return InvalidUsage;
 
-    if (!getCommonOptions(parser)) return InvalidUsage;
+    if (!getCommonOptions(parser))
+        return InvalidUsage;
 
     mItemArg = args.first();
 
@@ -85,7 +84,8 @@ void EditCommand::start()
 
 void EditCommand::onItemFetched(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
 
@@ -139,7 +139,8 @@ void EditCommand::onItemFetched(KJob *job)
 
 void EditCommand::onItemModified(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     std::cout << i18nc("@info:shell", "Changes to item '%1' have been saved", mItemArg).toLocal8Bit().constData() << std::endl;
     Q_EMIT finished(NoError);
 }

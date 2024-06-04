@@ -67,4 +67,3 @@ private Q_SLOTS:
     void processNextCollection();
     void processNextItemFromQueue();
 };
-

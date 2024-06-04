@@ -64,4 +64,3 @@ private Q_SLOTS:
     void onItemsFetched(KJob *job);
     void onParentPathFetched(KJob *job);
 };
-

@@ -24,11 +24,10 @@
 
 #include <kshell.h>
 
-#include <QTextStream>
 #include <QCoreApplication>
+#include <QTextStream>
 
-DEFINE_COMMAND("shell", CommandShell,
-               kli18n("Enter commands in an interactive shell"));
+DEFINE_COMMAND("shell", CommandShell, kli18n("Enter commands in an interactive shell"));
 
 bool CommandShell::sIsActive = false;
 
@@ -55,7 +54,7 @@ int CommandShell::initCommand(QCommandLineParser *parser)
 void CommandShell::start()
 {
     sIsActive = true;
-    while (enterCommandLoop()) {}
+    while (enterCommandLoop()) { }
     sIsActive = false;
     QCoreApplication::quit();
 }
@@ -71,23 +70,24 @@ bool CommandShell::enterCommandLoop()
 
     KShell::Errors err;
     const QStringList args = KShell::splitArgs(input, KShell::AbortOnMeta, &err);
-    if (err != KShell::NoError) {			// error splitting line
+    if (err != KShell::NoError) { // error splitting line
         ErrorReporter::error(i18nc("@info:shell", "Invalid command"));
-    }							// but continue command loop
-    else if (!args.isEmpty()) {				// non-empty input line
-        const QString cmd = args.first();		// look at command name
-        if (cmd == "quit" || cmd == "exit") {		// exit shell on these
+    } // but continue command loop
+    else if (!args.isEmpty()) { // non-empty input line
+        const QString cmd = args.first(); // look at command name
+        if (cmd == "quit" || cmd == "exit") { // exit shell on these
             return (false);
         }
 
         CommandFactory factory(&args);
-        if (cmd == "help") return (true);		// handled above by CommandFactory
+        if (cmd == "help")
+            return (true); // handled above by CommandFactory
 
         toInvoke = factory.createCommand();
         if (toInvoke != nullptr) {
             connect(toInvoke, &AbstractCommand::error, this, &CommandShell::onCommandError);
             if (toInvoke->init(args) == AbstractCommand::NoError) {
-                QEventLoop loop;			// hopefully safe, because not a child of us
+                QEventLoop loop; // hopefully safe, because not a child of us
                 connect(toInvoke, &AbstractCommand::finished, &loop, &QEventLoop::quit);
                 QMetaObject::invokeMethod(toInvoke, "start", Qt::QueuedConnection);
                 loop.exec();

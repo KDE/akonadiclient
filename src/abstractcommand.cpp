@@ -23,41 +23,40 @@
 #include <QCommandLineParser>
 
 #include "collectionresolvejob.h"
-#include "errorreporter.h"
 #include "commandshell.h"
+#include "errorreporter.h"
 
 #include <iostream>
 
-#define ENV_VAR_DANGEROUS   "AKONADICLIENT_DANGEROUS"
-#define ENV_VAL_DANGEROUS   "enabled"
+#define ENV_VAR_DANGEROUS "AKONADICLIENT_DANGEROUS"
+#define ENV_VAL_DANGEROUS "enabled"
 
 AbstractCommand::AbstractCommand(QObject *parent)
-    : QObject(parent),
-      mDryRun(false),
-      mWantCollection(false),
-      mWantItem(false),
-      mSetDryRun(false),
-      mSetCollectionItem(false),
-      mResolveJob(nullptr),
-      mProcessLoopSlot(nullptr)
+    : QObject(parent)
+    , mDryRun(false)
+    , mWantCollection(false)
+    , mWantItem(false)
+    , mSetDryRun(false)
+    , mSetCollectionItem(false)
+    , mResolveJob(nullptr)
+    , mProcessLoopSlot(nullptr)
 {
 }
 
 int AbstractCommand::init(const QStringList &parsedArgs, bool showHelp)
 {
     QCommandLineParser parser;
-    parser.addPositionalArgument(name(), i18nc("@info:shell", "The name of the command"),  name());
-    setupCommandOptions(&parser);			// set options for command
+    parser.addPositionalArgument(name(), i18nc("@info:shell", "The name of the command"), name());
+    setupCommandOptions(&parser); // set options for command
 
-    const bool ok = parser.parse(parsedArgs);		// just parse, do not do actions
-    if (!ok)
-    {
+    const bool ok = parser.parse(parsedArgs); // just parse, do not do actions
+    if (!ok) {
         ErrorReporter::fatal(parser.errorText());
         return (InvalidUsage);
     }
 
-    if (showHelp) {					// do this here, while the
-        QString s = parser.helpText();			// parser is still available
+    if (showHelp) { // do this here, while the
+        QString s = parser.helpText(); // parser is still available
 
         // This substitutes the first "[options]" (between the "akonadiclient"
         // and the comand name) with blank, because it is not relevant and
@@ -67,16 +66,18 @@ int AbstractCommand::init(const QStringList &parsedArgs, bool showHelp)
         // text supplied by the command as well.
         int idx1 = s.indexOf(" [");
         int idx2 = s.indexOf("] ");
-        if (idx1!=-1 && idx2!=-1) s = s.left(idx1)+s.mid(idx2+1);
+        if (idx1 != -1 && idx2 != -1)
+            s = s.left(idx1) + s.mid(idx2 + 1);
 
         // If the command shell is active, then the executable name also needs
         // to be removed.  Again, cannot use a regular expression replacement
         // because only the first instance needs to be changed.
         if (CommandShell::isActive()) {
             idx1 = s.indexOf(": ");
-            if (idx1!=-1) {
-                idx2 = s.indexOf(' ', idx1+2);
-                if (idx2!=-1) s = s.left(idx1+1)+s.mid(idx2);
+            if (idx1 != -1) {
+                idx2 = s.indexOf(' ', idx1 + 2);
+                if (idx2 != -1)
+                    s = s.left(idx1 + 1) + s.mid(idx2);
             }
         }
 
@@ -84,7 +85,7 @@ int AbstractCommand::init(const QStringList &parsedArgs, bool showHelp)
         return (NoError);
     }
 
-    return (initCommand(&parser));			// read command arguments
+    return (initCommand(&parser)); // read command arguments
 }
 
 void AbstractCommand::addOptionsOption(QCommandLineParser *parser)
@@ -94,17 +95,20 @@ void AbstractCommand::addOptionsOption(QCommandLineParser *parser)
 
 void AbstractCommand::addCollectionItemOptions(QCommandLineParser *parser)
 {
-    parser->addOption(QCommandLineOption((QStringList() << "c" << "collection"),
+    parser->addOption(QCommandLineOption((QStringList() << "c"
+                                                        << "collection"),
                                          i18nc("@info:shell", "Assume that a collection is specified")));
 
-    parser->addOption(QCommandLineOption((QStringList() << "i" << "item"),
+    parser->addOption(QCommandLineOption((QStringList() << "i"
+                                                        << "item"),
                                          i18nc("@info:shell", "Assume that an item is specified")));
     mSetCollectionItem = true;
 }
 
 void AbstractCommand::addDryRunOption(QCommandLineParser *parser)
 {
-    parser->addOption(QCommandLineOption((QStringList() << "n" << "dryrun"),
+    parser->addOption(QCommandLineOption((QStringList() << "n"
+                                                        << "dryrun"),
                                          i18nc("@info:shell", "Run without making any actual changes")));
     mSetDryRun = true;
 }
@@ -115,8 +119,7 @@ bool AbstractCommand::getCommonOptions(QCommandLineParser *parser)
         mDryRun = parser->isSet("dryrun");
     }
 
-    if (mSetCollectionItem)
-    {
+    if (mSetCollectionItem) {
         mWantCollection = parser->isSet("collection");
         mWantItem = parser->isSet("item");
 
@@ -131,13 +134,15 @@ bool AbstractCommand::getCommonOptions(QCommandLineParser *parser)
 
 bool AbstractCommand::getResolveJob(const QString &arg)
 {
-    if (mResolveJob != nullptr) delete mResolveJob;
+    if (mResolveJob != nullptr)
+        delete mResolveJob;
     mResolveJob = new CollectionResolveJob(arg, this);
     // TODO: does this work for ITEMs specified as an Akonadi URL?
     //       "akonadiclient info 10175" works,
     //       but "akonadiclient info 'akonadi://?item=10175'" doesn't
 
-    if (mResolveJob->hasUsableInput()) return (true);
+    if (mResolveJob->hasUsableInput())
+        return (true);
 
     error(i18nc("@info:shell", "Invalid collection/item argument '%1', %2", arg, mResolveJob->errorString()));
     delete mResolveJob;
@@ -147,7 +152,8 @@ bool AbstractCommand::getResolveJob(const QString &arg)
 
 bool AbstractCommand::checkArgCount(const QStringList &args, int min, const QString &errorText)
 {
-    if (args.count()>=min) return (true);		// enough arguments provided
+    if (args.count() >= min)
+        return (true); // enough arguments provided
     emitErrorSeeHelp(errorText);
     return (false);
 }
@@ -156,10 +162,7 @@ void AbstractCommand::emitErrorSeeHelp(const QString &msg)
 {
     QString s;
     if (CommandShell::isActive()) {
-        s = i18nc("@info:shell %1 is subcommand name, %2 is error message",
-                  "%2. See 'help %1'",
-                  this->name(),
-                  msg);
+        s = i18nc("@info:shell %1 is subcommand name, %2 is error message", "%2. See 'help %1'", this->name(), msg);
     } else {
         s = i18nc("@info:shell %1 is application name, %2 is subcommand name, %3 is error message",
                   "%3. See '%1 help %2'",
@@ -179,9 +182,7 @@ bool AbstractCommand::allowDangerousOperation() const
     }
 
     ErrorReporter::error(i18nc("@info:shell", "Dangerous or destructive operations are not allowed"));
-    ErrorReporter::error(i18nc("@info:shell", "Set %1=\"%2\" in environment",
-                              QLatin1String(ENV_VAR_DANGEROUS),
-                              QLatin1String(ENV_VAL_DANGEROUS)));
+    ErrorReporter::error(i18nc("@info:shell", "Set %1=\"%2\" in environment", QLatin1String(ENV_VAR_DANGEROUS), QLatin1String(ENV_VAL_DANGEROUS)));
     return false;
 }
 
@@ -213,17 +214,17 @@ void AbstractCommand::startProcessLoop(const char *slot)
 
 void AbstractCommand::processNext()
 {
-    if (mProcessLoopArgs.isEmpty())			// all arguments processed,
-    {							// loop is finished
+    if (mProcessLoopArgs.isEmpty()) // all arguments processed,
+    { // loop is finished
         if (!mFinishedLoopMessage.isEmpty()) {
             ErrorReporter::progress(mFinishedLoopMessage);
         }
 
-        Q_EMIT finished();				// with accumulated error code
+        Q_EMIT finished(); // with accumulated error code
         return;
     }
 
-    Q_ASSERT(mProcessLoopSlot!=nullptr);
+    Q_ASSERT(mProcessLoopSlot != nullptr);
     mCurrentArg = mProcessLoopArgs.takeFirst();
     QMetaObject::invokeMethod(this, mProcessLoopSlot, Qt::QueuedConnection);
 }

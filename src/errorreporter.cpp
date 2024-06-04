@@ -18,29 +18,21 @@
 
 #include "errorreporter.h"
 
-#include <QString>
 #include <QCoreApplication>
+#include <QString>
 
 #include <iostream>
 
-
 static bool runningApplication = false;
-
 
 void ErrorReporter::error(const QString &msg)
 {
-    std::cerr << qPrintable(QCoreApplication::applicationName())
-              << " (error): "
-              << qPrintable(msg)
-              << std::endl;
+    std::cerr << qPrintable(QCoreApplication::applicationName()) << " (error): " << qPrintable(msg) << std::endl;
 }
 
 void ErrorReporter::warning(const QString &msg)
 {
-    std::cerr << qPrintable(QCoreApplication::applicationName())
-              << " (warning): "
-              << qPrintable(msg)
-              << std::endl;
+    std::cerr << qPrintable(QCoreApplication::applicationName()) << " (warning): " << qPrintable(msg) << std::endl;
 }
 
 void ErrorReporter::fatal(const QString &msg)
@@ -57,9 +49,7 @@ void ErrorReporter::fatal(const QString &msg)
 
 void ErrorReporter::progress(const QString &msg)
 {
-    std::cout << "** "
-              << qPrintable(msg)
-              << std::endl;
+    std::cout << "** " << qPrintable(msg) << std::endl;
 }
 
 void ErrorReporter::setRunningApplication(bool running)

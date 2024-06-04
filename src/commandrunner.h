@@ -31,7 +31,10 @@ public:
     ~CommandRunner() override;
 
     int start();
-    int exitCode() const				{ return (mExitCode); }
+    int exitCode() const
+    {
+        return (mExitCode);
+    }
 
 private:
     AbstractCommand *mCommand = nullptr;
@@ -42,4 +45,3 @@ private Q_SLOTS:
     void onCommandFinished(int exitCode);
     void onCommandError(const QString &error);
 };
-

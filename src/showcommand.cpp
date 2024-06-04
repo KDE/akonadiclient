@@ -31,8 +31,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("show", ShowCommand,
-               kli18nc("info:shell", "Show the raw payload of an item"));
+DEFINE_COMMAND("show", ShowCommand, kli18nc("info:shell", "Show the raw payload of an item"));
 
 ShowCommand::ShowCommand(QObject *parent)
     : AbstractCommand(parent)
@@ -42,13 +41,15 @@ ShowCommand::ShowCommand(QObject *parent)
 void ShowCommand::setupCommandOptions(QCommandLineParser *parser)
 {
     parser->addPositionalArgument("item", i18nc("@info:shell", "The items to show"), i18nc("@info:shell", "item..."));
-    parser->addOption(QCommandLineOption((QStringList() << QStringLiteral("r") << QStringLiteral("raw")), i18nc("@info:shell", "Use raw payload (disables quoted-printable decoding)")));
+    parser->addOption(QCommandLineOption((QStringList() << QStringLiteral("r") << QStringLiteral("raw")),
+                                         i18nc("@info:shell", "Use raw payload (disables quoted-printable decoding)")));
 }
 
 int ShowCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList itemArgs = parser->positionalArguments();
-    if (!checkArgCount(itemArgs, 1, i18nc("@info:shell", "No items specified"))) return InvalidUsage;
+    if (!checkArgCount(itemArgs, 1, i18nc("@info:shell", "No items specified")))
+        return InvalidUsage;
 
     mRaw = parser->isSet("raw");
 
@@ -91,7 +92,7 @@ void ShowCommand::onItemFetched(KJob *job)
             if (!item.hasPayload()) {
                 Q_EMIT error(i18nc("@info:shell", "Item '%1' has no payload", currentArg()));
             } else if (mRaw) {
-                std::cout << item.payloadData().constData();    // output the raw payload
+                std::cout << item.payloadData().constData(); // output the raw payload
             } else {
                 if (item.hasPayload<KMime::Message::Ptr>()) {
                     const KMime::Message::Ptr mail = item.payload<KMime::Message::Ptr>();
@@ -107,8 +108,8 @@ void ShowCommand::onItemFetched(KJob *job)
                 }
             }
 
-            if (!isProcessLoopFinished()) {		// not the last item
-                std::cout << "\n";			// blank line to separate
+            if (!isProcessLoopFinished()) { // not the last item
+                std::cout << "\n"; // blank line to separate
             }
         }
     }

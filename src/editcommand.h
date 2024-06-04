@@ -49,4 +49,3 @@ private Q_SLOTS:
     void onItemFetched(KJob *job);
     void onItemModified(KJob *job);
 };
-

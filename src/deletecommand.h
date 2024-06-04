@@ -30,13 +30,13 @@ class CollectionDeleteJob;
 
 class KJob;
 
-class DeleteCommand :  public AbstractCommand
+class DeleteCommand : public AbstractCommand
 {
     Q_OBJECT
 
 public:
     explicit DeleteCommand(QObject *parent = nullptr);
-     ~DeleteCommand() override = default;
+    ~DeleteCommand() override = default;
 
     QString name() const override;
 
@@ -60,4 +60,3 @@ private Q_SLOTS:
     void onItemsDeleted(KJob *job);
     void onItemsFetched(KJob *job);
 };
-

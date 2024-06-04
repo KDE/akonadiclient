@@ -19,25 +19,24 @@
 
 #include "importcommand.h"
 
-#include <Akonadi/XmlWriteJob>
-#include <Akonadi/XmlDocument>
 #include <Akonadi/CollectionCreateJob>
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
 #include <Akonadi/ItemCreateJob>
+#include <Akonadi/XmlDocument>
+#include <Akonadi/XmlWriteJob>
 
 #include <klocalizedstring.h>
 
 #include <qfile.h>
 
+#include "collectionresolvejob.h"
 #include "commandfactory.h"
 #include "errorreporter.h"
-#include "collectionresolvejob.h"
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("import", ImportCommand,
-               kli18nc("info:shell", "Import an XML file"));
+DEFINE_COMMAND("import", ImportCommand, kli18nc("info:shell", "Import an XML file"));
 
 ImportCommand::ImportCommand(QObject *parent)
     : AbstractCommand(parent)
@@ -61,12 +60,16 @@ void ImportCommand::setupCommandOptions(QCommandLineParser *parser)
 int ImportCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (!checkArgCount(args, 1, i18nc("@info:shell", "No parent collection specified"))) return InvalidUsage;
-    if (!checkArgCount(args, 2, i18nc("@info:shell", "No import file specified"))) return InvalidUsage;
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "No parent collection specified")))
+        return InvalidUsage;
+    if (!checkArgCount(args, 2, i18nc("@info:shell", "No import file specified")))
+        return InvalidUsage;
 
-    if (!getCommonOptions(parser)) return InvalidUsage;
+    if (!getCommonOptions(parser))
+        return InvalidUsage;
 
-    if (!getResolveJob(args.first())) return InvalidUsage;
+    if (!getResolveJob(args.first()))
+        return InvalidUsage;
 
     const QString fileArg = args.at(1);
     mDocument = new XmlDocument(fileArg);
@@ -88,7 +91,8 @@ void ImportCommand::start()
 
 void ImportCommand::onParentFetched(KJob *job)
 {
-    if (!checkJobResult(job, i18nc("@info:shell", "Unable to fetch parent collection, %1", job->errorString()))) return;
+    if (!checkJobResult(job, i18nc("@info:shell", "Unable to fetch parent collection, %1", job->errorString())))
+        return;
 
     mParentCollection = resolveJob()->collection();
     QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
@@ -96,7 +100,8 @@ void ImportCommand::onParentFetched(KJob *job)
 
 void ImportCommand::onChildrenFetched(KJob *job)
 {
-    if (!checkJobResult(job, i18nc("@info:shell", "Unable to fetch children of parent collection, %1", job->errorString()))) return;
+    if (!checkJobResult(job, i18nc("@info:shell", "Unable to fetch children of parent collection, %1", job->errorString())))
+        return;
 
     QString rid = job->property("rid").toString();
     Collection parent = job->property("parent").value<Collection>();
@@ -147,8 +152,7 @@ void ImportCommand::processNextCollection()
     } else {
         parent = mCollectionMap.value(collection.parentCollection().remoteId());
         if (!parent.isValid() && !isDryRun()) {
-            ErrorReporter::warning(i18nc("@info:shell", "Invalid parent for collection with remote ID '%1'",
-                                         collection.remoteId()));
+            ErrorReporter::warning(i18nc("@info:shell", "Invalid parent for collection with remote ID '%1'", collection.remoteId()));
             QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
         }
     }
@@ -169,8 +173,7 @@ void ImportCommand::onCollectionFetched(KJob *job)
     Collection collection = job->property("collection").value<Collection>();
 
     if (job->error() != 0) {
-        ErrorReporter::warning(i18nc("@info:shell", "Unable to fetch collection with remote ID '%1', %2",
-                                     collection.remoteId(), job->errorString()));
+        ErrorReporter::warning(i18nc("@info:shell", "Unable to fetch collection with remote ID '%1', %2", collection.remoteId(), job->errorString()));
 
         if (!isDryRun()) {
             CollectionCreateJob *createJob = new CollectionCreateJob(collection, this);
@@ -188,7 +191,8 @@ void ImportCommand::onCollectionFetched(KJob *job)
 
 void ImportCommand::onCollectionCreated(KJob *job)
 {
-    if (!checkJobResult(job, i18nc("@info:shell", "Unable to create collection with remote ID '%1'", job->property("rid").toString()))) return;
+    if (!checkJobResult(job, i18nc("@info:shell", "Unable to create collection with remote ID '%1'", job->property("rid").toString())))
+        return;
     CollectionCreateJob *createJob = qobject_cast<CollectionCreateJob *>(job);
     mCollectionMap.insert(job->property("rid").toString(), createJob->collection());
     QMetaObject::invokeMethod(this, "processNextCollection", Qt::QueuedConnection);
@@ -227,7 +231,8 @@ void ImportCommand::processNextItemFromQueue()
 
 void ImportCommand::onItemCreated(KJob *job)
 {
-    if (!checkJobResult(job, i18nc("@info:shell", "Error creating item, %1", job->errorString()))) return;
+    if (!checkJobResult(job, i18nc("@info:shell", "Error creating item, %1", job->errorString())))
+        return;
     ItemCreateJob *itemCreateJob = qobject_cast<ItemCreateJob *>(job);
     ErrorReporter::progress(i18nc("@info:shell", "Created item '%1'", itemCreateJob->item().remoteId()));
     QMetaObject::invokeMethod(this, "processNextItemFromQueue", Qt::QueuedConnection);

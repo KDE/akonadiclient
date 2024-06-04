@@ -34,7 +34,10 @@ public:
     QString name() const override;
 
 public:
-    static bool isActive()			 { return (sIsActive); }
+    static bool isActive()
+    {
+        return (sIsActive);
+    }
 
 public Q_SLOTS:
     void start() override;
@@ -53,4 +56,3 @@ private:
 private Q_SLOTS:
     void onCommandError(const QString &error);
 };
-

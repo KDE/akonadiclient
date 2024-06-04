@@ -70,4 +70,3 @@ private:
 private:
     void fetchBase();
 };
-

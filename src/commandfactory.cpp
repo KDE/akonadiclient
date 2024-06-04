@@ -19,8 +19,8 @@
 #include "commandfactory.h"
 
 #include "abstractcommand.h"
-#include "errorreporter.h"
 #include "commandshell.h"
+#include "errorreporter.h"
 
 #include <QDebug>
 #include <QHash>
@@ -48,7 +48,8 @@ AbstractCommand *CommandFactory::createCommand()
     CommandData *data = sCommands->value(commandName);
     if (data == nullptr) {
         ErrorReporter::error(i18nc("@info:shell", "Unknown command '%1'", commandName));
-        if (!CommandShell::isActive()) printHelpAndExit(false);
+        if (!CommandShell::isActive())
+            printHelpAndExit(false);
         return (nullptr);
     }
 
@@ -57,9 +58,7 @@ AbstractCommand *CommandFactory::createCommand()
     return (command);
 }
 
-void CommandFactory::registerCommand(const QString &name,
-                                     const KLocalizedString &shortHelp,
-                                     CommandFactory::creatorFunction creator)
+void CommandFactory::registerCommand(const QString &name, const KLocalizedString &shortHelp, CommandFactory::creatorFunction creator)
 {
     CommandData *data = new CommandData;
     data->shortHelp = shortHelp;
@@ -87,19 +86,17 @@ void CommandFactory::registerCommand(const QString &name,
 
 void CommandFactory::checkAndHandleHelp()
 {
-    if (mParsedArgs->isEmpty()) {			// case 1
-        ErrorReporter::error(i18nc("@info:shell",
-                                   "No command specified (try '%1 --help')",
-                                   QCoreApplication::applicationName()));
+    if (mParsedArgs->isEmpty()) { // case 1
+        ErrorReporter::error(i18nc("@info:shell", "No command specified (try '%1 --help')", QCoreApplication::applicationName()));
         std::exit(EXIT_FAILURE);
     }
 
     if (mParsedArgs->first() == QLatin1String("help")) {
-        if (mParsedArgs->count() == 1) {		// case 2
+        if (mParsedArgs->count() == 1) { // case 2
             printHelpAndExit(true);
         }
 
-        for (int a = 1; a<mParsedArgs->count(); ++a) {	// case 3
+        for (int a = 1; a < mParsedArgs->count(); ++a) { // case 3
             const QString commandName = mParsedArgs->at(a);
             if (!sCommands->contains(commandName)) {
                 ErrorReporter::warning(i18nc("@info:shell", "Unknown command '%1'", commandName));
@@ -110,10 +107,11 @@ void CommandFactory::checkAndHandleHelp()
             Q_ASSERT(data != nullptr);
             AbstractCommand *command = (data->creator)(nullptr);
             Q_ASSERT(command != nullptr);
-            command->init(*mParsedArgs, true);		// set up and display help
+            command->init(*mParsedArgs, true); // set up and display help
         }
 
-        if (!CommandShell::isActive()) std::exit(EXIT_SUCCESS);
+        if (!CommandShell::isActive())
+            std::exit(EXIT_SUCCESS);
     }
 }
 
@@ -131,18 +129,19 @@ void CommandFactory::printHelpAndExit(bool userRequestedHelp)
     std::ostream &stream = userRequestedHelp ? std::cout : std::cerr;
 
     const QString linePattern = QLatin1String("  %1  %2");
-    const bool shellActive =  CommandShell::isActive();
+    const bool shellActive = CommandShell::isActive();
 
     stream << std::endl << qPrintable(i18nc("@info:shell", "Available commands are:")) << std::endl;
 
     for (const QString &commandName : std::as_const(commands)) {
-        if (commandName == "shell" && shellActive) continue;
+        if (commandName == "shell" && shellActive)
+            continue;
 
-        stream << qPrintable(linePattern.arg(commandName.leftJustified(maxNameLength),
-                                             sCommands->value(commandName)->shortHelp.toString(Kuit::TermText)))
+        stream << qPrintable(linePattern.arg(commandName.leftJustified(maxNameLength), sCommands->value(commandName)->shortHelp.toString(Kuit::TermText)))
                << std::endl;
     }
 
-    if (!shellActive) std::exit(userRequestedHelp ? EXIT_SUCCESS : EXIT_FAILURE);
+    if (!shellActive)
+        std::exit(userRequestedHelp ? EXIT_SUCCESS : EXIT_FAILURE);
     stream << std::endl;
 }

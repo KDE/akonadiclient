@@ -65,6 +65,4 @@ private Q_SLOTS:
 
     void processNextSource();
     void processNextSubcollection(const QString &sourceArg);
-
 };
-

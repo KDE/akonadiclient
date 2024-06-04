@@ -36,4 +36,3 @@ public Q_SLOTS:
 protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
 };
-

@@ -32,8 +32,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("update", UpdateCommand,
-               kli18nc("info:shell", "Update an item's payload from a file"));
+DEFINE_COMMAND("update", UpdateCommand, kli18nc("info:shell", "Update an item's payload from a file"));
 
 UpdateCommand::UpdateCommand(QObject *parent)
     : AbstractCommand(parent)
@@ -57,10 +56,13 @@ void UpdateCommand::setupCommandOptions(QCommandLineParser *parser)
 int UpdateCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (!checkArgCount(args, 1, i18nc("@info:shell", "No item specified"))) return InvalidUsage;
-    if (!checkArgCount(args, 2, i18nc("@info:shell", "No file specified"))) return InvalidUsage;
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "No item specified")))
+        return InvalidUsage;
+    if (!checkArgCount(args, 2, i18nc("@info:shell", "No file specified")))
+        return InvalidUsage;
 
-    if (!getCommonOptions(parser)) return InvalidUsage;
+    if (!getCommonOptions(parser))
+        return InvalidUsage;
 
     mItemArg = args.at(0);
     mFileArg = args.at(1);
@@ -104,7 +106,8 @@ void UpdateCommand::start()
 
 void UpdateCommand::onItemFetched(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
 
@@ -128,7 +131,8 @@ void UpdateCommand::onItemFetched(KJob *job)
 
 void UpdateCommand::onItemUpdated(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     std::cout << qPrintable(i18nc("@info:shell", "Item updated successfully")) << std::endl;
     Q_EMIT finished(NoError);
 }

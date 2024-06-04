@@ -23,8 +23,8 @@
 #include <KAboutData>
 #include <KLocalizedString>
 
-#include <QCoreApplication>
 #include <QCommandLineParser>
+#include <QCoreApplication>
 
 #include <iostream>
 
@@ -38,16 +38,16 @@ int main(int argc, char **argv)
     // TODO: should we allow commands to optionally support GUI?
     QCoreApplication application(argc, argv);
 
-    KAboutData aboutData(appname,							// componentName
-                         i18nc("@title program name", "Akonadi Client"),		// displayName
+    KAboutData aboutData(appname, // componentName
+                         i18nc("@title program name", "Akonadi Client"), // displayName
 #ifdef VCS_HAVE_VERSION
-                         (VERSION " (" VCS_TYPE_STRING " " VCS_REVISION_STRING ")"),	// version
+                         (VERSION " (" VCS_TYPE_STRING " " VCS_REVISION_STRING ")"), // version
 #else
-                         VERSION,							// version
+                         VERSION, // version
 #endif
                          i18nc("@info:shell short description", "A command-line/shell client for Akonadi"),
-								                         // shortDescription
-                         KAboutLicense::GPL);						 // licenseType
+                         // shortDescription
+                         KAboutLicense::GPL); // licenseType
 
     aboutData.addAuthor(i18n("Kevin Krammer"), i18nc("@title about data task", "Original Author"), "krammer@kde.org");
     aboutData.addAuthor(i18n("Jonathan Marten"), i18nc("@title about data task", "Additions and new commands"), "jjm@keelhaul.me.uk");
@@ -62,10 +62,8 @@ int main(int argc, char **argv)
     parser.addVersionOption();
 
     parser.addPositionalArgument("command", i18nc("@info:shell", "Command to execute"));
-    parser.addPositionalArgument("options", i18nc("@info:shell", "Options for command"),
-                                            i18nc("@info:shell", "[options]"));
-    parser.addPositionalArgument("args", i18nc("@info:shell", "Arguments for command"),
-                                         i18nc("@info:shell", "[args]"));
+    parser.addPositionalArgument("options", i18nc("@info:shell", "Options for command"), i18nc("@info:shell", "[options]"));
+    parser.addPositionalArgument("args", i18nc("@info:shell", "Arguments for command"), i18nc("@info:shell", "[args]"));
 
     // Just parse the command line and options, do not do any actions
     bool ok = parser.parse(QCoreApplication::arguments());
@@ -80,19 +78,19 @@ int main(int argc, char **argv)
     }
 
     if (parser.isSet("help")) {
-        std::cout << qPrintable(parser.helpText());	// does not exit application
-        std::cout << std::endl;				// so can print extra
+        std::cout << qPrintable(parser.helpText()); // does not exit application
+        std::cout << std::endl; // so can print extra
         std::cout << qPrintable(i18nc("@info:shell",
                                       "See '%1 help' for available commands."
                                       "\n"
                                       "See '%1 help command' for information on a specific command.",
                                       appname));
         std::cout << std::endl;
-        return (EXIT_SUCCESS);				// and then exit
+        return (EXIT_SUCCESS); // and then exit
     }
 
     if (parser.isSet("version")) {
-        parser.showVersion();				// exits the application
+        parser.showVersion(); // exits the application
     }
 
     // The QCommandLineParser::positionalArguments() remaining are the
@@ -102,7 +100,8 @@ int main(int argc, char **argv)
 
     CommandRunner runner(&args);
     int ret = runner.start();
-    if (ret != AbstractCommand::NoError) return ret;
+    if (ret != AbstractCommand::NoError)
+        return ret;
 
     ErrorReporter::setRunningApplication();
     // Something odd seems to happen here.  If the processing loop is run

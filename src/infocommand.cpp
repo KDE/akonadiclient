@@ -18,26 +18,24 @@
 
 #include "infocommand.h"
 
+#include <Akonadi/CollectionStatistics>
+#include <Akonadi/CollectionStatisticsJob>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
-#include <Akonadi/CollectionStatisticsJob>
-#include <Akonadi/CollectionStatistics>
 
-#include <Akonadi/CollectionPathResolver>   // just for error code
+#include <Akonadi/CollectionPathResolver> // just for error code
 
 #include <qdatetime.h>
 
 #include <iostream>
 
-#include "commandfactory.h"
-#include "collectionresolvejob.h"
 #include "collectionpathjob.h"
+#include "collectionresolvejob.h"
+#include "commandfactory.h"
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("info", InfoCommand,
-               kli18nc("info:shell",
-                       "Show full information for a collection or item"));
+DEFINE_COMMAND("info", InfoCommand, kli18nc("info:shell", "Show full information for a collection or item"));
 
 InfoCommand::InfoCommand(QObject *parent)
     : AbstractCommand(parent)
@@ -62,9 +60,11 @@ void InfoCommand::setupCommandOptions(QCommandLineParser *parser)
 int InfoCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (!checkArgCount(args, 1, i18nc("@info:shell", "No collections or items specified"))) return InvalidUsage;
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "No collections or items specified")))
+        return InvalidUsage;
 
-    if (!getCommonOptions(parser)) return InvalidUsage;
+    if (!getCommonOptions(parser))
+        return InvalidUsage;
 
     initProcessLoop(args);
     return NoError;
@@ -77,12 +77,10 @@ void InfoCommand::start()
 
 void InfoCommand::infoForNext()
 {
-    if (wantItem()) {					// user forced as an item
-        fetchItems();					// do this immediately
-    } else
-    {
-        if (!getResolveJob(currentArg()))
-        {
+    if (wantItem()) { // user forced as an item
+        fetchItems(); // do this immediately
+    } else {
+        if (!getResolveJob(currentArg())) {
             processNext();
             return;
         }
@@ -104,8 +102,8 @@ void InfoCommand::onBaseFetched(KJob *job)
     if (job->error() != 0) {
         if (job->error() == CollectionPathResolver::Unknown) {
             // failed to resolve as collection
-            if (!wantCollection()) {			// not forced as a collection
-                fetchItems();				// try it as an item
+            if (!wantCollection()) { // not forced as a collection
+                fetchItems(); // try it as an item
                 return;
             }
         }
@@ -133,7 +131,8 @@ void InfoCommand::fetchStatistics()
 
 void InfoCommand::onStatisticsFetched(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     CollectionStatisticsJob *statsJob = qobject_cast<CollectionStatisticsJob *>(job);
     Q_ASSERT(statsJob != nullptr);
     mInfoStatistics = new CollectionStatistics(statsJob->statistics());
@@ -168,7 +167,8 @@ void InfoCommand::fetchItems()
 
 void InfoCommand::onItemsFetched(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
     Item::List items = fetchJob->items();
@@ -206,14 +206,15 @@ static void writeInfo(const QString &tag, quint64 data)
 
 void InfoCommand::onParentPathFetched(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     CollectionPathJob *pathJob = qobject_cast<CollectionPathJob *>(job);
     Q_ASSERT(pathJob != nullptr);
     const QString parentString = pathJob->formattedCollectionPath();
 
     // Finally we have fetched all of the information to display.
 
-    if (mInfoCollection != nullptr) {			// for a collection
+    if (mInfoCollection != nullptr) { // for a collection
         Q_ASSERT(mInfoCollection->isValid());
 
         writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoCollection->id()));
@@ -261,7 +262,7 @@ void InfoCommand::onParentPathFetched(KJob *job)
         writeInfo(i18nc("@info:shell", "Unread"), QLocale::system().toString(mInfoStatistics->unreadCount()));
         const QString size = QLocale::system().formattedDataSize(mInfoStatistics->size());
         writeInfo(i18nc("@info:shell", "Size"), size);
-    } else if (mInfoItem != nullptr) {			// for an item
+    } else if (mInfoItem != nullptr) { // for an item
         writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoItem->id()));
         writeInfo(i18nc("@info:shell", "URL"), mInfoItem->url().toDisplayString());
         writeInfo(i18nc("@info:shell", "Parent"), parentString);
@@ -295,13 +296,13 @@ void InfoCommand::onParentPathFetched(KJob *job)
 
         const QString size = QLocale::system().formattedDataSize(mInfoItem->size());
         writeInfo(i18nc("@info:shell", "Size"), size);
-    } else {                      // neither collection nor item?
+    } else { // neither collection nor item?
         // should never happen
         writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Unknown"));
     }
 
-    if (!isProcessLoopFinished()) {			// not the last item
-        std::cout << "\n";				// blank line to separate
+    if (!isProcessLoopFinished()) { // not the last item
+        std::cout << "\n"; // blank line to separate
     }
 
     processNext();

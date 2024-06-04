@@ -18,18 +18,18 @@
 
 #include "copycommand.h"
 
-#include "collectionresolvejob.h"
 #include "collectionpathjob.h"
+#include "collectionresolvejob.h"
 #include "errorreporter.h"
 
 #include <Akonadi/CollectionCopyJob>
-#include <Akonadi/CollectionMoveJob>
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
+#include <Akonadi/CollectionMoveJob>
 #include <Akonadi/ItemCopyJob>
-#include <Akonadi/ItemMoveJob>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
+#include <Akonadi/ItemMoveJob>
 
 #include <iostream>
 
@@ -37,9 +37,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("copy", CopyCommand,
-               kli18nc("info:shell",
-                       "Copy collections or items into a new collection"));
+DEFINE_COMMAND("copy", CopyCommand, kli18nc("info:shell", "Copy collections or items into a new collection"));
 
 CopyCommand::CopyCommand(QObject *parent)
     : AbstractCommand(parent)
@@ -64,14 +62,17 @@ void CopyCommand::setupCommandOptions(QCommandLineParser *parser)
 
 int CopyCommand::initCommand(QCommandLineParser *parser)
 {
-    if (!getCommonOptions(parser)) return InvalidUsage;
+    if (!getCommonOptions(parser))
+        return InvalidUsage;
 
     QStringList sourceArgs = parser->positionalArguments();
-    if (!checkArgCount(sourceArgs, 2, i18nc("@info:shell", "Missing source/destination arguments"))) return InvalidUsage;
+    if (!checkArgCount(sourceArgs, 2, i18nc("@info:shell", "Missing source/destination arguments")))
+        return InvalidUsage;
 
-    mDestinationArg = sourceArgs.takeLast();		// extract the destination
-    Q_ASSERT(!sourceArgs.isEmpty());			// must have some left
-    if (!getResolveJob(mDestinationArg)) return InvalidUsage;
+    mDestinationArg = sourceArgs.takeLast(); // extract the destination
+    Q_ASSERT(!sourceArgs.isEmpty()); // must have some left
+    if (!getResolveJob(mDestinationArg))
+        return InvalidUsage;
 
     initProcessLoop(sourceArgs, i18n("No more sources to process"));
     return NoError;
@@ -79,8 +80,8 @@ int CopyCommand::initCommand(QCommandLineParser *parser)
 
 void CopyCommand::onTargetFetched(KJob *job)
 {
-    if (!checkJobResult(job, i18nc("@info:shell", "Cannot resolve destination collection '%1', %2",
-                                   mDestinationArg, job->errorString()))) return;
+    if (!checkJobResult(job, i18nc("@info:shell", "Cannot resolve destination collection '%1', %2", mDestinationArg, job->errorString())))
+        return;
     CollectionResolveJob *res = resolveJob();
     Q_ASSERT(job == res);
     mDestinationCollection = res->collection();
@@ -106,14 +107,13 @@ void CopyCommand::onSourceResolved(KJob *job)
     const QString sourceArg = job->property("arg").toString();
     if (job->error() != 0) {
         Item item;
-        if (job->error() == Akonadi::Job::Unknown) {    // failed to resolve as collection
+        if (job->error() == Akonadi::Job::Unknown) { // failed to resolve as collection
             // try as item instead
             item = CollectionResolveJob::parseItem(sourceArg);
         }
 
-        if (!item.isValid()) {              // couldn't parse as item either
-            Q_EMIT error(i18nc("@info:shell", "Cannot resolve source '%1', %2",
-                             sourceArg, job->errorString()));
+        if (!item.isValid()) { // couldn't parse as item either
+            Q_EMIT error(i18nc("@info:shell", "Cannot resolve source '%1', %2", sourceArg, job->errorString()));
             processNext();
             return;
         }
@@ -138,18 +138,13 @@ void CopyCommand::onSourceResolved(KJob *job)
         // source argument to rsync(1).
 
         if (mMoving) {
-            ErrorReporter::progress(i18n("Moving contents of %1 -> %2",
-                                         sourceJob->formattedCollectionName(),
-                                         resolveJob()->formattedCollectionName()));
+            ErrorReporter::progress(i18n("Moving contents of %1 -> %2", sourceJob->formattedCollectionName(), resolveJob()->formattedCollectionName()));
         } else {
-            ErrorReporter::progress(i18n("Copying contents of %1 -> %2",
-                                         sourceJob->formattedCollectionName(),
-                                         resolveJob()->formattedCollectionName()));
+            ErrorReporter::progress(i18n("Copying contents of %1 -> %2", sourceJob->formattedCollectionName(), resolveJob()->formattedCollectionName()));
         }
 
         mSourceCollection = sourceJob->collection();
-        CollectionFetchJob *fetchJob = new CollectionFetchJob(mSourceCollection,
-                CollectionFetchJob::FirstLevel, this);
+        CollectionFetchJob *fetchJob = new CollectionFetchJob(mSourceCollection, CollectionFetchJob::FirstLevel, this);
         fetchJob->fetchScope().setListFilter(CollectionFetchScope::NoFilter);
         fetchJob->setProperty("arg", sourceArg);
         connect(fetchJob, &KJob::result, this, &CopyCommand::onCollectionsFetched);
@@ -161,16 +156,12 @@ void CopyCommand::onSourceResolved(KJob *job)
 
         Akonadi::Job *copyMovejob;
         if (mMoving) {
-            ErrorReporter::progress(i18n("Moving collection %1 -> %2",
-                                         sourceJob->formattedCollectionName(),
-                                         resolveJob()->formattedCollectionName()));
+            ErrorReporter::progress(i18n("Moving collection %1 -> %2", sourceJob->formattedCollectionName(), resolveJob()->formattedCollectionName()));
             if (!isDryRun()) {
                 copyMovejob = new CollectionMoveJob(sourceCollection, mDestinationCollection, this);
             }
         } else {
-            ErrorReporter::progress(i18n("Copying collection %1 -> %2",
-                                         sourceJob->formattedCollectionName(),
-                                         resolveJob()->formattedCollectionName()));
+            ErrorReporter::progress(i18n("Copying collection %1 -> %2", sourceJob->formattedCollectionName(), resolveJob()->formattedCollectionName()));
 
             if (!isDryRun()) {
                 copyMovejob = new CollectionCopyJob(sourceCollection, mDestinationCollection, this);
@@ -189,50 +180,43 @@ void CopyCommand::onSourceResolved(KJob *job)
 void CopyCommand::onRecursiveCopyFinished(KJob *job)
 {
     const QString sourceArg = job->property("arg").toString();
-    if (!checkJobResult(job, i18nc("@info:shell", "Cannot copy/move from '%1', %2",
-                                   sourceArg, job->errorString()))) return;
+    if (!checkJobResult(job, i18nc("@info:shell", "Cannot copy/move from '%1', %2", sourceArg, job->errorString())))
+        return;
     processNext();
 }
 
 void CopyCommand::onCollectionsFetched(KJob *job)
 {
     const QString sourceArg = job->property("arg").toString();
-    if (!checkJobResult(job, i18nc("@info:shell", "Cannot fetch subcollections of '%1', %2",
-                                   sourceArg, job->errorString()))) return;
+    if (!checkJobResult(job, i18nc("@info:shell", "Cannot fetch subcollections of '%1', %2", sourceArg, job->errorString())))
+        return;
 
     CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
 
     mSubCollections = fetchJob->collections();
-    if (mSubCollections.isEmpty()) {          // no sub-collections, no problem
+    if (mSubCollections.isEmpty()) { // no sub-collections, no problem
         ErrorReporter::progress(i18n("No sub-collections to copy/move"));
-        fetchItems(sourceArg);              // go on to do items
+        fetchItems(sourceArg); // go on to do items
         return;
     }
 
     if (mMoving) {
-        ErrorReporter::progress(i18ncp("@info:shell",
-                                       "Moving %1 sub-collection",
-                                       "Moving %1 sub-collections",
-                                       mSubCollections.count()));
+        ErrorReporter::progress(i18ncp("@info:shell", "Moving %1 sub-collection", "Moving %1 sub-collections", mSubCollections.count()));
     } else {
-        ErrorReporter::progress(i18ncp("@info:shell",
-                                       "Copying %1 sub-collection",
-                                       "Copying %1 sub-collections",
-                                       mSubCollections.count()));
+        ErrorReporter::progress(i18ncp("@info:shell", "Copying %1 sub-collection", "Copying %1 sub-collections", mSubCollections.count()));
     }
-    doNextSubcollection(sourceArg);           // start processing them
+    doNextSubcollection(sourceArg); // start processing them
 }
 
 inline void CopyCommand::doNextSubcollection(const QString &sourceArg)
 {
-    QMetaObject::invokeMethod(this, "processNextSubcollection", Qt::QueuedConnection,
-                              Q_ARG(QString, sourceArg));
+    QMetaObject::invokeMethod(this, "processNextSubcollection", Qt::QueuedConnection, Q_ARG(QString, sourceArg));
 }
 
 void CopyCommand::processNextSubcollection(const QString &sourceArg)
 {
-    if (mSubCollections.isEmpty()) {          // no more to do
+    if (mSubCollections.isEmpty()) { // no more to do
         ErrorReporter::progress(i18n("No more sub-collections to process"));
         fetchItems(sourceArg);
         return;
@@ -265,11 +249,11 @@ void CopyCommand::onCollectionCopyFinished(KJob *job)
 {
     const QString sourceArg = job->property("arg").toString();
     if (job->error() != 0) {
-        Q_EMIT error(i18nc("@info:shell", "Cannot copy/move sub-collection '%2' from '%1', %3",
-                         sourceArg, job->property("collection").toString(), job->errorString()));
+        Q_EMIT error(
+            i18nc("@info:shell", "Cannot copy/move sub-collection '%2' from '%1', %3", sourceArg, job->property("collection").toString(), job->errorString()));
     }
 
-    doNextSubcollection(sourceArg);           // copy the next one
+    doNextSubcollection(sourceArg); // copy the next one
 }
 
 void CopyCommand::fetchItems(const QString &sourceArg)
@@ -283,14 +267,14 @@ void CopyCommand::fetchItems(const QString &sourceArg)
 void CopyCommand::onItemsFetched(KJob *job)
 {
     const QString sourceArg = job->property("arg").toString();
-    if (!checkJobResult(job, i18nc("@info:shell", "Cannot fetch items of '%1', %2",
-                                   sourceArg, job->errorString()))) return;
+    if (!checkJobResult(job, i18nc("@info:shell", "Cannot fetch items of '%1', %2", sourceArg, job->errorString())))
+        return;
 
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
 
     Akonadi::Item::List items = fetchJob->items();
-    if (items.isEmpty()) {                // no items, no problem
+    if (items.isEmpty()) { // no items, no problem
         ErrorReporter::progress(i18n("No items to process"));
         processNext();
         return;
@@ -319,8 +303,8 @@ void CopyCommand::onItemsFetched(KJob *job)
 void CopyCommand::onItemCopyFinished(KJob *job)
 {
     const QString sourceArg = job->property("arg").toString();
-    if (!checkJobResult(job, i18nc("@info:shell", "Cannot copy/move items from '%1', %2",
-                                   sourceArg, job->errorString()))) return;
+    if (!checkJobResult(job, i18nc("@info:shell", "Cannot copy/move items from '%1', %2", sourceArg, job->errorString())))
+        return;
     processNext();
 }
 

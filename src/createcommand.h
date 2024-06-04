@@ -48,4 +48,3 @@ private Q_SLOTS:
     void onCollectionCreated(KJob *job);
     void onPathFetched(KJob *job);
 };
-

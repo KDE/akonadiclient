@@ -26,8 +26,8 @@
 using namespace Akonadi;
 
 CollectionPathJob::CollectionPathJob(const Akonadi::Collection &collection, QObject *parent)
-    : KCompositeJob(parent),
-      mCollection(collection)
+    : KCompositeJob(parent)
+    , mCollection(collection)
 {
     setAutoDelete(false);
 }
@@ -67,8 +67,7 @@ QString CollectionPathJob::collectionPath() const
 
 QString CollectionPathJob::formattedCollectionPath() const
 {
-    return (i18nc("@info:shell 1=collection ID, 2=collection path",
-                  "%1 (\"/%2\")", QString::number(mCollection.id()), mPath));
+    return (i18nc("@info:shell 1=collection ID, 2=collection path", "%1 (\"/%2\")", QString::number(mCollection.id()), mPath));
 }
 
 #include "moc_collectionpathjob.cpp"

@@ -62,4 +62,3 @@ private Q_SLOTS:
     void onParentPathFetched(KJob *job);
     void processNextItem();
 };
-

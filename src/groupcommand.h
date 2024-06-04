@@ -43,12 +43,7 @@ protected:
     int initCommand(QCommandLineParser *parser) override;
 
 private:
-    enum Mode {
-        ModeExpand,
-        ModeAdd,
-        ModeDelete,
-        ModeClean
-    };
+    enum Mode { ModeExpand, ModeAdd, ModeDelete, ModeClean };
 
     Akonadi::Item *mGroupItem = nullptr;
 
@@ -77,4 +72,3 @@ private:
 private Q_SLOTS:
     void onItemsFetched(KJob *job);
 };
-

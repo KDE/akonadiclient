@@ -42,4 +42,3 @@ private:
     Akonadi::Collection mCollection;
     QString mPath;
 };
-

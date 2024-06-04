@@ -19,11 +19,11 @@
 
 #include "deletecommand.h"
 
+#include <Akonadi/CollectionDeleteJob>
+#include <Akonadi/CollectionPathResolver>
 #include <Akonadi/Item>
 #include <Akonadi/ItemDeleteJob>
 #include <Akonadi/ItemFetchJob>
-#include <Akonadi/CollectionDeleteJob>
-#include <Akonadi/CollectionPathResolver>
 
 #include <klocalizedstring.h>
 
@@ -31,14 +31,12 @@
 
 #include <iostream>
 
-#include "commandfactory.h"
 #include "collectionresolvejob.h"
-
+#include "commandfactory.h"
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("delete", DeleteCommand,
-               kli18nc("info:shell", "Delete a collection or an item"));
+DEFINE_COMMAND("delete", DeleteCommand, kli18nc("info:shell", "Delete a collection or an item"));
 
 DeleteCommand::DeleteCommand(QObject *parent)
     : AbstractCommand(parent)
@@ -57,12 +55,15 @@ void DeleteCommand::setupCommandOptions(QCommandLineParser *parser)
 int DeleteCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection/item argument"))) return InvalidUsage;
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection/item argument")))
+        return InvalidUsage;
 
-    if (!getCommonOptions(parser)) return InvalidUsage;
+    if (!getCommonOptions(parser))
+        return InvalidUsage;
 
     mEntityArg = args.first();
-    if (!getResolveJob(mEntityArg)) return InvalidUsage;
+    if (!getResolveJob(mEntityArg))
+        return InvalidUsage;
 
     return NoError;
 }
@@ -115,7 +116,8 @@ void DeleteCommand::onBaseFetched(KJob *job)
 
 void DeleteCommand::onCollectionDeleted(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     std::cout << i18n("Collection deleted successfully").toLocal8Bit().constData() << std::endl;
     Q_EMIT finished(NoError);
 }
@@ -140,7 +142,8 @@ void DeleteCommand::fetchItems()
 
 void DeleteCommand::onItemsFetched(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
 
@@ -156,7 +159,8 @@ void DeleteCommand::onItemsFetched(KJob *job)
 
 void DeleteCommand::onItemsDeleted(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     std::cout << i18n("Item deleted successfully").toLocal8Bit().constData() << std::endl;
     Q_EMIT finished(NoError);
 }

@@ -48,4 +48,3 @@ private Q_SLOTS:
     void processNextItem();
     void onItemFetched(KJob *job);
 };
-

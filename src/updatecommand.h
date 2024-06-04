@@ -50,4 +50,3 @@ private Q_SLOTS:
     void onItemFetched(KJob *job);
     void onItemUpdated(KJob *job);
 };
-

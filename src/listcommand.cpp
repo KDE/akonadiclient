@@ -33,10 +33,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND(
-    "list", ListCommand,
-    kli18nc("info:shell",
-            "List sub-collections and/or items in a specified collection"));
+DEFINE_COMMAND("list", ListCommand, kli18nc("info:shell", "List sub-collections and/or items in a specified collection"));
 
 ListCommand::ListCommand(QObject *parent)
     : AbstractCommand(parent)
@@ -46,9 +43,15 @@ ListCommand::ListCommand(QObject *parent)
 void ListCommand::setupCommandOptions(QCommandLineParser *parser)
 {
     addOptionsOption(parser);
-    parser->addOption(QCommandLineOption((QStringList() << "l" << "details"), i18n("List more detailed information")));
-    parser->addOption(QCommandLineOption((QStringList() << "c" << "collections"), i18n("List only sub-collections")));
-    parser->addOption(QCommandLineOption((QStringList() << "i" << "items"), i18n("List only contained items")));
+    parser->addOption(QCommandLineOption((QStringList() << "l"
+                                                        << "details"),
+                                         i18n("List more detailed information")));
+    parser->addOption(QCommandLineOption((QStringList() << "c"
+                                                        << "collections"),
+                                         i18n("List only sub-collections")));
+    parser->addOption(QCommandLineOption((QStringList() << "i"
+                                                        << "items"),
+                                         i18n("List only contained items")));
 
     parser->addPositionalArgument("collection", i18nc("@info:shell", "The collection to list: an ID, path or Akonadi URL"));
 }
@@ -56,17 +59,19 @@ void ListCommand::setupCommandOptions(QCommandLineParser *parser)
 int ListCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument"))) return InvalidUsage;
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument")))
+        return InvalidUsage;
 
-    mListItems = parser->isSet("items");		// selection options specified
+    mListItems = parser->isSet("items"); // selection options specified
     mListCollections = parser->isSet("collections");
-    if (!mListCollections && !mListItems) {		// if none given, then
-        mListCollections = mListItems = true;		// list both by default
+    if (!mListCollections && !mListItems) { // if none given, then
+        mListCollections = mListItems = true; // list both by default
     }
-    mListDetails = parser->isSet("details");		// listing option specified
+    mListDetails = parser->isSet("details"); // listing option specified
 
     const QString collectionArg = args.first();
-    if (!getResolveJob(collectionArg)) return InvalidUsage;
+    if (!getResolveJob(collectionArg))
+        return InvalidUsage;
 
     return NoError;
 }
@@ -116,16 +121,15 @@ void ListCommand::fetchCollections()
 
 void ListCommand::onCollectionsFetched(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
 
     Collection::List collections = fetchJob->collections();
     if (collections.isEmpty()) {
-        if (mListCollections) {                  // message only if collections requested
-            std::cout << qPrintable(i18nc("@info:shell",
-                                          "Collection %1 has no sub-collections",
-                                          resolveJob()->formattedCollectionName())) << std::endl;
+        if (mListCollections) { // message only if collections requested
+            std::cout << qPrintable(i18nc("@info:shell", "Collection %1 has no sub-collections", resolveJob()->formattedCollectionName())) << std::endl;
         }
     } else {
         // This works because Akonadi::Entity implements operator<
@@ -133,10 +137,11 @@ void ListCommand::onCollectionsFetched(KJob *job)
         std::sort(collections.begin(), collections.end());
 
         std::cout << qPrintable(i18ncp("@info:shell output section header 1=count, 2=collection",
-                                      "Collection %2 has %1 sub-collection:",
-                                      "Collection %2 has %1 sub-collections:",
-                                      collections.count(),
-                                      resolveJob()->formattedCollectionName())) << std::endl;
+                                       "Collection %2 has %1 sub-collection:",
+                                       "Collection %2 has %1 sub-collections:",
+                                       collections.count(),
+                                       resolveJob()->formattedCollectionName()))
+                  << std::endl;
         if (mListDetails) {
             std::cout << "  ";
             writeColumn(i18nc("@info:shell column header", "ID"), 8);
@@ -178,34 +183,32 @@ void ListCommand::fetchItems()
         job->fetchScope().fetchFullPayload(false);
         connect(job, &KJob::result, this, &ListCommand::onItemsFetched);
     } else {
-        std::cout << qPrintable(i18nc("@info:shell",
-                                      "Collection %1 cannot contain items",
-                                      resolveJob()->formattedCollectionName())) << std::endl;
+        std::cout << qPrintable(i18nc("@info:shell", "Collection %1 cannot contain items", resolveJob()->formattedCollectionName())) << std::endl;
         Q_EMIT finished(NoError);
     }
 }
 
 void ListCommand::onItemsFetched(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     ItemFetchJob *fetchJob = qobject_cast<ItemFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
     Item::List items = fetchJob->items();
 
     if (items.isEmpty()) {
-        if (mListItems) {                    // message only if items requested
-            std::cout << qPrintable(i18nc("@info:shell",
-                                          "Collection %1 has no items",
-                                          resolveJob()->formattedCollectionName())) << std::endl;
+        if (mListItems) { // message only if items requested
+            std::cout << qPrintable(i18nc("@info:shell", "Collection %1 has no items", resolveJob()->formattedCollectionName())) << std::endl;
         }
     } else {
         std::sort(items.begin(), items.end());
 
         std::cout << qPrintable(i18ncp("@info:shell output section header 1=count, 2=collection",
-                                      "Collection %2 has %1 item:",
-                                      "Collection %2 has %1 items:",
-                                      items.count(),
-                                      resolveJob()->formattedCollectionName())) << std::endl;
+                                       "Collection %2 has %1 item:",
+                                       "Collection %2 has %1 items:",
+                                       items.count(),
+                                       resolveJob()->formattedCollectionName()))
+                  << std::endl;
         if (mListDetails) {
             std::cout << "  ";
             writeColumn(i18nc("@info:shell column header", "ID"), 8);

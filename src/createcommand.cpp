@@ -18,8 +18,8 @@
 
 #include "createcommand.h"
 
-#include "collectionresolvejob.h"
 #include "collectionpathjob.h"
+#include "collectionresolvejob.h"
 #include "errorreporter.h"
 
 #include <Akonadi/Collection>
@@ -32,8 +32,7 @@
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("create", CreateCommand,
-               kli18nc("info:shell", "Create a new collection"));
+DEFINE_COMMAND("create", CreateCommand, kli18nc("info:shell", "Create a new collection"));
 
 CreateCommand::CreateCommand(QObject *parent)
     : AbstractCommand(parent)
@@ -49,7 +48,10 @@ void CreateCommand::start()
 void CreateCommand::setupCommandOptions(QCommandLineParser *parser)
 {
     addOptionsOption(parser);
-    parser->addOption(QCommandLineOption((QStringList() << "p" << "parent"), i18n("Parent collection to create in"), i18n("collection")));
+    parser->addOption(QCommandLineOption((QStringList() << "p"
+                                                        << "parent"),
+                                         i18n("Parent collection to create in"),
+                                         i18n("collection")));
     addDryRunOption(parser);
 
     parser->addPositionalArgument("collection", i18nc("@info:shell", "The collection to create, either as a path or a name (with a parent specified)"));
@@ -58,9 +60,11 @@ void CreateCommand::setupCommandOptions(QCommandLineParser *parser)
 int CreateCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
-    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument"))) return InvalidUsage;
+    if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument")))
+        return InvalidUsage;
 
-    if (!getCommonOptions(parser)) return InvalidUsage;
+    if (!getCommonOptions(parser))
+        return InvalidUsage;
 
     const QString collectionArg = args.first();
     if (parser->isSet("parent")) {
@@ -90,7 +94,7 @@ int CreateCommand::initCommand(QCommandLineParser *parser)
             return InvalidUsage;
         }
 
-        mNewCollectionName = collectionArg.mid(i+1);
+        mNewCollectionName = collectionArg.mid(i + 1);
         mParentCollection = collectionArg.left(i);
     }
 
@@ -99,17 +103,16 @@ int CreateCommand::initCommand(QCommandLineParser *parser)
         return InvalidUsage;
     }
 
-    if (!getResolveJob(mParentCollection)) return InvalidUsage;
+    if (!getResolveJob(mParentCollection))
+        return InvalidUsage;
 
     return NoError;
 }
 
 void CreateCommand::onTargetFetched(KJob *job)
 {
-    if (!checkJobResult(job, i18nc("@info:shell",
-                                   "Cannot fetch parent collection '%1', %2",
-                                   mParentCollection,
-                                   job->errorString()))) return;
+    if (!checkJobResult(job, i18nc("@info:shell", "Cannot fetch parent collection '%1', %2", mParentCollection, job->errorString())))
+        return;
     CollectionResolveJob *res = resolveJob();
     Q_ASSERT(job == res);
     Akonadi::Collection parentCollection = res->collection();
@@ -119,8 +122,7 @@ void CreateCommand::onTargetFetched(KJob *job)
     if ((mNewCollectionName == "cur") || (mNewCollectionName == "new") || (mNewCollectionName == "tmp")) {
         QString parentResource = parentCollection.resource();
         if (parentResource.startsWith(QLatin1String("akonadi_maildir_resource"))) {
-            ErrorReporter::warning(i18n("Creating a maildir folder named '%1' may not work",
-                                        mNewCollectionName));
+            ErrorReporter::warning(i18n("Creating a maildir folder named '%1' may not work", mNewCollectionName));
         }
     }
 
@@ -138,10 +140,9 @@ void CreateCommand::onTargetFetched(KJob *job)
 
 void CreateCommand::onCollectionCreated(KJob *job)
 {
-    if (!checkJobResult(job, i18n("Error creating collection '%1' under '%2', %3",
-                                  mNewCollectionName,
-                                  resolveJob()->formattedCollectionName(),
-                                  job->errorString()))) return;
+    if (!checkJobResult(job,
+                        i18n("Error creating collection '%1' under '%2', %3", mNewCollectionName, resolveJob()->formattedCollectionName(), job->errorString())))
+        return;
     CollectionCreateJob *createJob = qobject_cast<CollectionCreateJob *>(job);
     Q_ASSERT(createJob != nullptr);
 
@@ -152,12 +153,12 @@ void CreateCommand::onCollectionCreated(KJob *job)
 
 void CreateCommand::onPathFetched(KJob *job)
 {
-    if (!checkJobResult(job, i18n("Error getting path of new collection, %1", job->errorString()))) return;
+    if (!checkJobResult(job, i18n("Error getting path of new collection, %1", job->errorString())))
+        return;
     CollectionPathJob *pathJob = qobject_cast<CollectionPathJob *>(job);
     Q_ASSERT(pathJob != nullptr);
 
-    std::cout << qPrintable(i18n("Created new collection '%1'", pathJob->formattedCollectionPath()))
-              << std::endl;
+    std::cout << qPrintable(i18n("Created new collection '%1'", pathJob->formattedCollectionPath())) << std::endl;
 
     Q_EMIT finished(NoError);
 }

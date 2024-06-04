@@ -20,38 +20,47 @@
 
 #include <iostream>
 
-#include <Akonadi/TagFetchJob>
 #include <Akonadi/TagCreateJob>
 #include <Akonadi/TagDeleteJob>
+#include <Akonadi/TagFetchJob>
 
 #include "commandfactory.h"
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("tags", TagsCommand,
-               kli18nc("info:shell", "List or modify tags"));
+DEFINE_COMMAND("tags", TagsCommand, kli18nc("info:shell", "List or modify tags"));
 
 TagsCommand::TagsCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mBriefOutput(false),
-      mUrlsOutput(false),
-      mOperationMode(ModeList),
-      mAddForceId(0)
+    : AbstractCommand(parent)
+    , mBriefOutput(false)
+    , mUrlsOutput(false)
+    , mOperationMode(ModeList)
+    , mAddForceId(0)
 {
 }
 
 void TagsCommand::setupCommandOptions(QCommandLineParser *parser)
 {
     addOptionsOption(parser);
-    parser->addOption(QCommandLineOption((QStringList() << "b" << "brief"), i18n("Brief output, tag names or IDs only")));
-    parser->addOption(QCommandLineOption((QStringList() << "u" << "urls"), i18n("Brief output, tag URLs only")));
+    parser->addOption(QCommandLineOption((QStringList() << "b"
+                                                        << "brief"),
+                                         i18n("Brief output, tag names or IDs only")));
+    parser->addOption(QCommandLineOption((QStringList() << "u"
+                                                        << "urls"),
+                                         i18n("Brief output, tag URLs only")));
 
-    parser->addOption(QCommandLineOption((QStringList() << "l" << "list"), i18n("List all known tags (the default operation)")));
-    parser->addOption(QCommandLineOption((QStringList() << "a" << "add"), i18n("Add named tags")));
-    parser->addOption(QCommandLineOption((QStringList() << "d" << "delete"), i18n("Delete tags")));
+    parser->addOption(QCommandLineOption((QStringList() << "l"
+                                                        << "list"),
+                                         i18n("List all known tags (the default operation)")));
+    parser->addOption(QCommandLineOption((QStringList() << "a"
+                                                        << "add"),
+                                         i18n("Add named tags")));
+    parser->addOption(QCommandLineOption((QStringList() << "d"
+                                                        << "delete"),
+                                         i18n("Delete tags")));
     // This option would be nice to have but will not work, an ID is
     // automatically assigned by the Akonadi server when a tag is created.
-    //parser->addOption(QCommandLineOption((QStringList() << "i" << "id"), i18n("ID for a tag to be added (default automatic)"), i18n("id")));
+    // parser->addOption(QCommandLineOption((QStringList() << "i" << "id"), i18n("ID for a tag to be added (default automatic)"), i18n("id")));
 
     parser->addPositionalArgument(i18n("TAG"), i18n("The name of a tag to add, or the name, ID or URL of a tag to delete"), i18n("[TAG...]"));
 }
@@ -61,16 +70,16 @@ int TagsCommand::initCommand(QCommandLineParser *parser)
     mBriefOutput = parser->isSet("brief");
     mUrlsOutput = parser->isSet("urls");
 
-    //if (parser->isSet("id"))
+    // if (parser->isSet("id"))
     //{
-    //    bool ok;
-    //    mAddForceId = parser->value("id").toUInt(&ok);
-    //    if (!ok || mAddForceId==0)
-    //    {
-    //        emitErrorSeeHelp(i18nc("@info:shell", "Invalid value for the 'id' option"));
-    //        return (InvalidUsage);
-    //    }
-    //}
+    //     bool ok;
+    //     mAddForceId = parser->value("id").toUInt(&ok);
+    //     if (!ok || mAddForceId==0)
+    //     {
+    //         emitErrorSeeHelp(i18nc("@info:shell", "Invalid value for the 'id' option"));
+    //         return (InvalidUsage);
+    //     }
+    // }
 
     if (mBriefOutput && mUrlsOutput) {
         emitErrorSeeHelp(i18nc("@info:shell", "The 'brief' and 'urls' options cannot both be specified"));
@@ -94,33 +103,29 @@ int TagsCommand::initCommand(QCommandLineParser *parser)
 
     const QStringList tagArgs = parser->positionalArguments();
 
-    if (parser->isSet("list")) {			// see if "List" mode
+    if (parser->isSet("list")) { // see if "List" mode
         // expand
         mOperationMode = ModeList;
-    } else if (parser->isSet("add")) {			// see if "Add" mode
+    } else if (parser->isSet("add")) { // see if "Add" mode
         // add [-i ID] NAME
         // add NAME...
         mOperationMode = ModeAdd;
 
-        if (tagArgs.isEmpty())
-        {
+        if (tagArgs.isEmpty()) {
             emitErrorSeeHelp(i18nc("@info:shell", "No tags specified to add"));
             return (InvalidUsage);
         }
 
-        if (tagArgs.count()>1 && mAddForceId!=0)
-        {
+        if (tagArgs.count() > 1 && mAddForceId != 0) {
             emitErrorSeeHelp(i18nc("@info:shell", "Multiple tags cannot be specified to add with 'id'"));
             return (InvalidUsage);
         }
-    }
-    else if (parser->isSet("delete"))			// see if "Delete" mode
+    } else if (parser->isSet("delete")) // see if "Delete" mode
     {
         // delete NAME|ID|URL...
         mOperationMode = ModeDelete;
 
-        if (tagArgs.isEmpty())
-        {
+        if (tagArgs.isEmpty()) {
             emitErrorSeeHelp(i18nc("@info:shell", "No tags specified to delete"));
             return (InvalidUsage);
         }
@@ -133,7 +138,7 @@ int TagsCommand::initCommand(QCommandLineParser *parser)
 void TagsCommand::start()
 {
     if (mOperationMode == ModeDelete) {
-        if (!isDryRun()) {				// allow if not doing anything
+        if (!isDryRun()) { // allow if not doing anything
             if (!allowDangerousOperation()) {
                 Q_EMIT finished(RuntimeError);
                 return;
@@ -141,57 +146,52 @@ void TagsCommand::start()
         }
     }
 
-    TagFetchJob *job = new TagFetchJob(this);		// always need tag list
+    TagFetchJob *job = new TagFetchJob(this); // always need tag list
     connect(job, &KJob::result, this, &TagsCommand::onTagsFetched);
 }
 
 void TagsCommand::addNextTag()
 {
     // See whether a tag with that name or ID already exists
-    for (const Tag &tag : mFetchedTags)
-    {
-        if (tag.name()==currentArg() || (mAddForceId!=0 && tag.id()==mAddForceId))
-        {
-            Q_EMIT error(i18nc("@info:shell", "A tag named '%1' ID %2 already exists",
-                             tag.name(), QString::number(tag.id())));
-            processNext();				// ignore the conflicting tag
+    for (const Tag &tag : mFetchedTags) {
+        if (tag.name() == currentArg() || (mAddForceId != 0 && tag.id() == mAddForceId)) {
+            Q_EMIT error(i18nc("@info:shell", "A tag named '%1' ID %2 already exists", tag.name(), QString::number(tag.id())));
+            processNext(); // ignore the conflicting tag
             return;
         }
     }
 
     Tag newTag(currentArg());
-    if (mAddForceId!=0) newTag.setId(mAddForceId);
+    if (mAddForceId != 0)
+        newTag.setId(mAddForceId);
     TagCreateJob *createJob = new TagCreateJob(newTag, this);
     connect(createJob, &KJob::result, this, &TagsCommand::onTagAdded);
 }
 
 void TagsCommand::onTagAdded(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     TagCreateJob *createJob = qobject_cast<TagCreateJob *>(job);
     Q_ASSERT(createJob != nullptr);
 
     Tag addedTag = createJob->tag();
-    if (!addedTag.isValid())
-    {
-        if (mAddForceId!=0)
-        {
-            Q_EMIT error(i18nc("@info:shell", "Cannot add tag '%1' ID %2",
-                             currentArg(), QString::number(mAddForceId)));
-        }
-        else
-        {
+    if (!addedTag.isValid()) {
+        if (mAddForceId != 0) {
+            Q_EMIT error(i18nc("@info:shell", "Cannot add tag '%1' ID %2", currentArg(), QString::number(mAddForceId)));
+        } else {
             Q_EMIT error(i18nc("@info:shell", "Cannot add tag '%1'", currentArg()));
         }
-    }
-    else
-    {
-        if (mBriefOutput) std::cout << addedTag.id() << std::endl;
-        else if (mUrlsOutput) std::cout << qPrintable(addedTag.url().toDisplayString()) << std::endl;
-        else std::cout << "Added tag '" << qPrintable(addedTag.name()) << "' ID " << addedTag.id() << std::endl;
+    } else {
+        if (mBriefOutput)
+            std::cout << addedTag.id() << std::endl;
+        else if (mUrlsOutput)
+            std::cout << qPrintable(addedTag.url().toDisplayString()) << std::endl;
+        else
+            std::cout << "Added tag '" << qPrintable(addedTag.name()) << "' ID " << addedTag.id() << std::endl;
     }
 
-    processNext();					// continue to do next
+    processNext(); // continue to do next
 }
 
 void TagsCommand::deleteNextTag()
@@ -200,37 +200,32 @@ void TagsCommand::deleteNextTag()
     // See if user input is a valid integer as a tag ID
     bool ok;
     unsigned int id = currentArg().toUInt(&ok);
-    if (ok) delTag = Tag(id);				// conversion succeeded
-    else
-    {
+    if (ok)
+        delTag = Tag(id); // conversion succeeded
+    else {
         // Otherwise check if we have an Akonadi URL
         const QUrl url = QUrl::fromUserInput(currentArg());
-        if (url.isValid() && url.scheme() == QLatin1String("akonadi"))
-        {						// valid Akonadi URL
+        if (url.isValid() && url.scheme() == QLatin1String("akonadi")) { // valid Akonadi URL
             delTag = Tag::fromUrl(url);
-        }
-        else
-        {
+        } else {
             // Otherwise assume a tag name.  Unfortunately this means that
             // a tag with a name that looks like an integer or a URL cannot be
             // deleted.  This is not very likely.
             //
             // A tag can only be deleted by ID, so find the corresponding
             // tag with that name in the fetched list and use its ID.
-            for (const Tag &tag : mFetchedTags)
-            {
-                if (tag.name() == currentArg())
-                {
+            for (const Tag &tag : mFetchedTags) {
+                if (tag.name() == currentArg()) {
                     delTag = Tag(tag.id());
                     break;
                 }
             }
 
             // Check now whether the named tag currently exists.
-            if (delTag.id()==-1)			// no tag found by loop above
+            if (delTag.id() == -1) // no tag found by loop above
             {
                 Q_EMIT error(i18nc("@info:shell", "Tag to delete '%1' does not exist", currentArg()));
-                processNext();				// ignore the missing tag
+                processNext(); // ignore the missing tag
                 return;
             }
         }
@@ -253,9 +248,8 @@ void TagsCommand::deleteNextTag()
     // Look for a matching tag by ID, if a name has been specified then
     // it will have been resolved to an existing ID above.
     Q_ASSERT(delTag.isValid());
-    for (const Tag &tag : mFetchedTags)
-    {
-        if (delTag.id()==tag.id())			// tag specified by ID
+    for (const Tag &tag : mFetchedTags) {
+        if (delTag.id() == tag.id()) // tag specified by ID
         {
             // It is now safe to delete the tag.  Use the fetched tag,
             // since that will have both its ID and name available to
@@ -267,20 +261,24 @@ void TagsCommand::deleteNextTag()
     }
 
     Q_EMIT error(i18nc("@info:shell", "Tag to delete ID %1 does not exist", QString::number(delTag.id())));
-    processNext();					// ignore the missing tag
+    processNext(); // ignore the missing tag
 }
 
 void TagsCommand::onTagDeleted(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     TagDeleteJob *deleteJob = qobject_cast<TagDeleteJob *>(job);
     Q_ASSERT(deleteJob != nullptr);
 
-    Tag deletedTag = deleteJob->tags().first();		// must be one and only one
-    if (mBriefOutput) std::cout << deletedTag.id() << std::endl;
-    else if (mUrlsOutput) std::cout << qPrintable(deletedTag.url().toDisplayString()) << std::endl;
-    else std::cout << "Deleted tag '" << qPrintable(deletedTag.name()) << "' ID " << deletedTag.id() << std::endl;
-    processNext();					// continue to do next
+    Tag deletedTag = deleteJob->tags().first(); // must be one and only one
+    if (mBriefOutput)
+        std::cout << deletedTag.id() << std::endl;
+    else if (mUrlsOutput)
+        std::cout << qPrintable(deletedTag.url().toDisplayString()) << std::endl;
+    else
+        std::cout << "Deleted tag '" << qPrintable(deletedTag.name()) << "' ID " << deletedTag.id() << std::endl;
+    processNext(); // continue to do next
 }
 
 static void writeColumn(const QString &data, int width = 0)
@@ -295,24 +293,24 @@ static void writeColumn(quint64 data, int width = 0)
 
 void TagsCommand::onTagsFetched(KJob *job)
 {
-    if (!checkJobResult(job)) return;
+    if (!checkJobResult(job))
+        return;
     TagFetchJob *fetchJob = qobject_cast<TagFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
     mFetchedTags = fetchJob->tags();
 
     // Now that the current tag list has been fetched,
     // look at what to do.
-    if (mOperationMode == ModeList)
-    {
-        if (mFetchedTags.isEmpty())
-        {
+    if (mOperationMode == ModeList) {
+        if (mFetchedTags.isEmpty()) {
             Q_EMIT error(i18nc("@info:shell", "No tags found"));
             Q_EMIT finished(NoError);
-        }
-        else listTags();
-    }
-    else if (mOperationMode == ModeAdd) startProcessLoop("addNextTag");
-    else if (mOperationMode == ModeDelete) startProcessLoop("deleteNextTag");
+        } else
+            listTags();
+    } else if (mOperationMode == ModeAdd)
+        startProcessLoop("addNextTag");
+    else if (mOperationMode == ModeDelete)
+        startProcessLoop("deleteNextTag");
 }
 
 void TagsCommand::listTags()
@@ -324,8 +322,7 @@ void TagsCommand::listTags()
         std::cout << std::endl;
     }
 
-    for (const Tag &tag : std::as_const(mFetchedTags))
-    {
+    for (const Tag &tag : std::as_const(mFetchedTags)) {
         if (!mBriefOutput && !mUrlsOutput) {
             writeColumn(tag.id(), 8);
         }

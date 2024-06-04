@@ -21,37 +21,47 @@
 
 #include <klocalizedstring.h>
 
-#include <Akonadi/AgentManager>
 #include <Akonadi/AgentInstance>
+#include <Akonadi/AgentManager>
 
-#include <qstringlist.h>
 #include <QVector>
+#include <qstringlist.h>
 
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 
 #include "commandfactory.h"
 
 using namespace Akonadi;
 
-DEFINE_COMMAND("agents", AgentsCommand,
-               kli18nc("info:shell", "Manage Akonadi agents"));
+DEFINE_COMMAND("agents", AgentsCommand, kli18nc("info:shell", "Manage Akonadi agents"));
 
 AgentsCommand::AgentsCommand(QObject *parent)
-    : AbstractCommand(parent),
-      mStateArg(ONLINE),
-      mOption(LIST)
+    : AbstractCommand(parent)
+    , mStateArg(ONLINE)
+    , mOption(LIST)
 {
 }
 
 void AgentsCommand::setupCommandOptions(QCommandLineParser *parser)
 {
     addOptionsOption(parser);
-    parser->addOption(QCommandLineOption((QStringList() << "l" << "list"), i18n("List all agents")));
-    parser->addOption(QCommandLineOption((QStringList() << "s" << "setstate"), i18n("Set state \"online\" or \"offline\" for specified agents"), i18nc("@info:shell", "state")));
-    parser->addOption(QCommandLineOption((QStringList() << "g" << "getstate"), i18n("Get state for the specified agent")));
-    parser->addOption(QCommandLineOption((QStringList() << "i" << "info"), i18n("Show information about the specified agent")));
-    parser->addOption(QCommandLineOption((QStringList() << "r" << "restart"), i18n("Restart the specified agent")));
+    parser->addOption(QCommandLineOption((QStringList() << "l"
+                                                        << "list"),
+                                         i18n("List all agents")));
+    parser->addOption(QCommandLineOption((QStringList() << "s"
+                                                        << "setstate"),
+                                         i18n("Set state \"online\" or \"offline\" for specified agents"),
+                                         i18nc("@info:shell", "state")));
+    parser->addOption(QCommandLineOption((QStringList() << "g"
+                                                        << "getstate"),
+                                         i18n("Get state for the specified agent")));
+    parser->addOption(QCommandLineOption((QStringList() << "i"
+                                                        << "info"),
+                                         i18n("Show information about the specified agent")));
+    parser->addOption(QCommandLineOption((QStringList() << "r"
+                                                        << "restart"),
+                                         i18n("Restart the specified agent")));
     addDryRunOption(parser);
 
     parser->addPositionalArgument("agents", i18nc("@info:shell", "Agents to operate on"), i18nc("@info:shell", "[agents...]"));
@@ -61,12 +71,14 @@ int AgentsCommand::initCommand(QCommandLineParser *parser)
 {
     mArguments = parser->positionalArguments();
 
-    if (!getCommonOptions(parser)) return InvalidUsage;
+    if (!getCommonOptions(parser))
+        return InvalidUsage;
 
     if (parser->isSet("list")) {
         mOption = LIST;
     } else {
-        if (!checkArgCount(mArguments, 1, i18nc("@info:shell", "No agents or options specified"))) return InvalidUsage;
+        if (!checkArgCount(mArguments, 1, i18nc("@info:shell", "No agents or options specified")))
+            return InvalidUsage;
 
         if (parser->isSet("info")) {
             mOption = INFO;
@@ -78,9 +90,9 @@ int AgentsCommand::initCommand(QCommandLineParser *parser)
             mOption = SETSTATE;
             const QString state = parser->value("setstate");
 
-            if (state.length()>=2 && state.compare(QStringLiteral("online").left(state.length())) == 0) {
+            if (state.length() >= 2 && state.compare(QStringLiteral("online").left(state.length())) == 0) {
                 mStateArg = ONLINE;
-            } else if (state.length()>=2 && state.compare(QStringLiteral("offline").left(state.length())) == 0) {
+            } else if (state.length() >= 2 && state.compare(QStringLiteral("offline").left(state.length())) == 0) {
                 mStateArg = OFFLINE;
             } else {
                 emitErrorSeeHelp(i18nc("@info:shell", "Invalid state '%1'", state));
