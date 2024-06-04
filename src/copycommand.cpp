@@ -307,5 +307,3 @@ void CopyCommand::onItemCopyFinished(KJob *job)
         return;
     processNext();
 }
-
-#include "moc_copycommand.cpp"

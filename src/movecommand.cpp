@@ -48,5 +48,3 @@ void MoveCommand::start()
     }
     CopyCommand::start();
 }
-
-#include "moc_movecommand.cpp"

@@ -420,5 +420,3 @@ void AddCommand::onItemCreated(KJob *job)
 
     processNextFile();
 }
-
-#include "moc_addcommand.cpp"

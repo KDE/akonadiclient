@@ -89,5 +89,3 @@ void ExportCommand::onWriteFinished(KJob *job)
         return;
     Q_EMIT finished(NoError);
 }
-
-#include "moc_exportcommand.cpp"

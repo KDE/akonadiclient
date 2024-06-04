@@ -236,5 +236,3 @@ void ListCommand::onItemsFetched(KJob *job)
 
     Q_EMIT finished(NoError);
 }
-
-#include "moc_listcommand.cpp"

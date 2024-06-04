@@ -237,5 +237,3 @@ void ImportCommand::onItemCreated(KJob *job)
     ErrorReporter::progress(i18nc("@info:shell", "Created item '%1'", itemCreateJob->item().remoteId()));
     QMetaObject::invokeMethod(this, "processNextItemFromQueue", Qt::QueuedConnection);
 }
-
-#include "moc_importcommand.cpp"

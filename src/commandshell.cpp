@@ -104,5 +104,3 @@ void CommandShell::onCommandError(const QString &error)
 {
     ErrorReporter::error(error);
 }
-
-#include "moc_commandshell.cpp"

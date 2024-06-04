@@ -69,5 +69,3 @@ QString CollectionPathJob::formattedCollectionPath() const
 {
     return (i18nc("@info:shell 1=collection ID, 2=collection path", "%1 (\"/%2\")", QString::number(mCollection.id()), mPath));
 }
-
-#include "moc_collectionpathjob.cpp"

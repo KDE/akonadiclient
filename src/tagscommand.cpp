@@ -337,5 +337,3 @@ void TagsCommand::listTags()
 
     Q_EMIT finished();
 }
-
-#include "moc_tagscommand.cpp"

@@ -202,5 +202,3 @@ Akonadi::Collection CollectionResolveJob::parseCollection(const QString &userInp
 
     return (coll);
 }
-
-#include "moc_collectionresolvejob.cpp"

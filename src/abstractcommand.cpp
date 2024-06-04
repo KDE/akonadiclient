@@ -228,5 +228,3 @@ void AbstractCommand::processNext()
     mCurrentArg = mProcessLoopArgs.takeFirst();
     QMetaObject::invokeMethod(this, mProcessLoopSlot, Qt::QueuedConnection);
 }
-
-#include "moc_abstractcommand.cpp"
