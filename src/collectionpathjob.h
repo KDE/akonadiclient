@@ -29,7 +29,7 @@ class CollectionPathJob : public KCompositeJob
 
 public:
     explicit CollectionPathJob(const Akonadi::Collection &collection, QObject *parent = nullptr);
-    virtual ~CollectionPathJob() = default;
+    ~CollectionPathJob() override = default;
 
     void start() override;
 

@@ -33,7 +33,7 @@ class DumpCommand : public AbstractCommand
 
 public:
     explicit DumpCommand(QObject *parent = nullptr);
-    virtual ~DumpCommand() = default;
+    ~DumpCommand() override = default;
 
     QString name() const override;
 

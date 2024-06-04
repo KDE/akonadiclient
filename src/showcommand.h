@@ -31,7 +31,7 @@ class ShowCommand : public AbstractCommand
 
 public:
     explicit ShowCommand(QObject *parent = nullptr);
-    virtual ~ShowCommand() = default;
+    ~ShowCommand() override = default;
 
     QString name() const override;
 

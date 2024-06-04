@@ -37,7 +37,7 @@ class DeleteCommand :  public AbstractCommand
 
 public:
     explicit DeleteCommand(QObject *parent = nullptr);
-    virtual ~DeleteCommand() = default;
+     ~DeleteCommand() override = default;
 
     QString name() const override;
 

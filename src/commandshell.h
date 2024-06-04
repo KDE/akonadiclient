@@ -30,7 +30,7 @@ class CommandShell : public AbstractCommand
 
 public:
     explicit CommandShell(QObject *parent = nullptr);
-    virtual ~CommandShell();
+    ~CommandShell() override;
 
     QString name() const override;
 

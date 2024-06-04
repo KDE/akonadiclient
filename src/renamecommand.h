@@ -30,7 +30,7 @@ class RenameCommand : public AbstractCommand
 
 public:
     explicit RenameCommand(QObject *parent = nullptr);
-    virtual ~RenameCommand() = default;
+    ~RenameCommand() override = default;
 
     QString name() const override;
 

@@ -30,7 +30,7 @@ class ExportCommand : public AbstractCommand
 
 public:
     explicit ExportCommand(QObject *parent = nullptr);
-    virtual ~ExportCommand() = default;
+    ~ExportCommand() override = default;
 
     QString name() const override;
 

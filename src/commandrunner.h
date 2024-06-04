@@ -29,7 +29,7 @@ class CommandRunner : public QObject
 
 public:
     explicit CommandRunner(const QStringList *args);
-    virtual ~CommandRunner();
+    ~CommandRunner() override;
 
     int start();
     int exitCode() const				{ return (mExitCode); }

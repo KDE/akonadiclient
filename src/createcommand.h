@@ -29,7 +29,7 @@ class CreateCommand : public AbstractCommand
 
 public:
     explicit CreateCommand(QObject *parent = nullptr);
-    virtual ~CreateCommand() = default;
+    ~CreateCommand() override = default;
 
     QString name() const override;
 

@@ -31,7 +31,7 @@ class TagsCommand : public AbstractCommand
 
 public:
     explicit TagsCommand(QObject *parent = nullptr);
-    virtual ~TagsCommand() = default;
+    ~TagsCommand() override = default;
 
     QString name() const override;
 

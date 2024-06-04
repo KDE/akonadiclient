@@ -27,15 +27,15 @@ class MoveCommand : public CopyCommand
 
 public:
     explicit MoveCommand(QObject *parent = nullptr);
-    virtual ~MoveCommand() = default;
+    ~MoveCommand() override = default;
 
     QString name() const override;
 
 public Q_SLOTS:
-    virtual void start() override;
+    void start() override;
 
 protected:
-    virtual void setupCommandOptions(QCommandLineParser *parser) override;
+    void setupCommandOptions(QCommandLineParser *parser) override;
 };
 
 #endif                          // MOVECOMMAND_H

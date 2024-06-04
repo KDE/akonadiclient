@@ -32,7 +32,7 @@ class GroupCommand : public AbstractCommand
 
 public:
     explicit GroupCommand(QObject *parent = nullptr);
-    virtual ~GroupCommand();
+    ~GroupCommand() override;
 
     QString name() const override;
 

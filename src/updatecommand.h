@@ -31,7 +31,7 @@ class UpdateCommand : public AbstractCommand
 
 public:
     explicit UpdateCommand(QObject *parent = nullptr);
-    virtual ~UpdateCommand();
+    ~UpdateCommand() override;
 
     QString name() const override;
 

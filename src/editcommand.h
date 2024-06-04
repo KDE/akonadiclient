@@ -31,7 +31,7 @@ class EditCommand : public AbstractCommand
 
 public:
     explicit EditCommand(QObject *parent = nullptr);
-    virtual ~EditCommand();
+    ~EditCommand() override;
 
     QString name() const override;
 

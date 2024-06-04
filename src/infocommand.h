@@ -36,7 +36,7 @@ class InfoCommand : public AbstractCommand
 
 public:
     explicit InfoCommand(QObject *parent = nullptr);
-    virtual ~InfoCommand();
+    ~InfoCommand() override;
 
     QString name() const override;
 

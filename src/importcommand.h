@@ -39,7 +39,7 @@ class ImportCommand : public AbstractCommand
 
 public:
     explicit ImportCommand(QObject *parent = nullptr);
-    virtual ~ImportCommand();
+    ~ImportCommand() override;
 
     QString name() const override;
 

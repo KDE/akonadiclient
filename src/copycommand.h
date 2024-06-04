@@ -31,7 +31,7 @@ class CopyCommand : public AbstractCommand
 
 public:
     explicit CopyCommand(QObject *parent = nullptr);
-    virtual ~CopyCommand() = default;
+    ~CopyCommand() override = default;
 
     QString name() const override;
 
@@ -42,8 +42,8 @@ protected:
     bool mMoving;
 
 protected:
-    virtual void setupCommandOptions(QCommandLineParser *parser) override;
-    virtual int initCommand(QCommandLineParser *parser) override;
+    void setupCommandOptions(QCommandLineParser *parser) override;
+    int initCommand(QCommandLineParser *parser) override;
 
 private:
     QString mDestinationArg;

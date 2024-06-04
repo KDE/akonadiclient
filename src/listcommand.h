@@ -29,7 +29,7 @@ class ListCommand : public AbstractCommand
 
 public:
     explicit ListCommand(QObject *parent = nullptr);
-    virtual ~ListCommand() = default;
+    ~ListCommand() override = default;
 
     QString name() const override;
 
