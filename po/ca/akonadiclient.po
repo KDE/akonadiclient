@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-03 01:41+0000\n"
-"PO-Revision-Date: 2024-01-28 18:23+0100\n"
+"PO-Revision-Date: 2024-06-03 10:48+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -105,8 +105,6 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Estableix %1=\"%2\" a l'entorn"
 
 #: src/addcommand.cpp:42
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
 msgstr "Afegeix els elements a la col·lecció"
@@ -289,8 +287,6 @@ msgid "Added file '%2' as item %1"
 msgstr "S'ha afegit el fitxer «%2» com a element %1"
 
 #: src/agentscommand.cpp:38
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Gestiona els agents de l'Akonadi"
@@ -447,8 +443,6 @@ msgid "Invalid command"
 msgstr "Ordre no vàlida"
 
 #: src/copycommand.cpp:42
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
 msgstr "Copia les col·leccions o els elements a dins d'una col·lecció nova"
@@ -591,11 +585,9 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "No s'han pogut copiar/moure els elements des de «%1», %2"
 
 #: src/createcommand.cpp:36
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
-msgstr "Crear una col·lecció nova"
+msgstr "Crea una col·lecció nova"
 
 #: src/createcommand.cpp:52
 #, kde-format
@@ -660,8 +652,6 @@ msgid "Created new collection '%1'"
 msgstr "S'ha creat la col·lecció nova «%1»"
 
 #: src/deletecommand.cpp:41
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Suprimeix una col·lecció o un element"
@@ -707,8 +697,6 @@ msgid "Item deleted successfully"
 msgstr "L'element s'ha suprimit amb èxit"
 
 #: src/dumpcommand.cpp:48
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
 msgstr "Bolca una col·lecció a una estructura de directoris"
@@ -797,8 +785,6 @@ msgid "Cannot save file '%1'"
 msgstr "No s'ha pogut desar el fitxer «%1»"
 
 #: src/editcommand.cpp:40
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr "Edita el contingut en brut per a l'element especificat usant $EDITOR"
@@ -840,11 +826,9 @@ msgid "Changes to item '%1' have been saved"
 msgstr "S'han desat els canvis a l'element «%1»"
 
 #: src/exportcommand.cpp:32
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
-msgstr "Exportar una col·lecció a un fitxer en XML"
+msgstr "Exporta una col·lecció a un fitxer XML"
 
 #: src/exportcommand.cpp:44
 #, kde-format
@@ -865,8 +849,6 @@ msgid "No export file specified"
 msgstr "No s'ha especificat cap fitxer a exportar"
 
 #: src/groupcommand.cpp:40
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "Expandeix o modifica un grup de contactes"
@@ -1113,11 +1095,9 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "S'estan netejant les referències del grup %1 «%2»:"
 
 #: src/importcommand.cpp:40
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
-msgstr "Importa un fitxer en XML"
+msgstr "Importa un fitxer XML"
 
 #: src/importcommand.cpp:58
 #, kde-format
@@ -1216,8 +1196,6 @@ msgid "Created item '%1'"
 msgstr "S'ha creat l'element «%1»"
 
 #: src/infocommand.cpp:40
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "Mostra la informació completa per a una col·lecció o element"
@@ -1438,8 +1416,6 @@ msgid "Unknown"
 msgstr "Desconegut"
 
 #: src/listcommand.cpp:39
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Llista les subcol·leccions i/o elements en una col·lecció específica"
@@ -1585,8 +1561,6 @@ msgstr ""
 "Vegeu «help ordre» per a obtenir més informació sobre una ordre específica."
 
 #: src/movecommand.cpp:29
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Mou les col·leccions o els elements a dins d'una col·lecció nova"
@@ -1604,11 +1578,9 @@ msgid "Destination collection to move into"
 msgstr "Col·lecció de destinació a moure dins de"
 
 #: src/renamecommand.cpp:34
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
-msgstr "Reanomena la col·lecció"
+msgstr "Reanomena una col·lecció"
 
 #: src/renamecommand.cpp:46
 #, kde-format
@@ -1620,7 +1592,7 @@ msgstr "La col·lecció a reanomenar"
 #, kde-format
 msgctxt "@info:shell"
 msgid "New name for collection"
-msgstr "El nom nou per a la col·lecció"
+msgstr "El nom nou de la col·lecció"
 
 #: src/renamecommand.cpp:54
 #, kde-format
@@ -1635,8 +1607,6 @@ msgid "Collection renamed successfully"
 msgstr "La col·lecció s'ha reanomenat amb èxit"
 
 #: src/showcommand.cpp:35
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr "Mostra el contingut en brut d'un element"
@@ -1677,8 +1647,6 @@ msgid "Item has no main body part"
 msgstr "L'element no té la part principal del cos"
 
 #: src/tagscommand.cpp:32
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "Llista o modifica etiquetes"
@@ -1799,8 +1767,6 @@ msgid "URL"
 msgstr "URL"
 
 #: src/updatecommand.cpp:36
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr "Actualitza el contingut d'un element des d'un fitxer"

@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the akonadiclient package.
 #
 # Automatically generated, 2018.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2018, 2019, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2022, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-03 01:41+0000\n"
-"PO-Revision-Date: 2022-04-26 21:00+0200\n"
+"PO-Revision-Date: 2024-06-03 15:09+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -104,8 +104,6 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Definir %1=\"%2\" en el entorno"
 
 #: src/addcommand.cpp:42
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
 msgstr "Añadir elementos a una colección"
@@ -286,8 +284,6 @@ msgid "Added file '%2' as item %1"
 msgstr "Se ha añadido el archivo «%2» como elemento %1"
 
 #: src/agentscommand.cpp:38
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Gestión de agentes de Akonadi"
@@ -445,8 +441,6 @@ msgid "Invalid command"
 msgstr "Orden no válida"
 
 #: src/copycommand.cpp:42
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
 msgstr "Copiar colecciones o elementos a una nueva colección"
@@ -589,8 +583,6 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "No se puede copiar/mover elementos de «%1», %2"
 
 #: src/createcommand.cpp:36
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "Crear una nueva colección"
@@ -661,8 +653,6 @@ msgid "Created new collection '%1'"
 msgstr "Se ha creado la nueva colección «%1»"
 
 #: src/deletecommand.cpp:41
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Borrar una colección o un elemento"
@@ -708,8 +698,6 @@ msgid "Item deleted successfully"
 msgstr "Elemento borrado con éxito"
 
 #: src/dumpcommand.cpp:48
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
 msgstr "Volcar una colección en una estructura de directorios"
@@ -799,8 +787,6 @@ msgid "Cannot save file '%1'"
 msgstr "No se puede guardar el archivo «%1»"
 
 #: src/editcommand.cpp:40
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr "Editar la carga útil en bruto del elemento especificado usando $EDITOR"
@@ -842,8 +828,6 @@ msgid "Changes to item '%1' have been saved"
 msgstr "Los cambios del elemento «%1» se han guardado"
 
 #: src/exportcommand.cpp:32
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
 msgstr "Exportar una colección a un archivo XML"
@@ -867,8 +851,6 @@ msgid "No export file specified"
 msgstr "No se ha indicado ningún archivo donde exportar"
 
 #: src/groupcommand.cpp:40
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "Expandir o modificar un grupo de contactos"
@@ -1116,8 +1098,6 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "Borrando referencias del grupo %1 «%2»:"
 
 #: src/importcommand.cpp:40
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr "Importar un archivo XML"
@@ -1219,8 +1199,6 @@ msgid "Created item '%1'"
 msgstr "Se ha creado el elemento «%1»"
 
 #: src/infocommand.cpp:40
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "Mostrar toda la información de una colección o elemento"
@@ -1441,8 +1419,6 @@ msgid "Unknown"
 msgstr "Desconocido"
 
 #: src/listcommand.cpp:39
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Listar las subcolecciones y los elementos de una determinada colección"
@@ -1588,8 +1564,6 @@ msgstr ""
 "Consulte «%1 help orden» para obtener información sobre una orden específica."
 
 #: src/movecommand.cpp:29
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Mover colecciones o elementos a una nueva colección"
@@ -1607,8 +1581,6 @@ msgid "Destination collection to move into"
 msgstr "Colección de destino a la que mover"
 
 #: src/renamecommand.cpp:34
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "Cambiar el nombre de una colección"
@@ -1638,8 +1610,6 @@ msgid "Collection renamed successfully"
 msgstr "Se ha cambiado el nombre de la colección con éxito"
 
 #: src/showcommand.cpp:35
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr "Mostrar la carga útil en bruto de un elemento"
@@ -1682,8 +1652,6 @@ msgid "Item has no main body part"
 msgstr "El elemento no tiene parte de cuerpo principal"
 
 #: src/tagscommand.cpp:32
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "Listar o modificar etiquetas"
@@ -1804,8 +1772,6 @@ msgid "URL"
 msgstr "URL"
 
 #: src/updatecommand.cpp:36
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr "Actualizar la carga útil de un elemento desde un archivo"

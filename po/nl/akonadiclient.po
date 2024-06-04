@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2018, 2019, 2021, 2022.
+# SPDX-FileCopyrightText: 2018, 2019, 2021, 2022, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-03 01:41+0000\n"
-"PO-Revision-Date: 2022-04-26 12:00+0200\n"
+"PO-Revision-Date: 2024-06-03 11:22+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - t/m 2019;2021 t/m 2022"
+msgstr "Freek de Kruijf - t/m 2019;2021 t/m 2024"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -102,8 +102,6 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Stel %1=\"%2\" in in de omgeving"
 
 #: src/addcommand.cpp:42
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
 msgstr "Items aan een verzameling toevoegen"
@@ -283,8 +281,6 @@ msgid "Added file '%2' as item %1"
 msgstr "Bestand '%2' als item %1 toegevoegd"
 
 #: src/agentscommand.cpp:38
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Akonadi-agenten beheren"
@@ -440,8 +436,6 @@ msgid "Invalid command"
 msgstr "Ongeldig commando"
 
 #: src/copycommand.cpp:42
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
 msgstr "Verzamelingen of items in een nieuwe verzamelingen kopiëren"
@@ -584,8 +578,6 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "Kan items uit '%1', %2 niet kopiëren/verplaatsen"
 
 #: src/createcommand.cpp:36
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "Maak een nieuwe verzameling"
@@ -655,8 +647,6 @@ msgid "Created new collection '%1'"
 msgstr "Nieuwe verzameling '%1' aangemaakt"
 
 #: src/deletecommand.cpp:41
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Een verzameling of item verwijderen"
@@ -702,8 +692,6 @@ msgid "Item deleted successfully"
 msgstr "Item met succes verwijderd"
 
 #: src/dumpcommand.cpp:48
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
 msgstr "Een verzameling naar een map-structuur dumpen"
@@ -790,8 +778,6 @@ msgid "Cannot save file '%1'"
 msgstr "Kan bestand '%1' niet opslaan"
 
 #: src/editcommand.cpp:40
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr "De ruwe inhoud voor het gespecificeerde item bewerken met $EDITOR"
@@ -833,8 +819,6 @@ msgid "Changes to item '%1' have been saved"
 msgstr "Wijzigingen aan item '%1' zijn opgeslagen"
 
 #: src/exportcommand.cpp:32
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
 msgstr "Een verzameling naar een XML-bestand exporteren"
@@ -858,8 +842,6 @@ msgid "No export file specified"
 msgstr "Geen te exporteren bestand gespecificeerd"
 
 #: src/groupcommand.cpp:40
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "Een contactgroep uitvouw of wijzigen"
@@ -1107,8 +1089,6 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "Verwijzingen uit groep %1 \"%2\" opschonen:"
 
 #: src/importcommand.cpp:40
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr "Een XML-bestand importeren"
@@ -1210,8 +1190,6 @@ msgid "Created item '%1'"
 msgstr "Item '%1' aangemaakt"
 
 #: src/infocommand.cpp:40
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "Volledige informatie voor een verzameling of item tonen"
@@ -1432,8 +1410,6 @@ msgid "Unknown"
 msgstr "Onbekend"
 
 #: src/listcommand.cpp:39
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr ""
@@ -1581,8 +1557,6 @@ msgstr ""
 "Zie '%1 help commando' voor informatie over een specifiek commando."
 
 #: src/movecommand.cpp:29
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Verzamelingen of items verplaatsen naar een nieuwe verzameling"
@@ -1600,8 +1574,6 @@ msgid "Destination collection to move into"
 msgstr "Doelverzameling om in te verplaatsen"
 
 #: src/renamecommand.cpp:34
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "Een verzameling hernoemen"
@@ -1631,8 +1603,6 @@ msgid "Collection renamed successfully"
 msgstr "Verzameling met succes hernoemd"
 
 #: src/showcommand.cpp:35
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr "De ruwe inhoud van een item tonen"
@@ -1673,8 +1643,6 @@ msgid "Item has no main body part"
 msgstr "Item heeft geen hoofdgedeelte"
 
 #: src/tagscommand.cpp:32
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "Tags tonen of wijzigen"
@@ -1798,8 +1766,6 @@ msgid "URL"
 msgstr "URL-adres"
 
 #: src/updatecommand.cpp:36
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr "De inhoud van een item bijwerken uit een bestand"

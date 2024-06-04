@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-03 01:41+0000\n"
-"PO-Revision-Date: 2022-04-29 09:52+0200\n"
+"PO-Revision-Date: 2024-06-03 07:13+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -105,8 +105,6 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Nastavi %1=\"%2\" v okolju"
 
 #: src/addcommand.cpp:42
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
 msgstr "Dodaj predmete v zbirko"
@@ -287,8 +285,6 @@ msgid "Added file '%2' as item %1"
 msgstr "Predmet '%2' dodan kot predmet %1"
 
 #: src/agentscommand.cpp:38
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Upravljaj Akonadi posrednike"
@@ -444,11 +440,9 @@ msgid "Invalid command"
 msgstr "Neveljaven ukaz"
 
 #: src/copycommand.cpp:42
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
-msgstr "Kopiraj zbirke ali predmete na novo lokacijo"
+msgstr "Kopiraj zbirke ali predmete v novo zbirko"
 
 #: src/copycommand.cpp:61 src/movecommand.cpp:42
 #, kde-format
@@ -596,8 +590,6 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "Ni mogoče kopirati/premakniti predmetov iz '%1', %2"
 
 #: src/createcommand.cpp:36
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "Ustvari novo zbirko"
@@ -667,8 +659,6 @@ msgid "Created new collection '%1'"
 msgstr "Ustvarjena nova zbirka '%1'"
 
 #: src/deletecommand.cpp:41
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Izbriši zbirko ali predmet"
@@ -714,11 +704,9 @@ msgid "Item deleted successfully"
 msgstr "Predmet uspešno izbrisan"
 
 #: src/dumpcommand.cpp:48
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
-msgstr "Odloži zbirko v zgradbo map"
+msgstr "Odloži zbirko v strukturo direktorijev"
 
 #: src/dumpcommand.cpp:59
 #, kde-format
@@ -803,11 +791,9 @@ msgid "Cannot save file '%1'"
 msgstr "Ni mogoče shraniti datoteke '%1'"
 
 #: src/editcommand.cpp:40
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
-msgstr "Urejanje gole vsebine določenega predmeta z možnostjo $EDITOR"
+msgstr "Urejanje gole vsebine določenega predmeta z uporabo $EDITOR"
 
 #: src/editcommand.cpp:58
 #, kde-format
@@ -846,8 +832,6 @@ msgid "Changes to item '%1' have been saved"
 msgstr "Spremembe v predmetu '%1' so bile shranjene"
 
 #: src/exportcommand.cpp:32
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
 msgstr "Izvoz zbirke v XML datoteko"
@@ -871,8 +855,6 @@ msgid "No export file specified"
 msgstr "Izhodna datoteka ni določena"
 
 #: src/groupcommand.cpp:40
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "Razširi ali spremeni skupino stikov"
@@ -1118,8 +1100,6 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "Počisti sklice iz skupine %1 \"%2\":"
 
 #: src/importcommand.cpp:40
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr "Uvozi datoteko XML"
@@ -1221,8 +1201,6 @@ msgid "Created item '%1'"
 msgstr "Predmet '%1' ustvarjen"
 
 #: src/infocommand.cpp:40
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "Prikaži vse podatke o zbirki ali predmetu"
@@ -1443,8 +1421,6 @@ msgid "Unknown"
 msgstr "Neznano"
 
 #: src/listcommand.cpp:39
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Prikaz podrejenih zbirk in/ali predmetov v določeni zbirki"
@@ -1594,8 +1570,6 @@ msgstr ""
 "Glej '%1 help command' za podatke o posameznih ukazih."
 
 #: src/movecommand.cpp:29
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Premakni zbirke ali predmete v novo zbirko"
@@ -1613,8 +1587,6 @@ msgid "Destination collection to move into"
 msgstr "Izberi ciljno zbirko"
 
 #: src/renamecommand.cpp:34
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "Preimenuj zbirko"
@@ -1644,8 +1616,6 @@ msgid "Collection renamed successfully"
 msgstr "Zbirka uspešno preimenovana"
 
 #: src/showcommand.cpp:35
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr "Prikaži golo vsebino predmeta"
@@ -1686,8 +1656,6 @@ msgid "Item has no main body part"
 msgstr "Predmet nima glavnega dela"
 
 #: src/tagscommand.cpp:32
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "Prikaži ali spremeni oznake"
@@ -1808,8 +1776,6 @@ msgid "URL"
 msgstr "URL"
 
 #: src/updatecommand.cpp:36
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr "Posodobi vsebino predmeta iz datoteke"

@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2018, 2019, 2021, 2022.
+# SPDX-FileCopyrightText: 2018, 2019, 2021, 2022, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-03 01:41+0000\n"
-"PO-Revision-Date: 2022-04-26 20:08+0200\n"
-"Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
+"PO-Revision-Date: 2024-06-03 22:07+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -102,8 +102,6 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Ställ in %1=\"%2\" i miljön"
 
 #: src/addcommand.cpp:42
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
 msgstr "Lägg till objekt i en samling"
@@ -284,8 +282,6 @@ msgid "Added file '%2' as item %1"
 msgstr "Filen '%2' tillagd som objekt %1"
 
 #: src/agentscommand.cpp:38
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Hantera Akonadi-agenter"
@@ -441,8 +437,6 @@ msgid "Invalid command"
 msgstr "Ogiltigt kommando"
 
 #: src/copycommand.cpp:42
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
 msgstr "Kopiera samlingar eller objekt till en ny samling"
@@ -585,8 +579,6 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "Kan inte kopiera eller flytta objekt från '%1', %2"
 
 #: src/createcommand.cpp:36
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "Skapa en ny samling"
@@ -656,8 +648,6 @@ msgid "Created new collection '%1'"
 msgstr "Skapade ny samling '%1'"
 
 #: src/deletecommand.cpp:41
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Ta bort en samling eller ett objekt"
@@ -703,8 +693,6 @@ msgid "Item deleted successfully"
 msgstr "Objekt borttaget med lyckat resultat"
 
 #: src/dumpcommand.cpp:48
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
 msgstr "Dumpa en samling i en katalogstruktur"
@@ -793,8 +781,6 @@ msgid "Cannot save file '%1'"
 msgstr "Kan inte spara filen '%1'"
 
 #: src/editcommand.cpp:40
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr "Redigera obehandlad nyttolast för det angivna objektet med $EDITOR"
@@ -836,8 +822,6 @@ msgid "Changes to item '%1' have been saved"
 msgstr "Ändringar av objektet '%1' har sparats"
 
 #: src/exportcommand.cpp:32
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
 msgstr "Exportera en samling till en XML-fil"
@@ -862,8 +846,6 @@ msgid "No export file specified"
 msgstr "Ingen exportfil angiven"
 
 #: src/groupcommand.cpp:40
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "Expandera eller ändra en kontaktgrupp"
@@ -1108,8 +1090,6 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "Rensar referenser från grupp %1 \"%2\":"
 
 #: src/importcommand.cpp:40
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr "Importera en XML-fil"
@@ -1211,8 +1191,6 @@ msgid "Created item '%1'"
 msgstr "Skapade objekt '%1'"
 
 #: src/infocommand.cpp:40
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "Visa fullständig information om en samling eller ett objekt"
@@ -1433,8 +1411,6 @@ msgid "Unknown"
 msgstr "Okänd"
 
 #: src/listcommand.cpp:39
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Lista delsamlingar och/eller objekt i en angiven samling"
@@ -1580,8 +1556,6 @@ msgstr ""
 "Se '%1 help kommando' för information om ett specifik kommando."
 
 #: src/movecommand.cpp:29
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Flytta samlingar eller objekt till en ny samling"
@@ -1599,8 +1573,6 @@ msgid "Destination collection to move into"
 msgstr "Målsamling att flytta in i"
 
 #: src/renamecommand.cpp:34
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "Byt namn på en samling"
@@ -1630,8 +1602,6 @@ msgid "Collection renamed successfully"
 msgstr "Bytte namn på samling med lyckat resultat"
 
 #: src/showcommand.cpp:35
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr "Visa ett objekts obehandlade nyttolast"
@@ -1673,8 +1643,6 @@ msgid "Item has no main body part"
 msgstr "Objektet har ingen huvudsaklig textdel"
 
 #: src/tagscommand.cpp:32
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "Lista eller ändra etiketter"
@@ -1795,8 +1763,6 @@ msgid "URL"
 msgstr "Webbadress"
 
 #: src/updatecommand.cpp:36
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr "Uppdatera ett objekts nyttolast från en fil"

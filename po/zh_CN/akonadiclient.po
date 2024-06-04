@@ -102,11 +102,9 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "在环境变量中设置 %1=\"%2\""
 
 #: src/addcommand.cpp:42
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
-msgstr "添加项目到集合"
+msgstr ""
 
 #: src/addcommand.cpp:58
 #, kde-format
@@ -283,11 +281,9 @@ msgid "Added file '%2' as item %1"
 msgstr "添加文件“%2”为项目 %1"
 
 #: src/agentscommand.cpp:38
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
-msgstr "管理 Akonadi 代理"
+msgstr ""
 
 #: src/agentscommand.cpp:50
 #, kde-format
@@ -440,11 +436,9 @@ msgid "Invalid command"
 msgstr "无效的命令"
 
 #: src/copycommand.cpp:42
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
-msgstr "将收藏或项目复制到新收藏"
+msgstr ""
 
 #: src/copycommand.cpp:61 src/movecommand.cpp:42
 #, kde-format
@@ -580,11 +574,9 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "无法从 '%1', %2 复制/移动项目"
 
 #: src/createcommand.cpp:36
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
-msgstr "创建新收藏"
+msgstr ""
 
 #: src/createcommand.cpp:52
 #, kde-format
@@ -649,11 +641,9 @@ msgid "Created new collection '%1'"
 msgstr "创建新集合 ‘%1’"
 
 #: src/deletecommand.cpp:41
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
-msgstr "删除集合或项目"
+msgstr ""
 
 #: src/deletecommand.cpp:55
 #, kde-format
@@ -696,11 +686,9 @@ msgid "Item deleted successfully"
 msgstr "项目成功删除"
 
 #: src/dumpcommand.cpp:48
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
-msgstr "将集合转储到目录结构"
+msgstr ""
 
 #: src/dumpcommand.cpp:59
 #, kde-format
@@ -784,11 +772,9 @@ msgid "Cannot save file '%1'"
 msgstr "无法保存文件 ‘%1’"
 
 #: src/editcommand.cpp:40
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
-msgstr "使用 $EDITOR 编辑指定项目的原始有效负载"
+msgstr ""
 
 #: src/editcommand.cpp:58
 #, kde-format
@@ -827,11 +813,9 @@ msgid "Changes to item '%1' have been saved"
 msgstr "已保存对项目 ‘%1’ 的更改"
 
 #: src/exportcommand.cpp:32
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
-msgstr "将集合导出到 XML 文件"
+msgstr ""
 
 #: src/exportcommand.cpp:44
 #, kde-format
@@ -852,11 +836,9 @@ msgid "No export file specified"
 msgstr "未指定输出文件"
 
 #: src/groupcommand.cpp:40
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
-msgstr "展开或修改联系人组"
+msgstr ""
 
 #: src/groupcommand.cpp:58
 #, kde-format
@@ -1097,11 +1079,9 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "正在清理来自组 %1 “%2”的引用："
 
 #: src/importcommand.cpp:40
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
-msgstr "导入一个 XML 文件"
+msgstr ""
 
 #: src/importcommand.cpp:58
 #, kde-format
@@ -1200,11 +1180,9 @@ msgid "Created item '%1'"
 msgstr "创建项目 %1"
 
 #: src/infocommand.cpp:40
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
-msgstr "显示收藏或项目的完整信息"
+msgstr ""
 
 #: src/infocommand.cpp:62
 #, kde-format
@@ -1422,11 +1400,9 @@ msgid "Unknown"
 msgstr "未知算法"
 
 #: src/listcommand.cpp:39
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
-msgstr "列出指定集合中的子集合或项目"
+msgstr ""
 
 #: src/listcommand.cpp:49
 #, kde-format
@@ -1567,11 +1543,9 @@ msgstr ""
 "查看 ‘%1 help command’ 获取关于特定命令的信息。"
 
 #: src/movecommand.cpp:29
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
-msgstr "移动集合或项目到新集合"
+msgstr ""
 
 #: src/movecommand.cpp:42
 #, kde-format
@@ -1586,11 +1560,9 @@ msgid "Destination collection to move into"
 msgstr "要移动到的目标集合"
 
 #: src/renamecommand.cpp:34
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
-msgstr "重命名集合"
+msgstr ""
 
 #: src/renamecommand.cpp:46
 #, kde-format
@@ -1617,11 +1589,9 @@ msgid "Collection renamed successfully"
 msgstr "集合重命名成功"
 
 #: src/showcommand.cpp:35
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
-msgstr "显示一个项目的原始有效负载"
+msgstr ""
 
 #: src/showcommand.cpp:44
 #, kde-format
@@ -1659,11 +1629,9 @@ msgid "Item has no main body part"
 msgstr "项目没有主体部分"
 
 #: src/tagscommand.cpp:32
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
-msgstr "列表或修改标签"
+msgstr ""
 
 #: src/tagscommand.cpp:46
 #, kde-format
