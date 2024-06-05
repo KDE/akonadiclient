@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 01:41+0000\n"
+"POT-Creation-Date: 2024-06-05 02:06+0000\n"
 "PO-Revision-Date: 2022-12-10 23:47+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -33,55 +33,55 @@ msgctxt "@info:shell"
 msgid "The name of the command"
 msgstr "Le nomine del commando"
 
-#: src/abstractcommand.cpp:92 src/main.cpp:65
+#: src/abstractcommand.cpp:93 src/main.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "Options for command"
 msgstr "Optione per le commando"
 
-#: src/abstractcommand.cpp:92 src/main.cpp:66
+#: src/abstractcommand.cpp:93 src/main.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "[options]"
 msgstr "[options]"
 
-#: src/abstractcommand.cpp:98
+#: src/abstractcommand.cpp:100
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that a collection is specified"
 msgstr "On assume que un collection es specificte"
 
-#: src/abstractcommand.cpp:101
+#: src/abstractcommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that an item is specified"
 msgstr "On assume que un elemento es specificate"
 
-#: src/abstractcommand.cpp:108
+#: src/abstractcommand.cpp:112
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run without making any actual changes"
 msgstr "Executa sin facer ulle cambiamentos effective"
 
-#: src/abstractcommand.cpp:124
+#: src/abstractcommand.cpp:127
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot specify as both an item and a collection"
 msgstr "Non pote specificar ambes un elemento e un collection"
 
-#: src/abstractcommand.cpp:142
+#: src/abstractcommand.cpp:147
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid collection/item argument '%1', %2"
 msgstr "Argumento de collection/elemento '%1',%2"
 
-#: src/abstractcommand.cpp:160
+#: src/abstractcommand.cpp:165
 #, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2. See 'help %1'"
 msgstr "%2. Vide 'adjuta %1'"
 
-#: src/abstractcommand.cpp:165
+#: src/abstractcommand.cpp:168
 #, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
@@ -89,301 +89,301 @@ msgctxt ""
 msgid "%3. See '%1 help %2'"
 msgstr "%3. Vide '%1 adjuta %2'"
 
-#: src/abstractcommand.cpp:181
+#: src/abstractcommand.cpp:184
 #, kde-format
 msgctxt "@info:shell"
 msgid "Dangerous or destructive operations are not allowed"
 msgstr "Operationes periculose o destructive non es permittite"
 
-#: src/abstractcommand.cpp:182
+#: src/abstractcommand.cpp:185
 #, kde-format
 msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
 msgstr "Pone %1=\"%2\" in ambiente"
 
-#: src/addcommand.cpp:42
+#: src/addcommand.cpp:41
 #, fuzzy
 #| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
 msgstr "Adde elementos a un collection"
 
-#: src/addcommand.cpp:58
+#: src/addcommand.cpp:59
 #, kde-format
 msgid "Base directory for input files/directories, default is current"
 msgstr ""
 "Directorio base per files/directorios de entrata, currente es le predefinite"
 
-#: src/addcommand.cpp:58
+#: src/addcommand.cpp:60
 #, kde-format
 msgid "directory"
 msgstr "directorio"
 
-#: src/addcommand.cpp:59
+#: src/addcommand.cpp:63
 #, kde-format
 msgid "Flat mode, do not duplicate subdirectory structure"
 msgstr "Modo platte, non duplica structura de subdirectorio"
 
-#: src/addcommand.cpp:60
+#: src/addcommand.cpp:66
 #, kde-format
 msgid "MIME type of added items, default is to auto-detect"
 msgstr "Typo MIME de elementos addite, predefinite es de auto-relevar"
 
-#: src/addcommand.cpp:60
+#: src/addcommand.cpp:67
 #, kde-format
 msgid "mimetype"
 msgstr "typo mime"
 
-#: src/addcommand.cpp:63
+#: src/addcommand.cpp:70
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to add to: an ID, path or Akonadi URL"
 msgstr "Le collection de adder: un ID, percurso o URL de Akonadi."
 
-#: src/addcommand.cpp:64
+#: src/addcommand.cpp:71
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or directories to add to the collection"
 msgstr "Files o directorios de adder a collection"
 
-#: src/addcommand.cpp:64
+#: src/addcommand.cpp:71
 #, kde-format
 msgid "files..."
 msgstr "files..."
 
-#: src/addcommand.cpp:70 src/createcommand.cpp:61 src/listcommand.cpp:59
-#: src/renamecommand.cpp:53
+#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:62
+#: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection argument"
 msgstr "Argumento de collection mancante"
 
-#: src/addcommand.cpp:71
+#: src/addcommand.cpp:79
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file or directory arguments"
 msgstr "Nulle argumentos de file o directorio"
 
-#: src/addcommand.cpp:84
+#: src/addcommand.cpp:95
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid MIME type argument '%1'"
 msgstr "Argumento de typo de MIME invalide '%1'"
 
-#: src/addcommand.cpp:93
+#: src/addcommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
 msgstr "Directorio de base '%1' non trovate"
 
-#: src/addcommand.cpp:114
+#: src/addcommand.cpp:125
 #, kde-format
 msgid "File '%1' does not exist"
 msgstr "File '%1' non existe"
 
-#: src/addcommand.cpp:117
+#: src/addcommand.cpp:128
 #, kde-format
 msgid "Error accessing file '%1'"
 msgstr "Error accedente a file '%1'"
 
-#: src/addcommand.cpp:145
+#: src/addcommand.cpp:156
 #, kde-format
 msgctxt "@info:shell"
 msgid "No valid file or directory arguments"
 msgstr "Nulle argumentos valide de file o directorio"
 
-#: src/addcommand.cpp:155
+#: src/addcommand.cpp:166
 #, kde-format
 msgid "No more directories to process"
 msgstr "Nulle altere directorios de processar"
 
-#: src/addcommand.cpp:179 src/addcommand.cpp:201
+#: src/addcommand.cpp:190 src/addcommand.cpp:212
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
 msgstr "Directorio '%1' non plus existe"
 
-#: src/addcommand.cpp:218
+#: src/addcommand.cpp:229
 #, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
 msgstr "Trovante collection \"%3\" in genitor %1 \"%2\""
 
-#: src/addcommand.cpp:231
+#: src/addcommand.cpp:241
 #, kde-format
 msgid "Need to create collection for '%1'"
 msgstr "Necessita crear collection per '%1'"
 
-#: src/addcommand.cpp:244
+#: src/addcommand.cpp:253
 #, kde-format
 msgid "No more files to process"
 msgstr " Nulle altere files a processar"
 
-#: src/addcommand.cpp:255 src/updatecommand.cpp:85
+#: src/addcommand.cpp:264 src/updatecommand.cpp:86
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ does not exist"
 msgstr "File '%1' non existe"
 
-#: src/addcommand.cpp:261 src/updatecommand.cpp:93
+#: src/addcommand.cpp:270 src/updatecommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ cannot be read"
 msgstr "File '%1' non poteva esser legite"
 
-#: src/addcommand.cpp:269
+#: src/addcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine MIME type of file ‘%1’"
 msgstr "Non pote determinar typo MIME de file '%1'"
 
-#: src/addcommand.cpp:278
+#: src/addcommand.cpp:287
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine parent collection for file ‘%1’"
 msgstr "Non pot edeterminar collection genitor per file '%1'"
 
-#: src/addcommand.cpp:285
+#: src/addcommand.cpp:293
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
 msgstr "Creante elemento in collection %1 \"%2\" am '%3' grandor %4"
 
-#: src/addcommand.cpp:307
+#: src/addcommand.cpp:315
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch target collection, %1"
 msgstr "Non pote trovar collection objectivo, %1"
 
-#: src/addcommand.cpp:317
+#: src/addcommand.cpp:325
 #, kde-format
 msgid "Root folder is %1 \"%2\""
 msgstr "Dossier radice es %1 \"%2\""
 
-#: src/addcommand.cpp:365
+#: src/addcommand.cpp:373
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
 msgstr "Error a trovar collection %1 \"%2\",%3"
 
-#: src/addcommand.cpp:380
+#: src/addcommand.cpp:386
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
 msgstr "Cambiatenomine de dossier maildir a '%1'"
 
-#: src/addcommand.cpp:389
+#: src/addcommand.cpp:396
 #, kde-format
 msgid "Creating collection \"%3\" under parent %1 \"%2\""
 msgstr "Creante collection \"%3\" sub genitor %1 \"%2\""
 
-#: src/addcommand.cpp:410
+#: src/addcommand.cpp:414
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
 msgstr "Falleva a adder ‘%1’, %2"
 
-#: src/addcommand.cpp:416
+#: src/addcommand.cpp:418
 #, kde-format
 msgid "Added file '%2' as item %1"
 msgstr "Addite file '%2' como elemento %1"
 
-#: src/agentscommand.cpp:38
+#: src/agentscommand.cpp:37
 #, fuzzy
 #| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Gere agentes de Akonadi"
 
-#: src/agentscommand.cpp:50
+#: src/agentscommand.cpp:51
 #, kde-format
 msgid "List all agents"
 msgstr "Lista omne agentes"
 
-#: src/agentscommand.cpp:51
+#: src/agentscommand.cpp:54
 #, kde-format
 msgid "Set state \"online\" or \"offline\" for specified agents"
 msgstr ""
 "Fixa stato de \"in linea\" o \"foras de  linea\" per agentes specificate"
 
-#: src/agentscommand.cpp:51
+#: src/agentscommand.cpp:55
 #, kde-format
 msgctxt "@info:shell"
 msgid "state"
 msgstr "stato"
 
-#: src/agentscommand.cpp:52
+#: src/agentscommand.cpp:58
 #, kde-format
 msgid "Get state for the specified agent"
 msgstr "Obtene stato per le agente specificate"
 
-#: src/agentscommand.cpp:53
+#: src/agentscommand.cpp:61
 #, kde-format
 msgid "Show information about the specified agent"
 msgstr "Monstra information re le specificate agente"
 
-#: src/agentscommand.cpp:54
+#: src/agentscommand.cpp:64
 #, kde-format
 msgid "Restart the specified agent"
 msgstr "Restarta le agente specificate"
 
-#: src/agentscommand.cpp:57
+#: src/agentscommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "Agents to operate on"
 msgstr "Agente sur le quales operar"
 
-#: src/agentscommand.cpp:57
+#: src/agentscommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "[agents...]"
 msgstr "[agents...]"
 
-#: src/agentscommand.cpp:69
+#: src/agentscommand.cpp:80
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agents or options specified"
 msgstr "Necun agente o option specificate"
 
-#: src/agentscommand.cpp:86
+#: src/agentscommand.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid state '%1'"
 msgstr "Stato invalide '%1'"
 
-#: src/agentscommand.cpp:90
+#: src/agentscommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "No option specified"
 msgstr "Necun option specificate"
 
-#: src/agentscommand.cpp:131
+#: src/agentscommand.cpp:143
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parameters"
 msgstr "Parametros invalide"
 
-#: src/agentscommand.cpp:167 src/agentscommand.cpp:199
-#: src/agentscommand.cpp:217 src/agentscommand.cpp:243
+#: src/agentscommand.cpp:179 src/agentscommand.cpp:211
+#: src/agentscommand.cpp:229 src/agentscommand.cpp:255
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agent exists with the identifier '%1'"
 msgstr "Necun agente existe con le identificator '%1'"
 
-#: src/agentscommand.cpp:226
+#: src/agentscommand.cpp:238
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID:      "
 msgstr "ID:      "
 
-#: src/agentscommand.cpp:227
+#: src/agentscommand.cpp:239
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name:    "
 msgstr "Nomine:    "
 
-#: src/agentscommand.cpp:228
+#: src/agentscommand.cpp:240
 #, kde-format
 msgctxt "@info:shell"
 msgid "Status:  "
 msgstr "Stato:  "
 
-#: src/collectionpathjob.cpp:71
+#: src/collectionpathjob.cpp:70
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection path"
 msgid "%1 (\"/%2\")"
@@ -395,94 +395,94 @@ msgctxt "@info:shell"
 msgid "Unknown Akonadi collection format '%1'"
 msgstr "Formato de collection de Akonadi incognoscite '%1'"
 
-#: src/collectionresolvejob.cpp:143
+#: src/collectionresolvejob.cpp:142
 #, kde-format
 msgctxt "@info:shell 1=collection ID"
 msgid "%1 (root)"
 msgstr "%1 (Radice)"
 
-#: src/collectionresolvejob.cpp:146
+#: src/collectionresolvejob.cpp:144
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection name"
 msgid "%1 (\"%2\")"
 msgstr "%1 (\"%2\")"
 
-#: src/collectionresolvejob.cpp:171
+#: src/collectionresolvejob.cpp:168
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
 msgstr "Syntaxe de lemento invalide '%1'"
 
-#: src/commandfactory.cpp:50 src/commandfactory.cpp:105
+#: src/commandfactory.cpp:50 src/commandfactory.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
 msgstr "Commando incognite '%1'"
 
-#: src/commandfactory.cpp:92
+#: src/commandfactory.cpp:90
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
 msgstr "Nulle commando specificate (essaya '%1 -help')"
 
-#: src/commandfactory.cpp:136
+#: src/commandfactory.cpp:134
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
 msgstr "Commandos disponibile es:"
 
-#: src/commandshell.cpp:31
+#: src/commandshell.cpp:30
 msgid "Enter commands in an interactive shell"
 msgstr "Inserta commandos in un shell interactive"
 
-#: src/commandshell.cpp:75
+#: src/commandshell.cpp:74
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid command"
 msgstr "Commando invalide"
 
-#: src/copycommand.cpp:42
+#: src/copycommand.cpp:40
 #, fuzzy
 #| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
 msgstr "Copia al collectiones o elementos in un nove collection"
 
-#: src/copycommand.cpp:61 src/movecommand.cpp:42
+#: src/copycommand.cpp:59 src/movecommand.cpp:40
 #, kde-format
 msgid "source..."
 msgstr "Fonte..."
 
-#: src/copycommand.cpp:61
+#: src/copycommand.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to copy"
 msgstr "Collectiones o elementos existente a copiar"
 
-#: src/copycommand.cpp:62
+#: src/copycommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to copy into"
 msgstr "Collection de destination ubi copiar"
 
-#: src/copycommand.cpp:70
+#: src/copycommand.cpp:69
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing source/destination arguments"
 msgstr "Mancante argumentos de fonte/destination"
 
-#: src/copycommand.cpp:76
+#: src/copycommand.cpp:77
 #, kde-format
 msgid "No more sources to process"
 msgstr "Nulle altere fontes a processar"
 
-#: src/copycommand.cpp:82
+#: src/copycommand.cpp:83
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve destination collection '%1', %2"
 msgstr "Non pote resolver collection de destination '%1',%2"
 
-#: src/copycommand.cpp:115
+#: src/copycommand.cpp:116
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve source '%1', %2"
@@ -493,39 +493,39 @@ msgstr "Non pote resolver fonte '%1',%2"
 msgid "Moving contents of %1 -> %2"
 msgstr "Movente contentos de %1 -> %2"
 
-#: src/copycommand.cpp:145
+#: src/copycommand.cpp:143
 #, kde-format
 msgid "Copying contents of %1 -> %2"
 msgstr "Copiante contentos de %1 -> %2"
 
-#: src/copycommand.cpp:164
+#: src/copycommand.cpp:159
 #, kde-format
 msgid "Moving collection %1 -> %2"
 msgstr "Movente collection %1 -> %2"
 
-#: src/copycommand.cpp:171
+#: src/copycommand.cpp:164
 #, kde-format
 msgid "Copying collection %1 -> %2"
 msgstr "Copiante collection %1 -> %2"
 
-#: src/copycommand.cpp:192
+#: src/copycommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move from '%1', %2"
 msgstr "Non pote copiar/mover ex '%1',%2"
 
-#: src/copycommand.cpp:200
+#: src/copycommand.cpp:191
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch subcollections of '%1', %2"
 msgstr "Non pote trovar subcollectiones de '%1', %2"
 
-#: src/copycommand.cpp:208
+#: src/copycommand.cpp:199
 #, kde-format
 msgid "No sub-collections to copy/move"
 msgstr "Necun sub-collectiones a copiar/mover"
 
-#: src/copycommand.cpp:215
+#: src/copycommand.cpp:205
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 sub-collection"
@@ -533,7 +533,7 @@ msgid_plural "Moving %1 sub-collections"
 msgstr[0] "Movente %1 sub-collection"
 msgstr[1] "Movente %1 sub-collectiones"
 
-#: src/copycommand.cpp:220
+#: src/copycommand.cpp:207
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 sub-collection"
@@ -541,29 +541,29 @@ msgid_plural "Copying %1 sub-collections"
 msgstr[0] "Creante sub-collection '%1'"
 msgstr[1] "Creante collection '%1'"
 
-#: src/copycommand.cpp:236
+#: src/copycommand.cpp:220
 #, kde-format
 msgid "No more sub-collections to process"
 msgstr "Non plus altere sub-collectiones a processar"
 
-#: src/copycommand.cpp:268
+#: src/copycommand.cpp:253
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
 msgstr "Non pote copiar/mover sub-collection '%2' ex '%1', %3"
 
-#: src/copycommand.cpp:286
+#: src/copycommand.cpp:270
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch items of '%1', %2"
 msgstr "Non pote trovar elementos de '%1',%2"
 
-#: src/copycommand.cpp:294
+#: src/copycommand.cpp:278
 #, kde-format
 msgid "No items to process"
 msgstr "Necun elementos a processar"
 
-#: src/copycommand.cpp:301
+#: src/copycommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 item"
@@ -571,7 +571,7 @@ msgid_plural "Moving %1 items"
 msgstr[0] "Mover %1 elementos"
 msgstr[1] "Mover %1 elementos"
 
-#: src/copycommand.cpp:306
+#: src/copycommand.cpp:290
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 item"
@@ -579,30 +579,30 @@ msgid_plural "Copying %1 items"
 msgstr[0] "Copiar %1 elementos"
 msgstr[1] "Copiar %1 elementos"
 
-#: src/copycommand.cpp:322
+#: src/copycommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move items from '%1', %2"
 msgstr "Non pote copiar/mover elementos ab '%1,%2"
 
-#: src/createcommand.cpp:36
+#: src/createcommand.cpp:35
 #, fuzzy
 #| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "Crea un nove collection"
 
-#: src/createcommand.cpp:52
+#: src/createcommand.cpp:53
 #, kde-format
 msgid "Parent collection to create in"
 msgstr "Collection genitor ubi crear"
 
-#: src/createcommand.cpp:52
+#: src/createcommand.cpp:54
 #, kde-format
 msgid "collection"
 msgstr "Collection"
 
-#: src/createcommand.cpp:55
+#: src/createcommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
@@ -612,64 +612,64 @@ msgstr ""
 "Le collection a crear, o como un percurso o un nomine (con un genitor "
 "specificate)"
 
-#: src/createcommand.cpp:72
+#: src/createcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (with parent) cannot be a path"
 msgstr "Argumento de collection (con genitor) non pote esser un percurso"
 
-#: src/createcommand.cpp:89
+#: src/createcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (without parent) must be a path"
 msgstr "Argumento de collection (sin genitor) debe esser un percurso"
 
-#: src/createcommand.cpp:98
+#: src/createcommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "New collection name not specified"
 msgstr "Nove nomine de collection non specificate"
 
-#: src/createcommand.cpp:110
+#: src/createcommand.cpp:114
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch parent collection '%1', %2"
 msgstr "Non pote trovar collection genitor '%1',%2"
 
-#: src/createcommand.cpp:122
+#: src/createcommand.cpp:125
 #, kde-format
 msgid "Creating a maildir folder named '%1' may not work"
 msgstr "Creante un dossier de maildir appellate '%1' pote non functionar"
 
-#: src/createcommand.cpp:141
+#: src/createcommand.cpp:144
 #, kde-format
 msgid "Error creating collection '%1' under '%2', %3"
 msgstr "Error creante collection '%1' sub '%2', %3"
 
-#: src/createcommand.cpp:155
+#: src/createcommand.cpp:156
 #, kde-format
 msgid "Error getting path of new collection, %1"
 msgstr "Error obtenente percurso de nove collection, %1"
 
-#: src/createcommand.cpp:159
+#: src/createcommand.cpp:161
 #, kde-format
 msgid "Created new collection '%1'"
 msgstr "Create nove collection '%1'"
 
-#: src/deletecommand.cpp:41
+#: src/deletecommand.cpp:39
 #, fuzzy
 #| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Dele un collection o un elemento"
 
-#: src/deletecommand.cpp:55
+#: src/deletecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection or item"
 msgstr "Le collection o elemento"
 
-#: src/deletecommand.cpp:61
+#: src/deletecommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection/item argument"
@@ -681,146 +681,146 @@ msgctxt "@info:shell"
 msgid "Cannot delete the root collection"
 msgstr "Non pote deler le collection radice"
 
-#: src/deletecommand.cpp:120
+#: src/deletecommand.cpp:121
 #, kde-format
 msgid "Collection deleted successfully"
 msgstr "Collection delete con successo"
 
-#: src/deletecommand.cpp:128 src/infocommand.cpp:152
+#: src/deletecommand.cpp:129 src/infocommand.cpp:148
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item/collection syntax '%1'"
 msgstr "Syntaxe de elemento/collection invalide '%1'"
 
-#: src/deletecommand.cpp:150 src/infocommand.cpp:179
+#: src/deletecommand.cpp:152 src/infocommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
 msgstr "Non pote trovar '%1' como un collection o elemento"
 
-#: src/deletecommand.cpp:161
+#: src/deletecommand.cpp:164
 #, kde-format
 msgid "Item deleted successfully"
 msgstr "Elemento delite con successo"
 
-#: src/dumpcommand.cpp:48
+#: src/dumpcommand.cpp:46
 #, fuzzy
 #| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
 msgstr "Discarga un collection a un structura de directorio"
 
-#: src/dumpcommand.cpp:59
+#: src/dumpcommand.cpp:58
 #, kde-format
 msgid "Dump email messages in maildir directory structure"
 msgstr ""
 
-#: src/dumpcommand.cpp:60
+#: src/dumpcommand.cpp:61
 #, kde-format
 msgid "Dump items with Akonadi category URLs, otherwise text names"
 msgstr ""
 
-#: src/dumpcommand.cpp:61
+#: src/dumpcommand.cpp:64
 #, kde-format
 msgid "Operate even if destination directory is not empty"
 msgstr "Opera anque si directorio de destination non es vacue"
 
-#: src/dumpcommand.cpp:64
+#: src/dumpcommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to dump: an ID, path or Akonadi URL"
 msgstr ""
 
-#: src/dumpcommand.cpp:65
+#: src/dumpcommand.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "The destination directory to dump to"
 msgstr ""
 
-#: src/dumpcommand.cpp:72 src/exportcommand.cpp:51
+#: src/dumpcommand.cpp:74 src/exportcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
 msgstr "Nulle collection specificate"
 
-#: src/dumpcommand.cpp:73
+#: src/dumpcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
 msgid "No destination directory specified"
 msgstr "Nulle directorio de destination specificate"
 
-#: src/dumpcommand.cpp:86
+#: src/dumpcommand.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' not found or not a directory"
 msgstr ""
 
-#: src/dumpcommand.cpp:94
+#: src/dumpcommand.cpp:97
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr ""
 
-#: src/dumpcommand.cpp:120 src/listcommand.cpp:182
+#: src/dumpcommand.cpp:121 src/listcommand.cpp:186
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
 msgstr ""
 
-#: src/dumpcommand.cpp:146
+#: src/dumpcommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 contains no items"
 msgstr ""
 
-#: src/dumpcommand.cpp:205 src/editcommand.cpp:104 src/showcommand.cpp:92
+#: src/dumpcommand.cpp:200 src/editcommand.cpp:103 src/showcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no payload"
 msgstr ""
 
-#: src/dumpcommand.cpp:250
+#: src/dumpcommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create directory '%1/%2'"
 msgstr "Non pote crear directorio '%1: /%2'"
 
-#: src/dumpcommand.cpp:332
+#: src/dumpcommand.cpp:319
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save file '%1'"
 msgstr "Il non pote salveguardar file '%1'"
 
-#: src/editcommand.cpp:40
+#: src/editcommand.cpp:37
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr ""
 
-#: src/editcommand.cpp:58
+#: src/editcommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to edit"
 msgstr ""
 
-#: src/editcommand.cpp:64 src/updatecommand.cpp:61
+#: src/editcommand.cpp:60 src/updatecommand.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "No item specified"
 msgstr "Nulle elemento specificate"
 
-#: src/editcommand.cpp:96
+#: src/editcommand.cpp:95
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result found for item '%1'"
 msgstr ""
 
-#: src/editcommand.cpp:111
+#: src/editcommand.cpp:110
 #, kde-format
 msgctxt "@info:shell"
 msgid "EDITOR environment variable needs to be set"
 msgstr ""
 
-#: src/editcommand.cpp:125
+#: src/editcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot launch text editor '%1'"
@@ -832,20 +832,20 @@ msgctxt "@info:shell"
 msgid "Changes to item '%1' have been saved"
 msgstr ""
 
-#: src/exportcommand.cpp:32
+#: src/exportcommand.cpp:31
 #, fuzzy
 #| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
 msgstr "Dele un collection o un elemento"
 
-#: src/exportcommand.cpp:44
+#: src/exportcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to export: an ID, path or Akonadi URL"
 msgstr ""
 
-#: src/exportcommand.cpp:45
+#: src/exportcommand.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to export to"
@@ -857,7 +857,7 @@ msgctxt "@info:shell"
 msgid "No export file specified"
 msgstr ""
 
-#: src/groupcommand.cpp:40
+#: src/groupcommand.cpp:39
 #, fuzzy
 #| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
@@ -869,139 +869,139 @@ msgstr "Expande o modifica un gruppo de contacto"
 msgid "Show the expanded contact group (the default operation)"
 msgstr ""
 
-#: src/groupcommand.cpp:59
+#: src/groupcommand.cpp:61
 #, kde-format
 msgid "Add a contact to the group"
 msgstr ""
 
-#: src/groupcommand.cpp:60
+#: src/groupcommand.cpp:64
 #, kde-format
 msgid "Delete a contact from the group"
 msgstr "Dele un contacto ex le gruppo"
 
-#: src/groupcommand.cpp:61
+#: src/groupcommand.cpp:67
 #, kde-format
 msgid "Remove unknown item references from the group"
 msgstr ""
 
-#: src/groupcommand.cpp:62
+#: src/groupcommand.cpp:70
 #, kde-format
 msgid "Email comment (name) for an added item"
 msgstr ""
 
-#: src/groupcommand.cpp:62
+#: src/groupcommand.cpp:71
 #, kde-format
 msgid "name"
 msgstr "Nomine"
 
-#: src/groupcommand.cpp:63
+#: src/groupcommand.cpp:74
 #, kde-format
 msgid "Brief output (for 'expand', email addresses only)"
 msgstr ""
 
-#: src/groupcommand.cpp:66
+#: src/groupcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
 msgstr ""
 
-#: src/groupcommand.cpp:67
+#: src/groupcommand.cpp:78
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for the operation"
 msgstr "Argumentos per le operation"
 
-#: src/groupcommand.cpp:67
+#: src/groupcommand.cpp:78
 #, kde-format
 msgid "args..."
 msgstr "args..."
 
-#: src/groupcommand.cpp:73
+#: src/groupcommand.cpp:84
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing group argument"
 msgstr "Argumento de gruppo mancante"
 
-#: src/groupcommand.cpp:91
+#: src/groupcommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"
 msgstr ""
 
-#: src/groupcommand.cpp:102
+#: src/groupcommand.cpp:115
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to add"
 msgstr "Nulle elementos specificate a adder"
 
-#: src/groupcommand.cpp:111
+#: src/groupcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one item may be specified to add with 'comment'"
 msgstr "Solmente un elemento pote esser specificate a adder con 'comment'"
 
-#: src/groupcommand.cpp:120
+#: src/groupcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to delete"
 msgstr "Nulle elementos specificate a deler"
 
-#: src/groupcommand.cpp:134
+#: src/groupcommand.cpp:147
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'comment' option is only allowed with 'add'"
 msgstr "Le option 'comment' es solment epermittite con 'add'"
 
-#: src/groupcommand.cpp:183
+#: src/groupcommand.cpp:197
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as an item"
 msgstr "Non pote trovar '%1' como elemento"
 
-#: src/groupcommand.cpp:190
+#: src/groupcommand.cpp:204
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' is not a contact group"
 msgstr "Elemento '%1' non es un gruppo de contacto"
 
-#: src/groupcommand.cpp:196
+#: src/groupcommand.cpp:210
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no contact group payload"
 msgstr ""
 
-#: src/groupcommand.cpp:234
+#: src/groupcommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "Errors occurred, group not updated"
 msgstr "Occurreva un error, gruppo non actualisate"
 
-#: src/groupcommand.cpp:278
+#: src/groupcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell"
 msgid "(unknown referenced item)"
 msgstr "(elemento referentiate incognite)"
 
-#: src/groupcommand.cpp:285 src/groupcommand.cpp:306
+#: src/groupcommand.cpp:299 src/groupcommand.cpp:320
 #, kde-format
 msgctxt "@info:shell"
 msgid "(item has no Addressee payload)"
 msgstr ""
 
-#: src/groupcommand.cpp:325
+#: src/groupcommand.cpp:339
 #, kde-format
 msgctxt "@item:shell"
 msgid "(invalid referenced item)"
 msgstr "(elemento referentiate invalide)"
 
-#: src/groupcommand.cpp:327
+#: src/groupcommand.cpp:341
 #, kde-format
 msgctxt "@item:shell"
 msgid "(unknown referenced item)"
 msgstr "(elemento referentiate incognite)"
 
-#: src/groupcommand.cpp:378
+#: src/groupcommand.cpp:392
 #, kde-format
 msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
@@ -1009,38 +1009,38 @@ msgctxt ""
 msgid "Group %1 \"%5\" has %2 groups, %3 references and %4 data items:"
 msgstr ""
 
-#: src/groupcommand.cpp:387
+#: src/groupcommand.cpp:401
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "Typo"
 
-#: src/groupcommand.cpp:388 src/listcommand.cpp:142 src/listcommand.cpp:211
-#: src/tagscommand.cpp:321
+#: src/groupcommand.cpp:402 src/listcommand.cpp:147 src/listcommand.cpp:214
+#: src/tagscommand.cpp:319
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "ID"
 msgstr "ID"
 
-#: src/groupcommand.cpp:389
+#: src/groupcommand.cpp:403
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "E-posta"
 
-#: src/groupcommand.cpp:390 src/listcommand.cpp:143 src/tagscommand.cpp:323
+#: src/groupcommand.cpp:404 src/listcommand.cpp:148 src/tagscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
 msgstr "Nomine"
 
-#: src/groupcommand.cpp:424
+#: src/groupcommand.cpp:438
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items could be fetched"
 msgstr "Necun elemento poteva esser trovate"
 
-#: src/groupcommand.cpp:484
+#: src/groupcommand.cpp:497
 #, kde-format
 msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
@@ -1048,31 +1048,31 @@ msgctxt ""
 msgid "Adding to group %1 \"%2\":"
 msgstr "Adder a gruppo %1 \"%2\":"
 
-#: src/groupcommand.cpp:498 src/groupcommand.cpp:612
+#: src/groupcommand.cpp:512 src/groupcommand.cpp:624
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot search for email '%1', %2"
 msgstr "Non pote cercar eposta '%1',%2"
 
-#: src/groupcommand.cpp:510
+#: src/groupcommand.cpp:523
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple contacts found for '%1', using the first one"
 msgstr ""
 
-#: src/groupcommand.cpp:545
+#: src/groupcommand.cpp:558
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch requested item %1, %2"
 msgstr "Non pote trovar elemento requirite %1, %2"
 
-#: src/groupcommand.cpp:556
+#: src/groupcommand.cpp:568
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item %1 is not a contact item"
 msgstr ""
 
-#: src/groupcommand.cpp:572 src/groupcommand.cpp:655 src/groupcommand.cpp:703
+#: src/groupcommand.cpp:583 src/groupcommand.cpp:666 src/groupcommand.cpp:715
 #, kde-format
 msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
@@ -1080,7 +1080,7 @@ msgctxt ""
 msgid "Group %1 \"%5\" now has %2 groups, %3 references and %4 data items"
 msgstr ""
 
-#: src/groupcommand.cpp:590
+#: src/groupcommand.cpp:601
 #, kde-format
 msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
@@ -1088,13 +1088,13 @@ msgctxt ""
 msgid "Removing from group %1 \"%2\":"
 msgstr ""
 
-#: src/groupcommand.cpp:627
+#: src/groupcommand.cpp:638
 #, kde-format
 msgctxt "@info:shell"
 msgid "Nothing to remove for email '%1'"
 msgstr "Necun cosa a remover per eposta '%1'"
 
-#: src/groupcommand.cpp:671
+#: src/groupcommand.cpp:682
 #, kde-format
 msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
@@ -1102,108 +1102,108 @@ msgctxt ""
 msgid "Cleaning references from group %1 \"%2\":"
 msgstr ""
 
-#: src/importcommand.cpp:40
+#: src/importcommand.cpp:39
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr ""
 
-#: src/importcommand.cpp:58
+#: src/importcommand.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "The parent collection under which to import the file"
 msgstr ""
 
-#: src/importcommand.cpp:59
+#: src/importcommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to import"
 msgstr ""
 
-#: src/importcommand.cpp:65
+#: src/importcommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "No parent collection specified"
 msgstr ""
 
-#: src/importcommand.cpp:66
+#: src/importcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "No import file specified"
 msgstr ""
 
-#: src/importcommand.cpp:75
+#: src/importcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid XML file, %1"
 msgstr "Filede xML invalide, %1"
 
-#: src/importcommand.cpp:92
+#: src/importcommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch parent collection, %1"
 msgstr ""
 
-#: src/importcommand.cpp:100
+#: src/importcommand.cpp:103
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch children of parent collection, %1"
 msgstr ""
 
-#: src/importcommand.cpp:118
+#: src/importcommand.cpp:122
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection '%1' already exists"
 msgstr "Collection '%1' jam existe"
 
-#: src/importcommand.cpp:122
+#: src/importcommand.cpp:126
 #, kde-format
 msgctxt "@info:shell"
 msgid "Creating collection '%1'"
 msgstr "Creante collection '%1'"
 
-#: src/importcommand.cpp:144
+#: src/importcommand.cpp:148
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing collection '%1'"
 msgstr "Processante collection '%1'"
 
-#: src/importcommand.cpp:151
+#: src/importcommand.cpp:155
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parent for collection with remote ID '%1'"
 msgstr ""
 
-#: src/importcommand.cpp:173
+#: src/importcommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
 msgstr ""
 
-#: src/importcommand.cpp:192
+#: src/importcommand.cpp:194
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
 msgstr ""
 
-#: src/importcommand.cpp:209
+#: src/importcommand.cpp:212
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing items for '%1'"
 msgstr ""
 
-#: src/importcommand.cpp:231
+#: src/importcommand.cpp:234
 #, kde-format
 msgctxt "@info:shell"
 msgid "Error creating item, %1"
 msgstr ""
 
-#: src/importcommand.cpp:233
+#: src/importcommand.cpp:237
 #, kde-format
 msgctxt "@info:shell"
 msgid "Created item '%1'"
 msgstr "Create elemento '%1'"
 
-#: src/infocommand.cpp:40
+#: src/infocommand.cpp:38
 #, fuzzy
 #| msgctxt "@info:shell"
 #| msgid "Cannot find '%1' as a collection or item"
@@ -1211,256 +1211,256 @@ msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "Non pote trovar '%1' como un collection o elemento"
 
-#: src/infocommand.cpp:62
+#: src/infocommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
 msgstr "Collectiones o elementos  a monstrar"
 
-#: src/infocommand.cpp:62
+#: src/infocommand.cpp:57
 #, kde-format
 msgid "entity..."
 msgstr "entitate..."
 
-#: src/infocommand.cpp:68
+#: src/infocommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
 msgstr "Nulle collectiones o elementos specificate"
 
-#: src/infocommand.cpp:122
+#: src/infocommand.cpp:117
 #, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
 msgstr ""
 
-#: src/infocommand.cpp:222 src/infocommand.cpp:268
+#: src/infocommand.cpp:220 src/infocommand.cpp:266
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID"
 msgstr "ID"
 
-#: src/infocommand.cpp:223 src/infocommand.cpp:269
+#: src/infocommand.cpp:221 src/infocommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "URL"
 msgstr "URL"
 
-#: src/infocommand.cpp:224 src/infocommand.cpp:270
+#: src/infocommand.cpp:222 src/infocommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "Parent"
 msgstr "Genitor"
 
-#: src/infocommand.cpp:225 src/infocommand.cpp:271 src/infocommand.cpp:303
+#: src/infocommand.cpp:223 src/infocommand.cpp:269 src/infocommand.cpp:301
 #, kde-format
 msgctxt "@info:shell"
 msgid "Type"
 msgstr "Typo"
 
-#: src/infocommand.cpp:225
+#: src/infocommand.cpp:223
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Collection"
 msgstr "Collection"
 
-#: src/infocommand.cpp:226
+#: src/infocommand.cpp:224
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name"
 msgstr "Nomine"
 
-#: src/infocommand.cpp:227
+#: src/infocommand.cpp:225
 #, kde-format
 msgctxt "@info:shell"
 msgid "Owner"
 msgstr "Proprietario"
 
-#: src/infocommand.cpp:228 src/infocommand.cpp:272
+#: src/infocommand.cpp:226 src/infocommand.cpp:270
 #, kde-format
 msgctxt "@info:shell"
 msgid "MIME"
 msgstr "MIME"
 
-#: src/infocommand.cpp:229 src/infocommand.cpp:276
+#: src/infocommand.cpp:227 src/infocommand.cpp:274
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
 msgstr "ID remote"
 
-#: src/infocommand.cpp:234
+#: src/infocommand.cpp:232
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
 msgstr "Sol lectura"
 
-#: src/infocommand.cpp:237
+#: src/infocommand.cpp:235
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
 msgstr ""
 
-#: src/infocommand.cpp:240
+#: src/infocommand.cpp:238
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
 msgstr ""
 
-#: src/infocommand.cpp:243
+#: src/infocommand.cpp:241
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
 msgstr ""
 
-#: src/infocommand.cpp:246
+#: src/infocommand.cpp:244
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
 msgstr ""
 
-#: src/infocommand.cpp:249
+#: src/infocommand.cpp:247
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
 msgstr ""
 
-#: src/infocommand.cpp:252
+#: src/infocommand.cpp:250
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
 msgstr ""
 
-#: src/infocommand.cpp:255
+#: src/infocommand.cpp:253
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
 msgstr ""
 
-#: src/infocommand.cpp:258
+#: src/infocommand.cpp:256
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
 msgstr ""
 
-#: src/infocommand.cpp:260
+#: src/infocommand.cpp:258
 #, kde-format
 msgctxt "@info:shell"
 msgid "Rights"
 msgstr "Derectos"
 
-#: src/infocommand.cpp:263
+#: src/infocommand.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Count"
 msgstr "Computo"
 
-#: src/infocommand.cpp:264
+#: src/infocommand.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unread"
 msgstr "Non Legite"
 
-#: src/infocommand.cpp:266 src/infocommand.cpp:300
+#: src/infocommand.cpp:264 src/infocommand.cpp:298
 #, kde-format
 msgctxt "@info:shell"
 msgid "Size"
 msgstr "Dimension"
 
-#: src/infocommand.cpp:271
+#: src/infocommand.cpp:269
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Item"
 msgstr "Elemento"
 
-#: src/infocommand.cpp:274
+#: src/infocommand.cpp:272
 #, kde-format
 msgctxt "@info:shell"
 msgid "Modified"
 msgstr "Modificate"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:273
 #, kde-format
 msgctxt "@info:shell"
 msgid "Revision"
 msgstr "Revision"
 
-#: src/infocommand.cpp:277
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
 msgstr "Cargo utile"
 
-#: src/infocommand.cpp:277
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "yes"
 msgstr "si"
 
-#: src/infocommand.cpp:277
+#: src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "no"
 msgstr "no"
 
-#: src/infocommand.cpp:285 src/infocommand.cpp:295
+#: src/infocommand.cpp:283 src/infocommand.cpp:293
 #, kde-format
 msgctxt "@info:shell"
 msgid "(none)"
 msgstr "(necun)"
 
-#: src/infocommand.cpp:287
+#: src/infocommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "Flags"
 msgstr "Flags (bandieras)"
 
-#: src/infocommand.cpp:297
+#: src/infocommand.cpp:295
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tags"
 msgstr "Etiquettas"
 
-#: src/infocommand.cpp:303
+#: src/infocommand.cpp:301
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "Incognite"
 
-#: src/listcommand.cpp:39
+#: src/listcommand.cpp:36
 #, fuzzy
 #| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Copia al collectiones o elementos in un nove collection"
 
-#: src/listcommand.cpp:49
+#: src/listcommand.cpp:48
 #, kde-format
 msgid "List more detailed information"
 msgstr ""
 
-#: src/listcommand.cpp:50
+#: src/listcommand.cpp:51
 #, kde-format
 msgid "List only sub-collections"
 msgstr ""
 
-#: src/listcommand.cpp:51
+#: src/listcommand.cpp:54
 #, kde-format
 msgid "List only contained items"
 msgstr ""
 
-#: src/listcommand.cpp:53
+#: src/listcommand.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr ""
 
-#: src/listcommand.cpp:127
+#: src/listcommand.cpp:132
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr ""
 
-#: src/listcommand.cpp:136
+#: src/listcommand.cpp:140
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
@@ -1468,13 +1468,13 @@ msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] "Collection %2 ha %1 sub-collectiione:"
 msgstr[1] "Collection %2 ha %1 sub-collectiones:"
 
-#: src/listcommand.cpp:198
+#: src/listcommand.cpp:201
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr ""
 
-#: src/listcommand.cpp:205
+#: src/listcommand.cpp:207
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
@@ -1482,19 +1482,19 @@ msgid_plural "Collection %2 has %1 items:"
 msgstr[0] "Collection %2 ha %1 elemento:"
 msgstr[1] "Collection %2 ha %1 elementos:"
 
-#: src/listcommand.cpp:212
+#: src/listcommand.cpp:215
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "Typo MIME"
 
-#: src/listcommand.cpp:213
+#: src/listcommand.cpp:216
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "Dimension"
 
-#: src/listcommand.cpp:214
+#: src/listcommand.cpp:217
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"
@@ -1513,7 +1513,9 @@ msgid "A command-line/shell client for Akonadi"
 msgstr ""
 
 #: src/main.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Kevin Krammer"
+msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
 
@@ -1524,7 +1526,9 @@ msgid "Original Author"
 msgstr "Autor original"
 
 #: src/main.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jonathan Marten"
+msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
 
@@ -1535,7 +1539,9 @@ msgid "Additions and new commands"
 msgstr ""
 
 #: src/main.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bhaskar Kandiyal"
+msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
 
@@ -1551,19 +1557,19 @@ msgctxt "@info:shell"
 msgid "Command to execute"
 msgstr "Commando que il debe exequer"
 
-#: src/main.cpp:67
+#: src/main.cpp:66
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for command"
 msgstr "Argumentos pro commando"
 
-#: src/main.cpp:68
+#: src/main.cpp:66
 #, kde-format
 msgctxt "@info:shell"
 msgid "[args]"
 msgstr "[args]"
 
-#: src/main.cpp:86
+#: src/main.cpp:84
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
@@ -1571,39 +1577,39 @@ msgid ""
 "See '%1 help command' for information on a specific command."
 msgstr ""
 
-#: src/movecommand.cpp:29
+#: src/movecommand.cpp:27
 #, fuzzy
 #| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Copia al collectiones o elementos in un nove collection"
 
-#: src/movecommand.cpp:42
+#: src/movecommand.cpp:40
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to move"
 msgstr ""
 
-#: src/movecommand.cpp:43
+#: src/movecommand.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to move into"
 msgstr ""
 
-#: src/renamecommand.cpp:34
+#: src/renamecommand.cpp:33
 #, fuzzy
 #| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "Renomina un Collection"
 
-#: src/renamecommand.cpp:46
+#: src/renamecommand.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to rename"
 msgstr ""
 
-#: src/renamecommand.cpp:47
+#: src/renamecommand.cpp:46
 #, kde-format
 msgctxt "@info:shell"
 msgid "New name for collection"
@@ -1615,24 +1621,24 @@ msgctxt "@info:shell"
 msgid "New name not specified"
 msgstr ""
 
-#: src/renamecommand.cpp:92
+#: src/renamecommand.cpp:97
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection renamed successfully"
 msgstr ""
 
-#: src/showcommand.cpp:35
+#: src/showcommand.cpp:34
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr ""
 
-#: src/showcommand.cpp:44
+#: src/showcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The items to show"
 msgstr "Le elementos de monstrar"
 
-#: src/showcommand.cpp:44
+#: src/showcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "item..."
@@ -1650,164 +1656,164 @@ msgctxt "@info:shell"
 msgid "No items specified"
 msgstr "Nulle elementos specificate"
 
-#: src/showcommand.cpp:88 src/updatecommand.cpp:114
+#: src/showcommand.cpp:89 src/updatecommand.cpp:116
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result returned for item '%1'"
 msgstr ""
 
-#: src/showcommand.cpp:103
+#: src/showcommand.cpp:104
 #, kde-format
 msgid "Item has no main body part"
 msgstr ""
 
-#: src/tagscommand.cpp:32
+#: src/tagscommand.cpp:31
 #, fuzzy
 #| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "Lista o modifica etiquettas"
 
-#: src/tagscommand.cpp:46
+#: src/tagscommand.cpp:47
 #, kde-format
 msgid "Brief output, tag names or IDs only"
 msgstr ""
 
-#: src/tagscommand.cpp:47
+#: src/tagscommand.cpp:50
 #, kde-format
 msgid "Brief output, tag URLs only"
 msgstr ""
 
-#: src/tagscommand.cpp:49
+#: src/tagscommand.cpp:54
 #, kde-format
 msgid "List all known tags (the default operation)"
 msgstr "Lista omne etiquettas cognoscite (le operation predefinite)"
 
-#: src/tagscommand.cpp:50
+#: src/tagscommand.cpp:57
 #, kde-format
 msgid "Add named tags"
 msgstr "Adde etiquettas denominate"
 
-#: src/tagscommand.cpp:51
+#: src/tagscommand.cpp:60
 #, kde-format
 msgid "Delete tags"
 msgstr "Dele etiquettas"
 
 #. i18n("ID for a tag to be added (default automatic)"), i18n("id")));
-#: src/tagscommand.cpp:56
+#: src/tagscommand.cpp:65
 #, kde-format
 msgid "TAG"
 msgstr "TAG"
 
-#: src/tagscommand.cpp:56
+#: src/tagscommand.cpp:65
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
 msgstr ""
 "Le nomine de un etiquetta a adder, o un nomine, ID o URL de un etiquetta a "
 "deler"
 
-#: src/tagscommand.cpp:56
+#: src/tagscommand.cpp:65
 #, kde-format
 msgid "[TAG...]"
 msgstr "[TAG...]"
 
-#: src/tagscommand.cpp:76
+#: src/tagscommand.cpp:85
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
 msgstr ""
 
-#: src/tagscommand.cpp:91
+#: src/tagscommand.cpp:100
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
 msgstr ""
 
-#: src/tagscommand.cpp:107
+#: src/tagscommand.cpp:115
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
 msgstr "Nulle tags, i.e. etiquettas, specificate a adder"
 
-#: src/tagscommand.cpp:113
+#: src/tagscommand.cpp:120
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
 msgstr ""
 "Multiple etiquettas (tags)  non pote esser specificate a adder con 'id'"
 
-#: src/tagscommand.cpp:124
+#: src/tagscommand.cpp:129
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
 msgstr "Nulle etiquetta specificate a deler"
 
-#: src/tagscommand.cpp:155
+#: src/tagscommand.cpp:158
 #, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
 msgstr "Un etiquetta nominate '%1' ID %2 jam existe"
 
-#: src/tagscommand.cpp:179
+#: src/tagscommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1' ID %2"
 msgstr "Non poteadder etiquetta '%1' ID %2"
 
-#: src/tagscommand.cpp:184
+#: src/tagscommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1'"
 msgstr "Non pote adder etiquetta '%1'"
 
-#: src/tagscommand.cpp:232
+#: src/tagscommand.cpp:227
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
 msgstr "Etiquetta a deler '%1' non existe"
 
-#: src/tagscommand.cpp:269
+#: src/tagscommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete ID %1 does not exist"
 msgstr "Etiquetta a deler ID '%1' non existe"
 
-#: src/tagscommand.cpp:309
+#: src/tagscommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags found"
 msgstr "Non trovava ulle etiquettas"
 
-#: src/tagscommand.cpp:322
+#: src/tagscommand.cpp:320
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "URL"
 msgstr "URL"
 
-#: src/updatecommand.cpp:36
+#: src/updatecommand.cpp:35
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr ""
 
-#: src/updatecommand.cpp:54
+#: src/updatecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to update, an ID or Akonadi URL"
 msgstr ""
 
-#: src/updatecommand.cpp:55
+#: src/updatecommand.cpp:53
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to update the item from"
 msgstr ""
 
-#: src/updatecommand.cpp:62
+#: src/updatecommand.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file specified"
 msgstr "Nulle file specificate"
 
-#: src/updatecommand.cpp:133
+#: src/updatecommand.cpp:136
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item updated successfully"
