@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-05 02:06+0000\n"
-"PO-Revision-Date: 2024-06-03 07:13+0200\n"
+"PO-Revision-Date: 2024-06-05 07:14+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -527,7 +527,7 @@ msgctxt "@info:shell"
 msgid "Moving %1 sub-collection"
 msgid_plural "Moving %1 sub-collections"
 msgstr[0] "Premikam podrejeno zbirko %1"
-msgstr[1] " Premikam podrejeni zbirki %1"
+msgstr[1] "Premikam podrejeni zbirki %1"
 msgstr[2] "Premikam podrejene zbirke %1"
 msgstr[3] "Premikam podrejene zbirke %1"
 
@@ -1509,8 +1509,7 @@ msgid "A command-line/shell client for Akonadi"
 msgstr "Odjemalec za Akonadi v ukazni vrstici/lupini"
 
 #: src/main.cpp:52
-#, fuzzy, kde-format
-#| msgid "Kevin Krammer"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
@@ -1522,8 +1521,7 @@ msgid "Original Author"
 msgstr "Izvorni avtor"
 
 #: src/main.cpp:53
-#, fuzzy, kde-format
-#| msgid "Jonathan Marten"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
@@ -1535,8 +1533,7 @@ msgid "Additions and new commands"
 msgstr "Dodatki in novi ukazi"
 
 #: src/main.cpp:54
-#, fuzzy, kde-format
-#| msgid "Bhaskar Kandiyal"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"

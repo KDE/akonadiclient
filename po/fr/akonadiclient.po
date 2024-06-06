@@ -1,20 +1,20 @@
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2024 Xavier Besnard <xavier.besnard@kde.org>
 # Simon Depiets <sdepiets@gmail.com>, 2018, 2019.
-# Xavier Besnard <xavier.besnard@kde.org>, 2020, 2021, 2022.
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-05 02:06+0000\n"
-"PO-Revision-Date: 2023-01-27 18:51+0100\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@kde.org>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2024-06-04 09:53+0200\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -106,11 +106,9 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Définir %1=\"%2\" dans l'environnement"
 
 #: src/addcommand.cpp:41
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
-msgstr "Ajouter des éléments à la collection"
+msgstr "Ajouter des éléments à une collection"
 
 #: src/addcommand.cpp:59
 #, kde-format
@@ -292,8 +290,6 @@ msgid "Added file '%2' as item %1"
 msgstr "Ajout du fichier « %2 » en tant qu'élément %1"
 
 #: src/agentscommand.cpp:37
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Gérer les agents de Akonadi"
@@ -450,11 +446,9 @@ msgid "Invalid command"
 msgstr "Commande non valable"
 
 #: src/copycommand.cpp:40
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
-msgstr "Copier les collections ou les éléments dans une nouvelle collection"
+msgstr "Copier des collections ou des éléments dans une nouvelle collection"
 
 #: src/copycommand.cpp:59 src/movecommand.cpp:40
 #, kde-format
@@ -596,8 +590,6 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "Impossible de copier ou de déplacer l'élément depuis « %1 », %2"
 
 #: src/createcommand.cpp:35
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "Créer une nouvelle collection"
@@ -673,8 +665,6 @@ msgid "Created new collection '%1'"
 msgstr "Nouvelle collection « %1 » créée"
 
 #: src/deletecommand.cpp:39
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Supprimer une collection ou un élément"
@@ -720,11 +710,9 @@ msgid "Item deleted successfully"
 msgstr "Élément supprimé avec succès"
 
 #: src/dumpcommand.cpp:46
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
-msgstr "Vider une collection dans la structure de dossiers"
+msgstr "Vider une collection dans une structure de dossiers"
 
 #: src/dumpcommand.cpp:58
 #, kde-format
@@ -814,12 +802,11 @@ msgid "Cannot save file '%1'"
 msgstr "Impossible d'enregistrer le fichier « %1 »"
 
 #: src/editcommand.cpp:37
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr ""
-"Modifier la charge utile brute pour l'élément spécifié utilisant $EDITOR"
+"Modifier la charge utile brute pour l'élément spécifié utilisant le "
+"programme « $EDITOR »"
 
 #: src/editcommand.cpp:54
 #, kde-format
@@ -858,8 +845,6 @@ msgid "Changes to item '%1' have been saved"
 msgstr "Les changements apportés à l'élément « %1 » ont été enregistrés"
 
 #: src/exportcommand.cpp:31
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
 msgstr "Exporter une collection vers un fichier « XML »"
@@ -883,8 +868,6 @@ msgid "No export file specified"
 msgstr "Aucun fichier d'exportation spécifié"
 
 #: src/groupcommand.cpp:39
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "Étendre ou modifier un groupe de contacts"
@@ -1135,8 +1118,6 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "Nettoyage des références du groupe %1 « %2 » :"
 
 #: src/importcommand.cpp:39
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr "Importer un fichier « XML »"
@@ -1240,8 +1221,6 @@ msgid "Created item '%1'"
 msgstr "Élément « %1 » créé"
 
 #: src/infocommand.cpp:38
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr ""
@@ -1463,8 +1442,6 @@ msgid "Unknown"
 msgstr "Inconnu"
 
 #: src/listcommand.cpp:36
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr ""
@@ -1618,8 +1595,6 @@ msgstr ""
 "spécifique."
 
 #: src/movecommand.cpp:27
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Déplacer des collections ou des éléments dans une nouvelle collection"
@@ -1637,8 +1612,6 @@ msgid "Destination collection to move into"
 msgstr "Collection de destination du déplacement"
 
 #: src/renamecommand.cpp:33
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "Renommer une collection"
@@ -1669,8 +1642,6 @@ msgid "Collection renamed successfully"
 msgstr "Collection renommée avec succès"
 
 #: src/showcommand.cpp:34
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr "Afficher la charge utile brute d'un élément"
@@ -1713,8 +1684,6 @@ msgid "Item has no main body part"
 msgstr "L'élément ne possède aucune partie principale de corps"
 
 #: src/tagscommand.cpp:31
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "Lister ou modifier des étiquettes"
@@ -1839,8 +1808,6 @@ msgid "URL"
 msgstr "URL"
 
 #: src/updatecommand.cpp:35
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr "Mettre à jour la charge utile d'un élément à partir d'un fichier"

@@ -1482,11 +1482,10 @@ msgid "A command-line/shell client for Akonadi"
 msgstr "Akonadi 的命令行、shell 客户端"
 
 #: src/main.cpp:52
-#, fuzzy, kde-format
-#| msgid "Kevin Krammer"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
-msgstr "Kevin Krammer"
+msgstr ""
 
 #: src/main.cpp:52
 #, kde-format
@@ -1495,11 +1494,10 @@ msgid "Original Author"
 msgstr "原作者"
 
 #: src/main.cpp:53
-#, fuzzy, kde-format
-#| msgid "Jonathan Marten"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
-msgstr "Jonathan Marten"
+msgstr ""
 
 #: src/main.cpp:53
 #, kde-format
@@ -1508,11 +1506,10 @@ msgid "Additions and new commands"
 msgstr "扩展和新的命令"
 
 #: src/main.cpp:54
-#, fuzzy, kde-format
-#| msgid "Bhaskar Kandiyal"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
-msgstr "Bhaskar Kandiyal"
+msgstr ""
 
 #: src/main.cpp:54
 #, kde-format

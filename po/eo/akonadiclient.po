@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-05 02:06+0000\n"
-"PO-Revision-Date: 2024-06-04 23:03+0200\n"
+"PO-Revision-Date: 2024-06-05 23:54+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1491,8 +1491,7 @@ msgid "A command-line/shell client for Akonadi"
 msgstr "Komandlinio/ŝela kliento por Akonadi"
 
 #: src/main.cpp:52
-#, fuzzy, kde-format
-#| msgid "Kevin Krammer"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
@@ -1504,11 +1503,10 @@ msgid "Original Author"
 msgstr "Originala Aŭtoro"
 
 #: src/main.cpp:53
-#, fuzzy, kde-format
-#| msgid "Jonathan Marten"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
-msgstr "Jonatano Marteno"
+msgstr "Jonathan Marten"
 
 #: src/main.cpp:53
 #, kde-format
@@ -1517,8 +1515,7 @@ msgid "Additions and new commands"
 msgstr "Aldonoj kaj novaj komandoj"
 
 #: src/main.cpp:54
-#, fuzzy, kde-format
-#| msgid "Bhaskar Kandiyal"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
