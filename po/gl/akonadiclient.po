@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-05 02:06+0000\n"
-"PO-Revision-Date: 2024-06-04 10:02+0200\n"
+"PO-Revision-Date: 2024-06-08 11:32+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -1522,8 +1522,7 @@ msgid "A command-line/shell client for Akonadi"
 msgstr "Un cliente da liña de ordes ou intérprete de ordes para Akonadi."
 
 #: src/main.cpp:52
-#, fuzzy, kde-format
-#| msgid "Kevin Krammer"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
@@ -1535,8 +1534,7 @@ msgid "Original Author"
 msgstr "Autor orixinal"
 
 #: src/main.cpp:53
-#, fuzzy, kde-format
-#| msgid "Jonathan Marten"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
@@ -1548,8 +1546,7 @@ msgid "Additions and new commands"
 msgstr "Engadidos e novas ordes"
 
 #: src/main.cpp:54
-#, fuzzy, kde-format
-#| msgid "Bhaskar Kandiyal"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"

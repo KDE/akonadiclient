@@ -1,21 +1,21 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
 #
-# Steve Allewell <steve.allewell@gmail.com>, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-05 02:06+0000\n"
-"PO-Revision-Date: 2022-07-22 15:48+0100\n"
+"PO-Revision-Date: 2024-06-08 12:29+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language-Team: British English\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -102,8 +102,6 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Set %1=\"%2\" in environment"
 
 #: src/addcommand.cpp:41
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
 msgstr "Add items to a collection"
@@ -283,8 +281,6 @@ msgid "Added file '%2' as item %1"
 msgstr "Added file '%2' as item %1"
 
 #: src/agentscommand.cpp:37
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Manage Akonadi agents"
@@ -440,8 +436,6 @@ msgid "Invalid command"
 msgstr "Invalid command"
 
 #: src/copycommand.cpp:40
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
 msgstr "Copy collections or items into a new collection"
@@ -584,8 +578,6 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "Cannot copy/move items from '%1', %2"
 
 #: src/createcommand.cpp:35
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "Create a new collection"
@@ -655,8 +647,6 @@ msgid "Created new collection '%1'"
 msgstr "Created new collection '%1'"
 
 #: src/deletecommand.cpp:39
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Delete a collection or an item"
@@ -702,8 +692,6 @@ msgid "Item deleted successfully"
 msgstr "Item deleted successfully"
 
 #: src/dumpcommand.cpp:46
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
 msgstr "Dump a collection to a directory structure"
@@ -790,8 +778,6 @@ msgid "Cannot save file '%1'"
 msgstr "Cannot save file '%1'"
 
 #: src/editcommand.cpp:37
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr "Edit the raw payload for the specified item using $EDITOR"
@@ -833,8 +819,6 @@ msgid "Changes to item '%1' have been saved"
 msgstr "Changes to item '%1' have been saved"
 
 #: src/exportcommand.cpp:31
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
 msgstr "Export a collection to an XML file"
@@ -858,8 +842,6 @@ msgid "No export file specified"
 msgstr "No export file specified"
 
 #: src/groupcommand.cpp:39
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "Expand or modify a contact group"
@@ -1104,8 +1086,6 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "Cleaning references from group %1 \"%2\":"
 
 #: src/importcommand.cpp:39
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr "Import an XML file"
@@ -1207,8 +1187,6 @@ msgid "Created item '%1'"
 msgstr "Created item '%1'"
 
 #: src/infocommand.cpp:38
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "Show full information for a collection or item"
@@ -1429,8 +1407,6 @@ msgid "Unknown"
 msgstr "Unknown"
 
 #: src/listcommand.cpp:36
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "List sub-collections and/or items in a specified collection"
@@ -1515,8 +1491,7 @@ msgid "A command-line/shell client for Akonadi"
 msgstr "A command-line/shell client for Akonadi"
 
 #: src/main.cpp:52
-#, fuzzy, kde-format
-#| msgid "Kevin Krammer"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
@@ -1528,8 +1503,7 @@ msgid "Original Author"
 msgstr "Original Author"
 
 #: src/main.cpp:53
-#, fuzzy, kde-format
-#| msgid "Jonathan Marten"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
@@ -1541,8 +1515,7 @@ msgid "Additions and new commands"
 msgstr "Additions and new commands"
 
 #: src/main.cpp:54
-#, fuzzy, kde-format
-#| msgid "Bhaskar Kandiyal"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
@@ -1582,8 +1555,6 @@ msgstr ""
 "See '%1 help command' for information on a specific command."
 
 #: src/movecommand.cpp:27
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Move collections or items into a new collection"
@@ -1601,8 +1572,6 @@ msgid "Destination collection to move into"
 msgstr "Destination collection to move into"
 
 #: src/renamecommand.cpp:33
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "Rename a collection"
@@ -1632,8 +1601,6 @@ msgid "Collection renamed successfully"
 msgstr "Collection renamed successfully"
 
 #: src/showcommand.cpp:34
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr "Show the raw payload of an item"
@@ -1674,8 +1641,6 @@ msgid "Item has no main body part"
 msgstr "Item has no main body part"
 
 #: src/tagscommand.cpp:31
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "List or modify tags"
@@ -1794,8 +1759,6 @@ msgid "URL"
 msgstr "URL"
 
 #: src/updatecommand.cpp:35
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr "Update an item's payload from a file"
