@@ -1,21 +1,21 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
 #
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-05 02:06+0000\n"
-"PO-Revision-Date: 2023-01-07 05:11+0900\n"
+"PO-Revision-Date: 2024-06-15 04:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -102,8 +102,6 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "在環境設定 %1=\"%2\""
 
 #: src/addcommand.cpp:41
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
 msgstr "新增項目到收藏"
@@ -283,8 +281,6 @@ msgid "Added file '%2' as item %1"
 msgstr "已將檔案 '%2' 新增為項目 %1"
 
 #: src/agentscommand.cpp:37
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "管理 Akonadi 代理程式"
@@ -440,8 +436,6 @@ msgid "Invalid command"
 msgstr "無效的命令"
 
 #: src/copycommand.cpp:40
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
 msgstr "複製收藏或項目到新收藏裡"
@@ -580,8 +574,6 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "無法從 '%1' 複製/移動項目，%2"
 
 #: src/createcommand.cpp:35
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "建立新收藏"
@@ -649,8 +641,6 @@ msgid "Created new collection '%1'"
 msgstr "已建立新收藏 '%1'"
 
 #: src/deletecommand.cpp:39
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "刪除一個收藏或項目"
@@ -696,8 +686,6 @@ msgid "Item deleted successfully"
 msgstr "成功刪除項目"
 
 #: src/dumpcommand.cpp:46
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
 msgstr "將收藏傾印至一個目錄結構"
@@ -784,8 +772,6 @@ msgid "Cannot save file '%1'"
 msgstr "無法儲存檔案 '%1'"
 
 #: src/editcommand.cpp:37
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr "用 $EDITOR 環境變數內的編輯器編輯指定項目的原始負載 (payload)"
@@ -827,8 +813,6 @@ msgid "Changes to item '%1' have been saved"
 msgstr "項目 '%1' 的變更已儲存"
 
 #: src/exportcommand.cpp:31
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
 msgstr "將收藏匯出到 XML 檔"
@@ -852,8 +836,6 @@ msgid "No export file specified"
 msgstr "未指定匯出檔案"
 
 #: src/groupcommand.cpp:39
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "展開或修改一個聯絡人群組"
@@ -1097,8 +1079,6 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "正在清理群組 %1「%2」內的參照："
 
 #: src/importcommand.cpp:39
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr "匯入 XML 檔"
@@ -1200,8 +1180,6 @@ msgid "Created item '%1'"
 msgstr "已建立項目 '%1'"
 
 #: src/infocommand.cpp:38
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "為收藏或項目顯示完整資訊"
@@ -1422,8 +1400,6 @@ msgid "Unknown"
 msgstr "未知"
 
 #: src/listcommand.cpp:36
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "列出指定的收藏內的子收藏和/或項目"
@@ -1506,8 +1482,7 @@ msgid "A command-line/shell client for Akonadi"
 msgstr "Akonadi 用的命令列用戶端"
 
 #: src/main.cpp:52
-#, fuzzy, kde-format
-#| msgid "Kevin Krammer"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
@@ -1519,8 +1494,7 @@ msgid "Original Author"
 msgstr "原始作者"
 
 #: src/main.cpp:53
-#, fuzzy, kde-format
-#| msgid "Jonathan Marten"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
@@ -1532,8 +1506,7 @@ msgid "Additions and new commands"
 msgstr "新功能和新命令"
 
 #: src/main.cpp:54
-#, fuzzy, kde-format
-#| msgid "Bhaskar Kandiyal"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
@@ -1573,8 +1546,6 @@ msgstr ""
 "指定命令的資訊請參見 '%1 help 命令'。"
 
 #: src/movecommand.cpp:27
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "移動收藏或項目到新收藏裡"
@@ -1592,8 +1563,6 @@ msgid "Destination collection to move into"
 msgstr "要移動到的目標收藏"
 
 #: src/renamecommand.cpp:33
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "重新命名收藏"
@@ -1623,8 +1592,6 @@ msgid "Collection renamed successfully"
 msgstr "成功為收藏進行重新命名"
 
 #: src/showcommand.cpp:34
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr "顯示項目的原始負載 (payload)"
@@ -1665,8 +1632,6 @@ msgid "Item has no main body part"
 msgstr "項目沒有主要內文部分"
 
 #: src/tagscommand.cpp:31
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "列出或修改標籤"
@@ -1785,8 +1750,6 @@ msgid "URL"
 msgstr "URL"
 
 #: src/updatecommand.cpp:35
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr "從檔案更新一個項目的負載"
