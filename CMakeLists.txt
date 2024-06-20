@@ -1,6 +1,6 @@
 project(akonadiclient)
 
-cmake_minimum_required (VERSION 3.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 
 set(QT_MIN_VERSION "6.6.0")
 set(KF_MIN_VERSION "6.2.0")
@@ -28,11 +28,11 @@ remove_definitions(-DQT_NO_CAST_TO_ASCII)
 add_definitions(-DTRANSLATION_DOMAIN=\"akonadiclient\")
 
 # KDE Application Version, managed by release script
-set (KDE_APPLICATIONS_VERSION_MAJOR "24")
-set (KDE_APPLICATIONS_VERSION_MINOR "07")
-set (KDE_APPLICATIONS_VERSION_MICRO "70")
+set(KDE_APPLICATIONS_VERSION_MAJOR "24")
+set(KDE_APPLICATIONS_VERSION_MINOR "07")
+set(KDE_APPLICATIONS_VERSION_MICRO "70")
 
-set (KDE_APPLICATIONS_VERSION "${KDE_APPLICATIONS_VERSION_MAJOR}.${KDE_APPLICATIONS_VERSION_MINOR}.${KDE_APPLICATIONS_VERSION_MICRO}")
+set(KDE_APPLICATIONS_VERSION "${KDE_APPLICATIONS_VERSION_MAJOR}.${KDE_APPLICATIONS_VERSION_MINOR}.${KDE_APPLICATIONS_VERSION_MICRO}")
 
 find_package(KPim6Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(KPim6AkonadiContactCore ${AKONADI_CONTACT_VERSION} CONFIG REQUIRED)
@@ -44,7 +44,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DocTools)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 ecm_set_disabled_deprecation_versions(QT 6.7
     KF 6.3.0
-    )
+   )
 add_custom_target(vcsversion
   ALL
   COMMENT "Checking VCS type and version"
