@@ -1,16 +1,16 @@
 # Translation for akonadiclient.po to Euskara/Basque (eu).
-# Copyright (C) 2020-2022, This file is copyright:
+# Copyright (C) 2020-2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
-# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
+# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020, 2021, 2022.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020, 2021, 2022, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-05 02:06+0000\n"
-"PO-Revision-Date: 2022-07-14 18:21+0200\n"
+"PO-Revision-Date: 2024-06-29 13:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -105,11 +105,9 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Ingurunean %1=\"%2\" ezarri"
 
 #: src/addcommand.cpp:41
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
-msgstr "Gehitu elementuak bilduma bati"
+msgstr "Gehitu elementuak bilduma batera"
 
 #: src/addcommand.cpp:59
 #, kde-format
@@ -288,8 +286,6 @@ msgid "Added file '%2' as item %1"
 msgstr "«%2» fitxategia %1 elementu gisa gehitu da"
 
 #: src/agentscommand.cpp:37
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Kudeatu Akonadi-ren agenteak"
@@ -445,8 +441,6 @@ msgid "Invalid command"
 msgstr "Komando baliogabea"
 
 #: src/copycommand.cpp:40
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
 msgstr "Kopiatu bildumak edo elementuak bilduma berri batean"
@@ -589,8 +583,6 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "Ezin dira elementuak «%1»(e)tik kopiatu/mugitu, %2"
 
 #: src/createcommand.cpp:35
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "Sortu bilduma berri bat"
@@ -659,8 +651,6 @@ msgid "Created new collection '%1'"
 msgstr "Sortu bilduma berria «%1»"
 
 #: src/deletecommand.cpp:39
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Ezabatu bilduma bat edo elementu bat"
@@ -706,11 +696,9 @@ msgid "Item deleted successfully"
 msgstr "Elementua ondo ezabatu da"
 
 #: src/dumpcommand.cpp:46
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
-msgstr "Irauli bilduma bat direktorio egitura batera"
+msgstr "Irauli bilduma bat direktorio egitura batean"
 
 #: src/dumpcommand.cpp:58
 #, kde-format
@@ -795,8 +783,6 @@ msgid "Cannot save file '%1'"
 msgstr "Ezin da gorde «%1» fitxategia"
 
 #: src/editcommand.cpp:37
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr ""
@@ -839,8 +825,6 @@ msgid "Changes to item '%1' have been saved"
 msgstr "«%1» elementuari egindako aldaketak gorde dira"
 
 #: src/exportcommand.cpp:31
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
 msgstr "Esportatu bilduma bat XML fitxategi batera"
@@ -864,8 +848,6 @@ msgid "No export file specified"
 msgstr "Ez da esportatzeko fitxategirik zehaztu"
 
 #: src/groupcommand.cpp:39
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "Zabaldu edo aldatu kontaktu talde bat"
@@ -1111,8 +1093,6 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "%1 «%2» taldeko erreferentziak garbitzen:"
 
 #: src/importcommand.cpp:39
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr "Inportatu XML fitxategi bat"
@@ -1214,8 +1194,6 @@ msgid "Created item '%1'"
 msgstr "«%1» elementua sortu da"
 
 #: src/infocommand.cpp:38
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "Erakutsi bilduma edo elementu bati buruzko informazio osoa"
@@ -1436,8 +1414,6 @@ msgid "Unknown"
 msgstr "Ezezaguna"
 
 #: src/listcommand.cpp:36
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Zerrendatu bilduma zehatz bateko azpi-bilduma eta/edo elementuak"
@@ -1522,8 +1498,7 @@ msgid "A command-line/shell client for Akonadi"
 msgstr "Akonadi-rako komando-lerro/oskol bezero bat"
 
 #: src/main.cpp:52
-#, fuzzy, kde-format
-#| msgid "Kevin Krammer"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
@@ -1535,8 +1510,7 @@ msgid "Original Author"
 msgstr "Jatorrizko egilea"
 
 #: src/main.cpp:53
-#, fuzzy, kde-format
-#| msgid "Jonathan Marten"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
@@ -1548,8 +1522,7 @@ msgid "Additions and new commands"
 msgstr "Eransketak eta komando berriak"
 
 #: src/main.cpp:54
-#, fuzzy, kde-format
-#| msgid "Bhaskar Kandiyal"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
@@ -1589,8 +1562,6 @@ msgstr ""
 "Begiratu '%1 help komandoa' komando zehatz baten informaziorako."
 
 #: src/movecommand.cpp:27
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Eraman bildumak edo elementuak bilduma berri batera"
@@ -1608,8 +1579,6 @@ msgid "Destination collection to move into"
 msgstr "Mugitzeko helmugako bilduma"
 
 #: src/renamecommand.cpp:33
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "Berrizendatu bilduma bat"
@@ -1639,8 +1608,6 @@ msgid "Collection renamed successfully"
 msgstr "Bilduma ondo berrizendatu da"
 
 #: src/showcommand.cpp:34
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr "Erakutsi elementu baten zama erabilgarri gordina"
@@ -1682,8 +1649,6 @@ msgid "Item has no main body part"
 msgstr "Elementuak ez du gorputz atal nagusirik"
 
 #: src/tagscommand.cpp:31
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "Zerrendatu edo aldatu etiketak"
@@ -1804,11 +1769,9 @@ msgid "URL"
 msgstr "URLa"
 
 #: src/updatecommand.cpp:35
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
-msgstr "Eguneratu elementu baten zama erabilgarria fitxategi batetik"
+msgstr "Fitxategi batetik elementu baten zama erabilgarria eguneratzea"
 
 #: src/updatecommand.cpp:52
 #, kde-format
