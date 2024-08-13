@@ -20,8 +20,6 @@
 
 #include <KLocalizedString>
 
-#include <QCommandLineParser>
-
 #include "collectionresolvejob.h"
 #include "commandshell.h"
 #include "errorreporter.h"

@@ -20,7 +20,6 @@
 
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
-#include <Akonadi/CollectionPathResolver>
 
 #include <KLocalizedString>
 
