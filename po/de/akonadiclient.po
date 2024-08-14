@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 02:06+0000\n"
+"POT-Creation-Date: 2024-08-14 01:47+0000\n"
 "PO-Revision-Date: 2022-11-14 19:03+0100\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -30,61 +30,61 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-i18n-de@kde.org"
 
-#: src/abstractcommand.cpp:49
+#: src/abstractcommand.cpp:47
 #, kde-format
 msgctxt "@info:shell"
 msgid "The name of the command"
 msgstr "Der Name des Befehls"
 
-#: src/abstractcommand.cpp:93 src/main.cpp:65
+#: src/abstractcommand.cpp:91 src/main.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "Options for command"
 msgstr "Optionen für Befehle"
 
-#: src/abstractcommand.cpp:93 src/main.cpp:65
+#: src/abstractcommand.cpp:91 src/main.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "[options]"
 msgstr "[options]"
 
-#: src/abstractcommand.cpp:100
+#: src/abstractcommand.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that a collection is specified"
 msgstr "Annahme, dass eine Sammlung angegeben ist"
 
-#: src/abstractcommand.cpp:104
+#: src/abstractcommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that an item is specified"
 msgstr "Annahme, dass ein Eintrag angegeben ist"
 
-#: src/abstractcommand.cpp:112
+#: src/abstractcommand.cpp:110
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run without making any actual changes"
 msgstr "Ausführung ohne tatsächlich Änderungen vorzunehmen"
 
-#: src/abstractcommand.cpp:127
+#: src/abstractcommand.cpp:125
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot specify as both an item and a collection"
 msgstr "Angabe sowohl als Eintrag als auch Sammlung ist nicht möglich"
 
-#: src/abstractcommand.cpp:147
+#: src/abstractcommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid collection/item argument '%1', %2"
 msgstr "Ungültiges Argument „%1“ für Sammlung oder Eintrag, %2"
 
-#: src/abstractcommand.cpp:165
+#: src/abstractcommand.cpp:163
 #, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2. See 'help %1'"
 msgstr "%2. Siehe „help %1“"
 
-#: src/abstractcommand.cpp:168
+#: src/abstractcommand.cpp:166
 #, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
@@ -92,14 +92,14 @@ msgctxt ""
 msgid "%3. See '%1 help %2'"
 msgstr "%3. Siehe „%1 help %2“"
 
-#: src/abstractcommand.cpp:184
+#: src/abstractcommand.cpp:182
 #, kde-format
 msgctxt "@info:shell"
 msgid "Dangerous or destructive operations are not allowed"
 msgstr "Gefährliche oder schädliche Operationen sind nicht erlaubt"
 
 # Damit der Nutzer das 1:1 kopieren kann, müssen das einfache ASCII-Quotes sein
-#: src/abstractcommand.cpp:185
+#: src/abstractcommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
@@ -395,25 +395,25 @@ msgctxt "@info:shell 1=collection ID, 2=collection path"
 msgid "%1 (\"/%2\")"
 msgstr "%1 (\"/%2\")"
 
-#: src/collectionresolvejob.cpp:99
+#: src/collectionresolvejob.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown Akonadi collection format '%1'"
 msgstr "Unbekanntes Format „%1“ der Akonadi-Sammlung"
 
-#: src/collectionresolvejob.cpp:142
+#: src/collectionresolvejob.cpp:141
 #, kde-format
 msgctxt "@info:shell 1=collection ID"
 msgid "%1 (root)"
 msgstr "%1 (Basis)"
 
-#: src/collectionresolvejob.cpp:144
+#: src/collectionresolvejob.cpp:143
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection name"
 msgid "%1 (\"%2\")"
 msgstr "%1 (\"%2\")"
 
-#: src/collectionresolvejob.cpp:168
+#: src/collectionresolvejob.cpp:167
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
