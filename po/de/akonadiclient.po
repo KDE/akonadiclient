@@ -1,24 +1,25 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
 # Burkhard Lück <lueck@hube-lueck.de>, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2022.
 # Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
 # Alois Spitzbart <spitz234@hotmail.com>, 2022.
+# SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-14 01:47+0000\n"
-"PO-Revision-Date: 2022-11-14 19:03+0100\n"
-"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
+"PO-Revision-Date: 2024-08-20 19:38+0200\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -106,8 +107,6 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "%1 = \"%2\" als Umgebungsvariable festlegen"
 
 #: src/addcommand.cpp:41
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
 msgstr "Fügt Einträge zu einer Sammlung hinzu"
@@ -291,8 +290,6 @@ msgid "Added file '%2' as item %1"
 msgstr "Datei „%2“ als Eintrag %1 hinzugefügt"
 
 #: src/agentscommand.cpp:37
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Akonadi-Agenten verwalten"
@@ -448,8 +445,6 @@ msgid "Invalid command"
 msgstr "Ungültiger Befehl"
 
 #: src/copycommand.cpp:40
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
 msgstr "Sammlungen oder Einträge in eine neue Sammlung kopieren"
@@ -592,8 +587,6 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "Einträge können nicht von „%1“ kopiert/verschoben werden, %2"
 
 #: src/createcommand.cpp:35
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "Eine neue Sammlung erstellen"
@@ -664,8 +657,6 @@ msgid "Created new collection '%1'"
 msgstr "Neue Sammlung „%1“ erstellt"
 
 #: src/deletecommand.cpp:39
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Eine Sammlung oder einen Eintrag löschen"
@@ -711,8 +702,6 @@ msgid "Item deleted successfully"
 msgstr "Eintrag erfolgreich gelöscht"
 
 #: src/dumpcommand.cpp:46
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
 msgstr "Ausgabe einer Sammlung in eine Ordnerstruktur"
@@ -803,8 +792,6 @@ msgid "Cannot save file '%1'"
 msgstr "Die Datei „%1“ kann nicht gespeichert werden"
 
 #: src/editcommand.cpp:37
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr ""
@@ -847,8 +834,6 @@ msgid "Changes to item '%1' have been saved"
 msgstr "Die Änderungen am Eintrag „%1“ wurden gespeichert"
 
 #: src/exportcommand.cpp:31
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
 msgstr "Eine Sammlung in eine XML-Datei exportieren"
@@ -872,8 +857,6 @@ msgid "No export file specified"
 msgstr "Keine Exportdatei angegeben"
 
 #: src/groupcommand.cpp:39
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "Eine Kontaktgruppe erweitern oder bearbeiten"
@@ -1120,8 +1103,6 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "Referenzen in Gruppe %1 „%2“ werden bereinigt:"
 
 #: src/importcommand.cpp:39
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr "Eine XML-Datei importieren"
@@ -1224,8 +1205,6 @@ msgid "Created item '%1'"
 msgstr "Eintrag „%1“ erstellt"
 
 #: src/infocommand.cpp:38
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "Vollständige Information für eine Sammlung oder einen Eintrag anzeigen"
@@ -1446,8 +1425,6 @@ msgid "Unknown"
 msgstr "Unbekannt"
 
 #: src/listcommand.cpp:36
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Untersammlungen und/oder Einträge in angegebener Sammlung auflisten"
@@ -1532,8 +1509,7 @@ msgid "A command-line/shell client for Akonadi"
 msgstr "Ein Befehlszeilenprogramm für Akonadi"
 
 #: src/main.cpp:52
-#, fuzzy, kde-format
-#| msgid "Kevin Krammer"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
@@ -1545,8 +1521,7 @@ msgid "Original Author"
 msgstr "Ursprünglicher Autor"
 
 #: src/main.cpp:53
-#, fuzzy, kde-format
-#| msgid "Jonathan Marten"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
@@ -1558,8 +1533,7 @@ msgid "Additions and new commands"
 msgstr "Erweiterungen und neue Befehle"
 
 #: src/main.cpp:54
-#, fuzzy, kde-format
-#| msgid "Bhaskar Kandiyal"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
@@ -1599,8 +1573,6 @@ msgstr ""
 "Siehe „ %1 help Befehl“ für Informationen zu einem bestimmten Befehl."
 
 #: src/movecommand.cpp:27
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Sammlungen oder Einträge in eine neuen Sammlung verschieben"
@@ -1618,8 +1590,6 @@ msgid "Destination collection to move into"
 msgstr "Zielsammlung, in die verschoben werden soll"
 
 #: src/renamecommand.cpp:33
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "Eine Sammlung umbenennen"
@@ -1649,8 +1619,6 @@ msgid "Collection renamed successfully"
 msgstr "Die Sammlung wurde erfolgreich umbenannt"
 
 #: src/showcommand.cpp:34
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr "Die rohen Nutzdaten eines Eintrags anzeigen"
@@ -1692,8 +1660,6 @@ msgid "Item has no main body part"
 msgstr "Eintrag hat keinen Hauptteil"
 
 #: src/tagscommand.cpp:31
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "Tags anzeigen oder bearbeiten"
@@ -1817,8 +1783,6 @@ msgid "URL"
 msgstr "URL"
 
 #: src/updatecommand.cpp:35
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr "Nutzdaten eines Eintrags aus einer Datei aktualisieren"
