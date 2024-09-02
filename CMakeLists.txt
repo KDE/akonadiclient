@@ -3,7 +3,7 @@ project(akonadiclient)
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 
 set(QT_MIN_VERSION "6.6.0")
-set(KF_MIN_VERSION "6.2.0")
+set(KF_MIN_VERSION "6.2.1")
 set(AKONADI_VERSION "6.1.0")
 set(AKONADI_CONTACT_VERSION "6.1.0")
 
@@ -43,7 +43,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DocTools)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 ecm_set_disabled_deprecation_versions(QT 6.7.2
-    KF 6.5.0
+    KF 6.6.0
    )
 add_custom_target(vcsversion
   ALL
