@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 01:47+0000\n"
+"POT-Creation-Date: 2024-09-21 01:52+0000\n"
 "PO-Revision-Date: 2022-12-19 18:08+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -1241,25 +1241,25 @@ msgctxt "@info:shell"
 msgid "No information available for collection root"
 msgstr "Nie sú k dispozícii žiadne informácie pre koreňovú kolekciu"
 
-#: src/infocommand.cpp:220 src/infocommand.cpp:266
+#: src/infocommand.cpp:220 src/infocommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID"
 msgstr "ID"
 
-#: src/infocommand.cpp:221 src/infocommand.cpp:267
+#: src/infocommand.cpp:221 src/infocommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "URL"
 msgstr "URL"
 
-#: src/infocommand.cpp:222 src/infocommand.cpp:268
+#: src/infocommand.cpp:222 src/infocommand.cpp:269
 #, kde-format
 msgctxt "@info:shell"
 msgid "Parent"
 msgstr "Rodič"
 
-#: src/infocommand.cpp:223 src/infocommand.cpp:269 src/infocommand.cpp:301
+#: src/infocommand.cpp:223 src/infocommand.cpp:270 src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell"
 msgid "Type"
@@ -1283,151 +1283,157 @@ msgctxt "@info:shell"
 msgid "Owner"
 msgstr "Vlastník"
 
-#: src/infocommand.cpp:226 src/infocommand.cpp:270
+#: src/infocommand.cpp:226 src/infocommand.cpp:271
 #, kde-format
 msgctxt "@info:shell"
 msgid "MIME"
 msgstr "MIME"
 
-#: src/infocommand.cpp:227 src/infocommand.cpp:274
+#: src/infocommand.cpp:227 src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
 msgstr "Vzdialené ID"
 
-#: src/infocommand.cpp:232
+#: src/infocommand.cpp:228
+#, kde-format
+msgctxt "@info:shell"
+msgid "Path"
+msgstr ""
+
+#: src/infocommand.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
 msgstr "LenNaČítanie"
 
-#: src/infocommand.cpp:235
+#: src/infocommand.cpp:236
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
 msgstr "ZmeniťPoložku"
 
-#: src/infocommand.cpp:238
+#: src/infocommand.cpp:239
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
 msgstr "VytvoriťPoložku"
 
-#: src/infocommand.cpp:241
+#: src/infocommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
 msgstr "VymazaťPoložku"
 
-#: src/infocommand.cpp:244
+#: src/infocommand.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
 msgstr "ZmeniťKolekciu"
 
-#: src/infocommand.cpp:247
+#: src/infocommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
 msgstr "VytvoriťKolekciu"
 
-#: src/infocommand.cpp:250
+#: src/infocommand.cpp:251
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
 msgstr "VymazaťKolekciu"
 
-#: src/infocommand.cpp:253
+#: src/infocommand.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
 msgstr "PrepojiťPoložku"
 
-#: src/infocommand.cpp:256
+#: src/infocommand.cpp:257
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
 msgstr "OdpojiťPoložku"
 
-#: src/infocommand.cpp:258
+#: src/infocommand.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Rights"
 msgstr "Práva"
 
-#: src/infocommand.cpp:261
+#: src/infocommand.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Count"
 msgstr "Počet"
 
-#: src/infocommand.cpp:262
+#: src/infocommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unread"
 msgstr "Neprečítané"
 
-#: src/infocommand.cpp:264 src/infocommand.cpp:298
+#: src/infocommand.cpp:265 src/infocommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "Size"
 msgstr "Veľkosť"
 
-#: src/infocommand.cpp:269
+#: src/infocommand.cpp:270
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Item"
 msgstr "Položka"
 
-#: src/infocommand.cpp:272
+#: src/infocommand.cpp:273
 #, kde-format
 msgctxt "@info:shell"
 msgid "Modified"
 msgstr "Zmenené"
 
-#: src/infocommand.cpp:273
+#: src/infocommand.cpp:274
 #, kde-format
 msgctxt "@info:shell"
 msgid "Revision"
 msgstr "Revízia"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
 msgstr "Dátový obsah"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "yes"
 msgstr "áno"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "no"
 msgstr "nie"
 
-#: src/infocommand.cpp:283 src/infocommand.cpp:293
+#: src/infocommand.cpp:284 src/infocommand.cpp:294
 #, kde-format
 msgctxt "@info:shell"
 msgid "(none)"
 msgstr "(žiadne)"
 
-#: src/infocommand.cpp:285
+#: src/infocommand.cpp:286
 #, kde-format
 msgctxt "@info:shell"
 msgid "Flags"
 msgstr "Príznaky"
 
-#: src/infocommand.cpp:295
+#: src/infocommand.cpp:296
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tags"
 msgstr "Značky"
 
-#: src/infocommand.cpp:301
+#: src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Unknown"

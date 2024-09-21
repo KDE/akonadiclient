@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 01:47+0000\n"
+"POT-Creation-Date: 2024-09-21 01:52+0000\n"
 "PO-Revision-Date: 2024-08-19 21:42+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1207,25 +1207,25 @@ msgctxt "@info:shell"
 msgid "No information available for collection root"
 msgstr "모음집 루트 정보가 없음"
 
-#: src/infocommand.cpp:220 src/infocommand.cpp:266
+#: src/infocommand.cpp:220 src/infocommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID"
 msgstr "ID"
 
-#: src/infocommand.cpp:221 src/infocommand.cpp:267
+#: src/infocommand.cpp:221 src/infocommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "URL"
 msgstr "URL"
 
-#: src/infocommand.cpp:222 src/infocommand.cpp:268
+#: src/infocommand.cpp:222 src/infocommand.cpp:269
 #, kde-format
 msgctxt "@info:shell"
 msgid "Parent"
 msgstr "부모"
 
-#: src/infocommand.cpp:223 src/infocommand.cpp:269 src/infocommand.cpp:301
+#: src/infocommand.cpp:223 src/infocommand.cpp:270 src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell"
 msgid "Type"
@@ -1249,151 +1249,157 @@ msgctxt "@info:shell"
 msgid "Owner"
 msgstr "소유자"
 
-#: src/infocommand.cpp:226 src/infocommand.cpp:270
+#: src/infocommand.cpp:226 src/infocommand.cpp:271
 #, kde-format
 msgctxt "@info:shell"
 msgid "MIME"
 msgstr "MIME"
 
-#: src/infocommand.cpp:227 src/infocommand.cpp:274
+#: src/infocommand.cpp:227 src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
 msgstr "원격 ID"
 
-#: src/infocommand.cpp:232
+#: src/infocommand.cpp:228
+#, kde-format
+msgctxt "@info:shell"
+msgid "Path"
+msgstr ""
+
+#: src/infocommand.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
 msgstr "읽기 전용"
 
-#: src/infocommand.cpp:235
+#: src/infocommand.cpp:236
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
 msgstr "항목 변경"
 
-#: src/infocommand.cpp:238
+#: src/infocommand.cpp:239
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
 msgstr "항목 생성"
 
-#: src/infocommand.cpp:241
+#: src/infocommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
 msgstr "항목 삭제"
 
-#: src/infocommand.cpp:244
+#: src/infocommand.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
 msgstr "모음집 변경"
 
-#: src/infocommand.cpp:247
+#: src/infocommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
 msgstr "모음집 생성"
 
-#: src/infocommand.cpp:250
+#: src/infocommand.cpp:251
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
 msgstr "모음집 삭제"
 
-#: src/infocommand.cpp:253
+#: src/infocommand.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
 msgstr "항목 링크"
 
-#: src/infocommand.cpp:256
+#: src/infocommand.cpp:257
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
 msgstr "항목 링크 해제"
 
-#: src/infocommand.cpp:258
+#: src/infocommand.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Rights"
 msgstr "권한"
 
-#: src/infocommand.cpp:261
+#: src/infocommand.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Count"
 msgstr "개수"
 
-#: src/infocommand.cpp:262
+#: src/infocommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unread"
 msgstr "읽지 않음"
 
-#: src/infocommand.cpp:264 src/infocommand.cpp:298
+#: src/infocommand.cpp:265 src/infocommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "Size"
 msgstr "크기"
 
-#: src/infocommand.cpp:269
+#: src/infocommand.cpp:270
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Item"
 msgstr "항목"
 
-#: src/infocommand.cpp:272
+#: src/infocommand.cpp:273
 #, kde-format
 msgctxt "@info:shell"
 msgid "Modified"
 msgstr "수정됨"
 
-#: src/infocommand.cpp:273
+#: src/infocommand.cpp:274
 #, kde-format
 msgctxt "@info:shell"
 msgid "Revision"
 msgstr "리비전"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
 msgstr "페이로드"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "yes"
 msgstr "예"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "no"
 msgstr "아니요"
 
-#: src/infocommand.cpp:283 src/infocommand.cpp:293
+#: src/infocommand.cpp:284 src/infocommand.cpp:294
 #, kde-format
 msgctxt "@info:shell"
 msgid "(none)"
 msgstr "(없음)"
 
-#: src/infocommand.cpp:285
+#: src/infocommand.cpp:286
 #, kde-format
 msgctxt "@info:shell"
 msgid "Flags"
 msgstr "플래그"
 
-#: src/infocommand.cpp:295
+#: src/infocommand.cpp:296
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tags"
 msgstr "태그"
 
-#: src/infocommand.cpp:301
+#: src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Unknown"

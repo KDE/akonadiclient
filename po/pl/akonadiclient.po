@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 01:47+0000\n"
+"POT-Creation-Date: 2024-09-21 01:52+0000\n"
 "PO-Revision-Date: 2024-06-22 08:22+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1221,25 +1221,25 @@ msgctxt "@info:shell"
 msgid "No information available for collection root"
 msgstr "Brak danych dla głównego zbioru"
 
-#: src/infocommand.cpp:220 src/infocommand.cpp:266
+#: src/infocommand.cpp:220 src/infocommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID"
 msgstr "ID"
 
-#: src/infocommand.cpp:221 src/infocommand.cpp:267
+#: src/infocommand.cpp:221 src/infocommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "URL"
 msgstr "Adres URL"
 
-#: src/infocommand.cpp:222 src/infocommand.cpp:268
+#: src/infocommand.cpp:222 src/infocommand.cpp:269
 #, kde-format
 msgctxt "@info:shell"
 msgid "Parent"
 msgstr "Nadrzędny"
 
-#: src/infocommand.cpp:223 src/infocommand.cpp:269 src/infocommand.cpp:301
+#: src/infocommand.cpp:223 src/infocommand.cpp:270 src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell"
 msgid "Type"
@@ -1263,151 +1263,157 @@ msgctxt "@info:shell"
 msgid "Owner"
 msgstr "Właściciel"
 
-#: src/infocommand.cpp:226 src/infocommand.cpp:270
+#: src/infocommand.cpp:226 src/infocommand.cpp:271
 #, kde-format
 msgctxt "@info:shell"
 msgid "MIME"
 msgstr "MIME"
 
-#: src/infocommand.cpp:227 src/infocommand.cpp:274
+#: src/infocommand.cpp:227 src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
 msgstr "Zdalne ID"
 
-#: src/infocommand.cpp:232
+#: src/infocommand.cpp:228
+#, kde-format
+msgctxt "@info:shell"
+msgid "Path"
+msgstr ""
+
+#: src/infocommand.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
 msgstr "Tylko-do-odczytu"
 
-#: src/infocommand.cpp:235
+#: src/infocommand.cpp:236
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
 msgstr "ZmieńRzecz"
 
-#: src/infocommand.cpp:238
+#: src/infocommand.cpp:239
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
 msgstr "UtwórzRzecz"
 
-#: src/infocommand.cpp:241
+#: src/infocommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
 msgstr "UsuńRzecz"
 
-#: src/infocommand.cpp:244
+#: src/infocommand.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
 msgstr "ZmieńZbiór"
 
-#: src/infocommand.cpp:247
+#: src/infocommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
 msgstr "UtwórzZbiór"
 
-#: src/infocommand.cpp:250
+#: src/infocommand.cpp:251
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
 msgstr "UsuńZbiór"
 
-#: src/infocommand.cpp:253
+#: src/infocommand.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
 msgstr "DowiążRzecz"
 
-#: src/infocommand.cpp:256
+#: src/infocommand.cpp:257
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
 msgstr "OdwiążRzecz"
 
-#: src/infocommand.cpp:258
+#: src/infocommand.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Rights"
 msgstr "Prawa"
 
-#: src/infocommand.cpp:261
+#: src/infocommand.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Count"
 msgstr "Liczba"
 
-#: src/infocommand.cpp:262
+#: src/infocommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unread"
 msgstr "Nieprzeczytanych"
 
-#: src/infocommand.cpp:264 src/infocommand.cpp:298
+#: src/infocommand.cpp:265 src/infocommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "Size"
 msgstr "Rozmiar"
 
-#: src/infocommand.cpp:269
+#: src/infocommand.cpp:270
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Item"
 msgstr "Rzecz"
 
-#: src/infocommand.cpp:272
+#: src/infocommand.cpp:273
 #, kde-format
 msgctxt "@info:shell"
 msgid "Modified"
 msgstr "Zmieniony"
 
-#: src/infocommand.cpp:273
+#: src/infocommand.cpp:274
 #, kde-format
 msgctxt "@info:shell"
 msgid "Revision"
 msgstr "Wydanie"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
 msgstr "Zawartość"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "yes"
 msgstr "tak"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "no"
 msgstr "nie"
 
-#: src/infocommand.cpp:283 src/infocommand.cpp:293
+#: src/infocommand.cpp:284 src/infocommand.cpp:294
 #, kde-format
 msgctxt "@info:shell"
 msgid "(none)"
 msgstr "(brak)"
 
-#: src/infocommand.cpp:285
+#: src/infocommand.cpp:286
 #, kde-format
 msgctxt "@info:shell"
 msgid "Flags"
 msgstr "Flagi"
 
-#: src/infocommand.cpp:295
+#: src/infocommand.cpp:296
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tags"
 msgstr "Znaczniki"
 
-#: src/infocommand.cpp:301
+#: src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Unknown"

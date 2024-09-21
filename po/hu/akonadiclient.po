@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 01:47+0000\n"
+"POT-Creation-Date: 2024-09-21 01:52+0000\n"
 "PO-Revision-Date: 2024-03-14 10:04+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1244,25 +1244,25 @@ msgctxt "@info:shell"
 msgid "No information available for collection root"
 msgstr "Nem érhetők el információk a gyűjteménygyökérhez"
 
-#: src/infocommand.cpp:220 src/infocommand.cpp:266
+#: src/infocommand.cpp:220 src/infocommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID"
 msgstr "Azonosító"
 
-#: src/infocommand.cpp:221 src/infocommand.cpp:267
+#: src/infocommand.cpp:221 src/infocommand.cpp:268
 #, kde-format
 msgctxt "@info:shell"
 msgid "URL"
 msgstr "URL-cím"
 
-#: src/infocommand.cpp:222 src/infocommand.cpp:268
+#: src/infocommand.cpp:222 src/infocommand.cpp:269
 #, kde-format
 msgctxt "@info:shell"
 msgid "Parent"
 msgstr "Szülő"
 
-#: src/infocommand.cpp:223 src/infocommand.cpp:269 src/infocommand.cpp:301
+#: src/infocommand.cpp:223 src/infocommand.cpp:270 src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell"
 msgid "Type"
@@ -1286,151 +1286,157 @@ msgctxt "@info:shell"
 msgid "Owner"
 msgstr "Tulajdonos"
 
-#: src/infocommand.cpp:226 src/infocommand.cpp:270
+#: src/infocommand.cpp:226 src/infocommand.cpp:271
 #, kde-format
 msgctxt "@info:shell"
 msgid "MIME"
 msgstr "MIME"
 
-#: src/infocommand.cpp:227 src/infocommand.cpp:274
+#: src/infocommand.cpp:227 src/infocommand.cpp:275
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
 msgstr "Távoli azonosító"
 
-#: src/infocommand.cpp:232
+#: src/infocommand.cpp:228
+#, kde-format
+msgctxt "@info:shell"
+msgid "Path"
+msgstr ""
+
+#: src/infocommand.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
 msgstr "Csak olvasható"
 
-#: src/infocommand.cpp:235
+#: src/infocommand.cpp:236
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
 msgstr "Elem módosítása"
 
-#: src/infocommand.cpp:238
+#: src/infocommand.cpp:239
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
 msgstr "Elem létrehozása"
 
-#: src/infocommand.cpp:241
+#: src/infocommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
 msgstr "Elem törlése"
 
-#: src/infocommand.cpp:244
+#: src/infocommand.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
 msgstr "Gyűjtemény módosítása"
 
-#: src/infocommand.cpp:247
+#: src/infocommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
 msgstr "Gyűjtemény létrehozása"
 
-#: src/infocommand.cpp:250
+#: src/infocommand.cpp:251
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
 msgstr "Gyűjtemény törlése"
 
-#: src/infocommand.cpp:253
+#: src/infocommand.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
 msgstr "Elem linkelése"
 
-#: src/infocommand.cpp:256
+#: src/infocommand.cpp:257
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
 msgstr "Link megszüntetése"
 
-#: src/infocommand.cpp:258
+#: src/infocommand.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Rights"
 msgstr "Jogok"
 
-#: src/infocommand.cpp:261
+#: src/infocommand.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Count"
 msgstr "Szám"
 
-#: src/infocommand.cpp:262
+#: src/infocommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unread"
 msgstr "Olvasatlan"
 
-#: src/infocommand.cpp:264 src/infocommand.cpp:298
+#: src/infocommand.cpp:265 src/infocommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "Size"
 msgstr "Méret"
 
-#: src/infocommand.cpp:269
+#: src/infocommand.cpp:270
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Item"
 msgstr "Elem"
 
-#: src/infocommand.cpp:272
+#: src/infocommand.cpp:273
 #, kde-format
 msgctxt "@info:shell"
 msgid "Modified"
 msgstr "Módosítva"
 
-#: src/infocommand.cpp:273
+#: src/infocommand.cpp:274
 #, kde-format
 msgctxt "@info:shell"
 msgid "Revision"
 msgstr "Revízió"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
 msgstr "Tartalom"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "yes"
 msgstr "igen"
 
-#: src/infocommand.cpp:275
+#: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "no"
 msgstr "nem"
 
-#: src/infocommand.cpp:283 src/infocommand.cpp:293
+#: src/infocommand.cpp:284 src/infocommand.cpp:294
 #, kde-format
 msgctxt "@info:shell"
 msgid "(none)"
 msgstr "(nincs)"
 
-#: src/infocommand.cpp:285
+#: src/infocommand.cpp:286
 #, kde-format
 msgctxt "@info:shell"
 msgid "Flags"
 msgstr "Jelzők"
 
-#: src/infocommand.cpp:295
+#: src/infocommand.cpp:296
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tags"
 msgstr "Címkék"
 
-#: src/infocommand.cpp:301
+#: src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Unknown"
