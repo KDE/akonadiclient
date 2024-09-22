@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-21 01:52+0000\n"
-"PO-Revision-Date: 2024-06-08 11:32+0200\n"
+"PO-Revision-Date: 2024-09-22 00:27+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -288,7 +288,7 @@ msgstr "Engadindo o ficheiro «%2» como o elemento %1"
 #: src/agentscommand.cpp:37
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
-msgstr "Xestionar clientes de Akonadi"
+msgstr "Xestionar axentes de Akonadi"
 
 #: src/agentscommand.cpp:51
 #, kde-format
@@ -434,7 +434,7 @@ msgstr "As ordes dispoñíbeis son:"
 
 #: src/commandshell.cpp:30
 msgid "Enter commands in an interactive shell"
-msgstr "Introducir ordes nunha interface interactiva"
+msgstr "Introducir ordes nun intérprete interactivo"
 
 #: src/commandshell.cpp:74
 #, kde-format
@@ -792,7 +792,7 @@ msgstr "Non é posíbel gardar o ficheiro «%1»"
 #: src/editcommand.cpp:37
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
-msgstr "Editar os datos en bruto do elemento indicado usando $EDITOR"
+msgstr "Editar o corpo en bruto do elemento indicado usando $EDITOR"
 
 #: src/editcommand.cpp:54
 #, kde-format
@@ -892,7 +892,7 @@ msgstr "nome"
 #: src/groupcommand.cpp:74
 #, kde-format
 msgid "Brief output (for 'expand', email addresses only)"
-msgstr "Saíra resumida (para «expand», só enderezos de correo electrónico)"
+msgstr "Saída resumida (para «expand», só enderezos de correo electrónico)"
 
 #: src/groupcommand.cpp:77
 #, kde-format
@@ -1288,7 +1288,7 @@ msgstr "Identificador remoto"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Path"
-msgstr ""
+msgstr "Ruta"
 
 # well-spelled: SóLectura
 #: src/infocommand.cpp:233
@@ -1297,7 +1297,7 @@ msgctxt "@info:shell"
 msgid "ReadOnly"
 msgstr "SóLectura"
 
-# skip-rule: PT-2011-dual_change
+# skip-rule: trasno-change_reverse
 # well-spelled: CambiarElemento
 #: src/infocommand.cpp:236
 #, kde-format
@@ -1313,14 +1313,14 @@ msgid "CreateItem"
 msgstr "CrearElemento"
 
 # well-spelled: EliminarElemento
-# skip-rule: PT-2011-dual_delete
+# skip-rule: trasno-delete_reverse
 #: src/infocommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
 msgstr "EliminarElemento"
 
-# skip-rule: PT-2011-dual_change
+# skip-rule: trasno-change_reverse
 # well-spelled: CambiarCol
 #: src/infocommand.cpp:245
 #, kde-format
@@ -1336,7 +1336,7 @@ msgid "CreateColl"
 msgstr "CrearCol"
 
 # well-spelled: EliminarCol
-# skip-rule: PT-2011-dual_delete
+# skip-rule: trasno-delete_reverse
 #: src/infocommand.cpp:251
 #, kde-format
 msgctxt "@info:shell"
@@ -1537,7 +1537,7 @@ msgstr "Kevin Krammer"
 #, kde-format
 msgctxt "@title about data task"
 msgid "Original Author"
-msgstr "Autor orixinal"
+msgstr "Autoría orixinal."
 
 #: src/main.cpp:53
 #, kde-format
@@ -1640,7 +1640,7 @@ msgstr "Renomeouse a colección"
 #: src/showcommand.cpp:34
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
-msgstr "Amosar os datos en bruto dun elemento"
+msgstr "Amosar o corpo en bruto dun elemento."
 
 #: src/showcommand.cpp:43
 #, kde-format
@@ -1658,7 +1658,7 @@ msgstr "elemento…"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Use raw payload (disables quoted-printable decoding)"
-msgstr "Usar os datos en cru (desactiva a descodificación de QP)"
+msgstr "Usar o corpo en cru (desactiva a descodificación de QP)."
 
 #: src/showcommand.cpp:51
 #, kde-format
@@ -1749,7 +1749,7 @@ msgstr "Non se indicaron as etiquetas para engadir"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr "Só se poden indicar varias etiquetas para engadir con «id»"
+msgstr "Non é posíbel indicar varias etiquetas para engadir con «id»."
 
 #: src/tagscommand.cpp:129
 #, kde-format
@@ -1802,7 +1802,7 @@ msgstr "URL"
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
-msgstr "Actualizar os datos dun elemento a partir dun ficheiro"
+msgstr "Actualizar o corpo dun elemento a partir dun ficheiro."
 
 #: src/updatecommand.cpp:52
 #, kde-format
