@@ -32,6 +32,10 @@ public:
 
     void start() override;
 
+    [[nodiscard]] const Akonadi::Collection &collection() const
+    {
+        return (mCollection);
+    }
     [[nodiscard]] QString collectionPath() const;
     [[nodiscard]] QString formattedCollectionPath() const;
 

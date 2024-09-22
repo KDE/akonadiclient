@@ -19,6 +19,7 @@
 #pragma once
 
 #include "abstractcommand.h"
+#include <Akonadi/Collection>
 
 class KJob;
 
@@ -43,13 +44,20 @@ private:
     bool mListItems;
     bool mListCollections;
     bool mListDetails;
+    bool mListRecursive;
+    Akonadi::Collection::List mCollections; // needed for recursive list
+    QString mBasePath; // only used for recursive list
 
 private:
     void fetchCollections();
     void fetchItems();
+    void processCollections();
+    void writeCollection(const Akonadi::Collection::Id &id, const QString &nameOrPath);
 
 private Q_SLOTS:
     void onBaseFetched(KJob *job);
+    void onBaseResolved(KJob *job);
     void onCollectionsFetched(KJob *job);
     void onItemsFetched(KJob *job);
+    void onParentPathFetched(KJob *job);
 };
