@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 01:52+0000\n"
+"POT-Creation-Date: 2024-09-23 01:47+0000\n"
 "PO-Revision-Date: 2024-06-05 23:54+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -149,7 +149,7 @@ msgstr "Dosieroj aŭ dosierujoj por aldoni al la aro"
 msgid "files..."
 msgstr "dosieroj..."
 
-#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:62
+#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
@@ -746,7 +746,7 @@ msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr "Dosierujo '%1' ne estas malplena (uzu '-f' por devigi operacion)"
 
-#: src/dumpcommand.cpp:121 src/listcommand.cpp:186
+#: src/dumpcommand.cpp:121 src/listcommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -998,7 +998,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "Tipo"
 
-#: src/groupcommand.cpp:402 src/listcommand.cpp:147 src/listcommand.cpp:214
+#: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
 #: src/tagscommand.cpp:319
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1011,7 +1011,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "Retpoŝto"
 
-#: src/groupcommand.cpp:404 src/listcommand.cpp:148 src/tagscommand.cpp:321
+#: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -1412,39 +1412,62 @@ msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "Nekonata"
 
-#: src/listcommand.cpp:36
+#: src/listcommand.cpp:37
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Listigi subarojn kaj/aŭ erojn en difinita aro"
 
-#: src/listcommand.cpp:48
+#: src/listcommand.cpp:49
 #, kde-format
 msgid "List more detailed information"
 msgstr "Listigi pli detalajn informojn"
 
-#: src/listcommand.cpp:51
+#: src/listcommand.cpp:52
 #, kde-format
 msgid "List only sub-collections"
 msgstr "Listigi nur subarojn"
 
-#: src/listcommand.cpp:54
+#: src/listcommand.cpp:55
 #, kde-format
 msgid "List only contained items"
 msgstr "Listo nur enhavitaj eroj"
 
-#: src/listcommand.cpp:56
+#: src/listcommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "List only sub-collections"
+msgid "List sub-collections recursively"
+msgstr "Listigi nur subarojn"
+
+#: src/listcommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr "La aro listigenda: ID, vojo aŭ Akonadi-URL"
 
-#: src/listcommand.cpp:132
+#: src/listcommand.cpp:77
+#, kde-format
+msgctxt "@info:shell"
+msgid "Recursive list can only be used for collections"
+msgstr ""
+
+#: src/listcommand.cpp:160
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "Kolekto %1 ne havas subarojn"
 
-#: src/listcommand.cpp:140
+#: src/listcommand.cpp:169
+#, fuzzy, kde-format
+#| msgctxt "@info:shell output section header 1=count, 2=collection"
+#| msgid "Collection %2 has %1 sub-collection:"
+#| msgid_plural "Collection %2 has %1 sub-collections:"
+msgctxt "@info:shell output section header 1=count, 2=collection"
+msgid "Collection %2 has %1 recursive sub-collection:"
+msgid_plural "Collection %2 has %1 recursive sub-collections:"
+msgstr[0] "Kolekto %2 havas %1 subaron:"
+msgstr[1] "Kolekto %2 havas %1 subarojn:"
+
+#: src/listcommand.cpp:175
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
@@ -1452,13 +1475,13 @@ msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] "Kolekto %2 havas %1 subaron:"
 msgstr[1] "Kolekto %2 havas %1 subarojn:"
 
-#: src/listcommand.cpp:201
+#: src/listcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "Kolekto %1 havas neniujn erojn"
 
-#: src/listcommand.cpp:207
+#: src/listcommand.cpp:284
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
@@ -1466,19 +1489,19 @@ msgid_plural "Collection %2 has %1 items:"
 msgstr[0] "Kolekto %2 havas %1 eron:"
 msgstr[1] "Kolekto %2 havas %1 erojn:"
 
-#: src/listcommand.cpp:215
+#: src/listcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "MIME-tipo"
 
-#: src/listcommand.cpp:216
+#: src/listcommand.cpp:293
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "Grandeco"
 
-#: src/listcommand.cpp:217
+#: src/listcommand.cpp:294
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"

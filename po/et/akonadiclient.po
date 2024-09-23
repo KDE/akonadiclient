@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 01:52+0000\n"
+"POT-Creation-Date: 2024-09-23 01:47+0000\n"
 "PO-Revision-Date: 2020-01-28 22:43+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -151,7 +151,7 @@ msgstr "Kogusse lisatavad failid või kataloogid"
 msgid "files..."
 msgstr "failid ..."
 
-#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:62
+#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
@@ -771,7 +771,7 @@ msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr ""
 "Kataloog '%1' ei ole tühi (toimingu jõuga sooritamiseks kasuta võtit '-f')"
 
-#: src/dumpcommand.cpp:121 src/listcommand.cpp:186
+#: src/dumpcommand.cpp:121 src/listcommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -1026,7 +1026,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "Tüüp"
 
-#: src/groupcommand.cpp:402 src/listcommand.cpp:147 src/listcommand.cpp:214
+#: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
 #: src/tagscommand.cpp:319
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1039,7 +1039,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "E-post"
 
-#: src/groupcommand.cpp:404 src/listcommand.cpp:148 src/tagscommand.cpp:321
+#: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -1449,7 +1449,7 @@ msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "Teadmata"
 
-#: src/listcommand.cpp:36
+#: src/listcommand.cpp:37
 #, fuzzy
 #| msgctxt "@info:shell"
 #| msgid "Collection %1 has no sub-collections"
@@ -1457,34 +1457,56 @@ msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Kogul %1 ei ole alamkogusid"
 
-#: src/listcommand.cpp:48
+#: src/listcommand.cpp:49
 #, kde-format
 msgid "List more detailed information"
 msgstr ""
 
-#: src/listcommand.cpp:51
+#: src/listcommand.cpp:52
 #, kde-format
 msgid "List only sub-collections"
 msgstr ""
 
-#: src/listcommand.cpp:54
+#: src/listcommand.cpp:55
 #, kde-format
 msgid "List only contained items"
 msgstr ""
 
-#: src/listcommand.cpp:56
+#: src/listcommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "No sub-collections to copy/move"
+msgid "List sub-collections recursively"
+msgstr "Pole ühtegi alamkogu kopeerida/liigutada"
+
+#: src/listcommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr ""
 
-#: src/listcommand.cpp:132
+#: src/listcommand.cpp:77
+#, kde-format
+msgctxt "@info:shell"
+msgid "Recursive list can only be used for collections"
+msgstr ""
+
+#: src/listcommand.cpp:160
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "Kogul %1 ei ole alamkogusid"
 
-#: src/listcommand.cpp:140
+#: src/listcommand.cpp:169
+#, fuzzy, kde-format
+#| msgctxt "@info:shell output section header 1=count, 2=collection"
+#| msgid "Collection %2 has %1 sub-collections:"
+msgctxt "@info:shell output section header 1=count, 2=collection"
+msgid "Collection %2 has %1 recursive sub-collection:"
+msgid_plural "Collection %2 has %1 recursive sub-collections:"
+msgstr[0] "Kogul %2 on %1 alamkogu:"
+msgstr[1] "Kogul %2 on %1 alamkogu:"
+
+#: src/listcommand.cpp:175
 #, fuzzy, kde-format
 #| msgctxt "@info:shell output section header 1=count, 2=collection"
 #| msgid "Collection %2 has %1 sub-collections:"
@@ -1494,13 +1516,13 @@ msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] "Kogul %2 on %1 alamkogu:"
 msgstr[1] "Kogul %2 on %1 alamkogu:"
 
-#: src/listcommand.cpp:201
+#: src/listcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "Kogus %1 ei ole elemente"
 
-#: src/listcommand.cpp:207
+#: src/listcommand.cpp:284
 #, fuzzy, kde-format
 #| msgctxt "@info:shell output section header 1=count, 2=collection"
 #| msgid "Collection %2 has %1 items:"
@@ -1510,19 +1532,19 @@ msgid_plural "Collection %2 has %1 items:"
 msgstr[0] "Kogus %2 on elemente %1:"
 msgstr[1] "Kogus %2 on elemente %1:"
 
-#: src/listcommand.cpp:215
+#: src/listcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "MIME tüüp"
 
-#: src/listcommand.cpp:216
+#: src/listcommand.cpp:293
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "Suurus"
 
-#: src/listcommand.cpp:217
+#: src/listcommand.cpp:294
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"

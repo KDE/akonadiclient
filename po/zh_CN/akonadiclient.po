@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 01:52+0000\n"
+"POT-Creation-Date: 2024-09-23 01:47+0000\n"
 "PO-Revision-Date: 2024-04-23 19:30\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -148,7 +148,7 @@ msgstr "要添加到集合的文件或目录"
 msgid "files..."
 msgstr "文件..."
 
-#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:62
+#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
@@ -741,7 +741,7 @@ msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr "目录 ‘%1’ 不是空的 (使用 ‘-f’ 强制操作)"
 
-#: src/dumpcommand.cpp:121 src/listcommand.cpp:186
+#: src/dumpcommand.cpp:121 src/listcommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -991,7 +991,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "文件系统"
 
-#: src/groupcommand.cpp:402 src/listcommand.cpp:147 src/listcommand.cpp:214
+#: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
 #: src/tagscommand.cpp:319
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1004,7 +1004,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "电子邮箱"
 
-#: src/groupcommand.cpp:404 src/listcommand.cpp:148 src/tagscommand.cpp:321
+#: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -1405,71 +1405,93 @@ msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "未知算法"
 
-#: src/listcommand.cpp:36
+#: src/listcommand.cpp:37
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr ""
 
-#: src/listcommand.cpp:48
+#: src/listcommand.cpp:49
 #, kde-format
 msgid "List more detailed information"
 msgstr "列出更详细的信息"
 
-#: src/listcommand.cpp:51
+#: src/listcommand.cpp:52
 #, kde-format
 msgid "List only sub-collections"
 msgstr "仅列出子集合"
 
-#: src/listcommand.cpp:54
+#: src/listcommand.cpp:55
 #, kde-format
 msgid "List only contained items"
 msgstr "只列出包含的项目"
 
-#: src/listcommand.cpp:56
+#: src/listcommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "List only sub-collections"
+msgid "List sub-collections recursively"
+msgstr "仅列出子集合"
+
+#: src/listcommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr "要列出的集合：ID、路径或者 Akonadi URL"
 
-#: src/listcommand.cpp:132
+#: src/listcommand.cpp:77
+#, kde-format
+msgctxt "@info:shell"
+msgid "Recursive list can only be used for collections"
+msgstr ""
+
+#: src/listcommand.cpp:160
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "集合 %1 没有子集合"
 
-#: src/listcommand.cpp:140
+#: src/listcommand.cpp:169
+#, fuzzy, kde-format
+#| msgctxt "@info:shell output section header 1=count, 2=collection"
+#| msgid "Collection %2 has %1 sub-collection:"
+#| msgid_plural "Collection %2 has %1 sub-collections:"
+msgctxt "@info:shell output section header 1=count, 2=collection"
+msgid "Collection %2 has %1 recursive sub-collection:"
+msgid_plural "Collection %2 has %1 recursive sub-collections:"
+msgstr[0] "集合 %2 有 %1 个子集合："
+
+#: src/listcommand.cpp:175
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] "集合 %2 有 %1 个子集合："
 
-#: src/listcommand.cpp:201
+#: src/listcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "集合 %1 中没有项目"
 
-#: src/listcommand.cpp:207
+#: src/listcommand.cpp:284
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
 msgstr[0] "集合 %2 有 %1 个项目："
 
-#: src/listcommand.cpp:215
+#: src/listcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "MIME 类型"
 
-#: src/listcommand.cpp:216
+#: src/listcommand.cpp:293
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "尺寸"
 
-#: src/listcommand.cpp:217
+#: src/listcommand.cpp:294
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"

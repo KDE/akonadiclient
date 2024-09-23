@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 01:52+0000\n"
+"POT-Creation-Date: 2024-09-23 01:47+0000\n"
 "PO-Revision-Date: 2023-05-29 19:06+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -152,7 +152,7 @@ msgstr "Kolleksiyaya əlavə etmək üçün fayllar və qovluqlar"
 msgid "files..."
 msgstr "fayllar..."
 
-#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:62
+#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
@@ -765,7 +765,7 @@ msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr "'%1' qovluğu boş deyil (məcburi əməliyyat üçün '-f' istifadə edin)"
 
-#: src/dumpcommand.cpp:121 src/listcommand.cpp:186
+#: src/dumpcommand.cpp:121 src/listcommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -1025,7 +1025,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "Növ"
 
-#: src/groupcommand.cpp:402 src/listcommand.cpp:147 src/listcommand.cpp:214
+#: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
 #: src/tagscommand.cpp:319
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1038,7 +1038,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "E-Poçt"
 
-#: src/groupcommand.cpp:404 src/listcommand.cpp:148 src/tagscommand.cpp:321
+#: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -1444,7 +1444,7 @@ msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "Naməlum"
 
-#: src/listcommand.cpp:36
+#: src/listcommand.cpp:37
 #, fuzzy
 #| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
@@ -1452,34 +1452,57 @@ msgid "List sub-collections and/or items in a specified collection"
 msgstr ""
 "Göstərilmiş kolleksiyada alt-kolleksiyaların və/və ya elementlərin siyahısı"
 
-#: src/listcommand.cpp:48
+#: src/listcommand.cpp:49
 #, kde-format
 msgid "List more detailed information"
 msgstr "Ətraflı məlumatları çıxarmaq"
 
-#: src/listcommand.cpp:51
+#: src/listcommand.cpp:52
 #, kde-format
 msgid "List only sub-collections"
 msgstr "Yalnız alt kolleksiyaların siahısı"
 
-#: src/listcommand.cpp:54
+#: src/listcommand.cpp:55
 #, kde-format
 msgid "List only contained items"
 msgstr "Yalnız tərkibindəkilərin siyahısı"
 
-#: src/listcommand.cpp:56
+#: src/listcommand.cpp:58
+#, fuzzy, kde-format
+#| msgid "List only sub-collections"
+msgid "List sub-collections recursively"
+msgstr "Yalnız alt kolleksiyaların siahısı"
+
+#: src/listcommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr "Siyahıdakı kolleksiya: İD, yol və Akonadi URL-ları"
 
-#: src/listcommand.cpp:132
+#: src/listcommand.cpp:77
+#, kde-format
+msgctxt "@info:shell"
+msgid "Recursive list can only be used for collections"
+msgstr ""
+
+#: src/listcommand.cpp:160
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "%1 kolleksiyasının alt-kolleksiyaları yoxdur"
 
-#: src/listcommand.cpp:140
+#: src/listcommand.cpp:169
+#, fuzzy, kde-format
+#| msgctxt "@info:shell output section header 1=count, 2=collection"
+#| msgid "Collection %2 has %1 sub-collection:"
+#| msgid_plural "Collection %2 has %1 sub-collections:"
+msgctxt "@info:shell output section header 1=count, 2=collection"
+msgid "Collection %2 has %1 recursive sub-collection:"
+msgid_plural "Collection %2 has %1 recursive sub-collections:"
+msgstr[0] "%2 kolleksiyasında %1 alt kolleksiya var:"
+msgstr[1] "%2 kolleksiyasında %1 alt kolleksiya var:"
+
+#: src/listcommand.cpp:175
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
@@ -1487,13 +1510,13 @@ msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] "%2 kolleksiyasında %1 alt kolleksiya var:"
 msgstr[1] "%2 kolleksiyasında %1 alt kolleksiya var:"
 
-#: src/listcommand.cpp:201
+#: src/listcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "%1 kolleksiasının elementləri yoxdur"
 
-#: src/listcommand.cpp:207
+#: src/listcommand.cpp:284
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
@@ -1501,19 +1524,19 @@ msgid_plural "Collection %2 has %1 items:"
 msgstr[0] "%2 kolleksiyasında %1 element var:"
 msgstr[1] "%2 kolleksiyasında %1 element var:"
 
-#: src/listcommand.cpp:215
+#: src/listcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "MİME növü"
 
-#: src/listcommand.cpp:216
+#: src/listcommand.cpp:293
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "Ölçü"
 
-#: src/listcommand.cpp:217
+#: src/listcommand.cpp:294
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"
