@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-23 01:47+0000\n"
-"PO-Revision-Date: 2024-09-21 22:04+0300\n"
+"PO-Revision-Date: 2024-09-23 14:25+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1438,10 +1438,9 @@ msgid "List only contained items"
 msgstr "Yalnızca kapsanılan ögeleri listele"
 
 #: src/listcommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "List only sub-collections"
+#, kde-format
 msgid "List sub-collections recursively"
-msgstr "Yalnızca alt koleksiyonları listele"
+msgstr "Alt koleksiyonları özyineli olarak listele"
 
 #: src/listcommand.cpp:60
 #, kde-format
@@ -1453,7 +1452,7 @@ msgstr "Bu koleksiyon listeye: Bir kimlik, yol veya Akonadi URL’si"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "Özyineli liste yalnızca koleksiyonlar için kullanılabilir"
 
 #: src/listcommand.cpp:160
 #, kde-format
@@ -1462,15 +1461,12 @@ msgid "Collection %1 has no sub-collections"
 msgstr "%1 koleksiyonunda alt koleksiyon yok"
 
 #: src/listcommand.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collection:"
-#| msgid_plural "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "%2 koleksiyonunda %1 alt öge var:"
-msgstr[1] "%2 koleksiyonunda %1 alt öge var:"
+msgstr[0] "%2 koleksiyonunda %1 özyineli alt koleksiyon var:"
+msgstr[1] "%2 koleksiyonunda %1 özyineli alt koleksiyon var:"
 
 #: src/listcommand.cpp:175
 #, kde-format

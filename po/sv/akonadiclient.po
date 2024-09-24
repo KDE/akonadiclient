@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-23 01:47+0000\n"
-"PO-Revision-Date: 2024-09-21 07:54+0200\n"
+"PO-Revision-Date: 2024-09-23 17:11+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -1437,10 +1437,9 @@ msgid "List only contained items"
 msgstr "Listar bara ingående objekt"
 
 #: src/listcommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "List only sub-collections"
+#, kde-format
 msgid "List sub-collections recursively"
-msgstr "Listar bara delsamlingar"
+msgstr "Listar delsamlingar rekursivt"
 
 #: src/listcommand.cpp:60
 #, kde-format
@@ -1452,7 +1451,7 @@ msgstr "Samlingen att lista: En identifierare, sökväg eller Akonadi webbadress
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "Rekursiv listning kan bara användas för samlingar"
 
 #: src/listcommand.cpp:160
 #, kde-format
@@ -1461,15 +1460,12 @@ msgid "Collection %1 has no sub-collections"
 msgstr "Samlingen %1 har inga delsamlingar"
 
 #: src/listcommand.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collection:"
-#| msgid_plural "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "Samling %2 har %1 delsamling:"
-msgstr[1] "Samling %2 har %1 delsamlingar:"
+msgstr[0] "Samling %2 har %1 rekursiv delsamling:"
+msgstr[1] "Samling %2 har %1 rekursiva delsamlingar:"
 
 #: src/listcommand.cpp:175
 #, kde-format

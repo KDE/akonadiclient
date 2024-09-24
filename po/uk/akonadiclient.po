@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-23 01:47+0000\n"
-"PO-Revision-Date: 2024-09-21 09:13+0300\n"
+"PO-Revision-Date: 2024-09-23 08:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1455,10 +1455,9 @@ msgid "List only contained items"
 msgstr "Вивести список лише записів, що містяться у батьківському"
 
 #: src/listcommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "List only sub-collections"
+#, kde-format
 msgid "List sub-collections recursively"
-msgstr "Вивести список лише підлеглих збірок"
+msgstr "Рекурсивний список для підлеглих збірок"
 
 #: src/listcommand.cpp:60
 #, kde-format
@@ -1472,7 +1471,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "Рекурсивний список можна використовувати лише для збірок"
 
 #: src/listcommand.cpp:160
 #, kde-format
@@ -1481,17 +1480,14 @@ msgid "Collection %1 has no sub-collections"
 msgstr "У збірці %1 немає підлеглих збірок"
 
 #: src/listcommand.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collection:"
-#| msgid_plural "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "У збірці %2 %1 підлеглих збірок:"
-msgstr[1] "У збірці %2 %1 підлеглих збірок:"
-msgstr[2] "У збірці %2 %1 підлеглих збірок:"
-msgstr[3] "У збірці %2 %1 підлеглих збірок:"
+msgstr[0] "У збірці %2 %1 рекурсивна підлегла збірка:"
+msgstr[1] "У збірці %2 %1 рекурсивних підлеглих збірок:"
+msgstr[2] "У збірці %2 %1 рекурсивних підлеглих збірок:"
+msgstr[3] "У збірці %2 %1 рекурсивна підлегла збірка:"
 
 #: src/listcommand.cpp:175
 #, kde-format
