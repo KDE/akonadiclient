@@ -78,7 +78,6 @@ AttributesCommand::AttributesCommand(QObject *parent)
 
 AttributesCommand::~AttributesCommand()
 {
-    delete mAttributesCollection;
 }
 
 void AttributesCommand::setupCommandOptions(QCommandLineParser *parser)
@@ -245,9 +244,10 @@ void AttributesCommand::onCollectionResolved(KJob *job)
             return;
         }
 
+        SyntheticAttribute *newAttr = new SyntheticAttribute(mCommandType, mCommandValue);
         SyntheticAttribute *collectionAttr = mAttributesCollection->attribute<SyntheticAttribute>(Collection::AddIfMissing);
         Q_ASSERT(collectionAttr != nullptr);
-        *collectionAttr = SyntheticAttribute(mCommandType, mCommandValue);
+        *collectionAttr = *newAttr;
     } else { // delete/modify, must already exist
         if (!attributeExists) {
             Q_EMIT error(i18nc("@info:shell", "Collection has no attribute '%1'", mCommandType));
@@ -258,10 +258,10 @@ void AttributesCommand::onCollectionResolved(KJob *job)
         if (mOperationMode == ModeDelete) { // delete, remove from colelction
             mAttributesCollection->removeAttribute(mCommandType);
         } else { // modify, set new value
-            SyntheticAttribute newAttr(mCommandType, mCommandValue);
-            SyntheticAttribute *collectionAttr = mAttributesCollection->attribute<SyntheticAttribute>(Collection::DontCreate);
+            SyntheticAttribute *newAttr = new SyntheticAttribute(mCommandType, mCommandValue);
+            SyntheticAttribute *collectionAttr = mAttributesCollection->attribute<SyntheticAttribute>(Collection::AddIfMissing);
             Q_ASSERT(collectionAttr != nullptr);
-            *collectionAttr = SyntheticAttribute(mCommandType, mCommandValue);
+            *collectionAttr = *newAttr;
         }
     }
 
