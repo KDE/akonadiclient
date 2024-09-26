@@ -26,31 +26,7 @@ set(libakonadiclient_SRCS
     importcommand.cpp
     commandshell.cpp
     dumpcommand.cpp
-
-    abstractcommand.h
-    addcommand.h
-    collectionresolvejob.h
-    collectionpathjob.h
-    commandfactory.h
-    commandrunner.h
-    listcommand.h
-    infocommand.h
-    showcommand.h
-    createcommand.h
-    copycommand.h
-    movecommand.h
-    groupcommand.h
-    errorreporter.h
-    editcommand.h
-    deletecommand.h
-    renamecommand.h
-    updatecommand.h
-    tagscommand.h
-    agentscommand.h
-    exportcommand.h
-    importcommand.h
-    commandshell.h
-    dumpcommand.h
+    attributescommand.cpp
 )
 
 set(akonadiclient_SRCS main.cpp)
