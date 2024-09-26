@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-23 01:47+0000\n"
-"PO-Revision-Date: 2024-06-05 10:26+0200\n"
+"PO-Revision-Date: 2024-09-23 18:27+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1283,7 +1283,7 @@ msgstr "ID remoto"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Path"
-msgstr ""
+msgstr "Percorso"
 
 #: src/infocommand.cpp:233
 #, kde-format
@@ -1444,10 +1444,9 @@ msgid "List only contained items"
 msgstr "Elenca solo gli elementi contenuti"
 
 #: src/listcommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "List only sub-collections"
+#, kde-format
 msgid "List sub-collections recursively"
-msgstr "Elenca solo le sotto-raccolte"
+msgstr "Elenca solo le sotto-raccolte ricorsive"
 
 #: src/listcommand.cpp:60
 #, kde-format
@@ -1459,7 +1458,7 @@ msgstr "La raccolta da elencare: un ID, un percorso o URL di Akonadi"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "L'elenco ricorsivo può essere utilizzato solo per le raccolte"
 
 #: src/listcommand.cpp:160
 #, kde-format
@@ -1468,15 +1467,12 @@ msgid "Collection %1 has no sub-collections"
 msgstr "La raccolta %1 non ha sotto-raccolte"
 
 #: src/listcommand.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collection:"
-#| msgid_plural "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "La raccolta %2 ha %1 sotto-raccolta:"
-msgstr[1] "La raccolta %2 ha %1 sotto-raccolte:"
+msgstr[0] "La raccolta %2 ha %1 sotto-raccolta ricorsiva:"
+msgstr[1] "La raccolta %2 ha %1 sotto-raccolte ricorsive:"
 
 #: src/listcommand.cpp:175
 #, kde-format
