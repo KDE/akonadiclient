@@ -227,6 +227,7 @@ void AttributesCommand::onCollectionResolved(KJob *job)
 
     if (!allowDangerousOperation()) {
         Q_EMIT finished(RuntimeError);
+        return;
     }
 
     bool attributeExists = false;
