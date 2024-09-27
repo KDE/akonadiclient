@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 01:47+0000\n"
+"POT-Creation-Date: 2024-09-27 01:54+0000\n"
 "PO-Revision-Date: 2024-04-23 19:30\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -377,6 +377,135 @@ msgctxt "@info:shell"
 msgid "Status:  "
 msgstr "状态:  "
 
+#: src/attributescommand.cpp:72
+#, fuzzy
+#| msgctxt "@info:shell"
+#| msgid "No information available for collection root"
+msgctxt "info:shell"
+msgid "Show or update attributes for a collection"
+msgstr "没有可用于集合根目录的信息"
+
+#: src/attributescommand.cpp:89
+#, fuzzy, kde-format
+#| msgid "Show the expanded contact group (the default operation)"
+msgid "Show the collection attributes (the default operation)"
+msgstr "显示展开的的联系人组 (默认操作)"
+
+#: src/attributescommand.cpp:92
+#, kde-format
+msgid "Add an attribute"
+msgstr ""
+
+#: src/attributescommand.cpp:95
+#, kde-format
+msgid "Modify an existing attribute"
+msgstr ""
+
+#: src/attributescommand.cpp:98
+#, kde-format
+msgid "Delete an existing attribute"
+msgstr ""
+
+#: src/attributescommand.cpp:101
+#, kde-format
+msgid "Show or interpret the attribute value as hex encoded"
+msgstr ""
+
+#: src/attributescommand.cpp:103
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "The collection to dump: an ID, path or Akonadi URL"
+msgctxt "@info:shell"
+msgid "The collection: an ID, path or Akonadi URL"
+msgstr "要转储的集合：ID、路径或者 Akonadi URL"
+
+#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#, kde-format
+msgctxt "@info:shell"
+msgid "Arguments for the operation"
+msgstr "操作的参数"
+
+#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#, kde-format
+msgid "args..."
+msgstr "参数"
+
+#: src/attributescommand.cpp:120
+#, kde-format
+msgctxt "@info:shell"
+msgid "Hex encoded string expected, but length %1 is not even"
+msgstr ""
+
+#: src/attributescommand.cpp:127
+#, kde-format
+msgctxt "@info:shell"
+msgid "Hex encoded value contained invalid characters"
+msgstr ""
+
+#: src/attributescommand.cpp:160
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid ""
+#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
+#| "specified"
+msgctxt "@info:shell"
+msgid ""
+"Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
+msgstr "只能指定一个‘扩展’，‘添加’，‘删除’或‘清除’选项"
+
+#: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
+#: src/exportcommand.cpp:50
+#, kde-format
+msgctxt "@info:shell"
+msgid "No collection specified"
+msgstr "未指定集合"
+
+#: src/attributescommand.cpp:172
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "No items specified to add"
+msgctxt "@info:shell"
+msgid "No attribute name/value specified to add"
+msgstr "没有指定要添加的项目"
+
+#: src/attributescommand.cpp:181
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "No items specified to delete"
+msgctxt "@info:shell"
+msgid "No attribute name specified to delete"
+msgstr "没有指定要删除的项目"
+
+#: src/attributescommand.cpp:188
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "No items specified to add"
+msgctxt "@info:shell"
+msgid "No attribute name/value specified to modify"
+msgstr "没有指定要添加的项目"
+
+#: src/attributescommand.cpp:198
+#, kde-format
+msgctxt "@info:shell"
+msgid "Too many arguments specified, from '%1'"
+msgstr ""
+
+#: src/attributescommand.cpp:243
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Collection %1 has no items"
+msgctxt "@info:shell"
+msgid "Collection already has an attribute '%1'"
+msgstr "集合 %1 中没有项目"
+
+#: src/attributescommand.cpp:254
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Collection %1 has no items"
+msgctxt "@info:shell"
+msgid "Collection has no attribute '%1'"
+msgstr "集合 %1 中没有项目"
+
 #: src/collectionpathjob.cpp:70
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection path"
@@ -717,12 +846,6 @@ msgctxt "@info:shell"
 msgid "The destination directory to dump to"
 msgstr "要转储到的目标目录"
 
-#: src/dumpcommand.cpp:74 src/exportcommand.cpp:50
-#, kde-format
-msgctxt "@info:shell"
-msgid "No collection specified"
-msgstr "未指定集合"
-
 #: src/dumpcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
@@ -880,17 +1003,6 @@ msgstr "简要输出 (仅限“扩展”电子邮件地址)"
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
 msgstr "联系人组项、ID 或 Akonadi URL"
-
-#: src/groupcommand.cpp:78
-#, kde-format
-msgctxt "@info:shell"
-msgid "Arguments for the operation"
-msgstr "操作的参数"
-
-#: src/groupcommand.cpp:78
-#, kde-format
-msgid "args..."
-msgstr "参数"
 
 #: src/groupcommand.cpp:84
 #, kde-format

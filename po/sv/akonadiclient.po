@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 01:47+0000\n"
+"POT-Creation-Date: 2024-09-27 01:54+0000\n"
 "PO-Revision-Date: 2024-09-23 17:11+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -378,6 +378,135 @@ msgctxt "@info:shell"
 msgid "Status:  "
 msgstr "Status:"
 
+#: src/attributescommand.cpp:72
+#, fuzzy
+#| msgctxt "info:shell"
+#| msgid "Add items to a collection"
+msgctxt "info:shell"
+msgid "Show or update attributes for a collection"
+msgstr "Lägg till objekt i en samling"
+
+#: src/attributescommand.cpp:89
+#, fuzzy, kde-format
+#| msgid "Show the expanded contact group (the default operation)"
+msgid "Show the collection attributes (the default operation)"
+msgstr "Visa den expanderade kontaktgruppen (förvald åtgärd)"
+
+#: src/attributescommand.cpp:92
+#, kde-format
+msgid "Add an attribute"
+msgstr ""
+
+#: src/attributescommand.cpp:95
+#, kde-format
+msgid "Modify an existing attribute"
+msgstr ""
+
+#: src/attributescommand.cpp:98
+#, fuzzy, kde-format
+#| msgctxt "info:shell"
+#| msgid "Delete a collection or an item"
+msgid "Delete an existing attribute"
+msgstr "Ta bort en samling eller ett objekt"
+
+#: src/attributescommand.cpp:101
+#, kde-format
+msgid "Show or interpret the attribute value as hex encoded"
+msgstr ""
+
+#: src/attributescommand.cpp:103
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "The collection to dump: an ID, path or Akonadi URL"
+msgctxt "@info:shell"
+msgid "The collection: an ID, path or Akonadi URL"
+msgstr "Samlingen att dumpa: En identifierare, sökväg eller Akonadi webbadress"
+
+#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#, kde-format
+msgctxt "@info:shell"
+msgid "Arguments for the operation"
+msgstr "Argument för åtgärden"
+
+#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#, kde-format
+msgid "args..."
+msgstr "argument..."
+
+#: src/attributescommand.cpp:120
+#, kde-format
+msgctxt "@info:shell"
+msgid "Hex encoded string expected, but length %1 is not even"
+msgstr ""
+
+#: src/attributescommand.cpp:127
+#, kde-format
+msgctxt "@info:shell"
+msgid "Hex encoded value contained invalid characters"
+msgstr ""
+
+#: src/attributescommand.cpp:160
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+msgctxt "@info:shell"
+msgid ""
+"Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
+msgstr "Bara ett av alternativen  'list', 'add' eller 'delete' får anges"
+
+#: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
+#: src/exportcommand.cpp:50
+#, kde-format
+msgctxt "@info:shell"
+msgid "No collection specified"
+msgstr "Ingen samling angiven"
+
+#: src/attributescommand.cpp:172
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "No items specified to add"
+msgctxt "@info:shell"
+msgid "No attribute name/value specified to add"
+msgstr "Inga objekt angivna att lägga till"
+
+#: src/attributescommand.cpp:181
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "No items specified to delete"
+msgctxt "@info:shell"
+msgid "No attribute name specified to delete"
+msgstr "Inga objekt angivna att ta bort"
+
+#: src/attributescommand.cpp:188
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "No items specified to add"
+msgctxt "@info:shell"
+msgid "No attribute name/value specified to modify"
+msgstr "Inga objekt angivna att lägga till"
+
+#: src/attributescommand.cpp:198
+#, kde-format
+msgctxt "@info:shell"
+msgid "Too many arguments specified, from '%1'"
+msgstr ""
+
+#: src/attributescommand.cpp:243
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Collection %1 has no items"
+msgctxt "@info:shell"
+msgid "Collection already has an attribute '%1'"
+msgstr "Samling %1 har inga objekt"
+
+#: src/attributescommand.cpp:254
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Collection %1 has no items"
+msgctxt "@info:shell"
+msgid "Collection has no attribute '%1'"
+msgstr "Samling %1 har inga objekt"
+
 #: src/collectionpathjob.cpp:70
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection path"
@@ -724,12 +853,6 @@ msgctxt "@info:shell"
 msgid "The destination directory to dump to"
 msgstr "Målkatalogen att dumpa i"
 
-#: src/dumpcommand.cpp:74 src/exportcommand.cpp:50
-#, kde-format
-msgctxt "@info:shell"
-msgid "No collection specified"
-msgstr "Ingen samling angiven"
-
 #: src/dumpcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
@@ -890,17 +1013,6 @@ msgstr "Kortfattad utmatning (för 'expand', bara e-postadresser)"
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
 msgstr "Kontaktgruppobjektet, en identifierare eller Akonadi webbadress"
-
-#: src/groupcommand.cpp:78
-#, kde-format
-msgctxt "@info:shell"
-msgid "Arguments for the operation"
-msgstr "Argument för åtgärden"
-
-#: src/groupcommand.cpp:78
-#, kde-format
-msgid "args..."
-msgstr "argument..."
 
 #: src/groupcommand.cpp:84
 #, kde-format

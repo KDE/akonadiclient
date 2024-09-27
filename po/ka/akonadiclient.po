@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 01:47+0000\n"
+"POT-Creation-Date: 2024-09-27 01:54+0000\n"
 "PO-Revision-Date: 2024-07-07 06:30+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -380,6 +380,137 @@ msgctxt "@info:shell"
 msgid "Status:  "
 msgstr "სტატუსი:    "
 
+#: src/attributescommand.cpp:72
+#, fuzzy
+#| msgctxt "info:shell"
+#| msgid "Add items to a collection"
+msgctxt "info:shell"
+msgid "Show or update attributes for a collection"
+msgstr "ჩანაწერების კოლექციაში ჩამატება"
+
+#: src/attributescommand.cpp:89
+#, fuzzy, kde-format
+#| msgid "Show the expanded contact group (the default operation)"
+msgid "Show the collection attributes (the default operation)"
+msgstr "გაფართოებული კონტაქტების ჯგუფის ჩვენება (ნაგულისხმები ოპერაცია)"
+
+#: src/attributescommand.cpp:92
+#, kde-format
+msgid "Add an attribute"
+msgstr ""
+
+#: src/attributescommand.cpp:95
+#, kde-format
+msgid "Modify an existing attribute"
+msgstr ""
+
+#: src/attributescommand.cpp:98
+#, fuzzy, kde-format
+#| msgctxt "info:shell"
+#| msgid "Delete a collection or an item"
+msgid "Delete an existing attribute"
+msgstr "კოლექციის ან ელემენტის წაშლა"
+
+#: src/attributescommand.cpp:101
+#, kde-format
+msgid "Show or interpret the attribute value as hex encoded"
+msgstr ""
+
+#: src/attributescommand.cpp:103
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "The collection to dump: an ID, path or Akonadi URL"
+msgctxt "@info:shell"
+msgid "The collection: an ID, path or Akonadi URL"
+msgstr "ჩასაყრელი კოლექციები: ID, ბილიკი ან Akonadi-ის ბმული"
+
+#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#, kde-format
+msgctxt "@info:shell"
+msgid "Arguments for the operation"
+msgstr "ოპერაციის არგუმენტები"
+
+#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#, kde-format
+msgid "args..."
+msgstr "არგუმენტები..."
+
+#: src/attributescommand.cpp:120
+#, kde-format
+msgctxt "@info:shell"
+msgid "Hex encoded string expected, but length %1 is not even"
+msgstr ""
+
+#: src/attributescommand.cpp:127
+#, kde-format
+msgctxt "@info:shell"
+msgid "Hex encoded value contained invalid characters"
+msgstr ""
+
+#: src/attributescommand.cpp:160
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+msgctxt "@info:shell"
+msgid ""
+"Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
+msgstr ""
+"შეგიძლიათ მიუთითოთ მხოლოდ ერთი სიიდან: 'list' (ჩამონათვალი), "
+"'add' (დამატება) და 'delete' (წაშლა)"
+
+#: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
+#: src/exportcommand.cpp:50
+#, kde-format
+msgctxt "@info:shell"
+msgid "No collection specified"
+msgstr "კოლექცია მითითებული არაა"
+
+#: src/attributescommand.cpp:172
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "No items specified to add"
+msgctxt "@info:shell"
+msgid "No attribute name/value specified to add"
+msgstr "დასამატებელი ელემენტები მითითებული არაა"
+
+#: src/attributescommand.cpp:181
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "No items specified to delete"
+msgctxt "@info:shell"
+msgid "No attribute name specified to delete"
+msgstr "წასაშლელი ელემენტები მითითებული არაა"
+
+#: src/attributescommand.cpp:188
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "No items specified to add"
+msgctxt "@info:shell"
+msgid "No attribute name/value specified to modify"
+msgstr "დასამატებელი ელემენტები მითითებული არაა"
+
+#: src/attributescommand.cpp:198
+#, kde-format
+msgctxt "@info:shell"
+msgid "Too many arguments specified, from '%1'"
+msgstr ""
+
+#: src/attributescommand.cpp:243
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Collection %1 has no items"
+msgctxt "@info:shell"
+msgid "Collection already has an attribute '%1'"
+msgstr "კოლექციას %1 ელემენტები არ გააჩნია"
+
+#: src/attributescommand.cpp:254
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Collection %1 has no items"
+msgctxt "@info:shell"
+msgid "Collection has no attribute '%1'"
+msgstr "კოლექციას %1 ელემენტები არ გააჩნია"
+
 #: src/collectionpathjob.cpp:70
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection path"
@@ -726,12 +857,6 @@ msgctxt "@info:shell"
 msgid "The destination directory to dump to"
 msgstr "სამიზნე საქაღალდე ჩასაყრელად"
 
-#: src/dumpcommand.cpp:74 src/exportcommand.cpp:50
-#, kde-format
-msgctxt "@info:shell"
-msgid "No collection specified"
-msgstr "კოლექცია მითითებული არაა"
-
 #: src/dumpcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
@@ -890,17 +1015,6 @@ msgstr "მოკლე გამოტანა ('გაფართოებ�
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
 msgstr "კონტაქტის ჯგუფის ელემენტი, ID ან Akonadi-ის URL"
-
-#: src/groupcommand.cpp:78
-#, kde-format
-msgctxt "@info:shell"
-msgid "Arguments for the operation"
-msgstr "ოპერაციის არგუმენტები"
-
-#: src/groupcommand.cpp:78
-#, kde-format
-msgid "args..."
-msgstr "არგუმენტები..."
 
 #: src/groupcommand.cpp:84
 #, kde-format
