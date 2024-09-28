@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-27 01:54+0000\n"
-"PO-Revision-Date: 2024-09-23 14:25+0300\n"
+"PO-Revision-Date: 2024-09-27 17:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -382,48 +382,40 @@ msgid "Status:  "
 msgstr "Durum:  "
 
 #: src/attributescommand.cpp:72
-#, fuzzy
-#| msgctxt "info:shell"
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr "Ögeleri bir koleksiyona ekle"
+msgstr "Bir koleksiyon için olan öznitelikleri göster veya güncelle"
 
 #: src/attributescommand.cpp:89
-#, fuzzy, kde-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr "Genişletilmiş kişi grubunu göster (öntanımlı işlem)"
+msgstr "Koleksiyon özniteliklerini göster (öntanımlı işlem)"
 
 #: src/attributescommand.cpp:92
 #, kde-format
 msgid "Add an attribute"
-msgstr ""
+msgstr "Bir öznitelik ekle"
 
 #: src/attributescommand.cpp:95
 #, kde-format
 msgid "Modify an existing attribute"
-msgstr ""
+msgstr "Var olan öznitelikte değişiklik yap"
 
 #: src/attributescommand.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Delete a collection or an item"
+#, kde-format
 msgid "Delete an existing attribute"
-msgstr "Bir koleksiyonu veya ögeyi sil"
+msgstr "Var olan özniteliği sil"
 
 #: src/attributescommand.cpp:101
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
-msgstr ""
+msgstr "Öznitelik değerini onaltılı kodlu olarak göster veya yorumla"
 
 #: src/attributescommand.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection to dump: an ID, path or Akonadi URL"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
-msgstr "Dökülecek koleksiyon: Bir kimlik, yol veya Akonadi URL’si"
+msgstr "Koleksiyon: Bir kimlik, yol veya Akonadi URL’si"
 
 #: src/attributescommand.cpp:104 src/groupcommand.cpp:78
 #, kde-format
@@ -440,23 +432,21 @@ msgstr "argümanlar…"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr ""
+msgstr "Onaltılı kodlu dizi bekleniyordu; ancak %1 uzunluğu çift değil"
 
 #: src/attributescommand.cpp:127
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr ""
+msgstr "Onaltılı kodlu değerde geçersiz karakterler var"
 
 #: src/attributescommand.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
 msgstr ""
-"“list”, “add” veya “delete” seçeneklerinden yalnızca bir tanesi "
+"“show”, “add”, “modify” veya “delete” seçeneklerinden yalnızca bir tanesi "
 "belirtilebilir"
 
 #: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
@@ -464,53 +454,43 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
-msgstr "Koleksiyon belirtilmedi"
+msgstr "Belirtilen koleksiyon yok"
 
 #: src/attributescommand.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
-msgstr "Eklenecek ögeler belirtilmedi"
+msgstr "Eklenecek öznitelik adı veya değeri belirtilmedi"
 
 #: src/attributescommand.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
-msgstr "Silinecek ögeler belirtilmedi"
+msgstr "Silinecek öznitelik adı belirtilmedi"
 
 #: src/attributescommand.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr "Eklenecek ögeler belirtilmedi"
+msgstr "Değişiklik yapılacak öznitelik adı veya değeri belirtilmedi"
 
 #: src/attributescommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr ""
+msgstr "“%1” ögesinden pek çok argüman belirtilmiş"
 
 #: src/attributescommand.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection already has an attribute '%1'"
-msgstr "%1 koleksiyonunda öge yok"
+msgstr "Koleksiyonda halihazırda “%1” özniteliği var"
 
 #: src/attributescommand.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection has no attribute '%1'"
-msgstr "%1 koleksiyonunda öge yok"
+msgstr "Koleksiyonda “%1” özniteliği yok"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
