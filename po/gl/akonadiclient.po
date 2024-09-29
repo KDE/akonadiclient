@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-27 01:54+0000\n"
-"PO-Revision-Date: 2024-09-25 21:12+0200\n"
+"PO-Revision-Date: 2024-09-28 13:16+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -385,49 +385,41 @@ msgid "Status:  "
 msgstr "Estado:  "
 
 #: src/attributescommand.cpp:72
-#, fuzzy
-#| msgctxt "info:shell"
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr "Engadir elementos a unha colección"
+msgstr "Amosar ou actualizar os atributos dunha colección."
 
 #: src/attributescommand.cpp:89
-#, fuzzy, kde-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr "Amosar o grupo de contactos expandido (a operación predeterminada)"
+msgstr "Amosar os atributos da colección (a operación predeterminada)."
 
 #: src/attributescommand.cpp:92
 #, kde-format
 msgid "Add an attribute"
-msgstr ""
+msgstr "Engadir un atributo"
 
 #: src/attributescommand.cpp:95
 #, kde-format
 msgid "Modify an existing attribute"
-msgstr ""
+msgstr "Modificar o atributo existente"
 
 #: src/attributescommand.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Delete a collection or an item"
+#, kde-format
 msgid "Delete an existing attribute"
-msgstr "Eliminar unha colección ou un elemento"
+msgstr "Eliminar o atributo existente"
 
 #: src/attributescommand.cpp:101
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
 msgstr ""
+"Amosar ou interpretar o valor do atributo como codificado en hexadecimal."
 
 #: src/attributescommand.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection to dump: an ID, path or Akonadi URL"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
-msgstr ""
-"A colección para envorcar: un identificador, unha ruta ou un URL de Akonadi"
+msgstr "A colección: un identificador, unha ruta ou un URL de Akonadi."
 
 #: src/attributescommand.cpp:104 src/groupcommand.cpp:78
 #, kde-format
@@ -444,24 +436,22 @@ msgstr "argumentos…"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr ""
+msgstr "Esperábase unha cadea hexadecimal, pero a lonxitude %1 non é par."
 
 #: src/attributescommand.cpp:127
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr ""
+msgstr "O valor hexadecimal contiña caracteres non válidos."
 
 #: src/attributescommand.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
 msgstr ""
-"Só se pode indicar unha destas opcións: «list» (listar), «add» (engadir) ou "
-"«delete» (eliminar)."
+"Só se pode indicar unha destas opcións: «show» (amosar), «add» (engadir), "
+"«modify» (modificar) ou «delete» (eliminar)."
 
 #: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -471,50 +461,40 @@ msgid "No collection specified"
 msgstr "Non se indicou unha colección"
 
 #: src/attributescommand.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
-msgstr "Non se indicaron os elementos para engadir"
+msgstr "Non se indicaron os nomes e valores de atributos para engadir."
 
 #: src/attributescommand.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
-msgstr "Non se indicaron os elementos para eliminar"
+msgstr "Non se indicaron os nomes de atributos para eliminar."
 
 #: src/attributescommand.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr "Non se indicaron os elementos para engadir"
+msgstr "Non se indicaron os nomes e valores de atributos para modificar."
 
 #: src/attributescommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr ""
+msgstr "Indicáronse demasiados argumentos, de «%1»."
 
 #: src/attributescommand.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection already has an attribute '%1'"
-msgstr "A colección %1 non ten elementos"
+msgstr "A colección xa ten un atributo «%1»."
 
 #: src/attributescommand.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection has no attribute '%1'"
-msgstr "A colección %1 non ten elementos"
+msgstr "A colección non ten ningún atributo «%1»."
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
