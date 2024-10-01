@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-27 01:54+0000\n"
-"PO-Revision-Date: 2024-06-05 15:08+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2024-09-23 13:02+0200\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -378,12 +378,9 @@ msgid "Status:  "
 msgstr "Stav:  "
 
 #: src/attributescommand.cpp:72
-#, fuzzy
-#| msgctxt "info:shell"
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr "Přidat položky do sbírky"
+msgstr ""
 
 #: src/attributescommand.cpp:89
 #, kde-format
@@ -401,11 +398,9 @@ msgid "Modify an existing attribute"
 msgstr ""
 
 #: src/attributescommand.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Delete a collection or an item"
+#, kde-format
 msgid "Delete an existing attribute"
-msgstr "Smazat sbírku nebo položku"
+msgstr ""
 
 #: src/attributescommand.cpp:101
 #, kde-format
@@ -1370,7 +1365,7 @@ msgstr "Vzdálené ID"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Path"
-msgstr ""
+msgstr "Cesta"
 
 #: src/infocommand.cpp:233
 #, kde-format
@@ -1554,16 +1549,13 @@ msgid "Collection %1 has no sub-collections"
 msgstr ""
 
 #: src/listcommand.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Copying %1 sub-collection"
-#| msgid_plural "Copying %1 sub-collections"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "Kopíruji %1 podsbírku"
-msgstr[1] "Kopíruji %1 podsbírky"
-msgstr[2] "Kopíruji %1 podsbírek"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: src/listcommand.cpp:175
 #, kde-format
