@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-27 01:54+0000\n"
-"PO-Revision-Date: 2024-09-21 11:32+0200\n"
+"PO-Revision-Date: 2024-10-05 12:31+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -242,7 +242,7 @@ msgstr "Nie można określić zbioru nadrzędnego dla pliku '%1'"
 #: src/addcommand.cpp:293
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
-msgstr "Tworzenie rzeczy w zbiorze %1 \"%2\" z '%3' rozmiar %4"
+msgstr "Tworzenie elementu w zbiorze %1 \"%2\" z '%3' rozmiar %4"
 
 #: src/addcommand.cpp:315
 #, kde-format
@@ -379,48 +379,40 @@ msgid "Status:  "
 msgstr "Stan:  "
 
 #: src/attributescommand.cpp:72
-#, fuzzy
-#| msgctxt "info:shell"
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr "Dodaj rzecz do zbioru"
+msgstr "Pokaż lub uaktualnij atrybuty dla zbioru"
 
 #: src/attributescommand.cpp:89
-#, fuzzy, kde-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr "Pokaż rozwiniętą grupę kontaktów (domyślne działanie)"
+msgstr "Pokaż atrybuty zbioru (domyślne działanie)"
 
 #: src/attributescommand.cpp:92
 #, kde-format
 msgid "Add an attribute"
-msgstr ""
+msgstr "Dodaj atrybut"
 
 #: src/attributescommand.cpp:95
 #, kde-format
 msgid "Modify an existing attribute"
-msgstr ""
+msgstr "Zmień istniejący atrybut"
 
 #: src/attributescommand.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Delete a collection or an item"
+#, kde-format
 msgid "Delete an existing attribute"
-msgstr "Usuń zbiór lub rzecz"
+msgstr "Usuń istniejący atrybut"
 
 #: src/attributescommand.cpp:101
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
-msgstr ""
+msgstr "Pokaż lub zinterpretuj wartość atrybutu jako szesnastkową"
 
 #: src/attributescommand.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection to dump: an ID, path or Akonadi URL"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
-msgstr "Zbiór do zrzucenia: identyfikator, ścieżka lub adres URL Akonadi"
+msgstr "Zbiór: identyfikator, ścieżka lub adres URL Akonadi"
 
 #: src/attributescommand.cpp:104 src/groupcommand.cpp:78
 #, kde-format
@@ -437,22 +429,20 @@ msgstr "argumenty..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr ""
+msgstr "Oczekiwano ciągu zapisanego szesnastkowo, lecz nie podano długości %1"
 
 #: src/attributescommand.cpp:127
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr ""
+msgstr "Wartość zakodowana szesnastkowo zawierała nieprawidłowe znaki"
 
 #: src/attributescommand.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
-msgstr "Można podać tylko jedno z: 'list', 'add' lub 'delete'"
+msgstr "Można podać tylko jedno z: 'show', 'add', 'modify' lub 'delete'"
 
 #: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -462,50 +452,40 @@ msgid "No collection specified"
 msgstr "Nie podano zbioru"
 
 #: src/attributescommand.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
-msgstr "Nie podano rzeczy do dodania"
+msgstr "Nie podano nazwy/wartości atrybutu do dodania"
 
 #: src/attributescommand.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
-msgstr "Nie podano rzeczy do usunięcia"
+msgstr "Nie podano nazwy atrybutu do usunięcia"
 
 #: src/attributescommand.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr "Nie podano rzeczy do dodania"
+msgstr "Nie podano nazwy/wartości do zmienienia"
 
 #: src/attributescommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr ""
+msgstr "Podano zbyt wiele argumentów z '%1'"
 
 #: src/attributescommand.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection already has an attribute '%1'"
-msgstr "Zbiór %1 nie ma rzeczy"
+msgstr "Zbiór ma już atrybut '%1'"
 
 #: src/attributescommand.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection has no attribute '%1'"
-msgstr "Zbiór %1 nie ma rzeczy"
+msgstr "Zbiór nie ma atrybutu '%1'"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -701,9 +681,9 @@ msgstr[2] "Przenoszenie %1 rzeczy"
 msgctxt "@info:shell"
 msgid "Copying %1 item"
 msgid_plural "Copying %1 items"
-msgstr[0] "Kopiowanie %1 rzeczy"
-msgstr[1] "Kopiowanie %1 rzeczy"
-msgstr[2] "Kopiowanie %1 rzeczy"
+msgstr[0] "Kopiowanie %1 elementu"
+msgstr[1] "Kopiowanie %1 elementów"
+msgstr[2] "Kopiowanie %1 elementów"
 
 #: src/copycommand.cpp:306
 #, kde-format
@@ -794,7 +774,7 @@ msgstr "Zbiór lub rzecz"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection/item argument"
-msgstr "Brak argumentu zbioru/rzeczy"
+msgstr "Brak argumentu zbioru/elementu"
 
 #: src/deletecommand.cpp:104
 #, kde-format
@@ -913,7 +893,7 @@ msgstr "Edytuj nieprzetworzony wsad dla danej rzeczy przy użyciu $EDITOR"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to edit"
-msgstr "Rzecz do edycji"
+msgstr "Element do edycji"
 
 #: src/editcommand.cpp:60 src/updatecommand.cpp:59
 #, kde-format
@@ -1044,7 +1024,7 @@ msgstr "Można podać tylko jeden rzecz do dodania z 'komentarzem'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to delete"
-msgstr "Nie podano rzeczy do usunięcia"
+msgstr "Nie podano elementów do usunięcia"
 
 #: src/groupcommand.cpp:147
 #, kde-format
@@ -1056,7 +1036,7 @@ msgstr "Ustawienie 'komentarz' jest niedozwolone z 'dodaj'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as an item"
-msgstr "Nie można znaleźć '%1' jako rzeczy"
+msgstr "Nie można znaleźć '%1' jako elementu"
 
 #: src/groupcommand.cpp:204
 #, kde-format
@@ -1552,10 +1532,9 @@ msgid "List only contained items"
 msgstr "Pokaż tylko rzeczy wewnątrz"
 
 #: src/listcommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "List only sub-collections"
+#, kde-format
 msgid "List sub-collections recursively"
-msgstr "Pokaż tylko podzbiory"
+msgstr "Wypisz podzbiory wgłąb"
 
 #: src/listcommand.cpp:60
 #, kde-format
@@ -1567,7 +1546,7 @@ msgstr "Zbiór do pokazania: identyfikator, ścieżka lub adres URL Akonadi"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "Listy wgłęb można użyć tylko dla zbiorów"
 
 #: src/listcommand.cpp:160
 #, kde-format
@@ -1576,16 +1555,13 @@ msgid "Collection %1 has no sub-collections"
 msgstr "Zbiór %1 nie ma podzbiorów"
 
 #: src/listcommand.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collection:"
-#| msgid_plural "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "Zbiór %2 ma %1 podzbiorów:"
-msgstr[1] "Zbiór %2 ma %1 podzbiorów:"
-msgstr[2] "Zbiór %2 ma %1 podzbiorów:"
+msgstr[0] "Zbiór %2 ma %1 podzbiorów w głębi:"
+msgstr[1] "Zbiór %2 ma %1 podzbiory w głębi:"
+msgstr[2] "Zbiór %2 ma %1 podzbiorów w głębi:"
 
 #: src/listcommand.cpp:175
 #, kde-format
@@ -1926,7 +1902,7 @@ msgstr "Rzecz do uaktualnienia, identyfikator lub adres URL Akonadi"
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to update the item from"
-msgstr "Plik, z którego uaktualnić rzecz"
+msgstr "Plik, z którego uaktualnić element"
 
 #: src/updatecommand.cpp:61
 #, kde-format
