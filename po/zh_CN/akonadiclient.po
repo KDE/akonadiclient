@@ -378,18 +378,14 @@ msgid "Status:  "
 msgstr "状态:  "
 
 #: src/attributescommand.cpp:72
-#, fuzzy
-#| msgctxt "@info:shell"
-#| msgid "No information available for collection root"
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr "没有可用于集合根目录的信息"
+msgstr ""
 
 #: src/attributescommand.cpp:89
-#, fuzzy, kde-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr "显示展开的的联系人组 (默认操作)"
+msgstr ""
 
 #: src/attributescommand.cpp:92
 #, kde-format
@@ -412,12 +408,10 @@ msgid "Show or interpret the attribute value as hex encoded"
 msgstr ""
 
 #: src/attributescommand.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection to dump: an ID, path or Akonadi URL"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
-msgstr "要转储的集合：ID、路径或者 Akonadi URL"
+msgstr ""
 
 #: src/attributescommand.cpp:104 src/groupcommand.cpp:78
 #, kde-format
@@ -443,15 +437,11 @@ msgid "Hex encoded value contained invalid characters"
 msgstr ""
 
 #: src/attributescommand.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
-msgstr "只能指定一个‘扩展’，‘添加’，‘删除’或‘清除’选项"
+msgstr ""
 
 #: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -461,28 +451,22 @@ msgid "No collection specified"
 msgstr "未指定集合"
 
 #: src/attributescommand.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
-msgstr "没有指定要添加的项目"
+msgstr ""
 
 #: src/attributescommand.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
-msgstr "没有指定要删除的项目"
+msgstr ""
 
 #: src/attributescommand.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr "没有指定要添加的项目"
+msgstr ""
 
 #: src/attributescommand.cpp:198
 #, kde-format
@@ -491,20 +475,16 @@ msgid "Too many arguments specified, from '%1'"
 msgstr ""
 
 #: src/attributescommand.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection already has an attribute '%1'"
-msgstr "集合 %1 中没有项目"
+msgstr ""
 
 #: src/attributescommand.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection has no attribute '%1'"
-msgstr "集合 %1 中没有项目"
+msgstr ""
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -1538,10 +1518,9 @@ msgid "List only contained items"
 msgstr "只列出包含的项目"
 
 #: src/listcommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "List only sub-collections"
+#, kde-format
 msgid "List sub-collections recursively"
-msgstr "仅列出子集合"
+msgstr ""
 
 #: src/listcommand.cpp:60
 #, kde-format
@@ -1562,14 +1541,11 @@ msgid "Collection %1 has no sub-collections"
 msgstr "集合 %1 没有子集合"
 
 #: src/listcommand.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collection:"
-#| msgid_plural "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "集合 %2 有 %1 个子集合："
+msgstr[0] ""
 
 #: src/listcommand.cpp:175
 #, kde-format
