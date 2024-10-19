@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-27 01:54+0000\n"
-"PO-Revision-Date: 2024-06-08 12:29+0100\n"
+"PO-Revision-Date: 2024-10-18 18:48+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -378,48 +378,40 @@ msgid "Status:  "
 msgstr "Status:  "
 
 #: src/attributescommand.cpp:72
-#, fuzzy
-#| msgctxt "info:shell"
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr "Add items to a collection"
+msgstr "Show or update attributes for a collection"
 
 #: src/attributescommand.cpp:89
-#, fuzzy, kde-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr "Show the expanded contact group (the default operation)"
+msgstr "Show the collection attributes (the default operation)"
 
 #: src/attributescommand.cpp:92
 #, kde-format
 msgid "Add an attribute"
-msgstr ""
+msgstr "Add an attribute"
 
 #: src/attributescommand.cpp:95
 #, kde-format
 msgid "Modify an existing attribute"
-msgstr ""
+msgstr "Modify an existing attribute"
 
 #: src/attributescommand.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Delete a collection or an item"
+#, kde-format
 msgid "Delete an existing attribute"
-msgstr "Delete a collection or an item"
+msgstr "Delete an existing attribute"
 
 #: src/attributescommand.cpp:101
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
-msgstr ""
+msgstr "Show or interpret the attribute value as hex encoded"
 
 #: src/attributescommand.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection to dump: an ID, path or Akonadi URL"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
-msgstr "The collection to dump: an ID, path or Akonadi URL"
+msgstr "The collection: an ID, path or Akonadi URL"
 
 #: src/attributescommand.cpp:104 src/groupcommand.cpp:78
 #, kde-format
@@ -436,22 +428,21 @@ msgstr "args..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr ""
+msgstr "Hex encoded string expected, but length %1 is not even"
 
 #: src/attributescommand.cpp:127
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr ""
+msgstr "Hex encoded value contained invalid characters"
 
 #: src/attributescommand.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
-msgstr "Only one of the 'list', 'add' or 'delete' options may be specified"
+msgstr ""
+"Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
 
 #: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -461,50 +452,40 @@ msgid "No collection specified"
 msgstr "No collection specified"
 
 #: src/attributescommand.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
-msgstr "No items specified to add"
+msgstr "No attribute name/value specified to add"
 
 #: src/attributescommand.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
-msgstr "No items specified to delete"
+msgstr "No attribute name specified to delete"
 
 #: src/attributescommand.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr "No items specified to add"
+msgstr "No attribute name/value specified to modify"
 
 #: src/attributescommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr ""
+msgstr "Too many arguments specified, from '%1'"
 
 #: src/attributescommand.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection already has an attribute '%1'"
-msgstr "Collection %1 has no items"
+msgstr "Collection already has an attribute '%1'"
 
 #: src/attributescommand.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection has no attribute '%1'"
-msgstr "Collection %1 has no items"
+msgstr "Collection has no attribute '%1'"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -1384,7 +1365,7 @@ msgstr "Remote ID"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Path"
-msgstr ""
+msgstr "Path"
 
 #: src/infocommand.cpp:233
 #, kde-format
@@ -1545,10 +1526,9 @@ msgid "List only contained items"
 msgstr "List only contained items"
 
 #: src/listcommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "List only sub-collections"
+#, kde-format
 msgid "List sub-collections recursively"
-msgstr "List only sub-collections"
+msgstr "List sub-collections recursively"
 
 #: src/listcommand.cpp:60
 #, kde-format
@@ -1560,7 +1540,7 @@ msgstr "The collection to list: an ID, path or Akonadi URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "Recursive list can only be used for collections"
 
 #: src/listcommand.cpp:160
 #, kde-format
@@ -1569,15 +1549,12 @@ msgid "Collection %1 has no sub-collections"
 msgstr "Collection %1 has no sub-collections"
 
 #: src/listcommand.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collection:"
-#| msgid_plural "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "Collection %2 has %1 sub-collection:"
-msgstr[1] "Collection %2 has %1 sub-collections:"
+msgstr[0] "Collection %2 has %1 recursive sub-collection:"
+msgstr[1] "Collection %2 has %1 recursive sub-collections:"
 
 #: src/listcommand.cpp:175
 #, kde-format
