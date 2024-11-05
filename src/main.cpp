@@ -19,6 +19,9 @@
 #include "abstractcommand.h"
 #include "commandrunner.h"
 #include "errorreporter.h"
+#ifdef HAVE_TERMINFO
+#include "terminalcolour.h"
+#endif
 
 #include <KAboutData>
 #include <KLocalizedString>
@@ -54,6 +57,9 @@ int main(int argc, char **argv)
     aboutData.addAuthor(i18nc("@info:credit", "Bhaskar Kandiyal"), i18nc("@title about data task", "New commands, GSOC 2014"), "bkandiyal@gmail.com");
 
     KAboutData::setApplicationData(aboutData);
+#ifdef HAVE_TERMINFO
+    TerminalColour::self()->init(); // do this now, for reporting command errors
+#endif
 
     QCommandLineParser parser;
     parser.setApplicationDescription(aboutData.shortDescription());
