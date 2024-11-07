@@ -28,11 +28,11 @@
 
 #include <klocalizedstring.h>
 
-#include <qfile.h>
-
 #include "collectionresolvejob.h"
 #include "commandfactory.h"
 #include "errorreporter.h"
+#include <QVariant>
+#include <qfile.h>
 
 using namespace Akonadi;
 
