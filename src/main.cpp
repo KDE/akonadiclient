@@ -28,7 +28,7 @@
 
 #include <iostream>
 
-#include "version.h"
+#include "config-akonadiclient.h"
 
 const char *appname = "akonadiclient";
 
@@ -40,11 +40,7 @@ int main(int argc, char **argv)
 
     KAboutData aboutData(appname, // componentName
                          i18nc("@title program name", "Akonadi Client"), // displayName
-#ifdef VCS_HAVE_VERSION
-                         (VERSION " (" VCS_TYPE_STRING " " VCS_REVISION_STRING ")"), // version
-#else
-                         VERSION, // version
-#endif
+                         QStringLiteral(AKONADICLIENT_VERSION),
                          i18nc("@info:shell short description", "A command-line/shell client for Akonadi"),
                          // shortDescription
                          KAboutLicense::GPL); // licenseType

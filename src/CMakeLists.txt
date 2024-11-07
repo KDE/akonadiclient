@@ -41,10 +41,6 @@ set_target_properties(libakonadiclient PROPERTIES ENABLE_EXPORTS TRUE)
 add_executable(akonadiclient ${akonadiclient_SRCS})
 target_link_libraries(akonadiclient libakonadiclient)
 
-###### version tracking ######
-
-add_dependencies(akonadiclient vcsversion)
-
 ###### install ######
 
 install(TARGETS akonadiclient ${INSTALL_TARGETS_DEFAULT_ARGS})

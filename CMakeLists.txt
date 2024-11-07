@@ -1,6 +1,9 @@
 project(akonadiclient)
-
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+set(RELEASE_SERVICE_VERSION_MAJOR "24")
+set(RELEASE_SERVICE_VERSION_MINOR "11")
+set(RELEASE_SERVICE_VERSION_MICRO "70")
+set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 
 set(QT_MIN_VERSION "6.6.0")
 set(KF_MIN_VERSION "6.2.3")
@@ -22,17 +25,12 @@ include(ECMDeprecationSettings)
 include(KDEGitCommitHooks)
 include(KDEClangFormat)
 
+configure_file(config-akonadiclient.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-akonadiclient.h)
+
 add_definitions(-DQT_USE_QSTRINGBUILDER -DQT_USE_FAST_OPERATOR_PLUS -DQT_NO_URL_CAST_FROM_STRING)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 remove_definitions(-DQT_NO_CAST_TO_ASCII)
 add_definitions(-DTRANSLATION_DOMAIN=\"akonadiclient\")
-
-# KDE Application Version, managed by release script
-set(KDE_APPLICATIONS_VERSION_MAJOR "24")
-set(KDE_APPLICATIONS_VERSION_MINOR "07")
-set(KDE_APPLICATIONS_VERSION_MICRO "70")
-
-set(KDE_APPLICATIONS_VERSION "${KDE_APPLICATIONS_VERSION_MAJOR}.${KDE_APPLICATIONS_VERSION_MINOR}.${KDE_APPLICATIONS_VERSION_MICRO}")
 
 find_package(KPim6Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(KPim6AkonadiContactCore ${AKONADI_CONTACT_VERSION} CONFIG REQUIRED)
@@ -45,13 +43,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 ecm_set_disabled_deprecation_versions(QT 6.8.0
     KF 6.8.0
    )
-add_custom_target(vcsversion
-  ALL
-  COMMENT "Checking VCS type and version"
-  VERBATIM
-  COMMAND sh ${CMAKE_CURRENT_SOURCE_DIR}/genversion.sh ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${KDE_APPLICATIONS_VERSION}
-)
-
 
 add_subdirectory(src)
 add_subdirectory(doc)
