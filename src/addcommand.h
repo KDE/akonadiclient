@@ -34,7 +34,10 @@ class AddCommand : public AbstractCommand
     Q_OBJECT
 
 public:
-    enum AddDirectoryMode { AddDirOnly = 0, AddRecursive };
+    enum AddDirectoryMode {
+        AddDirOnly = 0,
+        AddRecursive
+    };
 
     explicit AddCommand(QObject *parent = nullptr);
     ~AddCommand() = default;

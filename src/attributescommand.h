@@ -48,7 +48,12 @@ private:
     bool parseValue(const QString &arg, bool isHex);
 
 private:
-    enum Mode { ModeShow, ModeAdd, ModeDelete, ModeModify };
+    enum Mode {
+        ModeShow,
+        ModeAdd,
+        ModeDelete,
+        ModeModify
+    };
 
 private Q_SLOTS:
     void onCollectionResolved(KJob *job);

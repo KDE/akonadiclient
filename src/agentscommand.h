@@ -51,9 +51,18 @@ private:
     void setState();
 
 private:
-    enum Option { LIST = 0, SETSTATE = 1, GETSTATE = 2, INFO = 3, RESTART = 4 };
+    enum Option {
+        LIST = 0,
+        SETSTATE = 1,
+        GETSTATE = 2,
+        INFO = 3,
+        RESTART = 4
+    };
 
-    enum AgentState { OFFLINE = 0, ONLINE = 1 };
+    enum AgentState {
+        OFFLINE = 0,
+        ONLINE = 1
+    };
 
     AgentState mStateArg;
     Option mOption;

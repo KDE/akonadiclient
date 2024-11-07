@@ -42,7 +42,11 @@ protected:
     int initCommand(QCommandLineParser *parser) override;
 
 private:
-    enum Mode { ModeList, ModeAdd, ModeDelete };
+    enum Mode {
+        ModeList,
+        ModeAdd,
+        ModeDelete
+    };
 
     bool mBriefOutput;
     bool mUrlsOutput;

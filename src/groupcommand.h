@@ -43,7 +43,12 @@ protected:
     int initCommand(QCommandLineParser *parser) override;
 
 private:
-    enum Mode { ModeExpand, ModeAdd, ModeDelete, ModeClean };
+    enum Mode {
+        ModeExpand,
+        ModeAdd,
+        ModeDelete,
+        ModeClean
+    };
 
     Akonadi::Item *mGroupItem = nullptr;
 
