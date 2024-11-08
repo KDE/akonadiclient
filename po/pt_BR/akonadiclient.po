@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:54+0000\n"
+"POT-Creation-Date: 2024-11-08 01:49+0000\n"
 "PO-Revision-Date: 2023-11-14 11:47-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -38,13 +38,13 @@ msgctxt "@info:shell"
 msgid "The name of the command"
 msgstr "O nome do comando"
 
-#: src/abstractcommand.cpp:91 src/main.cpp:65
+#: src/abstractcommand.cpp:91 src/main.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "Options for command"
 msgstr "Opções do comando"
 
-#: src/abstractcommand.cpp:91 src/main.cpp:65
+#: src/abstractcommand.cpp:91 src/main.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "[options]"
@@ -1657,70 +1657,70 @@ msgctxt "@title program name"
 msgid "Akonadi Client"
 msgstr "Cliente Akonadi "
 
-#: src/main.cpp:48
+#: src/main.cpp:44
 #, kde-format
 msgctxt "@info:shell short description"
 msgid "A command-line/shell client for Akonadi"
 msgstr "Um cliente de licha de comando /shell para Akonadi"
 
-#: src/main.cpp:52
+#: src/main.cpp:48
 #, fuzzy, kde-format
 #| msgid "Kevin Krammer"
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
 
-#: src/main.cpp:52
+#: src/main.cpp:48
 #, kde-format
 msgctxt "@title about data task"
 msgid "Original Author"
 msgstr "Autor Original"
 
-#: src/main.cpp:53
+#: src/main.cpp:49
 #, fuzzy, kde-format
 #| msgid "Jonathan Marten"
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
 
-#: src/main.cpp:53
+#: src/main.cpp:49
 #, kde-format
 msgctxt "@title about data task"
 msgid "Additions and new commands"
 msgstr "Adições e novos comandos"
 
-#: src/main.cpp:54
+#: src/main.cpp:50
 #, fuzzy, kde-format
 #| msgid "Bhaskar Kandiyal"
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
 
-#: src/main.cpp:54
+#: src/main.cpp:50
 #, kde-format
 msgctxt "@title about data task"
 msgid "New commands, GSOC 2014"
 msgstr "Novis comandos, GSOC 2014"
 
-#: src/main.cpp:64
+#: src/main.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Command to execute"
 msgstr "Comando para executar"
 
-#: src/main.cpp:66
+#: src/main.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for command"
 msgstr "Argumento do comando"
 
-#: src/main.cpp:66
+#: src/main.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "[args]"
 msgstr "[args]"
 
-#: src/main.cpp:84
+#: src/main.cpp:80
 #, kde-format
 msgctxt "@info:shell"
 msgid ""

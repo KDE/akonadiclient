@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-27 01:54+0000\n"
+"POT-Creation-Date: 2024-11-08 01:49+0000\n"
 "PO-Revision-Date: 2024-10-19 19:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -33,13 +33,13 @@ msgctxt "@info:shell"
 msgid "The name of the command"
 msgstr "命令的名稱"
 
-#: src/abstractcommand.cpp:91 src/main.cpp:65
+#: src/abstractcommand.cpp:91 src/main.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "Options for command"
 msgstr "命令的選項"
 
-#: src/abstractcommand.cpp:91 src/main.cpp:65
+#: src/abstractcommand.cpp:91 src/main.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "[options]"
@@ -1591,67 +1591,67 @@ msgctxt "@title program name"
 msgid "Akonadi Client"
 msgstr "Akonadi 用戶端"
 
-#: src/main.cpp:48
+#: src/main.cpp:44
 #, kde-format
 msgctxt "@info:shell short description"
 msgid "A command-line/shell client for Akonadi"
 msgstr "Akonadi 用的命令列用戶端"
 
-#: src/main.cpp:52
+#: src/main.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
 
-#: src/main.cpp:52
+#: src/main.cpp:48
 #, kde-format
 msgctxt "@title about data task"
 msgid "Original Author"
 msgstr "原始作者"
 
-#: src/main.cpp:53
+#: src/main.cpp:49
 #, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
 
-#: src/main.cpp:53
+#: src/main.cpp:49
 #, kde-format
 msgctxt "@title about data task"
 msgid "Additions and new commands"
 msgstr "新功能和新命令"
 
-#: src/main.cpp:54
+#: src/main.cpp:50
 #, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
 
-#: src/main.cpp:54
+#: src/main.cpp:50
 #, kde-format
 msgctxt "@title about data task"
 msgid "New commands, GSOC 2014"
 msgstr "新命令，GSOC 2014"
 
-#: src/main.cpp:64
+#: src/main.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Command to execute"
 msgstr "要執行的命令"
 
-#: src/main.cpp:66
+#: src/main.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for command"
 msgstr "命令的引數"
 
-#: src/main.cpp:66
+#: src/main.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "[args]"
 msgstr "[引數]"
 
-#: src/main.cpp:84
+#: src/main.cpp:80
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
