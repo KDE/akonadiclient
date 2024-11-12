@@ -256,7 +256,7 @@ void AttributesCommand::onCollectionResolved(KJob *job)
             return;
         }
 
-        if (mOperationMode == ModeDelete) { // delete, remove from colelction
+        if (mOperationMode == ModeDelete) { // delete, remove from collection
             mAttributesCollection->removeAttribute(mCommandType);
         } else { // modify, set new value
             SyntheticAttribute *newAttr = new SyntheticAttribute(mCommandType, mCommandValue);

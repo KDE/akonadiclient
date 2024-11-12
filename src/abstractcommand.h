@@ -29,16 +29,12 @@ class AbstractCommand : public QObject
     Q_OBJECT
 
 public:
-    enum Errors {
-        DefaultError = -1,
-        NoError = 0,
-        InvalidUsage = 1,
-        RuntimeError = 2
-    };
+    enum Errors { DefaultError = -1, NoError = 0, InvalidUsage = 1, RuntimeError = 2, NoRun = 3 };
 
     explicit AbstractCommand(QObject *parent = nullptr);
     ~AbstractCommand() override = default;
 
+    // TODO: return type should be the enum
     int init(const QStringList &parsedArgs, bool showHelp = false);
 
     virtual QString name() const = 0;

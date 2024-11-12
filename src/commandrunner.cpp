@@ -36,6 +36,7 @@ CommandRunner::~CommandRunner()
     delete mCommand;
 }
 
+// TODO: return type should be the enum
 int CommandRunner::start()
 {
     CommandFactory factory(mParsedArgs);
@@ -44,10 +45,12 @@ int CommandRunner::start()
 
     connect(mCommand, &AbstractCommand::error, this, &CommandRunner::onCommandError);
 
-    if (mCommand->init(*mParsedArgs) == AbstractCommand::InvalidUsage) {
+    // TODO: return type should be the enum
+    int initStatus = mCommand->init(*mParsedArgs);
+    if ((initStatus == AbstractCommand::InvalidUsage) || (initStatus == AbstractCommand::NoRun)) {
         delete mCommand;
         mCommand = nullptr;
-        return AbstractCommand::InvalidUsage;
+        return initStatus;
     }
 
     mExitCode = AbstractCommand::NoError; // no errors reported yet

@@ -47,10 +47,22 @@ int AbstractCommand::init(const QStringList &parsedArgs, bool showHelp)
     parser.addPositionalArgument(name(), i18nc("@info:shell", "The name of the command"), name());
     setupCommandOptions(&parser); // set options for command
 
+    QCommandLineOption helpOption((QStringList() << "h" << "help"), i18nc("@info:shell", "Give help for the specified command"));
+    helpOption.setFlags(QCommandLineOption::HiddenFromHelp);
+    parser.addOption(helpOption);
+
     const bool ok = parser.parse(parsedArgs); // just parse, do not do actions
     if (!ok) {
         ErrorReporter::fatal(parser.errorText());
         return (InvalidUsage);
+    }
+
+    if (parser.isSet("help")) {
+        showHelp = true;
+    } else {
+        const QStringList args = parser.positionalArguments();
+        if (!args.isEmpty() && args.first() == "help")
+            showHelp = true;
     }
 
     if (showHelp) { // do this here, while the
@@ -80,7 +92,7 @@ int AbstractCommand::init(const QStringList &parsedArgs, bool showHelp)
         }
 
         std::cout << qPrintable(s) << std::endl;
-        return (NoError);
+        return (NoRun);
     }
 
     return (initCommand(&parser)); // read command arguments
