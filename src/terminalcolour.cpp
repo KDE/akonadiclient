@@ -23,6 +23,7 @@
 #ifdef HAVE_TERMINFO
 #include <curses.h>
 #include <term.h>
+#include <unistd.h>
 #endif
 
 #include "errorreporter.h"
@@ -36,6 +37,9 @@
 void TerminalColour::init()
 {
 #ifdef HAVE_TERMINFO
+    if (!isatty(1))
+        return; // not a TTY, no colouring
+
     int erret;
     if (setupterm(nullptr, 2, &erret) == ERR) {
         ErrorReporter::warning(i18nc("@info:shell", "Could not set up terminal"));
