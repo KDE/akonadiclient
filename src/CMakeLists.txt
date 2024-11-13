@@ -31,12 +31,13 @@ set(libakonadiclient_SRCS
     dumpcommand.cpp
     attributescommand.cpp
     terminalcolour.cpp
+    folderscommand.cpp
 )
 
 add_library(libakonadiclient STATIC)
 target_sources(libakonadiclient PRIVATE ${libakonadiclient_SRCS})
 target_link_libraries(libakonadiclient KPim6::AkonadiCore KPim6::AkonadiXml KPim6::AkonadiContactCore KPim6::Mime)
-target_link_libraries(libakonadiclient KF6::I18n KF6::Codecs)
+target_link_libraries(libakonadiclient KF6::I18n KF6::Codecs KF6::ConfigCore)
 target_link_libraries(libakonadiclient Qt::Core)
 if (HAVE_TERMINFO)
   target_link_libraries(libakonadiclient ${CURSES_LIBRARIES})
