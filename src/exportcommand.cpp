@@ -44,7 +44,7 @@ void ExportCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("file", i18nc("@info:shell", "The file to export to"));
 }
 
-int ExportCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error ExportCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
     if (!checkArgCount(args, 1, i18nc("@info:shell", "No collection specified")))

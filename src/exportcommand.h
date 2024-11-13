@@ -37,7 +37,7 @@ public Q_SLOTS:
     void start() override;
 
 protected:
-    int initCommand(QCommandLineParser *parser) override;
+    AbstractCommand::Error initCommand(QCommandLineParser *parser) override;
     void setupCommandOptions(QCommandLineParser *parser) override;
 
 private:

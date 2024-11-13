@@ -46,7 +46,7 @@ void CommandShell::setupCommandOptions(QCommandLineParser *parser)
 {
 }
 
-int CommandShell::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error CommandShell::initCommand(QCommandLineParser *parser)
 {
     return (AbstractCommand::NoError);
 }

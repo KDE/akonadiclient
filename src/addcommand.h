@@ -49,7 +49,7 @@ public Q_SLOTS:
 
 protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
-    int initCommand(QCommandLineParser *parser) override;
+    AbstractCommand::Error initCommand(QCommandLineParser *parser) override;
 
 private:
     QSet<QString> mFiles;

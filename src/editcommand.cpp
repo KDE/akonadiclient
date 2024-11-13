@@ -54,7 +54,7 @@ void EditCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("item", i18nc("@info:shell", "The item to edit"));
 }
 
-int EditCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error EditCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
     if (!checkArgCount(args, 1, i18nc("@info:shell", "No item specified")))

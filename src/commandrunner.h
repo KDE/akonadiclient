@@ -20,7 +20,7 @@
 
 #include <QObject>
 
-class AbstractCommand;
+#include "abstractcommand.h"
 
 class CommandRunner : public QObject
 {
@@ -30,18 +30,18 @@ public:
     explicit CommandRunner(const QStringList *args);
     ~CommandRunner() override;
 
-    [[nodiscard]] int start();
+    [[nodiscard]] bool start();
     [[nodiscard]] int exitCode() const
     {
-        return (mExitCode);
+        return (static_cast<int>(mExitCode));
     }
 
 private:
     AbstractCommand *mCommand = nullptr;
     const QStringList *mParsedArgs;
-    int mExitCode;
+    AbstractCommand::Error mExitCode;
 
 private Q_SLOTS:
-    void onCommandFinished(int exitCode);
+    void onCommandFinished(AbstractCommand::Error exitCode);
     void onCommandError(const QString &error);
 };

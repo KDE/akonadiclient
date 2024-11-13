@@ -57,7 +57,7 @@ void ImportCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("file", i18nc("@info:shell", "The file to import"));
 }
 
-int ImportCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error ImportCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
     if (!checkArgCount(args, 1, i18nc("@info:shell", "No parent collection specified")))

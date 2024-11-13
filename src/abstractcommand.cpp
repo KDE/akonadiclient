@@ -41,7 +41,7 @@ AbstractCommand::AbstractCommand(QObject *parent)
 {
 }
 
-int AbstractCommand::init(const QStringList &parsedArgs, bool showHelp)
+AbstractCommand::Error AbstractCommand::init(const QStringList &parsedArgs, bool showHelp)
 {
     QCommandLineParser parser;
     parser.addPositionalArgument(name(), i18nc("@info:shell", "The name of the command"), name());
@@ -92,7 +92,7 @@ int AbstractCommand::init(const QStringList &parsedArgs, bool showHelp)
         }
 
         std::cout << qPrintable(s) << std::endl;
-        return (NoRun);
+        return (HelpOnly);
     }
 
     return (initCommand(&parser)); // read command arguments

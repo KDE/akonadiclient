@@ -60,7 +60,7 @@ void ListCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("collection", i18nc("@info:shell", "The collection to list: an ID, path or Akonadi URL"));
 }
 
-int ListCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error ListCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
     if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument")))

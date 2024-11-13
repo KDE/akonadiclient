@@ -60,7 +60,7 @@ void CopyCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("destination", i18nc("@info:shell", "Destination collection to copy into"));
 }
 
-int CopyCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error CopyCommand::initCommand(QCommandLineParser *parser)
 {
     if (!getCommonOptions(parser))
         return InvalidUsage;

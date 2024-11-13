@@ -68,7 +68,7 @@ void DumpCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("directory", i18nc("@info:shell", "The destination directory to dump to"));
 }
 
-int DumpCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error DumpCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
     if (!checkArgCount(args, 1, i18nc("@info:shell", "No collection specified")))

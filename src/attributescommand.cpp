@@ -136,7 +136,7 @@ bool AttributesCommand::parseValue(const QString &arg, bool isHex)
     return (true);
 }
 
-int AttributesCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error AttributesCommand::initCommand(QCommandLineParser *parser)
 {
     QStringList args = parser->positionalArguments();
 
