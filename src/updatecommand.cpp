@@ -53,7 +53,7 @@ void UpdateCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("file", i18nc("@info:shell", "File to update the item from"));
 }
 
-int UpdateCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error UpdateCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
     if (!checkArgCount(args, 1, i18nc("@info:shell", "No item specified")))

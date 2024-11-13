@@ -46,7 +46,7 @@ void RenameCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("name", i18nc("@info:shell", "New name for collection"));
 }
 
-int RenameCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error RenameCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
     if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument")))

@@ -29,17 +29,12 @@ class AbstractCommand : public QObject
     Q_OBJECT
 
 public:
-    enum Errors {
-        DefaultError = -1,
-        NoError = 0,
-        InvalidUsage = 1,
-        RuntimeError = 2
-    };
+    enum Error { DefaultError = -1, NoError = 0, InvalidUsage = 1, RuntimeError = 2, HelpOnly = 3 };
 
     explicit AbstractCommand(QObject *parent = nullptr);
     ~AbstractCommand() override = default;
 
-    int init(const QStringList &parsedArgs, bool showHelp = false);
+    AbstractCommand::Error init(const QStringList &parsedArgs, bool showHelp = false);
 
     virtual QString name() const = 0;
 
@@ -47,13 +42,12 @@ public Q_SLOTS:
     virtual void start() = 0;
 
 Q_SIGNALS:
-    void finished(AbstractCommand::Errors exitCode = AbstractCommand::DefaultError);
+    void finished(AbstractCommand::Error exitCode = AbstractCommand::DefaultError);
     void error(const QString &message);
 
 protected:
     virtual void setupCommandOptions(QCommandLineParser *parser) = 0;
-    // TODO: return type should be the enum
-    virtual int initCommand(QCommandLineParser *parser) = 0;
+    virtual AbstractCommand::Error initCommand(QCommandLineParser *parser) = 0;
 
     void emitErrorSeeHelp(const QString &msg);
     bool allowDangerousOperation() const;

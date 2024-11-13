@@ -67,7 +67,7 @@ void AgentsCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("agents", i18nc("@info:shell", "Agents to operate on"), i18nc("@info:shell", "[agents...]"));
 }
 
-int AgentsCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error AgentsCommand::initCommand(QCommandLineParser *parser)
 {
     mArguments = parser->positionalArguments();
 

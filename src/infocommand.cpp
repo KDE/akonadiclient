@@ -57,7 +57,7 @@ void InfoCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("entity", i18nc("@info:shell", "Collections or items to display"), i18n("entity..."));
 }
 
-int InfoCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error InfoCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
     if (!checkArgCount(args, 1, i18nc("@info:shell", "No collections or items specified")))

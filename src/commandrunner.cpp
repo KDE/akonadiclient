@@ -18,7 +18,6 @@
 
 #include "commandrunner.h"
 
-#include "abstractcommand.h"
 #include "commandfactory.h"
 #include "errorreporter.h"
 
@@ -36,7 +35,10 @@ CommandRunner::~CommandRunner()
     delete mCommand;
 }
 
-int CommandRunner::start()
+// This can return a 'bool' result because, during command initialisation,
+// the only possible error conditions are NoError or InvalidUsage.  HelpOnly
+// simply means to not actually execute the command.
+bool CommandRunner::start()
 {
     CommandFactory factory(mParsedArgs);
     mCommand = factory.createCommand();
@@ -44,28 +46,28 @@ int CommandRunner::start()
 
     connect(mCommand, &AbstractCommand::error, this, &CommandRunner::onCommandError);
 
-    if (mCommand->init(*mParsedArgs) == AbstractCommand::InvalidUsage) {
+    mExitCode = mCommand->init(*mParsedArgs);
+    if (mExitCode != AbstractCommand::NoError) {
+        if (mExitCode == AbstractCommand::HelpOnly)
+            mExitCode = AbstractCommand::NoError;
+
         delete mCommand;
         mCommand = nullptr;
-        return AbstractCommand::InvalidUsage;
+        return false;
     }
 
-    mExitCode = AbstractCommand::NoError; // no errors reported yet
-
     connect(mCommand, &AbstractCommand::finished, this, &CommandRunner::onCommandFinished);
-
     QMetaObject::invokeMethod(mCommand, "start", Qt::QueuedConnection);
-
-    return AbstractCommand::NoError;
+    return true;
 }
 
-void CommandRunner::onCommandFinished(int exitCode)
+void CommandRunner::onCommandFinished(AbstractCommand::Error exitCode)
 {
     // If no exit code is emplicitly specified, use the accumulated
     // exit code from the processing loop.
     if (exitCode == AbstractCommand::DefaultError)
         exitCode = mExitCode;
-    QCoreApplication::exit(exitCode);
+    QCoreApplication::exit(static_cast<int>(exitCode));
 }
 
 void CommandRunner::onCommandError(const QString &error)

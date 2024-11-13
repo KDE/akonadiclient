@@ -65,7 +65,7 @@ void TagsCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument(i18n("TAG"), i18n("The name of a tag to add, or the name, ID or URL of a tag to delete"), i18n("[TAG...]"));
 }
 
-int TagsCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error TagsCommand::initCommand(QCommandLineParser *parser)
 {
     mBriefOutput = parser->isSet("brief"_L1);
     mUrlsOutput = parser->isSet("urls"_L1);

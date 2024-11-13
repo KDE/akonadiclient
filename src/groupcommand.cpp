@@ -78,7 +78,7 @@ void GroupCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("args", i18nc("@info:shell", "Arguments for the operation"), i18n("args..."));
 }
 
-int GroupCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error GroupCommand::initCommand(QCommandLineParser *parser)
 {
     mItemArgs = parser->positionalArguments();
     if (!checkArgCount(mItemArgs, 1, i18nc("@info:shell", "Missing group argument")))
@@ -214,7 +214,7 @@ void GroupCommand::onItemsFetched(KJob *job)
 
     KContacts::ContactGroup group = mGroupItem->payload<KContacts::ContactGroup>();
 
-    AbstractCommand::Errors status = RuntimeError;
+    AbstractCommand::Error status = RuntimeError;
     switch (mOperationMode) { // perform the requested operation
     case ModeExpand:
         status = showExpandedGroup(group);
@@ -385,7 +385,7 @@ bool GroupCommand::removeDataByEmail(KContacts::ContactGroup &group, const QStri
     return (somethingFound);
 }
 
-AbstractCommand::Errors GroupCommand::showExpandedGroup(const KContacts::ContactGroup &group)
+AbstractCommand::Error GroupCommand::showExpandedGroup(const KContacts::ContactGroup &group)
 {
     if (!mBriefMode) {
         std::cout << qPrintable(i18nc("@info:shell section header 1=item 2=groupref count 3=ref count 4=data count 5=name",
@@ -488,7 +488,7 @@ AbstractCommand::Errors GroupCommand::showExpandedGroup(const KContacts::Contact
     return (!fetchIds.isEmpty() ? RuntimeError : NoError);
 }
 
-AbstractCommand::Errors GroupCommand::addGroupItems(KContacts::ContactGroup &group)
+AbstractCommand::Error GroupCommand::addGroupItems(KContacts::ContactGroup &group)
 {
     Q_ASSERT(!mItemArgs.isEmpty());
 
@@ -592,7 +592,7 @@ AbstractCommand::Errors GroupCommand::addGroupItems(KContacts::ContactGroup &gro
     return (hadError ? RuntimeError : NoError);
 }
 
-AbstractCommand::Errors GroupCommand::deleteGroupItems(KContacts::ContactGroup &group)
+AbstractCommand::Error GroupCommand::deleteGroupItems(KContacts::ContactGroup &group)
 {
     Q_ASSERT(!mItemArgs.isEmpty());
 
@@ -675,7 +675,7 @@ AbstractCommand::Errors GroupCommand::deleteGroupItems(KContacts::ContactGroup &
     return (hadError ? RuntimeError : NoError);
 }
 
-AbstractCommand::Errors GroupCommand::cleanGroupItems(KContacts::ContactGroup &group)
+AbstractCommand::Error GroupCommand::cleanGroupItems(KContacts::ContactGroup &group)
 {
     if (!mBriefMode) {
         std::cout << qPrintable(i18nc("@info:shell section header 1=item 2=groupref count 3=ref count 4=data count 5=name",

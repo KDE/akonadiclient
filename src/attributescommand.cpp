@@ -136,7 +136,7 @@ bool AttributesCommand::parseValue(const QString &arg, bool isHex)
     return (true);
 }
 
-int AttributesCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error AttributesCommand::initCommand(QCommandLineParser *parser)
 {
     QStringList args = parser->positionalArguments();
 
@@ -256,7 +256,7 @@ void AttributesCommand::onCollectionResolved(KJob *job)
             return;
         }
 
-        if (mOperationMode == ModeDelete) { // delete, remove from colelction
+        if (mOperationMode == ModeDelete) { // delete, remove from collection
             mAttributesCollection->removeAttribute(mCommandType);
         } else { // modify, set new value
             SyntheticAttribute *newAttr = new SyntheticAttribute(mCommandType, mCommandValue);

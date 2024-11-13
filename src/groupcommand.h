@@ -40,7 +40,7 @@ public Q_SLOTS:
 
 protected:
     void setupCommandOptions(QCommandLineParser *parser) override;
-    int initCommand(QCommandLineParser *parser) override;
+    AbstractCommand::Error initCommand(QCommandLineParser *parser) override;
 
 private:
     enum Mode {
@@ -69,10 +69,10 @@ private:
     bool removeDataByEmail(KContacts::ContactGroup &group, const QString &email, bool verbose = false);
     bool removeReferenceById(KContacts::ContactGroup &group, const QString &id, bool verbose = false);
 
-    AbstractCommand::Errors showExpandedGroup(const KContacts::ContactGroup &group);
-    AbstractCommand::Errors addGroupItems(KContacts::ContactGroup &group);
-    AbstractCommand::Errors deleteGroupItems(KContacts::ContactGroup &group);
-    AbstractCommand::Errors cleanGroupItems(KContacts::ContactGroup &group);
+    AbstractCommand::Error showExpandedGroup(const KContacts::ContactGroup &group);
+    AbstractCommand::Error addGroupItems(KContacts::ContactGroup &group);
+    AbstractCommand::Error deleteGroupItems(KContacts::ContactGroup &group);
+    AbstractCommand::Error cleanGroupItems(KContacts::ContactGroup &group);
 
 private Q_SLOTS:
     void onItemsFetched(KJob *job);

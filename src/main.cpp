@@ -101,11 +101,11 @@ int main(int argc, char **argv)
     const QStringList args = parser.positionalArguments();
 
     CommandRunner runner(&args);
-    int ret = runner.start();
-    if (ret != AbstractCommand::NoError)
-        return ret;
+    if (runner.start()) {
+        ErrorReporter::setRunningApplication();
+        application.exec();
+    }
 
-    ErrorReporter::setRunningApplication();
     // Something odd seems to happen here.  If the processing loop is run
     // with multiple (more than 1) arguments then the exit code eventually
     // given to QCoreApplication::exit() by CommandRunner::onCommandFinished()
@@ -113,6 +113,5 @@ int main(int argc, char **argv)
     // If there is only one argument then the code is returned correctly.
     // Retrieve the accumulated exit code directly from the CommandRunner
     // instead.
-    application.exec();
     return (runner.exitCode());
 }

@@ -57,7 +57,7 @@ void CreateCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("collection", i18nc("@info:shell", "The collection to create, either as a path or a name (with a parent specified)"));
 }
 
-int CreateCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error CreateCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
     if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument")))

@@ -71,7 +71,7 @@ void AddCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("files", i18nc("@info:shell", "Files or directories to add to the collection"), i18n("files..."));
 }
 
-int AddCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error AddCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
     if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection argument")))

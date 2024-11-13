@@ -45,7 +45,7 @@ void ShowCommand::setupCommandOptions(QCommandLineParser *parser)
                                          i18nc("@info:shell", "Use raw payload (disables quoted-printable decoding)")));
 }
 
-int ShowCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error ShowCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList itemArgs = parser->positionalArguments();
     if (!checkArgCount(itemArgs, 1, i18nc("@info:shell", "No items specified")))

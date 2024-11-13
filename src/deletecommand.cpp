@@ -52,7 +52,7 @@ void DeleteCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addPositionalArgument("entity", i18nc("@info:shell", "The collection or item"));
 }
 
-int DeleteCommand::initCommand(QCommandLineParser *parser)
+AbstractCommand::Error DeleteCommand::initCommand(QCommandLineParser *parser)
 {
     const QStringList args = parser->positionalArguments();
     if (!checkArgCount(args, 1, i18nc("@info:shell", "Missing collection/item argument")))
