@@ -21,6 +21,7 @@
 #include "abstractcommand.h"
 #include "commandshell.h"
 #include "errorreporter.h"
+#include "terminalcolour.h"
 
 #include <QDebug>
 #include <QHash>
@@ -128,7 +129,7 @@ void CommandFactory::printHelpAndExit(bool userRequestedHelp)
     // otherwise we are missing the mandatory command argument and output to stderr
     std::ostream &stream = userRequestedHelp ? std::cout : std::cerr;
 
-    const QString linePattern = QLatin1String("  %1  %2");
+    const QString linePattern = QLatin1String("  %3%1%4  %2");
     const bool shellActive = CommandShell::isActive();
 
     stream << std::endl << qPrintable(i18nc("@info:shell", "Available commands are:")) << std::endl;
@@ -137,7 +138,10 @@ void CommandFactory::printHelpAndExit(bool userRequestedHelp)
         if (commandName == "shell"_L1 && shellActive)
             continue;
 
-        stream << qPrintable(linePattern.arg(commandName.leftJustified(maxNameLength), sCommands->value(commandName)->shortHelp.toString(Kuit::TermText)))
+        stream << qPrintable(linePattern.arg(commandName.leftJustified(maxNameLength),
+                                             sCommands->value(commandName)->shortHelp.toString(Kuit::TermText),
+                                             TerminalColour::string(TerminalColour::Bold),
+                                             TerminalColour::string(TerminalColour::Normal)))
                << std::endl;
     }
 

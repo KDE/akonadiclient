@@ -39,6 +39,13 @@ find_package(KPim6Mime ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Widgets Test)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DocTools)
 
+# Only 'ncurses' includes terminfo support, not classic 'curses'
+set(CURSES_NEED_NCURSES TRUE)
+find_package(Curses)
+if (Curses_FOUND)
+  set(HAVE_TERMINFO TRUE)
+endif ()
+
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 ecm_set_disabled_deprecation_versions(QT 6.8.0
     KF 6.8.0

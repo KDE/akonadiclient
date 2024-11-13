@@ -21,18 +21,28 @@
 #include <QCoreApplication>
 #include <QString>
 
+#include <klocalizedstring.h>
+
 #include <iostream>
+
+#include "terminalcolour.h"
 
 static bool runningApplication = false;
 
 void ErrorReporter::error(const QString &msg)
 {
-    std::cerr << qPrintable(QCoreApplication::applicationName()) << " (error): " << qPrintable(msg) << std::endl;
+    std::cerr << qPrintable(QCoreApplication::applicationName()) << " (" << TerminalColour::string(TerminalColour::Bold | TerminalColour::Red)
+              << qPrintable(i18nc("@info:shell", "error")) << TerminalColour::string(TerminalColour::Normal)
+              << "): " << TerminalColour::string(TerminalColour::Bold | TerminalColour::Red) << qPrintable(msg)
+              << TerminalColour::string(TerminalColour::Normal) << std::endl;
 }
 
 void ErrorReporter::warning(const QString &msg)
 {
-    std::cerr << qPrintable(QCoreApplication::applicationName()) << " (warning): " << qPrintable(msg) << std::endl;
+    std::cerr << qPrintable(QCoreApplication::applicationName()) << " (" << TerminalColour::string(TerminalColour::Bold | TerminalColour::Yellow)
+              << qPrintable(i18nc("@info:shell", "warning")) << TerminalColour::string(TerminalColour::Normal)
+              << "): " << TerminalColour::string(TerminalColour::Bold | TerminalColour::Yellow) << qPrintable(msg)
+              << TerminalColour::string(TerminalColour::Normal) << std::endl;
 }
 
 void ErrorReporter::fatal(const QString &msg)
@@ -49,7 +59,8 @@ void ErrorReporter::fatal(const QString &msg)
 
 void ErrorReporter::progress(const QString &msg)
 {
-    std::cout << "** " << qPrintable(msg) << std::endl;
+    std::cerr << "** " << TerminalColour::string(TerminalColour::Bold | TerminalColour::Magenta) << qPrintable(msg)
+              << TerminalColour::string(TerminalColour::Normal) << std::endl;
 }
 
 void ErrorReporter::setRunningApplication(bool running)
