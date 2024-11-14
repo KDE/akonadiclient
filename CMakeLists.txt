@@ -1,5 +1,6 @@
-project(akonadiclient)
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+
+project(akonadiclient)
 set(RELEASE_SERVICE_VERSION_MAJOR "24")
 set(RELEASE_SERVICE_VERSION_MINOR "11")
 set(RELEASE_SERVICE_VERSION_MICRO "70")
