@@ -121,6 +121,7 @@ private:
     void fetchCollections();
     void processChanges();
     bool readOrSaveLists();
+    void processRestore();
 
     void getCurrentPaths(const Collection::List &colls);
     void saveCurrentPaths(QSaveFile *file);
@@ -128,7 +129,10 @@ private:
     int checkForChanges();
 
     QString findSaveFile(const QString &name, bool createDir);
+    QStringList allConfigFiles();
+
     void populateChangeData();
+    QList<ChangeData> findChangesFor(const QString &file);
 
 private:
     FoldersCommand::Mode mOperationMode;
