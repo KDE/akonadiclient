@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-08 01:49+0000\n"
-"PO-Revision-Date: 2024-08-19 21:42+0200\n"
+"PO-Revision-Date: 2024-11-29 00:58+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -378,48 +378,40 @@ msgid "Status:  "
 msgstr "상태:  "
 
 #: src/attributescommand.cpp:72
-#, fuzzy
-#| msgctxt "info:shell"
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr "모음집에 항목 추가"
+msgstr "모음집의 속성을 표시하거나 업데이트"
 
 #: src/attributescommand.cpp:89
-#, fuzzy, kde-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr "확장된 연락처 그룹 표시(기본 동작)"
+msgstr "모음집 속성 표시(기본 동작)"
 
 #: src/attributescommand.cpp:92
 #, kde-format
 msgid "Add an attribute"
-msgstr ""
+msgstr "속성 추가"
 
 #: src/attributescommand.cpp:95
 #, kde-format
 msgid "Modify an existing attribute"
-msgstr ""
+msgstr "기존 속성 수정"
 
 #: src/attributescommand.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Delete a collection or an item"
+#, kde-format
 msgid "Delete an existing attribute"
-msgstr "모음집이나 항목 삭제"
+msgstr "기존 속성 삭제"
 
 #: src/attributescommand.cpp:101
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
-msgstr ""
+msgstr "값을 16진수 인코딩된 형태로 표시하거나 해석"
 
 #: src/attributescommand.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection to dump: an ID, path or Akonadi URL"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
-msgstr "출력할 모음집: ID, 경로, Akonadi URL"
+msgstr "모음집: ID, 경로, Akonadi URL"
 
 #: src/attributescommand.cpp:104 src/groupcommand.cpp:78
 #, kde-format
@@ -436,22 +428,20 @@ msgstr "인자..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr ""
+msgstr "16진 인코딩된 문자열을 예상했지만 길이 %1이(가) 짝수가 아님"
 
 #: src/attributescommand.cpp:127
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr ""
+msgstr "16진 인코딩된 문자열에 잘못된 문자가 있음"
 
 #: src/attributescommand.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
-msgstr "'list', 'add', 'delete' 옵션 중 하나만 지정할 수 있음"
+msgstr "'show', 'add', 'modify', 'delete' 옵션 중 하나만 지정할 수 있음"
 
 #: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -461,50 +451,40 @@ msgid "No collection specified"
 msgstr "모음집을 지정하지 않았음"
 
 #: src/attributescommand.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
-msgstr "추가할 항목을 지정하지 않았음"
+msgstr "추가할 속성 이름/값이 지정되지 않았음"
 
 #: src/attributescommand.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
-msgstr "삭제할 항목을 지정하지 않았음"
+msgstr "삭제할 속성 이름이 지정되지 않았음"
 
 #: src/attributescommand.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr "추가할 항목을 지정하지 않았음"
+msgstr "수정할 속성 이름/값이 지정되지 않았음"
 
 #: src/attributescommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr ""
+msgstr "'%1'에서 너무 많은 인자가 지정됨"
 
 #: src/attributescommand.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection already has an attribute '%1'"
-msgstr "모음집 %1에 항목이 없음"
+msgstr "모음집에 이미 '%1' 속성이 있음"
 
 #: src/attributescommand.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection has no attribute '%1'"
-msgstr "모음집 %1에 항목이 없음"
+msgstr "모음집에 '%1' 속성이 없음"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -1377,7 +1357,7 @@ msgstr "원격 ID"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Path"
-msgstr ""
+msgstr "경로"
 
 #: src/infocommand.cpp:233
 #, kde-format
@@ -1538,10 +1518,9 @@ msgid "List only contained items"
 msgstr "포함된 항목만 표시"
 
 #: src/listcommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "List only sub-collections"
+#, kde-format
 msgid "List sub-collections recursively"
-msgstr "하위 모음집만 표시"
+msgstr "하위 모음집을 재귀적으로 표시"
 
 #: src/listcommand.cpp:60
 #, kde-format
@@ -1553,7 +1532,7 @@ msgstr "표시할 모음집: ID, 경로, Akonadi URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "재귀적 목록은 모음집에서만 사용할 수 있음"
 
 #: src/listcommand.cpp:160
 #, kde-format
@@ -1562,14 +1541,11 @@ msgid "Collection %1 has no sub-collections"
 msgstr "모음집 %1에 하위 모음집이 없음"
 
 #: src/listcommand.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collection:"
-#| msgid_plural "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "모음집 %2에 하위 모음집이 %1개 있음:"
+msgstr[0] "모음집 %2에 재귀적 하위 모음집이 %1개 있음:"
 
 #: src/listcommand.cpp:175
 #, kde-format
