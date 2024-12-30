@@ -1,86 +1,87 @@
-# translation of akonadiclient.pot to esperanto
-# Copyright (C) 2023 Free Software Foundation, Inc.
+# Sanskrit translations for akonadiclient package.
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
-# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
+# Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <shreekantkalwar@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-08 01:49+0000\n"
-"PO-Revision-Date: 2024-12-29 12:45+0100\n"
-"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
-"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
-"Language: eo\n"
+"PO-Revision-Date: 2024-12-29 18:08+0530\n"
+"Last-Translator: kali <shreekantkalwar@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
+"Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Poedit 3.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Oliver Kellogg"
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "olivermkellogg@gmail.com"
+msgstr "भवतः ईमेलपत्राणि"
 
 #: src/abstractcommand.cpp:47
 #, kde-format
 msgctxt "@info:shell"
 msgid "The name of the command"
-msgstr "La nomo de la komando"
+msgstr "आदेशस्य नाम"
 
 #: src/abstractcommand.cpp:91 src/main.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "Options for command"
-msgstr "Opcioj por komando"
+msgstr "आदेशस्य विकल्पाः"
 
 #: src/abstractcommand.cpp:91 src/main.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "[options]"
-msgstr "[opcioj]"
+msgstr "[विकल्पाः] ।"
 
 #: src/abstractcommand.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that a collection is specified"
-msgstr "Supozi ke aro estas specifita"
+msgstr "संग्रहः निर्दिष्टः इति कल्पयतु"
 
 #: src/abstractcommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that an item is specified"
-msgstr "Supozi, ke ero estas specifita"
+msgstr "कल्पयतु यत् कश्चन द्रव्यः निर्दिष्टः अस्ति"
 
 #: src/abstractcommand.cpp:110
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run without making any actual changes"
-msgstr "Ruli sen fari iujn realajn ŝanĝojn"
+msgstr "वास्तविकं परिवर्तनं विना चालयन्तु"
 
 #: src/abstractcommand.cpp:125
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot specify as both an item and a collection"
-msgstr "Ne povas specifi kiel eron kaj aron"
+msgstr "द्रव्यं संग्रहं च इति द्वयोः रूपेण निर्दिष्टुं न शक्यते"
 
 #: src/abstractcommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid collection/item argument '%1', %2"
-msgstr "Nevalida aro/elementa argumento '%1', %2"
+msgstr "अमान्य संग्रह/वस्तु तर्क '%1', %2"
 
 #: src/abstractcommand.cpp:163
 #, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2. See 'help %1'"
-msgstr "%2. Vidu 'helpo %1'"
+msgstr "%2. 'सहायतां %1' पश्यन्तु।"
 
 #: src/abstractcommand.cpp:166
 #, kde-format
@@ -88,354 +89,354 @@ msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3. See '%1 help %2'"
-msgstr "%3. Vidu '%1 helpon %2'"
+msgstr "%3. '%1 सहायता %2' पश्यन्तु।"
 
 #: src/abstractcommand.cpp:182
 #, kde-format
 msgctxt "@info:shell"
 msgid "Dangerous or destructive operations are not allowed"
-msgstr "Danĝeraj aŭ detruaj operacioj ne estas permesitaj"
+msgstr "खतरनाकं वा विनाशकारीं वा कार्यं न अनुमतम्"
 
 #: src/abstractcommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
-msgstr "Agordi %1=\"%2\" en medio"
+msgstr "वातावरणे %1=\"%2\" सेट् कुर्वन्तु"
 
 #: src/addcommand.cpp:41
 msgctxt "info:shell"
 msgid "Add items to a collection"
-msgstr "Aldoni erojn al aro"
+msgstr "संग्रहे वस्तूनि योजयन्तु"
 
 #: src/addcommand.cpp:59
 #, kde-format
 msgid "Base directory for input files/directories, default is current"
-msgstr "Baza dosierujo por enigdosieroj/dosierujoj, defaŭlta estas aktuala"
+msgstr "निवेशसञ्चिकानां/निर्देशिकानां कृते आधारनिर्देशिका, पूर्वनिर्धारितं वर्तमानम् अस्ति"
 
 #: src/addcommand.cpp:60
 #, kde-format
 msgid "directory"
-msgstr "dosierujo"
+msgstr "निर्देशिका"
 
 #: src/addcommand.cpp:63
 #, kde-format
 msgid "Flat mode, do not duplicate subdirectory structure"
-msgstr "Plata reĝimo, ne duplikatigi subdosierujon"
+msgstr "सपाटविधिः, उपनिर्देशिकासंरचनायाः द्वितीयकं न कुर्वन्तु"
 
 #: src/addcommand.cpp:66
 #, kde-format
 msgid "MIME type of added items, default is to auto-detect"
-msgstr "MIME-tipo de aldonitaj eroj, defaŭlte estas aŭtomate detekti"
+msgstr "MIME प्रकारः योजितवस्तूनाम्, पूर्वनिर्धारितं स्वयमेव अन्वेषणं भवति"
 
 #: src/addcommand.cpp:67
 #, kde-format
 msgid "mimetype"
-msgstr "mimetipo"
+msgstr "अनुकरणप्रकारः"
 
 #: src/addcommand.cpp:70
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to add to: an ID, path or Akonadi URL"
-msgstr "La aro al kiu aldoni: ID, vojo aŭ Akonadi-URL"
+msgstr "योजयितुं संग्रहः: एकः ID, मार्गः अथवा Akonadi URL"
 
 #: src/addcommand.cpp:71
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or directories to add to the collection"
-msgstr "Dosieroj aŭ dosierujoj por aldoni al la aro"
+msgstr "संग्रहे योजयितुं सञ्चिकाः अथवा निर्देशिकाः"
 
 #: src/addcommand.cpp:71
 #, kde-format
 msgid "files..."
-msgstr "dosieroj..."
+msgstr "सञ्चिकाः..."
 
 #: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection argument"
-msgstr "Mankas argumento pri aro"
+msgstr "संग्रहतर्कः अनुपलब्धः"
 
 #: src/addcommand.cpp:79
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file or directory arguments"
-msgstr "Neniuj argumentoj pri dosiero aŭ dosierujo"
+msgstr "सञ्चिका वा निर्देशिका वा तर्कः नास्ति"
 
 #: src/addcommand.cpp:95
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid MIME type argument '%1'"
-msgstr "Nevalida MIME-tipa argumento '%1'"
+msgstr "अमान्यः MIME प्रकारस्य तर्कः '%1'."
 
 #: src/addcommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
-msgstr "Baza dosierujo '%1' ne trovita"
+msgstr "आधारनिर्देशिका '%1' न प्राप्ता"
 
 #: src/addcommand.cpp:125
 #, kde-format
 msgid "File '%1' does not exist"
-msgstr "Dosiero '%1' ne ekzistas"
+msgstr "'%1' सञ्चिका नास्ति"
 
 #: src/addcommand.cpp:128
 #, kde-format
 msgid "Error accessing file '%1'"
-msgstr "Eraro alirante dosieron '%1'"
+msgstr "'%1' सञ्चिकां अभिगन्तुं त्रुटिः ।"
 
 #: src/addcommand.cpp:156
 #, kde-format
 msgctxt "@info:shell"
 msgid "No valid file or directory arguments"
-msgstr "Neniuj validaj argumentoj pri dosiero aŭ dosierujo"
+msgstr "वैध सञ्चिका वा निर्देशिका वा तर्कः नास्ति"
 
 #: src/addcommand.cpp:166
 #, kde-format
 msgid "No more directories to process"
-msgstr "Ne pli da procesendaj dosierujoj"
+msgstr "संसाधितुं अधिकानि निर्देशिकाः नास्ति"
 
 #: src/addcommand.cpp:190 src/addcommand.cpp:212
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
-msgstr "Dosierujo '%1' ne plu ekzistas"
+msgstr "'%1' निर्देशिका अधुना नास्ति"
 
 #: src/addcommand.cpp:229
 #, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
-msgstr "Prenante aron \"%3\" en gepatra %1 \"%2\""
+msgstr "मातापितृ %1 \"%2\" मध्ये \"%3\" संग्रहं आनयति ।"
 
 #: src/addcommand.cpp:241
 #, kde-format
 msgid "Need to create collection for '%1'"
-msgstr "Necesas krei aron por '%1'"
+msgstr "'%1' कृते संग्रहस्य निर्माणस्य आवश्यकता अस्ति ।"
 
 #: src/addcommand.cpp:253
 #, kde-format
 msgid "No more files to process"
-msgstr "Ne pli da dosieroj por prilabori"
+msgstr "संसाधितुं अधिकानि सञ्चिकाः नास्ति"
 
 #: src/addcommand.cpp:264 src/updatecommand.cpp:86
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ does not exist"
-msgstr "Dosiero '%1' ne ekzistas"
+msgstr "'%1' सञ्चिका नास्ति"
 
 #: src/addcommand.cpp:270 src/updatecommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ cannot be read"
-msgstr "Dosiero '%1' ne estas legebla"
+msgstr "'%1' सञ्चिका पठितुं न शक्यते"
 
 #: src/addcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine MIME type of file ‘%1’"
-msgstr "Ne povas determini MIME-tipo de dosiero ‘%1’"
+msgstr "'%1' इति सञ्चिकायाः MIME प्रकारं निर्धारयितुं न शक्यते ।"
 
 #: src/addcommand.cpp:287
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine parent collection for file ‘%1’"
-msgstr "Ne povas determini gepatran aron por dosiero '%1'"
+msgstr "'%1' सञ्चिकायाः कृते मातापितृसङ्ग्रहं निर्धारयितुं न शक्यते ।"
 
 #: src/addcommand.cpp:293
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
-msgstr "Kreante objekton en aro %1 \"%2\" el '%3' grandeco %4"
+msgstr "संग्रह %1 \"%2\" इत्यस्य '%3' आकारेण %4 सृजनं कुर्वन्।"
 
 #: src/addcommand.cpp:315
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch target collection, %1"
-msgstr "Ne povas preni celaron, %1"
+msgstr "लक्ष्यसङ्ग्रहं आनेतुं न शक्यते, %1"
 
 #: src/addcommand.cpp:325
 #, kde-format
 msgid "Root folder is %1 \"%2\""
-msgstr "Radika dosierujo estas %1 \"%2\""
+msgstr "मूलपुटं %1 \"%2\" अस्ति ।"
 
 #: src/addcommand.cpp:373
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
-msgstr "Eraro alportante aron %1 \"%2\", %3"
+msgstr "संग्रहं आनयितुं त्रुटिः %1 \"%2\", %3"
 
 #: src/addcommand.cpp:386
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
-msgstr "Ŝanĝita maildir dosierujo nomo al '%1'"
+msgstr "maildir पुटस्य नाम '%1' इति परिवर्तितम् ।"
 
 #: src/addcommand.cpp:396
 #, kde-format
 msgid "Creating collection \"%3\" under parent %1 \"%2\""
-msgstr "Kreante aron \"%3\" sub la patro %1 \"%2\""
+msgstr "मातापितृ %1 \"%2\" इत्यस्य अन्तर्गतं \"%3\" संग्रहं रचयति ।"
 
 #: src/addcommand.cpp:414
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
-msgstr "Malsukcesis aldoni ‘%1’, %2"
+msgstr "'%1', %2 योजयितुं असफलम्"
 
 #: src/addcommand.cpp:418
 #, kde-format
 msgid "Added file '%2' as item %1"
-msgstr "Aldonis dosieron '%2' kiel ero %1"
+msgstr "'%2' सञ्चिका %1 इति रूपेण योजितम्"
 
 #: src/agentscommand.cpp:37
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
-msgstr "Mastrumi Akonadi-procezojn"
+msgstr "अकोनाडी एजेण्ट् प्रबन्धयन्तु"
 
 #: src/agentscommand.cpp:51
 #, kde-format
 msgid "List all agents"
-msgstr "Listigi ĉiujn klientprocezojn"
+msgstr "सर्वेषां एजेण्ट्-समूहानां सूचीं कुर्वन्तु"
 
 #: src/agentscommand.cpp:54
 #, kde-format
 msgid "Set state \"online\" or \"offline\" for specified agents"
-msgstr "Agordi staton \"rete\" aŭ \"senrete\" por specifitaj procezoj"
+msgstr "निर्दिष्टानां एजेण्ट्-कृते \"online\" अथवा \"offline\" इति अवस्थां सेट् कुर्वन्तु"
 
 #: src/agentscommand.cpp:55
 #, kde-format
 msgctxt "@info:shell"
 msgid "state"
-msgstr "stato"
+msgstr "राज्यम्‌"
 
 #: src/agentscommand.cpp:58
 #, kde-format
 msgid "Get state for the specified agent"
-msgstr "Akiri staton por la specifita klientprocezo"
+msgstr "निर्दिष्टस्य एजेण्टस्य कृते राज्यं प्राप्नुत"
 
 #: src/agentscommand.cpp:61
 #, kde-format
 msgid "Show information about the specified agent"
-msgstr "Montri informojn pri la specifita klientprocezo"
+msgstr "निर्दिष्टस्य एजेण्टस्य विषये सूचनां दर्शयतु"
 
 #: src/agentscommand.cpp:64
 #, kde-format
 msgid "Restart the specified agent"
-msgstr "Rekomenci la specifitan klientprocezon"
+msgstr "निर्दिष्टं एजेण्ट् पुनः आरभत"
 
 #: src/agentscommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "Agents to operate on"
-msgstr "Klientprocezoj pri kiuj operacii"
+msgstr "शल्यक्रिया कर्तुं एजेण्ट्"
 
 #: src/agentscommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "[agents...]"
-msgstr "[klientprocezoj...]"
+msgstr "[एजेण्ट्...]"
 
 #: src/agentscommand.cpp:80
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agents or options specified"
-msgstr "Neniuj klientprocezoj aŭ opcioj specifitaj"
+msgstr "न एजेण्ट् वा विकल्पाः निर्दिष्टाः"
 
 #: src/agentscommand.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid state '%1'"
-msgstr "Nevalida stato '%1'"
+msgstr "अमान्य अवस्था '%1'."
 
 #: src/agentscommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "No option specified"
-msgstr "Neniu opcio specifita"
+msgstr "विकल्पः निर्दिष्टः नास्ति"
 
 #: src/agentscommand.cpp:143
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parameters"
-msgstr "Nevalidaj parametroj"
+msgstr "अमान्य पैरामीटर्"
 
 #: src/agentscommand.cpp:179 src/agentscommand.cpp:211
 #: src/agentscommand.cpp:229 src/agentscommand.cpp:255
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agent exists with the identifier '%1'"
-msgstr "Neniu klientprocezo ekzistas kun la identigilo '%1'"
+msgstr "'%1' इति परिचयकर्तृणा सह कोऽपि एजेण्टः नास्ति ।"
 
 #: src/agentscommand.cpp:238
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID:      "
-msgstr "ID:"
+msgstr "आईडी :"
 
 #: src/agentscommand.cpp:239
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name:    "
-msgstr "Nomo:"
+msgstr "नामः:"
 
 #: src/agentscommand.cpp:240
 #, kde-format
 msgctxt "@info:shell"
 msgid "Status:  "
-msgstr "Statuso:"
+msgstr "स्थितिः:"
 
 #: src/attributescommand.cpp:72
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr "Montri aŭ ĝisdatigi atributojn por aro"
+msgstr "संग्रहस्य कृते विशेषताः दर्शयन्तु अथवा अद्यतनं कुर्वन्तु"
 
 #: src/attributescommand.cpp:89
 #, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr "Montri la atributojn de aro (la defaŭlta operacio)"
+msgstr "संग्रहविशेषणानि (पूर्वनिर्धारितक्रिया) दर्शयतु ।"
 
 #: src/attributescommand.cpp:92
 #, kde-format
 msgid "Add an attribute"
-msgstr "Aldoni atributon"
+msgstr "एकं विशेषतां योजयन्तु"
 
 #: src/attributescommand.cpp:95
 #, kde-format
 msgid "Modify an existing attribute"
-msgstr "Modifi ekzistantan atributon"
+msgstr "विद्यमानं विशेषतां परिवर्तयन्तु"
 
 #: src/attributescommand.cpp:98
 #, kde-format
 msgid "Delete an existing attribute"
-msgstr "Forigi ekzistantan atributon"
+msgstr "विद्यमानं विशेषतां विलोपयन्तु"
 
 #: src/attributescommand.cpp:101
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
-msgstr "Montri aŭ interpreti la atributvaloron kiel deksesum-kodita"
+msgstr "विशेषतामूल्यं हेक्स एन्कोडेड् इति दर्शयन्तु अथवा व्याख्यायन्तु"
 
 #: src/attributescommand.cpp:103
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
-msgstr "La aro: ID, vojo aŭ Akonadi-URL"
+msgstr "संग्रहः: एकः ID, मार्गः अथवा Akonadi URL"
 
 #: src/attributescommand.cpp:104 src/groupcommand.cpp:78
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for the operation"
-msgstr "Argumentoj por la operacio"
+msgstr "शल्यक्रियायाः कृते तर्काः"
 
 #: src/attributescommand.cpp:104 src/groupcommand.cpp:78
 #, kde-format
 msgid "args..."
-msgstr "argumentoj..."
+msgstr "args..."
 
 #: src/attributescommand.cpp:120
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr "Deksesume kodita ĉeno atendata, sed longeco %1 ne estas para"
+msgstr "हेक्स एन्कोडेड् स्ट्रिंग् अपेक्षितम्, परन्तु दीर्घता %1 सम नास्ति"
 
 #: src/attributescommand.cpp:127
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr "Deksesume kodita ĉeno enhavis nevalidajn signojn"
+msgstr "हेक्स एन्कोडेड् मूल्ये अमान्यवर्णाः आसन्"
 
 #: src/attributescommand.cpp:160
 #, kde-format
@@ -443,51 +444,50 @@ msgctxt "@info:shell"
 msgid ""
 "Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
 msgstr ""
-"Nur unu el la 'montri', 'aldoni', 'modifi' aŭ 'forigi' opcioj povas esti "
-"specifita"
+"केवलं 'show', 'add', 'modify' अथवा 'delete' विकल्पेषु एकः एव निर्दिष्टः भवितुम् अर्हति"
 
 #: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
-msgstr "Neniu aro specifita"
+msgstr "न कोऽपि संग्रहः निर्दिष्टः"
 
 #: src/attributescommand.cpp:172
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
-msgstr "Neniu atributa nomo/valoro specifitaj por aldoni"
+msgstr "योजयितुं विशेषतानाम/मूल्यं निर्दिष्टं नास्ति"
 
 #: src/attributescommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
-msgstr "Neniu atributnomo specifita por forigi"
+msgstr "विलोपनार्थं विशेषनाम निर्दिष्टं नास्ति"
 
 #: src/attributescommand.cpp:188
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr "Neniu atributa nomo/valoro specifita por modifi"
+msgstr "परिवर्तनार्थं विशेषतानाम/मूल्यं निर्दिष्टं नास्ति"
 
 #: src/attributescommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr "Specifiĝis tro da argumentoj, el '%1'"
+msgstr "अत्यधिकाः तर्काः निर्दिष्टाः, '%1' तः ।"
 
 #: src/attributescommand.cpp:243
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection already has an attribute '%1'"
-msgstr "Kolekto jam havas atributon '%1'"
+msgstr "संग्रहस्य पूर्वमेव '%1' इति विशेषता अस्ति ।"
 
 #: src/attributescommand.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection has no attribute '%1'"
-msgstr "Kolekto ne havas atributon '%1'"
+msgstr "संग्रहस्य '%1' इति विशेषणं नास्ति ।"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -499,13 +499,13 @@ msgstr "%1 (\"/%2\")"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown Akonadi collection format '%1'"
-msgstr "Nekonata Akonadi aroformato '%1'"
+msgstr "अज्ञात अकोनाडी संग्रहस्वरूप '%1'."
 
 #: src/collectionresolvejob.cpp:141
 #, kde-format
 msgctxt "@info:shell 1=collection ID"
 msgid "%1 (root)"
-msgstr "%1 (radiko)"
+msgstr "%1 (मूलम्)"
 
 #: src/collectionresolvejob.cpp:143
 #, kde-format
@@ -517,192 +517,192 @@ msgstr "%1 (\"%2\")"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
-msgstr "Nevalida ero-sintakso '%1'"
+msgstr "अमान्य मदवाक्यविन्यासः '%1'."
 
 #: src/commandfactory.cpp:50 src/commandfactory.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
-msgstr "Nekonata komando '%1'"
+msgstr "अज्ञात आदेशः '%1'।"
 
 #: src/commandfactory.cpp:90
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
-msgstr "Neniu komando specifita (provu '%1 --help')"
+msgstr "निर्दिष्टः आदेशः नास्ति ('%1 --help' इति प्रयतस्व)"
 
 #: src/commandfactory.cpp:134
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
-msgstr "Disponeblaj komandoj estas:"
+msgstr "उपलब्धाः आदेशाः सन्ति :"
 
 #: src/commandshell.cpp:30
 msgid "Enter commands in an interactive shell"
-msgstr "Enigi komandojn en interaga ŝelo"
+msgstr "एकस्मिन् अन्तरक्रियाशील-शेल् मध्ये आदेशान् प्रविशन्तु"
 
 #: src/commandshell.cpp:74
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid command"
-msgstr "Nevalida komando"
+msgstr "असिद्धः आदेशः"
 
 #: src/copycommand.cpp:40
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
-msgstr "Kopii arojn aŭ erojn en novan aron"
+msgstr "संग्रहान् वा वस्तूनि वा नूतनसङ्ग्रहे प्रतिलिख्यताम्"
 
 #: src/copycommand.cpp:59 src/movecommand.cpp:40
 #, kde-format
 msgid "source..."
-msgstr "fonto..."
+msgstr "स्रोतः..."
 
 #: src/copycommand.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to copy"
-msgstr "Ekzistantaj aroj aŭ eroj por kopii"
+msgstr "विद्यमानसङ्ग्रहाः वा प्रतिलिपिं कर्तुं वस्तूनि वा"
 
 #: src/copycommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to copy into"
-msgstr "Celaro en kiun kopii"
+msgstr "प्रतिलिपिं कर्तुं गन्तव्यसङ्ग्रहः"
 
 #: src/copycommand.cpp:69
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing source/destination arguments"
-msgstr "Mankas font-/cel-argumentoj"
+msgstr "स्रोत/गन्तव्यतर्काः अनुपलब्धाः"
 
 #: src/copycommand.cpp:77
 #, kde-format
 msgid "No more sources to process"
-msgstr "Ne pli da fontoj prilaborendaj"
+msgstr "न अधिकानि स्रोतानि संसाधितुं"
 
 #: src/copycommand.cpp:83
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve destination collection '%1', %2"
-msgstr "Ne povas solvi cel-aron '%1', %2"
+msgstr "गन्तव्यसङ्ग्रहस्य '%1', %2 समाधानं कर्तुं न शक्यते"
 
 #: src/copycommand.cpp:116
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve source '%1', %2"
-msgstr "Ne povas solvi fonton '%1', %2"
+msgstr "स्रोतः '%1', %2 समाधानं कर्तुं न शक्यते"
 
 #: src/copycommand.cpp:141
 #, kde-format
 msgid "Moving contents of %1 -> %2"
-msgstr "Movante enhavon de %1 -> %2"
+msgstr "%1 -> %2 इत्यस्य सामग्रीं चालयति"
 
 #: src/copycommand.cpp:143
 #, kde-format
 msgid "Copying contents of %1 -> %2"
-msgstr "Kopiante enhavon de %1 -> %2"
+msgstr "%1 -> %2 इत्यस्य सामग्रीं प्रतिलिखति"
 
 #: src/copycommand.cpp:159
 #, kde-format
 msgid "Moving collection %1 -> %2"
-msgstr "Movante aron %1 -> %2"
+msgstr "संग्रहं चालयति %1 -> %2"
 
 #: src/copycommand.cpp:164
 #, kde-format
 msgid "Copying collection %1 -> %2"
-msgstr "Kopiante aron %1 -> %2"
+msgstr "संग्रहस्य प्रतिलिपिः %1 -> %2"
 
 #: src/copycommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move from '%1', %2"
-msgstr "Ne povas kopii/movi de '%1', %2"
+msgstr "'%1', %2 तः प्रतिलिपिं/चलितुं न शक्यते"
 
 #: src/copycommand.cpp:191
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch subcollections of '%1', %2"
-msgstr "Ne povas preni subarojn de '%1', %2"
+msgstr "'%1', %2 इत्यस्य उपसङ्ग्रहान् आनेतुं न शक्यते"
 
 #: src/copycommand.cpp:199
 #, kde-format
 msgid "No sub-collections to copy/move"
-msgstr "Neniuj subaroj por kopii/movi"
+msgstr "प्रतिलिपिं कर्तुं/चलितुं उपसङ्ग्रहाः नास्ति"
 
 #: src/copycommand.cpp:205
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 sub-collection"
 msgid_plural "Moving %1 sub-collections"
-msgstr[0] "Movante %1 subaron"
-msgstr[1] "Movante %1 subarojn"
+msgstr[0] "%1 उपसङ्ग्रहं चालयति"
+msgstr[1] "%1 उपसङ्ग्रहान् चालयति"
 
 #: src/copycommand.cpp:207
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 sub-collection"
 msgid_plural "Copying %1 sub-collections"
-msgstr[0] "Kopiante %1 subaron"
-msgstr[1] "Kopiante %1 subarojn"
+msgstr[0] "%1 उपसङ्ग्रहस्य प्रतिलिपिः"
+msgstr[1] "%1 उपसङ्ग्रहाणां प्रतिलिपिः"
 
 #: src/copycommand.cpp:220
 #, kde-format
 msgid "No more sub-collections to process"
-msgstr "Ne pli da subaroj prilaborendaj"
+msgstr "न पुनः उपसङ्ग्रहाः संसाधितुं"
 
 #: src/copycommand.cpp:253
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
-msgstr "Ne povas kopii/movi subaron '%2' el '%1', %3"
+msgstr "'%1', %3 तः उपसङ्ग्रहं '%2' प्रतिलिपिं/चलितुं न शक्यते"
 
 #: src/copycommand.cpp:270
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch items of '%1', %2"
-msgstr "Ne povas preni erojn de '%1', %2"
+msgstr "'%1', %2 इत्यस्य वस्तूनि आनेतुं न शक्यते"
 
 #: src/copycommand.cpp:278
 #, kde-format
 msgid "No items to process"
-msgstr "Neniuj eroj por procezi"
+msgstr "संसाधितुं न वस्तूनि"
 
 #: src/copycommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 item"
 msgid_plural "Moving %1 items"
-msgstr[0] "Movante %1 subaron"
-msgstr[1] "Movante %1 subarojn"
+msgstr[0] "%1 मदं चालयति"
+msgstr[1] "%1 द्रव्यं चालयति"
 
 #: src/copycommand.cpp:290
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 item"
 msgid_plural "Copying %1 items"
-msgstr[0] "Kopiante %1 subaron"
-msgstr[1] "Kopiante %1 subarojn"
+msgstr[0] "%1 द्रव्यस्य प्रतिलिपिः भवति"
+msgstr[1] "%1 द्रव्याणां प्रतिलिपिः भवति"
 
 #: src/copycommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move items from '%1', %2"
-msgstr "Ne povas kopii/movi erojn de '%1', %2"
+msgstr "'%1', %2 तः वस्तूनि प्रतिलिपिं/चलितुं न शक्यते"
 
 #: src/createcommand.cpp:35
 msgctxt "info:shell"
 msgid "Create a new collection"
-msgstr "Krei novan aron"
+msgstr "नूतनं संग्रहं रचयन्तु"
 
 #: src/createcommand.cpp:53
 #, kde-format
 msgid "Parent collection to create in"
-msgstr "Gepatra aro en kiu krei"
+msgstr "मध्ये निर्मातुं मातापितृसङ्ग्रहः"
 
 #: src/createcommand.cpp:54
 #, kde-format
 msgid "collection"
-msgstr "aro"
+msgstr "सङ्ग्रह"
 
 #: src/createcommand.cpp:57
 #, kde-format
@@ -710,292 +710,292 @@ msgctxt "@info:shell"
 msgid ""
 "The collection to create, either as a path or a name (with a parent "
 "specified)"
-msgstr "La aro kreenda, ĉu kiel vojo aŭ nomo (kun gepatro specifita)"
+msgstr "निर्मातव्यः संग्रहः, मार्गरूपेण वा नामरूपेण वा (मातृपितृनिर्दिष्टेन सह)"
 
 #: src/createcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (with parent) cannot be a path"
-msgstr "Kolekta argumento (kun gepatro) ne povas esti vojo"
+msgstr "संग्रहतर्कः (मातृपितृसहितः) मार्गः न भवितुम् अर्हति"
 
 #: src/createcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (without parent) must be a path"
-msgstr "Kolekta argumento (sen gepatro) devas esti vojo"
+msgstr "संग्रहतर्कः (मातृपितृविना) मार्गः भवितुमर्हति"
 
 #: src/createcommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "New collection name not specified"
-msgstr "Nova aronomo ne specifita"
+msgstr "नूतनं संग्रहनाम निर्दिष्टं नास्ति"
 
 #: src/createcommand.cpp:114
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch parent collection '%1', %2"
-msgstr "Ne povas preni gepatran aron '%1', %2"
+msgstr "मातापितृसङ्ग्रहं '%1', %2 आनेतुं न शक्यते"
 
 #: src/createcommand.cpp:125
 #, kde-format
 msgid "Creating a maildir folder named '%1' may not work"
-msgstr "Krei maildir-dosierujon nomitan '%1' eble ne funkcias"
+msgstr "'%1' इति नामकं maildir पुटं निर्माय कार्यं न कर्तुं शक्नोति"
 
 #: src/createcommand.cpp:144
 #, kde-format
 msgid "Error creating collection '%1' under '%2', %3"
-msgstr "Eraro dum kreado de aro '%1' sub '%2', %3"
+msgstr "'%2', %3 इत्यस्य अधः '%1' संग्रहस्य निर्माणे त्रुटिः"
 
 #: src/createcommand.cpp:156
 #, kde-format
 msgid "Error getting path of new collection, %1"
-msgstr "Eraro akiri vojon de nova aro, %1"
+msgstr "नूतनसङ्ग्रहस्य मार्गं प्राप्तुं त्रुटिः, %1"
 
 #: src/createcommand.cpp:161
 #, kde-format
 msgid "Created new collection '%1'"
-msgstr "Kreis novan aron '%1'"
+msgstr "'%1' नूतनसङ्ग्रहः निर्मितः ।"
 
 #: src/deletecommand.cpp:39
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
-msgstr "Forigi aron aŭ eron"
+msgstr "संग्रहं वा द्रव्यं वा विलोपयन्तु"
 
 #: src/deletecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection or item"
-msgstr "La aro aŭ objekto"
+msgstr "संग्रहः वा द्रव्यः वा"
 
 #: src/deletecommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection/item argument"
-msgstr "Mankas aro/elementa argumento"
+msgstr "संग्रह/वस्तु तर्कः अनुपलब्धः"
 
 #: src/deletecommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot delete the root collection"
-msgstr "Ne povas forigi la radikan aron"
+msgstr "मूलसङ्ग्रहं विलोपयितुं न शक्यते"
 
 #: src/deletecommand.cpp:121
 #, kde-format
 msgid "Collection deleted successfully"
-msgstr "Kolekto forigita sukcese"
+msgstr "संग्रहः सफलतया विलोपितः"
 
 #: src/deletecommand.cpp:129 src/infocommand.cpp:148
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item/collection syntax '%1'"
-msgstr "Nevalida ero/kolekta sintakso '%1'"
+msgstr "अमान्यवस्तु/सङ्ग्रहवाक्यविन्यासः '%1'."
 
 #: src/deletecommand.cpp:152 src/infocommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
-msgstr "Ne povas trovi '%1' kiel aron aŭ objekton"
+msgstr "'%1' संग्रहरूपेण वा द्रव्यरूपेण वा न प्राप्यते"
 
 #: src/deletecommand.cpp:164
 #, kde-format
 msgid "Item deleted successfully"
-msgstr "Ero forigita sukcese"
+msgstr "द्रव्यं सफलतया विलोपितम्"
 
 #: src/dumpcommand.cpp:46
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
-msgstr "Elĵeti aron al dosieruja strukturo"
+msgstr "संग्रहं निर्देशिकासंरचने डम्प कुर्वन्तु"
 
 #: src/dumpcommand.cpp:58
 #, kde-format
 msgid "Dump email messages in maildir directory structure"
-msgstr "Elĵeti retpoŝtajn mesaĝojn en maildir-dosierujo-strukturo"
+msgstr "maildir निर्देशिकासंरचने ईमेलसन्देशान् डम्प कुर्वन्तु"
 
 #: src/dumpcommand.cpp:61
 #, kde-format
 msgid "Dump items with Akonadi category URLs, otherwise text names"
-msgstr "Elĵeti erojn kun Akonadi-kategoriaj URL-oj, alie tekstaj nomoj"
+msgstr "अकोनाडी श्रेणी URL इत्यनेन सह वस्तूनि डम्प कुर्वन्तु, अन्यथा पाठनामानि"
 
 #: src/dumpcommand.cpp:64
 #, kde-format
 msgid "Operate even if destination directory is not empty"
-msgstr "Funkcii eĉ se cela dosierujo ne estas malplena"
+msgstr "गन्तव्यनिर्देशिका रिक्तं नास्ति चेदपि कार्यं कुर्वन्तु"
 
 #: src/dumpcommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to dump: an ID, path or Akonadi URL"
-msgstr "La aro por elĵeti: ID, vojo aŭ Akonadi URL"
+msgstr "डम्पं कर्तुं संग्रहः: एकः ID, मार्गः अथवा Akonadi URL"
 
 #: src/dumpcommand.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "The destination directory to dump to"
-msgstr "La celdosierujo al kiu elĵeti"
+msgstr "डम्पं कर्तुं गन्तव्यनिर्देशिका"
 
 #: src/dumpcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
 msgid "No destination directory specified"
-msgstr "Neniu cela dosierujo specifita"
+msgstr "गन्तव्यनिर्देशिका निर्दिष्टा नास्ति"
 
 #: src/dumpcommand.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' not found or not a directory"
-msgstr "Dosierujo '%1' ne trovita aŭ ne dosierujo"
+msgstr "निर्देशिका '%1' न प्राप्ता अथवा निर्देशिका न"
 
 #: src/dumpcommand.cpp:97
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
-msgstr "Dosierujo '%1' ne estas malplena (uzu '-f' por devigi operacion)"
+msgstr "'%1' निर्देशिका रिक्तं नास्ति (सञ्चालनं बाध्यं कर्तुं '-f' इत्यस्य उपयोगं कुर्वन्तु)"
 
 #: src/dumpcommand.cpp:121 src/listcommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
-msgstr "Kolekto %1 ne povas enhavi erojn"
+msgstr "सङ्ग्रहः %1 द्रव्याणि समाविष्टुं न शक्नोति"
 
 #: src/dumpcommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 contains no items"
-msgstr "Kolekto %1 enhavas neniujn erojn"
+msgstr "संग्रहे %1 मध्ये कोऽपि द्रव्यः नास्ति"
 
 #: src/dumpcommand.cpp:200 src/editcommand.cpp:103 src/showcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no payload"
-msgstr "Ero '%1' ne havas utilan ŝarĝon"
+msgstr "'%1' मदस्य कोऽपि पेलोड् नास्ति"
 
 #: src/dumpcommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create directory '%1/%2'"
-msgstr "Ne povas krei dosierujon '%1/%2'"
+msgstr "'%1/%2' इति निर्देशिकां निर्मातुं न शक्यते ।"
 
 #: src/dumpcommand.cpp:319
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save file '%1'"
-msgstr "Ne povas konservi dosieron '%1'"
+msgstr "'%1' सञ्चिकां रक्षितुं न शक्यते ।"
 
 #: src/editcommand.cpp:37
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
-msgstr "Redakti la krudan utilŝarĝon por la specifita ero per $EDITOR"
+msgstr "$EDITOR इत्यस्य उपयोगेन निर्दिष्टस्य द्रव्यस्य कच्चं पेलोड् सम्पादयन्तु"
 
 #: src/editcommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to edit"
-msgstr "La ero por redakti"
+msgstr "सम्पादनीयं द्रव्यम्"
 
 #: src/editcommand.cpp:60 src/updatecommand.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "No item specified"
-msgstr "Neniu ero specifita"
+msgstr "न कोऽपि द्रव्यः निर्दिष्टः"
 
 #: src/editcommand.cpp:95
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result found for item '%1'"
-msgstr "Neniu rezulto trovita por ero '%1'"
+msgstr "'%1' मदस्य कोऽपि परिणामः न लब्धः ।"
 
 #: src/editcommand.cpp:110
 #, kde-format
 msgctxt "@info:shell"
 msgid "EDITOR environment variable needs to be set"
-msgstr "EDITOR-mediovariablo devas esti agordita"
+msgstr "EDITOR वातावरणचरं सेट् करणीयम् अस्ति"
 
 #: src/editcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot launch text editor '%1'"
-msgstr "Ne povas lanĉi tekstredaktilon '%1'"
+msgstr "'%1' इति पाठसम्पादकं प्रारम्भं कर्तुं न शक्यते ।"
 
 #: src/editcommand.cpp:144
 #, kde-format
 msgctxt "@info:shell"
 msgid "Changes to item '%1' have been saved"
-msgstr "Ŝanĝoj al ero '%1' estas konservitaj"
+msgstr "'%1' मदस्य परिवर्तनं रक्षितम् अस्ति"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
-msgstr "Eksporti aron al XML-dosiero"
+msgstr "संग्रहं XML सञ्चिकायां निर्यातयन्तु"
 
 #: src/exportcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to export: an ID, path or Akonadi URL"
-msgstr "La aro eksportenda: ID, vojo aŭ Akonadi-URL"
+msgstr "निर्यातयितुं संग्रहः: एकः ID, मार्गः अथवा Akonadi URL"
 
 #: src/exportcommand.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to export to"
-msgstr "La dosiero por eksporti"
+msgstr "निर्यातनीया सञ्चिका"
 
 #: src/exportcommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "No export file specified"
-msgstr "Neniu eksportdosiero specifita"
+msgstr "निर्यातसञ्चिका निर्दिष्टा नास्ति"
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
-msgstr "Vastigi aŭ modifi kontaktogrupon"
+msgstr "सम्पर्कसमूहस्य विस्तारं वा परिवर्तनं वा कुर्वन्तु"
 
 #: src/groupcommand.cpp:58
 #, kde-format
 msgid "Show the expanded contact group (the default operation)"
-msgstr "Montri la vastigitan kontaktogrupon (la defaŭlta operacio)"
+msgstr "विस्तारितं सम्पर्कसमूहं (पूर्वनिर्धारितं कार्यं) दर्शयतु"
 
 #: src/groupcommand.cpp:61
 #, kde-format
 msgid "Add a contact to the group"
-msgstr "Aldoni kontakton al la grupo"
+msgstr "समूहे सम्पर्कं योजयन्तु"
 
 #: src/groupcommand.cpp:64
 #, kde-format
 msgid "Delete a contact from the group"
-msgstr "Forigi kontakton de la grupo"
+msgstr "समूहात् सम्पर्कं विलोपयन्तु"
 
 #: src/groupcommand.cpp:67
 #, kde-format
 msgid "Remove unknown item references from the group"
-msgstr "Forigi nekonatajn objektoreferencojn el la grupo"
+msgstr "समूहात् अज्ञातवस्तुसन्दर्भान् निष्कासयन्तु"
 
 #: src/groupcommand.cpp:70
 #, kde-format
 msgid "Email comment (name) for an added item"
-msgstr "Retpoŝti komenton (nomo) por aldonita ero"
+msgstr "योजितस्य द्रव्यस्य कृते टिप्पणीं (नाम) ईमेल कुर्वन्तु"
 
 #: src/groupcommand.cpp:71
 #, kde-format
 msgid "name"
-msgstr "nomo"
+msgstr "नामः"
 
 #: src/groupcommand.cpp:74
 #, kde-format
 msgid "Brief output (for 'expand', email addresses only)"
-msgstr "Mallonga eligo (por \"vastigi\", retpoŝtadresoj nur)"
+msgstr "संक्षिप्तं निर्गमं ('विस्तार' कृते, केवलं ईमेल-सङ्केताः)"
 
 #: src/groupcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
-msgstr "La kontaktgrupo ero, ID aŭ Akonadi URL"
+msgstr "सम्पर्कसमूहस्य द्रव्यं, एकः ID अथवा Akonadi URL"
 
 #: src/groupcommand.cpp:84
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing group argument"
-msgstr "Mankas grupa argumento"
+msgstr "समूहवादः अनुपलब्धः"
 
 #: src/groupcommand.cpp:104
 #, kde-format
@@ -1003,80 +1003,79 @@ msgctxt "@info:shell"
 msgid ""
 "Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"
 msgstr ""
-"Nur unu el la opcioj 'pligrandigi', 'aldoni', 'forigi' aŭ 'purigi' povas "
-"esti specifita"
+"केवलं 'विस्तार', 'जोड', 'विलोपन' अथवा 'स्वच्छ' विकल्पेषु एकः एव निर्दिष्टः भवितुम् अर्हति"
 
 #: src/groupcommand.cpp:115
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to add"
-msgstr "Neniuj eroj specifitaj por aldoni"
+msgstr "योजयितुं निर्दिष्टानि वस्तूनि न"
 
 #: src/groupcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one item may be specified to add with 'comment'"
-msgstr "Nur unu ero povas esti specifita por aldoni kun 'komento'"
+msgstr "'टिप्पणी' इत्यनेन सह योजयितुं केवलमेकं द्रव्यं निर्दिष्टं भवितुमर्हति।"
 
 #: src/groupcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to delete"
-msgstr "Neniuj eroj specifitaj por forigi"
+msgstr "विलोपनार्थं निर्दिष्टानि वस्तूनि न"
 
 #: src/groupcommand.cpp:147
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'comment' option is only allowed with 'add'"
-msgstr "La opcio 'komento' estas permesita nur kun 'aldoni'"
+msgstr "'टिप्पणी' विकल्पः केवलं 'add' इत्यनेन सह अनुमतः अस्ति।"
 
 #: src/groupcommand.cpp:197
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as an item"
-msgstr "Ne povas trovi '%1' kiel ero"
+msgstr "'%1' इत्येतत् द्रव्यरूपेण न प्राप्यते"
 
 #: src/groupcommand.cpp:204
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' is not a contact group"
-msgstr "Elemento '%1' ne estas kontaktogrupo"
+msgstr "'%1' मदः सम्पर्कसमूहः नास्ति"
 
 #: src/groupcommand.cpp:210
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no contact group payload"
-msgstr "Elemento '%1' havas neniun utilŝarĝon de kontaktogrupo"
+msgstr "'%1' मदस्य सम्पर्कसमूहस्य पेलोड् नास्ति"
 
 #: src/groupcommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "Errors occurred, group not updated"
-msgstr "Eraroj okazis, grupo ne ĝisdatigita"
+msgstr "त्रुटयः अभवन्, समूहः अद्यतनः न अभवत्"
 
 #: src/groupcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell"
 msgid "(unknown referenced item)"
-msgstr "(nekonata referencita objekto)"
+msgstr "(अज्ञात सन्दर्भित द्रव्यम्)"
 
 #: src/groupcommand.cpp:299 src/groupcommand.cpp:320
 #, kde-format
 msgctxt "@info:shell"
 msgid "(item has no Addressee payload)"
-msgstr "(ero havas neniun utilan ŝarĝon de Adresato)"
+msgstr "(वस्तुनः Addressee पेलोड् नास्ति)"
 
 #: src/groupcommand.cpp:339
 #, kde-format
 msgctxt "@item:shell"
 msgid "(invalid referenced item)"
-msgstr "(nevalida referencita ero)"
+msgstr "(अमान्य सन्दर्भित द्रव्यम्)"
 
 #: src/groupcommand.cpp:341
 #, kde-format
 msgctxt "@item:shell"
 msgid "(unknown referenced item)"
-msgstr "(nekonata referencita objekto)"
+msgstr "(अज्ञात सन्दर्भित द्रव्यम्)"
 
 #: src/groupcommand.cpp:392
 #, kde-format
@@ -1084,38 +1083,38 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" has %2 groups, %3 references and %4 data items:"
-msgstr "Grupo %1 \"%5\" havas %2 grupojn, %3 referencojn kaj %4 datumaĵojn:"
+msgstr "%1 समूहे \"%5\" %2 समूहाः, %3 सन्दर्भाः %4 दत्तांशवस्तूनि च सन्ति ।"
 
 #: src/groupcommand.cpp:401
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Type"
-msgstr "Tipo"
+msgstr "प्रकारः"
 
 #: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
 #: src/tagscommand.cpp:319
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "ID"
-msgstr "ID"
+msgstr "आईडी"
 
 #: src/groupcommand.cpp:403
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Email"
-msgstr "Retpoŝto"
+msgstr "ईमेल"
 
 #: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
-msgstr "Nomo"
+msgstr "नामः"
 
 #: src/groupcommand.cpp:438
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items could be fetched"
-msgstr "Neniuj eroj povus esti prenitaj"
+msgstr "न कश्चित् वस्तूनि आनेतुं शक्यन्ते स्म"
 
 #: src/groupcommand.cpp:497
 #, kde-format
@@ -1123,31 +1122,31 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Adding to group %1 \"%2\":"
-msgstr "Aldonante al grupo %1 \"%2\":"
+msgstr "%1 \"%2\" समूहे योजयन्:"
 
 #: src/groupcommand.cpp:512 src/groupcommand.cpp:624
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot search for email '%1', %2"
-msgstr "Ne eblas serĉi retpoŝton '%1', %2"
+msgstr "'%1', %2 इति ईमेल अन्वेष्टुं न शक्यते"
 
 #: src/groupcommand.cpp:523
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple contacts found for '%1', using the first one"
-msgstr "Multoblaj kontaktoj trovitaj por '%1', uzante la unuan"
+msgstr "'%1' कृते बहुसंपर्काः प्राप्ताः, प्रथमस्य उपयोगेन"
 
 #: src/groupcommand.cpp:558
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch requested item %1, %2"
-msgstr "Ne povas preni petitan elementon %1, %2"
+msgstr "अनुरोधितं द्रव्यं %1, %2 आनेतुं न शक्यते"
 
 #: src/groupcommand.cpp:568
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item %1 is not a contact item"
-msgstr "Ero %1 ne estas kontakta ero"
+msgstr "%1 मदः सम्पर्क-वस्तु नास्ति"
 
 #: src/groupcommand.cpp:583 src/groupcommand.cpp:666 src/groupcommand.cpp:715
 #, kde-format
@@ -1155,7 +1154,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" now has %2 groups, %3 references and %4 data items"
-msgstr "Grupo %1 \"%5\" nun havas %2 grupojn, %3 referencojn kaj %4 datumeroj"
+msgstr "%1 समूहे \"%5\" इदानीं %2 समूहाः, %3 सन्दर्भाः, %4 दत्तांशवस्तूनि च सन्ति"
 
 #: src/groupcommand.cpp:601
 #, kde-format
@@ -1163,13 +1162,13 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Removing from group %1 \"%2\":"
-msgstr "Forigante el grupo %1 \"%2\":"
+msgstr "%1 \"%2\" समूहात् निष्कासयन्:"
 
 #: src/groupcommand.cpp:638
 #, kde-format
 msgctxt "@info:shell"
 msgid "Nothing to remove for email '%1'"
-msgstr "Nenio forigenda por retpoŝto '%1'"
+msgstr "'%1' इति ईमेलस्य कृते किमपि हर्तुं नास्ति ।"
 
 #: src/groupcommand.cpp:682
 #, kde-format
@@ -1177,142 +1176,142 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Cleaning references from group %1 \"%2\":"
-msgstr "Purigante referencojn el grupo %1 \"%2\":"
+msgstr "%1 \"%2\" समूहात् सन्दर्भान् स्वच्छं कुर्वन्:"
 
 #: src/importcommand.cpp:39
 msgctxt "info:shell"
 msgid "Import an XML file"
-msgstr "Enporti XML-dosieron"
+msgstr "XML सञ्चिकां आयातयन्तु"
 
 #: src/importcommand.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "The parent collection under which to import the file"
-msgstr "La gepatra aro sub kiu importi la dosieron"
+msgstr "मातापितृसङ्ग्रहः यस्य अन्तर्गतं सञ्चिकां आयातितव्यम्"
 
 #: src/importcommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to import"
-msgstr "La dosiero importenda"
+msgstr "आयातितव्यं सञ्चिका"
 
 #: src/importcommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "No parent collection specified"
-msgstr "Neniu gepatra aro specifita"
+msgstr "मातापितृसङ्ग्रहः निर्दिष्टः नास्ति"
 
 #: src/importcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "No import file specified"
-msgstr "Neniu importdosiero specifita"
+msgstr "आयातसञ्चिका निर्दिष्टा नास्ति"
 
 #: src/importcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid XML file, %1"
-msgstr "Nevalida XML-dosiero, %1"
+msgstr "अमान्य XML सञ्चिका, %1"
 
 #: src/importcommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch parent collection, %1"
-msgstr "Ne eblas akiri gepatran aron, %1"
+msgstr "मातापितृसङ्ग्रहं आनेतुं असमर्थः, %1"
 
 #: src/importcommand.cpp:103
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch children of parent collection, %1"
-msgstr "Ne eblas alporti infanojn de gepatra aro, %1"
+msgstr "मातापितृसङ्ग्रहस्य बालकान् आनेतुं असमर्थः, %1"
 
 #: src/importcommand.cpp:122
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection '%1' already exists"
-msgstr "Kolekto '%1' jam ekzistas"
+msgstr "'%1' सङ्ग्रहः पूर्वमेव अस्ति"
 
 #: src/importcommand.cpp:126
 #, kde-format
 msgctxt "@info:shell"
 msgid "Creating collection '%1'"
-msgstr "Kreante aron '%1'"
+msgstr "'%1' सङ्ग्रहस्य निर्माणम् ।"
 
 #: src/importcommand.cpp:148
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing collection '%1'"
-msgstr "Prilaboranta aron '%1'"
+msgstr "'%1' संग्रहणं संसाधितम्।"
 
 #: src/importcommand.cpp:155
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parent for collection with remote ID '%1'"
-msgstr "Nevalida gepatro por aro kun fora ID '%1'"
+msgstr "दूरस्थ-ID '%1' इत्यनेन सह संग्रहार्थं अमान्यः मातापिता ।"
 
 #: src/importcommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
-msgstr "Ne eblas preni aron kun fora ID '%1', %2"
+msgstr "दूरस्थ-ID '%1', %2 इत्यनेन सह संग्रहं आनेतुं असमर्थम्"
 
 #: src/importcommand.cpp:194
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
-msgstr "Ne eblas krei aron kun fora ID '%1'"
+msgstr "दूरस्थ-ID '%1' इत्यनेन सह संग्रहं निर्मातुं असमर्थः ।"
 
 #: src/importcommand.cpp:212
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing items for '%1'"
-msgstr "Prilaboranta erojn por '%1'"
+msgstr "'%1' कृते वस्तूनि संसाधितानि।"
 
 #: src/importcommand.cpp:234
 #, kde-format
 msgctxt "@info:shell"
 msgid "Error creating item, %1"
-msgstr "Eraro dum kreado de ero, %1"
+msgstr "मदं निर्मातुं त्रुटिः, %1"
 
 #: src/importcommand.cpp:237
 #, kde-format
 msgctxt "@info:shell"
 msgid "Created item '%1'"
-msgstr "Kreita ero '%1'"
+msgstr "'%1' इति मदं निर्मितम् ।"
 
 #: src/infocommand.cpp:38
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
-msgstr "Montri plenajn informojn por aro aŭ ero"
+msgstr "संग्रहस्य वा द्रव्यस्य वा पूर्णसूचना दर्शयतु"
 
 #: src/infocommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
-msgstr "Kolektoj aŭ eroj por montri"
+msgstr "प्रदर्शनार्थं संग्रहाः वा वस्तूनि वा"
 
 #: src/infocommand.cpp:57
 #, kde-format
 msgid "entity..."
-msgstr "ento..."
+msgstr "इंकाई..."
 
 #: src/infocommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
-msgstr "Neniuj aroj aŭ eroj specifitaj"
+msgstr "न कोऽपि संग्रहः वा वस्तूनि वा निर्दिष्टानि"
 
 #: src/infocommand.cpp:117
 #, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
-msgstr "Neniu informo havebla por aro radiko"
+msgstr "संग्रहमूलस्य कृते कोऽपि सूचना उपलब्धा नास्ति"
 
 #: src/infocommand.cpp:220 src/infocommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID"
-msgstr "ID"
+msgstr "आईडी"
 
 #: src/infocommand.cpp:221 src/infocommand.cpp:268
 #, kde-format
@@ -1324,31 +1323,31 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Parent"
-msgstr "Gepatro"
+msgstr "मातापिता"
 
 #: src/infocommand.cpp:223 src/infocommand.cpp:270 src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell"
 msgid "Type"
-msgstr "Tipo"
+msgstr "प्रकारः"
 
 #: src/infocommand.cpp:223
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Collection"
-msgstr "Kolekto"
+msgstr "सङ्ग्रह"
 
 #: src/infocommand.cpp:224
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name"
-msgstr "Nomo"
+msgstr "नामः"
 
 #: src/infocommand.cpp:225
 #, kde-format
 msgctxt "@info:shell"
 msgid "Owner"
-msgstr "Posedanto"
+msgstr "स्वामी"
 
 #: src/infocommand.cpp:226 src/infocommand.cpp:271
 #, kde-format
@@ -1360,49 +1359,49 @@ msgstr "MIME"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
-msgstr "Fora ID"
+msgstr "दूरस्थ आईडी"
 
 #: src/infocommand.cpp:228
 #, kde-format
 msgctxt "@info:shell"
 msgid "Path"
-msgstr "Vojo"
+msgstr "पथं"
 
 #: src/infocommand.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
-msgstr "Nurlegebla"
+msgstr "ReadOnly इति"
 
 #: src/infocommand.cpp:236
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
-msgstr "ŜanĝiItem"
+msgstr "ChangeItem इति"
 
 #: src/infocommand.cpp:239
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
-msgstr "KreiItem"
+msgstr "CreateItem इति"
 
 #: src/infocommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
-msgstr "ForigiItem"
+msgstr "DeleteItem इति"
 
 #: src/infocommand.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
-msgstr "ŜanĝiKolon"
+msgstr "ChangeColl"
 
 #: src/infocommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
-msgstr "KreuKolon"
+msgstr "CreateColl इति"
 
 #: src/infocommand.cpp:251
 #, kde-format
@@ -1420,248 +1419,248 @@ msgstr "LinkItem"
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
-msgstr "MalligiItem"
+msgstr "UnlinkItem"
 
 #: src/infocommand.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Rights"
-msgstr "Rajtoj"
+msgstr "अधिकारः"
 
 #: src/infocommand.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Count"
-msgstr "Nombro"
+msgstr "गणनां कारोतु"
 
 #: src/infocommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unread"
-msgstr "Nelegita"
+msgstr "अपठित"
 
 #: src/infocommand.cpp:265 src/infocommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "Size"
-msgstr "Grandeco"
+msgstr "आकृति"
 
 #: src/infocommand.cpp:270
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Item"
-msgstr "Ero"
+msgstr "वस्तु"
 
 #: src/infocommand.cpp:273
 #, kde-format
 msgctxt "@info:shell"
 msgid "Modified"
-msgstr "Modifita"
+msgstr "परिवर्तित"
 
 #: src/infocommand.cpp:274
 #, kde-format
 msgctxt "@info:shell"
 msgid "Revision"
-msgstr "Revizio"
+msgstr "कार्यदर्शन"
 
 #: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
-msgstr "Utila ŝarĝo"
+msgstr "पेलोड"
 
 #: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "yes"
-msgstr "jes"
+msgstr "आम्‌"
 
 #: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "no"
-msgstr "ne"
+msgstr "नहि"
 
 #: src/infocommand.cpp:284 src/infocommand.cpp:294
 #, kde-format
 msgctxt "@info:shell"
 msgid "(none)"
-msgstr "(neniu)"
+msgstr "(न कश्चित्)"
 
 #: src/infocommand.cpp:286
 #, kde-format
 msgctxt "@info:shell"
 msgid "Flags"
-msgstr "Flagoj"
+msgstr "ध्वजाः"
 
 #: src/infocommand.cpp:296
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tags"
-msgstr "Etikedoj"
+msgstr "टैग्स"
 
 #: src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Unknown"
-msgstr "Nekonata"
+msgstr "अज्ञात"
 
 #: src/listcommand.cpp:37
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
-msgstr "Listigi subarojn kaj/aŭ erojn en difinita aro"
+msgstr "निर्दिष्टसङ्ग्रहे उपसङ्ग्रहान्/अथवा वस्तूनि सूचीबद्धं कुर्वन्तु"
 
 #: src/listcommand.cpp:49
 #, kde-format
 msgid "List more detailed information"
-msgstr "Listigi pli detalajn informojn"
+msgstr "अधिकविस्तृतसूचनाः सूचीबद्धाः कुर्वन्तु"
 
 #: src/listcommand.cpp:52
 #, kde-format
 msgid "List only sub-collections"
-msgstr "Listigi nur subarojn"
+msgstr "केवलं उपसङ्ग्रहान् एव सूचीबद्धं कुर्वन्तु"
 
 #: src/listcommand.cpp:55
 #, kde-format
 msgid "List only contained items"
-msgstr "Listo nur enhavitaj eroj"
+msgstr "केवलं समाविष्टानि वस्तूनि सूचीत"
 
 #: src/listcommand.cpp:58
 #, kde-format
 msgid "List sub-collections recursively"
-msgstr "Listigi subarojn rikure"
+msgstr "उपसङ्ग्रहान् पुनरावर्तनीयरूपेण सूचीबद्धं कुर्वन्तु"
 
 #: src/listcommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
-msgstr "La aro listigenda: ID, vojo aŭ Akonadi-URL"
+msgstr "सूचीकृत्य संग्रहः: एकः ID, मार्गः अथवा अकोनाडी URL"
 
 #: src/listcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr "Rikura listigo povas nur esti uzata por kolektoj"
+msgstr "पुनरावर्तनीयसूची केवलं संग्रहाणां कृते एव उपयोक्तुं शक्यते"
 
 #: src/listcommand.cpp:160
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
-msgstr "Kolekto %1 ne havas subarojn"
+msgstr "%1 सङ्ग्रहे उपसङ्ग्रहाः नास्ति"
 
 #: src/listcommand.cpp:169
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "Kolekto %2 havas %1 rikuran subaron:"
-msgstr[1] "Kolekto %2 havas %1 rikurajn subarojn:"
+msgstr[0] "%2 संग्रहे %1 पुनरावर्तनीयः उपसङ्ग्रहः अस्ति:"
+msgstr[1] "%2 संग्रहे %1 पुनरावर्तनीय उपसङ्ग्रहाः सन्ति:"
 
 #: src/listcommand.cpp:175
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
-msgstr[0] "Kolekto %2 havas %1 subaron:"
-msgstr[1] "Kolekto %2 havas %1 subarojn:"
+msgstr[0] "%2 संग्रहे %1 उपसङ्ग्रहः अस्ति:"
+msgstr[1] "%2 संग्रहे %1 उपसङ्ग्रहाः सन्ति:"
 
 #: src/listcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
-msgstr "Kolekto %1 havas neniujn erojn"
+msgstr "संग्रह %1 इत्यस्य कोऽपि द्रव्यः नास्ति"
 
 #: src/listcommand.cpp:284
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
-msgstr[0] "Kolekto %2 havas %1 eron:"
-msgstr[1] "Kolekto %2 havas %1 erojn:"
+msgstr[0] "संग्रहे %2 मध्ये %1 द्रव्यम् अस्ति:"
+msgstr[1] "Collection %2 has %1 items:"
 
 #: src/listcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
-msgstr "MIME-tipo"
+msgstr "MIME प्रकार"
 
 #: src/listcommand.cpp:293
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
-msgstr "Grandeco"
+msgstr "आकृति"
 
 #: src/listcommand.cpp:294
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"
-msgstr "Modifa Tempo"
+msgstr "परिवर्तन समय"
 
 #: src/main.cpp:42
 #, kde-format
 msgctxt "@title program name"
 msgid "Akonadi Client"
-msgstr "Akonadi Kliento"
+msgstr "अकोनाडी ग्राहक"
 
 #: src/main.cpp:44
 #, kde-format
 msgctxt "@info:shell short description"
 msgid "A command-line/shell client for Akonadi"
-msgstr "Komandlinio/ŝela kliento por Akonadi"
+msgstr "अकोनाडी कृते एकः आदेश-पङ्क्तिः/शेल् क्लायन्ट्"
 
 #: src/main.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
-msgstr "Kevin Krammer"
+msgstr "केविन् क्रामर"
 
 #: src/main.cpp:48
 #, kde-format
 msgctxt "@title about data task"
 msgid "Original Author"
-msgstr "Originala Aŭtoro"
+msgstr "मूल लेखक"
 
 #: src/main.cpp:49
 #, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
-msgstr "Jonathan Marten"
+msgstr "जोनाथन् मार्टेन्"
 
 #: src/main.cpp:49
 #, kde-format
 msgctxt "@title about data task"
 msgid "Additions and new commands"
-msgstr "Aldonoj kaj novaj komandoj"
+msgstr "परिवर्तनानि नूतनानि च आदेशानि"
 
 #: src/main.cpp:50
 #, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
-msgstr "Bhaskar Kandiyal"
+msgstr "भास्कर काण्डियाल"
 
 #: src/main.cpp:50
 #, kde-format
 msgctxt "@title about data task"
 msgid "New commands, GSOC 2014"
-msgstr "Novaj komandoj, GSOC 2014"
+msgstr "नवीनाः आदेशाः, GSOC 2014"
 
 #: src/main.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Command to execute"
-msgstr "Komando plenumenda"
+msgstr "निष्पादयितुं आदेशः"
 
 #: src/main.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for command"
-msgstr "Argumentoj por komando"
+msgstr "आज्ञार्थं तर्काः"
 
 #: src/main.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "[args]"
-msgstr "[argoj]"
+msgstr "[अर्ग्स्] ।"
 
 #: src/main.cpp:80
 #, kde-format
@@ -1670,208 +1669,205 @@ msgid ""
 "See '%1 help' for available commands.\n"
 "See '%1 help command' for information on a specific command."
 msgstr ""
-"Vidu '%1 helpo' por disponeblaj komandoj.\n"
-"Vidu '%1 help-komando' por informoj pri specifa komando."
+"उपलब्धादेशानां कृते '%1 help' पश्यन्तु । विशिष्टादेशस्य सूचनायै '%1 help command' पश्यन्तु ।"
 
 #: src/movecommand.cpp:27
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
-msgstr "Movi arojn aŭ erojn en novan aron"
+msgstr "संग्रहान् वा वस्तूनि वा नूतनसङ्ग्रहे स्थानान्तरयन्तु"
 
 #: src/movecommand.cpp:40
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to move"
-msgstr "Ekzistantaj aroj aŭ aĵoj por movi"
+msgstr "विद्यमानाः संग्रहाः वा स्थानान्तरणार्थं वस्तूनि वा"
 
 #: src/movecommand.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to move into"
-msgstr "Celaro en kiun translokigi"
+msgstr "गन्तव्यसङ्ग्रहं प्रति गन्तुं"
 
 #: src/renamecommand.cpp:33
 msgctxt "info:shell"
 msgid "Rename a collection"
-msgstr "Alinomi aron"
+msgstr "संग्रहस्य नाम परिवर्तनं कुर्वन्तु"
 
 #: src/renamecommand.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to rename"
-msgstr "La aro por renomi"
+msgstr "नामकरणार्थं संग्रहः"
 
 #: src/renamecommand.cpp:46
 #, kde-format
 msgctxt "@info:shell"
 msgid "New name for collection"
-msgstr "Nova nomo por aro"
+msgstr "संग्रहार्थं नूतनं नाम"
 
 #: src/renamecommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "New name not specified"
-msgstr "Nova nomo ne specifita"
+msgstr "नूतनं नाम न निर्दिष्टम्"
 
 #: src/renamecommand.cpp:97
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection renamed successfully"
-msgstr "Kolekto renomita sukcese"
+msgstr "संग्रहस्य नाम सफलतया परिवर्तितम्"
 
 #: src/showcommand.cpp:34
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
-msgstr "Montri la krudan utilŝarĝon de ero"
+msgstr "कस्यचित् द्रव्यस्य कच्चं पेलोड् दर्शयतु"
 
 #: src/showcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The items to show"
-msgstr "La objektoj por montri"
+msgstr "दर्शयितुं वस्तूनि"
 
 #: src/showcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "item..."
-msgstr "ero..."
+msgstr "वस्तु..."
 
 #: src/showcommand.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "Use raw payload (disables quoted-printable decoding)"
-msgstr "Uzi krudan utilŝarĝon (malŝaltas citil-preseblan malkodigon)"
+msgstr "कच्चा पेलोड् इत्यस्य उपयोगं कुर्वन्तु (उद्धृत-मुद्रणयोग्यं डिकोडिंग् अक्षमं करोति)"
 
 #: src/showcommand.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified"
-msgstr "Neniuj eroj specifitaj"
+msgstr "न निर्दिष्टाः वस्तूनि"
 
 #: src/showcommand.cpp:89 src/updatecommand.cpp:116
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result returned for item '%1'"
-msgstr "Neniu rezulto revenis por ero '%1'"
+msgstr "'%1' मदस्य कृते कोऽपि परिणामः न प्रत्यागच्छत् ।"
 
 #: src/showcommand.cpp:104
 #, kde-format
 msgid "Item has no main body part"
-msgstr "Ero ne havas ĉefan korpoparton"
+msgstr "द्रव्यस्य मुख्यशरीरभागः नास्ति"
 
 #: src/tagscommand.cpp:31
 msgctxt "info:shell"
 msgid "List or modify tags"
-msgstr "Listigi aŭ modifi etikedojn"
+msgstr "टैग्स् सूचीबद्धं कुर्वन्तु अथवा परिवर्तनं कुर्वन्तु"
 
 #: src/tagscommand.cpp:47
 #, kde-format
 msgid "Brief output, tag names or IDs only"
-msgstr "Mallonga eligo, etikednomoj aŭ identigiloj nur"
+msgstr "संक्षिप्तं उत्पादनं, केवलं टैगनामानि वा IDs वा"
 
 #: src/tagscommand.cpp:50
 #, kde-format
 msgid "Brief output, tag URLs only"
-msgstr "Mallonga eligo, etikedaj URL-oj nur"
+msgstr "संक्षिप्तं आउटपुट्, केवलं टैग् URLs"
 
 #: src/tagscommand.cpp:54
 #, kde-format
 msgid "List all known tags (the default operation)"
-msgstr "Listigi ĉiujn konatajn etikedojn (la defaŭlta operacio)"
+msgstr "सर्वाणि ज्ञातानि टैग्स् (पूर्वनिर्धारितक्रिया) सूचीबद्धानि कुर्वन्तु ।"
 
 #: src/tagscommand.cpp:57
 #, kde-format
 msgid "Add named tags"
-msgstr "Aldoni nomitajn etikedojn"
+msgstr "नामकृतानि टैग्स् योजयन्तु"
 
 #: src/tagscommand.cpp:60
 #, kde-format
 msgid "Delete tags"
-msgstr "Forigi etikedojn"
+msgstr "टैग्स् विलोपयन्तु"
 
 #. i18n("ID for a tag to be added (default automatic)"), i18n("id")));
 #: src/tagscommand.cpp:65
 #, kde-format
 msgid "TAG"
-msgstr "TAG"
+msgstr "सूचकपत्त्र"
 
 #: src/tagscommand.cpp:65
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
-msgstr ""
-"La nomo de etikedo por aldoni, aŭ la nomo, ID aŭ URL de etikedo por forigi"
+msgstr "योजयितुं टैगस्य नाम, अथवा विलोपनीयस्य टैग् इत्यस्य नाम, ID अथवा URL"
 
 #: src/tagscommand.cpp:65
 #, kde-format
 msgid "[TAG...]"
-msgstr "[ETIKEDO...]"
+msgstr "[सूचकपत्त्र...]"
 
 #: src/tagscommand.cpp:85
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr "La opcioj 'breve' kaj 'urls' ne povas ambaŭ esti specifitaj"
+msgstr "'brief' तथा 'urls' विकल्पद्वयं निर्दिष्टुं न शक्यते"
 
 #: src/tagscommand.cpp:100
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
-msgstr ""
-"Nur unu el la 'listo', 'aldoni' aŭ 'forigi' opcioj povas esti specifita"
+msgstr "'सूची', 'add' अथवा 'delete' विकल्पेषु केवलम् एकः एव निर्दिष्टः भवितुम् अर्हति"
 
 #: src/tagscommand.cpp:115
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
-msgstr "Neniuj etikedoj specifitaj por aldoni"
+msgstr "योजयितुं कोऽपि टैग् निर्दिष्टः नास्ति"
 
 #: src/tagscommand.cpp:120
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr "Multoblaj etikedoj ne povas esti specifitaj por aldoni kun 'id'"
+msgstr "'id' इत्यनेन सह योजयितुं बहुविध-टैग् निर्दिष्टुं न शक्यते ।"
 
 #: src/tagscommand.cpp:129
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
-msgstr "Neniuj etikedoj specifitaj por forigi"
+msgstr "विलोपनार्थं कोऽपि टैग् निर्दिष्टः नास्ति"
 
 #: src/tagscommand.cpp:158
 #, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr "Etikedo nomita '%1' ID %2 jam ekzistas"
+msgstr "'%1' इति नामकं टैग् ID %2 पूर्वमेव अस्ति"
 
 #: src/tagscommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1' ID %2"
-msgstr "Ne povas aldoni etikedon '%1' ID %2"
+msgstr "'%1' ID %2 टैग् योजयितुं न शक्यते"
 
 #: src/tagscommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1'"
-msgstr "Ne povas aldoni etikedon '%1'"
+msgstr "'%1' इति टैग् योजयितुं न शक्यते ।"
 
 #: src/tagscommand.cpp:227
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
-msgstr "Etikedo por forigi '%1' ne ekzistas"
+msgstr "'%1' विलोपयितुं टैग् नास्ति"
 
 #: src/tagscommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete ID %1 does not exist"
-msgstr "Etikedo por forigi ID %1 ne ekzistas"
+msgstr "ID %1 विलोपयितुं टैग् नास्ति"
 
 #: src/tagscommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags found"
-msgstr "Neniuj etikedoj trovitaj"
+msgstr "न टैग्स् प्राप्ताः"
 
 #: src/tagscommand.cpp:320
 #, kde-format
@@ -1882,28 +1878,28 @@ msgstr "URL"
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
-msgstr "Ĝisdatigi la utilŝarĝon de ero el dosiero"
+msgstr "सञ्चिकातः कस्यचित् द्रव्यस्य पेलोड् अद्यतनं कुर्वन्तु"
 
 #: src/updatecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to update, an ID or Akonadi URL"
-msgstr "La ero ĝisdatigota, ID aŭ Akonadi URL"
+msgstr "अद्यतनं कर्तुं द्रव्यं, ID अथवा Akonadi URL"
 
 #: src/updatecommand.cpp:53
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to update the item from"
-msgstr "Dosiero el kiu ĝisdatigi la eron"
+msgstr "सञ्चिकातः द्रव्यं अद्यतनीकर्तुं"
 
 #: src/updatecommand.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file specified"
-msgstr "Neniu dosiero specifita"
+msgstr "न सञ्चिका निर्दिष्टा"
 
 #: src/updatecommand.cpp:136
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item updated successfully"
-msgstr "Ero ĝisdatigita sukcese"
+msgstr "मदः सफलतया अद्यतनः अभवत्"
