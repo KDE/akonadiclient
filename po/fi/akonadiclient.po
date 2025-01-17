@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
-# Tommi Nieminen <translator@legisign.org>, 2019, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-08 01:49+0000\n"
-"PO-Revision-Date: 2023-04-14 17:24+0300\n"
+"PO-Revision-Date: 2024-11-18 09:31+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -102,8 +102,6 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Aseta ympäristössä %1=\"%2\""
 
 #: src/addcommand.cpp:41
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
 msgstr "Lisää tietueet kokoelmaan"
@@ -286,8 +284,6 @@ msgid "Added file '%2' as item %1"
 msgstr "Lisättiin tiedosto ”%2” tietueeksi %1"
 
 #: src/agentscommand.cpp:37
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Hallitse Akonadi-agentteja"
@@ -385,46 +381,40 @@ msgid "Status:  "
 msgstr "Tila:    "
 
 #: src/attributescommand.cpp:72
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr "Lisää tietueet kokoelmaan"
+msgstr "Näytä määritteet tai päivitä ne kokoelmaan"
 
 #: src/attributescommand.cpp:89
-#, fuzzy, kde-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr "Näytä yhteystietoryhmä laajennettuna (oletustoiminto)"
+msgstr "Näytä kokoelman määritteet (oletustoimenpide)"
 
 #: src/attributescommand.cpp:92
 #, kde-format
 msgid "Add an attribute"
-msgstr ""
+msgstr "Lisää määrite"
 
 #: src/attributescommand.cpp:95
 #, kde-format
 msgid "Modify an existing attribute"
-msgstr ""
+msgstr "Muuta olemassa olevaa määritettä"
 
 #: src/attributescommand.cpp:98
-#, fuzzy, kde-format
-#| msgid "Delete a collection or an item"
+#, kde-format
 msgid "Delete an existing attribute"
-msgstr "Poista kokoelma tai tietue"
+msgstr "Poista olemassa oleva määrite"
 
 #: src/attributescommand.cpp:101
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
-msgstr ""
+msgstr "Näytä tai tulkitse määritteen arvo heksana"
 
 #: src/attributescommand.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection to dump: an ID, path or Akonadi URL"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
-msgstr "Vedostettava kokoelma: tunniste, sijainti tai Akonadi-osoite"
+msgstr "Kokoelma: tunniste, sijainti tai Akonadi-verkko-osoite"
 
 #: src/attributescommand.cpp:104 src/groupcommand.cpp:78
 #, kde-format
@@ -442,21 +432,22 @@ msgstr "parametrit…"
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
 msgstr ""
+"Odotetaan heksakoodattua merkkijonoa, mutta pituus %1 ei ole parillinen"
 
 #: src/attributescommand.cpp:127
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr ""
+msgstr "Heksakoodattu arvo sisälsi virheellisiä merkkejä"
 
 #: src/attributescommand.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
-msgstr "Vain yhden komennoista ”list”, ”add” tai ”delete” voi antaa kerrallaan"
+msgstr ""
+"Vain yhden komennoista ”show”, ”add”, ”modify” tai ”delete” voi antaa "
+"kerrallaan"
 
 #: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -466,50 +457,40 @@ msgid "No collection specified"
 msgstr "Kokoelmaa ei määritetty"
 
 #: src/attributescommand.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
-msgstr "Lisättäviä tietueita ei annettu"
+msgstr "Lisättävän määritteen nimeä tai arvoa ei annettu"
 
 #: src/attributescommand.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
-msgstr "Poistettavia tietueita ei annettu"
+msgstr "Ei annettu poistettavan määritteen nimeä"
 
 #: src/attributescommand.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr "Lisättäviä tietueita ei annettu"
+msgstr "Ei annettu muutettavan määritteen nimeä tai arvoa"
 
 #: src/attributescommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr ""
+msgstr "Liian monta parametria annettua, alkaen: ”%1”"
 
 #: src/attributescommand.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection already has an attribute '%1'"
-msgstr "Kokoelmassa %1 ei ole tietueita"
+msgstr "Kokoelmassa on jo määrite ”%1”"
 
 #: src/attributescommand.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection has no attribute '%1'"
-msgstr "Kokoelmassa %1 ei ole tietueita"
+msgstr "Kokoelmassa ei ole määritettä ”%1”"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -570,8 +551,6 @@ msgid "Invalid command"
 msgstr "Virheellinen komento"
 
 #: src/copycommand.cpp:40
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
 msgstr "Kopioi kokoelmat tai tietueet uuteen kokoelmaan"
@@ -714,8 +693,6 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "”%1”: kohteita ei voida kopioida tai siirtää, %2"
 
 #: src/createcommand.cpp:35
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "Luo uusi kokoelma"
@@ -783,8 +760,6 @@ msgid "Created new collection '%1'"
 msgstr "Luotu uusi kokoelma ”%1”"
 
 #: src/deletecommand.cpp:39
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Poista kokoelma tai tietue"
@@ -830,8 +805,6 @@ msgid "Item deleted successfully"
 msgstr "Tietueen poistaminen onnistui"
 
 #: src/dumpcommand.cpp:46
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
 msgstr "Vedosta kokoelma kansiorakenteeksi"
@@ -912,8 +885,6 @@ msgid "Cannot save file '%1'"
 msgstr "Tiedostoa ”%1” ei voi tallentaa"
 
 #: src/editcommand.cpp:37
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr "Muokkaa annetun tietueen raakakuormaa $EDITORilla"
@@ -955,11 +926,9 @@ msgid "Changes to item '%1' have been saved"
 msgstr "Muutokset tietueeseen ”%1” on tallennettu"
 
 #: src/exportcommand.cpp:31
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
-msgstr "Tuo kokoelma XML-tiedostosta"
+msgstr "Vie kokoelma XML-tiedostoksi"
 
 #: src/exportcommand.cpp:43
 #, kde-format
@@ -980,8 +949,6 @@ msgid "No export file specified"
 msgstr "Vientitiedosto ei määritetty"
 
 #: src/groupcommand.cpp:39
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "Laajenna tai muuta yhteystietoryhmää"
@@ -1215,8 +1182,6 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "Siivotaan viittauksia ryhmästä %1 ”%2”:"
 
 #: src/importcommand.cpp:39
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr "Tuo XML-tiedosto"
@@ -1318,8 +1283,6 @@ msgid "Created item '%1'"
 msgstr "Luotiin tietue ”%1”"
 
 #: src/infocommand.cpp:38
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "Näytä kokoelman tai tietueen kaikki tiedot"
@@ -1405,7 +1368,7 @@ msgstr "Etätunniste"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Path"
-msgstr ""
+msgstr "Sijainti"
 
 #: src/infocommand.cpp:233
 #, kde-format
@@ -1546,8 +1509,6 @@ msgid "Unknown"
 msgstr "Tuntematon"
 
 #: src/listcommand.cpp:37
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Luettele annetun kokoelmat alikokoelmat tai tietueet"
@@ -1568,10 +1529,9 @@ msgid "List only contained items"
 msgstr "Luettele vain sisältyvät tietueet"
 
 #: src/listcommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "List only sub-collections"
+#, kde-format
 msgid "List sub-collections recursively"
-msgstr "Luettele vain alikokoelmat"
+msgstr "Luettele alikokoelmat rekursiivisesti"
 
 #: src/listcommand.cpp:60
 #, kde-format
@@ -1583,7 +1543,7 @@ msgstr "Lueteltava kokoelma: tunniste, sijainti tai Akonadi-osoite"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "Rekursiivista luettelointia voi käyttää vain kokoelmiin"
 
 #: src/listcommand.cpp:160
 #, kde-format
@@ -1592,15 +1552,12 @@ msgid "Collection %1 has no sub-collections"
 msgstr "Kokoelmalla %1 ei ole alikokoelmia"
 
 #: src/listcommand.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collection:"
-#| msgid_plural "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "Kokoelmassa %2 on %1 alikokoelma:"
-msgstr[1] "Kokoelmassa %2 on %1 alikokoelmaa:"
+msgstr[0] "Kokoelmassa %2 on %1 rekursiivinen alikokoelma:"
+msgstr[1] "Kokoelmassa %2 on %1 rekursiivista alikokoelmaa:"
 
 #: src/listcommand.cpp:175
 #, kde-format
@@ -1655,8 +1612,7 @@ msgid "A command-line/shell client for Akonadi"
 msgstr "Akonadin komentoriviasiakas"
 
 #: src/main.cpp:48
-#, fuzzy, kde-format
-#| msgid "Kevin Krammer"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
@@ -1668,8 +1624,7 @@ msgid "Original Author"
 msgstr "Alkuperäinen tekijä"
 
 #: src/main.cpp:49
-#, fuzzy, kde-format
-#| msgid "Jonathan Marten"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
@@ -1681,8 +1636,7 @@ msgid "Additions and new commands"
 msgstr "Lisäykset ja uudet komennot"
 
 #: src/main.cpp:50
-#, fuzzy, kde-format
-#| msgid "Bhaskar Kandiyal"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
@@ -1722,8 +1676,6 @@ msgstr ""
 "Lisätietoa komennosta: ”%1 help komento”."
 
 #: src/movecommand.cpp:27
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Siirrä kokoelmat tai tietueet uuteen kokoelmaan"
@@ -1741,8 +1693,6 @@ msgid "Destination collection to move into"
 msgstr "Kohdekokoelma, johon siirretään"
 
 #: src/renamecommand.cpp:33
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "Muuta kokoelman nimeä"
@@ -1772,11 +1722,9 @@ msgid "Collection renamed successfully"
 msgstr "Kokoelman nimen muuttaminen onnistui"
 
 #: src/showcommand.cpp:34
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
-msgstr "Näytä tietueen raaka kuorma"
+msgstr "Näytä tietueen raakakuorma"
 
 #: src/showcommand.cpp:43
 #, kde-format
@@ -1816,8 +1764,6 @@ msgid "Item has no main body part"
 msgstr "Tietueella ei ole päärunko-osaa"
 
 #: src/tagscommand.cpp:31
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "Luettele tai muuta luokituksia"
@@ -1938,8 +1884,6 @@ msgid "URL"
 msgstr "Verkko-osoite"
 
 #: src/updatecommand.cpp:35
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr "Päivitä tietueen kuorma tiedostosta"

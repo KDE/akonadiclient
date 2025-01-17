@@ -1,85 +1,87 @@
+# Sanskrit translations for akonadiclient package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the akonadiclient package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+# SPDX-FileCopyrightText: 2024 kali <shreekantkalwar@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-08 01:49+0000\n"
-"PO-Revision-Date: 2024-04-23 19:30\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-12-29 18:08+0530\n"
+"Last-Translator: kali <shreekantkalwar@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
+"Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/akonadiclient/akonadiclient.pot\n"
-"X-Crowdin-File-ID: 57020\n"
+"Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Poedit 3.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "朱鸷勇, Lie_Ex, Guo Yunhe"
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "您的电子邮件"
+msgstr "भवतः ईमेलपत्राणि"
 
 #: src/abstractcommand.cpp:47
 #, kde-format
 msgctxt "@info:shell"
 msgid "The name of the command"
-msgstr "命令名称"
+msgstr "आदेशस्य नाम"
 
 #: src/abstractcommand.cpp:91 src/main.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "Options for command"
-msgstr "命令选项"
+msgstr "आदेशस्य विकल्पाः"
 
 #: src/abstractcommand.cpp:91 src/main.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "[options]"
-msgstr "[选项]"
+msgstr "[विकल्पाः] ।"
 
 #: src/abstractcommand.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that a collection is specified"
-msgstr "假设集合已指定"
+msgstr "संग्रहः निर्दिष्टः इति कल्पयतु"
 
 #: src/abstractcommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that an item is specified"
-msgstr "假设项目已指定"
+msgstr "कल्पयतु यत् कश्चन द्रव्यः निर्दिष्टः अस्ति"
 
 #: src/abstractcommand.cpp:110
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run without making any actual changes"
-msgstr "运行但不进行实际更改"
+msgstr "वास्तविकं परिवर्तनं विना चालयन्तु"
 
 #: src/abstractcommand.cpp:125
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot specify as both an item and a collection"
-msgstr "无法同时指定为项目和集合"
+msgstr "द्रव्यं संग्रहं च इति द्वयोः रूपेण निर्दिष्टुं न शक्यते"
 
 #: src/abstractcommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid collection/item argument '%1', %2"
-msgstr "集合/项目的参数 '%1' 无效，%2"
+msgstr "अमान्य संग्रह/वस्तु तर्क '%1', %2"
 
 #: src/abstractcommand.cpp:163
 #, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2. See 'help %1'"
-msgstr "%2。参见 'help %1'"
+msgstr "%2. 'सहायतां %1' पश्यन्तु।"
 
 #: src/abstractcommand.cpp:166
 #, kde-format
@@ -87,354 +89,354 @@ msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3. See '%1 help %2'"
-msgstr "%3. 参见 '%1 help %2'"
+msgstr "%3. '%1 सहायता %2' पश्यन्तु।"
 
 #: src/abstractcommand.cpp:182
 #, kde-format
 msgctxt "@info:shell"
 msgid "Dangerous or destructive operations are not allowed"
-msgstr "不允许危险或破坏性操作"
+msgstr "खतरनाकं वा विनाशकारीं वा कार्यं न अनुमतम्"
 
 #: src/abstractcommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
-msgstr "在环境变量中设置 %1=\"%2\""
+msgstr "वातावरणे %1=\"%2\" सेट् कुर्वन्तु"
 
 #: src/addcommand.cpp:41
 msgctxt "info:shell"
 msgid "Add items to a collection"
-msgstr ""
+msgstr "संग्रहे वस्तूनि योजयन्तु"
 
 #: src/addcommand.cpp:59
 #, kde-format
 msgid "Base directory for input files/directories, default is current"
-msgstr "输入的文件/目录的基准目录，默认当前目录"
+msgstr "निवेशसञ्चिकानां/निर्देशिकानां कृते आधारनिर्देशिका, पूर्वनिर्धारितं वर्तमानम् अस्ति"
 
 #: src/addcommand.cpp:60
 #, kde-format
 msgid "directory"
-msgstr "目录"
+msgstr "निर्देशिका"
 
 #: src/addcommand.cpp:63
 #, kde-format
 msgid "Flat mode, do not duplicate subdirectory structure"
-msgstr "扁平模式，不会复制子目录结构"
+msgstr "सपाटविधिः, उपनिर्देशिकासंरचनायाः द्वितीयकं न कुर्वन्तु"
 
 #: src/addcommand.cpp:66
 #, kde-format
 msgid "MIME type of added items, default is to auto-detect"
-msgstr "添加项目的 MIME 类型，默认自动检测"
+msgstr "MIME प्रकारः योजितवस्तूनाम्, पूर्वनिर्धारितं स्वयमेव अन्वेषणं भवति"
 
 #: src/addcommand.cpp:67
 #, kde-format
 msgid "mimetype"
-msgstr "MIME 类型"
+msgstr "अनुकरणप्रकारः"
 
 #: src/addcommand.cpp:70
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to add to: an ID, path or Akonadi URL"
-msgstr "要添加到的集合：ID、路径或者 Akonadi URL"
+msgstr "योजयितुं संग्रहः: एकः ID, मार्गः अथवा Akonadi URL"
 
 #: src/addcommand.cpp:71
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or directories to add to the collection"
-msgstr "要添加到集合的文件或目录"
+msgstr "संग्रहे योजयितुं सञ्चिकाः अथवा निर्देशिकाः"
 
 #: src/addcommand.cpp:71
 #, kde-format
 msgid "files..."
-msgstr "文件..."
+msgstr "सञ्चिकाः..."
 
 #: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection argument"
-msgstr "缺少集合参数"
+msgstr "संग्रहतर्कः अनुपलब्धः"
 
 #: src/addcommand.cpp:79
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file or directory arguments"
-msgstr "没有文件或目录参数"
+msgstr "सञ्चिका वा निर्देशिका वा तर्कः नास्ति"
 
 #: src/addcommand.cpp:95
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid MIME type argument '%1'"
-msgstr "无效的 MIME 类型参数 '%1'"
+msgstr "अमान्यः MIME प्रकारस्य तर्कः '%1'."
 
 #: src/addcommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
-msgstr "找不到基准目录 '%1'"
+msgstr "आधारनिर्देशिका '%1' न प्राप्ता"
 
 #: src/addcommand.cpp:125
 #, kde-format
 msgid "File '%1' does not exist"
-msgstr "文件 '%1' 不存在"
+msgstr "'%1' सञ्चिका नास्ति"
 
 #: src/addcommand.cpp:128
 #, kde-format
 msgid "Error accessing file '%1'"
-msgstr "访问文件 '%1' 时出错"
+msgstr "'%1' सञ्चिकां अभिगन्तुं त्रुटिः ।"
 
 #: src/addcommand.cpp:156
 #, kde-format
 msgctxt "@info:shell"
 msgid "No valid file or directory arguments"
-msgstr "无有效的文件或目录参数"
+msgstr "वैध सञ्चिका वा निर्देशिका वा तर्कः नास्ति"
 
 #: src/addcommand.cpp:166
 #, kde-format
 msgid "No more directories to process"
-msgstr "没有更多能处理的目录"
+msgstr "संसाधितुं अधिकानि निर्देशिकाः नास्ति"
 
 #: src/addcommand.cpp:190 src/addcommand.cpp:212
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
-msgstr "目录 '%1' 已不再存在"
+msgstr "'%1' निर्देशिका अधुना नास्ति"
 
 #: src/addcommand.cpp:229
 #, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
-msgstr "在父级 %1 中获取 \"%3\" 集合 \"%2\""
+msgstr "मातापितृ %1 \"%2\" मध्ये \"%3\" संग्रहं आनयति ।"
 
 #: src/addcommand.cpp:241
 #, kde-format
 msgid "Need to create collection for '%1'"
-msgstr "需要为 '%1' 创建集合"
+msgstr "'%1' कृते संग्रहस्य निर्माणस्य आवश्यकता अस्ति ।"
 
 #: src/addcommand.cpp:253
 #, kde-format
 msgid "No more files to process"
-msgstr "没有更多要处理的文件"
+msgstr "संसाधितुं अधिकानि सञ्चिकाः नास्ति"
 
 #: src/addcommand.cpp:264 src/updatecommand.cpp:86
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ does not exist"
-msgstr "文件 ‘%1’ 不存在"
+msgstr "'%1' सञ्चिका नास्ति"
 
 #: src/addcommand.cpp:270 src/updatecommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ cannot be read"
-msgstr "无法读取文件 ‘%1’"
+msgstr "'%1' सञ्चिका पठितुं न शक्यते"
 
 #: src/addcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine MIME type of file ‘%1’"
-msgstr "无法确定文件 '%1' 的 MIME 类型"
+msgstr "'%1' इति सञ्चिकायाः MIME प्रकारं निर्धारयितुं न शक्यते ।"
 
 #: src/addcommand.cpp:287
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine parent collection for file ‘%1’"
-msgstr "无法确定文件 '%1' 的父集合"
+msgstr "'%1' सञ्चिकायाः कृते मातापितृसङ्ग्रहं निर्धारयितुं न शक्यते ।"
 
 #: src/addcommand.cpp:293
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
-msgstr "从大小为 %4 的 '%3' 在集合 \"%1\" 中创建项目 %2"
+msgstr "संग्रह %1 \"%2\" इत्यस्य '%3' आकारेण %4 सृजनं कुर्वन्।"
 
 #: src/addcommand.cpp:315
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch target collection, %1"
-msgstr "无法获取目标集合，%1"
+msgstr "लक्ष्यसङ्ग्रहं आनेतुं न शक्यते, %1"
 
 #: src/addcommand.cpp:325
 #, kde-format
 msgid "Root folder is %1 \"%2\""
-msgstr "根目录是 %1 \"%2\""
+msgstr "मूलपुटं %1 \"%2\" अस्ति ।"
 
 #: src/addcommand.cpp:373
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
-msgstr "获取集合错误 %1 “%2”，%3"
+msgstr "संग्रहं आनयितुं त्रुटिः %1 \"%2\", %3"
 
 #: src/addcommand.cpp:386
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
-msgstr "已将邮件目录名更改为 “%1”"
+msgstr "maildir पुटस्य नाम '%1' इति परिवर्तितम् ।"
 
 #: src/addcommand.cpp:396
 #, kde-format
 msgid "Creating collection \"%3\" under parent %1 \"%2\""
-msgstr "在父集合%1 “%2”下创建“%3”"
+msgstr "मातापितृ %1 \"%2\" इत्यस्य अन्तर्गतं \"%3\" संग्रहं रचयति ।"
 
 #: src/addcommand.cpp:414
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
-msgstr "添加“%1”，%2失败"
+msgstr "'%1', %2 योजयितुं असफलम्"
 
 #: src/addcommand.cpp:418
 #, kde-format
 msgid "Added file '%2' as item %1"
-msgstr "添加文件“%2”为项目 %1"
+msgstr "'%2' सञ्चिका %1 इति रूपेण योजितम्"
 
 #: src/agentscommand.cpp:37
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
-msgstr ""
+msgstr "अकोनाडी एजेण्ट् प्रबन्धयन्तु"
 
 #: src/agentscommand.cpp:51
 #, kde-format
 msgid "List all agents"
-msgstr "列出所有代理"
+msgstr "सर्वेषां एजेण्ट्-समूहानां सूचीं कुर्वन्तु"
 
 #: src/agentscommand.cpp:54
 #, kde-format
 msgid "Set state \"online\" or \"offline\" for specified agents"
-msgstr "为特定代理设置状态“在线”或“离线”"
+msgstr "निर्दिष्टानां एजेण्ट्-कृते \"online\" अथवा \"offline\" इति अवस्थां सेट् कुर्वन्तु"
 
 #: src/agentscommand.cpp:55
 #, kde-format
 msgctxt "@info:shell"
 msgid "state"
-msgstr "状态"
+msgstr "राज्यम्‌"
 
 #: src/agentscommand.cpp:58
 #, kde-format
 msgid "Get state for the specified agent"
-msgstr "获取指定代理的状态"
+msgstr "निर्दिष्टस्य एजेण्टस्य कृते राज्यं प्राप्नुत"
 
 #: src/agentscommand.cpp:61
 #, kde-format
 msgid "Show information about the specified agent"
-msgstr "显示指定代理的信息"
+msgstr "निर्दिष्टस्य एजेण्टस्य विषये सूचनां दर्शयतु"
 
 #: src/agentscommand.cpp:64
 #, kde-format
 msgid "Restart the specified agent"
-msgstr "重启指定的代理"
+msgstr "निर्दिष्टं एजेण्ट् पुनः आरभत"
 
 #: src/agentscommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "Agents to operate on"
-msgstr "要操作的代理"
+msgstr "शल्यक्रिया कर्तुं एजेण्ट्"
 
 #: src/agentscommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "[agents...]"
-msgstr "[agents...]"
+msgstr "[एजेण्ट्...]"
 
 #: src/agentscommand.cpp:80
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agents or options specified"
-msgstr "未指定代理或选项"
+msgstr "न एजेण्ट् वा विकल्पाः निर्दिष्टाः"
 
 #: src/agentscommand.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid state '%1'"
-msgstr "无效状态“%1”"
+msgstr "अमान्य अवस्था '%1'."
 
 #: src/agentscommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "No option specified"
-msgstr "未指定选项"
+msgstr "विकल्पः निर्दिष्टः नास्ति"
 
 #: src/agentscommand.cpp:143
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parameters"
-msgstr "无效的参数"
+msgstr "अमान्य पैरामीटर्"
 
 #: src/agentscommand.cpp:179 src/agentscommand.cpp:211
 #: src/agentscommand.cpp:229 src/agentscommand.cpp:255
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agent exists with the identifier '%1'"
-msgstr "标识符为 %1 的代理不存在"
+msgstr "'%1' इति परिचयकर्तृणा सह कोऽपि एजेण्टः नास्ति ।"
 
 #: src/agentscommand.cpp:238
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID:      "
-msgstr "编码:      "
+msgstr "आईडी :"
 
 #: src/agentscommand.cpp:239
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name:    "
-msgstr "名称:    "
+msgstr "नामः:"
 
 #: src/agentscommand.cpp:240
 #, kde-format
 msgctxt "@info:shell"
 msgid "Status:  "
-msgstr "状态:  "
+msgstr "स्थितिः:"
 
 #: src/attributescommand.cpp:72
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr ""
+msgstr "संग्रहस्य कृते विशेषताः दर्शयन्तु अथवा अद्यतनं कुर्वन्तु"
 
 #: src/attributescommand.cpp:89
 #, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr ""
+msgstr "संग्रहविशेषणानि (पूर्वनिर्धारितक्रिया) दर्शयतु ।"
 
 #: src/attributescommand.cpp:92
 #, kde-format
 msgid "Add an attribute"
-msgstr ""
+msgstr "एकं विशेषतां योजयन्तु"
 
 #: src/attributescommand.cpp:95
 #, kde-format
 msgid "Modify an existing attribute"
-msgstr ""
+msgstr "विद्यमानं विशेषतां परिवर्तयन्तु"
 
 #: src/attributescommand.cpp:98
 #, kde-format
 msgid "Delete an existing attribute"
-msgstr ""
+msgstr "विद्यमानं विशेषतां विलोपयन्तु"
 
 #: src/attributescommand.cpp:101
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
-msgstr ""
+msgstr "विशेषतामूल्यं हेक्स एन्कोडेड् इति दर्शयन्तु अथवा व्याख्यायन्तु"
 
 #: src/attributescommand.cpp:103
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "संग्रहः: एकः ID, मार्गः अथवा Akonadi URL"
 
 #: src/attributescommand.cpp:104 src/groupcommand.cpp:78
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for the operation"
-msgstr "操作的参数"
+msgstr "शल्यक्रियायाः कृते तर्काः"
 
 #: src/attributescommand.cpp:104 src/groupcommand.cpp:78
 #, kde-format
 msgid "args..."
-msgstr "参数"
+msgstr "args..."
 
 #: src/attributescommand.cpp:120
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr ""
+msgstr "हेक्स एन्कोडेड् स्ट्रिंग् अपेक्षितम्, परन्तु दीर्घता %1 सम नास्ति"
 
 #: src/attributescommand.cpp:127
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr ""
+msgstr "हेक्स एन्कोडेड् मूल्ये अमान्यवर्णाः आसन्"
 
 #: src/attributescommand.cpp:160
 #, kde-format
@@ -442,49 +444,50 @@ msgctxt "@info:shell"
 msgid ""
 "Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
 msgstr ""
+"केवलं 'show', 'add', 'modify' अथवा 'delete' विकल्पेषु एकः एव निर्दिष्टः भवितुम् अर्हति"
 
 #: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
-msgstr "未指定集合"
+msgstr "न कोऽपि संग्रहः निर्दिष्टः"
 
 #: src/attributescommand.cpp:172
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
-msgstr ""
+msgstr "योजयितुं विशेषतानाम/मूल्यं निर्दिष्टं नास्ति"
 
 #: src/attributescommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
-msgstr ""
+msgstr "विलोपनार्थं विशेषनाम निर्दिष्टं नास्ति"
 
 #: src/attributescommand.cpp:188
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr ""
+msgstr "परिवर्तनार्थं विशेषतानाम/मूल्यं निर्दिष्टं नास्ति"
 
 #: src/attributescommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr ""
+msgstr "अत्यधिकाः तर्काः निर्दिष्टाः, '%1' तः ।"
 
 #: src/attributescommand.cpp:243
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection already has an attribute '%1'"
-msgstr ""
+msgstr "संग्रहस्य पूर्वमेव '%1' इति विशेषता अस्ति ।"
 
 #: src/attributescommand.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection has no attribute '%1'"
-msgstr ""
+msgstr "संग्रहस्य '%1' इति विशेषणं नास्ति ।"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -496,13 +499,13 @@ msgstr "%1 (\"/%2\")"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown Akonadi collection format '%1'"
-msgstr "未知 Akonadi 收藏格式 '%1'"
+msgstr "अज्ञात अकोनाडी संग्रहस्वरूप '%1'."
 
 #: src/collectionresolvejob.cpp:141
 #, kde-format
 msgctxt "@info:shell 1=collection ID"
 msgid "%1 (root)"
-msgstr "%1 (root)"
+msgstr "%1 (मूलम्)"
 
 #: src/collectionresolvejob.cpp:143
 #, kde-format
@@ -514,188 +517,192 @@ msgstr "%1 (\"%2\")"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
-msgstr "无效的项目语法 '%1'"
+msgstr "अमान्य मदवाक्यविन्यासः '%1'."
 
 #: src/commandfactory.cpp:50 src/commandfactory.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
-msgstr "未知命令“%1”"
+msgstr "अज्ञात आदेशः '%1'।"
 
 #: src/commandfactory.cpp:90
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
-msgstr "未指定命令 (试试'%1 --help')"
+msgstr "निर्दिष्टः आदेशः नास्ति ('%1 --help' इति प्रयतस्व)"
 
 #: src/commandfactory.cpp:134
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
-msgstr "可用的命令："
+msgstr "उपलब्धाः आदेशाः सन्ति :"
 
 #: src/commandshell.cpp:30
 msgid "Enter commands in an interactive shell"
-msgstr "在交互式命令行中输入命令"
+msgstr "एकस्मिन् अन्तरक्रियाशील-शेल् मध्ये आदेशान् प्रविशन्तु"
 
 #: src/commandshell.cpp:74
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid command"
-msgstr "无效的命令"
+msgstr "असिद्धः आदेशः"
 
 #: src/copycommand.cpp:40
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
-msgstr ""
+msgstr "संग्रहान् वा वस्तूनि वा नूतनसङ्ग्रहे प्रतिलिख्यताम्"
 
 #: src/copycommand.cpp:59 src/movecommand.cpp:40
 #, kde-format
 msgid "source..."
-msgstr "原因..."
+msgstr "स्रोतः..."
 
 #: src/copycommand.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to copy"
-msgstr "现有收藏或要复制的项目"
+msgstr "विद्यमानसङ्ग्रहाः वा प्रतिलिपिं कर्तुं वस्तूनि वा"
 
 #: src/copycommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to copy into"
-msgstr "要复制到的目标集合"
+msgstr "प्रतिलिपिं कर्तुं गन्तव्यसङ्ग्रहः"
 
 #: src/copycommand.cpp:69
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing source/destination arguments"
-msgstr "缺少源/目标参数"
+msgstr "स्रोत/गन्तव्यतर्काः अनुपलब्धाः"
 
 #: src/copycommand.cpp:77
 #, kde-format
 msgid "No more sources to process"
-msgstr "没有更多源可处理"
+msgstr "न अधिकानि स्रोतानि संसाधितुं"
 
 #: src/copycommand.cpp:83
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve destination collection '%1', %2"
-msgstr "无法解析目标集合 '%1', %2"
+msgstr "गन्तव्यसङ्ग्रहस्य '%1', %2 समाधानं कर्तुं न शक्यते"
 
 #: src/copycommand.cpp:116
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve source '%1', %2"
-msgstr "无法解析源 '%1', %2"
+msgstr "स्रोतः '%1', %2 समाधानं कर्तुं न शक्यते"
 
 #: src/copycommand.cpp:141
 #, kde-format
 msgid "Moving contents of %1 -> %2"
-msgstr "正在移动 %1 的内容 -> %2"
+msgstr "%1 -> %2 इत्यस्य सामग्रीं चालयति"
 
 #: src/copycommand.cpp:143
 #, kde-format
 msgid "Copying contents of %1 -> %2"
-msgstr "正在复制 %1 的内容 -> %2"
+msgstr "%1 -> %2 इत्यस्य सामग्रीं प्रतिलिखति"
 
 #: src/copycommand.cpp:159
 #, kde-format
 msgid "Moving collection %1 -> %2"
-msgstr "正在移动集合 %1 -> %2"
+msgstr "संग्रहं चालयति %1 -> %2"
 
 #: src/copycommand.cpp:164
 #, kde-format
 msgid "Copying collection %1 -> %2"
-msgstr "正在复制集合 %1 -> %2"
+msgstr "संग्रहस्य प्रतिलिपिः %1 -> %2"
 
 #: src/copycommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move from '%1', %2"
-msgstr "无法从 '%1', %2 复制/移动"
+msgstr "'%1', %2 तः प्रतिलिपिं/चलितुं न शक्यते"
 
 #: src/copycommand.cpp:191
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch subcollections of '%1', %2"
-msgstr "无法获取 '%1', %2 的子集合"
+msgstr "'%1', %2 इत्यस्य उपसङ्ग्रहान् आनेतुं न शक्यते"
 
 #: src/copycommand.cpp:199
 #, kde-format
 msgid "No sub-collections to copy/move"
-msgstr "没有子集合可以复制/移动"
+msgstr "प्रतिलिपिं कर्तुं/चलितुं उपसङ्ग्रहाः नास्ति"
 
 #: src/copycommand.cpp:205
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 sub-collection"
 msgid_plural "Moving %1 sub-collections"
-msgstr[0] "正在移动 %1 个子集合"
+msgstr[0] "%1 उपसङ्ग्रहं चालयति"
+msgstr[1] "%1 उपसङ्ग्रहान् चालयति"
 
 #: src/copycommand.cpp:207
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 sub-collection"
 msgid_plural "Copying %1 sub-collections"
-msgstr[0] "正在复制 %1 个子集合"
+msgstr[0] "%1 उपसङ्ग्रहस्य प्रतिलिपिः"
+msgstr[1] "%1 उपसङ्ग्रहाणां प्रतिलिपिः"
 
 #: src/copycommand.cpp:220
 #, kde-format
 msgid "No more sub-collections to process"
-msgstr "没有更多子集合可处理"
+msgstr "न पुनः उपसङ्ग्रहाः संसाधितुं"
 
 #: src/copycommand.cpp:253
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
-msgstr "无法从 '%1', %3 复制/移动子集合 '%2'"
+msgstr "'%1', %3 तः उपसङ्ग्रहं '%2' प्रतिलिपिं/चलितुं न शक्यते"
 
 #: src/copycommand.cpp:270
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch items of '%1', %2"
-msgstr "无法获取 '%1', %2 的项目"
+msgstr "'%1', %2 इत्यस्य वस्तूनि आनेतुं न शक्यते"
 
 #: src/copycommand.cpp:278
 #, kde-format
 msgid "No items to process"
-msgstr "没有项目可处理"
+msgstr "संसाधितुं न वस्तूनि"
 
 #: src/copycommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 item"
 msgid_plural "Moving %1 items"
-msgstr[0] "正在移动 %1 个项目"
+msgstr[0] "%1 मदं चालयति"
+msgstr[1] "%1 द्रव्यं चालयति"
 
 #: src/copycommand.cpp:290
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 item"
 msgid_plural "Copying %1 items"
-msgstr[0] "正在复制 %1 个项目"
+msgstr[0] "%1 द्रव्यस्य प्रतिलिपिः भवति"
+msgstr[1] "%1 द्रव्याणां प्रतिलिपिः भवति"
 
 #: src/copycommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move items from '%1', %2"
-msgstr "无法从 '%1', %2 复制/移动项目"
+msgstr "'%1', %2 तः वस्तूनि प्रतिलिपिं/चलितुं न शक्यते"
 
 #: src/createcommand.cpp:35
 msgctxt "info:shell"
 msgid "Create a new collection"
-msgstr ""
+msgstr "नूतनं संग्रहं रचयन्तु"
 
 #: src/createcommand.cpp:53
 #, kde-format
 msgid "Parent collection to create in"
-msgstr "要创建的父收藏集"
+msgstr "मध्ये निर्मातुं मातापितृसङ्ग्रहः"
 
 #: src/createcommand.cpp:54
 #, kde-format
 msgid "collection"
-msgstr "收藏"
+msgstr "सङ्ग्रह"
 
 #: src/createcommand.cpp:57
 #, kde-format
@@ -703,371 +710,372 @@ msgctxt "@info:shell"
 msgid ""
 "The collection to create, either as a path or a name (with a parent "
 "specified)"
-msgstr "要创建的集合，作为路径或名称 (指定父名称)"
+msgstr "निर्मातव्यः संग्रहः, मार्गरूपेण वा नामरूपेण वा (मातृपितृनिर्दिष्टेन सह)"
 
 #: src/createcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (with parent) cannot be a path"
-msgstr "集合参数 (与父目录) 不能为路径"
+msgstr "संग्रहतर्कः (मातृपितृसहितः) मार्गः न भवितुम् अर्हति"
 
 #: src/createcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (without parent) must be a path"
-msgstr "集合参数 (无父目录) 必须为路径"
+msgstr "संग्रहतर्कः (मातृपितृविना) मार्गः भवितुमर्हति"
 
 #: src/createcommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "New collection name not specified"
-msgstr "未指定新集合名称"
+msgstr "नूतनं संग्रहनाम निर्दिष्टं नास्ति"
 
 #: src/createcommand.cpp:114
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch parent collection '%1', %2"
-msgstr "无法获取父集合 ‘%1’，%2"
+msgstr "मातापितृसङ्ग्रहं '%1', %2 आनेतुं न शक्यते"
 
 #: src/createcommand.cpp:125
 #, kde-format
 msgid "Creating a maildir folder named '%1' may not work"
-msgstr "创建名为 ‘%1’ 的邮件目录可能无法工作"
+msgstr "'%1' इति नामकं maildir पुटं निर्माय कार्यं न कर्तुं शक्नोति"
 
 #: src/createcommand.cpp:144
 #, kde-format
 msgid "Error creating collection '%1' under '%2', %3"
-msgstr "在 ‘%2’ 下创建集合 ‘%1’ 时出错，%3"
+msgstr "'%2', %3 इत्यस्य अधः '%1' संग्रहस्य निर्माणे त्रुटिः"
 
 #: src/createcommand.cpp:156
 #, kde-format
 msgid "Error getting path of new collection, %1"
-msgstr "获取新集合路径时出错，%1"
+msgstr "नूतनसङ्ग्रहस्य मार्गं प्राप्तुं त्रुटिः, %1"
 
 #: src/createcommand.cpp:161
 #, kde-format
 msgid "Created new collection '%1'"
-msgstr "创建新集合 ‘%1’"
+msgstr "'%1' नूतनसङ्ग्रहः निर्मितः ।"
 
 #: src/deletecommand.cpp:39
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
-msgstr ""
+msgstr "संग्रहं वा द्रव्यं वा विलोपयन्तु"
 
 #: src/deletecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection or item"
-msgstr "集合或项目"
+msgstr "संग्रहः वा द्रव्यः वा"
 
 #: src/deletecommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection/item argument"
-msgstr "缺少集合、项目参数"
+msgstr "संग्रह/वस्तु तर्कः अनुपलब्धः"
 
 #: src/deletecommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot delete the root collection"
-msgstr "不能删除根集合"
+msgstr "मूलसङ्ग्रहं विलोपयितुं न शक्यते"
 
 #: src/deletecommand.cpp:121
 #, kde-format
 msgid "Collection deleted successfully"
-msgstr "集合删除成功"
+msgstr "संग्रहः सफलतया विलोपितः"
 
 #: src/deletecommand.cpp:129 src/infocommand.cpp:148
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item/collection syntax '%1'"
-msgstr "无效的项目、集合语法 ‘%1’"
+msgstr "अमान्यवस्तु/सङ्ग्रहवाक्यविन्यासः '%1'."
 
 #: src/deletecommand.cpp:152 src/infocommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
-msgstr "找不到 ‘%1’ 作为集合或项目"
+msgstr "'%1' संग्रहरूपेण वा द्रव्यरूपेण वा न प्राप्यते"
 
 #: src/deletecommand.cpp:164
 #, kde-format
 msgid "Item deleted successfully"
-msgstr "项目成功删除"
+msgstr "द्रव्यं सफलतया विलोपितम्"
 
 #: src/dumpcommand.cpp:46
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
-msgstr ""
+msgstr "संग्रहं निर्देशिकासंरचने डम्प कुर्वन्तु"
 
 #: src/dumpcommand.cpp:58
 #, kde-format
 msgid "Dump email messages in maildir directory structure"
-msgstr "在邮件目录结构中转储邮件信息"
+msgstr "maildir निर्देशिकासंरचने ईमेलसन्देशान् डम्प कुर्वन्तु"
 
 #: src/dumpcommand.cpp:61
 #, kde-format
 msgid "Dump items with Akonadi category URLs, otherwise text names"
-msgstr "使用 Akonadi 类别的 URL 转储项目，否则使用文本名称"
+msgstr "अकोनाडी श्रेणी URL इत्यनेन सह वस्तूनि डम्प कुर्वन्तु, अन्यथा पाठनामानि"
 
 #: src/dumpcommand.cpp:64
 #, kde-format
 msgid "Operate even if destination directory is not empty"
-msgstr "进行操作即使目标不为空"
+msgstr "गन्तव्यनिर्देशिका रिक्तं नास्ति चेदपि कार्यं कुर्वन्तु"
 
 #: src/dumpcommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to dump: an ID, path or Akonadi URL"
-msgstr "要转储的集合：ID、路径或者 Akonadi URL"
+msgstr "डम्पं कर्तुं संग्रहः: एकः ID, मार्गः अथवा Akonadi URL"
 
 #: src/dumpcommand.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "The destination directory to dump to"
-msgstr "要转储到的目标目录"
+msgstr "डम्पं कर्तुं गन्तव्यनिर्देशिका"
 
 #: src/dumpcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
 msgid "No destination directory specified"
-msgstr "未指定目标目录"
+msgstr "गन्तव्यनिर्देशिका निर्दिष्टा नास्ति"
 
 #: src/dumpcommand.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' not found or not a directory"
-msgstr "找不到目录 ‘%1’ 或不是目录"
+msgstr "निर्देशिका '%1' न प्राप्ता अथवा निर्देशिका न"
 
 #: src/dumpcommand.cpp:97
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
-msgstr "目录 ‘%1’ 不是空的 (使用 ‘-f’ 强制操作)"
+msgstr "'%1' निर्देशिका रिक्तं नास्ति (सञ्चालनं बाध्यं कर्तुं '-f' इत्यस्य उपयोगं कुर्वन्तु)"
 
 #: src/dumpcommand.cpp:121 src/listcommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
-msgstr "集合 %1 不能包含项目"
+msgstr "सङ्ग्रहः %1 द्रव्याणि समाविष्टुं न शक्नोति"
 
 #: src/dumpcommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 contains no items"
-msgstr "集合 %1 中没有项目"
+msgstr "संग्रहे %1 मध्ये कोऽपि द्रव्यः नास्ति"
 
 #: src/dumpcommand.cpp:200 src/editcommand.cpp:103 src/showcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no payload"
-msgstr "项目 ‘%1’ 没有有效负载"
+msgstr "'%1' मदस्य कोऽपि पेलोड् नास्ति"
 
 #: src/dumpcommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create directory '%1/%2'"
-msgstr "无法创建目录 ‘%1/%2’"
+msgstr "'%1/%2' इति निर्देशिकां निर्मातुं न शक्यते ।"
 
 #: src/dumpcommand.cpp:319
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save file '%1'"
-msgstr "无法保存文件 ‘%1’"
+msgstr "'%1' सञ्चिकां रक्षितुं न शक्यते ।"
 
 #: src/editcommand.cpp:37
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
-msgstr ""
+msgstr "$EDITOR इत्यस्य उपयोगेन निर्दिष्टस्य द्रव्यस्य कच्चं पेलोड् सम्पादयन्तु"
 
 #: src/editcommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to edit"
-msgstr "要编辑的项目"
+msgstr "सम्पादनीयं द्रव्यम्"
 
 #: src/editcommand.cpp:60 src/updatecommand.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "No item specified"
-msgstr "未指定项目"
+msgstr "न कोऽपि द्रव्यः निर्दिष्टः"
 
 #: src/editcommand.cpp:95
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result found for item '%1'"
-msgstr "未找到项目 ‘%1’ 的结果"
+msgstr "'%1' मदस्य कोऽपि परिणामः न लब्धः ।"
 
 #: src/editcommand.cpp:110
 #, kde-format
 msgctxt "@info:shell"
 msgid "EDITOR environment variable needs to be set"
-msgstr "需要设置 EDITOR 环境变量"
+msgstr "EDITOR वातावरणचरं सेट् करणीयम् अस्ति"
 
 #: src/editcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot launch text editor '%1'"
-msgstr "无法启动文本编辑器 ‘%1’"
+msgstr "'%1' इति पाठसम्पादकं प्रारम्भं कर्तुं न शक्यते ।"
 
 #: src/editcommand.cpp:144
 #, kde-format
 msgctxt "@info:shell"
 msgid "Changes to item '%1' have been saved"
-msgstr "已保存对项目 ‘%1’ 的更改"
+msgstr "'%1' मदस्य परिवर्तनं रक्षितम् अस्ति"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
-msgstr ""
+msgstr "संग्रहं XML सञ्चिकायां निर्यातयन्तु"
 
 #: src/exportcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to export: an ID, path or Akonadi URL"
-msgstr "要导出的集合：ID、路径或者 Akonadi URL"
+msgstr "निर्यातयितुं संग्रहः: एकः ID, मार्गः अथवा Akonadi URL"
 
 #: src/exportcommand.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to export to"
-msgstr "导出文件到"
+msgstr "निर्यातनीया सञ्चिका"
 
 #: src/exportcommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "No export file specified"
-msgstr "未指定输出文件"
+msgstr "निर्यातसञ्चिका निर्दिष्टा नास्ति"
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
-msgstr ""
+msgstr "सम्पर्कसमूहस्य विस्तारं वा परिवर्तनं वा कुर्वन्तु"
 
 #: src/groupcommand.cpp:58
 #, kde-format
 msgid "Show the expanded contact group (the default operation)"
-msgstr "显示展开的的联系人组 (默认操作)"
+msgstr "विस्तारितं सम्पर्कसमूहं (पूर्वनिर्धारितं कार्यं) दर्शयतु"
 
 #: src/groupcommand.cpp:61
 #, kde-format
 msgid "Add a contact to the group"
-msgstr "将一个联系人添加到分组"
+msgstr "समूहे सम्पर्कं योजयन्तु"
 
 #: src/groupcommand.cpp:64
 #, kde-format
 msgid "Delete a contact from the group"
-msgstr "从分组中删除联系人"
+msgstr "समूहात् सम्पर्कं विलोपयन्तु"
 
 #: src/groupcommand.cpp:67
 #, kde-format
 msgid "Remove unknown item references from the group"
-msgstr "从群组中删除未知项目引用"
+msgstr "समूहात् अज्ञातवस्तुसन्दर्भान् निष्कासयन्तु"
 
 #: src/groupcommand.cpp:70
 #, kde-format
 msgid "Email comment (name) for an added item"
-msgstr "已添加项目的电子邮件注释 (名称)"
+msgstr "योजितस्य द्रव्यस्य कृते टिप्पणीं (नाम) ईमेल कुर्वन्तु"
 
 #: src/groupcommand.cpp:71
 #, kde-format
 msgid "name"
-msgstr "名称"
+msgstr "नामः"
 
 #: src/groupcommand.cpp:74
 #, kde-format
 msgid "Brief output (for 'expand', email addresses only)"
-msgstr "简要输出 (仅限“扩展”电子邮件地址)"
+msgstr "संक्षिप्तं निर्गमं ('विस्तार' कृते, केवलं ईमेल-सङ्केताः)"
 
 #: src/groupcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
-msgstr "联系人组项、ID 或 Akonadi URL"
+msgstr "सम्पर्कसमूहस्य द्रव्यं, एकः ID अथवा Akonadi URL"
 
 #: src/groupcommand.cpp:84
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing group argument"
-msgstr "缺少组参数"
+msgstr "समूहवादः अनुपलब्धः"
 
 #: src/groupcommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"
-msgstr "只能指定一个‘扩展’，‘添加’，‘删除’或‘清除’选项"
+msgstr ""
+"केवलं 'विस्तार', 'जोड', 'विलोपन' अथवा 'स्वच्छ' विकल्पेषु एकः एव निर्दिष्टः भवितुम् अर्हति"
 
 #: src/groupcommand.cpp:115
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to add"
-msgstr "没有指定要添加的项目"
+msgstr "योजयितुं निर्दिष्टानि वस्तूनि न"
 
 #: src/groupcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one item may be specified to add with 'comment'"
-msgstr "只能指定一个带有“评论”的项目"
+msgstr "'टिप्पणी' इत्यनेन सह योजयितुं केवलमेकं द्रव्यं निर्दिष्टं भवितुमर्हति।"
 
 #: src/groupcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to delete"
-msgstr "没有指定要删除的项目"
+msgstr "विलोपनार्थं निर्दिष्टानि वस्तूनि न"
 
 #: src/groupcommand.cpp:147
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'comment' option is only allowed with 'add'"
-msgstr "只有“添加”才具有“评论”选项"
+msgstr "'टिप्पणी' विकल्पः केवलं 'add' इत्यनेन सह अनुमतः अस्ति।"
 
 #: src/groupcommand.cpp:197
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as an item"
-msgstr "找不到‘%1’作为项目"
+msgstr "'%1' इत्येतत् द्रव्यरूपेण न प्राप्यते"
 
 #: src/groupcommand.cpp:204
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' is not a contact group"
-msgstr "项目‘%1’不是联系人组"
+msgstr "'%1' मदः सम्पर्कसमूहः नास्ति"
 
 #: src/groupcommand.cpp:210
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no contact group payload"
-msgstr "项目‘%1’没有联系人群组有效负载"
+msgstr "'%1' मदस्य सम्पर्कसमूहस्य पेलोड् नास्ति"
 
 #: src/groupcommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "Errors occurred, group not updated"
-msgstr "发生错误，组未更新"
+msgstr "त्रुटयः अभवन्, समूहः अद्यतनः न अभवत्"
 
 #: src/groupcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell"
 msgid "(unknown referenced item)"
-msgstr "(未知引用项)"
+msgstr "(अज्ञात सन्दर्भित द्रव्यम्)"
 
 #: src/groupcommand.cpp:299 src/groupcommand.cpp:320
 #, kde-format
 msgctxt "@info:shell"
 msgid "(item has no Addressee payload)"
-msgstr "(没有收件人有效载荷)"
+msgstr "(वस्तुनः Addressee पेलोड् नास्ति)"
 
 #: src/groupcommand.cpp:339
 #, kde-format
 msgctxt "@item:shell"
 msgid "(invalid referenced item)"
-msgstr "(无效引用项)"
+msgstr "(अमान्य सन्दर्भित द्रव्यम्)"
 
 #: src/groupcommand.cpp:341
 #, kde-format
 msgctxt "@item:shell"
 msgid "(unknown referenced item)"
-msgstr "(未知引用项)"
+msgstr "(अज्ञात सन्दर्भित द्रव्यम्)"
 
 #: src/groupcommand.cpp:392
 #, kde-format
@@ -1075,38 +1083,38 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" has %2 groups, %3 references and %4 data items:"
-msgstr "组 %1 \"%5\" 有 %2 组，%3 引用和 %4 数据项："
+msgstr "%1 समूहे \"%5\" %2 समूहाः, %3 सन्दर्भाः %4 दत्तांशवस्तूनि च सन्ति ।"
 
 #: src/groupcommand.cpp:401
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Type"
-msgstr "文件系统"
+msgstr "प्रकारः"
 
 #: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
 #: src/tagscommand.cpp:319
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "ID"
-msgstr "编码"
+msgstr "आईडी"
 
 #: src/groupcommand.cpp:403
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Email"
-msgstr "电子邮箱"
+msgstr "ईमेल"
 
 #: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
-msgstr "文件名"
+msgstr "नामः"
 
 #: src/groupcommand.cpp:438
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items could be fetched"
-msgstr "无法获取项目"
+msgstr "न कश्चित् वस्तूनि आनेतुं शक्यन्ते स्म"
 
 #: src/groupcommand.cpp:497
 #, kde-format
@@ -1114,31 +1122,31 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Adding to group %1 \"%2\":"
-msgstr "添加到组 %1 \"%2\"："
+msgstr "%1 \"%2\" समूहे योजयन्:"
 
 #: src/groupcommand.cpp:512 src/groupcommand.cpp:624
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot search for email '%1', %2"
-msgstr "无法搜索电子邮件‘%1’，%2"
+msgstr "'%1', %2 इति ईमेल अन्वेष्टुं न शक्यते"
 
 #: src/groupcommand.cpp:523
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple contacts found for '%1', using the first one"
-msgstr "找到‘%1’的多个联系人，使用第一个联系人"
+msgstr "'%1' कृते बहुसंपर्काः प्राप्ताः, प्रथमस्य उपयोगेन"
 
 #: src/groupcommand.cpp:558
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch requested item %1, %2"
-msgstr "无法获取请求的项目 %1，%2"
+msgstr "अनुरोधितं द्रव्यं %1, %2 आनेतुं न शक्यते"
 
 #: src/groupcommand.cpp:568
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item %1 is not a contact item"
-msgstr "项目 %1 不是一个联系人项目"
+msgstr "%1 मदः सम्पर्क-वस्तु नास्ति"
 
 #: src/groupcommand.cpp:583 src/groupcommand.cpp:666 src/groupcommand.cpp:715
 #, kde-format
@@ -1146,7 +1154,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" now has %2 groups, %3 references and %4 data items"
-msgstr "组 %1 “%5”现在有 %2 个小组，%3 个引用和 %4 个数据项"
+msgstr "%1 समूहे \"%5\" इदानीं %2 समूहाः, %3 सन्दर्भाः, %4 दत्तांशवस्तूनि च सन्ति"
 
 #: src/groupcommand.cpp:601
 #, kde-format
@@ -1154,13 +1162,13 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Removing from group %1 \"%2\":"
-msgstr "正从组 %1 中删除“%2”："
+msgstr "%1 \"%2\" समूहात् निष्कासयन्:"
 
 #: src/groupcommand.cpp:638
 #, kde-format
 msgctxt "@info:shell"
 msgid "Nothing to remove for email '%1'"
-msgstr "没有可删除的电子邮件‘%1’"
+msgstr "'%1' इति ईमेलस्य कृते किमपि हर्तुं नास्ति ।"
 
 #: src/groupcommand.cpp:682
 #, kde-format
@@ -1168,142 +1176,142 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Cleaning references from group %1 \"%2\":"
-msgstr "正在清理来自组 %1 “%2”的引用："
+msgstr "%1 \"%2\" समूहात् सन्दर्भान् स्वच्छं कुर्वन्:"
 
 #: src/importcommand.cpp:39
 msgctxt "info:shell"
 msgid "Import an XML file"
-msgstr ""
+msgstr "XML सञ्चिकां आयातयन्तु"
 
 #: src/importcommand.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "The parent collection under which to import the file"
-msgstr "要导入文件的父收藏"
+msgstr "मातापितृसङ्ग्रहः यस्य अन्तर्गतं सञ्चिकां आयातितव्यम्"
 
 #: src/importcommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to import"
-msgstr "要导入的文件"
+msgstr "आयातितव्यं सञ्चिका"
 
 #: src/importcommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "No parent collection specified"
-msgstr "未指定父收藏"
+msgstr "मातापितृसङ्ग्रहः निर्दिष्टः नास्ति"
 
 #: src/importcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "No import file specified"
-msgstr "未指定导入文件"
+msgstr "आयातसञ्चिका निर्दिष्टा नास्ति"
 
 #: src/importcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid XML file, %1"
-msgstr "无效的 XML 文件，%1"
+msgstr "अमान्य XML सञ्चिका, %1"
 
 #: src/importcommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch parent collection, %1"
-msgstr "无法获取父收藏，%1"
+msgstr "मातापितृसङ्ग्रहं आनेतुं असमर्थः, %1"
 
 #: src/importcommand.cpp:103
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch children of parent collection, %1"
-msgstr "无法获取父集合的子集，%1"
+msgstr "मातापितृसङ्ग्रहस्य बालकान् आनेतुं असमर्थः, %1"
 
 #: src/importcommand.cpp:122
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection '%1' already exists"
-msgstr "收藏 %1 已存在"
+msgstr "'%1' सङ्ग्रहः पूर्वमेव अस्ति"
 
 #: src/importcommand.cpp:126
 #, kde-format
 msgctxt "@info:shell"
 msgid "Creating collection '%1'"
-msgstr "正在创建收藏 %1"
+msgstr "'%1' सङ्ग्रहस्य निर्माणम् ।"
 
 #: src/importcommand.cpp:148
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing collection '%1'"
-msgstr "正在处理集合 %1"
+msgstr "'%1' संग्रहणं संसाधितम्।"
 
 #: src/importcommand.cpp:155
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parent for collection with remote ID '%1'"
-msgstr "父收藏的远程 ID %1 无效"
+msgstr "दूरस्थ-ID '%1' इत्यनेन सह संग्रहार्थं अमान्यः मातापिता ।"
 
 #: src/importcommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
-msgstr "无法获取远程 ID %1，%2"
+msgstr "दूरस्थ-ID '%1', %2 इत्यनेन सह संग्रहं आनेतुं असमर्थम्"
 
 #: src/importcommand.cpp:194
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
-msgstr "无法创建带有远程 ID 的 %1 收藏"
+msgstr "दूरस्थ-ID '%1' इत्यनेन सह संग्रहं निर्मातुं असमर्थः ।"
 
 #: src/importcommand.cpp:212
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing items for '%1'"
-msgstr "正在处理 %1 的项目"
+msgstr "'%1' कृते वस्तूनि संसाधितानि।"
 
 #: src/importcommand.cpp:234
 #, kde-format
 msgctxt "@info:shell"
 msgid "Error creating item, %1"
-msgstr "创建项目时出错，%1"
+msgstr "मदं निर्मातुं त्रुटिः, %1"
 
 #: src/importcommand.cpp:237
 #, kde-format
 msgctxt "@info:shell"
 msgid "Created item '%1'"
-msgstr "创建项目 %1"
+msgstr "'%1' इति मदं निर्मितम् ।"
 
 #: src/infocommand.cpp:38
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
-msgstr ""
+msgstr "संग्रहस्य वा द्रव्यस्य वा पूर्णसूचना दर्शयतु"
 
 #: src/infocommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
-msgstr "要显示的收藏或项目"
+msgstr "प्रदर्शनार्थं संग्रहाः वा वस्तूनि वा"
 
 #: src/infocommand.cpp:57
 #, kde-format
 msgid "entity..."
-msgstr "实体"
+msgstr "इंकाई..."
 
 #: src/infocommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
-msgstr "未指定集合或项目"
+msgstr "न कोऽपि संग्रहः वा वस्तूनि वा निर्दिष्टानि"
 
 #: src/infocommand.cpp:117
 #, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
-msgstr "没有可用于集合根目录的信息"
+msgstr "संग्रहमूलस्य कृते कोऽपि सूचना उपलब्धा नास्ति"
 
 #: src/infocommand.cpp:220 src/infocommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "ID"
-msgstr "编码"
+msgstr "आईडी"
 
 #: src/infocommand.cpp:221 src/infocommand.cpp:268
 #, kde-format
@@ -1315,31 +1323,31 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Parent"
-msgstr "总部"
+msgstr "मातापिता"
 
 #: src/infocommand.cpp:223 src/infocommand.cpp:270 src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell"
 msgid "Type"
-msgstr "文件系统"
+msgstr "प्रकारः"
 
 #: src/infocommand.cpp:223
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Collection"
-msgstr "收藏"
+msgstr "सङ्ग्रह"
 
 #: src/infocommand.cpp:224
 #, kde-format
 msgctxt "@info:shell"
 msgid "Name"
-msgstr "文件名"
+msgstr "नामः"
 
 #: src/infocommand.cpp:225
 #, kde-format
 msgctxt "@info:shell"
 msgid "Owner"
-msgstr "用户"
+msgstr "स्वामी"
 
 #: src/infocommand.cpp:226 src/infocommand.cpp:271
 #, kde-format
@@ -1351,305 +1359,308 @@ msgstr "MIME"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
-msgstr "远程 ID"
+msgstr "दूरस्थ आईडी"
 
 #: src/infocommand.cpp:228
 #, kde-format
 msgctxt "@info:shell"
 msgid "Path"
-msgstr ""
+msgstr "पथं"
 
 #: src/infocommand.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
-msgstr "只读"
+msgstr "ReadOnly इति"
 
 #: src/infocommand.cpp:236
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
-msgstr "更改项目"
+msgstr "ChangeItem इति"
 
 #: src/infocommand.cpp:239
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
-msgstr "创建项目"
+msgstr "CreateItem इति"
 
 #: src/infocommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
-msgstr "删除项目"
+msgstr "DeleteItem इति"
 
 #: src/infocommand.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
-msgstr "更改 Coll"
+msgstr "ChangeColl"
 
 #: src/infocommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
-msgstr "创建 Coll"
+msgstr "CreateColl इति"
 
 #: src/infocommand.cpp:251
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
-msgstr "删除 Coll"
+msgstr "DeleteColl"
 
 #: src/infocommand.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
-msgstr "链接项"
+msgstr "LinkItem"
 
 #: src/infocommand.cpp:257
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
-msgstr "取消链接项"
+msgstr "UnlinkItem"
 
 #: src/infocommand.cpp:259
 #, kde-format
 msgctxt "@info:shell"
 msgid "Rights"
-msgstr "权利"
+msgstr "अधिकारः"
 
 #: src/infocommand.cpp:262
 #, kde-format
 msgctxt "@info:shell"
 msgid "Count"
-msgstr "数量"
+msgstr "गणनां कारोतु"
 
 #: src/infocommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unread"
-msgstr "未读"
+msgstr "अपठित"
 
 #: src/infocommand.cpp:265 src/infocommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "Size"
-msgstr "大小"
+msgstr "आकृति"
 
 #: src/infocommand.cpp:270
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Item"
-msgstr "项目"
+msgstr "वस्तु"
 
 #: src/infocommand.cpp:273
 #, kde-format
 msgctxt "@info:shell"
 msgid "Modified"
-msgstr "修改日期"
+msgstr "परिवर्तित"
 
 #: src/infocommand.cpp:274
 #, kde-format
 msgctxt "@info:shell"
 msgid "Revision"
-msgstr "版本"
+msgstr "कार्यदर्शन"
 
 #: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
-msgstr "负载"
+msgstr "पेलोड"
 
 #: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "yes"
-msgstr "yes"
+msgstr "आम्‌"
 
 #: src/infocommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "no"
-msgstr "否"
+msgstr "नहि"
 
 #: src/infocommand.cpp:284 src/infocommand.cpp:294
 #, kde-format
 msgctxt "@info:shell"
 msgid "(none)"
-msgstr "(无)"
+msgstr "(न कश्चित्)"
 
 #: src/infocommand.cpp:286
 #, kde-format
 msgctxt "@info:shell"
 msgid "Flags"
-msgstr "标志"
+msgstr "ध्वजाः"
 
 #: src/infocommand.cpp:296
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tags"
-msgstr "标记"
+msgstr "टैग्स"
 
 #: src/infocommand.cpp:302
 #, kde-format
 msgctxt "@info:shell entity type"
 msgid "Unknown"
-msgstr "未知算法"
+msgstr "अज्ञात"
 
 #: src/listcommand.cpp:37
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
-msgstr ""
+msgstr "निर्दिष्टसङ्ग्रहे उपसङ्ग्रहान्/अथवा वस्तूनि सूचीबद्धं कुर्वन्तु"
 
 #: src/listcommand.cpp:49
 #, kde-format
 msgid "List more detailed information"
-msgstr "列出更详细的信息"
+msgstr "अधिकविस्तृतसूचनाः सूचीबद्धाः कुर्वन्तु"
 
 #: src/listcommand.cpp:52
 #, kde-format
 msgid "List only sub-collections"
-msgstr "仅列出子集合"
+msgstr "केवलं उपसङ्ग्रहान् एव सूचीबद्धं कुर्वन्तु"
 
 #: src/listcommand.cpp:55
 #, kde-format
 msgid "List only contained items"
-msgstr "只列出包含的项目"
+msgstr "केवलं समाविष्टानि वस्तूनि सूचीत"
 
 #: src/listcommand.cpp:58
 #, kde-format
 msgid "List sub-collections recursively"
-msgstr ""
+msgstr "उपसङ्ग्रहान् पुनरावर्तनीयरूपेण सूचीबद्धं कुर्वन्तु"
 
 #: src/listcommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
-msgstr "要列出的集合：ID、路径或者 Akonadi URL"
+msgstr "सूचीकृत्य संग्रहः: एकः ID, मार्गः अथवा अकोनाडी URL"
 
 #: src/listcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "पुनरावर्तनीयसूची केवलं संग्रहाणां कृते एव उपयोक्तुं शक्यते"
 
 #: src/listcommand.cpp:160
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
-msgstr "集合 %1 没有子集合"
+msgstr "%1 सङ्ग्रहे उपसङ्ग्रहाः नास्ति"
 
 #: src/listcommand.cpp:169
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] ""
+msgstr[0] "%2 संग्रहे %1 पुनरावर्तनीयः उपसङ्ग्रहः अस्ति:"
+msgstr[1] "%2 संग्रहे %1 पुनरावर्तनीय उपसङ्ग्रहाः सन्ति:"
 
 #: src/listcommand.cpp:175
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
-msgstr[0] "集合 %2 有 %1 个子集合："
+msgstr[0] "%2 संग्रहे %1 उपसङ्ग्रहः अस्ति:"
+msgstr[1] "%2 संग्रहे %1 उपसङ्ग्रहाः सन्ति:"
 
 #: src/listcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
-msgstr "集合 %1 中没有项目"
+msgstr "संग्रह %1 इत्यस्य कोऽपि द्रव्यः नास्ति"
 
 #: src/listcommand.cpp:284
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
-msgstr[0] "集合 %2 有 %1 个项目："
+msgstr[0] "संग्रहे %2 मध्ये %1 द्रव्यम् अस्ति:"
+msgstr[1] "Collection %2 has %1 items:"
 
 #: src/listcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
-msgstr "MIME 类型"
+msgstr "MIME प्रकार"
 
 #: src/listcommand.cpp:293
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
-msgstr "尺寸"
+msgstr "आकृति"
 
 #: src/listcommand.cpp:294
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"
-msgstr "修改时间"
+msgstr "परिवर्तन समय"
 
 #: src/main.cpp:42
 #, kde-format
 msgctxt "@title program name"
 msgid "Akonadi Client"
-msgstr "Akonadi Client"
+msgstr "अकोनाडी ग्राहक"
 
 #: src/main.cpp:44
 #, kde-format
 msgctxt "@info:shell short description"
 msgid "A command-line/shell client for Akonadi"
-msgstr "Akonadi 的命令行、shell 客户端"
+msgstr "अकोनाडी कृते एकः आदेश-पङ्क्तिः/शेल् क्लायन्ट्"
 
 #: src/main.cpp:48
 #, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
-msgstr ""
+msgstr "केविन् क्रामर"
 
 #: src/main.cpp:48
 #, kde-format
 msgctxt "@title about data task"
 msgid "Original Author"
-msgstr "原作者"
+msgstr "मूल लेखक"
 
 #: src/main.cpp:49
 #, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
-msgstr ""
+msgstr "जोनाथन् मार्टेन्"
 
 #: src/main.cpp:49
 #, kde-format
 msgctxt "@title about data task"
 msgid "Additions and new commands"
-msgstr "扩展和新的命令"
+msgstr "परिवर्तनानि नूतनानि च आदेशानि"
 
 #: src/main.cpp:50
 #, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
-msgstr ""
+msgstr "भास्कर काण्डियाल"
 
 #: src/main.cpp:50
 #, kde-format
 msgctxt "@title about data task"
 msgid "New commands, GSOC 2014"
-msgstr "新命令，GSOC 2014"
+msgstr "नवीनाः आदेशाः, GSOC 2014"
 
 #: src/main.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Command to execute"
-msgstr "要执行的命令"
+msgstr "निष्पादयितुं आदेशः"
 
 #: src/main.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for command"
-msgstr "命令参数"
+msgstr "आज्ञार्थं तर्काः"
 
 #: src/main.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "[args]"
-msgstr "[args]"
+msgstr "[अर्ग्स्] ।"
 
 #: src/main.cpp:80
 #, kde-format
@@ -1658,206 +1669,205 @@ msgid ""
 "See '%1 help' for available commands.\n"
 "See '%1 help command' for information on a specific command."
 msgstr ""
-"查看 ‘%1 help’ 获取可用的命令。\n"
-"查看 ‘%1 help command’ 获取关于特定命令的信息。"
+"उपलब्धादेशानां कृते '%1 help' पश्यन्तु । विशिष्टादेशस्य सूचनायै '%1 help command' पश्यन्तु ।"
 
 #: src/movecommand.cpp:27
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
-msgstr ""
+msgstr "संग्रहान् वा वस्तूनि वा नूतनसङ्ग्रहे स्थानान्तरयन्तु"
 
 #: src/movecommand.cpp:40
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to move"
-msgstr "存在集合或要复制的项目"
+msgstr "विद्यमानाः संग्रहाः वा स्थानान्तरणार्थं वस्तूनि वा"
 
 #: src/movecommand.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to move into"
-msgstr "要移动到的目标集合"
+msgstr "गन्तव्यसङ्ग्रहं प्रति गन्तुं"
 
 #: src/renamecommand.cpp:33
 msgctxt "info:shell"
 msgid "Rename a collection"
-msgstr ""
+msgstr "संग्रहस्य नाम परिवर्तनं कुर्वन्तु"
 
 #: src/renamecommand.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to rename"
-msgstr "要重命名的集合"
+msgstr "नामकरणार्थं संग्रहः"
 
 #: src/renamecommand.cpp:46
 #, kde-format
 msgctxt "@info:shell"
 msgid "New name for collection"
-msgstr "集合的新名称"
+msgstr "संग्रहार्थं नूतनं नाम"
 
 #: src/renamecommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "New name not specified"
-msgstr "未指定新名称"
+msgstr "नूतनं नाम न निर्दिष्टम्"
 
 #: src/renamecommand.cpp:97
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection renamed successfully"
-msgstr "集合重命名成功"
+msgstr "संग्रहस्य नाम सफलतया परिवर्तितम्"
 
 #: src/showcommand.cpp:34
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
-msgstr ""
+msgstr "कस्यचित् द्रव्यस्य कच्चं पेलोड् दर्शयतु"
 
 #: src/showcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The items to show"
-msgstr "要显示的项目"
+msgstr "दर्शयितुं वस्तूनि"
 
 #: src/showcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "item..."
-msgstr "项目..."
+msgstr "वस्तु..."
 
 #: src/showcommand.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "Use raw payload (disables quoted-printable decoding)"
-msgstr "使用原始有效载荷 (禁用引号-可打印解码)"
+msgstr "कच्चा पेलोड् इत्यस्य उपयोगं कुर्वन्तु (उद्धृत-मुद्रणयोग्यं डिकोडिंग् अक्षमं करोति)"
 
 #: src/showcommand.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified"
-msgstr "未指定项目"
+msgstr "न निर्दिष्टाः वस्तूनि"
 
 #: src/showcommand.cpp:89 src/updatecommand.cpp:116
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result returned for item '%1'"
-msgstr "没有返回项目 ‘%1’ 的结果"
+msgstr "'%1' मदस्य कृते कोऽपि परिणामः न प्रत्यागच्छत् ।"
 
 #: src/showcommand.cpp:104
 #, kde-format
 msgid "Item has no main body part"
-msgstr "项目没有主体部分"
+msgstr "द्रव्यस्य मुख्यशरीरभागः नास्ति"
 
 #: src/tagscommand.cpp:31
 msgctxt "info:shell"
 msgid "List or modify tags"
-msgstr ""
+msgstr "टैग्स् सूचीबद्धं कुर्वन्तु अथवा परिवर्तनं कुर्वन्तु"
 
 #: src/tagscommand.cpp:47
 #, kde-format
 msgid "Brief output, tag names or IDs only"
-msgstr "仅简短输出、标签名称或ID"
+msgstr "संक्षिप्तं उत्पादनं, केवलं टैगनामानि वा IDs वा"
 
 #: src/tagscommand.cpp:50
 #, kde-format
 msgid "Brief output, tag URLs only"
-msgstr "简要输出、仅标签 URL"
+msgstr "संक्षिप्तं आउटपुट्, केवलं टैग् URLs"
 
 #: src/tagscommand.cpp:54
 #, kde-format
 msgid "List all known tags (the default operation)"
-msgstr "列出所有已知标签 (默认操作)"
+msgstr "सर्वाणि ज्ञातानि टैग्स् (पूर्वनिर्धारितक्रिया) सूचीबद्धानि कुर्वन्तु ।"
 
 #: src/tagscommand.cpp:57
 #, kde-format
 msgid "Add named tags"
-msgstr ""
+msgstr "नामकृतानि टैग्स् योजयन्तु"
 
 #: src/tagscommand.cpp:60
 #, kde-format
 msgid "Delete tags"
-msgstr ""
+msgstr "टैग्स् विलोपयन्तु"
 
 #. i18n("ID for a tag to be added (default automatic)"), i18n("id")));
 #: src/tagscommand.cpp:65
 #, kde-format
 msgid "TAG"
-msgstr ""
+msgstr "सूचकपत्त्र"
 
 #: src/tagscommand.cpp:65
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
-msgstr ""
+msgstr "योजयितुं टैगस्य नाम, अथवा विलोपनीयस्य टैग् इत्यस्य नाम, ID अथवा URL"
 
 #: src/tagscommand.cpp:65
 #, kde-format
 msgid "[TAG...]"
-msgstr ""
+msgstr "[सूचकपत्त्र...]"
 
 #: src/tagscommand.cpp:85
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr ""
+msgstr "'brief' तथा 'urls' विकल्पद्वयं निर्दिष्टुं न शक्यते"
 
 #: src/tagscommand.cpp:100
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
-msgstr ""
+msgstr "'सूची', 'add' अथवा 'delete' विकल्पेषु केवलम् एकः एव निर्दिष्टः भवितुम् अर्हति"
 
 #: src/tagscommand.cpp:115
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
-msgstr ""
+msgstr "योजयितुं कोऽपि टैग् निर्दिष्टः नास्ति"
 
 #: src/tagscommand.cpp:120
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr ""
+msgstr "'id' इत्यनेन सह योजयितुं बहुविध-टैग् निर्दिष्टुं न शक्यते ।"
 
 #: src/tagscommand.cpp:129
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
-msgstr ""
+msgstr "विलोपनार्थं कोऽपि टैग् निर्दिष्टः नास्ति"
 
 #: src/tagscommand.cpp:158
 #, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr ""
+msgstr "'%1' इति नामकं टैग् ID %2 पूर्वमेव अस्ति"
 
 #: src/tagscommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1' ID %2"
-msgstr ""
+msgstr "'%1' ID %2 टैग् योजयितुं न शक्यते"
 
 #: src/tagscommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot add tag '%1'"
-msgstr ""
+msgstr "'%1' इति टैग् योजयितुं न शक्यते ।"
 
 #: src/tagscommand.cpp:227
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
-msgstr ""
+msgstr "'%1' विलोपयितुं टैग् नास्ति"
 
 #: src/tagscommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete ID %1 does not exist"
-msgstr ""
+msgstr "ID %1 विलोपयितुं टैग् नास्ति"
 
 #: src/tagscommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags found"
-msgstr ""
+msgstr "न टैग्स् प्राप्ताः"
 
 #: src/tagscommand.cpp:320
 #, kde-format
@@ -1868,28 +1878,28 @@ msgstr "URL"
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
-msgstr ""
+msgstr "सञ्चिकातः कस्यचित् द्रव्यस्य पेलोड् अद्यतनं कुर्वन्तु"
 
 #: src/updatecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to update, an ID or Akonadi URL"
-msgstr ""
+msgstr "अद्यतनं कर्तुं द्रव्यं, ID अथवा Akonadi URL"
 
 #: src/updatecommand.cpp:53
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to update the item from"
-msgstr ""
+msgstr "सञ्चिकातः द्रव्यं अद्यतनीकर्तुं"
 
 #: src/updatecommand.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file specified"
-msgstr ""
+msgstr "न सञ्चिका निर्दिष्टा"
 
 #: src/updatecommand.cpp:136
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item updated successfully"
-msgstr ""
+msgstr "मदः सफलतया अद्यतनः अभवत्"
