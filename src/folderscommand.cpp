@@ -22,12 +22,14 @@
 #include <qfileinfo.h>
 #include <qsavefile.h>
 #include <qstandardpaths.h>
+#include <qtimer.h>
 #include <qurl.h>
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
 #include <Akonadi/CollectionFetchJob>
+#include <Akonadi/ServerManager>
 
 #include <iostream>
 #include <unistd.h>
@@ -664,6 +666,18 @@ void FoldersCommand::populateChangeData()
         i18nc("@info:shell", "Defined %1 change data patterns for %2 config file names", mChangeData.count(), mChangeData.uniqueKeys().count()));
 }
 
+static void sleepFor(int ms)
+{
+    QEventLoop eventLoop;
+
+    QTimer timer;
+    timer.setInterval(ms);
+    timer.setSingleShot(true);
+    QObject::connect(&timer, &QTimer::timeout, &eventLoop, &QEventLoop::quit);
+    timer.start();
+    eventLoop.exec();
+}
+
 void FoldersCommand::processRestore()
 {
     const QStringList configFiles = allConfigFiles();
@@ -715,7 +729,26 @@ void FoldersCommand::processRestore()
         return;
     }
 
-    // TODO: check Akonadi server and agents are stopped
+    // Check that the Akonadi server and agents are stopped.
+    if (!isDryRun()) {
+        ErrorReporter::progress(i18nc("@info:shell", "Checking whether the Akonadi server is running..."));
+        bool firstTime = true;
+
+        while (true) {
+            if (ServerManager::state() == ServerManager::NotRunning) {
+                std::cerr << qPrintable(i18nc("@info:shell", "Akonadi server is stopped")) << std::endl;
+                break;
+            }
+
+            if (firstTime) {
+                ErrorReporter::progress(i18nc("@info:shell", "Shutting down Akonadi server..."));
+                ServerManager::stop();
+                firstTime = false;
+            }
+
+            sleepFor(1000);
+        }
+    }
 
     ErrorReporter::progress(i18nc("@info:shell", "Updating %1 configuration files in '%2'", configFiles.count(), QDir::currentPath()));
 
