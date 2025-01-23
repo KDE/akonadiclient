@@ -2,13 +2,13 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['@all']
-  'require':
+ - 'on': ['@all']
+   'require':
     'frameworks/extra-cmake-modules': '@stable'
     'frameworks/kcoreaddons': '@stable'
     'frameworks/kdoctools': '@stable'
     'frameworks/ki18n': '@stable'
     'frameworks/kio': '@stable'
-    'pim/akonadi' : '@latest-kf6'
-    'pim/akonadi-contacts' : '@latest-kf6'
-    'pim/kmime' : '@latest-kf6'
+    'pim/akonadi': '@latest-kf6'
+    'pim/akonadi-contacts': '@latest-kf6'
+    'pim/kmime': '@latest-kf6'
