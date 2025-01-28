@@ -139,7 +139,23 @@ void FoldersCommand::start()
         return;
     }
 
-    // Backup or check mode, so read the current collections first
+    if (mOperationMode == ModeCheck) {
+        // Check mode.  First read the original list of folders that
+        // was saved by a previous backup operation.
+        const QString readFileName = findSaveFile("savedfolders.dat", false);
+        qDebug() << "check from" << readFileName;
+        QFile readFile(readFileName, this);
+        if (!readFile.open(QIODevice::ReadOnly)) {
+            Q_EMIT error(i18nc("@info:shell", "Cannot read saved list from '%1'", readFile.fileName()));
+            Q_EMIT error(i18nc("@info:shell", "Run '%1 %2 --backup' first", QCoreApplication::applicationName(), name()));
+            Q_EMIT finished(RuntimeError);
+            return;
+        }
+
+        readSavedPaths(&readFile, &mOrigPathMap); // populates mOrigPathMap
+    }
+
+    // Backup or check mode, so read the current collections
     fetchCollections();
 }
 
@@ -190,20 +206,6 @@ bool FoldersCommand::readOrSaveLists()
         Q_EMIT finished(NoError); // no more to do
         return (false);
     }
-
-    // Check mode.  First read the original list of folders that
-    // was saved by a previous backup operation.
-    const QString readFileName = findSaveFile("savedfolders.dat", false);
-    qDebug() << "check from" << readFileName;
-    QFile readFile(readFileName, this);
-    if (!readFile.open(QIODevice::ReadOnly)) {
-        Q_EMIT error(i18nc("@info:shell", "Cannot read saved list from '%1'", readFile.fileName()));
-        Q_EMIT error(i18nc("@info:shell", "Run '%1 %2 --backup' first", QCoreApplication::applicationName(), name()));
-        Q_EMIT finished(RuntimeError);
-        return (false);
-    }
-
-    readSavedPaths(&readFile, &mOrigPathMap); // populates mOrigPathMap
 
     // Save the current list of folders that was obtained from the
     // Akonadi server to a "current" data file.  This will later be
