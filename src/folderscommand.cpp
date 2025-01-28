@@ -257,6 +257,18 @@ static QString newConfigFileName(const QString &name)
     return (name + "_" + QCoreApplication::applicationName() + "_new");
 }
 
+static void sleepFor(int ms)
+{
+    QEventLoop eventLoop;
+
+    QTimer timer;
+    timer.setInterval(ms);
+    timer.setSingleShot(true);
+    QObject::connect(&timer, &QTimer::timeout, &eventLoop, &QEventLoop::quit);
+    timer.start();
+    eventLoop.exec();
+}
+
 void FoldersCommand::processChanges()
 {
     // First of all read or save the folder lists, as appropriate for the
@@ -288,7 +300,7 @@ void FoldersCommand::processChanges()
 
     // Crude, but ensures that the updated configuration files have
     // later timestamps than the saved current folders file.
-    sleep(1);
+    sleepFor(1000);
 
     for (const QString &configFile : std::as_const(configFiles)) {
         std::cerr << std::endl;
@@ -665,18 +677,6 @@ void FoldersCommand::populateChangeData()
 
     ErrorReporter::progress(
         i18nc("@info:shell", "Defined %1 change data patterns for %2 config file names", mChangeData.count(), mChangeData.uniqueKeys().count()));
-}
-
-static void sleepFor(int ms)
-{
-    QEventLoop eventLoop;
-
-    QTimer timer;
-    timer.setInterval(ms);
-    timer.setSingleShot(true);
-    QObject::connect(&timer, &QTimer::timeout, &eventLoop, &QEventLoop::quit);
-    timer.start();
-    eventLoop.exec();
 }
 
 void FoldersCommand::processRestore()
