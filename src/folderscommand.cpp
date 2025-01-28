@@ -32,7 +32,6 @@
 #include <Akonadi/ServerManager>
 
 #include <iostream>
-#include <unistd.h>
 
 #include "commandfactory.h"
 #include "errorreporter.h"
