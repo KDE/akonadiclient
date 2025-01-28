@@ -115,7 +115,11 @@ protected:
     AbstractCommand::Error initCommand(QCommandLineParser *parser) override;
 
 private:
-    enum Mode { ModeBackup, ModeCheck, ModeRestore };
+    enum Mode {
+        ModeBackup,
+        ModeCheck,
+        ModeRestore
+    };
 
 private:
     void fetchCollections();
