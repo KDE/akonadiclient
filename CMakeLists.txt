@@ -38,7 +38,7 @@ find_package(KPim6AkonadiContactCore ${AKONADI_CONTACT_VERSION} CONFIG REQUIRED)
 find_package(KPim6Mime ${AKONADI_VERSION} CONFIG REQUIRED)
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Widgets Test)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n Config)
 
 # Only 'ncurses' includes terminfo support, not classic 'curses'
 set(CURSES_NEED_NCURSES TRUE)

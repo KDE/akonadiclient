@@ -29,7 +29,13 @@ class AbstractCommand : public QObject
     Q_OBJECT
 
 public:
-    enum Error { DefaultError = -1, NoError = 0, InvalidUsage = 1, RuntimeError = 2, HelpOnly = 3 };
+    enum Error {
+        DefaultError = -1,
+        NoError = 0,
+        InvalidUsage = 1,
+        RuntimeError = 2,
+        HelpOnly = 3
+    };
 
     explicit AbstractCommand(QObject *parent = nullptr);
     ~AbstractCommand() override = default;
