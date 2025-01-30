@@ -18,6 +18,15 @@
 
 #include "attributescommand.h"
 
+#include <qdir.h>
+#include <qfile.h>
+#include <qfileinfo.h>
+#include <qregularexpression.h>
+#include <qsavefile.h>
+#include <qstandardpaths.h>
+#include <qtextstream.h>
+
+#include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionModifyJob>
 
 #include <iostream>
@@ -25,6 +34,7 @@
 #include "collectionpathjob.h"
 #include "collectionresolvejob.h"
 #include "commandfactory.h"
+#include "errorreporter.h"
 
 using namespace Akonadi;
 
@@ -76,10 +86,6 @@ AttributesCommand::AttributesCommand(QObject *parent)
 {
 }
 
-AttributesCommand::~AttributesCommand()
-{
-}
-
 void AttributesCommand::setupCommandOptions(QCommandLineParser *parser)
 {
     addOptionsOption(parser);
@@ -99,6 +105,24 @@ void AttributesCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addOption(QCommandLineOption((QStringList() << "x"
                                                         << "hex"),
                                          i18n("Show or interpret the attribute value as hex encoded")));
+    parser->addOption(QCommandLineOption((QStringList() << "b"
+                                                        << "backup"),
+                                         i18n("Save current folder attributes")));
+    parser->addOption(QCommandLineOption((QStringList() << "c"
+                                                        << "check"),
+                                         i18n("Check current against saved folder attributes")));
+    parser->addOption(QCommandLineOption((QStringList() << "r"
+                                                        << "restore"),
+                                         i18n("Restore changed folder attributes")));
+
+    // This command does not provide a "dry run" mode, even for the Backup,
+    // Check or Restore operations, for two reasons:
+    //
+    //   1.  The original operations (Show/Add/Modify/Delete) didn't have
+    //       a dry run mode either.
+    //
+    //   2.  A dry run for Backup doesn't make sense, and Check is just
+    //       like a dry run for Restore.
 
     parser->addPositionalArgument("collection", i18nc("@info:shell", "The collection: an ID, path or Akonadi URL"));
     parser->addPositionalArgument("args", i18nc("@info:shell", "Arguments for the operation"), i18n("args..."));
@@ -147,48 +171,71 @@ AbstractCommand::Error AttributesCommand::initCommand(QCommandLineParser *parser
     mHexOption = parser->isSet("hex");
 
     int modeCount = 0;
-    if (parser->isSet("show"))
+    bool needCollection = true;
+    if (parser->isSet("show")) {
         ++modeCount;
-    if (parser->isSet("add"))
+        mOperationMode = ModeShow;
+    }
+    if (parser->isSet("add")) {
         ++modeCount;
-    if (parser->isSet("delete"))
+        mOperationMode = ModeAdd;
+    }
+    if (parser->isSet("delete")) {
         ++modeCount;
-    if (parser->isSet("modify"))
+        mOperationMode = ModeDelete;
+    }
+    if (parser->isSet("modify")) {
         ++modeCount;
+        mOperationMode = ModeModify;
+    }
+    if (parser->isSet("backup")) {
+        ++modeCount;
+        mOperationMode = ModeBackup;
+        needCollection = false;
+    }
+    if (parser->isSet("check")) {
+        ++modeCount;
+        mOperationMode = ModeCheck;
+        needCollection = false;
+    }
+    if (parser->isSet("restore")) {
+        ++modeCount;
+        mOperationMode = ModeRestore;
+        needCollection = false;
+    }
 
     if (modeCount > 1) {
-        emitErrorSeeHelp(i18nc("@info:shell", "Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"));
+        emitErrorSeeHelp(i18nc("@info:shell", "Only one operation mode option may be specified"));
         return (InvalidUsage);
     }
 
-    if (!checkArgCount(args, 1, i18nc("@info:shell", "No collection specified")))
-        return InvalidUsage;
+    if (needCollection) {
+        if (!checkArgCount(args, 1, i18nc("@info:shell", "No collection specified")))
+            return InvalidUsage;
 
-    const QString collectionArg = args.takeFirst();
-    if (!getResolveJob(collectionArg))
-        return (InvalidUsage);
+        const QString collectionArg = args.takeFirst();
+        if (!getResolveJob(collectionArg))
+            return (InvalidUsage);
+    }
 
-    if (parser->isSet("add")) {
+    if (mOperationMode == ModeAdd) {
         if (!checkArgCount(args, 2, i18nc("@info:shell", "No attribute name/value specified to add")))
             return (InvalidUsage);
 
-        mOperationMode = ModeAdd;
         mCommandType = args.takeFirst().toLatin1();
         if (!parseValue(args.takeFirst(), mHexOption))
             return (InvalidUsage);
     }
-    if (parser->isSet("delete")) {
+    if (mOperationMode == ModeDelete) {
         if (!checkArgCount(args, 1, i18nc("@info:shell", "No attribute name specified to delete")))
             return (InvalidUsage);
 
-        mOperationMode = ModeDelete;
         mCommandType = args.takeFirst().toLatin1();
     }
-    if (parser->isSet("modify")) {
+    if (mOperationMode == ModeModify) {
         if (!checkArgCount(args, 2, i18nc("@info:shell", "No attribute name/value specified to modify")))
             return (InvalidUsage);
 
-        mOperationMode = ModeModify;
         mCommandType = args.takeFirst().toLatin1();
         if (!parseValue(args.takeFirst(), mHexOption))
             return (InvalidUsage);
@@ -202,10 +249,68 @@ AbstractCommand::Error AttributesCommand::initCommand(QCommandLineParser *parser
     return (NoError);
 }
 
+// TODO: common with FoldersCommand
+// Find the full path for a save file, optionally creating the parent
+// directory if required.
+QString AttributesCommand::findSaveFile(const QString &name, bool createDir)
+{
+    const QString saveDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + '/';
+    QFileInfo info(saveDir);
+    if (!info.isDir()) {
+        if (info.exists()) {
+            Q_EMIT error(i18nc("@info:shell", "Save location '%1' exists but is not a directory", info.absoluteFilePath()));
+            Q_EMIT finished(RuntimeError);
+            return (QString());
+        }
+
+        if (createDir) {
+            QDir d(info.dir());
+            if (!d.mkpath(saveDir)) {
+                Q_EMIT error(i18nc("@info:shell", "Cannot create save directory '%1'", info.absoluteFilePath()));
+                Q_EMIT finished(RuntimeError);
+                return (QString());
+            }
+        }
+    }
+
+    info.setFile(info.dir(), name);
+    qDebug() << info.absoluteFilePath();
+    return (info.absoluteFilePath());
+}
+
 void AttributesCommand::start()
 {
-    connect(resolveJob(), &KJob::result, this, &AttributesCommand::onCollectionResolved);
-    resolveJob()->start();
+    if (mOperationMode == ModeBackup || mOperationMode == ModeCheck || mOperationMode == ModeRestore) {
+        if (mOperationMode == ModeRestore) {
+            if (!allowDangerousOperation()) {
+                Q_EMIT finished(RuntimeError);
+                return;
+            }
+        }
+
+        if (mOperationMode == ModeCheck || mOperationMode == ModeRestore) {
+            // Check or restore mode.  First read the original list of
+            // folder attributes that was saved by a previous backup operation.
+            const QString readFileName = findSaveFile("savedattributes.dat", false);
+            qDebug() << "read from" << readFileName;
+            QFile readFile(readFileName, this);
+            if (!readFile.open(QIODevice::ReadOnly)) {
+                Q_EMIT error(i18nc("@info:shell", "Cannot read saved attributes from '%1'", readFile.fileName()));
+                Q_EMIT error(i18nc("@info:shell", "Run '%1 %2 --backup' first", QCoreApplication::applicationName(), name()));
+                Q_EMIT finished(RuntimeError);
+                return;
+            }
+
+            readSavedAttributes(&readFile); // populates mOrigPathMap and mOrigAttrMap
+        }
+
+        // In any of those modes, read the current collections.
+        fetchCollections();
+    } else {
+        // Resolve the collection argument specified.
+        connect(resolveJob(), &KJob::result, this, &AttributesCommand::onCollectionResolved);
+        resolveJob()->start();
+    }
 }
 
 void AttributesCommand::onCollectionResolved(KJob *job)
@@ -334,4 +439,138 @@ void AttributesCommand::onPathFetched(KJob *job)
     }
 
     Q_EMIT finished(NoError);
+}
+
+void AttributesCommand::fetchCollections()
+{
+    CollectionFetchJob *job = new CollectionFetchJob(Collection::root(), CollectionFetchJob::Recursive, this);
+    connect(job, &KJob::result, this, &AttributesCommand::onCollectionsFetched);
+}
+
+void AttributesCommand::onCollectionsFetched(KJob *job)
+{
+    Q_ASSERT(mOperationMode != ModeRestore);
+
+    if (!checkJobResult(job))
+        return;
+    CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
+    Q_ASSERT(fetchJob != nullptr);
+
+    mCollections = fetchJob->collections();
+    if (mCollections.isEmpty()) {
+        Q_EMIT error(i18nc("@info:shell", "Cannot list any collections"));
+        Q_EMIT finished(RuntimeError);
+        return;
+    }
+
+    ErrorReporter::progress(i18nc("@info:shell", "Found %1 current Akonadi collections", mCollections.count()));
+
+    getCurrentPaths(mCollections); // populates mCurPathMap
+
+    if (mOperationMode == ModeBackup) {
+        // Backup mode.  Save the current list of folders to the "saved"
+        // data file.  After that there is no more to do.
+        const QString saveFileName = findSaveFile("savedattributes.dat", true);
+        qDebug() << "backup to" << saveFileName;
+        QSaveFile saveFile(saveFileName);
+        if (!saveFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+            Q_EMIT error(i18nc("@info:shell", "Cannot save backup list to '%1'", saveFile.fileName()));
+            Q_EMIT finished(RuntimeError);
+            return;
+        }
+
+        saveCollectionAttributes(&saveFile);
+        saveFile.commit(); // finished with save file
+        return;
+    }
+
+    // Check or restore mode, check and set the attributes.
+    // processChanges();
+}
+
+// TODO: common with FoldersCommand
+void AttributesCommand::getCurrentPaths(const Collection::List &colls)
+{
+    QMap<Collection::Id, Collection> curCollMap;
+    for (const Collection &coll : std::as_const(colls)) {
+        curCollMap[coll.id()] = coll;
+    }
+
+    for (const Collection &coll : std::as_const(colls)) {
+        QStringList path(coll.displayName());
+        Collection::Id parentId = coll.parentCollection().id();
+        while (parentId != 0) {
+            const Collection &parentColl = curCollMap[parentId];
+            path.prepend(parentColl.displayName());
+            parentId = parentColl.parentCollection().id();
+        }
+
+        path.prepend(""); // to get root at beginning
+        const QString p = path.join('/');
+        mCurPathMap[coll.id()] = p;
+    }
+}
+
+void AttributesCommand::saveCollectionAttributes(QFileDevice *file)
+{
+    ErrorReporter::progress(i18nc("@info:shell", "Saving collection attributes to '%1'", file->fileName()));
+
+    // We already have all of the collections and their attributes
+    // available in 'mCollections'.  There is no need to run any more
+    // asynchronous jobs for this operation, so it can just be a
+    // simple loop.
+
+    int saveCount = 0;
+    for (const Collection &collection : std::as_const(mCollections)) {
+        const Attribute::List &attrs = collection.attributes();
+
+        if (attrs.isEmpty()) { // only save for folders with attributes
+            continue;
+        }
+
+        // Creating a new QTextStream each time simply writes more data
+        // to the QSaveFile.  Doing it this way to avoid yet needing yet
+        // another member variable.
+        QTextStream ts(file);
+
+        ts << Qt::left << qSetFieldWidth(8) << QString::number(collection.id()) << qSetFieldWidth(0) << "  " << qSetFieldWidth(30) << "=" << qSetFieldWidth(0)
+           << "  " << QUrl::toPercentEncoding(mCurPathMap.value(collection.id()), "/") << Qt::endl;
+
+        for (const Attribute *attr : std::as_const(attrs)) {
+            ts << Qt::left << qSetFieldWidth(8) << QString::number(collection.id()) << qSetFieldWidth(0) << "  " << qSetFieldWidth(30) << attr->type()
+               << qSetFieldWidth(0) << "  " << attr->serialized().toPercentEncoding("()") << Qt::endl;
+        }
+
+        ts << Qt::endl;
+        ++saveCount;
+    }
+
+    ErrorReporter::progress(i18nc("@info:shell", "Saved attributes for %1 collections", saveCount));
+    Q_EMIT finished(NoError);
+}
+
+void AttributesCommand::readSavedAttributes(QFileDevice *file)
+{
+    ErrorReporter::progress(i18nc("@info:shell", "Reading saved attributes from '%1'", file->fileName()));
+    QTextStream ts(file);
+    const QRegularExpression rx("^(\\d+)\\s+(\\S+)\\s+(.+)$");
+    while (!ts.atEnd()) {
+        const QString line = ts.readLine().trimmed();
+        const QRegularExpressionMatch match = rx.match(line);
+        if (!match.hasMatch())
+            continue;
+
+        const Collection::Id id = static_cast<Collection::Id>(match.captured(1).toULong());
+        const QByteArray attrName = match.captured(2).toLatin1();
+        const QByteArray attrValue = QByteArray::fromPercentEncoding(match.captured(3).toLatin1());
+
+        if (attrName == '=') { // this is the folder path
+            mOrigPathMap.insert(id, attrValue);
+        } else { // this is an attribute name/value
+            QPair<Collection::Id, QByteArray> key(id, attrName);
+            mOrigAttrMap.insert(key, attrValue);
+        }
+    }
+
+    ErrorReporter::progress(i18nc("@info:shell", "Read attributes for %1 collections", mOrigPathMap.count()));
 }

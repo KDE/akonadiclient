@@ -20,12 +20,11 @@
 
 #include "abstractcommand.h"
 
-class KJob;
+#include <Akonadi/Collection>
+using namespace Akonadi;
 
-namespace Akonadi
-{
-class Collection;
-};
+class QFileDevice;
+class KJob;
 
 class AttributesCommand : public AbstractCommand
 {
@@ -33,7 +32,7 @@ class AttributesCommand : public AbstractCommand
 
 public:
     explicit AttributesCommand(QObject *parent = nullptr);
-    ~AttributesCommand() override;
+    ~AttributesCommand() override = default;
 
     [[nodiscard]] QString name() const override;
 
@@ -46,19 +45,28 @@ protected:
 
 private:
     bool parseValue(const QString &arg, bool isHex);
+    void fetchCollections();
+    QString findSaveFile(const QString &name, bool createDir);
+    void getCurrentPaths(const Collection::List &colls);
+    void saveCollectionAttributes(QFileDevice *file);
+    void readSavedAttributes(QFileDevice *file);
 
 private:
     enum Mode {
         ModeShow,
         ModeAdd,
         ModeDelete,
-        ModeModify
+        ModeModify,
+        ModeBackup,
+        ModeCheck,
+        ModeRestore
     };
 
 private Q_SLOTS:
     void onCollectionResolved(KJob *job);
     void onPathFetched(KJob *job);
     void onCollectionModified(KJob *job);
+    void onCollectionsFetched(KJob *job);
 
 private:
     Akonadi::Collection *mAttributesCollection = nullptr;
@@ -67,4 +75,12 @@ private:
     QByteArray mCommandType;
     QByteArray mCommandValue;
     bool mHexOption;
+
+    Collection::List mCollections;
+
+    // TODO: to a multiple inherited class shared with FoldersCommand
+    QMap<Collection::Id, QString> mOrigPathMap; // coll ID -> original path
+    QMap<Collection::Id, QString> mCurPathMap; // coll ID -> current path
+
+    QMap<QPair<Collection::Id, QByteArray>, QByteArray> mOrigAttrMap;
 };
