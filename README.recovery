@@ -90,5 +90,5 @@ intended for use by those familiar with the Akonadi system and its
 maintenance.  It does try to check the integrity of saved files and
 data before changing anything, but it is always possible that something
 could go wrong.  You are recommended to back up the $XDG_CONFIG_HOME
-folder before running the command in 'check' or 'restore' mode.
+directory before running the command in 'check' or 'restore' mode.
 
