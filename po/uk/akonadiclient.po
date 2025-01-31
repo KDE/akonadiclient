@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 01:49+0000\n"
+"POT-Creation-Date: 2025-01-31 00:41+0000\n"
 "PO-Revision-Date: 2024-09-27 20:21+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -36,55 +36,62 @@ msgctxt "@info:shell"
 msgid "The name of the command"
 msgstr "Назва команди"
 
-#: src/abstractcommand.cpp:91 src/main.cpp:61
+#: src/abstractcommand.cpp:50
+#, fuzzy, kde-format
+#| msgid "Get state for the specified agent"
+msgctxt "@info:shell"
+msgid "Give help for the specified command"
+msgstr "Отримати стан вказаного агента"
+
+#: src/abstractcommand.cpp:103 src/main.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "Options for command"
 msgstr "Параметри команди"
 
-#: src/abstractcommand.cpp:91 src/main.cpp:61
+#: src/abstractcommand.cpp:103 src/main.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "[options]"
 msgstr "[параметри]"
 
-#: src/abstractcommand.cpp:98
+#: src/abstractcommand.cpp:110
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that a collection is specified"
 msgstr "Задати збірку як аргумент"
 
-#: src/abstractcommand.cpp:102
+#: src/abstractcommand.cpp:114
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that an item is specified"
 msgstr "Задати запис як аргумент"
 
-#: src/abstractcommand.cpp:110
+#: src/abstractcommand.cpp:122
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run without making any actual changes"
 msgstr "Запустити без внесення змін насправді"
 
-#: src/abstractcommand.cpp:125
+#: src/abstractcommand.cpp:137
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot specify as both an item and a collection"
 msgstr "Не можна одночасно вказувати як запис і як збірку"
 
-#: src/abstractcommand.cpp:145
+#: src/abstractcommand.cpp:157
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid collection/item argument '%1', %2"
 msgstr "Некоректний аргумент збірки або запису «%1», %2"
 
-#: src/abstractcommand.cpp:163
+#: src/abstractcommand.cpp:175
 #, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2. See 'help %1'"
 msgstr "%2. Див. «help %1»"
 
-#: src/abstractcommand.cpp:166
+#: src/abstractcommand.cpp:178
 #, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
@@ -92,13 +99,13 @@ msgctxt ""
 msgid "%3. See '%1 help %2'"
 msgstr "%3. Див. «%1 help %2'ґ»"
 
-#: src/abstractcommand.cpp:182
+#: src/abstractcommand.cpp:194
 #, kde-format
 msgctxt "@info:shell"
 msgid "Dangerous or destructive operations are not allowed"
 msgstr "Небезпечні або руйнівні дії заборонено"
 
-#: src/abstractcommand.cpp:183
+#: src/abstractcommand.cpp:195
 #, kde-format
 msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
@@ -524,19 +531,19 @@ msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
 msgstr "Некоректний синтаксис запису «%1»"
 
-#: src/commandfactory.cpp:50 src/commandfactory.cpp:102
+#: src/commandfactory.cpp:51 src/commandfactory.cpp:103
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
 msgstr "Невідома команда «%1»"
 
-#: src/commandfactory.cpp:90
+#: src/commandfactory.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
 msgstr "Не вказано команди (спробуйте «%1 --help»)"
 
-#: src/commandfactory.cpp:134
+#: src/commandfactory.cpp:135
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
@@ -943,6 +950,18 @@ msgctxt "@info:shell"
 msgid "Changes to item '%1' have been saved"
 msgstr "Зміни у записі «%1» було збережено"
 
+#: src/errorreporter.cpp:35
+#, kde-format
+msgctxt "@info:shell"
+msgid "error"
+msgstr ""
+
+#: src/errorreporter.cpp:43
+#, kde-format
+msgctxt "@info:shell"
+msgid "warning"
+msgstr ""
+
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
@@ -966,6 +985,299 @@ msgstr "Файл, до якого слід експортувати дані"
 msgctxt "@info:shell"
 msgid "No export file specified"
 msgstr "Не вказано файл для експортування"
+
+#: src/folderscommand.cpp:40
+msgctxt "info:shell"
+msgid "Save, check or restore Akonadi folder IDs"
+msgstr ""
+
+#: src/folderscommand.cpp:52
+#, kde-format
+msgid "Save current folder ID assignments"
+msgstr ""
+
+#: src/folderscommand.cpp:55
+#, kde-format
+msgid "Check current against saved folder ID assignments"
+msgstr ""
+
+#: src/folderscommand.cpp:58
+#, kde-format
+msgid "Restore configuration files with changed folder ID assignments"
+msgstr ""
+
+#: src/folderscommand.cpp:81
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+msgctxt "@info:shell"
+msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
+msgstr "Можна вказати лише один з параметрів «list», «add» або «delete»"
+
+#: src/folderscommand.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+msgctxt "@info:shell"
+msgid "One of the 'backup', 'check' or 'restore' options must be specified"
+msgstr "Можна вказати лише один з параметрів «list», «add» або «delete»"
+
+#: src/folderscommand.cpp:100
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Directory '%1' not found or not a directory"
+msgctxt "@info:shell"
+msgid "Save location '%1' exists but is not a directory"
+msgstr "Каталог «%1» не знайдено або вказаний запис не є каталогом"
+
+#: src/folderscommand.cpp:108
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot create directory '%1/%2'"
+msgctxt "@info:shell"
+msgid "Cannot create save directory '%1'"
+msgstr "Не вдалося створити каталог «%1/%2»"
+
+#: src/folderscommand.cpp:148
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot save file '%1'"
+msgctxt "@info:shell"
+msgid "Cannot read saved list from '%1'"
+msgstr "Не вдалося зберегти файл «%1»"
+
+#: src/folderscommand.cpp:149
+#, kde-format
+msgctxt "@info:shell"
+msgid "Run '%1 %2 --backup' first"
+msgstr ""
+
+#: src/folderscommand.cpp:178
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot delete the root collection"
+msgctxt "@info:shell"
+msgid "Cannot list any collections"
+msgstr "Не можна вилучати кореневу збірку"
+
+#: src/folderscommand.cpp:183
+#, kde-format
+msgctxt "@info:shell"
+msgid "Found %1 current Akonadi collections"
+msgstr ""
+
+#: src/folderscommand.cpp:199
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot save file '%1'"
+msgctxt "@info:shell"
+msgid "Cannot save backup list to '%1'"
+msgstr "Не вдалося зберегти файл «%1»"
+
+#: src/folderscommand.cpp:217
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot create directory '%1/%2'"
+msgctxt "@info:shell"
+msgid "Cannot write current list to '%1'"
+msgstr "Не вдалося створити каталог «%1/%2»"
+
+#: src/folderscommand.cpp:285
+#, kde-format
+msgctxt "@info:shell"
+msgid "No folder IDs have changed"
+msgstr ""
+
+#: src/folderscommand.cpp:290
+#, kde-format
+msgctxt "@info:shell"
+msgid "%1 folder IDs have changed"
+msgstr ""
+
+#: src/folderscommand.cpp:307
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Processing collection '%1'"
+msgctxt "@info:shell"
+msgid "Processing config file '%1'..."
+msgstr "Обробляємо збірку «%1»"
+
+#: src/folderscommand.cpp:403
+#, kde-format
+msgctxt "@info:shell"
+msgid "%1 groups were renamed"
+msgstr ""
+
+#: src/folderscommand.cpp:517
+#, kde-format
+msgctxt "@info:shell"
+msgid "%1 settings values were changed"
+msgstr ""
+
+#: src/folderscommand.cpp:523
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "No configuration changes are required"
+msgstr ""
+
+#: src/folderscommand.cpp:532
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid ""
+"Configuration changes are required (%1 group renames and %2 settings "
+"changes).<nl/>Quit all running PIM applications and stop the Akonadi server, "
+"then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
+"implement the required changes."
+msgstr ""
+
+#: src/folderscommand.cpp:573
+#, fuzzy, kde-format
+#| msgid "Changed maildir folder name to '%1'"
+msgctxt "@info:shell"
+msgid "Saving folder paths to '%1'"
+msgstr "Назву теки maildir змінено на «%1»"
+
+#: src/folderscommand.cpp:580
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "The collection or item"
+msgctxt "@info:shell"
+msgid "Saved %1 collection folder paths"
+msgstr "Збірка або запис"
+
+#: src/folderscommand.cpp:585
+#, fuzzy, kde-format
+#| msgid "Changed maildir folder name to '%1'"
+msgctxt "@info:shell"
+msgid "Reading saved folder paths from '%1'"
+msgstr "Назву теки maildir змінено на «%1»"
+
+#: src/folderscommand.cpp:596
+#, fuzzy, kde-format
+#| msgctxt "info:shell"
+#| msgid "Rename a collection"
+msgctxt "@info:shell"
+msgid "Read %1 saved collection paths"
+msgstr "Перейменувати збірку"
+
+#: src/folderscommand.cpp:679
+#, kde-format
+msgctxt "@info:shell"
+msgid "Defined %1 change data patterns for %2 config file names"
+msgstr ""
+
+#: src/folderscommand.cpp:695
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid "Tag to delete '%1' does not exist"
+msgctxt "@info:shell"
+msgid "Saved folder list '%1' does not exist"
+msgstr "Не існує мітки, «%1» яку слід вилучити"
+
+#: src/folderscommand.cpp:699
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid "Tag to delete '%1' does not exist"
+msgctxt "@info:shell"
+msgid "Current folder list '%1' does not exist"
+msgstr "Не існує мітки, «%1» яку слід вилучити"
+
+#: src/folderscommand.cpp:703
+#, kde-format
+msgctxt "@info:shell"
+msgid "Current folder list '%1' is older than saved folder list '%2'"
+msgstr ""
+
+#: src/folderscommand.cpp:706
+#, kde-format
+msgctxt "@info:shell"
+msgid "Run '%1 %2 --check' first"
+msgstr ""
+
+#: src/folderscommand.cpp:718
+#, kde-format
+msgctxt "@info:shell"
+msgid ""
+"New configuration file '%1' does not exist, or is older than folder list '%2'"
+msgstr ""
+
+#: src/folderscommand.cpp:735
+#, kde-format
+msgctxt "@info:shell"
+msgid "Checking whether the Akonadi server is running..."
+msgstr ""
+
+#: src/folderscommand.cpp:740
+#, kde-format
+msgctxt "@info:shell"
+msgid "Akonadi server is stopped"
+msgstr ""
+
+#: src/folderscommand.cpp:745
+#, kde-format
+msgctxt "@info:shell"
+msgid "Shutting down Akonadi server..."
+msgstr ""
+
+#: src/folderscommand.cpp:754
+#, kde-format
+msgctxt "@info:shell"
+msgid "Updating %1 configuration files in '%2'"
+msgstr ""
+
+#: src/folderscommand.cpp:765
+#, kde-format
+msgctxt "@info:shell"
+msgid "Removing old '%1'"
+msgstr ""
+
+#: src/folderscommand.cpp:768
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot save file '%1'"
+msgctxt "@info:shell"
+msgid "Cannot remove old '%1'"
+msgstr "Не вдалося зберегти файл «%1»"
+
+#: src/folderscommand.cpp:773
+#, kde-format
+msgctxt "@info:shell"
+msgid "Copying new '%2' to '%1'"
+msgstr ""
+
+#: src/folderscommand.cpp:776
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot copy/move from '%1', %2"
+msgctxt "@info:shell"
+msgid "Cannot copy new '%2'to '%1'"
+msgstr "Не вдалося скопіювати або пересунути дані з «%1», %2"
+
+#: src/folderscommand.cpp:781
+#, kde-format
+msgctxt "@info:shell"
+msgid "Restore finished"
+msgstr ""
+
+#: src/folderscommand.cpp:794
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot locate user configuration directory"
+msgstr ""
+
+#: src/folderscommand.cpp:801
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Tag to delete '%1' does not exist"
+msgctxt "@info:shell"
+msgid "Configuration directory '%1' does not exist"
+msgstr "Не існує мітки, «%1» яку слід вилучити"
+
+#: src/folderscommand.cpp:822
+#, kde-format
+msgctxt "@info:shell"
+msgid "No applicable configuration files found"
+msgstr ""
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
@@ -1628,73 +1940,73 @@ msgctxt "@info:shell column header"
 msgid "Modification Time"
 msgstr "Час внесення змін"
 
-#: src/main.cpp:42
+#: src/main.cpp:45
 #, kde-format
 msgctxt "@title program name"
 msgid "Akonadi Client"
 msgstr "Клієнт Akonadi"
 
-#: src/main.cpp:44
+#: src/main.cpp:47
 #, kde-format
 msgctxt "@info:shell short description"
 msgid "A command-line/shell client for Akonadi"
 msgstr "Клієнт командного рядка або оболонки для Akonadi"
 
-#: src/main.cpp:48
+#: src/main.cpp:51
 #, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
 
-#: src/main.cpp:48
+#: src/main.cpp:51
 #, kde-format
 msgctxt "@title about data task"
 msgid "Original Author"
 msgstr "Автор початкової версії"
 
-#: src/main.cpp:49
+#: src/main.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
 
-#: src/main.cpp:49
+#: src/main.cpp:52
 #, kde-format
 msgctxt "@title about data task"
 msgid "Additions and new commands"
 msgstr "Розширення і додавання нових команд"
 
-#: src/main.cpp:50
+#: src/main.cpp:53
 #, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
 
-#: src/main.cpp:50
+#: src/main.cpp:53
 #, kde-format
 msgctxt "@title about data task"
 msgid "New commands, GSOC 2014"
 msgstr "Нові команди, GSOC 2014"
 
-#: src/main.cpp:60
+#: src/main.cpp:66
 #, kde-format
 msgctxt "@info:shell"
 msgid "Command to execute"
 msgstr "Команда, яку слід виконати"
 
-#: src/main.cpp:62
+#: src/main.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for command"
 msgstr "Аргументи команди"
 
-#: src/main.cpp:62
+#: src/main.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "[args]"
 msgstr "[аргументи]"
 
-#: src/main.cpp:80
+#: src/main.cpp:86
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
@@ -1911,6 +2223,12 @@ msgstr "Не знайдено жодних міток"
 msgctxt "@info:shell column header"
 msgid "URL"
 msgstr "Адреса"
+
+#: src/terminalcolour.cpp:45
+#, kde-format
+msgctxt "@info:shell"
+msgid "Could not set up terminal"
+msgstr ""
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
