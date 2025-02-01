@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2018, 2019, 2021, 2022, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2018, 2019, 2021, 2022, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-31 00:41+0000\n"
-"PO-Revision-Date: 2024-09-27 14:43+0200\n"
+"PO-Revision-Date: 2025-01-31 11:11+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - t/m 2019;2021 t/m 2024"
+msgstr "Freek de Kruijf - t/m 2019;2021 t/m 2025"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -34,11 +34,10 @@ msgid "The name of the command"
 msgstr "De naam van de opdracht"
 
 #: src/abstractcommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "Status van de gespecificeerde agent verkrijgen"
+msgstr "Hulp geven voor de gespecificeerde opdracht"
 
 #: src/abstractcommand.cpp:103 src/main.cpp:67
 #, kde-format
@@ -934,13 +933,13 @@ msgstr "Wijzigingen aan item '%1' zijn opgeslagen"
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "fout"
 
 #: src/errorreporter.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "waarschuwing"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -968,140 +967,122 @@ msgstr "Geen te exporteren bestand gespecificeerd"
 #: src/folderscommand.cpp:40
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "Opslaan, controleer of herstel map-ID's van Akonadi"
 
 #: src/folderscommand.cpp:52
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "Huidige toekenningen van map-ID's opslaan"
 
 #: src/folderscommand.cpp:55
 #, kde-format
 msgid "Check current against saved folder ID assignments"
-msgstr ""
+msgstr "Huidige map-ID's vergelijken met die zijn opgeslagen"
 
 #: src/folderscommand.cpp:58
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
+"Configuratiebestanden herstellen met gewijzigde toekenningen van map-ID's"
 
 #: src/folderscommand.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
 msgstr ""
-"Slechts één van de opties 'tonen', 'toevoegen', 'verwijderen' mag "
-"gespecificeerd worden"
+"Slechts één van de opties 'backup', 'check' of 'restore' mag gespecificeerd "
+"worden"
 
 #: src/folderscommand.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
 msgstr ""
-"Slechts één van de opties 'tonen', 'toevoegen', 'verwijderen' mag "
-"gespecificeerd worden"
+"Eén van de opties 'backup', 'check' of 'restore' moet gespecificeerd worden"
 
 #: src/folderscommand.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "Map '%1' niet gevonden of geen map"
+msgstr "Opslaglocatie '%1' bestaat maar is geen map"
 
 #: src/folderscommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Kan map '%1/%2' niet aanmaken"
+msgstr "Kan opslagmap '%1' niet aanmaken"
 
 #: src/folderscommand.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "Kan bestand '%1' niet opslaan"
+msgstr "Kan opgeslagen lijst uit '%1' niet openen"
 
 #: src/folderscommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "Opdracht '%1 %2 --backup' eerst uitvoeren"
 
 #: src/folderscommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "Kan de hoofdverzameling niet verwijderen"
+msgstr "Kan van geen enkele verzameling een lijst maken"
 
 #: src/folderscommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "Gevonden %1 huidige Akonadi verzamelingen"
 
 #: src/folderscommand.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "Kan bestand '%1' niet opslaan"
+msgstr "Kan reservekopielijst niet opslaan naar '%1' "
 
 #: src/folderscommand.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "Kan map '%1/%2' niet aanmaken"
+msgstr "Kan huidige lijst niet schrijven naar '%1'"
 
 #: src/folderscommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "Geen map-ID's zijn gewijzigd"
 
 #: src/folderscommand.cpp:290
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "%1 map-ID's zijn gewijzigd"
 
 #: src/folderscommand.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "Verzameling '%1' wordt verwerkt"
+msgstr "Configuratiebestand '%1' wordt verwerkt..."
 
 #: src/folderscommand.cpp:403
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "%1 groepen zijn hernoemd"
 
 #: src/folderscommand.cpp:517
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "%1 instellingswaarden zijn gewijzigd"
 
 #: src/folderscommand.cpp:523
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "Geen wijzigingen in configuratie zijn vereist"
 
 #: src/folderscommand.cpp:532
 #, kde-kuit-format
@@ -1112,70 +1093,66 @@ msgid ""
 "then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
 "implement the required changes."
 msgstr ""
+"Wijzigingen in configuratie zijn vereist (%1 hernoemen van groep en %2 "
+"wijzigingen van instellingen).<nl/>Verlaat alle actieve PIM-toepassingen en "
+"stop de Akonadi-server, daarna<nl/>voer uit de opdracht:<nl/><bcode>  %3 %4 "
+"--restore</bcode><nl/>om de vereiste wijzigingen te implementeren."
 
 #: src/folderscommand.cpp:573
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "Maildir-mapnaam gewijzigd naar '%1'"
+msgstr "Mappaden worden opgeslagen naar '%1'"
 
 #: src/folderscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "De verzameling of item"
+msgstr "Opgeslagen %1 mappaden van verzamelingen"
 
 #: src/folderscommand.cpp:585
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "Maildir-mapnaam gewijzigd naar '%1'"
+msgstr "Opgeslagen mappaden worden gelezen uit '%1'"
 
 #: src/folderscommand.cpp:596
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Een verzameling hernoemen"
+msgstr "Gelezen %1 opgeslagen verzamelingpaden"
 
 #: src/folderscommand.cpp:679
 #, kde-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
+"Gedefinieerd %1 gewijzigde gegevenspatronen voor %2 configuratiebestandsnamen"
 
 #: src/folderscommand.cpp:695
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "Te verwijderen tag '%1' bestaat niet"
+msgstr "Opgeslagen lijst met mappen '%1' bestaat niet"
 
 #: src/folderscommand.cpp:699
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "Te verwijderen tag '%1' bestaat niet"
+msgstr "Huidige lijst met mappen '%1' bestaat niet"
 
 #: src/folderscommand.cpp:703
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
 msgstr ""
+"Huidige lijst met mappen '%1' is ouder dan opgeslagen lijst met mappen '%2'"
 
 #: src/folderscommand.cpp:706
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "Eerst '%1 %2 --check' uitvoeren"
 
 #: src/folderscommand.cpp:718
 #, kde-format
@@ -1183,84 +1160,80 @@ msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
 msgstr ""
+"Nieuw configuratiebestand '%1' bestaat niet of is ouder dan lijst met mappen "
+"'%2'"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "Controleren of de Akonadi-server actief is..."
 
 #: src/folderscommand.cpp:740
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Akonadi-server is gestopt"
 
 #: src/folderscommand.cpp:745
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server..."
-msgstr ""
+msgstr "Akonadi-server wordt afgesloten..."
 
 #: src/folderscommand.cpp:754
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "%1 configuratiebestanden in '%2' worden bijgewerkt"
 
 #: src/folderscommand.cpp:765
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "Oude '%1' wordt verwijderd"
 
 #: src/folderscommand.cpp:768
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "Kan bestand '%1' niet opslaan"
+msgstr "Oude '%1' kan niet verwijderd worden"
 
 #: src/folderscommand.cpp:773
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "Nieuwe '%2' wordt gekopieerd naar '%1'"
 
 #: src/folderscommand.cpp:776
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
-msgstr "Kan niet kopiëren/verplaatsen van \"%1\", %2"
+msgstr "Kan nieuwe %2 niet kopiëren naar '%1'"
 
 #: src/folderscommand.cpp:781
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "Herstellen voltooid"
 
 #: src/folderscommand.cpp:794
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "Kant configuratiemap van gebruiker niet lokaliseren"
 
 #: src/folderscommand.cpp:801
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "Te verwijderen tag '%1' bestaat niet"
+msgstr "Configuratiemap '%1' bestaat niet"
 
 #: src/folderscommand.cpp:822
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "Geen toepasselijke configuratiebestanden gevonden"
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
@@ -2207,7 +2180,7 @@ msgstr "URL-adres"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "Kon terminal niet opzetten"
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"

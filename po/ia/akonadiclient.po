@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2024 Giovanni Sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2024, 2025 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-31 00:41+0000\n"
-"PO-Revision-Date: 2024-12-27 11:56+0100\n"
+"PO-Revision-Date: 2025-01-31 12:21+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -34,11 +34,10 @@ msgid "The name of the command"
 msgstr "Le nomine del commando"
 
 #: src/abstractcommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "Obtene stato per le agente specificate"
+msgstr "Da adjuta per le commando specificate"
 
 #: src/abstractcommand.cpp:103 src/main.cpp:67
 #, kde-format
@@ -270,7 +269,7 @@ msgstr "Error a trovar collection %1 \"%2\",%3"
 #: src/addcommand.cpp:386
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
-msgstr "Cambiatenomine de dossier maildir a '%1'"
+msgstr "Cambiate nomine de dossier maildir a '%1'"
 
 #: src/addcommand.cpp:396
 #, kde-format
@@ -934,13 +933,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "error"
 
 #: src/errorreporter.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "aviso"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -1004,20 +1003,16 @@ msgid "Save location '%1' exists but is not a directory"
 msgstr ""
 
 #: src/folderscommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Non pote crear directorio '%1: /%2'"
+msgstr "Non pote crear directorio de salveguardar '%1'"
 
 #: src/folderscommand.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "Il non pote salveguardar file '%1'"
+msgstr "Il non pote leger lista salveguardate ab '%1'"
 
 #: src/folderscommand.cpp:149
 #, kde-format
@@ -1026,12 +1021,10 @@ msgid "Run '%1 %2 --backup' first"
 msgstr ""
 
 #: src/folderscommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "Non pote deler le collection radice"
+msgstr "Non pote listar ulle collectiones"
 
 #: src/folderscommand.cpp:183
 #, kde-format
@@ -1040,20 +1033,16 @@ msgid "Found %1 current Akonadi collections"
 msgstr ""
 
 #: src/folderscommand.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "Il non pote salveguardar file '%1'"
+msgstr "Il non pote salveguardar lista de backup (copia de securitate) a '%1'"
 
 #: src/folderscommand.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "Non pote crear directorio '%1: /%2'"
+msgstr "Non pote scriber lista currente a '%1'"
 
 #: src/folderscommand.cpp:285
 #, kde-format
@@ -1068,12 +1057,10 @@ msgid "%1 folder IDs have changed"
 msgstr ""
 
 #: src/folderscommand.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "Processante collection '%1'"
+msgstr "Processante filede configuration  '%1' ..."
 
 #: src/folderscommand.cpp:403
 #, kde-format
@@ -1104,34 +1091,28 @@ msgid ""
 msgstr ""
 
 #: src/folderscommand.cpp:573
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "Cambiatenomine de dossier maildir a '%1'"
+msgstr "Salveguardante percursos de dossier a '%1'"
 
 #: src/folderscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "Le collection o elemento"
+msgstr "Salveguardate %1 percursos de dossier de collection"
 
 #: src/folderscommand.cpp:585
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "Cambiatenomine de dossier maildir a '%1'"
+msgstr "Legente percursos de dossier salveguardate ab '%1'"
 
 #: src/folderscommand.cpp:596
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Renomina un Collection"
+msgstr "Lege %1 percursos de collectiones salveguardate"
 
 #: src/folderscommand.cpp:679
 #, kde-format
@@ -1140,20 +1121,16 @@ msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
 
 #: src/folderscommand.cpp:695
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "Etiquetta a deler '%1' non existe"
+msgstr "Lista de dossier salveguardate '%1' non existe"
 
 #: src/folderscommand.cpp:699
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "Etiquetta a deler '%1' non existe"
+msgstr "Lista de dossier currente '%1' non existe"
 
 #: src/folderscommand.cpp:703
 #, kde-format
@@ -1205,12 +1182,10 @@ msgid "Removing old '%1'"
 msgstr ""
 
 #: src/folderscommand.cpp:768
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "Il non pote salveguardar file '%1'"
+msgstr "Il non pote remover vetere  '%1'"
 
 #: src/folderscommand.cpp:773
 #, kde-format
@@ -1219,12 +1194,10 @@ msgid "Copying new '%2' to '%1'"
 msgstr ""
 
 #: src/folderscommand.cpp:776
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
-msgstr "Non pote copiar/mover ex '%1',%2"
+msgstr "Non pote copiar nove '%2' a '%1'"
 
 #: src/folderscommand.cpp:781
 #, kde-format
@@ -1239,12 +1212,10 @@ msgid "Cannot locate user configuration directory"
 msgstr ""
 
 #: src/folderscommand.cpp:801
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "Etiquetta a deler '%1' non existe"
+msgstr "Directorio de configuration '%1' non existe"
 
 #: src/folderscommand.cpp:822
 #, kde-format

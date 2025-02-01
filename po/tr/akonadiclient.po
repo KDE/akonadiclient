@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the akonadiclient package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2021.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-31 00:41+0000\n"
-"PO-Revision-Date: 2024-09-27 17:44+0300\n"
+"PO-Revision-Date: 2025-01-31 17:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -35,11 +35,10 @@ msgid "The name of the command"
 msgstr "Komutun adı"
 
 #: src/abstractcommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "Belirli bir aracı için durum al"
+msgstr "Belirli bir komut için yardım al"
 
 #: src/abstractcommand.cpp:103 src/main.cpp:67
 #, kde-format
@@ -938,13 +937,13 @@ msgstr "“%1” ögesine yapılan değişiklikler kaydedildi"
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "hata"
 
 #: src/errorreporter.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "uyarı"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -972,140 +971,123 @@ msgstr "Dışa aktarma dosyası belirtilmedi"
 #: src/folderscommand.cpp:40
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "Akonadi klasörü kimliklerini kaydet, denetle veya geri yükle"
 
 #: src/folderscommand.cpp:52
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "Geçerli klasör kimliği atamalarını kaydet"
 
 #: src/folderscommand.cpp:55
 #, kde-format
 msgid "Check current against saved folder ID assignments"
-msgstr ""
+msgstr "Kayıtlı klasör kimliği atamalarına karşı geçerliyi denetle"
 
 #: src/folderscommand.cpp:58
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
+"Değiştirilmiş klasör kimliği atamaları olan yapılandırma dosyalarını geri "
+"yükle"
 
 #: src/folderscommand.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
 msgstr ""
-"“list”, “add” veya “delete” seçeneklerinden yalnızca bir tanesi "
+"“backup”, “check” veya “restore” seçeneklerinden yalnızca bir tanesi "
 "belirtilebilir"
 
 #: src/folderscommand.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
 msgstr ""
-"“list”, “add” veya “delete” seçeneklerinden yalnızca bir tanesi "
-"belirtilebilir"
+"“backup”, “check” veya “restore” seçeneklerinden bir tanesi belirtilmelidir"
 
 #: src/folderscommand.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "“%1” dizini bulunamadı veya bir dizin değil"
+msgstr "Kayıt konumu “%1”var; ancak bir dizin değil"
 
 #: src/folderscommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "“%1/%2” dizin oluşturulamıyor"
+msgstr "Kayıt dizini “%1” oluşturulamıyor"
 
 #: src/folderscommand.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "“%1” dosyası kaydedilemiyor"
+msgstr "“%1” konumundan kayıtlı liste okunamıyor"
 
 #: src/folderscommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "Önce “%1 %2 --backup” çalıştır"
 
 #: src/folderscommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "Kök koleksiyon silinemez"
+msgstr "Hiçbir koleksiyon listelenemiyor"
 
 #: src/folderscommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "%1 geçerli Akonadi koleksiyonu bulundu"
 
 #: src/folderscommand.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "“%1” dosyası kaydedilemiyor"
+msgstr "Yedek listesi “%1” konumuna kaydedilemiyor"
 
 #: src/folderscommand.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "“%1/%2” dizin oluşturulamıyor"
+msgstr "Geçerli liste “%1” konumuna yazılamıyor"
 
 #: src/folderscommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "Değiştirilen klasör kimliği yok"
 
 #: src/folderscommand.cpp:290
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "%1 klasör kimliği değiştirildi"
 
 #: src/folderscommand.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "“%1” koleksiyonu işleniyor"
+msgstr "Yapılandırma dosyası “%1” işleniyor…"
 
 #: src/folderscommand.cpp:403
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "%1 grup yeniden adlandırıldı"
 
 #: src/folderscommand.cpp:517
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "%1 ayar değeri değiştirildi"
 
 #: src/folderscommand.cpp:523
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "Gerekli yapılandırma değişikliği yok"
 
 #: src/folderscommand.cpp:532
 #, kde-kuit-format
@@ -1116,70 +1098,65 @@ msgid ""
 "then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
 "implement the required changes."
 msgstr ""
+"Yapılandırma değişiklikleri gerekiyor (%1 grup adı ve %2 ayar değişikliği)."
+"<nl/>Tüm çalışan PIM uygulamalarından çıkın ve Akonadi sunucusunu "
+"durdurup<nl/>şu komutu yürütün:<nl/><bcode>  %3 %4 --restore</bcode><nl/>."
 
 #: src/folderscommand.cpp:573
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "maildir klasörü adı “%1” olarak değiştirildi"
+msgstr "Klasör yolları “%1” konumuna kaydediliyor…"
 
 #: src/folderscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "Koleksiyon veya öge"
+msgstr "%1 koleksiyon klasörü yolu kaydedildi."
 
 #: src/folderscommand.cpp:585
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "maildir klasörü adı “%1” olarak değiştirildi"
+msgstr "“%1” konumundan kayıtlı klasör yolları okunuyor…"
 
 #: src/folderscommand.cpp:596
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Bir koleksiyonu yeniden adlandır"
+msgstr "%1 kayıtlı koleksiyon yolu okundu."
 
 #: src/folderscommand.cpp:679
 #, kde-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
+"%2 yapılandırma dosyası adı için %1 değişiklik verisi dizgisi tanımlandı"
 
 #: src/folderscommand.cpp:695
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
 msgstr "“%1” ögesini silmek için gereken etiket yok"
 
 #: src/folderscommand.cpp:699
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "“%1” ögesini silmek için gereken etiket yok"
+msgstr "Geçerli klasör listesi “%1” yok"
 
 #: src/folderscommand.cpp:703
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
 msgstr ""
+"Geçerli klasör listesi “%1”, “%2” kaydedilen klasör listesinden daha eski"
 
 #: src/folderscommand.cpp:706
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "Önce “%1 %2 --check” çalıştır"
 
 #: src/folderscommand.cpp:718
 #, kde-format
@@ -1187,84 +1164,79 @@ msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
 msgstr ""
+"Yeni yapılandırma dosyası “%1” yok veya “%2” klasör listesinden daha eski"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "Akonadi sunucusunun çalışıp çalışmadığı denetleniyor…"
 
 #: src/folderscommand.cpp:740
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Akonadi sunucusu durduruldu"
 
 #: src/folderscommand.cpp:745
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server..."
-msgstr ""
+msgstr "Akonadi sunucusu kapatılıyor…"
 
 #: src/folderscommand.cpp:754
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "“%2” içindeki %1 yapılandırma dosyası güncelleniyor…"
 
 #: src/folderscommand.cpp:765
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "Eski “%1” kaldırılıyor…"
 
 #: src/folderscommand.cpp:768
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "“%1” dosyası kaydedilemiyor"
+msgstr "Eski “%1” kaldırılamıyor"
 
 #: src/folderscommand.cpp:773
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "Yeni “%2”, “%1” konumuna kopyalanıyor…"
 
 #: src/folderscommand.cpp:776
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
-msgstr "“%1” konumundan kopyalama/taşıma yapılamıyor, %2"
+msgstr "Yeni “%2”, “%1” konumuna kopyalanamıyor"
 
 #: src/folderscommand.cpp:781
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "Geri yükleme tamamlandı."
 
 #: src/folderscommand.cpp:794
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "Kullanıcı yapılandırma dizini bulunamıyor"
 
 #: src/folderscommand.cpp:801
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "“%1” ögesini silmek için gereken etiket yok"
+msgstr "Yapılandırma dizini “%1” yok"
 
 #: src/folderscommand.cpp:822
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "Uygulanabilir yapılandırma dosyası bulunamadı"
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
@@ -2207,7 +2179,7 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "Uçbirim ayarlanamadı"
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
