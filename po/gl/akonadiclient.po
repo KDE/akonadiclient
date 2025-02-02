@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
-# SPDX-FileCopyrightText: 2024 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2024, 2025 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-31 00:41+0000\n"
-"PO-Revision-Date: 2024-09-28 13:16+0200\n"
+"PO-Revision-Date: 2025-02-01 10:42+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -34,11 +34,10 @@ msgid "The name of the command"
 msgstr "O nome da orde"
 
 #: src/abstractcommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "Obter o estado do axente indicado"
+msgstr "Fornecer axuda para a orde indicada."
 
 #: src/abstractcommand.cpp:103 src/main.cpp:67
 #, kde-format
@@ -947,13 +946,13 @@ msgstr "Gardáronse os cambios no elemento «%1»"
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "erro"
 
 #: src/errorreporter.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "aviso"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -982,86 +981,77 @@ msgstr "Non se indicou un ficheiro no que exportar"
 #: src/folderscommand.cpp:40
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "Gardar, comprobar ou restaurar identificadores de cartafol de Akonadi."
 
 #: src/folderscommand.cpp:52
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "Gardar as asignacións actuais de identificadores de cartafol."
 
 #: src/folderscommand.cpp:55
 #, kde-format
 msgid "Check current against saved folder ID assignments"
 msgstr ""
+"Comparar as asignacións de identificadores de cartafol actuais e gardadas."
 
 #: src/folderscommand.cpp:58
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
+"Restaurar os ficheiros de configuración con asignacións de identificadores "
+"de cartafol cambiadas."
 
 #: src/folderscommand.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
 msgstr ""
-"Só se pode indicar unha destas opcións: «list» (listar), «add» (engadir) ou "
-"«delete» (eliminar)."
+"Só pode indicar unha destas opcións: «backup» (salvagardar), "
+"«check» (comprobar) ou «restore» (restaurar)."
 
 #: src/folderscommand.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
 msgstr ""
-"Só se pode indicar unha destas opcións: «list» (listar), «add» (engadir) ou "
-"«delete» (eliminar)."
+"Debe indicar unha destas opcións: «backup» (salvagardar), "
+"«check» (comprobar) ou «restore» (restaurar)."
 
 #: src/folderscommand.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "O cartafol «%1» non se atopou ou non é un cartafol."
+msgstr "A localización de garda «%1» existe, pero non é un cartafol."
 
 #: src/folderscommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Non é posíbel crear o cartafol «%1/%2»."
+msgstr "Non é posíbel crear o cartafol de garda «%1»."
 
 #: src/folderscommand.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "Non é posíbel gardar o ficheiro «%1»"
+msgstr "Non é posíbel ler a lista gardada de «%1»."
 
 #: src/folderscommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "Primeiro execute «%1 %2 --backup»."
 
 #: src/folderscommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "Non é posíbel eliminar a colección raíz"
+msgstr "Non é posíbel listar ningunha colección."
 
 #: src/folderscommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "Atopáronse %1 coleccións actuais de Akonadi."
 
 #: src/folderscommand.cpp:199
 #, fuzzy, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-31 00:41+0000\n"
-"PO-Revision-Date: 2024-09-27 06:34+0200\n"
+"PO-Revision-Date: 2025-02-01 08:20+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -37,11 +37,10 @@ msgid "The name of the command"
 msgstr "Ime ukaza"
 
 #: src/abstractcommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "Pridobitev stanja izbranega posrednika"
+msgstr "Nudi pomoč za podani ukaz"
 
 #: src/abstractcommand.cpp:103 src/main.cpp:67
 #, kde-format
@@ -945,13 +944,13 @@ msgstr "Spremembe v predmetu '%1' so bile shranjene"
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "napaka"
 
 #: src/errorreporter.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "opozorilo"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -979,136 +978,118 @@ msgstr "Izhodna datoteka ni določena"
 #: src/folderscommand.cpp:40
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "Shrani, preveri ali obnovi ID-je mape Akonadi"
 
 #: src/folderscommand.cpp:52
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "Shrani dodelitve ID trenutne mape"
 
 #: src/folderscommand.cpp:55
 #, kde-format
 msgid "Check current against saved folder ID assignments"
-msgstr ""
+msgstr "Preveri trenutne glede na dodelitve ID-ja v shranjeni mapi"
 
 #: src/folderscommand.cpp:58
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
-msgstr ""
+msgstr "Obnovi datoteke konfiguracije z dodelitvami ID-ja spremenjene mape"
 
 #: src/folderscommand.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
-msgstr "Le ena od možnosti 'list', 'add' ali 'delete' je lahko določena"
+msgstr "Določena je lahko samo ena od možnosti 'backup', 'check' ali 'restore'"
 
 #: src/folderscommand.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
-msgstr "Le ena od možnosti 'list', 'add' ali 'delete' je lahko določena"
+msgstr "Ena od možnosti 'backup', 'check' ali 'restore' mora biti določena"
 
 #: src/folderscommand.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "Mapa '%1' ni bila najdena, ali pa ni mapa"
+msgstr "Lokacija shranjevanja '%1' obstaja, vendar ni imenik"
 
 #: src/folderscommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Ni mogoče ustvariti mape '%1/%2'"
+msgstr "Ni mogoče ustvariti imenika za shranjevanje '%1'"
 
 #: src/folderscommand.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "Ni mogoče shraniti datoteke '%1'"
+msgstr "Shranjenega seznama iz '%1' ni mogoče prebrati"
 
 #: src/folderscommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "Naprej zaženite '%1 %2 --backup'"
 
 #: src/folderscommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "Ni mogoče izbrisati korenske zbirke"
+msgstr "Ni mogoče navesti nobene zbirke"
 
 #: src/folderscommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "Najdenih %1 trenutnih zbirk Akonadi"
 
 #: src/folderscommand.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "Ni mogoče shraniti datoteke '%1'"
+msgstr "Seznama varnostnih kopij ni mogoče shraniti v '%1'"
 
 #: src/folderscommand.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "Ni mogoče ustvariti mape '%1/%2'"
+msgstr "Trenutnega seznama ni mogoče zapisati v '%1'"
 
 #: src/folderscommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "ID-ji map se niso spremenili"
 
 #: src/folderscommand.cpp:290
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "ID-ji map %1 so spremenjeni"
 
 #: src/folderscommand.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "Obdelujem zbirko '%1'"
+msgstr "Obdelava datoteke konfiguracije '%1'..."
 
 #: src/folderscommand.cpp:403
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "%1 skupin je bilo preimenovanih"
 
 #: src/folderscommand.cpp:517
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "%1 vrednosti nastavitev so bile spremenjene"
 
 #: src/folderscommand.cpp:523
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "Spremembe konfiguracije niso potrebne"
 
 #: src/folderscommand.cpp:532
 #, kde-kuit-format
@@ -1119,70 +1100,65 @@ msgid ""
 "then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
 "implement the required changes."
 msgstr ""
+"Potrebne so spremembe konfiguracije (%1 preimenovanje skupine in %2 "
+"spremembe nastavitev).<nl/>Zaprite vse delujoče aplikacije PIM in zaustavi "
+"strežnik Akonadi, nato<nl/>izvedi ukaz:<nl/><bcode>  %3 %4 --restore</"
+"bcode><nl/>za izvedbo zahtevanih sprememb."
 
 #: src/folderscommand.cpp:573
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "Ime mape za e-pošto spremenjeno v '%1'"
+msgstr "Shranjevanje poti mape v '%1'"
 
 #: src/folderscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "Zbirka ali predmet"
+msgstr "Shranjene poti mape zbirke %1"
 
 #: src/folderscommand.cpp:585
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "Ime mape za e-pošto spremenjeno v '%1'"
+msgstr "Branje shranjenih poti map iz '%1'"
 
 #: src/folderscommand.cpp:596
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Preimenuj zbirko"
+msgstr "Preberi %1 shranjenih zbirnih poti"
 
 #: src/folderscommand.cpp:679
 #, kde-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
+"Določen %1 vzorec spreminjanja podatkov za %2 imena datotek konfiguracije"
 
 #: src/folderscommand.cpp:695
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "Oznaka za brisanje '%1' ne obstaja"
+msgstr "Seznam shranjenih map '%1' ne obstaja"
 
 #: src/folderscommand.cpp:699
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "Oznaka za brisanje '%1' ne obstaja"
+msgstr "Trenutni seznam map'%1' ne obstaja"
 
 #: src/folderscommand.cpp:703
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
-msgstr ""
+msgstr "Trenutni seznam map '%1' je starejši od shranjenega seznama map '%2'"
 
 #: src/folderscommand.cpp:706
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "Najprej zaženi '%1 %2 --check'"
 
 #: src/folderscommand.cpp:718
 #, kde-format
@@ -1190,84 +1166,80 @@ msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
 msgstr ""
+"Nova datoteka konfiguracije '%1' ne obstaja ali je starejša od seznama map "
+"'%2'"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "Preverjanje ali strežnik Akonadi deluje..."
 
 #: src/folderscommand.cpp:740
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Strežnik Akonadi je ustavljen"
 
 #: src/folderscommand.cpp:745
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server..."
-msgstr ""
+msgstr "Ustavljanje strežnika Akonadi..."
 
 #: src/folderscommand.cpp:754
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "Posodabljanje %1 datotek konfiguracije v '%2'"
 
 #: src/folderscommand.cpp:765
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "Odstranjevanje starega '%1'"
 
 #: src/folderscommand.cpp:768
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "Ni mogoče shraniti datoteke '%1'"
+msgstr "Starega '%1' ni mogoče odstraniti"
 
 #: src/folderscommand.cpp:773
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "Kopiranje novega '%2' v '%1'"
 
 #: src/folderscommand.cpp:776
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
-msgstr "Ni mogoče kopirati/premakniti iz '%1', %2"
+msgstr "Novega '%2' ni mogoče kopirati v '%1'"
 
 #: src/folderscommand.cpp:781
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "Obnova končana"
 
 #: src/folderscommand.cpp:794
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "Ni mogoče najti uporabniškega imenika konfiguracije"
 
 #: src/folderscommand.cpp:801
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "Oznaka za brisanje '%1' ne obstaja"
+msgstr "Imenik konfiguracije '%1' ne obstaja"
 
 #: src/folderscommand.cpp:822
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "Ni ustreznih datotek konfiguracije"
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
@@ -2213,7 +2185,7 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "Terminala ni bilo mogoče nastaviti"
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
