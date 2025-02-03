@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2024  Jonathan Marten <jjm@keelhaul.me.uk>
+    Copyright (C) 2024-2025  Jonathan Marten <jjm@keelhaul.me.uk>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -50,6 +50,8 @@ private:
     void getCurrentPaths(const Collection::List &colls);
     void saveCollectionAttributes(QFileDevice *file);
     void readSavedAttributes(QFileDevice *file);
+    void processChanges();
+    void processNextChange();
 
 private:
     enum Mode {
@@ -67,6 +69,7 @@ private Q_SLOTS:
     void onPathFetched(KJob *job);
     void onCollectionModified(KJob *job);
     void onCollectionsFetched(KJob *job);
+    void onAttributesModified(KJob *job);
 
 private:
     Akonadi::Collection *mAttributesCollection = nullptr;
@@ -77,10 +80,13 @@ private:
     bool mHexOption;
 
     Collection::List mCollections;
+    int mUpdatedCollectionCount;
 
     // TODO: to a multiple inherited class shared with FoldersCommand
     QMap<Collection::Id, QString> mOrigPathMap; // coll ID -> original path
     QMap<Collection::Id, QString> mCurPathMap; // coll ID -> current path
 
-    QMap<QPair<Collection::Id, QByteArray>, QByteArray> mOrigAttrMap;
+    QMap<QPair<Collection::Id, QByteArray>, QByteArray> mOrigAttrMap; // (coll ID, attr name) -> attr value
+    QList<QPair<Collection::Id, QByteArray>> mOrigAttrKeys; // keys of above
+    QList<Collection::Id> mOrigCollIds; // original collection IDs
 };

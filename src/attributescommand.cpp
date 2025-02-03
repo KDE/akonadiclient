@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2024  Jonathan Marten <jjm@keelhaul.me.uk>
+    Copyright (C) 2024-2025  Jonathan Marten <jjm@keelhaul.me.uk>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -118,7 +118,7 @@ void AttributesCommand::setupCommandOptions(QCommandLineParser *parser)
     // This command does not provide a "dry run" mode, even for the Backup,
     // Check or Restore operations, for two reasons:
     //
-    //   1.  The original operations (Show/Add/Modify/Delete) didn't have
+    //   1.  The original operations (Show/Add/Modify/Delete) don't have
     //       a dry run mode either.
     //
     //   2.  A dry run for Backup doesn't make sense, and Check is just
@@ -280,30 +280,30 @@ QString AttributesCommand::findSaveFile(const QString &name, bool createDir)
 
 void AttributesCommand::start()
 {
+    if (mOperationMode == ModeRestore) {
+        if (!allowDangerousOperation()) {
+            Q_EMIT finished(RuntimeError);
+            return;
+        }
+    }
+
+    if (mOperationMode == ModeCheck || mOperationMode == ModeRestore) {
+        // Check or restore mode.  First read the original list of
+        // folder attributes that was saved by a previous backup operation.
+        const QString readFileName = findSaveFile("savedattributes.dat", false);
+        qDebug() << "read from" << readFileName;
+        QFile readFile(readFileName, this);
+        if (!readFile.open(QIODevice::ReadOnly)) {
+            Q_EMIT error(i18nc("@info:shell", "Cannot read saved attributes from '%1'", readFile.fileName()));
+            Q_EMIT error(i18nc("@info:shell", "Run '%1 %2 --backup' first", QCoreApplication::applicationName(), name()));
+            Q_EMIT finished(RuntimeError);
+            return;
+        }
+
+        readSavedAttributes(&readFile); // populates mOrigPathMap and mOrigAttrMap
+    }
+
     if (mOperationMode == ModeBackup || mOperationMode == ModeCheck || mOperationMode == ModeRestore) {
-        if (mOperationMode == ModeRestore) {
-            if (!allowDangerousOperation()) {
-                Q_EMIT finished(RuntimeError);
-                return;
-            }
-        }
-
-        if (mOperationMode == ModeCheck || mOperationMode == ModeRestore) {
-            // Check or restore mode.  First read the original list of
-            // folder attributes that was saved by a previous backup operation.
-            const QString readFileName = findSaveFile("savedattributes.dat", false);
-            qDebug() << "read from" << readFileName;
-            QFile readFile(readFileName, this);
-            if (!readFile.open(QIODevice::ReadOnly)) {
-                Q_EMIT error(i18nc("@info:shell", "Cannot read saved attributes from '%1'", readFile.fileName()));
-                Q_EMIT error(i18nc("@info:shell", "Run '%1 %2 --backup' first", QCoreApplication::applicationName(), name()));
-                Q_EMIT finished(RuntimeError);
-                return;
-            }
-
-            readSavedAttributes(&readFile); // populates mOrigPathMap and mOrigAttrMap
-        }
-
         // In any of those modes, read the current collections.
         fetchCollections();
     } else {
@@ -350,6 +350,8 @@ void AttributesCommand::onCollectionResolved(KJob *job)
             return;
         }
 
+        // TODO: can use Collection::addAttribute?
+
         SyntheticAttribute *newAttr = new SyntheticAttribute(mCommandType, mCommandValue);
         SyntheticAttribute *collectionAttr = mAttributesCollection->attribute<SyntheticAttribute>(Collection::AddIfMissing);
         Q_ASSERT(collectionAttr != nullptr);
@@ -383,6 +385,38 @@ void AttributesCommand::onCollectionModified(KJob *job)
     Q_EMIT finished(NoError);
 }
 
+static bool allPrintable(const QByteArray &str)
+{
+    for (const char &ch : std::as_const(str)) {
+        if (!QChar::isPrint(ch))
+            return (false);
+    }
+    return (true);
+}
+
+static QByteArray printableForMessage(const QByteArray &str)
+{
+    if (str.isEmpty())
+        return ("(null)");
+    else if (allPrintable(str)) {
+        QByteArray ret = str;
+        ret.replace('"', "\\\"");
+        return ("\"" + str + "\"");
+    } else
+        return (str.toHex('\0'));
+}
+
+static QByteArray printableForDisplay(const QByteArray &str, bool forceHex)
+{
+    if (str.isEmpty())
+        return (forceHex ? "" : "\"\"");
+    else if (!forceHex && allPrintable(str)) {
+        QByteArray ret = str;
+        return ("\"" + ret.replace('"', "\\\"") + "\"");
+    } else
+        return (str.toHex(' '));
+}
+
 void AttributesCommand::onPathFetched(KJob *job)
 {
     if (!checkJobResult(job))
@@ -405,36 +439,7 @@ void AttributesCommand::onPathFetched(KJob *job)
             std::cout << "  ";
             std::cout << qPrintable(attr->type().leftJustified(maxLength));
             std::cout << "  ";
-
-            const QByteArray value = attr->serialized();
-            if (value.isEmpty()) { // attribute exists but empty value
-                if (!mHexOption) {
-                    std::cout << "\"\"";
-                }
-            } else {
-                bool isPrintable = true; // assume so to start, anyway
-                for (const char &ch : std::as_const(value)) {
-                    if (!QChar::isPrint(ch)) {
-                        isPrintable = false;
-                        break;
-                    }
-                }
-
-                if (isPrintable && !mHexOption) {
-                    std::cout << '\"';
-                    for (const char &ch : std::as_const(value)) {
-                        if (ch == '\"') {
-                            std::cout << "\\\"";
-                        } else {
-                            std::cout << ch;
-                        }
-                    }
-                    std::cout << '\"';
-                } else {
-                    std::cout << qPrintable(value.toHex(' '));
-                }
-            }
-            std::cout << std::endl;
+            std::cout << qPrintable(printableForDisplay(attr->serialized(), mHexOption)) << std::endl;
         }
     }
 
@@ -443,14 +448,17 @@ void AttributesCommand::onPathFetched(KJob *job)
 
 void AttributesCommand::fetchCollections()
 {
+    // TODO: there may be no need for this and the loop in processNextChange().
+    // The full list of collections is not needed, only those with saved
+    // attributes which may be a far smaller number.
+    // After reading in the data file, set the "arguments" to a list of the
+    // folder names and use the AbstractCommand process loop.
     CollectionFetchJob *job = new CollectionFetchJob(Collection::root(), CollectionFetchJob::Recursive, this);
     connect(job, &KJob::result, this, &AttributesCommand::onCollectionsFetched);
 }
 
 void AttributesCommand::onCollectionsFetched(KJob *job)
 {
-    Q_ASSERT(mOperationMode != ModeRestore);
-
     if (!checkJobResult(job))
         return;
     CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
@@ -484,8 +492,8 @@ void AttributesCommand::onCollectionsFetched(KJob *job)
         return;
     }
 
-    // Check or restore mode, check and set the attributes.
-    // processChanges();
+    // Check or restore mode, check and if necessary reset the attributes.
+    processChanges();
 }
 
 // TODO: common with FoldersCommand
@@ -516,8 +524,8 @@ void AttributesCommand::saveCollectionAttributes(QFileDevice *file)
     ErrorReporter::progress(i18nc("@info:shell", "Saving collection attributes to '%1'", file->fileName()));
 
     // We already have all of the collections and their attributes
-    // available in 'mCollections'.  There is no need to run any more
-    // asynchronous jobs for this operation, so it can just be a
+    // available in 'mCollections'.  So there is no need to run any
+    // more asynchronous jobs for this operation, it can just be a
     // simple loop.
 
     int saveCount = 0;
@@ -528,9 +536,9 @@ void AttributesCommand::saveCollectionAttributes(QFileDevice *file)
             continue;
         }
 
-        // Creating a new QTextStream each time simply writes more data
-        // to the QSaveFile.  Doing it this way to avoid yet needing yet
-        // another member variable.
+        // Creating a new QTextStream each time works, and simply writes
+        // more data to the QSaveFile.  Doing it this way to avoid needing
+        // yet another member variable.
         QTextStream ts(file);
 
         ts << Qt::left << qSetFieldWidth(8) << QString::number(collection.id()) << qSetFieldWidth(0) << "  " << qSetFieldWidth(30) << "=" << qSetFieldWidth(0)
@@ -573,4 +581,195 @@ void AttributesCommand::readSavedAttributes(QFileDevice *file)
     }
 
     ErrorReporter::progress(i18nc("@info:shell", "Read attributes for %1 collections", mOrigPathMap.count()));
+}
+
+void AttributesCommand::processChanges()
+{
+    mUpdatedCollectionCount = 0;
+
+    // Do the scan over the original (backed up) collections, so that
+    // if any attributes are present but the folder they applied to
+    // has disappeared the user can be warned.
+    mOrigAttrKeys = mOrigAttrMap.keys();
+    mOrigCollIds = mOrigPathMap.keys();
+    qDebug() << mOrigCollIds.count() << "collections with attributes," << mOrigAttrKeys.count() << "saved attributes";
+    processNextChange();
+}
+
+void AttributesCommand::processNextChange()
+{
+    if (mOrigCollIds.isEmpty()) {
+        if (mUpdatedCollectionCount == 0) {
+            if (mOperationMode == ModeCheck) {
+                ErrorReporter::progress(xi18nc("@info:shell", "No collection attributes need to be restored"));
+            } else {
+                ErrorReporter::progress(xi18nc("@info:shell", "No collection attributes needed to be restored"));
+            }
+        } else {
+            if (mOperationMode == ModeCheck) {
+                ErrorReporter::progress(xi18ncp("@info:shell",
+                                                "Attributes need to be restored for %1 collection",
+                                                "Attributes need to be restored for %1 collections",
+                                                mUpdatedCollectionCount));
+                // TODO: tell user what to do
+            } else {
+                ErrorReporter::progress(xi18ncp("@info:shell",
+                                                "Attributes were restored for %1 collection",
+                                                "Attributes were restored for %1 collections",
+                                                mUpdatedCollectionCount));
+            }
+        }
+
+        Q_EMIT finished(NoError);
+        return;
+    }
+
+    const Collection::Id origCollId = mOrigCollIds.takeFirst();
+
+    // Get the folder path, and check to see whether it has changed.  The
+    // attributes can be reapplied to the new folder, but its new ID is
+    // needed to access it.
+    const QString folderPath = mOrigPathMap[origCollId];
+    const Collection::Id newCollId = mCurPathMap.key(folderPath, -1);
+    qDebug() << "folder" << origCollId << "->" << newCollId << folderPath;
+    if (newCollId == -1) {
+        ErrorReporter::warning(xi18nc("@info:shell", "Folder '%1' had attributes but is no longer present", folderPath));
+        processNextChange();
+        return;
+    }
+
+    // Get the list of attributes that the old folder had.
+    QMap<QByteArray, QByteArray> origAttrs;
+    bool isSpecialCollection = false;
+
+    for (const QPair<Collection::Id, QByteArray> &attrKey : std::as_const(mOrigAttrKeys)) {
+        if (attrKey.first != newCollId)
+            continue;
+        const QByteArray &attrName = attrKey.second;
+        const QByteArray &attrValue = mOrigAttrMap[attrKey];
+
+        // This attribute value is only maintained and used internally
+        // by Akonadi.  It is not a user setting, so it is ignored and
+        // never restored.
+        if (attrName == "AccessRights")
+            continue;
+
+        qDebug() << "    " << attrName << "=" << attrValue;
+
+        // This attribute value is set by Akonadi when the special collections
+        // are created, and never changed.  Therefore it is not restored here,
+        // but it is taken into account to see whether certain other values
+        // should be restored.
+        if (attrName == "SpecialCollectionAttribute") {
+            isSpecialCollection = true;
+            continue;
+        }
+
+        // For any other attribute save the name and value, for now anyway.
+        origAttrs[attrName] = attrValue;
+    }
+
+    qDebug() << "  " << origAttrs.count() << "attrs saved";
+
+    // If this is a special collection, then do not restore the ENTITYDISPLAY
+    // attribute which is again set when they are created.  There is no GUI
+    // for the user to change the icon for special collections, so it is safe
+    // to assume that the default values are correct.
+    if (isSpecialCollection && origAttrs.contains("ENTITYDISPLAY")) {
+        origAttrs.remove("ENTITYDISPLAY");
+    }
+
+    qDebug() << "  " << origAttrs.count() << "attrs to be restored";
+
+    if (!origAttrs.isEmpty()) {
+        // Find the current collection, with its attributes.  The iterator
+        // cannot be 'const' here because the collection may need to be
+        // modified with the new attributes.
+        for (Collection &currColl : mCollections) {
+            if (currColl.id() == newCollId) {
+                const Attribute::List &currAttrs = currColl.attributes();
+                qDebug() << "  currently has" << currAttrs.count() << "attrs";
+
+                int updateCount = 0; // how many updates are needed
+
+                const QList<QByteArray> origAttrNames = origAttrs.keys();
+                for (const QByteArray &origAttrName : std::as_const(origAttrNames)) {
+                    // qDebug() << "   trying" << origAttrName;
+
+                    bool needsUpdate = true; // assume so for now
+
+                    const Attribute *currAttr = currColl.attribute(origAttrName);
+                    if (currAttr != nullptr) // see if attribute present
+                    { // and if so, check its value
+                        // qDebug() << "    found with value" << currAttr->serialized();
+                        if (currAttr->serialized() == origAttrs[origAttrName]) {
+                            // qDebug() << "    same value, no change";
+                            needsUpdate = false; // not this attribute, anyway
+                        } else {
+                            ErrorReporter::progress(xi18nc("@info:shell",
+                                                           "Folder  \"%1\" attribute \"%2\" changed from %3 to %4",
+                                                           currColl.displayName(),
+                                                           origAttrName,
+                                                           printableForMessage(currAttr->serialized()),
+                                                           printableForMessage(origAttrs[origAttrName])));
+                        }
+                    } else {
+                        // qDebug() << "    not found";
+                        ErrorReporter::progress(xi18nc("@info:shell",
+                                                       "Folder \"%1\" attribute \"%2\" added %3",
+                                                       currColl.displayName(),
+                                                       origAttrName,
+                                                       printableForMessage(origAttrs[origAttrName])));
+                    }
+
+                    qDebug() << "  needs update?" << needsUpdate;
+
+                    if (needsUpdate) {
+                        qDebug() << "  set new attr" << origAttrName;
+                        SyntheticAttribute *newAttr = new SyntheticAttribute(origAttrName, origAttrs[origAttrName]);
+                        currColl.addAttribute(newAttr);
+                        ++updateCount;
+                    }
+
+                } // end loop over attrs
+
+                qDebug() << "  update count" << updateCount;
+                if (updateCount > 0) // need to update collection
+                {
+                    ++mUpdatedCollectionCount;
+                    if (mOperationMode == ModeCheck) { // or maybe just report
+                        ErrorReporter::progress(xi18ncp("@info:shell",
+                                                        "Folder \"%2\" needs update of %1 attribute",
+                                                        "Folder \"%2\" needs update of %1 attributes",
+                                                        updateCount,
+                                                        currColl.displayName()));
+                    } else {
+                        qDebug() << "  starting CMJ for coll" << currColl.id();
+
+                        ErrorReporter::progress(xi18ncp("@info:shell",
+                                                        "Folder \"%2\" updating %1 attribute",
+                                                        "Folder \"%2\" updating %1 attributes",
+                                                        updateCount,
+                                                        currColl.displayName()));
+
+                        CollectionModifyJob *modifyJob = new Akonadi::CollectionModifyJob(currColl);
+                        connect(modifyJob, &KJob::result, this, &AttributesCommand::onAttributesModified);
+                        modifyJob->start();
+                        return;
+                    }
+                }
+
+                break; // from collection search loop
+            } // end collection found by ID
+        } // end collection search loop
+    } // if attrs not empty
+
+    processNextChange();
+}
+
+void AttributesCommand::onAttributesModified(KJob *job)
+{
+    if (!checkJobResult(job))
+        return;
+    processNextChange();
 }
