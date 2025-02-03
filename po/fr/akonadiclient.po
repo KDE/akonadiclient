@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-31 00:41+0000\n"
-"PO-Revision-Date: 2025-01-08 12:19+0100\n"
+"PO-Revision-Date: 2025-02-02 13:30+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.1\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -38,11 +38,10 @@ msgid "The name of the command"
 msgstr "Le nom de la commande"
 
 #: src/abstractcommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "Obtenir l'état de l'agent spécifié"
+msgstr "Obtenir de l'aide pour la commande spécifiée"
 
 #: src/abstractcommand.cpp:103 src/main.cpp:67
 #, kde-format
@@ -962,13 +961,13 @@ msgstr "Les changements apportés à l'élément « %1 » ont été enregistr�
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "erreur"
 
 #: src/errorreporter.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "avertissement"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -997,137 +996,126 @@ msgstr "Aucun fichier d'exportation spécifié"
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
 msgstr ""
+"Enregistrer, vérifier ou restaurer les identifiants de dossiers Akonadi"
 
 #: src/folderscommand.cpp:52
 #, kde-format
 msgid "Save current folder ID assignments"
 msgstr ""
+"Enregistrer les affectations d'identifiants des dossier courantsactuelles"
 
 #: src/folderscommand.cpp:55
 #, kde-format
 msgid "Check current against saved folder ID assignments"
 msgstr ""
+"Comparer les affectations d'identifiants de dossier courants et enregistrés"
 
 #: src/folderscommand.cpp:58
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
+"Restaurer les fichiers de configuration avec les affectations d'identifiants "
+"de dossiers modifiés"
 
 #: src/folderscommand.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
 msgstr ""
-"Seulement une option parmi « list », « add », « delete » peut être spécifiée."
+"Une seule option parmi « backup », « check » ou « restore » peut être "
+"spécifiée."
 
 #: src/folderscommand.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
 msgstr ""
-"Seulement une option parmi « list », « add », « delete » peut être spécifiée."
+"Une seule option parmi « backup », « check » ou « restore » peut être "
+"spécifiée."
 
 #: src/folderscommand.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "Le dossier « %1 » n'existe pas ou n'est pas un dossier"
+msgstr "L'emplacement d'enregistrement « %1 » existe mais n'est pas un dossier"
 
 #: src/folderscommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Impossible de créer le dossier « %1/%2 »"
+msgstr "Impossible de créer le dossier d'enregistrement « %1 »"
 
 #: src/folderscommand.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "Impossible d'enregistrer le fichier « %1 »"
+msgstr "Impossible de lire la liste enregistrée à partir de « %1 »"
 
 #: src/folderscommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "Lancez d'abord « %1 %2 --backup »"
 
 #: src/folderscommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "Impossible de supprimer la collection racine"
+msgstr "Impossible de lister des collections"
 
 #: src/folderscommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "%1 collections courantes pour Akonadi actuelles ont été trouvées."
 
 #: src/folderscommand.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "Impossible d'enregistrer le fichier « %1 »"
+msgstr "Impossible d'enregistrer la liste d'archive vers « %1 »"
 
 #: src/folderscommand.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "Impossible de créer le dossier « %1/%2 »"
+msgstr "Impossible d'écrire la liste courante vers « %1 »"
 
 #: src/folderscommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "Aucun identifiant de dossier n'a été modifié."
 
 #: src/folderscommand.cpp:290
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "%1 identifiants de dossier ont été modifiés."
 
 #: src/folderscommand.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "Traitement de la collection « %1 »"
+msgstr "Traitement en cours du fichier de configuration « %1 »..."
 
 #: src/folderscommand.cpp:403
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "%1 groupes ont été renommés"
 
 #: src/folderscommand.cpp:517
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "%1 valeurs de paramètres ont été modifiées."
 
 #: src/folderscommand.cpp:523
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "Aucune modification de configuration n'est requise."
 
 #: src/folderscommand.cpp:532
 #, kde-kuit-format
@@ -1138,70 +1126,70 @@ msgid ""
 "then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
 "implement the required changes."
 msgstr ""
+"Des modifications de configuration sont nécessaires (%1 renommages de groupe "
+"et %2 modifications de paramètres).<nl/>Veuillez fermer toutes les "
+"applications PIM en cours d'exécution, arrêter le serveur Akonadi, puis<nl/"
+">lancer la commande :<nl/><bcode>  %3 %4 --restore</bcode><nl/>pour "
+"implémenter les modifications demandées."
 
 #: src/folderscommand.cpp:573
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "Changement du nom du dossier « maildir » en « %1 »"
+msgstr "Enregistrement en cours des emplacements de dossier dans « %1 »"
 
 #: src/folderscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "La collection ou l'élément"
+msgstr "%1 emplacements des dossiers de collections enregistrés"
 
 #: src/folderscommand.cpp:585
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "Changement du nom du dossier « maildir » en « %1 »"
+msgstr ""
+"Lecture en cours des emplacements enregistrés de dossiers à partir de « %1 »"
 
 #: src/folderscommand.cpp:596
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Renommer une collection"
+msgstr "Lire les %1 emplacements enregistrés de collection"
 
 #: src/folderscommand.cpp:679
 #, kde-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
+"%1 modèles de données de modification ont été définis pour %2 noms de "
+"fichier de configuration"
 
 #: src/folderscommand.cpp:695
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "L'étiquette « %1 » à supprimer n'existe pas."
+msgstr "La liste des dossiers enregistrés « %1 » n'existe pas."
 
 #: src/folderscommand.cpp:699
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "L'étiquette « %1 » à supprimer n'existe pas."
+msgstr "La liste de dossiers courants « %1 » n'existe pas."
 
 #: src/folderscommand.cpp:703
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
 msgstr ""
+"La liste courante de dossiers « %1 » est plus ancienne que la liste de "
+"dossiers enregistrés « %2 »."
 
 #: src/folderscommand.cpp:706
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "Lancez d'abord « %1 %2 --check »"
 
 #: src/folderscommand.cpp:718
 #, kde-format
@@ -1209,84 +1197,82 @@ msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
 msgstr ""
+"Le nouveau fichier de configuration « %1 » n'existe pas ou est plus ancien "
+"que la liste des dossiers « %2 »"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
 msgstr ""
+"Vérification en cours pour déterminer si le serveur Akonadi est en cours "
+"d'exécution..."
 
 #: src/folderscommand.cpp:740
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Le serveur Akonadi est arrêté."
 
 #: src/folderscommand.cpp:745
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server..."
-msgstr ""
+msgstr "Arrêt du serveur Akonadi en cours..."
 
 #: src/folderscommand.cpp:754
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "Mise à jour en cours des %1 fichiers de configuration dans « %2 »"
 
 #: src/folderscommand.cpp:765
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "Suppression de l'ancien « %1 »"
 
 #: src/folderscommand.cpp:768
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "Impossible d'enregistrer le fichier « %1 »"
+msgstr "Impossible de supprimer l'ancien fichier « %1 »"
 
 #: src/folderscommand.cpp:773
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "Copie du nouveau « %2 » vers « %1 »"
 
 #: src/folderscommand.cpp:776
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
-msgstr "Impossible de copier ou de déplacer depuis « %1 », %2"
+msgstr "Impossible de copier le nouveau « %2 » vers « %1 »"
 
 #: src/folderscommand.cpp:781
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "Restauration terminée"
 
 #: src/folderscommand.cpp:794
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "Impossible de localiser le dossier de configuration de l'utilisateur"
 
 #: src/folderscommand.cpp:801
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "L'étiquette « %1 » à supprimer n'existe pas."
+msgstr "Le dossier de configuration « %1 » n'existe pas."
 
 #: src/folderscommand.cpp:822
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "Aucun fichier de configuration applicable n'a été trouvé."
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
@@ -1338,7 +1324,7 @@ msgstr "L'élément groupe de contacts, un ID ou une URL Akonadi"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing group argument"
-msgstr "Argument groupe manquant"
+msgstr "Argument de groupe manquant"
 
 #: src/groupcommand.cpp:104
 #, kde-format
@@ -2245,7 +2231,7 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "Impossible de configurer le terminal"
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"

@@ -1,16 +1,16 @@
 # Translation for akonadiclient.po to Euskara/Basque (eu).
-# Copyright (C) 2020-2024 This file is copyright:
+# Copyright (C) 2020-2025 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
-# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020, 2021, 2022, 2024.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020, 2021, 2022, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-31 00:41+0000\n"
-"PO-Revision-Date: 2024-09-28 20:49+0200\n"
+"PO-Revision-Date: 2025-02-02 17:13+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -37,11 +37,10 @@ msgid "The name of the command"
 msgstr "Komandoaren izena"
 
 #: src/abstractcommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "Lortu zehaztutako agentearen egoera"
+msgstr "Eman adierazitako komandoaren laguntza"
 
 #: src/abstractcommand.cpp:103 src/main.cpp:67
 #, kde-format
@@ -940,13 +939,13 @@ msgstr "«%1» elementuari egindako aldaketak gorde dira"
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "errorea"
 
 #: src/errorreporter.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "abisua"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -974,136 +973,119 @@ msgstr "Ez da esportatzeko fitxategirik zehaztu"
 #: src/folderscommand.cpp:40
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "Gorde, egiaztatu edo lehengoratu Akonadi-karpeten IDak"
 
 #: src/folderscommand.cpp:52
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "Gorde karpeten uneko ID esleipenak"
 
 #: src/folderscommand.cpp:55
 #, kde-format
 msgid "Check current against saved folder ID assignments"
-msgstr ""
+msgstr "Egiaztatu karpeten uneko ID esleipenak gordetakoekin alderatuta"
 
 #: src/folderscommand.cpp:58
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
-msgstr ""
+msgstr "Lehengoratu konfiguratzeko fitxategiak aldatutako ID esleipenekin"
 
 #: src/folderscommand.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
-msgstr "«list», «add» edo «delete» aukeren arteko bakarra zehaztu daiteke"
+msgstr "'backup', 'check' edo 'restore' aukeren arteko bakarra zehaztu daiteke"
 
 #: src/folderscommand.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
-msgstr "«list», «add» edo «delete» aukeren arteko bakarra zehaztu daiteke"
+msgstr ""
+"'backup', 'check' edo 'restore'  aukeren arteko bakarra zehaztu behar da"
 
 #: src/folderscommand.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "«%1» direktorioa ez da aurkitu edo ez da direktorio bat"
+msgstr "Gordetzeko '%1' kokalekua existitzen da baina ez da direktorio bat"
 
 #: src/folderscommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Ezin da sortu «%1/%2» direktorioa"
+msgstr "Ezin da gordetzeko '%1' direktorioa sortu"
 
 #: src/folderscommand.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "Ezin da gorde «%1» fitxategia"
+msgstr "Ezin da '%1'etik gordetako zerrenda irakurri"
 
 #: src/folderscommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "Exekutatu '%1 %2 --backup' lehenengo"
 
 #: src/folderscommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "Ezin da erro bilduma ezabatu"
+msgstr "Ezin da bildumarik zerrendatu"
 
 #: src/folderscommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "egungo %1 Akonadi bilduma aurkitu dira"
 
 #: src/folderscommand.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "Ezin da gorde «%1» fitxategia"
+msgstr "Ezin du babeskopia-zerrenda '%1'(e)an gorde"
 
 #: src/folderscommand.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "Ezin da sortu «%1/%2» direktorioa"
+msgstr "Ezin du uneko zerrenda '%1'(e)an gorde"
 
 #: src/folderscommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "Ez da karpeten IDrik aldatu"
 
 #: src/folderscommand.cpp:290
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "%1 karpetaen IDak aldatu dira"
 
 #: src/folderscommand.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "«%1» bilduma prozesatzen"
+msgstr "'%1' konfigurazio-fitxategia prozesatzen..."
 
 #: src/folderscommand.cpp:403
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "%1 talde berrizendatu dira"
 
 #: src/folderscommand.cpp:517
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "%1 ezarpen-balio aldatu dira"
 
 #: src/folderscommand.cpp:523
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "Ez da konfigurazio aldaketarik behar"
 
 #: src/folderscommand.cpp:532
 #, kde-kuit-format
@@ -1114,70 +1096,67 @@ msgid ""
 "then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
 "implement the required changes."
 msgstr ""
+"Konfigurazioetan aldaketak egin behar dira (%1 talde berrizendatze eta %2 "
+"ezarpen aldaketa).<nl/>Irten martxan dauden PIM aplikazio guztietatik eta "
+"gelditu Akonadi zerbitzaria, ondoren<nl/>exekutatu komandoa:<nl/><bcode> %3 "
+"%4 --restore</bcode><nl/>beharrezko aldaketak inplementatzeko."
 
 #: src/folderscommand.cpp:573
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "Maildir karpetaren izena «%1»(e)ra aldatu da"
+msgstr "Karpeta bide-izenak '%1'(e)an gordetzen"
 
 #: src/folderscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "Bilduma edo elementua"
+msgstr "%1 bilduma-karpeten bide-izenak gorde dira"
 
 #: src/folderscommand.cpp:585
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "Maildir karpetaren izena «%1»(e)ra aldatu da"
+msgstr "Gordetako karpeten bide-izenak '%1'(e)tik irakurtzen"
 
 #: src/folderscommand.cpp:596
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Berrizendatu bilduma bat"
+msgstr "Irakurri gordetako %1 bildumen bide-izenak"
 
 #: src/folderscommand.cpp:679
 #, kde-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
+"%1 datu-eredu aldaketa definitu dira %2 konfigurazio-fitxategi izenetarako"
 
 #: src/folderscommand.cpp:695
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "Ezabatu beharreko «%1» etiketa ez dago"
+msgstr "Gordetako '%1' karpeta-zerrenda ez da existitzen"
 
 #: src/folderscommand.cpp:699
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "Ezabatu beharreko «%1» etiketa ez dago"
+msgstr "Uneko '%1' karpeta-zerrenda ez da existitzen"
 
 #: src/folderscommand.cpp:703
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
 msgstr ""
+"Uneko '%1' karpeta-zerrenda gordetako '%2' karpeta-zerrenda baino zaharragoa "
+"da"
 
 #: src/folderscommand.cpp:706
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "Exekutatu '%1 %2 --check' lehenengo"
 
 #: src/folderscommand.cpp:718
 #, kde-format
@@ -1185,84 +1164,80 @@ msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
 msgstr ""
+"'%1' konfigurazio-fitxategi berria ez da existitzen, edo '%2' karpeta-"
+"zerrenda baino zaharragoa da"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "Akonadi zerbitzaria martxan dagoen egiaztatzen..."
 
 #: src/folderscommand.cpp:740
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Akonadi zerbitzaria geldituta dago"
 
 #: src/folderscommand.cpp:745
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server..."
-msgstr ""
+msgstr "Akonadi zerbitzaria itzaltzen..."
 
 #: src/folderscommand.cpp:754
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "'%2'(e)ko %1 konfigurazio-fitxategiak eguneratzen"
 
 #: src/folderscommand.cpp:765
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "'%1' zaharra kentzen"
 
 #: src/folderscommand.cpp:768
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "Ezin da gorde «%1» fitxategia"
+msgstr "Ezin da '%1' zaharra kendu"
 
 #: src/folderscommand.cpp:773
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "'%2' berria '%1'(e)ra kopiatzen"
 
 #: src/folderscommand.cpp:776
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
-msgstr "Ezin da «%1»(e)tik kopiatu/mugitu, %2"
+msgstr "Ezin da '%2' berria '%1'(e)ra kopiatu"
 
 #: src/folderscommand.cpp:781
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "Lehengoratzea bukatu da"
 
 #: src/folderscommand.cpp:794
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "Ezin da erabiltzailearen konfigurazio-direktorioa aurkitu"
 
 #: src/folderscommand.cpp:801
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "Ezabatu beharreko «%1» etiketa ez dago"
+msgstr "'%1' konfigurazio-direktorioa ez da existitzen"
 
 #: src/folderscommand.cpp:822
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "Ez da konfigurazio-fitxategi aplikagarririk aurkitu"
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
@@ -1322,7 +1297,7 @@ msgctxt "@info:shell"
 msgid ""
 "Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"
 msgstr ""
-"«expand», «add», «delete» edo «clean» aukeren arteko bakarra zehaztu daiteke"
+"'expand', 'add', 'delete' edo 'clean' aukeren arteko bakarra zehaztu daiteke"
 
 #: src/groupcommand.cpp:115
 #, kde-format
@@ -1334,7 +1309,7 @@ msgstr "Ez da gehitzeko elementurik zehaztu"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one item may be specified to add with 'comment'"
-msgstr "«comment»ekin gehitzeko elementu bakarra zehaztu daiteke"
+msgstr "'comment'ekin gehitzeko elementu bakarra zehaztu daiteke"
 
 #: src/groupcommand.cpp:133
 #, kde-format
@@ -1346,7 +1321,7 @@ msgstr "Ez da ezabatzeko elementurik zehaztu"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'comment' option is only allowed with 'add'"
-msgstr "«comment» aukera «add»ekin baino ezin da erabili"
+msgstr "'comment' aukera 'add'ekin baino ezin da erabili"
 
 #: src/groupcommand.cpp:197
 #, kde-format
@@ -2137,7 +2112,7 @@ msgstr "«brief» eta «urls» aukerak ezin dira biak batera zehaztu"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
-msgstr "«list», «add» edo «delete» aukeren arteko bakarra zehaztu daiteke"
+msgstr "'list', 'add' edo 'delete' aukeren arteko bakarra zehaztu daiteke"
 
 #: src/tagscommand.cpp:115
 #, kde-format
@@ -2203,7 +2178,7 @@ msgstr "URLa"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "Ezin izan du terminala ezarri"
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
