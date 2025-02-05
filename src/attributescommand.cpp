@@ -320,7 +320,6 @@ void AttributesCommand::onCollectionResolved(KJob *job)
         return;
     CollectionResolveJob *res = resolveJob();
     Q_ASSERT(job == res);
-
     Collection *coll = new Collection(res->collection());
     const Attribute::List &attrs = coll->attributes();
 
@@ -334,13 +333,13 @@ void AttributesCommand::onCollectionResolved(KJob *job)
     const bool attributeExists = (coll->attribute(mCommandType)!=nullptr);
     if (mOperationMode == ModeAdd) { // add, must not already exist
         if (attributeExists) {
-            Q_EMIT error(i18nc("@info:shell", "Collection already has an attribute '%1'", mCommandType));
+            Q_EMIT error(i18nc("@info:shell", "Collection %2 already has an attribute '%1'", mCommandType, coll->id()));
             Q_EMIT finished(RuntimeError);
             return;
         }
     } else { // delete/modify, must already exist
         if (!attributeExists) {
-            Q_EMIT error(i18nc("@info:shell", "Collection has no attribute '%1'", mCommandType));
+            Q_EMIT error(i18nc("@info:shell", "Collection %2 has no attribute '%1'", mCommandType, coll->id()));
             Q_EMIT finished(RuntimeError);
             return;
         }
@@ -406,21 +405,25 @@ void AttributesCommand::onPathFetched(KJob *job)
     const QString pathString = pathJob->formattedCollectionPath();
     const Collection &coll = pathJob->collection();
 
+    std::cout << std::endl;
     const Attribute::List &attrs = coll.attributes();
     if (attrs.isEmpty()) {
-        std::cout << std::endl << "Collection " << qPrintable(pathString) << " has no attributes" << std::endl;
+        std::cout << qPrintable(xi18nc("@info:shell", "Collection %1 has no attributes", pathString));
+        std::cout << std::endl;
     } else {
         int maxLength = 2;
         for (const Attribute *attr : std::as_const(attrs)) {
             maxLength = qMax(maxLength, attr->type().length());
         }
 
-        std::cout << std::endl << "Collection " << qPrintable(pathString) << " has " << attrs.count() << " attributes:" << std::endl;
+        std::cout << qPrintable(xi18ncp("@info:shell", "Collection %2 has %1 attribute:", "Collection %2 has %1 attributes:", attrs.count(), pathString));
+        std::cout << std::endl;
         for (const Attribute *attr : std::as_const(attrs)) {
             std::cout << "  ";
             std::cout << qPrintable(attr->type().leftJustified(maxLength));
             std::cout << "  ";
-            std::cout << qPrintable(printableForDisplay(attr->serialized(), mHexOption)) << std::endl;
+            std::cout << qPrintable(printableForDisplay(attr->serialized(), mHexOption));
+            std::cout << std::endl;
         }
     }
 
