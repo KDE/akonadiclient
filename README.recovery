@@ -1,16 +1,16 @@
-Settings Recovery - Using the 'folders' command
-===============================================
+Settings Recovery - Using the 'folders' and 'attributes' commands
+=================================================================
 
-This command is intended to be used to recover from situations where
+These commands are intended to be used to recover from situations where
 the Akonadi database is lost or becomes corrupted and has to be recreated
 (see the "Backup" section in https://userbase.kde.org/Akonadi).  By
-importing a backup or reimporting all the source data (local Maildir
-mail, contact VCF files etc) the database will be regenerated.  No data
-will be lost, but the user's application configuration may be.  In
-particular, settings such as:
+importing a PIM data backup or reimporting all the source data (local
+Maildir mail, contact VCF files etc) the database will be regenerated.
+No data will be lost, but the user's application configuration may be.
+In particular, settings such as:
 
   - destination folder assignments for mail filters
-  - some folder properties
+  - some folder display and expiry settings
   - special folder assignments for identities
   - folder assignments for POP/IMAP agents
   - favourite folders and their display order
@@ -18,61 +18,75 @@ particular, settings such as:
 may change because they refer to the internal Akonadi collection IDs
 as they were before.
 
-The 'akonadiclient folders' command attempts to automatically fix up
-these folder assignments after the Akonadi database had had to be
-regenerated.  It operates in three modes:
+Most of the above settings are stored in PIM application or agent
+configuration files, and are backed up and restored by the 'folders'
+command.  Folder display options (e.g. a custom icon), the "Act on
+new mail in this folder" option in KMail, and expiry settings, are
+stored as collection attributes in the Akonadi database and are
+backed up and restored by the 'attributes' command.
+
+The 'akonadiclient folders' and 'akonadiclient attributes' commands
+attempt to automatically fix up these folder assignments and settings
+after the Akonadi database had had to be regenerated.  Each command
+operates in three modes:
 
 
 Backup					akonadiclient folders -b
-------
+------					akonadiclient attributes -b
 
 This should be run when the current Akonadi database and application
-settings are known to be good.  It does not change anything in the
-database or applications, but simply saves a list of the current
-folders and their collection ID assignments.  This list is saved to
-"$XDG_DATA_HOME/akonadiclient/savedfolders.dat" and is a readable
-plain text file.
+settings are known to be good.  They do not change anything in the
+database or applications, but simply save lists of the current
+folders with their collection ID assignments and attributes.  These
+lists are saved to the "$XDG_DATA_HOME/akonadiclient" directory and
+are readable plain text files named "savedfolders.dat" and
+"savedattributes.dat" respectively.
 
-To ensure that this reflects the latest good state, this command
+To ensure that this reflects the latest good state, these commands
 should be run whenever significant changes are made to the PIM
-resources: for example, adding a new Akonadi resource or online
-account, or moving around or renaming folders.
+resources:  for example, adding a new Akonadi resource or online
+account, moving around or renaming folders, or changing folder
+display options.
 
-The Akonadi server must be running when this command is used; if it is
-not already running, then it will be automatically started.
+The Akonadi server must be running when either of these commands are
+used; if it is not already running, then it will be automatically
+started.
 
 
 Check					akonadiclient folders -c
------
+-----					akonadiclient attributes -c
 
-If the Akonadi database has had to be recreated, run the command in
-this mode.  Again it will not change anything in the database or
-applications, but it checks the current folder structure and
-collection IDs against those saved as above.  If any changes to
+If the Akonadi database has had to be recreated, run each command in
+this mode.  Again they will not change anything in the database or
+applications, but it checks the current folder structure, collection
+IDs and attributes against those saved as above.  If any changes to
 configuration files are needed it will update them, but will save
 them to new files so as to not immediately overwrite their current
 settings.
 
-When it has finished it will report whether any folder IDs have
-changed - if it reports "No folder IDs have changed" or "No
-configuration changes are required" then there is nothing to do.
-Otherwise, it will print instructions on what to do next.
+When it has finished they will report whether any folder IDs or
+attributes have - if it reports "No folder IDs have changed", "No
+configuration changes are required" or "No collection attributes need
+to be restored" then there is nothing to do.  Otherwise, they will
+display instructions on what to do next.
 
-The Akonadi server must again be running when this command is used.
+The Akonadi server must again be running when either of these commands
+are used.
 
 
-Restore					akonadiclient folders -r
--------
+Restore folders				akonadiclient folders -r
+---------------
 
-If changes are necessary, then exit all running PIM applications and
-stop the Akonadi server ("akondictl stop").  Then enable the dangerous
-akonadiclient actions by setting the environment variable:
+If changes to folder IDs are necessary, then exit all running PIM
+applications and stop the Akonadi server ("akondictl stop").  Then
+enable the dangerous akonadiclient actions by setting the environment
+variable:
 
   AKONADICLIENT_DANGEROUS="enabled"
   export AKONADICLIENT_DANGEROUS
 
-and then run the command in this mode.  It will recheck the integrity
-of the changes and files saved above, then update the application
+and then run the 'folders' command in this mode.  It will recheck the
+integrity of the changes and files saved above, then update the application
 configuration with the new files.  Then the server and PIM applications
 can be restarted; their settings and folder assignments should now be
 correct.
@@ -82,13 +96,21 @@ account settings and then immediately run the command again in 'backup'
 mode to save the new folder assignments.
 
 
+Restore attributes			akonadiclient attributes -r
+------------------
+
+If changes to collection attributes are necessary, then run this command
+in the same way.  It is not necessary to exit any PIM applications or
+stop the Akonadi server in this case.
+
+
 Caution
 -------
 
-This (and the 'akonadiclient' command in general) is a powerful tool
+These (and the 'akonadiclient' command in general) are powerful tools
 intended for use by those familiar with the Akonadi system and its
-maintenance.  It does try to check the integrity of saved files and
+maintenance.  They do try to check the integrity of saved files and
 data before changing anything, but it is always possible that something
 could go wrong.  You are recommended to back up the $XDG_CONFIG_HOME
-folder before running the command in 'check' or 'restore' mode.
+folder before running either command in 'check' or 'restore' mode.
 
