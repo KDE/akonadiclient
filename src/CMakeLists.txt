@@ -7,6 +7,7 @@ endif ()
 set(libakonadiclient_SRCS
     abstractcommand.cpp
     addcommand.cpp
+    collectionlistcommand.cpp
     collectionresolvejob.cpp
     collectionpathjob.cpp
     commandfactory.cpp

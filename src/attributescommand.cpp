@@ -18,12 +18,9 @@
 
 #include "attributescommand.h"
 
-#include <qdir.h>
 #include <qfile.h>
-#include <qfileinfo.h>
 #include <qregularexpression.h>
 #include <qsavefile.h>
-#include <qstandardpaths.h>
 #include <qtextstream.h>
 
 #include <Akonadi/CollectionFetchJob>
@@ -83,7 +80,7 @@ private:
 DEFINE_COMMAND("attributes", AttributesCommand, kli18nc("info:shell", "Show or update attributes for a collection"));
 
 AttributesCommand::AttributesCommand(QObject *parent)
-    : AbstractCommand(parent)
+    : CollectionListCommand(parent)
 {
 }
 
@@ -250,35 +247,6 @@ AbstractCommand::Error AttributesCommand::initCommand(QCommandLineParser *parser
     return (NoError);
 }
 
-// TODO: common with FoldersCommand
-// Find the full path for a save file, optionally creating the parent
-// directory if required.
-QString AttributesCommand::findSaveFile(const QString &name, bool createDir)
-{
-    const QString saveDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + '/';
-    QFileInfo info(saveDir);
-    if (!info.isDir()) {
-        if (info.exists()) {
-            Q_EMIT error(i18nc("@info:shell", "Save location '%1' exists but is not a directory", info.absoluteFilePath()));
-            Q_EMIT finished(RuntimeError);
-            return (QString());
-        }
-
-        if (createDir) {
-            QDir d(info.dir());
-            if (!d.mkpath(saveDir)) {
-                Q_EMIT error(i18nc("@info:shell", "Cannot create save directory '%1'", info.absoluteFilePath()));
-                Q_EMIT finished(RuntimeError);
-                return (QString());
-            }
-        }
-    }
-
-    info.setFile(info.dir(), name);
-    qDebug() << info.absoluteFilePath();
-    return (info.absoluteFilePath());
-}
-
 void AttributesCommand::start()
 {
     if (mOperationMode == ModeRestore || mOperationMode == ModeAdd || mOperationMode == ModeModify || mOperationMode == ModeDelete) {
@@ -290,7 +258,7 @@ void AttributesCommand::start()
 
     if (mOperationMode == ModeBackup) {
         // In this mode, just list and then save the current collections.
-        listAllCollections();
+        listCollections(CollectionFetchJob::Recursive);
     } else if (mOperationMode == ModeCheck || mOperationMode == ModeRestore) {
         // In these modes, first read the original list of collection
         // attributes that was saved by a previous backup operation.
@@ -430,30 +398,11 @@ void AttributesCommand::onPathFetched(KJob *job)
     Q_EMIT finished(NoError);
 }
 
-void AttributesCommand::listAllCollections()
+void AttributesCommand::onCollectionsListed()
 {
-    Q_ASSERT(mOperationMode == ModeBackup);
-    CollectionFetchJob *job = new CollectionFetchJob(Collection::root(), CollectionFetchJob::Recursive, this);
-    connect(job, &KJob::result, this, &AttributesCommand::onCollectionsListed);
-}
-
-void AttributesCommand::onCollectionsListed(KJob *job)
-{
-    if (!checkJobResult(job))
-        return;
-    CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
-    Q_ASSERT(fetchJob != nullptr);
-
-    mCollections = fetchJob->collections();
-    if (mCollections.isEmpty()) {
-        Q_EMIT error(i18nc("@info:shell", "Cannot list any collections"));
-        Q_EMIT finished(RuntimeError);
-        return;
-    }
-
     ErrorReporter::progress(i18nc("@info:shell", "Found %1 current Akonadi collections", mCollections.count()));
 
-    getCurrentPaths(mCollections); // populates mCurPathMap
+    getCurrentPaths(); // populates mCurPathMap
 
     // Save the current list of folders to the "saved"
     // data file.  After that there is no more to do.
@@ -468,29 +417,6 @@ void AttributesCommand::onCollectionsListed(KJob *job)
 
     saveCollectionAttributes(&saveFile);
     saveFile.commit(); // finished with save file
-}
-
-// TODO: common with FoldersCommand
-void AttributesCommand::getCurrentPaths(const Collection::List &colls)
-{
-    QMap<Collection::Id, Collection> curCollMap;
-    for (const Collection &coll : std::as_const(colls)) {
-        curCollMap[coll.id()] = coll;
-    }
-
-    for (const Collection &coll : std::as_const(colls)) {
-        QStringList path(coll.name());
-        Collection::Id parentId = coll.parentCollection().id();
-        while (parentId != 0) {
-            const Collection &parentColl = curCollMap[parentId];
-            path.prepend(parentColl.name());
-            parentId = parentColl.parentCollection().id();
-        }
-
-        path.prepend(""); // to get root at beginning
-        const QString p = path.join('/');
-        mCurPathMap[coll.id()] = p;
-    }
 }
 
 void AttributesCommand::saveCollectionAttributes(QFileDevice *file)
@@ -584,7 +510,7 @@ void AttributesCommand::processChanges()
 void AttributesCommand::processCollection()
 {
     const QString collPath = currentArg();
-    qDebug() << "folder" << collPath;
+    qDebug() << collPath;
 
     // Resolve the path into a current collection ID.  The path as saved
     // in the backup file is always absolute.
