@@ -1,0 +1,2209 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the akonadiclient package.
+#
+# SPDX-FileCopyrightText: 2025 Toms Trasuns <toms.trasuns@posteo.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadiclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-01-31 00:41+0000\n"
+"PO-Revision-Date: 2025-02-03 15:19+0200\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 24.12.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Toms Trasūns"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "toms.trasuns@posteo.net"
+
+#: src/abstractcommand.cpp:47
+#, kde-format
+msgctxt "@info:shell"
+msgid "The name of the command"
+msgstr "Komandas nosaukums"
+
+#: src/abstractcommand.cpp:50
+#, kde-format
+msgctxt "@info:shell"
+msgid "Give help for the specified command"
+msgstr "Sniegt palīdzību par konkrētas komandas lietojumu"
+
+#: src/abstractcommand.cpp:103 src/main.cpp:67
+#, kde-format
+msgctxt "@info:shell"
+msgid "Options for command"
+msgstr "Komandas opcijas"
+
+#: src/abstractcommand.cpp:103 src/main.cpp:67
+#, kde-format
+msgctxt "@info:shell"
+msgid "[options]"
+msgstr "[opcijas]"
+
+#: src/abstractcommand.cpp:110
+#, kde-format
+msgctxt "@info:shell"
+msgid "Assume that a collection is specified"
+msgstr "Pieņemt, ka ir precizēta kolekcija"
+
+#: src/abstractcommand.cpp:114
+#, kde-format
+msgctxt "@info:shell"
+msgid "Assume that an item is specified"
+msgstr "Pieņemt ir ir precizēts vienums"
+
+#: src/abstractcommand.cpp:122
+#, kde-format
+msgctxt "@info:shell"
+msgid "Run without making any actual changes"
+msgstr "Palaist, patiesībā neveicot nekādas izmaiņas"
+
+#: src/abstractcommand.cpp:137
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot specify as both an item and a collection"
+msgstr "Nevar norādīt, ka ir gan vienums, gan kolekcija"
+
+#: src/abstractcommand.cpp:157
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid collection/item argument '%1', %2"
+msgstr "Nederīgs kolekcijas/vienuma parametrs „%1“: %2"
+
+#: src/abstractcommand.cpp:175
+#, kde-format
+msgctxt "@info:shell %1 is subcommand name, %2 is error message"
+msgid "%2. See 'help %1'"
+msgstr "%2. Skatiet “help %1“"
+
+#: src/abstractcommand.cpp:178
+#, kde-format
+msgctxt ""
+"@info:shell %1 is application name, %2 is subcommand name, %3 is error "
+"message"
+msgid "%3. See '%1 help %2'"
+msgstr "%3. Skatiet „%1 help %2“"
+
+#: src/abstractcommand.cpp:194
+#, kde-format
+msgctxt "@info:shell"
+msgid "Dangerous or destructive operations are not allowed"
+msgstr "Bīstamas un destruktīvas darbības nav atļautas"
+
+#: src/abstractcommand.cpp:195
+#, kde-format
+msgctxt "@info:shell"
+msgid "Set %1=\"%2\" in environment"
+msgstr "Iestatiet vidē „%1=\"%2\"“"
+
+#: src/addcommand.cpp:41
+msgctxt "info:shell"
+msgid "Add items to a collection"
+msgstr "Pievienot vienumus kolekcijai"
+
+#: src/addcommand.cpp:59
+#, kde-format
+msgid "Base directory for input files/directories, default is current"
+msgstr "Datņu/mapju ievades pamata mape, noklusējums ir pašreizējais"
+
+#: src/addcommand.cpp:60
+#, kde-format
+msgid "directory"
+msgstr "mape"
+
+#: src/addcommand.cpp:63
+#, kde-format
+msgid "Flat mode, do not duplicate subdirectory structure"
+msgstr "Plakanais režīms — nedublēt apakšmaju struktūru"
+
+#: src/addcommand.cpp:66
+#, kde-format
+msgid "MIME type of added items, default is to auto-detect"
+msgstr "Pievienoto vienumu MIME tips. Pēc noklusējuma to nosaka automātiski"
+
+#: src/addcommand.cpp:67
+#, kde-format
+msgid "mimetype"
+msgstr "MIME tips"
+
+#: src/addcommand.cpp:70
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection to add to: an ID, path or Akonadi URL"
+msgstr "Kolekcija, kurai pievienot: ID, ceļš vai „Akonadi“ URL"
+
+#: src/addcommand.cpp:71
+#, kde-format
+msgctxt "@info:shell"
+msgid "Files or directories to add to the collection"
+msgstr "Kolekcijai pievienojamās datnes vai mapes"
+
+#: src/addcommand.cpp:71
+#, kde-format
+msgid "files..."
+msgstr "datnes..."
+
+#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
+#: src/renamecommand.cpp:52
+#, kde-format
+msgctxt "@info:shell"
+msgid "Missing collection argument"
+msgstr "Trūkst kolekcijas parametra"
+
+#: src/addcommand.cpp:79
+#, kde-format
+msgctxt "@info:shell"
+msgid "No file or directory arguments"
+msgstr "Nav datnes vai mapes parametru"
+
+#: src/addcommand.cpp:95
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid MIME type argument '%1'"
+msgstr "Nederīgs MIME tipa parametrs „%1“"
+
+#: src/addcommand.cpp:104
+#, kde-format
+msgctxt "@info:shell"
+msgid "Base directory '%1' not found"
+msgstr "Nav atrasta pamata mape „%1“"
+
+#: src/addcommand.cpp:125
+#, kde-format
+msgid "File '%1' does not exist"
+msgstr "Datne „%1“ nepastāv"
+
+#: src/addcommand.cpp:128
+#, kde-format
+msgid "Error accessing file '%1'"
+msgstr "Kļūda, piekļūstot datnei „%1“"
+
+#: src/addcommand.cpp:156
+#, kde-format
+msgctxt "@info:shell"
+msgid "No valid file or directory arguments"
+msgstr "Nav derīgu datnes vai mapes parametru"
+
+#: src/addcommand.cpp:166
+#, kde-format
+msgid "No more directories to process"
+msgstr "Nav vairs apstrādājamu mapju"
+
+#: src/addcommand.cpp:190 src/addcommand.cpp:212
+#, kde-format
+msgid "Directory ‘%1’ no longer exists"
+msgstr "Mape „%1“ vairs nepastāv"
+
+#: src/addcommand.cpp:229
+#, kde-format
+msgid "Fetching collection \"%3\" in parent %1 \"%2\""
+msgstr "Izgūst kolekciju „%3“ vecākā %1 „%2“"
+
+#: src/addcommand.cpp:241
+#, kde-format
+msgid "Need to create collection for '%1'"
+msgstr "„%1“ ir nepieciešamas izveidot jaunu kolekciju"
+
+#: src/addcommand.cpp:253
+#, kde-format
+msgid "No more files to process"
+msgstr "Vairs nav apstrādājamu datņu"
+
+#: src/addcommand.cpp:264 src/updatecommand.cpp:86
+#, kde-format
+msgctxt "@info:shell"
+msgid "File ‘%1’ does not exist"
+msgstr "Datne „%1“ nepastāv"
+
+#: src/addcommand.cpp:270 src/updatecommand.cpp:94
+#, kde-format
+msgctxt "@info:shell"
+msgid "File ‘%1’ cannot be read"
+msgstr "Datni „%1“ nevar nolasīt"
+
+#: src/addcommand.cpp:278
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot determine MIME type of file ‘%1’"
+msgstr "Nevar noteikt datnes „%1“ MIME tipu"
+
+#: src/addcommand.cpp:287
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot determine parent collection for file ‘%1’"
+msgstr "Nevar noteikt datnes „%1“ vecāka kolekciju"
+
+#: src/addcommand.cpp:293
+#, kde-format
+msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
+msgstr "Veido vienumu kolekcijā %1 „%2“ no „%3“, izmērs %4"
+
+#: src/addcommand.cpp:315
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot fetch target collection, %1"
+msgstr "Nevar izgūt mērķa kolekciju, %1"
+
+#: src/addcommand.cpp:325
+#, kde-format
+msgid "Root folder is %1 \"%2\""
+msgstr "Saknes mape ir %1 „%2“"
+
+#: src/addcommand.cpp:373
+#, kde-format
+msgid "Error fetching collection %1 \"%2\", %3"
+msgstr "Kļūda, izgūstot kolekciju %1 „%2“, %3"
+
+#: src/addcommand.cpp:386
+#, kde-format
+msgid "Changed maildir folder name to '%1'"
+msgstr "„maildir“ mapes nosaukums ir mainīts uz „%1“"
+
+#: src/addcommand.cpp:396
+#, kde-format
+msgid "Creating collection \"%3\" under parent %1 \"%2\""
+msgstr "Izveido kolekciju „%3“ zem vecāka %1 „%2“"
+
+#: src/addcommand.cpp:414
+#, kde-format
+msgctxt "@info:shell"
+msgid "Failed to add ‘%1’, %2"
+msgstr "Neizdevās pievienot „%1“, %2"
+
+#: src/addcommand.cpp:418
+#, kde-format
+msgid "Added file '%2' as item %1"
+msgstr "Datne „%2“ ir pievienota kā vienums „%1“"
+
+#: src/agentscommand.cpp:37
+msgctxt "info:shell"
+msgid "Manage Akonadi agents"
+msgstr "Pārvaldiet „Akonadi“ aģentus"
+
+#: src/agentscommand.cpp:51
+#, kde-format
+msgid "List all agents"
+msgstr "Uzskaitīt visus aģentus"
+
+#: src/agentscommand.cpp:54
+#, kde-format
+msgid "Set state \"online\" or \"offline\" for specified agents"
+msgstr "Noteiktiem aģentiem iestatiet statusu „tiešsaistē“ vai „nesaistē“"
+
+#: src/agentscommand.cpp:55
+#, kde-format
+msgctxt "@info:shell"
+msgid "state"
+msgstr "statuss"
+
+#: src/agentscommand.cpp:58
+#, kde-format
+msgid "Get state for the specified agent"
+msgstr "Iegūstiet noteikta aģenta statusu"
+
+#: src/agentscommand.cpp:61
+#, kde-format
+msgid "Show information about the specified agent"
+msgstr "Rādīt informāciju par noteiktu aģentu"
+
+#: src/agentscommand.cpp:64
+#, kde-format
+msgid "Restart the specified agent"
+msgstr "Pārstartēt noteiktu aģentu"
+
+#: src/agentscommand.cpp:67
+#, kde-format
+msgctxt "@info:shell"
+msgid "Agents to operate on"
+msgstr "Aģenti, ar kuriem darboties"
+
+#: src/agentscommand.cpp:67
+#, kde-format
+msgctxt "@info:shell"
+msgid "[agents...]"
+msgstr "[aģenti...]"
+
+#: src/agentscommand.cpp:80
+#, kde-format
+msgctxt "@info:shell"
+msgid "No agents or options specified"
+msgstr "Nav precizēti aģenti vai opcijas"
+
+#: src/agentscommand.cpp:98
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid state '%1'"
+msgstr "Nederīgs stāvoklis „%1“"
+
+#: src/agentscommand.cpp:102
+#, kde-format
+msgctxt "@info:shell"
+msgid "No option specified"
+msgstr "Nav precizēta opcija"
+
+#: src/agentscommand.cpp:143
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid parameters"
+msgstr "Nederīgi parametri"
+
+#: src/agentscommand.cpp:179 src/agentscommand.cpp:211
+#: src/agentscommand.cpp:229 src/agentscommand.cpp:255
+#, kde-format
+msgctxt "@info:shell"
+msgid "No agent exists with the identifier '%1'"
+msgstr "Nav neviena aģenta ar identifikatoru „%1“"
+
+#: src/agentscommand.cpp:238
+#, kde-format
+msgctxt "@info:shell"
+msgid "ID:      "
+msgstr "ID:      "
+
+#: src/agentscommand.cpp:239
+#, kde-format
+msgctxt "@info:shell"
+msgid "Name:    "
+msgstr "Nosaukums:    "
+
+#: src/agentscommand.cpp:240
+#, kde-format
+msgctxt "@info:shell"
+msgid "Status:  "
+msgstr "Statuss:  "
+
+#: src/attributescommand.cpp:72
+msgctxt "info:shell"
+msgid "Show or update attributes for a collection"
+msgstr "Rādīt vai atjaunināt kolekcijas atribūtus"
+
+#: src/attributescommand.cpp:89
+#, kde-format
+msgid "Show the collection attributes (the default operation)"
+msgstr "Rādīt kolekcijas atribūtus (noklusējuma darbība)"
+
+#: src/attributescommand.cpp:92
+#, kde-format
+msgid "Add an attribute"
+msgstr "Pievienot atribūtu"
+
+#: src/attributescommand.cpp:95
+#, kde-format
+msgid "Modify an existing attribute"
+msgstr "Modificēt pastāvošu atribūtu"
+
+#: src/attributescommand.cpp:98
+#, kde-format
+msgid "Delete an existing attribute"
+msgstr "Dzēst pastāvošu atribūtu"
+
+#: src/attributescommand.cpp:101
+#, kde-format
+msgid "Show or interpret the attribute value as hex encoded"
+msgstr "Rādīt vai interpretēt atribūt vērtību kā heksadecimāli kodētu"
+
+#: src/attributescommand.cpp:103
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection: an ID, path or Akonadi URL"
+msgstr "Kolekcija: ID, ceļā vai „Akonadi“ URL"
+
+#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#, kde-format
+msgctxt "@info:shell"
+msgid "Arguments for the operation"
+msgstr "Operācijas parametri"
+
+#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#, kde-format
+msgid "args..."
+msgstr "param..."
+
+#: src/attributescommand.cpp:120
+#, kde-format
+msgctxt "@info:shell"
+msgid "Hex encoded string expected, but length %1 is not even"
+msgstr "Komanda gaida heksadecimālu virkni, bet garums %1 nav pāra"
+
+#: src/attributescommand.cpp:127
+#, kde-format
+msgctxt "@info:shell"
+msgid "Hex encoded value contained invalid characters"
+msgstr "Heksadecimāli kodēta vērtība satur nederīgas rakstzīmes"
+
+#: src/attributescommand.cpp:160
+#, kde-format
+msgctxt "@info:shell"
+msgid ""
+"Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
+msgstr ""
+"Iespējams precizēt tikai vienu „show“, „add“, „modify“ vai „delete“ opciju"
+
+#: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
+#: src/exportcommand.cpp:50
+#, kde-format
+msgctxt "@info:shell"
+msgid "No collection specified"
+msgstr "Kolekcija nav precizēta"
+
+#: src/attributescommand.cpp:172
+#, kde-format
+msgctxt "@info:shell"
+msgid "No attribute name/value specified to add"
+msgstr "Pievienošanai nav precizēts neviens atribūta nosaukums/vērtība"
+
+#: src/attributescommand.cpp:181
+#, kde-format
+msgctxt "@info:shell"
+msgid "No attribute name specified to delete"
+msgstr "Dzēšanai nav precizēts neviens atribūt nosaukums"
+
+#: src/attributescommand.cpp:188
+#, kde-format
+msgctxt "@info:shell"
+msgid "No attribute name/value specified to modify"
+msgstr "Modificēšanai nav precizēts neviens atribūta nosaukums/vērtība"
+
+#: src/attributescommand.cpp:198
+#, kde-format
+msgctxt "@info:shell"
+msgid "Too many arguments specified, from '%1'"
+msgstr "Precizēti pārāk daudzi parametri, no „%1“"
+
+#: src/attributescommand.cpp:243
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection already has an attribute '%1'"
+msgstr "Kolekcija jau satur atribūtu „%1“"
+
+#: src/attributescommand.cpp:254
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection has no attribute '%1'"
+msgstr "Kolekcijai nav atribūt „%1“"
+
+#: src/collectionpathjob.cpp:70
+#, kde-format
+msgctxt "@info:shell 1=collection ID, 2=collection path"
+msgid "%1 (\"/%2\")"
+msgstr "%1 („/%2“)"
+
+#: src/collectionresolvejob.cpp:98
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unknown Akonadi collection format '%1'"
+msgstr "Nezināms „Akonadi“ kolekcijas formāts „%1“"
+
+#: src/collectionresolvejob.cpp:141
+#, kde-format
+msgctxt "@info:shell 1=collection ID"
+msgid "%1 (root)"
+msgstr "%1 (sakne)"
+
+#: src/collectionresolvejob.cpp:143
+#, kde-format
+msgctxt "@info:shell 1=collection ID, 2=collection name"
+msgid "%1 (\"%2\")"
+msgstr "%1 („%2“)"
+
+#: src/collectionresolvejob.cpp:167
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid item syntax '%1'"
+msgstr "Nederīga vienuma sintakse „%1“"
+
+#: src/commandfactory.cpp:51 src/commandfactory.cpp:103
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unknown command '%1'"
+msgstr "Nezināma komanda „%1“"
+
+#: src/commandfactory.cpp:91
+#, kde-format
+msgctxt "@info:shell"
+msgid "No command specified (try '%1 --help')"
+msgstr "Nav precizēta komanda (mēģiniet „%1 --help“)"
+
+#: src/commandfactory.cpp:135
+#, kde-format
+msgctxt "@info:shell"
+msgid "Available commands are:"
+msgstr "Pieejamās komandas ir:"
+
+#: src/commandshell.cpp:30
+msgid "Enter commands in an interactive shell"
+msgstr "Rakstiet komandas interaktīvajā čaulā"
+
+#: src/commandshell.cpp:74
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid command"
+msgstr "Nederīga komanda"
+
+#: src/copycommand.cpp:40
+msgctxt "info:shell"
+msgid "Copy collections or items into a new collection"
+msgstr "Kopēt kolekcijas vai vienumus jaunā kolekcijā"
+
+#: src/copycommand.cpp:59 src/movecommand.cpp:40
+#, kde-format
+msgid "source..."
+msgstr "avots..."
+
+#: src/copycommand.cpp:59
+#, kde-format
+msgctxt "@info:shell"
+msgid "Existing collections or items to copy"
+msgstr "Pastāvošās kolekcijas vai vienumi, ko kopēt."
+
+#: src/copycommand.cpp:60
+#, kde-format
+msgctxt "@info:shell"
+msgid "Destination collection to copy into"
+msgstr "Galamērķa kolekcija, kurā iekopēt"
+
+#: src/copycommand.cpp:69
+#, kde-format
+msgctxt "@info:shell"
+msgid "Missing source/destination arguments"
+msgstr "Trūkst avota/galamērķa argumenti"
+
+#: src/copycommand.cpp:77
+#, kde-format
+msgid "No more sources to process"
+msgstr "Vairs nav apstrādājamu avotu"
+
+#: src/copycommand.cpp:83
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot resolve destination collection '%1', %2"
+msgstr "Nevar atrisināt galamērķa kolekciju „%1“, %2"
+
+#: src/copycommand.cpp:116
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot resolve source '%1', %2"
+msgstr "Nevar atrisināt avotu „%1“, %2"
+
+#: src/copycommand.cpp:141
+#, kde-format
+msgid "Moving contents of %1 -> %2"
+msgstr "Pārvieto „%1“ saturu uz „%2“"
+
+#: src/copycommand.cpp:143
+#, kde-format
+msgid "Copying contents of %1 -> %2"
+msgstr "Kopē „%1“ saturu uz „%2“"
+
+#: src/copycommand.cpp:159
+#, kde-format
+msgid "Moving collection %1 -> %2"
+msgstr "Pārvieto „%1“ kolekciju uz „%2“"
+
+#: src/copycommand.cpp:164
+#, kde-format
+msgid "Copying collection %1 -> %2"
+msgstr "Kopē „%1“ kolekciju uz „%2“"
+
+#: src/copycommand.cpp:183
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot copy/move from '%1', %2"
+msgstr "Nevar kopēt/pārvietot no „%1“, %2"
+
+#: src/copycommand.cpp:191
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot fetch subcollections of '%1', %2"
+msgstr "Nevar izgūt „%1“ apakškolekcijas, %2"
+
+#: src/copycommand.cpp:199
+#, kde-format
+msgid "No sub-collections to copy/move"
+msgstr "Nav apakškolekciju, ko kopēt/pārvietot"
+
+#: src/copycommand.cpp:205
+#, kde-format
+msgctxt "@info:shell"
+msgid "Moving %1 sub-collection"
+msgid_plural "Moving %1 sub-collections"
+msgstr[0] "Pārvieto %1 apakškolekciju"
+msgstr[1] "Pārvieto %1 apakškolekcijas"
+msgstr[2] "Pārvieto %1 apakškolekciju"
+
+#: src/copycommand.cpp:207
+#, kde-format
+msgctxt "@info:shell"
+msgid "Copying %1 sub-collection"
+msgid_plural "Copying %1 sub-collections"
+msgstr[0] "Kopē %1 apakškolekciju"
+msgstr[1] "Kopē %1 apakškolekcijas"
+msgstr[2] "Kopē %1 apakškolekciju"
+
+#: src/copycommand.cpp:220
+#, kde-format
+msgid "No more sub-collections to process"
+msgstr "Vairāk nav apstrādājamu apakškolekciju"
+
+#: src/copycommand.cpp:253
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
+msgstr "Nevar kopēt/pārvietot apakškolekciju „%2“ no „%1“. %3"
+
+#: src/copycommand.cpp:270
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot fetch items of '%1', %2"
+msgstr "Nevar izgūt „%1“ vienumus, %2"
+
+#: src/copycommand.cpp:278
+#, kde-format
+msgid "No items to process"
+msgstr "Nav apstrādājama vienuma"
+
+#: src/copycommand.cpp:285
+#, kde-format
+msgctxt "@info:shell"
+msgid "Moving %1 item"
+msgid_plural "Moving %1 items"
+msgstr[0] "Pārvieto %1 vienumu"
+msgstr[1] "Pārvieto %1 vienumus"
+msgstr[2] "Pārvieto %1 vienumu"
+
+#: src/copycommand.cpp:290
+#, kde-format
+msgctxt "@info:shell"
+msgid "Copying %1 item"
+msgid_plural "Copying %1 items"
+msgstr[0] "Kopē %1 vienumu"
+msgstr[1] "Kopē %1 vienumus"
+msgstr[2] "Kopē %1 vienumu"
+
+#: src/copycommand.cpp:306
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot copy/move items from '%1', %2"
+msgstr "Nevar nokopēt/pārvietot vienumus no „%1“: %2"
+
+#: src/createcommand.cpp:35
+msgctxt "info:shell"
+msgid "Create a new collection"
+msgstr "Izveidot jaunu mapi"
+
+#: src/createcommand.cpp:53
+#, kde-format
+msgid "Parent collection to create in"
+msgstr "Vecāka kolekcija, kurā izveidot"
+
+#: src/createcommand.cpp:54
+#, kde-format
+msgid "collection"
+msgstr "kolekcija"
+
+#: src/createcommand.cpp:57
+#, kde-format
+msgctxt "@info:shell"
+msgid ""
+"The collection to create, either as a path or a name (with a parent "
+"specified)"
+msgstr "Izveidojamā kolekcija kā ceļš vai nosaukums (norādot vecākobjektu)"
+
+#: src/createcommand.cpp:76
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection argument (with parent) cannot be a path"
+msgstr "Kolekcijas parametrs (ar vecākobjektu) nevar būt ceļš"
+
+#: src/createcommand.cpp:93
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection argument (without parent) must be a path"
+msgstr "Kolekcijas parametram (bez vecākobjekta) ir jābūt ceļam"
+
+#: src/createcommand.cpp:102
+#, kde-format
+msgctxt "@info:shell"
+msgid "New collection name not specified"
+msgstr "Nav norādīts kolekcijas nosaukums"
+
+#: src/createcommand.cpp:114
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot fetch parent collection '%1', %2"
+msgstr "Nevar izgūt vecāku kolekciju „%1“, %2"
+
+#: src/createcommand.cpp:125
+#, kde-format
+msgid "Creating a maildir folder named '%1' may not work"
+msgstr "„maildir“ mapes ar nosaukumu „%1“ izveidošana var nedarboties"
+
+#: src/createcommand.cpp:144
+#, kde-format
+msgid "Error creating collection '%1' under '%2', %3"
+msgstr "Kļūda, veidojot kolekciju „%1“ zem „%2“, %3"
+
+#: src/createcommand.cpp:156
+#, kde-format
+msgid "Error getting path of new collection, %1"
+msgstr "Kļūda, iegūstot jaunās kolekcijas ceļu, %1"
+
+#: src/createcommand.cpp:161
+#, kde-format
+msgid "Created new collection '%1'"
+msgstr "Izveidoja jaunu kolekciju „%1“"
+
+#: src/deletecommand.cpp:39
+msgctxt "info:shell"
+msgid "Delete a collection or an item"
+msgstr "Dzēst kolekciju vai vienumu"
+
+#: src/deletecommand.cpp:52
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection or item"
+msgstr "Kolekcija vai vienums"
+
+#: src/deletecommand.cpp:58
+#, kde-format
+msgctxt "@info:shell"
+msgid "Missing collection/item argument"
+msgstr "Trūkst kolekcijas/vienuma argumenta"
+
+#: src/deletecommand.cpp:104
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot delete the root collection"
+msgstr "Nevar dzēst saknes kolekciju"
+
+#: src/deletecommand.cpp:121
+#, kde-format
+msgid "Collection deleted successfully"
+msgstr "Kolekcija ir veiksmīgi izdzēsta"
+
+#: src/deletecommand.cpp:129 src/infocommand.cpp:148
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid item/collection syntax '%1'"
+msgstr "Nederīga vienuma/kolekcijas sintakse „%1“"
+
+#: src/deletecommand.cpp:152 src/infocommand.cpp:176
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot find '%1' as a collection or item"
+msgstr "Nevar atrast „%1“ kā kolekciju vai vienumu"
+
+#: src/deletecommand.cpp:164
+#, kde-format
+msgid "Item deleted successfully"
+msgstr "Vienums ir izdzēsts"
+
+#: src/dumpcommand.cpp:46
+msgctxt "info:shell"
+msgid "Dump a collection to a directory structure"
+msgstr "Izmest kolekciju mapes struktūrā"
+
+#: src/dumpcommand.cpp:58
+#, kde-format
+msgid "Dump email messages in maildir directory structure"
+msgstr "Izmest e-pasta vēstules „maildir“ mapju struktūrā"
+
+#: src/dumpcommand.cpp:61
+#, kde-format
+msgid "Dump items with Akonadi category URLs, otherwise text names"
+msgstr ""
+"Izmest vienumus ar „Akonadi“ kategorijas URL, pretējā gadījumā teksta "
+"nosaukumus"
+
+#: src/dumpcommand.cpp:64
+#, kde-format
+msgid "Operate even if destination directory is not empty"
+msgstr "Darboties arī tad, ja mērķa mape nav tukša"
+
+#: src/dumpcommand.cpp:67
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection to dump: an ID, path or Akonadi URL"
+msgstr "Izmetamā kolekcija: ID, ceļš vai „Akonadi“ URL"
+
+#: src/dumpcommand.cpp:68
+#, kde-format
+msgctxt "@info:shell"
+msgid "The destination directory to dump to"
+msgstr "Mērķa mape, uz kuru izmest"
+
+#: src/dumpcommand.cpp:76
+#, kde-format
+msgctxt "@info:shell"
+msgid "No destination directory specified"
+msgstr "Nav norādīta mērķa mape"
+
+#: src/dumpcommand.cpp:91
+#, kde-format
+msgctxt "@info:shell"
+msgid "Directory '%1' not found or not a directory"
+msgstr "Mape „%1“ nav atrasta vai nav mape"
+
+#: src/dumpcommand.cpp:97
+#, kde-format
+msgctxt "@info:shell"
+msgid "Directory '%1' is not empty (use '-f' to force operation)"
+msgstr "Mape „%1“ nav tukša (izmantojiet „-f“, lai darbību piespiestu)"
+
+#: src/dumpcommand.cpp:121 src/listcommand.cpp:263
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %1 cannot contain items"
+msgstr "Kolekcija „%1“ nesatur vienumus"
+
+#: src/dumpcommand.cpp:145
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %1 contains no items"
+msgstr "Kolekcija „%1“ nesatur vienumus"
+
+#: src/dumpcommand.cpp:200 src/editcommand.cpp:103 src/showcommand.cpp:93
+#, kde-format
+msgctxt "@info:shell"
+msgid "Item '%1' has no payload"
+msgstr "Vienumam „%1“ nav derīga satura"
+
+#: src/dumpcommand.cpp:242
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot create directory '%1/%2'"
+msgstr "Nevar izveidot mapi „%1/%2“"
+
+#: src/dumpcommand.cpp:319
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot save file '%1'"
+msgstr "Nevar saglabāt datni „%1“"
+
+#: src/editcommand.cpp:37
+msgctxt "info:shell"
+msgid "Edit the raw payload for the specified item using $EDITOR"
+msgstr ""
+"Rediģēt neapstrādātu derīgo saturu noteiktam vienumam, izmantojot $EDITOR"
+
+#: src/editcommand.cpp:54
+#, kde-format
+msgctxt "@info:shell"
+msgid "The item to edit"
+msgstr "Rediģējamais vienums"
+
+#: src/editcommand.cpp:60 src/updatecommand.cpp:59
+#, kde-format
+msgctxt "@info:shell"
+msgid "No item specified"
+msgstr "Neviens vienums nav prezicēts"
+
+#: src/editcommand.cpp:95
+#, kde-format
+msgctxt "@info:shell"
+msgid "No result found for item '%1'"
+msgstr "Vienumam „%1“ nav atrasti rezultāti"
+
+#: src/editcommand.cpp:110
+#, kde-format
+msgctxt "@info:shell"
+msgid "EDITOR environment variable needs to be set"
+msgstr "Jāiestata EDITOR (redaktora) vides mainīgais"
+
+#: src/editcommand.cpp:124
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot launch text editor '%1'"
+msgstr "Nevar palaist teksta redaktoru „%1“"
+
+#: src/editcommand.cpp:144
+#, kde-format
+msgctxt "@info:shell"
+msgid "Changes to item '%1' have been saved"
+msgstr "Ir saglabātas vienuma „%1“ izmaiņas"
+
+#: src/errorreporter.cpp:35
+#, kde-format
+msgctxt "@info:shell"
+msgid "error"
+msgstr "kļūda"
+
+#: src/errorreporter.cpp:43
+#, kde-format
+msgctxt "@info:shell"
+msgid "warning"
+msgstr "uzmanību"
+
+#: src/exportcommand.cpp:31
+msgctxt "info:shell"
+msgid "Export a collection to an XML file"
+msgstr "Eksportēt kolekciju uz XML datni"
+
+#: src/exportcommand.cpp:43
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection to export: an ID, path or Akonadi URL"
+msgstr "Eksportējamā kolekcija: ID, ceļš vai „Akonadi“ URL"
+
+#: src/exportcommand.cpp:44
+#, kde-format
+msgctxt "@info:shell"
+msgid "The file to export to"
+msgstr "Datne, uz kuru eksportēt"
+
+#: src/exportcommand.cpp:52
+#, kde-format
+msgctxt "@info:shell"
+msgid "No export file specified"
+msgstr "Nav norādīta eksportēšanas datne"
+
+#: src/folderscommand.cpp:40
+msgctxt "info:shell"
+msgid "Save, check or restore Akonadi folder IDs"
+msgstr "Saglabāt, pārbaudīt vai atjaunot „Akonadi“ mapju ID"
+
+#: src/folderscommand.cpp:52
+#, kde-format
+msgid "Save current folder ID assignments"
+msgstr "Saglabāt pašreiz piešķirtos ID"
+
+#: src/folderscommand.cpp:55
+#, kde-format
+msgid "Check current against saved folder ID assignments"
+msgstr "Pārbaudīt pašreizējos pret saglabātajiem ID piešķīrumiem"
+
+#: src/folderscommand.cpp:58
+#, kde-format
+msgid "Restore configuration files with changed folder ID assignments"
+msgstr ""
+"Atjaunināt konfigurācijas datnes ar nomainītajiem mapju ID piešķīrumiem"
+
+#: src/folderscommand.cpp:81
+#, kde-format
+msgctxt "@info:shell"
+msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
+msgstr ""
+"Iespējams precizēt tikai vienu no „backup“, „check“ vai „restore“ opciju"
+
+#: src/folderscommand.cpp:85
+#, kde-format
+msgctxt "@info:shell"
+msgid "One of the 'backup', 'check' or 'restore' options must be specified"
+msgstr "Jāprecizē viena no „backup“, „check“ vai „restore“ opcijām"
+
+#: src/folderscommand.cpp:100
+#, kde-format
+msgctxt "@info:shell"
+msgid "Save location '%1' exists but is not a directory"
+msgstr "Saglabāšanas vieta „%1“ jau pastāv, bet tā nav mape"
+
+#: src/folderscommand.cpp:108
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot create save directory '%1'"
+msgstr "Nevar izveidot saglabāšanas mapi „%1“"
+
+#: src/folderscommand.cpp:148
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot read saved list from '%1'"
+msgstr "Nevar nolasīt saglabāto sarakstu no „%1“"
+
+#: src/folderscommand.cpp:149
+#, kde-format
+msgctxt "@info:shell"
+msgid "Run '%1 %2 --backup' first"
+msgstr "Vispirms palaidiet „%1 %2 --backup“"
+
+#: src/folderscommand.cpp:178
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot list any collections"
+msgstr "Nevar uzskaitīt nevienu kolekciju"
+
+#: src/folderscommand.cpp:183
+#, kde-format
+msgctxt "@info:shell"
+msgid "Found %1 current Akonadi collections"
+msgstr "Atrastas %1 pašreizējas „Akonadi“ kolekcijas"
+
+#: src/folderscommand.cpp:199
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot save backup list to '%1'"
+msgstr "Nevar saglabāt rezerves kopiju sarakstu uz „%1“"
+
+#: src/folderscommand.cpp:217
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot write current list to '%1'"
+msgstr "Nevar rakstīt pašreizējo sarakstu uz „%1“"
+
+#: src/folderscommand.cpp:285
+#, kde-format
+msgctxt "@info:shell"
+msgid "No folder IDs have changed"
+msgstr "Nav nomainīts neviens mapes ID"
+
+#: src/folderscommand.cpp:290
+#, kde-format
+msgctxt "@info:shell"
+msgid "%1 folder IDs have changed"
+msgstr "%1 mapju ID ir nomainīti"
+
+#: src/folderscommand.cpp:307
+#, kde-format
+msgctxt "@info:shell"
+msgid "Processing config file '%1'..."
+msgstr "Apstrādā konfigurācijas datni „%1“..."
+
+#: src/folderscommand.cpp:403
+#, kde-format
+msgctxt "@info:shell"
+msgid "%1 groups were renamed"
+msgstr "Pārdēvēts %1 grupas"
+
+#: src/folderscommand.cpp:517
+#, kde-format
+msgctxt "@info:shell"
+msgid "%1 settings values were changed"
+msgstr "Nomainīts %1 iestatījumu vērtības"
+
+#: src/folderscommand.cpp:523
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "No configuration changes are required"
+msgstr "Konfigurācijas izmaiņas nav nepieciešamas"
+
+#: src/folderscommand.cpp:532
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid ""
+"Configuration changes are required (%1 group renames and %2 settings "
+"changes).<nl/>Quit all running PIM applications and stop the Akonadi server, "
+"then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
+"implement the required changes."
+msgstr ""
+"Nepieciešamas konfigurācijas izmaiņas (%1 grupas pārdēvēšanas un %2 "
+"iestatījumu izmaiņas).<nl/>Izejiet no visām palaistajām PIM programmām un "
+"apturiet „Akonadi“ serveri, pēc tam<nl/>izpildiet komandu:<nl/><bcode>  %3 "
+"%4 --restore</bcode><nl/>, kas veiks nepieciešamās izmaiņas."
+
+#: src/folderscommand.cpp:573
+#, kde-format
+msgctxt "@info:shell"
+msgid "Saving folder paths to '%1'"
+msgstr "Saglabā mapju ceļus uz „%1“"
+
+#: src/folderscommand.cpp:580
+#, kde-format
+msgctxt "@info:shell"
+msgid "Saved %1 collection folder paths"
+msgstr "Ir saglabāti %1 kolekcijas mapju ceļi"
+
+#: src/folderscommand.cpp:585
+#, kde-format
+msgctxt "@info:shell"
+msgid "Reading saved folder paths from '%1'"
+msgstr "Nolasa saglabātos mapju ceļus no „%1“"
+
+#: src/folderscommand.cpp:596
+#, kde-format
+msgctxt "@info:shell"
+msgid "Read %1 saved collection paths"
+msgstr "Nolasa %1 saglabātos kolekciju ceļus"
+
+#: src/folderscommand.cpp:679
+#, kde-format
+msgctxt "@info:shell"
+msgid "Defined %1 change data patterns for %2 config file names"
+msgstr "Definēti %1 izmaiņu datu modeļi %2 konfigurācijas datņu nosaukumiem"
+
+#: src/folderscommand.cpp:695
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Saved folder list '%1' does not exist"
+msgstr "Saglabātais mapju saraksts „%1“ nepastāv"
+
+#: src/folderscommand.cpp:699
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Current folder list '%1' does not exist"
+msgstr "Pašreizējās mapju saraksts „%1“ nepastāv"
+
+#: src/folderscommand.cpp:703
+#, kde-format
+msgctxt "@info:shell"
+msgid "Current folder list '%1' is older than saved folder list '%2'"
+msgstr ""
+"Pašreizējais mapju saraksts „%1“ ir vecāks par saglabāto mapju sarakstu „%2“"
+
+#: src/folderscommand.cpp:706
+#, kde-format
+msgctxt "@info:shell"
+msgid "Run '%1 %2 --check' first"
+msgstr "Vispirms palaidiet „%1 %2 --check“"
+
+#: src/folderscommand.cpp:718
+#, kde-format
+msgctxt "@info:shell"
+msgid ""
+"New configuration file '%1' does not exist, or is older than folder list '%2'"
+msgstr ""
+"Jaunā konfigurācijas datne „%1“ nepastāv vai ir vecāka par mapju sarakstu "
+"„%2“"
+
+#: src/folderscommand.cpp:735
+#, kde-format
+msgctxt "@info:shell"
+msgid "Checking whether the Akonadi server is running..."
+msgstr "Pārbauda, vai „Akonadi“ serveris ir palaists..."
+
+#: src/folderscommand.cpp:740
+#, kde-format
+msgctxt "@info:shell"
+msgid "Akonadi server is stopped"
+msgstr "„Akonadi“ serveris ir apturēts"
+
+#: src/folderscommand.cpp:745
+#, kde-format
+msgctxt "@info:shell"
+msgid "Shutting down Akonadi server..."
+msgstr "Izslēdz „Akonadi“ serveri..."
+
+#: src/folderscommand.cpp:754
+#, kde-format
+msgctxt "@info:shell"
+msgid "Updating %1 configuration files in '%2'"
+msgstr "Atjaunina %1 konfigurācijas datnes, kas atrodas „%2“"
+
+#: src/folderscommand.cpp:765
+#, kde-format
+msgctxt "@info:shell"
+msgid "Removing old '%1'"
+msgstr "Noņem veco „%1“"
+
+#: src/folderscommand.cpp:768
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot remove old '%1'"
+msgstr "Nevar noņemt veco „%1“"
+
+#: src/folderscommand.cpp:773
+#, kde-format
+msgctxt "@info:shell"
+msgid "Copying new '%2' to '%1'"
+msgstr "Kopē jauno „%2“ uz „%1“"
+
+#: src/folderscommand.cpp:776
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot copy new '%2'to '%1'"
+msgstr "Nevar nokopēt jauno „%2“ uz „%1“"
+
+#: src/folderscommand.cpp:781
+#, kde-format
+msgctxt "@info:shell"
+msgid "Restore finished"
+msgstr "Atjaunošana ir paveikta"
+
+#: src/folderscommand.cpp:794
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot locate user configuration directory"
+msgstr "Nevar atrast lietotāja konfigurācijas mapi"
+
+#: src/folderscommand.cpp:801
+#, kde-format
+msgctxt "@info:shell"
+msgid "Configuration directory '%1' does not exist"
+msgstr "Konfigurācijas mape „%1“ nepastāv"
+
+#: src/folderscommand.cpp:822
+#, kde-format
+msgctxt "@info:shell"
+msgid "No applicable configuration files found"
+msgstr "Nav atrastas piemērotas konfigurācijas datnes"
+
+#: src/groupcommand.cpp:39
+msgctxt "info:shell"
+msgid "Expand or modify a contact group"
+msgstr "Izvērst vai modificēt kontaktu grupu"
+
+#: src/groupcommand.cpp:58
+#, kde-format
+msgid "Show the expanded contact group (the default operation)"
+msgstr "Rādīt izvērstu kontaktu grupu (noklusējuma darbība)"
+
+#: src/groupcommand.cpp:61
+#, kde-format
+msgid "Add a contact to the group"
+msgstr "Pievienot grupai kontaktu"
+
+#: src/groupcommand.cpp:64
+#, kde-format
+msgid "Delete a contact from the group"
+msgstr "Dzēst kontaktu no grupas"
+
+#: src/groupcommand.cpp:67
+#, kde-format
+msgid "Remove unknown item references from the group"
+msgstr "Noņemt no grupas nezināmās vienumu atsauces"
+
+#: src/groupcommand.cpp:70
+#, kde-format
+msgid "Email comment (name) for an added item"
+msgstr "Pievienotā vienuma e-pasta komentārs (nosaukums)"
+
+#: src/groupcommand.cpp:71
+#, kde-format
+msgid "name"
+msgstr "nosaukums"
+
+#: src/groupcommand.cpp:74
+#, kde-format
+msgid "Brief output (for 'expand', email addresses only)"
+msgstr "Īsa izvade (tikai „expand“ e-pasta adresēm)"
+
+#: src/groupcommand.cpp:77
+#, kde-format
+msgctxt "@info:shell"
+msgid "The contact group item, an ID or Akonadi URL"
+msgstr "Kontaktu grupas vienums, ID vai „Akonadi“ URL"
+
+#: src/groupcommand.cpp:84
+#, kde-format
+msgctxt "@info:shell"
+msgid "Missing group argument"
+msgstr "Trūkst grupas parametra"
+
+#: src/groupcommand.cpp:104
+#, kde-format
+msgctxt "@info:shell"
+msgid ""
+"Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"
+msgstr ""
+"Iespējams precizēt tikai vienu no „expand“, „add“ „delete“ vai „clean“ opciju"
+
+#: src/groupcommand.cpp:115
+#, kde-format
+msgctxt "@info:shell"
+msgid "No items specified to add"
+msgstr "Nav norādīti pievienojamie vienumi"
+
+#: src/groupcommand.cpp:124
+#, kde-format
+msgctxt "@info:shell"
+msgid "Only one item may be specified to add with 'comment'"
+msgstr "Ar pievienošanu ar komentāru var norādīt tikai vienu vienumu"
+
+#: src/groupcommand.cpp:133
+#, kde-format
+msgctxt "@info:shell"
+msgid "No items specified to delete"
+msgstr "Nav precizēti vienumi dzēšanai"
+
+#: src/groupcommand.cpp:147
+#, kde-format
+msgctxt "@info:shell"
+msgid "The 'comment' option is only allowed with 'add'"
+msgstr "„comment“ opcija ir atļauta tikai ar „add“"
+
+#: src/groupcommand.cpp:197
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot find '%1' as an item"
+msgstr "Nevar atrast „%1“ kā vienumu"
+
+#: src/groupcommand.cpp:204
+#, kde-format
+msgctxt "@info:shell"
+msgid "Item '%1' is not a contact group"
+msgstr "Vienums „%1“ nav kontaktu grupa"
+
+#: src/groupcommand.cpp:210
+#, kde-format
+msgctxt "@info:shell"
+msgid "Item '%1' has no contact group payload"
+msgstr "Vienumam „%1“ nav kontaktu grupas satura"
+
+#: src/groupcommand.cpp:248
+#, kde-format
+msgctxt "@info:shell"
+msgid "Errors occurred, group not updated"
+msgstr "Programma saskārās ar kļūdām, grupa nav atjaunināta"
+
+#: src/groupcommand.cpp:292
+#, kde-format
+msgctxt "@info:shell"
+msgid "(unknown referenced item)"
+msgstr "(nezināms atsauces vienums)"
+
+#: src/groupcommand.cpp:299 src/groupcommand.cpp:320
+#, kde-format
+msgctxt "@info:shell"
+msgid "(item has no Addressee payload)"
+msgstr "(vienumam nav adresāta satura)"
+
+#: src/groupcommand.cpp:339
+#, kde-format
+msgctxt "@item:shell"
+msgid "(invalid referenced item)"
+msgstr "(nederīgs atsauces vienums)"
+
+#: src/groupcommand.cpp:341
+#, kde-format
+msgctxt "@item:shell"
+msgid "(unknown referenced item)"
+msgstr "(nezināms atsauces vienums)"
+
+#: src/groupcommand.cpp:392
+#, kde-format
+msgctxt ""
+"@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
+"5=name"
+msgid "Group %1 \"%5\" has %2 groups, %3 references and %4 data items:"
+msgstr "Grupai %1 „%5“ ir %2 grupas, %3 atsauces un %4 datu vienumi:"
+
+#: src/groupcommand.cpp:401
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "Type"
+msgstr "Tips"
+
+#: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
+#: src/tagscommand.cpp:319
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "ID"
+msgstr "ID"
+
+#: src/groupcommand.cpp:403
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "Email"
+msgstr "E-pasts"
+
+#: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:321
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "Name"
+msgstr "Nosaukums"
+
+#: src/groupcommand.cpp:438
+#, kde-format
+msgctxt "@info:shell"
+msgid "No items could be fetched"
+msgstr "Neizdevās izgūt nevienu vienumu"
+
+#: src/groupcommand.cpp:497
+#, kde-format
+msgctxt ""
+"@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
+"5=name"
+msgid "Adding to group %1 \"%2\":"
+msgstr "Pievieno grupai %1 „%2“:"
+
+#: src/groupcommand.cpp:512 src/groupcommand.cpp:624
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot search for email '%1', %2"
+msgstr "Nevar meklēt e-pastu „%1“, %2"
+
+#: src/groupcommand.cpp:523
+#, kde-format
+msgctxt "@info:shell"
+msgid "Multiple contacts found for '%1', using the first one"
+msgstr "„%1“ ir atrasti vairāki kontakti, izmanto pirmo"
+
+#: src/groupcommand.cpp:558
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot fetch requested item %1, %2"
+msgstr "Nevar izgūt pieprasīto vienumu %1, %2"
+
+#: src/groupcommand.cpp:568
+#, kde-format
+msgctxt "@info:shell"
+msgid "Item %1 is not a contact item"
+msgstr "Vienums %1 nav kontakta vienums"
+
+#: src/groupcommand.cpp:583 src/groupcommand.cpp:666 src/groupcommand.cpp:715
+#, kde-format
+msgctxt ""
+"@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
+"5=name"
+msgid "Group %1 \"%5\" now has %2 groups, %3 references and %4 data items"
+msgstr "Grupai %1 „%5“ tagad ir %2 grupas, %3 atsauces un %4 datu vienumi"
+
+#: src/groupcommand.cpp:601
+#, kde-format
+msgctxt ""
+"@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
+"5=name"
+msgid "Removing from group %1 \"%2\":"
+msgstr "Noņemt no grupas %1 „%2“:"
+
+#: src/groupcommand.cpp:638
+#, kde-format
+msgctxt "@info:shell"
+msgid "Nothing to remove for email '%1'"
+msgstr "E-pastam „%1“ nav nekā noņemama"
+
+#: src/groupcommand.cpp:682
+#, kde-format
+msgctxt ""
+"@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
+"5=name"
+msgid "Cleaning references from group %1 \"%2\":"
+msgstr "Notīra atsauces no grupas %1 „%2“:"
+
+#: src/importcommand.cpp:39
+msgctxt "info:shell"
+msgid "Import an XML file"
+msgstr "Importēt XML datni"
+
+#: src/importcommand.cpp:56
+#, kde-format
+msgctxt "@info:shell"
+msgid "The parent collection under which to import the file"
+msgstr "Vecākkolekcija, zem kuras datni importēt"
+
+#: src/importcommand.cpp:57
+#, kde-format
+msgctxt "@info:shell"
+msgid "The file to import"
+msgstr "Importējamā datne"
+
+#: src/importcommand.cpp:63
+#, kde-format
+msgctxt "@info:shell"
+msgid "No parent collection specified"
+msgstr "Nav norādīta vecākkolekcija"
+
+#: src/importcommand.cpp:65
+#, kde-format
+msgctxt "@info:shell"
+msgid "No import file specified"
+msgstr "Nav norādīta importējamā datne"
+
+#: src/importcommand.cpp:77
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid XML file, %1"
+msgstr "Nederīga XML datne, %1"
+
+#: src/importcommand.cpp:94
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unable to fetch parent collection, %1"
+msgstr "Neizdodas izgūt vecākkolekciju, %1"
+
+#: src/importcommand.cpp:103
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unable to fetch children of parent collection, %1"
+msgstr "Neizdodas izgūt vecākkolekcijai pakļauto kolekciju, %1"
+
+#: src/importcommand.cpp:122
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection '%1' already exists"
+msgstr "Kolekcija „%1“ jau pastāv"
+
+#: src/importcommand.cpp:126
+#, kde-format
+msgctxt "@info:shell"
+msgid "Creating collection '%1'"
+msgstr "Izveido kolekciju „%1“"
+
+#: src/importcommand.cpp:148
+#, kde-format
+msgctxt "@info:shell"
+msgid "Processing collection '%1'"
+msgstr "Apstrādā kolekciju „%1“"
+
+#: src/importcommand.cpp:155
+#, kde-format
+msgctxt "@info:shell"
+msgid "Invalid parent for collection with remote ID '%1'"
+msgstr "Nederīgs kolekcijas vecāks ar attālo ID „%1“"
+
+#: src/importcommand.cpp:176
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unable to fetch collection with remote ID '%1', %2"
+msgstr "Neizdodas izgūt kolekciju ar attālo ID „%1“, %2"
+
+#: src/importcommand.cpp:194
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unable to create collection with remote ID '%1'"
+msgstr "Neizdodas izveidot kolekciju ar attālo ID „%1“"
+
+#: src/importcommand.cpp:212
+#, kde-format
+msgctxt "@info:shell"
+msgid "Processing items for '%1'"
+msgstr "Apstrādā „%1“ vienumus"
+
+#: src/importcommand.cpp:234
+#, kde-format
+msgctxt "@info:shell"
+msgid "Error creating item, %1"
+msgstr "Kļūda, izveidojot vienumu, %1"
+
+#: src/importcommand.cpp:237
+#, kde-format
+msgctxt "@info:shell"
+msgid "Created item '%1'"
+msgstr "Izveidoja vienumu „%1“"
+
+#: src/infocommand.cpp:38
+msgctxt "info:shell"
+msgid "Show full information for a collection or item"
+msgstr "Rādīt pilnu informāciju kolekcijai vai vienumam"
+
+#: src/infocommand.cpp:57
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collections or items to display"
+msgstr "Parādāmās kolekcijas vai vienumi"
+
+#: src/infocommand.cpp:57
+#, kde-format
+msgid "entity..."
+msgstr "entītija..."
+
+#: src/infocommand.cpp:63
+#, kde-format
+msgctxt "@info:shell"
+msgid "No collections or items specified"
+msgstr "Nav norādītas kolekcijas vai vienumi"
+
+#: src/infocommand.cpp:117
+#, kde-format
+msgctxt "@info:shell"
+msgid "No information available for collection root"
+msgstr "Nav pieejama informācija par kolekcijas sakni"
+
+#: src/infocommand.cpp:220 src/infocommand.cpp:267
+#, kde-format
+msgctxt "@info:shell"
+msgid "ID"
+msgstr "ID"
+
+#: src/infocommand.cpp:221 src/infocommand.cpp:268
+#, kde-format
+msgctxt "@info:shell"
+msgid "URL"
+msgstr "URL"
+
+#: src/infocommand.cpp:222 src/infocommand.cpp:269
+#, kde-format
+msgctxt "@info:shell"
+msgid "Parent"
+msgstr "Vecāks"
+
+#: src/infocommand.cpp:223 src/infocommand.cpp:270 src/infocommand.cpp:302
+#, kde-format
+msgctxt "@info:shell"
+msgid "Type"
+msgstr "Tips"
+
+#: src/infocommand.cpp:223
+#, kde-format
+msgctxt "@info:shell entity type"
+msgid "Collection"
+msgstr "Kolekcija"
+
+#: src/infocommand.cpp:224
+#, kde-format
+msgctxt "@info:shell"
+msgid "Name"
+msgstr "Nosaukums"
+
+#: src/infocommand.cpp:225
+#, kde-format
+msgctxt "@info:shell"
+msgid "Owner"
+msgstr "Īpašnieks"
+
+#: src/infocommand.cpp:226 src/infocommand.cpp:271
+#, kde-format
+msgctxt "@info:shell"
+msgid "MIME"
+msgstr "MIME"
+
+#: src/infocommand.cpp:227 src/infocommand.cpp:275
+#, kde-format
+msgctxt "@info:shell"
+msgid "Remote ID"
+msgstr "Attālais ID"
+
+#: src/infocommand.cpp:228
+#, kde-format
+msgctxt "@info:shell"
+msgid "Path"
+msgstr "Ceļš"
+
+#: src/infocommand.cpp:233
+#, kde-format
+msgctxt "@info:shell"
+msgid "ReadOnly"
+msgstr "Tikai lasāms"
+
+#: src/infocommand.cpp:236
+#, kde-format
+msgctxt "@info:shell"
+msgid "ChangeItem"
+msgstr "Mainīt vienumu"
+
+#: src/infocommand.cpp:239
+#, kde-format
+msgctxt "@info:shell"
+msgid "CreateItem"
+msgstr "Izveidot vienumu"
+
+#: src/infocommand.cpp:242
+#, kde-format
+msgctxt "@info:shell"
+msgid "DeleteItem"
+msgstr "Dzēst vienumu"
+
+#: src/infocommand.cpp:245
+#, kde-format
+msgctxt "@info:shell"
+msgid "ChangeColl"
+msgstr "Mainīt kol"
+
+#: src/infocommand.cpp:248
+#, kde-format
+msgctxt "@info:shell"
+msgid "CreateColl"
+msgstr "Izveidot kol"
+
+#: src/infocommand.cpp:251
+#, kde-format
+msgctxt "@info:shell"
+msgid "DeleteColl"
+msgstr "Dzēst kol"
+
+#: src/infocommand.cpp:254
+#, kde-format
+msgctxt "@info:shell"
+msgid "LinkItem"
+msgstr "Sasaistīt vienumu"
+
+#: src/infocommand.cpp:257
+#, kde-format
+msgctxt "@info:shell"
+msgid "UnlinkItem"
+msgstr "Atsaistīt vienumu"
+
+#: src/infocommand.cpp:259
+#, kde-format
+msgctxt "@info:shell"
+msgid "Rights"
+msgstr "Tiesības"
+
+#: src/infocommand.cpp:262
+#, kde-format
+msgctxt "@info:shell"
+msgid "Count"
+msgstr "Skaits"
+
+#: src/infocommand.cpp:263
+#, kde-format
+msgctxt "@info:shell"
+msgid "Unread"
+msgstr "Nelasīts"
+
+#: src/infocommand.cpp:265 src/infocommand.cpp:299
+#, kde-format
+msgctxt "@info:shell"
+msgid "Size"
+msgstr "Izmērs"
+
+#: src/infocommand.cpp:270
+#, kde-format
+msgctxt "@info:shell entity type"
+msgid "Item"
+msgstr "Vienums"
+
+#: src/infocommand.cpp:273
+#, kde-format
+msgctxt "@info:shell"
+msgid "Modified"
+msgstr "Modificēts"
+
+#: src/infocommand.cpp:274
+#, kde-format
+msgctxt "@info:shell"
+msgid "Revision"
+msgstr "Revīzija"
+
+#: src/infocommand.cpp:276
+#, kde-format
+msgctxt "@info:shell"
+msgid "Payload"
+msgstr "Derīgais saturs"
+
+#: src/infocommand.cpp:276
+#, kde-format
+msgctxt "@info:shell"
+msgid "yes"
+msgstr "jā"
+
+#: src/infocommand.cpp:276
+#, kde-format
+msgctxt "@info:shell"
+msgid "no"
+msgstr "nē"
+
+#: src/infocommand.cpp:284 src/infocommand.cpp:294
+#, kde-format
+msgctxt "@info:shell"
+msgid "(none)"
+msgstr "(nav)"
+
+#: src/infocommand.cpp:286
+#, kde-format
+msgctxt "@info:shell"
+msgid "Flags"
+msgstr "Karogi"
+
+#: src/infocommand.cpp:296
+#, kde-format
+msgctxt "@info:shell"
+msgid "Tags"
+msgstr "Birkas"
+
+#: src/infocommand.cpp:302
+#, kde-format
+msgctxt "@info:shell entity type"
+msgid "Unknown"
+msgstr "Nezināms"
+
+#: src/listcommand.cpp:37
+msgctxt "info:shell"
+msgid "List sub-collections and/or items in a specified collection"
+msgstr "Saraksts ar norādītās kolekcijas apakškolekcijām un/vai vienumiem"
+
+#: src/listcommand.cpp:49
+#, kde-format
+msgid "List more detailed information"
+msgstr "Saraksts ar sīkāku informāciju"
+
+#: src/listcommand.cpp:52
+#, kde-format
+msgid "List only sub-collections"
+msgstr "Uzskaitīt tikai apakškolekcijas"
+
+#: src/listcommand.cpp:55
+#, kde-format
+msgid "List only contained items"
+msgstr "Uzskaitīt tikai ietvertos vienumus"
+
+#: src/listcommand.cpp:58
+#, kde-format
+msgid "List sub-collections recursively"
+msgstr "Uzskaitīt apakškolekcijas rekursīvi"
+
+#: src/listcommand.cpp:60
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection to list: an ID, path or Akonadi URL"
+msgstr "Uzskaitāmās kolekcijas: OD, ceļš vai „Akonadi“ URL"
+
+#: src/listcommand.cpp:77
+#, kde-format
+msgctxt "@info:shell"
+msgid "Recursive list can only be used for collections"
+msgstr "Rekursīvo sarakstu varat lietot tikai kolekcijām"
+
+#: src/listcommand.cpp:160
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %1 has no sub-collections"
+msgstr "Kolekcijai „%1“ nav apakškolekciju"
+
+#: src/listcommand.cpp:169
+#, kde-format
+msgctxt "@info:shell output section header 1=count, 2=collection"
+msgid "Collection %2 has %1 recursive sub-collection:"
+msgid_plural "Collection %2 has %1 recursive sub-collections:"
+msgstr[0] "Kolekcijai „%2“ ir %1 rekursīva apakškolekcija:"
+msgstr[1] "Kolekcijai „%2“ ir %1 rekursīvas apakškolekcija:"
+msgstr[2] "Kolekcijai „%2“ ir %1 rekursīvu apakškolekciju:"
+
+#: src/listcommand.cpp:175
+#, kde-format
+msgctxt "@info:shell output section header 1=count, 2=collection"
+msgid "Collection %2 has %1 sub-collection:"
+msgid_plural "Collection %2 has %1 sub-collections:"
+msgstr[0] "Kolekcijai „%2“ ir %1 apakškolekcija:"
+msgstr[1] "Kolekcijai „%2“ ir %1 apakškolekcijas:"
+msgstr[2] "Kolekcijai „%2“ ir %1 apakškolekciju:"
+
+#: src/listcommand.cpp:278
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %1 has no items"
+msgstr "Kolekcijai „%1“ nav apakškolekciju"
+
+#: src/listcommand.cpp:284
+#, kde-format
+msgctxt "@info:shell output section header 1=count, 2=collection"
+msgid "Collection %2 has %1 item:"
+msgid_plural "Collection %2 has %1 items:"
+msgstr[0] "Kolekcijai „%2“ ir %1 vienums:"
+msgstr[1] "Kolekcijai „%2“ ir %1 vienumi:"
+msgstr[2] "Kolekcijai „%2“ ir %1 vienumu:"
+
+#: src/listcommand.cpp:292
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "MIME type"
+msgstr "MIME tips"
+
+#: src/listcommand.cpp:293
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "Size"
+msgstr "Izmērs"
+
+#: src/listcommand.cpp:294
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "Modification Time"
+msgstr "Modifikācijas laiks"
+
+#: src/main.cpp:45
+#, kde-format
+msgctxt "@title program name"
+msgid "Akonadi Client"
+msgstr "„Akonadi“ klients"
+
+#: src/main.cpp:47
+#, kde-format
+msgctxt "@info:shell short description"
+msgid "A command-line/shell client for Akonadi"
+msgstr "„Akonadi“ komandrindas/čaulas klients"
+
+#: src/main.cpp:51
+#, kde-format
+msgctxt "@info:credit"
+msgid "Kevin Krammer"
+msgstr "Kevin Krammer"
+
+#: src/main.cpp:51
+#, kde-format
+msgctxt "@title about data task"
+msgid "Original Author"
+msgstr "Sākotnējās versijas autors"
+
+#: src/main.cpp:52
+#, kde-format
+msgctxt "@info:credit"
+msgid "Jonathan Marten"
+msgstr "Jonathan Marten"
+
+#: src/main.cpp:52
+#, kde-format
+msgctxt "@title about data task"
+msgid "Additions and new commands"
+msgstr "Papildinājumi un jaunas komandas"
+
+#: src/main.cpp:53
+#, kde-format
+msgctxt "@info:credit"
+msgid "Bhaskar Kandiyal"
+msgstr "Bhaskar Kandiyal"
+
+#: src/main.cpp:53
+#, kde-format
+msgctxt "@title about data task"
+msgid "New commands, GSOC 2014"
+msgstr "Jaunas komandas, GSOC 2014"
+
+#: src/main.cpp:66
+#, kde-format
+msgctxt "@info:shell"
+msgid "Command to execute"
+msgstr "Izpildāmā komanda"
+
+#: src/main.cpp:68
+#, kde-format
+msgctxt "@info:shell"
+msgid "Arguments for command"
+msgstr "Komandas parametri"
+
+#: src/main.cpp:68
+#, kde-format
+msgctxt "@info:shell"
+msgid "[args]"
+msgstr "[param]"
+
+#: src/main.cpp:86
+#, kde-format
+msgctxt "@info:shell"
+msgid ""
+"See '%1 help' for available commands.\n"
+"See '%1 help command' for information on a specific command."
+msgstr ""
+"Skatiet „%1 help“, lai redzētu pieejamās komandas.\n"
+"Skatiet „%1 help komanda“, lai uzzinātu vairāk par konkrētu komandu."
+
+#: src/movecommand.cpp:27
+msgctxt "info:shell"
+msgid "Move collections or items into a new collection"
+msgstr "Pārvietot kolekcijas vai vienumus jaunā kolekcijā"
+
+#: src/movecommand.cpp:40
+#, kde-format
+msgctxt "@info:shell"
+msgid "Existing collections or items to move"
+msgstr "Pārvietojamās kolekcijas vai vienumi"
+
+#: src/movecommand.cpp:41
+#, kde-format
+msgctxt "@info:shell"
+msgid "Destination collection to move into"
+msgstr "Galamērķa vieta, kur kolekciju pārvietot"
+
+#: src/renamecommand.cpp:33
+msgctxt "info:shell"
+msgid "Rename a collection"
+msgstr "Pārdēvēt kolekciju"
+
+#: src/renamecommand.cpp:45
+#, kde-format
+msgctxt "@info:shell"
+msgid "The collection to rename"
+msgstr "Pārdēvējamā kolekcija"
+
+#: src/renamecommand.cpp:46
+#, kde-format
+msgctxt "@info:shell"
+msgid "New name for collection"
+msgstr "Jaunais kolekcijas nosaukums"
+
+#: src/renamecommand.cpp:54
+#, kde-format
+msgctxt "@info:shell"
+msgid "New name not specified"
+msgstr "Nav norādīts jaunais nosaukums"
+
+#: src/renamecommand.cpp:97
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection renamed successfully"
+msgstr "Kolekcija ir pārdēvēta"
+
+#: src/showcommand.cpp:34
+msgctxt "info:shell"
+msgid "Show the raw payload of an item"
+msgstr "Rādīt neapstrādātu vienuma derīgo saturu"
+
+#: src/showcommand.cpp:43
+#, kde-format
+msgctxt "@info:shell"
+msgid "The items to show"
+msgstr "Parādāmie vienumi"
+
+#: src/showcommand.cpp:43
+#, kde-format
+msgctxt "@info:shell"
+msgid "item..."
+msgstr "vienums..."
+
+#: src/showcommand.cpp:45
+#, kde-format
+msgctxt "@info:shell"
+msgid "Use raw payload (disables quoted-printable decoding)"
+msgstr ""
+"Izmantot neapstrādātu derīgo saturu (izslēdz „quoted-printable“ atkodēšanu)"
+
+#: src/showcommand.cpp:51
+#, kde-format
+msgctxt "@info:shell"
+msgid "No items specified"
+msgstr "Nav norādīts neviens vienums"
+
+#: src/showcommand.cpp:89 src/updatecommand.cpp:116
+#, kde-format
+msgctxt "@info:shell"
+msgid "No result returned for item '%1'"
+msgstr "Vienums „%1“ neatgrieza nevienu rezultātu"
+
+#: src/showcommand.cpp:104
+#, kde-format
+msgid "Item has no main body part"
+msgstr "Vienumam nav nevienas pamatteksta daļas"
+
+#: src/tagscommand.cpp:31
+msgctxt "info:shell"
+msgid "List or modify tags"
+msgstr "Uzskaitīt vai rediģēt birkas"
+
+#: src/tagscommand.cpp:47
+#, kde-format
+msgid "Brief output, tag names or IDs only"
+msgstr "Īsa izvade, tikai birku nosaukumi vai ID"
+
+#: src/tagscommand.cpp:50
+#, kde-format
+msgid "Brief output, tag URLs only"
+msgstr "Īsa izvade, tikai birku URL"
+
+#: src/tagscommand.cpp:54
+#, kde-format
+msgid "List all known tags (the default operation)"
+msgstr "Uzskaitīt visas zināmās birkas (noklusējuma darbība)"
+
+#: src/tagscommand.cpp:57
+#, kde-format
+msgid "Add named tags"
+msgstr "Pievienot nosauktas birkas"
+
+#: src/tagscommand.cpp:60
+#, kde-format
+msgid "Delete tags"
+msgstr "Dzēst birkas"
+
+#. i18n("ID for a tag to be added (default automatic)"), i18n("id")));
+#: src/tagscommand.cpp:65
+#, kde-format
+msgid "TAG"
+msgstr "BIRKA"
+
+#: src/tagscommand.cpp:65
+#, kde-format
+msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
+msgstr ""
+"Pievienojamās birkas nosaukums vai dzēšamās birkas nosaukums, ID vai URL"
+
+#: src/tagscommand.cpp:65
+#, kde-format
+msgid "[TAG...]"
+msgstr "[BIRKA...]"
+
+#: src/tagscommand.cpp:85
+#, kde-format
+msgctxt "@info:shell"
+msgid "The 'brief' and 'urls' options cannot both be specified"
+msgstr "Nevar reizē norādīt „brief“ un „urls“ opciju"
+
+#: src/tagscommand.cpp:100
+#, kde-format
+msgctxt "@info:shell"
+msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+msgstr "Iespējams precizēt tikai vienu „list“, „add“ vai „delete“ opciju"
+
+#: src/tagscommand.cpp:115
+#, kde-format
+msgctxt "@info:shell"
+msgid "No tags specified to add"
+msgstr "Nav precizēta neviena pievienojama birka"
+
+#: src/tagscommand.cpp:120
+#, kde-format
+msgctxt "@info:shell"
+msgid "Multiple tags cannot be specified to add with 'id'"
+msgstr "Pievienošanai ir „id“ nevar norādīt vairākas birkas"
+
+#: src/tagscommand.cpp:129
+#, kde-format
+msgctxt "@info:shell"
+msgid "No tags specified to delete"
+msgstr "Dzēšanai nav norādīta neviena birka"
+
+#: src/tagscommand.cpp:158
+#, kde-format
+msgctxt "@info:shell"
+msgid "A tag named '%1' ID %2 already exists"
+msgstr "Birka ar nosaukumu „%1“ ID %2 jau pastāv"
+
+#: src/tagscommand.cpp:181
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot add tag '%1' ID %2"
+msgstr "Nevar pievienot birku „%1“ ID %2"
+
+#: src/tagscommand.cpp:183
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot add tag '%1'"
+msgstr "Nevar pievienot birku „%1“"
+
+#: src/tagscommand.cpp:227
+#, kde-format
+msgctxt "@info:shell"
+msgid "Tag to delete '%1' does not exist"
+msgstr "Dzēšamā birka „%1“ nepastāv"
+
+#: src/tagscommand.cpp:263
+#, kde-format
+msgctxt "@info:shell"
+msgid "Tag to delete ID %1 does not exist"
+msgstr "Dzēšamās birkas ID %1 nepastāv"
+
+#: src/tagscommand.cpp:306
+#, kde-format
+msgctxt "@info:shell"
+msgid "No tags found"
+msgstr "Neviena birka nav atrasta"
+
+#: src/tagscommand.cpp:320
+#, kde-format
+msgctxt "@info:shell column header"
+msgid "URL"
+msgstr "URL"
+
+#: src/terminalcolour.cpp:45
+#, kde-format
+msgctxt "@info:shell"
+msgid "Could not set up terminal"
+msgstr "Neizdevās iestatīt termināli"
+
+#: src/updatecommand.cpp:35
+msgctxt "info:shell"
+msgid "Update an item's payload from a file"
+msgstr "Atjaunināt vienuma derīgo saturu no datnes"
+
+#: src/updatecommand.cpp:52
+#, kde-format
+msgctxt "@info:shell"
+msgid "The item to update, an ID or Akonadi URL"
+msgstr "Atjaunināmais vienums, ID vai „Akonadi“ URL"
+
+#: src/updatecommand.cpp:53
+#, kde-format
+msgctxt "@info:shell"
+msgid "File to update the item from"
+msgstr "Datne, no kuras atjaunināt vienumu"
+
+#: src/updatecommand.cpp:61
+#, kde-format
+msgctxt "@info:shell"
+msgid "No file specified"
+msgstr "Nav norādīta neviena datne"
+
+#: src/updatecommand.cpp:136
+#, kde-format
+msgctxt "@info:shell"
+msgid "Item updated successfully"
+msgstr "Vienums ir atjaunināts"
