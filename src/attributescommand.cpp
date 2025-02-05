@@ -778,7 +778,19 @@ void AttributesCommand::processNextChange()
                                                 "Attributes need to be restored for %1 collection",
                                                 "Attributes need to be restored for %1 collections",
                                                 mUpdatedCollectionCount));
-                // TODO: tell user what to do
+
+                // A restore is needed, so tell the user what to do next.
+                std::cerr << std::endl
+                          << qPrintable(xi18nc("@info:shell",
+                                               "Attribute changes are required, execute the command:<nl/>"
+                                               "<bcode>"
+                                               "  %1 %2 --restore"
+                                               "</bcode>"
+                                               "<nl/>"
+                                               "to implement the changes.",
+                                               QCoreApplication::applicationName(),
+                                               name()))
+                          << std::endl;
             } else {
                 ErrorReporter::progress(xi18ncp("@info:shell",
                                                 "Attributes were restored for %1 collection",

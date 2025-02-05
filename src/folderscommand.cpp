@@ -536,7 +536,7 @@ void FoldersCommand::processChanges()
                                    "  %3 %4 --restore"
                                    "</bcode>"
                                    "<nl/>"
-                                   "to implement the required changes.",
+                                   "to implement the changes.",
                                    numRenamed,
                                    numChanged,
                                    QCoreApplication::applicationName(),
