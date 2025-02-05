@@ -27,75 +27,8 @@ using namespace Akonadi;
 
 class QSaveFile;
 class QFileDevice;
-
 class KJob;
-
-///////////////////////////////////////////////////////////////////////////
-
-class ChangeData
-{
-public:
-    /**
-     * Construct a change data item intended to match a group name.
-     **/
-    explicit ChangeData(const QString &groupPattern)
-        : mGroupPattern(QRegularExpression::anchoredPattern(groupPattern))
-        , mIsList(false)
-    {
-    }
-
-    /**
-     * Construct a change data item intended to match a key and value
-     * within a group.
-     **/
-    explicit ChangeData(const QString &groupPattern, const QString &keyPattern, const QString &valuePattern = QString())
-        : mGroupPattern(QRegularExpression::anchoredPattern(groupPattern))
-        , mKeyPattern(QRegularExpression::anchoredPattern(keyPattern))
-        , mValuePattern(QRegularExpression::anchoredPattern(!valuePattern.isEmpty() ? valuePattern : "(\\d+)"))
-        , mIsList(false)
-    {
-    }
-
-    ~ChangeData() = default;
-
-    void setIsListValue(bool isList)
-    {
-        mIsList = isList;
-    }
-    bool isListValue() const
-    {
-        return (mIsList);
-    }
-
-    QRegularExpression groupPattern() const
-    {
-        return (mGroupPattern);
-    }
-    QRegularExpression keyPattern() const
-    {
-        return (mKeyPattern);
-    }
-    QRegularExpression valuePattern() const
-    {
-        return (mValuePattern);
-    }
-
-    // Not sure whether a default-constructed QRegularExpresssion
-    // or one constructed with an empty string counts as invalid,
-    // so test for the presence of a pattern.
-    bool isValueChange() const
-    {
-        return (!mKeyPattern.pattern().isEmpty());
-    }
-
-private:
-    QRegularExpression mGroupPattern;
-    QRegularExpression mKeyPattern;
-    QRegularExpression mValuePattern;
-    bool mIsList;
-};
-
-///////////////////////////////////////////////////////////////////////////
+class ChangeData;
 
 class FoldersCommand : public CollectionListCommand
 {
@@ -133,7 +66,7 @@ private:
     QStringList allConfigFiles();
 
     void populateChangeData();
-    QList<ChangeData> findChangesFor(const QString &file);
+    QList<const ChangeData *> findChangesFor(const QString &file);
 
 private:
     FoldersCommand::Mode mOperationMode;
@@ -141,9 +74,7 @@ private:
     QMap<Collection::Id, QString> mOrigPathMap; // coll ID -> original path
     QMap<Collection::Id, Collection::Id> mChangeMap; // original coll -> current coll
 
-    // TODO: make this store pointers to ChangeData, then its
-    // class definition can be private to the source file.
-    QMultiMap<QString, ChangeData> mChangeData;
+    QMultiMap<QString, const ChangeData *> mChangeData;
 
 private Q_SLOTS:
     void onCollectionsListed() override;
