@@ -320,56 +320,40 @@ void AttributesCommand::onCollectionResolved(KJob *job)
         return;
     CollectionResolveJob *res = resolveJob();
     Q_ASSERT(job == res);
-    mAttributesCollection = new Collection(res->collection());
 
-    const Attribute::List &attrs = mAttributesCollection->attributes();
+    Collection *coll = new Collection(res->collection());
+    const Attribute::List &attrs = coll->attributes();
 
     if (mOperationMode == ModeShow) {
-        CollectionPathJob *pathJob = new CollectionPathJob(*mAttributesCollection);
+        CollectionPathJob *pathJob = new CollectionPathJob(*coll);
         connect(pathJob, &KJob::result, this, &AttributesCommand::onPathFetched);
         pathJob->start();
         return;
     }
 
-    bool attributeExists = false;
-    for (const Attribute *attr : std::as_const(attrs)) {
-        if (attr->type() == mCommandType) {
-            attributeExists = true;
-            break;
-        }
-    }
-
+    const bool attributeExists = (coll->attribute(mCommandType)!=nullptr);
     if (mOperationMode == ModeAdd) { // add, must not already exist
         if (attributeExists) {
             Q_EMIT error(i18nc("@info:shell", "Collection already has an attribute '%1'", mCommandType));
             Q_EMIT finished(RuntimeError);
             return;
         }
-
-        // TODO: can use Collection::addAttribute?
-
-        SyntheticAttribute *newAttr = new SyntheticAttribute(mCommandType, mCommandValue);
-        SyntheticAttribute *collectionAttr = mAttributesCollection->attribute<SyntheticAttribute>(Collection::AddIfMissing);
-        Q_ASSERT(collectionAttr != nullptr);
-        *collectionAttr = *newAttr;
     } else { // delete/modify, must already exist
         if (!attributeExists) {
             Q_EMIT error(i18nc("@info:shell", "Collection has no attribute '%1'", mCommandType));
             Q_EMIT finished(RuntimeError);
             return;
         }
-
-        if (mOperationMode == ModeDelete) { // delete, remove from collection
-            mAttributesCollection->removeAttribute(mCommandType);
-        } else { // modify, set new value
-            SyntheticAttribute *newAttr = new SyntheticAttribute(mCommandType, mCommandValue);
-            SyntheticAttribute *collectionAttr = mAttributesCollection->attribute<SyntheticAttribute>(Collection::AddIfMissing);
-            Q_ASSERT(collectionAttr != nullptr);
-            *collectionAttr = *newAttr;
-        }
     }
 
-    CollectionModifyJob *modifyJob = new Akonadi::CollectionModifyJob(*mAttributesCollection);
+    if (mOperationMode == ModeDelete) { // delete, remove from collection
+        coll->removeAttribute(mCommandType);
+    } else { // add/modify, set new value
+        SyntheticAttribute *newAttr = new SyntheticAttribute(mCommandType, mCommandValue);
+        coll->addAttribute(newAttr);
+    }
+
+    CollectionModifyJob *modifyJob = new CollectionModifyJob(*coll);
     connect(modifyJob, &KJob::result, this, &AttributesCommand::onCollectionModified);
     modifyJob->start();
 }
@@ -420,8 +404,9 @@ void AttributesCommand::onPathFetched(KJob *job)
     CollectionPathJob *pathJob = qobject_cast<CollectionPathJob *>(job);
     Q_ASSERT(pathJob != nullptr);
     const QString pathString = pathJob->formattedCollectionPath();
+    const Collection &coll = pathJob->collection();
 
-    const Attribute::List &attrs = mAttributesCollection->attributes();
+    const Attribute::List &attrs = coll.attributes();
     if (attrs.isEmpty()) {
         std::cout << std::endl << "Collection " << qPrintable(pathString) << " has no attributes" << std::endl;
     } else {
@@ -758,7 +743,7 @@ void AttributesCommand::onCollectionFetched(KJob *job)
                 xi18ncp("@info:shell", "Folder \"%2\" updating %1 attribute", "Folder \"%2\" updating %1 attributes", updateCount, currColl.displayName()));
 
             qDebug() << "starting CollectionModifyJob for" << currColl.id();
-            CollectionModifyJob *modifyJob = new Akonadi::CollectionModifyJob(currColl);
+            CollectionModifyJob *modifyJob = new CollectionModifyJob(currColl);
             connect(modifyJob, &KJob::result, this, &AttributesCommand::onAttributesModified);
             modifyJob->start();
             return;

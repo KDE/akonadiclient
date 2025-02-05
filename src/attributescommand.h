@@ -76,7 +76,6 @@ private Q_SLOTS:
     void onPathResolved(KJob *job);
 
 private:
-    Akonadi::Collection *mAttributesCollection = nullptr;
     AttributesCommand::Mode mOperationMode;
 
     QByteArray mCommandType;
