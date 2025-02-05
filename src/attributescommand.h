@@ -45,7 +45,7 @@ protected:
 
 private:
     bool parseValue(const QString &arg, bool isHex);
-    void fetchCollections();
+    void listAllCollections();
     QString findSaveFile(const QString &name, bool createDir);
     void getCurrentPaths(const Collection::List &colls);
     void saveCollectionAttributes(QFileDevice *file);
@@ -68,8 +68,12 @@ private Q_SLOTS:
     void onCollectionResolved(KJob *job);
     void onPathFetched(KJob *job);
     void onCollectionModified(KJob *job);
-    void onCollectionsFetched(KJob *job);
     void onAttributesModified(KJob *job);
+
+    void onCollectionsListed(KJob *job);
+    void onCollectionFetched(KJob *job);
+    void processCollection();
+    void onPathResolved(KJob *job);
 
 private:
     Akonadi::Collection *mAttributesCollection = nullptr;
@@ -88,5 +92,4 @@ private:
 
     QMap<QPair<Collection::Id, QByteArray>, QByteArray> mOrigAttrMap; // (coll ID, attr name) -> attr value
     QList<QPair<Collection::Id, QByteArray>> mOrigAttrKeys; // keys of above
-    QList<Collection::Id> mOrigCollIds; // original collection IDs
 };

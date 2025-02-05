@@ -39,12 +39,13 @@
 using namespace Akonadi;
 
 // This attribute class allows both the type (name) and value to be set
-// to arbitrary data, as specified for an "add" or "modify" command.
+// to arbitrary values, as specified for an "add" or "modify" command.
 // This is needed because it is not possible with the Akonadi API to
-// just add a collection attribute with a specified name, it must be an
-// object which is a subclass of Akonadi::Attribute.  However Akonadi
-// does not care about the actual C++ class of the attribute, as long as
-// its type() returns the expected name.
+// simply add a collection attribute with a specified name and value, it
+// must be an object which is a subclass of Akonadi::Attribute and whose
+// type corresponds to the required name.  However Akonadi does not care
+// about the actual C++ class of the attribute, as long as its type()
+// returns the name.
 
 class SyntheticAttribute : public Akonadi::Attribute
 {
@@ -280,16 +281,19 @@ QString AttributesCommand::findSaveFile(const QString &name, bool createDir)
 
 void AttributesCommand::start()
 {
-    if (mOperationMode == ModeRestore) {
+    if (mOperationMode == ModeRestore || mOperationMode == ModeAdd || mOperationMode == ModeModify || mOperationMode == ModeDelete) {
         if (!allowDangerousOperation()) {
             Q_EMIT finished(RuntimeError);
             return;
         }
     }
 
-    if (mOperationMode == ModeCheck || mOperationMode == ModeRestore) {
-        // Check or restore mode.  First read the original list of
-        // folder attributes that was saved by a previous backup operation.
+    if (mOperationMode == ModeBackup) {
+        // In this mode, just list and then save the current collections.
+        listAllCollections();
+    } else if (mOperationMode == ModeCheck || mOperationMode == ModeRestore) {
+        // In these modes, first read the original list of collection
+        // attributes that was saved by a previous backup operation.
         const QString readFileName = findSaveFile("savedattributes.dat", false);
         qDebug() << "read from" << readFileName;
         QFile readFile(readFileName, this);
@@ -301,13 +305,10 @@ void AttributesCommand::start()
         }
 
         readSavedAttributes(&readFile); // populates mOrigPathMap and mOrigAttrMap
-    }
-
-    if (mOperationMode == ModeBackup || mOperationMode == ModeCheck || mOperationMode == ModeRestore) {
-        // In any of those modes, read the current collections.
-        fetchCollections();
+        processChanges(); // scan for and report/fix changes
     } else {
-        // Resolve the collection argument specified.
+        // Operating on one collection, so first resolve the collection
+        // argument specified.
         connect(resolveJob(), &KJob::result, this, &AttributesCommand::onCollectionResolved);
         resolveJob()->start();
     }
@@ -327,11 +328,6 @@ void AttributesCommand::onCollectionResolved(KJob *job)
         CollectionPathJob *pathJob = new CollectionPathJob(*mAttributesCollection);
         connect(pathJob, &KJob::result, this, &AttributesCommand::onPathFetched);
         pathJob->start();
-        return;
-    }
-
-    if (!allowDangerousOperation()) {
-        Q_EMIT finished(RuntimeError);
         return;
     }
 
@@ -446,18 +442,14 @@ void AttributesCommand::onPathFetched(KJob *job)
     Q_EMIT finished(NoError);
 }
 
-void AttributesCommand::fetchCollections()
+void AttributesCommand::listAllCollections()
 {
-    // TODO: there may be no need for this and the loop in processNextChange().
-    // The full list of collections is not needed, only those with saved
-    // attributes which may be a far smaller number.
-    // After reading in the data file, set the "arguments" to a list of the
-    // folder names and use the AbstractCommand process loop.
+    Q_ASSERT(mOperationMode == ModeBackup);
     CollectionFetchJob *job = new CollectionFetchJob(Collection::root(), CollectionFetchJob::Recursive, this);
-    connect(job, &KJob::result, this, &AttributesCommand::onCollectionsFetched);
+    connect(job, &KJob::result, this, &AttributesCommand::onCollectionsListed);
 }
 
-void AttributesCommand::onCollectionsFetched(KJob *job)
+void AttributesCommand::onCollectionsListed(KJob *job)
 {
     if (!checkJobResult(job))
         return;
@@ -475,25 +467,19 @@ void AttributesCommand::onCollectionsFetched(KJob *job)
 
     getCurrentPaths(mCollections); // populates mCurPathMap
 
-    if (mOperationMode == ModeBackup) {
-        // Backup mode.  Save the current list of folders to the "saved"
-        // data file.  After that there is no more to do.
-        const QString saveFileName = findSaveFile("savedattributes.dat", true);
-        qDebug() << "backup to" << saveFileName;
-        QSaveFile saveFile(saveFileName);
-        if (!saveFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
-            Q_EMIT error(i18nc("@info:shell", "Cannot save backup list to '%1'", saveFile.fileName()));
-            Q_EMIT finished(RuntimeError);
-            return;
-        }
-
-        saveCollectionAttributes(&saveFile);
-        saveFile.commit(); // finished with save file
+    // Save the current list of folders to the "saved"
+    // data file.  After that there is no more to do.
+    const QString saveFileName = findSaveFile("savedattributes.dat", true);
+    qDebug() << "backup to" << saveFileName;
+    QSaveFile saveFile(saveFileName);
+    if (!saveFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+        Q_EMIT error(i18nc("@info:shell", "Cannot save backup list to '%1'", saveFile.fileName()));
+        Q_EMIT finished(RuntimeError);
         return;
     }
 
-    // Check or restore mode, check and if necessary reset the attributes.
-    processChanges();
+    saveCollectionAttributes(&saveFile);
+    saveFile.commit(); // finished with save file
 }
 
 // TODO: common with FoldersCommand
@@ -505,11 +491,11 @@ void AttributesCommand::getCurrentPaths(const Collection::List &colls)
     }
 
     for (const Collection &coll : std::as_const(colls)) {
-        QStringList path(coll.displayName());
+        QStringList path(coll.name());
         Collection::Id parentId = coll.parentCollection().id();
         while (parentId != 0) {
             const Collection &parentColl = curCollMap[parentId];
-            path.prepend(parentColl.displayName());
+            path.prepend(parentColl.name());
             parentId = parentColl.parentCollection().id();
         }
 
@@ -585,20 +571,213 @@ void AttributesCommand::readSavedAttributes(QFileDevice *file)
 
 void AttributesCommand::processChanges()
 {
+    Q_ASSERT(mOperationMode == ModeCheck || mOperationMode == ModeRestore);
+
+    // Do the loop over the original (backed up) collections, so that if any
+    // attributes are present but the folder they applied to has disappeared
+    // then the user can be warned.
+    //
+    // The full list of collections which were present in Akonadi when the
+    // backup was saved is not needed, only those which had attributes which
+    // may be a far smaller number.  The values of 'mOrigPathMap' are the
+    // folder paths for those, which are assumed to be still present in the
+    // current database under the same paths.  They can therefore be resolved
+    // to the appropriate current collection even if the collection ID has
+    // changed from when they were backed up.
+    initProcessLoop(mOrigPathMap.values());
     mUpdatedCollectionCount = 0;
 
-    // Do the scan over the original (backed up) collections, so that
-    // if any attributes are present but the folder they applied to
-    // has disappeared the user can be warned.
     mOrigAttrKeys = mOrigAttrMap.keys();
-    mOrigCollIds = mOrigPathMap.keys();
-    qDebug() << mOrigCollIds.count() << "collections with attributes," << mOrigAttrKeys.count() << "saved attributes";
+    qDebug() << mOrigPathMap.count() << "collections with attributes," << mOrigAttrKeys.count() << "saved attributes";
+
+    startProcessLoop("processCollection");
+}
+
+void AttributesCommand::processCollection()
+{
+    const QString collPath = currentArg();
+    qDebug() << "folder" << collPath;
+
+    // Resolve the path into a current collection ID.  The path as saved
+    // in the backup file is always absolute.
+    CollectionPathResolver *resolveJob = new CollectionPathResolver(collPath, this);
+    connect(resolveJob, &KJob::result, this, &AttributesCommand::onPathResolved);
+    resolveJob->start();
+}
+
+void AttributesCommand::onPathResolved(KJob *job)
+{
+    CollectionPathResolver *resolveJob = qobject_cast<CollectionPathResolver *>(job);
+    Q_ASSERT(resolveJob != nullptr);
+
+    const Collection::Id collId = resolveJob->collection();
+    // qDebug() << "collection ID" << collId;
+    if (job->error() || collId == -1) {
+        ErrorReporter::warning(xi18nc("@info:shell", "Folder '%1' had attributes but is no longer present", resolveJob->path()));
+        processNextChange();
+        return;
+    }
+
+    // Fetch the collection together with its current attributes.
+    CollectionFetchJob *fetchJob = new CollectionFetchJob((QList<Collection::Id>() << collId), CollectionFetchJob::Base, this);
+    fetchJob->setProperty("path", resolveJob->path());
+    fetchJob->setProperty("id", collId);
+    connect(fetchJob, &KJob::result, this, &AttributesCommand::onCollectionFetched);
+    fetchJob->start();
+}
+
+void AttributesCommand::onCollectionFetched(KJob *job)
+{
+    CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
+    Q_ASSERT(fetchJob != nullptr);
+    Collection::List colls = fetchJob->collections();
+
+    const QString collPath = '/' + fetchJob->property("path").toString();
+    const Collection::Id collId = fetchJob->property("id").value<Collection::Id>();
+
+    if (!checkJobResult(job) || colls.isEmpty()) {
+        Q_EMIT error(xi18nc("@info:shell", "Cannot fetch collection %1 \"%2\"", collId, collPath));
+        processNextChange();
+        return;
+    }
+
+    const Collection::Id origCollId = mOrigPathMap.key(collPath);
+    if (origCollId != collId) {
+        ErrorReporter::progress(
+            xi18nc("@info:shell", "Collection \"%2\" changed ID from %1 to %3", QString::number(origCollId), collPath, QString::number(collId)));
+    }
+
+    // Get the list of attributes that the old collection had.
+    QMap<QByteArray, QByteArray> origAttrs;
+    bool isSpecialCollection = false;
+
+    for (const QPair<Collection::Id, QByteArray> &attrKey : std::as_const(mOrigAttrKeys)) {
+        if (attrKey.first != origCollId)
+            continue;
+        const QByteArray &attrName = attrKey.second;
+        const QByteArray &attrValue = mOrigAttrMap[attrKey];
+
+        // This attribute value is only maintained and used internally
+        // by Akonadi.  It is not a user setting, so it is ignored and
+        // never restored.
+        if (attrName == "AccessRights")
+            continue;
+
+        // qDebug() << "    " << attrName << "=" << attrValue;
+
+        // This attribute value is set by Akonadi when the special collections
+        // are created, and never changed.  Therefore it is not restored here,
+        // but it is taken into account to see whether certain other values
+        // should be restored.
+        if (attrName == "SpecialCollectionAttribute") {
+            isSpecialCollection = true;
+            continue;
+        }
+
+        // For any other attribute save the name and value, for now anyway.
+        origAttrs[attrName] = attrValue;
+    }
+
+    // qDebug() << "  " << origAttrs.count() << "attrs saved";
+
+    // If this is a special collection, then do not restore the ENTITYDISPLAY
+    // attribute which is again set when they are created.  There is no GUI
+    // for the user to change the icon for special collections, so it is safe
+    // to assume that the default values are correct.
+    if (isSpecialCollection && origAttrs.contains("ENTITYDISPLAY")) {
+        origAttrs.remove("ENTITYDISPLAY");
+    }
+
+    // qDebug() << "  " << origAttrs.count() << "attrs to be restored";
+
+    if (origAttrs.isEmpty()) { // nothing to restore
+        processNextChange();
+        return;
+    }
+
+    // Get the current collection, with its attributes.
+    Collection &currColl = colls.first();
+    const Attribute::List &currAttrs = currColl.attributes();
+    // qDebug() << "  currently has" << currAttrs.count() << "attrs";
+
+    int updateCount = 0; // how many updates are needed
+
+    const QList<QByteArray> origAttrNames = origAttrs.keys();
+    for (const QByteArray &origAttrName : std::as_const(origAttrNames)) {
+        // qDebug() << "   trying" << origAttrName;
+
+        bool needsUpdate = true; // assume so for now
+
+        const Attribute *currAttr = currColl.attribute(origAttrName);
+        if (currAttr != nullptr) // see if attribute present
+        { // and if so, check its value
+            // qDebug() << "    found with value" << currAttr->serialized();
+            if (currAttr->serialized() == origAttrs[origAttrName]) {
+                // qDebug() << "    same value, no change";
+                needsUpdate = false; // not this attribute, anyway
+            } else {
+                ErrorReporter::progress(xi18nc("@info:shell",
+                                               "Folder  \"%1\" attribute \"%2\" changed from %3 to %4",
+                                               currColl.displayName(),
+                                               origAttrName,
+                                               printableForMessage(currAttr->serialized()),
+                                               printableForMessage(origAttrs[origAttrName])));
+            }
+        } else {
+            // qDebug() << "    not found";
+            ErrorReporter::progress(xi18nc("@info:shell",
+                                           "Folder \"%1\" attribute \"%2\" added %3",
+                                           currColl.displayName(),
+                                           origAttrName,
+                                           printableForMessage(origAttrs[origAttrName])));
+        }
+
+        // qDebug() << "  needs update?" << needsUpdate;
+
+        if (needsUpdate) {
+            // qDebug() << "  set new attr" << origAttrName;
+            SyntheticAttribute *newAttr = new SyntheticAttribute(origAttrName, origAttrs[origAttrName]);
+            currColl.addAttribute(newAttr);
+            ++updateCount;
+        }
+
+    } // end loop over attrs
+
+    // qDebug() << "  update count" << updateCount;
+    if (updateCount > 0) // need to update collection
+    {
+        ++mUpdatedCollectionCount;
+        if (mOperationMode == ModeCheck) { // or maybe just report
+            ErrorReporter::progress(xi18ncp("@info:shell",
+                                            "Folder \"%2\" needs update of %1 attribute",
+                                            "Folder \"%2\" needs update of %1 attributes",
+                                            updateCount,
+                                            currColl.displayName()));
+        } else {
+            ErrorReporter::progress(
+                xi18ncp("@info:shell", "Folder \"%2\" updating %1 attribute", "Folder \"%2\" updating %1 attributes", updateCount, currColl.displayName()));
+
+            qDebug() << "starting CollectionModifyJob for" << currColl.id();
+            CollectionModifyJob *modifyJob = new Akonadi::CollectionModifyJob(currColl);
+            connect(modifyJob, &KJob::result, this, &AttributesCommand::onAttributesModified);
+            modifyJob->start();
+            return;
+        }
+    }
+
+    processNextChange();
+}
+
+void AttributesCommand::onAttributesModified(KJob *job)
+{
+    if (!checkJobResult(job))
+        return;
     processNextChange();
 }
 
 void AttributesCommand::processNextChange()
 {
-    if (mOrigCollIds.isEmpty()) {
+    if (isProcessLoopFinished()) { // that was the last collection
         if (mUpdatedCollectionCount == 0) {
             if (mOperationMode == ModeCheck) {
                 ErrorReporter::progress(xi18nc("@info:shell", "No collection attributes need to be restored"));
@@ -619,157 +798,7 @@ void AttributesCommand::processNextChange()
                                                 mUpdatedCollectionCount));
             }
         }
-
-        Q_EMIT finished(NoError);
-        return;
     }
 
-    const Collection::Id origCollId = mOrigCollIds.takeFirst();
-
-    // Get the folder path, and check to see whether it has changed.  The
-    // attributes can be reapplied to the new folder, but its new ID is
-    // needed to access it.
-    const QString folderPath = mOrigPathMap[origCollId];
-    const Collection::Id newCollId = mCurPathMap.key(folderPath, -1);
-    qDebug() << "folder" << origCollId << "->" << newCollId << folderPath;
-    if (newCollId == -1) {
-        ErrorReporter::warning(xi18nc("@info:shell", "Folder '%1' had attributes but is no longer present", folderPath));
-        processNextChange();
-        return;
-    }
-
-    // Get the list of attributes that the old folder had.
-    QMap<QByteArray, QByteArray> origAttrs;
-    bool isSpecialCollection = false;
-
-    for (const QPair<Collection::Id, QByteArray> &attrKey : std::as_const(mOrigAttrKeys)) {
-        if (attrKey.first != newCollId)
-            continue;
-        const QByteArray &attrName = attrKey.second;
-        const QByteArray &attrValue = mOrigAttrMap[attrKey];
-
-        // This attribute value is only maintained and used internally
-        // by Akonadi.  It is not a user setting, so it is ignored and
-        // never restored.
-        if (attrName == "AccessRights")
-            continue;
-
-        qDebug() << "    " << attrName << "=" << attrValue;
-
-        // This attribute value is set by Akonadi when the special collections
-        // are created, and never changed.  Therefore it is not restored here,
-        // but it is taken into account to see whether certain other values
-        // should be restored.
-        if (attrName == "SpecialCollectionAttribute") {
-            isSpecialCollection = true;
-            continue;
-        }
-
-        // For any other attribute save the name and value, for now anyway.
-        origAttrs[attrName] = attrValue;
-    }
-
-    qDebug() << "  " << origAttrs.count() << "attrs saved";
-
-    // If this is a special collection, then do not restore the ENTITYDISPLAY
-    // attribute which is again set when they are created.  There is no GUI
-    // for the user to change the icon for special collections, so it is safe
-    // to assume that the default values are correct.
-    if (isSpecialCollection && origAttrs.contains("ENTITYDISPLAY")) {
-        origAttrs.remove("ENTITYDISPLAY");
-    }
-
-    qDebug() << "  " << origAttrs.count() << "attrs to be restored";
-
-    if (!origAttrs.isEmpty()) {
-        // Find the current collection, with its attributes.  The iterator
-        // cannot be 'const' here because the collection may need to be
-        // modified with the new attributes.
-        for (Collection &currColl : mCollections) {
-            if (currColl.id() == newCollId) {
-                const Attribute::List &currAttrs = currColl.attributes();
-                qDebug() << "  currently has" << currAttrs.count() << "attrs";
-
-                int updateCount = 0; // how many updates are needed
-
-                const QList<QByteArray> origAttrNames = origAttrs.keys();
-                for (const QByteArray &origAttrName : std::as_const(origAttrNames)) {
-                    // qDebug() << "   trying" << origAttrName;
-
-                    bool needsUpdate = true; // assume so for now
-
-                    const Attribute *currAttr = currColl.attribute(origAttrName);
-                    if (currAttr != nullptr) // see if attribute present
-                    { // and if so, check its value
-                        // qDebug() << "    found with value" << currAttr->serialized();
-                        if (currAttr->serialized() == origAttrs[origAttrName]) {
-                            // qDebug() << "    same value, no change";
-                            needsUpdate = false; // not this attribute, anyway
-                        } else {
-                            ErrorReporter::progress(xi18nc("@info:shell",
-                                                           "Folder  \"%1\" attribute \"%2\" changed from %3 to %4",
-                                                           currColl.displayName(),
-                                                           origAttrName,
-                                                           printableForMessage(currAttr->serialized()),
-                                                           printableForMessage(origAttrs[origAttrName])));
-                        }
-                    } else {
-                        // qDebug() << "    not found";
-                        ErrorReporter::progress(xi18nc("@info:shell",
-                                                       "Folder \"%1\" attribute \"%2\" added %3",
-                                                       currColl.displayName(),
-                                                       origAttrName,
-                                                       printableForMessage(origAttrs[origAttrName])));
-                    }
-
-                    qDebug() << "  needs update?" << needsUpdate;
-
-                    if (needsUpdate) {
-                        qDebug() << "  set new attr" << origAttrName;
-                        SyntheticAttribute *newAttr = new SyntheticAttribute(origAttrName, origAttrs[origAttrName]);
-                        currColl.addAttribute(newAttr);
-                        ++updateCount;
-                    }
-
-                } // end loop over attrs
-
-                qDebug() << "  update count" << updateCount;
-                if (updateCount > 0) // need to update collection
-                {
-                    ++mUpdatedCollectionCount;
-                    if (mOperationMode == ModeCheck) { // or maybe just report
-                        ErrorReporter::progress(xi18ncp("@info:shell",
-                                                        "Folder \"%2\" needs update of %1 attribute",
-                                                        "Folder \"%2\" needs update of %1 attributes",
-                                                        updateCount,
-                                                        currColl.displayName()));
-                    } else {
-                        qDebug() << "  starting CMJ for coll" << currColl.id();
-
-                        ErrorReporter::progress(xi18ncp("@info:shell",
-                                                        "Folder \"%2\" updating %1 attribute",
-                                                        "Folder \"%2\" updating %1 attributes",
-                                                        updateCount,
-                                                        currColl.displayName()));
-
-                        CollectionModifyJob *modifyJob = new Akonadi::CollectionModifyJob(currColl);
-                        connect(modifyJob, &KJob::result, this, &AttributesCommand::onAttributesModified);
-                        modifyJob->start();
-                        return;
-                    }
-                }
-
-                break; // from collection search loop
-            } // end collection found by ID
-        } // end collection search loop
-    } // if attrs not empty
-
-    processNextChange();
-}
-
-void AttributesCommand::onAttributesModified(KJob *job)
-{
-    if (!checkJobResult(job))
-        return;
-    processNextChange();
+    processNext(); // next collection or finish
 }
