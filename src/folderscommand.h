@@ -18,7 +18,7 @@
 
 #pragma once
 
-#include "abstractcommand.h"
+#include "collectionlistcommand.h"
 
 #include <qregularexpression.h>
 
@@ -97,7 +97,7 @@ private:
 
 ///////////////////////////////////////////////////////////////////////////
 
-class FoldersCommand : public AbstractCommand
+class FoldersCommand : public CollectionListCommand
 {
     Q_OBJECT
 
@@ -122,17 +122,14 @@ private:
     };
 
 private:
-    void fetchCollections();
     void processChanges();
     bool readOrSaveLists();
     void processRestore();
 
-    void getCurrentPaths(const Collection::List &colls);
     void saveCurrentPaths(QSaveFile *file);
     void readSavedPaths(QFileDevice *file, QMap<Collection::Id, QString> *pathMap);
     int checkForChanges();
 
-    QString findSaveFile(const QString &name, bool createDir);
     QStringList allConfigFiles();
 
     void populateChangeData();
@@ -142,11 +139,12 @@ private:
     FoldersCommand::Mode mOperationMode;
 
     QMap<Collection::Id, QString> mOrigPathMap; // coll ID -> original path
-    QMap<Collection::Id, QString> mCurPathMap; // coll ID -> current path
     QMap<Collection::Id, Collection::Id> mChangeMap; // original coll -> current coll
 
+    // TODO: make this store pointers to ChangeData, then its
+    // class definition can be private to the source file.
     QMultiMap<QString, ChangeData> mChangeData;
 
 private Q_SLOTS:
-    void onCollectionsFetched(KJob *job);
+    void onCollectionsListed() override;
 };

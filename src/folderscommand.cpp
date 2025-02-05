@@ -19,9 +19,8 @@
 #include "folderscommand.h"
 
 #include <qdir.h>
-#include <qfileinfo.h>
+#include <qfile.h>
 #include <qsavefile.h>
-#include <qstandardpaths.h>
 #include <qtimer.h>
 #include <qurl.h>
 
@@ -40,7 +39,7 @@ using namespace Qt::Literals::StringLiterals;
 DEFINE_COMMAND("folders", FoldersCommand, kli18nc("info:shell", "Save, check or restore Akonadi folder IDs"));
 
 FoldersCommand::FoldersCommand(QObject *parent)
-    : AbstractCommand(parent)
+    : CollectionListCommand(parent)
 {
 }
 
@@ -89,34 +88,6 @@ AbstractCommand::Error FoldersCommand::initCommand(QCommandLineParser *parser)
     return (NoError);
 }
 
-// Find the full path for a save file, optionally creating the parent
-// directory if required.
-QString FoldersCommand::findSaveFile(const QString &name, bool createDir)
-{
-    const QString saveDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + '/';
-    QFileInfo info(saveDir);
-    if (!info.isDir()) {
-        if (info.exists()) {
-            Q_EMIT error(i18nc("@info:shell", "Save location '%1' exists but is not a directory", info.absoluteFilePath()));
-            Q_EMIT finished(RuntimeError);
-            return (QString());
-        }
-
-        if (createDir) {
-            QDir d(info.dir());
-            if (!d.mkpath(saveDir)) {
-                Q_EMIT error(i18nc("@info:shell", "Cannot create save directory '%1'", info.absoluteFilePath()));
-                Q_EMIT finished(RuntimeError);
-                return (QString());
-            }
-        }
-    }
-
-    info.setFile(info.dir(), name);
-    qDebug() << info.absoluteFilePath();
-    return (info.absoluteFilePath());
-}
-
 void FoldersCommand::start()
 {
     populateChangeData(); // define change data
@@ -155,34 +126,16 @@ void FoldersCommand::start()
     }
 
     // Backup or check mode, so read the current collections
-    fetchCollections();
+    listCollections(CollectionFetchJob::Recursive);
 }
 
-void FoldersCommand::fetchCollections()
-{
-    CollectionFetchJob *job = new CollectionFetchJob(Collection::root(), CollectionFetchJob::Recursive, this);
-    connect(job, &KJob::result, this, &FoldersCommand::onCollectionsFetched);
-}
-
-void FoldersCommand::onCollectionsFetched(KJob *job)
+void FoldersCommand::onCollectionsListed()
 {
     Q_ASSERT(mOperationMode != ModeRestore);
 
-    if (!checkJobResult(job))
-        return;
-    CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
-    Q_ASSERT(fetchJob != nullptr);
+    ErrorReporter::progress(i18nc("@info:shell", "Found %1 current Akonadi collections", mCollections.count()));
 
-    const Collection::List colls = fetchJob->collections();
-    if (colls.count() < 1) {
-        Q_EMIT error(i18nc("@info:shell", "Cannot list any collections"));
-        Q_EMIT finished(RuntimeError);
-        return;
-    }
-
-    ErrorReporter::progress(i18nc("@info:shell", "Found %1 current Akonadi collections", colls.count()));
-
-    getCurrentPaths(colls); // populates mCurPathMap
+    getCurrentPaths(); // populates mCurPathMap
     processChanges(); // do the processing
 }
 
@@ -309,7 +262,6 @@ void FoldersCommand::processChanges()
         // Get the changes to be checked and applied to this file.
         // If there are none then do nothing.
         const QList<ChangeData> changes = findChangesFor(configFile);
-        // const QList<ChangeData> changes = mChangeData.values(configFile);
         if (changes.isEmpty())
             continue;
 
@@ -544,28 +496,6 @@ void FoldersCommand::processChanges()
               << std::endl;
 
     Q_EMIT finished(NoError);
-}
-
-void FoldersCommand::getCurrentPaths(const Collection::List &colls)
-{
-    QMap<Collection::Id, Collection> curCollMap;
-    for (const Collection &coll : std::as_const(colls)) {
-        curCollMap[coll.id()] = coll;
-    }
-
-    for (const Collection &coll : std::as_const(colls)) {
-        QStringList path(coll.displayName());
-        Collection::Id parentId = coll.parentCollection().id();
-        while (parentId != 0) {
-            const Collection &parentColl = curCollMap[parentId];
-            path.prepend(parentColl.displayName());
-            parentId = parentColl.parentCollection().id();
-        }
-
-        path.prepend(""); // to get root at beginning
-        const QString p = path.join('/');
-        mCurPathMap[coll.id()] = p;
-    }
 }
 
 void FoldersCommand::saveCurrentPaths(QSaveFile *file)
