@@ -764,6 +764,10 @@ void FoldersCommand::processRestore()
         if (!isDryRun()) {
             if (!newFile.copy(configFile)) {
                 ErrorReporter::warning(i18nc("@info:shell", "Cannot copy new '%2'to '%1'", configFile, newConfigFile));
+            } else {
+                if (!newFile.remove()) {
+                    ErrorReporter::warning(i18nc("@info:shell", "Cannot remove copied file '%1'", newConfigFile));
+                }
             }
         }
     }
