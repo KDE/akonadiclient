@@ -400,7 +400,7 @@ void AttributesCommand::onPathFetched(KJob *job)
 
 void AttributesCommand::onCollectionsListed()
 {
-    ErrorReporter::progress(i18nc("@info:shell", "Found %1 current Akonadi collections", mCollections.count()));
+    ErrorReporter::info(i18nc("@info:shell", "Found %1 current Akonadi collections", mCollections.count()));
 
     getCurrentPaths(); // populates mCurPathMap
 
@@ -453,7 +453,7 @@ void AttributesCommand::saveCollectionAttributes(QFileDevice *file)
         ++saveCount;
     }
 
-    ErrorReporter::progress(i18nc("@info:shell", "Saved attributes for %1 collections", saveCount));
+    ErrorReporter::success(i18nc("@info:shell", "Saved attributes for %1 collections", saveCount));
     Q_EMIT finished(NoError);
 }
 
@@ -480,7 +480,7 @@ void AttributesCommand::readSavedAttributes(QFileDevice *file)
         }
     }
 
-    ErrorReporter::progress(i18nc("@info:shell", "Read attributes for %1 collections", mOrigPathMap.count()));
+    ErrorReporter::info(i18nc("@info:shell", "Read attributes for %1 collections", mOrigPathMap.count()));
 }
 
 void AttributesCommand::processChanges()
@@ -504,6 +504,7 @@ void AttributesCommand::processChanges()
     mOrigAttrKeys = mOrigAttrMap.keys();
     qDebug() << mOrigPathMap.count() << "collections with attributes," << mOrigAttrKeys.count() << "saved attributes";
 
+    ErrorReporter::progress(xi18nc("@info:shell", "Checking current collection attributes"));
     startProcessLoop("processCollection");
 }
 
@@ -557,7 +558,7 @@ void AttributesCommand::onCollectionFetched(KJob *job)
 
     const Collection::Id origCollId = mOrigPathMap.key(collPath);
     if (origCollId != collId) {
-        ErrorReporter::progress(
+        ErrorReporter::notice(
             xi18nc("@info:shell", "Collection \"%2\" changed ID from %1 to %3", QString::number(origCollId), collPath, QString::number(collId)));
     }
 
@@ -630,20 +631,20 @@ void AttributesCommand::onCollectionFetched(KJob *job)
                 // qDebug() << "    same value, no change";
                 needsUpdate = false; // not this attribute, anyway
             } else {
-                ErrorReporter::progress(xi18nc("@info:shell",
-                                               "Folder  \"%1\" attribute \"%2\" changed from %3 to %4",
-                                               currColl.displayName(),
-                                               origAttrName,
-                                               printableForMessage(currAttr->serialized()),
-                                               printableForMessage(origAttrs[origAttrName])));
+                ErrorReporter::info(xi18nc("@info:shell",
+                                           "Folder  \"%1\" attribute \"%2\" changed from %3 to %4",
+                                           currColl.displayName(),
+                                           origAttrName,
+                                           printableForMessage(currAttr->serialized()),
+                                           printableForMessage(origAttrs[origAttrName])));
             }
         } else {
             // qDebug() << "    not found";
-            ErrorReporter::progress(xi18nc("@info:shell",
-                                           "Folder \"%1\" attribute \"%2\" added %3",
-                                           currColl.displayName(),
-                                           origAttrName,
-                                           printableForMessage(origAttrs[origAttrName])));
+            ErrorReporter::info(xi18nc("@info:shell",
+                                       "Folder \"%1\" attribute \"%2\" added %3",
+                                       currColl.displayName(),
+                                       origAttrName,
+                                       printableForMessage(origAttrs[origAttrName])));
         }
 
         // qDebug() << "  needs update?" << needsUpdate;
@@ -662,13 +663,13 @@ void AttributesCommand::onCollectionFetched(KJob *job)
     {
         ++mUpdatedCollectionCount;
         if (mOperationMode == ModeCheck) { // or maybe just report
-            ErrorReporter::progress(xi18ncp("@info:shell",
-                                            "Folder \"%2\" needs update of %1 attribute",
-                                            "Folder \"%2\" needs update of %1 attributes",
-                                            updateCount,
-                                            currColl.displayName()));
+            ErrorReporter::notice(xi18ncp("@info:shell",
+                                          "Folder \"%2\" needs update of %1 attribute",
+                                          "Folder \"%2\" needs update of %1 attributes",
+                                          updateCount,
+                                          currColl.displayName()));
         } else {
-            ErrorReporter::progress(
+            ErrorReporter::notice(
                 xi18ncp("@info:shell", "Folder \"%2\" updating %1 attribute", "Folder \"%2\" updating %1 attributes", updateCount, currColl.displayName()));
 
             qDebug() << "starting CollectionModifyJob for" << currColl.id();
@@ -694,20 +695,19 @@ void AttributesCommand::processNextChange()
     if (isProcessLoopFinished()) { // that was the last collection
         if (mUpdatedCollectionCount == 0) {
             if (mOperationMode == ModeCheck) {
-                ErrorReporter::progress(xi18nc("@info:shell", "No collection attributes need to be restored"));
+                ErrorReporter::success(xi18nc("@info:shell", "No collection attributes need to be restored"));
             } else {
-                ErrorReporter::progress(xi18nc("@info:shell", "No collection attributes needed to be restored"));
+                ErrorReporter::success(xi18nc("@info:shell", "No collection attributes needed to be restored"));
             }
         } else {
             if (mOperationMode == ModeCheck) {
-                ErrorReporter::progress(xi18ncp("@info:shell",
-                                                "Attributes need to be restored for %1 collection",
-                                                "Attributes need to be restored for %1 collections",
-                                                mUpdatedCollectionCount));
+                ErrorReporter::notice(xi18ncp("@info:shell",
+                                              "Attributes need to be restored for %1 collection",
+                                              "Attributes need to be restored for %1 collections",
+                                              mUpdatedCollectionCount));
 
                 // A restore is needed, so tell the user what to do next.
-                std::cerr << std::endl
-                          << qPrintable(xi18nc("@info:shell",
+                ErrorReporter::instruct(xi18nc("@info:shell",
                                                "Attribute changes are required, execute the command:<nl/>"
                                                "<bcode>"
                                                "  %1 %2 --restore"
@@ -715,13 +715,12 @@ void AttributesCommand::processNextChange()
                                                "<nl/>"
                                                "to implement the changes.",
                                                QCoreApplication::applicationName(),
-                                               name()))
-                          << std::endl;
+                                               name()));
             } else {
-                ErrorReporter::progress(xi18ncp("@info:shell",
-                                                "Attributes were restored for %1 collection",
-                                                "Attributes were restored for %1 collections",
-                                                mUpdatedCollectionCount));
+                ErrorReporter::success(xi18ncp("@info:shell",
+                                               "Attributes were restored for %1 collection",
+                                               "Attributes were restored for %1 collections",
+                                               mUpdatedCollectionCount));
             }
         }
     }
