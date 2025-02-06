@@ -19,9 +19,8 @@
 #include "folderscommand.h"
 
 #include <qdir.h>
-#include <qfileinfo.h>
+#include <qfile.h>
 #include <qsavefile.h>
-#include <qstandardpaths.h>
 #include <qtimer.h>
 #include <qurl.h>
 
@@ -36,11 +35,72 @@
 #include "commandfactory.h"
 #include "errorreporter.h"
 
+// ChangeData - Match patterns and replacement information for a
+// change to be made in a config file.
+
+class ChangeData
+{
+public:
+    // A change data item intended to match a group name.
+    explicit ChangeData(const QString &groupPattern)
+        : mGroupPattern(QRegularExpression::anchoredPattern(groupPattern))
+        , mIsList(false)
+    {
+    }
+
+    // A change data item intended to match a key and value within a group.
+    explicit ChangeData(const QString &groupPattern, const QString &keyPattern, const QString &valuePattern = QString())
+        : mGroupPattern(QRegularExpression::anchoredPattern(groupPattern))
+        , mKeyPattern(QRegularExpression::anchoredPattern(keyPattern))
+        , mValuePattern(QRegularExpression::anchoredPattern(!valuePattern.isEmpty() ? valuePattern : "(\\d+)"))
+        , mIsList(false)
+    {
+    }
+
+    void setIsListValue(bool isList)
+    {
+        mIsList = isList;
+    }
+    bool isListValue() const
+    {
+        return (mIsList);
+    }
+
+    const QRegularExpression &groupPattern() const
+    {
+        return (mGroupPattern);
+    }
+    const QRegularExpression &keyPattern() const
+    {
+        return (mKeyPattern);
+    }
+    const QRegularExpression &valuePattern() const
+    {
+        return (mValuePattern);
+    }
+
+    // Not sure whether a default-constructed QRegularExpresssion
+    // or one constructed with an empty string counts as invalid,
+    // so test for the presence of a pattern.
+    bool isValueChange() const
+    {
+        return (!mKeyPattern.pattern().isEmpty());
+    }
+
+private:
+    QRegularExpression mGroupPattern;
+    QRegularExpression mKeyPattern;
+    QRegularExpression mValuePattern;
+    bool mIsList;
+};
+
+// FoldersCommand
+
 using namespace Qt::Literals::StringLiterals;
 DEFINE_COMMAND("folders", FoldersCommand, kli18nc("info:shell", "Save, check or restore Akonadi folder IDs"));
 
 FoldersCommand::FoldersCommand(QObject *parent)
-    : AbstractCommand(parent)
+    : CollectionListCommand(parent)
 {
 }
 
@@ -89,34 +149,6 @@ AbstractCommand::Error FoldersCommand::initCommand(QCommandLineParser *parser)
     return (NoError);
 }
 
-// Find the full path for a save file, optionally creating the parent
-// directory if required.
-QString FoldersCommand::findSaveFile(const QString &name, bool createDir)
-{
-    const QString saveDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + '/';
-    QFileInfo info(saveDir);
-    if (!info.isDir()) {
-        if (info.exists()) {
-            Q_EMIT error(i18nc("@info:shell", "Save location '%1' exists but is not a directory", info.absoluteFilePath()));
-            Q_EMIT finished(RuntimeError);
-            return (QString());
-        }
-
-        if (createDir) {
-            QDir d(info.dir());
-            if (!d.mkpath(saveDir)) {
-                Q_EMIT error(i18nc("@info:shell", "Cannot create save directory '%1'", info.absoluteFilePath()));
-                Q_EMIT finished(RuntimeError);
-                return (QString());
-            }
-        }
-    }
-
-    info.setFile(info.dir(), name);
-    qDebug() << info.absoluteFilePath();
-    return (info.absoluteFilePath());
-}
-
 void FoldersCommand::start()
 {
     populateChangeData(); // define change data
@@ -155,34 +187,16 @@ void FoldersCommand::start()
     }
 
     // Backup or check mode, so read the current collections
-    fetchCollections();
+    listCollections(CollectionFetchJob::Recursive);
 }
 
-void FoldersCommand::fetchCollections()
-{
-    CollectionFetchJob *job = new CollectionFetchJob(Collection::root(), CollectionFetchJob::Recursive, this);
-    connect(job, &KJob::result, this, &FoldersCommand::onCollectionsFetched);
-}
-
-void FoldersCommand::onCollectionsFetched(KJob *job)
+void FoldersCommand::onCollectionsListed()
 {
     Q_ASSERT(mOperationMode != ModeRestore);
 
-    if (!checkJobResult(job))
-        return;
-    CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
-    Q_ASSERT(fetchJob != nullptr);
+    ErrorReporter::progress(i18nc("@info:shell", "Found %1 current Akonadi collections", mCollections.count()));
 
-    const Collection::List colls = fetchJob->collections();
-    if (colls.count() < 1) {
-        Q_EMIT error(i18nc("@info:shell", "Cannot list any collections"));
-        Q_EMIT finished(RuntimeError);
-        return;
-    }
-
-    ErrorReporter::progress(i18nc("@info:shell", "Found %1 current Akonadi collections", colls.count()));
-
-    getCurrentPaths(colls); // populates mCurPathMap
+    getCurrentPaths(); // populates mCurPathMap
     processChanges(); // do the processing
 }
 
@@ -236,9 +250,9 @@ static QString updateValue(const QRegularExpressionMatch &match, const QString &
     return (newValue);
 }
 
-QList<ChangeData> FoldersCommand::findChangesFor(const QString &file)
+QList<const ChangeData *> FoldersCommand::findChangesFor(const QString &file)
 {
-    QList<ChangeData> result;
+    QList<const ChangeData *> result;
 
     const QStringList configNames = mChangeData.uniqueKeys();
     for (const QString &configName : std::as_const(configNames)) {
@@ -308,8 +322,7 @@ void FoldersCommand::processChanges()
 
         // Get the changes to be checked and applied to this file.
         // If there are none then do nothing.
-        const QList<ChangeData> changes = findChangesFor(configFile);
-        // const QList<ChangeData> changes = mChangeData.values(configFile);
+        const QList<const ChangeData *> changes = findChangesFor(configFile);
         if (changes.isEmpty())
             continue;
 
@@ -348,13 +361,13 @@ void FoldersCommand::processChanges()
             QString newGroupName = curGroupName; // unchanged so far
 
             // Look at each applicable change data item in turn.
-            for (const ChangeData &change : std::as_const(changes)) {
+            for (const ChangeData *change : std::as_const(changes)) {
                 // Only process change data which refers to a group name match.
-                if (change.isValueChange())
+                if (change->isValueChange())
                     continue;
 
                 // Match the group name against the pattern.
-                const QRegularExpression rx = change.groupPattern();
+                const QRegularExpression rx = change->groupPattern();
                 const QRegularExpressionMatch match = rx.match(curGroupName);
                 if (!match.hasMatch())
                     continue;
@@ -415,16 +428,16 @@ void FoldersCommand::processChanges()
             KConfigGroup newGroup = newConfig.group(newGroupName);
 
             // Look at each applicable change data item in turn.
-            for (const ChangeData &change : std::as_const(changes)) {
+            for (const ChangeData *change : std::as_const(changes)) {
                 // Only process change data which refers to a key/value match.
-                if (!change.isValueChange())
+                if (!change->isValueChange())
                     continue;
 
                 // These regular expression patterns are constant
                 // for each change.
-                const QRegularExpression rx1 = change.groupPattern();
-                const QRegularExpression rx2 = change.keyPattern();
-                const QRegularExpression rx3 = change.valuePattern();
+                const QRegularExpression rx1 = change->groupPattern();
+                const QRegularExpression rx2 = change->keyPattern();
+                const QRegularExpression rx3 = change->valuePattern();
 
                 // Match the group name against its pattern.  This may be
                 // a plain name or a regular expression;  the name is only
@@ -455,7 +468,7 @@ void FoldersCommand::processChanges()
                     // although it must be read as a single string value
                     // because it may contain a comma.
                     QStringList newValues;
-                    const bool isList = change.isListValue();
+                    const bool isList = change->isListValue();
                     if (isList)
                         newValues = newGroup.readEntry(newKey, QStringList());
                     else
@@ -536,7 +549,7 @@ void FoldersCommand::processChanges()
                                    "  %3 %4 --restore"
                                    "</bcode>"
                                    "<nl/>"
-                                   "to implement the required changes.",
+                                   "to implement the changes.",
                                    numRenamed,
                                    numChanged,
                                    QCoreApplication::applicationName(),
@@ -544,28 +557,6 @@ void FoldersCommand::processChanges()
               << std::endl;
 
     Q_EMIT finished(NoError);
-}
-
-void FoldersCommand::getCurrentPaths(const Collection::List &colls)
-{
-    QMap<Collection::Id, Collection> curCollMap;
-    for (const Collection &coll : std::as_const(colls)) {
-        curCollMap[coll.id()] = coll;
-    }
-
-    for (const Collection &coll : std::as_const(colls)) {
-        QStringList path(coll.displayName());
-        Collection::Id parentId = coll.parentCollection().id();
-        while (parentId != 0) {
-            const Collection &parentColl = curCollMap[parentId];
-            path.prepend(parentColl.displayName());
-            parentId = parentColl.parentCollection().id();
-        }
-
-        path.prepend(""); // to get root at beginning
-        const QString p = path.join('/');
-        mCurPathMap[coll.id()] = p;
-    }
 }
 
 void FoldersCommand::saveCurrentPaths(QSaveFile *file)
@@ -624,11 +615,11 @@ int FoldersCommand::checkForChanges()
 void FoldersCommand::populateChangeData()
 {
     // KMail configuration
-    ChangeData d = ChangeData("Folder-(\\d+)");
+    ChangeData *d = new ChangeData("Folder-(\\d+)");
     mChangeData.insert("kmail2rc", d);
-    d = ChangeData("Search", "LastSearchCollectionId");
+    d = new ChangeData("Search", "LastSearchCollectionId");
     mChangeData.insert("kmail2rc", d);
-    d = ChangeData("Composer", "previous-fcc");
+    d = new ChangeData("Composer", "previous-fcc");
     mChangeData.insert("kmail2rc", d);
 
     // [FavoriteCollectionsOrder]
@@ -637,31 +628,31 @@ void FoldersCommand::populateChangeData()
     // The key value is the model column, see EntityOrderProxyModel::lessThan()
     // in akonadi/src/core/models/entityorderproxymodel.cpp
     // For the KMail favourites list this is always 0.
-    d = ChangeData("FavoriteCollectionsOrder", "0", "c(\\d+)");
-    d.setIsListValue(true);
+    d = new ChangeData("FavoriteCollectionsOrder", "0", "c(\\d+)");
+    d->setIsListValue(true);
     mChangeData.insert("kmail2rc", d);
 
     // [FavoriteCollections]
     // FavoriteCollectionIds=35,266,31,32,285,389,407,635,428,438,404,654,403
     //
     // Loaded and saved in akonadi/src/core/models/favoritecollectionsmodel.cpp
-    d = ChangeData("FavoriteCollections", "FavoriteCollectionIds");
-    d.setIsListValue(true);
+    d = new ChangeData("FavoriteCollections", "FavoriteCollectionIds");
+    d->setIsListValue(true);
     mChangeData.insert("kmail2rc", d);
 
     // POP3 resource
-    d = ChangeData("General", "targetCollection");
+    d = new ChangeData("General", "targetCollection");
     mChangeData.insert("akonadi_pop3_resource_*rc", d);
     // IMAP resource
-    d = ChangeData("cache", "TrashCollection");
+    d = new ChangeData("cache", "TrashCollection");
     mChangeData.insert("akonadi_imap_resource_*rc", d);
 
     // Identities
-    d = ChangeData("Identity #\\d+", "Drafts");
+    d = new ChangeData("Identity #\\d+", "Drafts");
     mChangeData.insert("emailidentities", d);
-    d = ChangeData("Identity #\\d+", "Fcc");
+    d = new ChangeData("Identity #\\d+", "Fcc");
     mChangeData.insert("emailidentities", d);
-    d = ChangeData("Identity #\\d+", "Templates");
+    d = new ChangeData("Identity #\\d+", "Templates");
     mChangeData.insert("emailidentities", d);
 
     // Filters
@@ -672,7 +663,7 @@ void FoldersCommand::populateChangeData()
     // mailcommon/src/filter/filteractions/filteractioncopy.cpp for those
     // strings.  However, any sensible status, header or email address
     // argument is unlikely to match the anchored regular expression.
-    d = ChangeData("Filter #\\d+", "action-args-\\d+");
+    d = new ChangeData("Filter #\\d+", "action-args-\\d+");
     mChangeData.insert("akonadi_mailfilter_agentrc", d);
 
     ErrorReporter::progress(

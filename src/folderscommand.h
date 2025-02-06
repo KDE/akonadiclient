@@ -18,7 +18,7 @@
 
 #pragma once
 
-#include "abstractcommand.h"
+#include "collectionlistcommand.h"
 
 #include <qregularexpression.h>
 
@@ -27,77 +27,10 @@ using namespace Akonadi;
 
 class QSaveFile;
 class QFileDevice;
-
 class KJob;
+class ChangeData;
 
-///////////////////////////////////////////////////////////////////////////
-
-class ChangeData
-{
-public:
-    /**
-     * Construct a change data item intended to match a group name.
-     **/
-    explicit ChangeData(const QString &groupPattern)
-        : mGroupPattern(QRegularExpression::anchoredPattern(groupPattern))
-        , mIsList(false)
-    {
-    }
-
-    /**
-     * Construct a change data item intended to match a key and value
-     * within a group.
-     **/
-    explicit ChangeData(const QString &groupPattern, const QString &keyPattern, const QString &valuePattern = QString())
-        : mGroupPattern(QRegularExpression::anchoredPattern(groupPattern))
-        , mKeyPattern(QRegularExpression::anchoredPattern(keyPattern))
-        , mValuePattern(QRegularExpression::anchoredPattern(!valuePattern.isEmpty() ? valuePattern : "(\\d+)"))
-        , mIsList(false)
-    {
-    }
-
-    ~ChangeData() = default;
-
-    void setIsListValue(bool isList)
-    {
-        mIsList = isList;
-    }
-    bool isListValue() const
-    {
-        return (mIsList);
-    }
-
-    QRegularExpression groupPattern() const
-    {
-        return (mGroupPattern);
-    }
-    QRegularExpression keyPattern() const
-    {
-        return (mKeyPattern);
-    }
-    QRegularExpression valuePattern() const
-    {
-        return (mValuePattern);
-    }
-
-    // Not sure whether a default-constructed QRegularExpresssion
-    // or one constructed with an empty string counts as invalid,
-    // so test for the presence of a pattern.
-    bool isValueChange() const
-    {
-        return (!mKeyPattern.pattern().isEmpty());
-    }
-
-private:
-    QRegularExpression mGroupPattern;
-    QRegularExpression mKeyPattern;
-    QRegularExpression mValuePattern;
-    bool mIsList;
-};
-
-///////////////////////////////////////////////////////////////////////////
-
-class FoldersCommand : public AbstractCommand
+class FoldersCommand : public CollectionListCommand
 {
     Q_OBJECT
 
@@ -122,31 +55,27 @@ private:
     };
 
 private:
-    void fetchCollections();
     void processChanges();
     bool readOrSaveLists();
     void processRestore();
 
-    void getCurrentPaths(const Collection::List &colls);
     void saveCurrentPaths(QSaveFile *file);
     void readSavedPaths(QFileDevice *file, QMap<Collection::Id, QString> *pathMap);
     int checkForChanges();
 
-    QString findSaveFile(const QString &name, bool createDir);
     QStringList allConfigFiles();
 
     void populateChangeData();
-    QList<ChangeData> findChangesFor(const QString &file);
+    QList<const ChangeData *> findChangesFor(const QString &file);
 
 private:
     FoldersCommand::Mode mOperationMode;
 
     QMap<Collection::Id, QString> mOrigPathMap; // coll ID -> original path
-    QMap<Collection::Id, QString> mCurPathMap; // coll ID -> current path
     QMap<Collection::Id, Collection::Id> mChangeMap; // original coll -> current coll
 
-    QMultiMap<QString, ChangeData> mChangeData;
+    QMultiMap<QString, const ChangeData *> mChangeData;
 
 private Q_SLOTS:
-    void onCollectionsFetched(KJob *job);
+    void onCollectionsListed() override;
 };

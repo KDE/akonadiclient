@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2024  Jonathan Marten <jjm@keelhaul.me.uk>
+    Copyright (C) 2024-2025  Jonathan Marten <jjm@keelhaul.me.uk>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,22 +18,21 @@
 
 #pragma once
 
-#include "abstractcommand.h"
+#include "collectionlistcommand.h"
 
+#include <Akonadi/Collection>
+using namespace Akonadi;
+
+class QFileDevice;
 class KJob;
 
-namespace Akonadi
-{
-class Collection;
-};
-
-class AttributesCommand : public AbstractCommand
+class AttributesCommand : public CollectionListCommand
 {
     Q_OBJECT
 
 public:
     explicit AttributesCommand(QObject *parent = nullptr);
-    ~AttributesCommand() override;
+    ~AttributesCommand() override = default;
 
     [[nodiscard]] QString name() const override;
 
@@ -46,25 +45,44 @@ protected:
 
 private:
     bool parseValue(const QString &arg, bool isHex);
+    void saveCollectionAttributes(QFileDevice *file);
+    void readSavedAttributes(QFileDevice *file);
+    void processChanges();
+    void processNextChange();
 
 private:
     enum Mode {
         ModeShow,
         ModeAdd,
         ModeDelete,
-        ModeModify
+        ModeModify,
+        ModeBackup,
+        ModeCheck,
+        ModeRestore
     };
 
 private Q_SLOTS:
     void onCollectionResolved(KJob *job);
     void onPathFetched(KJob *job);
     void onCollectionModified(KJob *job);
+    void onAttributesModified(KJob *job);
+
+    void onCollectionFetched(KJob *job);
+    void processCollection();
+    void onPathResolved(KJob *job);
+
+    void onCollectionsListed() override;
 
 private:
-    Akonadi::Collection *mAttributesCollection = nullptr;
     AttributesCommand::Mode mOperationMode;
 
     QByteArray mCommandType;
     QByteArray mCommandValue;
     bool mHexOption;
+
+    int mUpdatedCollectionCount;
+
+    QMap<Collection::Id, QString> mOrigPathMap; // coll ID -> original path
+    QMap<QPair<Collection::Id, QByteArray>, QByteArray> mOrigAttrMap; // (coll ID, attr name) -> attr value
+    QList<QPair<Collection::Id, QByteArray>> mOrigAttrKeys; // keys of above
 };
