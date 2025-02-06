@@ -29,20 +29,36 @@
 
 static bool runningApplication = false;
 
+static void message(const QString &severity, TerminalColour::Attributes colour, const QString &msg)
+{
+    std::cerr << qPrintable(QCoreApplication::applicationName()) << " (" << TerminalColour::string(colour) << qPrintable(severity)
+              << TerminalColour::string(TerminalColour::Normal) << "): " << TerminalColour::string(colour) << qPrintable(msg)
+              << TerminalColour::string(TerminalColour::Normal) << std::endl;
+}
+
 void ErrorReporter::error(const QString &msg)
 {
-    std::cerr << qPrintable(QCoreApplication::applicationName()) << " (" << TerminalColour::string(TerminalColour::Bold | TerminalColour::Red)
-              << qPrintable(i18nc("@info:shell", "error")) << TerminalColour::string(TerminalColour::Normal)
-              << "): " << TerminalColour::string(TerminalColour::Bold | TerminalColour::Red) << qPrintable(msg)
-              << TerminalColour::string(TerminalColour::Normal) << std::endl;
+    message(i18nc("@info:shell", "error"), (TerminalColour::Bold | TerminalColour::Red), msg);
 }
 
 void ErrorReporter::warning(const QString &msg)
 {
-    std::cerr << qPrintable(QCoreApplication::applicationName()) << " (" << TerminalColour::string(TerminalColour::Bold | TerminalColour::Yellow)
-              << qPrintable(i18nc("@info:shell", "warning")) << TerminalColour::string(TerminalColour::Normal)
-              << "): " << TerminalColour::string(TerminalColour::Bold | TerminalColour::Yellow) << qPrintable(msg)
-              << TerminalColour::string(TerminalColour::Normal) << std::endl;
+    message(i18nc("@info:shell", "warning"), (TerminalColour::Bold | TerminalColour::Yellow), msg);
+}
+
+void ErrorReporter::notice(const QString &msg)
+{
+    message(i18nc("@info:shell", "notice"), (TerminalColour::Bold | TerminalColour::Cyan), msg);
+}
+
+void ErrorReporter::success(const QString &msg)
+{
+    message(i18nc("@info:shell", "success"), (TerminalColour::Bold | TerminalColour::Green), msg);
+}
+
+void ErrorReporter::info(const QString &msg)
+{
+    message(i18nc("@info:shell", "info"), TerminalColour::Green, msg);
 }
 
 void ErrorReporter::fatal(const QString &msg)
@@ -61,6 +77,11 @@ void ErrorReporter::progress(const QString &msg)
 {
     std::cerr << "** " << TerminalColour::string(TerminalColour::Bold | TerminalColour::Magenta) << qPrintable(msg)
               << TerminalColour::string(TerminalColour::Normal) << std::endl;
+}
+
+void ErrorReporter::instruct(const QString &msg)
+{
+    std::cerr << std::endl << TerminalColour::string(TerminalColour::Bold) << qPrintable(msg) << TerminalColour::string(TerminalColour::Normal) << std::endl;
 }
 
 void ErrorReporter::setRunningApplication(bool running)
