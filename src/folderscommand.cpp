@@ -194,7 +194,7 @@ void FoldersCommand::onCollectionsListed()
 {
     Q_ASSERT(mOperationMode != ModeRestore);
 
-    ErrorReporter::progress(i18nc("@info:shell", "Found %1 current Akonadi collections", mCollections.count()));
+    ErrorReporter::info(i18nc("@info:shell", "Found %1 current Akonadi collections", mCollections.count()));
 
     getCurrentPaths(); // populates mCurPathMap
     processChanges(); // do the processing
@@ -296,12 +296,12 @@ void FoldersCommand::processChanges()
     // check whether anything actually needs to be done.
     const int pathsChanged = checkForChanges();
     if (pathsChanged == 0) {
-        ErrorReporter::progress(i18nc("@info:shell", "No folder IDs have changed"));
+        ErrorReporter::success(i18nc("@info:shell", "No folder IDs have changed"));
         Q_EMIT finished(NoError);
         return;
     }
 
-    ErrorReporter::progress(i18nc("@info:shell", "%1 folder IDs have changed", pathsChanged));
+    ErrorReporter::notice(i18nc("@info:shell", "%1 folder IDs have changed", pathsChanged));
 
     // Some folder IDs have changed, so prepare to process the application
     // configuration files.
@@ -389,17 +389,14 @@ void FoldersCommand::processChanges()
                     // does not clash with another one.
                     //
                     // TODO: maybe just drop the group?
-                    std::cerr << "Cannot rename group \"" << qPrintable(curGroupName) << "\""
-                              << " for folder \"" << qPrintable(mCurPathMap[curId]) << "\""
-                              << " which no longer exists" << std::endl;
+                    ErrorReporter::warning(
+                        i18nc("@info:shell", "Cannot rename group \"%1\" for folder \"%2\" which no longer exists", curGroupName, mCurPathMap[curId]));
                 } else {
                     // Build the renamed group name.
                     newGroupName = updateValue(match, curGroupName, newId);
                     ++numRenamed;
-
-                    std::cerr << "Group \"" << qPrintable(curGroupName) << "\""
-                              << " for folder \"" << qPrintable(mOrigPathMap[curId]) << "\""
-                              << " renamed to \"" << qPrintable(newGroupName) << "\"" << std::endl;
+                    ErrorReporter::notice(
+                        i18nc("@info:shell", "Group \"%1\" for folder \"%2\" renamed to \"%3\"", curGroupName, mOrigPathMap[curId], newGroupName));
                 }
 
                 // There can only be one rename, so exit from the loop
@@ -413,7 +410,7 @@ void FoldersCommand::processChanges()
             curGroup.copyTo(&newGroup);
         }
 
-        ErrorReporter::progress(i18nc("@info:shell", "%1 groups were renamed", numRenamed));
+        ErrorReporter::info(i18nc("@info:shell", "%1 groups were renamed", numRenamed));
 
         // Get the group list from the new configuration, each group in which
         // was copied or modified in the first pass above.  This will therefore
@@ -497,19 +494,22 @@ void FoldersCommand::processChanges()
                                     // There is no mapping to a new folder, which means that
                                     // the original group refers to a folder which no longer
                                     // exists.  Leave the value unchanged.
-                                    std::cerr << "Cannot update \"" << qPrintable(newKey) << "\""
-                                              << " in group \"" << qPrintable(newGroupName) << "\""
-                                              << " for folder \"" << qPrintable(mOrigPathMap[newId]) << "\""
-                                              << " which no longer exists" << std::endl;
+                                    ErrorReporter::warning(i18nc("@info:shell",
+                                                                 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists",
+                                                                 newKey,
+                                                                 newGroupName,
+                                                                 mOrigPathMap[newId]));
                                 } else {
                                     // Build the updated value.
                                     updValue = updateValue(match3, newValue, updId);
                                     // qDebug() << "-> updvalue" << updValue;
 
-                                    std::cerr << "Updated \"" << qPrintable(newKey) << "\""
-                                              << " in group \"" << qPrintable(newGroupName) << "\""
-                                              << " for folder \"" << qPrintable(mOrigPathMap[newId]) << "\""
-                                              << " to " << updId << std::endl;
+                                    ErrorReporter::notice(i18nc("@info:shell",
+                                                                "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4",
+                                                                newKey,
+                                                                newGroupName,
+                                                                mOrigPathMap[newId],
+                                                                QString::number(updId)));
                                     ++numChanged;
                                 }
                             } // if folder ID changed
@@ -527,35 +527,29 @@ void FoldersCommand::processChanges()
             } // loop over changes
         } // loop over groups
 
-        ErrorReporter::progress(i18nc("@info:shell", "%1 settings values were changed", numChanged));
+        ErrorReporter::info(i18nc("@info:shell", "%1 settings values were changed", numChanged));
         newConfig.sync();
     } // loop over config files
 
     // Evaluate the check results,
     if (numRenamed == 0 && numChanged == 0) {
-        std::cerr << std::endl << qPrintable(xi18nc("@info:shell", "No configuration changes are required")) << std::endl;
-
+        ErrorReporter::success(xi18nc("@info:shell", "No configuration changes are required"));
         Q_EMIT finished(NoError);
         return;
     }
 
     // A restore is needed, so tell the user what to do next.
-    std::cerr << std::endl
-              << qPrintable(xi18nc("@info:shell",
-                                   "Configuration changes are required (%1 group renames and %2 settings changes).<nl/>"
+    ErrorReporter::notice(xi18nc("@info:shell", "Configuration changes are required (%1 group renames and %2 settings changes)", numRenamed, numChanged));
+    ErrorReporter::instruct(xi18nc("@info:shell",
                                    "Quit all running PIM applications and stop the Akonadi server, then<nl/>"
                                    "execute the command:<nl/>"
                                    "<bcode>"
-                                   "  %3 %4 --restore"
+                                   "  %1 %2 --restore"
                                    "</bcode>"
                                    "<nl/>"
                                    "to implement the changes.",
-                                   numRenamed,
-                                   numChanged,
                                    QCoreApplication::applicationName(),
-                                   name()))
-              << std::endl;
-
+                                   name()));
     Q_EMIT finished(NoError);
 }
 
@@ -568,7 +562,7 @@ void FoldersCommand::saveCurrentPaths(QSaveFile *file)
     }
 
     file->commit();
-    ErrorReporter::progress(i18nc("@info:shell", "Saved %1 collection folder paths", mCurPathMap.count()));
+    ErrorReporter::info(i18nc("@info:shell", "Saved %1 collection folder paths", mCurPathMap.count()));
 }
 
 void FoldersCommand::readSavedPaths(QFileDevice *file, QMap<Collection::Id, QString> *pathMap)
@@ -584,7 +578,7 @@ void FoldersCommand::readSavedPaths(QFileDevice *file, QMap<Collection::Id, QStr
         pathMap->insert(static_cast<Collection::Id>(match.captured(1).toULong()), match.captured(2));
     }
 
-    ErrorReporter::progress(i18nc("@info:shell", "Read %1 saved collection paths", pathMap->count()));
+    ErrorReporter::info(i18nc("@info:shell", "Read %1 saved collection paths", pathMap->count()));
 }
 
 int FoldersCommand::checkForChanges()
@@ -601,9 +595,14 @@ int FoldersCommand::checkForChanges()
         if (origPath != curPath) {
             ++changed;
             const Collection::Id curId = mCurPathMap.key(origPath, 0);
-            std::cerr << "Folder \"" << qPrintable(origPath) << "\" changed ID "
-                      << "from " << origId << " to " << curId << std::endl;
             mChangeMap[origId] = curId;
+
+            if (curId == 0) {
+                ErrorReporter::warning(i18nc("@info:shell", "Folder \"%1\" was ID %2 but is no longer present", origPath, QString::number(origId)));
+            } else {
+                ErrorReporter::notice(
+                    i18nc("@info:shell", "Folder \"%1\" changed ID from %2 to %3", origPath, QString::number(origId), QString::number(curId)));
+            }
         }
     }
 
@@ -666,8 +665,8 @@ void FoldersCommand::populateChangeData()
     d = new ChangeData("Filter #\\d+", "action-args-\\d+");
     mChangeData.insert("akonadi_mailfilter_agentrc", d);
 
-    ErrorReporter::progress(
-        i18nc("@info:shell", "Defined %1 change data patterns for %2 config file names", mChangeData.count(), mChangeData.uniqueKeys().count()));
+    ErrorReporter::info(
+        xi18nc("@info:shell", "Defined %1 change data patterns for %2 config file names", mChangeData.count(), mChangeData.uniqueKeys().count()));
 }
 
 void FoldersCommand::processRestore()
@@ -694,7 +693,6 @@ void FoldersCommand::processRestore()
                                    "Current folder list '%1' is older than saved folder list '%2'",
                                    currFileInfo.absoluteFilePath(),
                                    savedFileInfo.absoluteFilePath()));
-                Q_EMIT error(i18nc("@info:shell", "Run '%1 %2 --check' first", QCoreApplication::applicationName(), name()));
             } else {
                 // Check that the new configuration files generated by
                 // the 'check' operation all exist and are not older than
@@ -717,6 +715,7 @@ void FoldersCommand::processRestore()
     }
 
     if (!ok) {
+        Q_EMIT error(i18nc("@info:shell", "Run '%1 %2 --check' first", QCoreApplication::applicationName(), name()));
         Q_EMIT finished(RuntimeError);
         return;
     }
@@ -728,12 +727,12 @@ void FoldersCommand::processRestore()
 
         while (true) {
             if (ServerManager::state() == ServerManager::NotRunning) {
-                std::cerr << qPrintable(i18nc("@info:shell", "Akonadi server is stopped")) << std::endl;
+                ErrorReporter::info(i18nc("@info:shell", "Akonadi server is stopped"));
                 break;
             }
 
             if (firstTime) {
-                ErrorReporter::progress(i18nc("@info:shell", "Shutting down Akonadi server..."));
+                ErrorReporter::notice(i18nc("@info:shell", "Shutting down Akonadi server"));
                 ServerManager::stop();
                 firstTime = false;
             }
@@ -753,7 +752,7 @@ void FoldersCommand::processRestore()
 
         QFile oldFile(configFile);
         if (oldFile.exists()) {
-            std::cerr << qPrintable(i18nc("@info:shell", "Removing old '%1'", configFile)) << std::endl;
+            ErrorReporter::progress(i18nc("@info:shell", "Removing old '%1'", configFile));
             if (!isDryRun()) {
                 if (!oldFile.remove()) {
                     ErrorReporter::warning(i18nc("@info:shell", "Cannot remove old '%1'", configFile));
@@ -761,7 +760,7 @@ void FoldersCommand::processRestore()
             }
         }
 
-        std::cerr << qPrintable(i18nc("@info:shell", "Copying new '%2' to '%1'", configFile, newConfigFile)) << std::endl;
+        ErrorReporter::progress(i18nc("@info:shell", "Copying new '%2' to '%1'", configFile, newConfigFile));
         if (!isDryRun()) {
             if (!newFile.copy(configFile)) {
                 ErrorReporter::warning(i18nc("@info:shell", "Cannot copy new '%2'to '%1'", configFile, newConfigFile));
@@ -769,7 +768,7 @@ void FoldersCommand::processRestore()
         }
     }
 
-    ErrorReporter::progress(i18nc("@info:shell", "Restore finished"));
+    ErrorReporter::success(i18nc("@info:shell", "Restore finished"));
     Q_EMIT finished(NoError);
 }
 
