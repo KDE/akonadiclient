@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 00:41+0000\n"
+"POT-Creation-Date: 2025-02-07 00:43+0000\n"
 "PO-Revision-Date: 2025-01-31 05:27+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -386,117 +386,337 @@ msgctxt "@info:shell"
 msgid "Status:  "
 msgstr "სტატუსი:    "
 
-#: src/attributescommand.cpp:72
+#: src/attributescommand.cpp:80
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
 msgstr "ატრიბუტების ჩვენება ან განახლება კოლექციისთვის"
 
-#: src/attributescommand.cpp:89
+#: src/attributescommand.cpp:93
 #, kde-format
 msgid "Show the collection attributes (the default operation)"
 msgstr "კოლექციის ატრიბუტების ჩვენება (ნაგულისხმევი ოპერაცია)"
 
-#: src/attributescommand.cpp:92
+#: src/attributescommand.cpp:96
 #, kde-format
 msgid "Add an attribute"
 msgstr "ატრიბუტის დამატება"
 
-#: src/attributescommand.cpp:95
+#: src/attributescommand.cpp:99
 #, kde-format
 msgid "Modify an existing attribute"
 msgstr "არსებული ატრიბუტის შეცვლა"
 
-#: src/attributescommand.cpp:98
+#: src/attributescommand.cpp:102
 #, kde-format
 msgid "Delete an existing attribute"
 msgstr "არსებული ატრიბუტის წაშლა"
 
-#: src/attributescommand.cpp:101
+#: src/attributescommand.cpp:105
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
 msgstr ""
 "ატრიბუტის ჩვენება ან ინტერპრეტაცია, თითქო, ის თექვსმეტობითშია კოდირებული"
 
-#: src/attributescommand.cpp:103
+#: src/attributescommand.cpp:108
+#, fuzzy, kde-format
+#| msgid "Save current folder ID assignments"
+msgid "Save current folder attributes"
+msgstr "მიმდინარე საქაღალდის ID-ის მინიჭებების შენახვა"
+
+#: src/attributescommand.cpp:111
+#, fuzzy, kde-format
+#| msgid "Check current against saved folder ID assignments"
+msgid "Check current against saved folder attributes"
+msgstr "მიმდინარის შედარება შენახული საქაღალდის ID-ების მინიჭებასთან"
+
+#: src/attributescommand.cpp:114
+#, kde-format
+msgid "Restore changed folder attributes"
+msgstr ""
+
+#: src/attributescommand.cpp:125
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
 msgstr "კოლექცია: ID, ბილიკი ან Akonadi-ის ბმული"
 
-#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for the operation"
 msgstr "ოპერაციის არგუმენტები"
 
-#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgid "args..."
 msgstr "არგუმენტები..."
 
-#: src/attributescommand.cpp:120
+#: src/attributescommand.cpp:142
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
 msgstr "მოველოდი თექვსმეტობითში კოდირებულ სტრიქონს. მაგრამ სიგრძე %1 ლუწი არაა"
 
-#: src/attributescommand.cpp:127
+#: src/attributescommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
 msgstr "თექვსმეტობითში კოდირებული მნიშვნელობა არასწორ მნიშვნელობებს შეიცავდა"
 
-#: src/attributescommand.cpp:160
-#, kde-format
+#: src/attributescommand.cpp:206
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
 msgctxt "@info:shell"
-msgid ""
-"Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
+msgid "Only one operation mode option may be specified"
 msgstr ""
-"შეგიძლიათ მიუთითოთ მხოლოდ ერთი სიიდან: 'show' (ჩვენება), 'add' (დამატება), "
-"'modify' (შეცვლა) და 'delete' (წაშლა)"
+"შეგიძლიათ მიუთითოთ მხოლოდ ერთი სიიდან: 'list' (ჩამონათვალი), "
+"'add' (დამატება) და 'delete' (წაშლა)"
 
-#: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
+#: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
 msgstr "კოლექცია მითითებული არაა"
 
-#: src/attributescommand.cpp:172
+#: src/attributescommand.cpp:220
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
 msgstr "დასამატებელი ატრიბუტის სახელი/მნიშვნელობა მითითებული არაა"
 
-#: src/attributescommand.cpp:181
+#: src/attributescommand.cpp:228
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
 msgstr "წასაშლელი ატრიბუტის სახელი მითითებული არაა"
 
-#: src/attributescommand.cpp:188
+#: src/attributescommand.cpp:234
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
 msgstr "შესაცვლელი ატრიბუტის სახელი/მნიშვნელობა მითითებული არაა"
 
-#: src/attributescommand.cpp:198
+#: src/attributescommand.cpp:243
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
 msgstr "მითითებულია მეტისმეტად ბევრი არგუმენტი '%1'-დან"
 
-#: src/attributescommand.cpp:243
+#: src/attributescommand.cpp:269
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot read saved list from '%1'"
+msgctxt "@info:shell"
+msgid "Cannot read saved attributes from '%1'"
+msgstr "შეუძლებელია შენახული სიის წაკითხვა '%1'-დან"
+
+#: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
-msgid "Collection already has an attribute '%1'"
+msgid "Run '%1 %2 --backup' first"
+msgstr "ჯერ გაუშვით ბრძანება '%1 %2 --backup'"
+
+#: src/attributescommand.cpp:304
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Collection already has an attribute '%1'"
+msgctxt "@info:shell"
+msgid "Collection %2 already has an attribute '%1'"
 msgstr "კოლექციას უკვე აქვს ატრიბუტი '%1'"
 
-#: src/attributescommand.cpp:254
+#: src/attributescommand.cpp:310
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Collection has no attribute '%1'"
+msgctxt "@info:shell"
+msgid "Collection %2 has no attribute '%1'"
+msgstr "კოლექციას არ აქვს ატრიბუტი '%1'"
+
+#: src/attributescommand.cpp:379
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid "Collection %1 has no items"
+msgctxt "@info:shell"
+msgid "Collection %1 has no attributes"
+msgstr "კოლექციას %1 ელემენტები არ გააჩნია"
+
+#: src/attributescommand.cpp:387
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell output section header 1=count, 2=collection"
+#| msgid "Collection %2 has %1 item:"
+#| msgid_plural "Collection %2 has %1 items:"
+msgctxt "@info:shell"
+msgid "Collection %2 has %1 attribute:"
+msgid_plural "Collection %2 has %1 attributes:"
+msgstr[0] "კოლექციას %2 %1 ელემენტი გააჩნია:"
+msgstr[1] "კოლექციას %2 %1 ელემენტი გააჩნია:"
+
+#: src/attributescommand.cpp:403 src/folderscommand.cpp:197
 #, kde-format
 msgctxt "@info:shell"
-msgid "Collection has no attribute '%1'"
+msgid "Found %1 current Akonadi collections"
+msgstr "აღმოჩენილია %1 მიმდინარე Akonadi-ის კოლექცია"
+
+#: src/attributescommand.cpp:413 src/folderscommand.cpp:213
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot save backup list to '%1'"
+msgstr "შეუძლებელია მარქაფი სიის შენახვა '%1'-ში"
+
+#: src/attributescommand.cpp:424
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Collection has no attribute '%1'"
+msgctxt "@info:shell"
+msgid "Saving collection attributes to '%1'"
 msgstr "კოლექციას არ აქვს ატრიბუტი '%1'"
+
+#: src/attributescommand.cpp:456
+#, fuzzy, kde-format
+#| msgctxt "info:shell"
+#| msgid "Show or update attributes for a collection"
+msgctxt "@info:shell"
+msgid "Saved attributes for %1 collections"
+msgstr "ატრიბუტების ჩვენება ან განახლება კოლექციისთვის"
+
+#: src/attributescommand.cpp:462
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Reading saved folder paths from '%1'"
+msgctxt "@info:shell"
+msgid "Reading saved attributes from '%1'"
+msgstr "შენახული საქაღალდის ბილიკების წაკითხვა '%1'-დან"
+
+#: src/attributescommand.cpp:483
+#, fuzzy, kde-format
+#| msgctxt "info:shell"
+#| msgid "Show or update attributes for a collection"
+msgctxt "@info:shell"
+msgid "Read attributes for %1 collections"
+msgstr "ატრიბუტების ჩვენება ან განახლება კოლექციისთვის"
+
+#: src/attributescommand.cpp:530
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder '%1' had attributes but is no longer present"
+msgstr ""
+
+#: src/attributescommand.cpp:553
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot fetch parent collection '%1', %2"
+msgctxt "@info:shell"
+msgid "Cannot fetch collection %1 \"%2\""
+msgstr "მშობელი კოლექციის ('%1') გამოთხოვის შეცდომა. %2"
+
+#: src/attributescommand.cpp:561
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell output section header 1=count, 2=collection"
+#| msgid "Collection %2 has %1 item:"
+#| msgid_plural "Collection %2 has %1 items:"
+msgctxt "@info:shell"
+msgid "Collection \"%2\" changed ID from %1 to %3"
+msgstr "კოლექციას %2 %1 ელემენტი გააჩნია:"
+
+#: src/attributescommand.cpp:634
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
+msgstr ""
+
+#: src/attributescommand.cpp:643
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%1\" attribute \"%2\" added %3"
+msgstr ""
+
+#: src/attributescommand.cpp:666
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%2\" needs update of %1 attribute"
+msgid_plural "Folder \"%2\" needs update of %1 attributes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/attributescommand.cpp:672
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%2\" updating %1 attribute"
+msgid_plural "Folder \"%2\" updating %1 attributes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/attributescommand.cpp:697
+#, fuzzy, kde-kuit-format
+#| msgid "Show the collection attributes (the default operation)"
+msgctxt "@info:shell"
+msgid "No collection attributes need to be restored"
+msgstr "კოლექციის ატრიბუტების ჩვენება (ნაგულისხმევი ოპერაცია)"
+
+#: src/attributescommand.cpp:699
+#, fuzzy, kde-kuit-format
+#| msgid "Show the collection attributes (the default operation)"
+msgctxt "@info:shell"
+msgid "No collection attributes needed to be restored"
+msgstr "კოლექციის ატრიბუტების ჩვენება (ნაგულისხმევი ოპერაცია)"
+
+#: src/attributescommand.cpp:704
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid "Recursive list can only be used for collections"
+msgctxt "@info:shell"
+msgid "Attributes need to be restored for %1 collection"
+msgid_plural "Attributes need to be restored for %1 collections"
+msgstr[0] "რეკურსიული სია, მხოლოდ, კოლექციებისთვის შეიძლება იქნეს გამოყენებული"
+msgstr[1] "რეკურსიული სია, მხოლოდ, კოლექციებისთვის შეიძლება იქნეს გამოყენებული"
+
+#: src/attributescommand.cpp:711
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid ""
+#| "Configuration changes are required (%1 group renames and %2 settings "
+#| "changes).<nl/>Quit all running PIM applications and stop the Akonadi "
+#| "server, then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</"
+#| "bcode><nl/>to implement the required changes."
+msgctxt "@info:shell"
+msgid ""
+"Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
+"restore</bcode><nl/>to implement the changes."
+msgstr ""
+"აუცილებელია კონფიგურაციის ცვლილებები (%1 ჯგუფის სახელის გადარქმევა და %2 "
+"კონფიგურაციის ცვლილება).<nl/>გადით ყველა გაშვებული PIM აპლიკაციიდან და "
+"გააჩერეთ Akonadi-ის სერვერი. შემდეგ<nl/>გაუშვით ბრძანება: <nl/><bcode>  %3 "
+"%4 --restore</bcode><nl/>, რომ ეს ცვლილებები ძალაში შევიდეს."
+
+#: src/attributescommand.cpp:722
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid "Files or directories to add to the collection"
+msgctxt "@info:shell"
+msgid "Attributes were restored for %1 collection"
+msgid_plural "Attributes were restored for %1 collections"
+msgstr[0] "კოლექციაში ჩასამატებელი ფაილები და საქაღალდეები"
+msgstr[1] "კოლექციაში ჩასამატებელი ფაილები და საქაღალდეები"
+
+#: src/collectionlistcommand.cpp:49
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot list any collections"
+msgstr "კოლექციების ჩამოთვლა შეუძლებელია"
+
+#: src/collectionlistcommand.cpp:86
+#, kde-format
+msgctxt "@info:shell"
+msgid "Save location '%1' exists but is not a directory"
+msgstr "ადგილი '%1' არსებობს, მაგრამ საქაღალდე არაა"
+
+#: src/collectionlistcommand.cpp:94
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot create save directory '%1'"
+msgstr "ვერ შევქმენი შენახვის საქაღალდე '%1'"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -969,27 +1189,27 @@ msgctxt "@info:shell"
 msgid "No export file specified"
 msgstr "გასატანი ფაილი მითითებული არაა"
 
-#: src/folderscommand.cpp:40
+#: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
 msgstr "შეინახეთ, შეამოწმეთ ან აღადგინეთ Akonadi-ის საქაღალდის ID-ები"
 
-#: src/folderscommand.cpp:52
+#: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
 msgstr "მიმდინარე საქაღალდის ID-ის მინიჭებების შენახვა"
 
-#: src/folderscommand.cpp:55
+#: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
 msgstr "მიმდინარის შედარება შენახული საქაღალდის ID-ების მინიჭებასთან"
 
-#: src/folderscommand.cpp:58
+#: src/folderscommand.cpp:118
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr "კონფიგურაციის ფაილების აღდგენა შეცვლილი საქაღალდის მინიჭებებით"
 
-#: src/folderscommand.cpp:81
+#: src/folderscommand.cpp:141
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
@@ -997,7 +1217,7 @@ msgstr ""
 "შეგიძლიათ მიუთითოთ მხოლოდ ერთი სიიდან: 'backup' (მარქაფი), "
 "'check' (შემოწმება) და 'restore' (აღდგენა)"
 
-#: src/folderscommand.cpp:85
+#: src/folderscommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
@@ -1005,160 +1225,130 @@ msgstr ""
 "შეგიძლიათ მიუთითოთ მხოლოდ ერთი სიიდან: 'backup' (მარქაფი), "
 "'check' (შემოწმება) და 'restore' (აღდგენა)"
 
-#: src/folderscommand.cpp:100
-#, kde-format
-msgctxt "@info:shell"
-msgid "Save location '%1' exists but is not a directory"
-msgstr "ადგილი '%1' არსებობს, მაგრამ საქაღალდე არაა"
-
-#: src/folderscommand.cpp:108
-#, kde-format
-msgctxt "@info:shell"
-msgid "Cannot create save directory '%1'"
-msgstr "ვერ შევქმენი შენახვის საქაღალდე '%1'"
-
-#: src/folderscommand.cpp:148
+#: src/folderscommand.cpp:180
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
 msgstr "შეუძლებელია შენახული სიის წაკითხვა '%1'-დან"
 
-#: src/folderscommand.cpp:149
-#, kde-format
-msgctxt "@info:shell"
-msgid "Run '%1 %2 --backup' first"
-msgstr "ჯერ გაუშვით ბრძანება '%1 %2 --backup'"
-
-#: src/folderscommand.cpp:178
-#, kde-format
-msgctxt "@info:shell"
-msgid "Cannot list any collections"
-msgstr "კოლექციების ჩამოთვლა შეუძლებელია"
-
-#: src/folderscommand.cpp:183
-#, kde-format
-msgctxt "@info:shell"
-msgid "Found %1 current Akonadi collections"
-msgstr "აღმოჩენილია %1 მიმდინარე Akonadi-ის კოლექცია"
-
-#: src/folderscommand.cpp:199
-#, kde-format
-msgctxt "@info:shell"
-msgid "Cannot save backup list to '%1'"
-msgstr "შეუძლებელია მარქაფი სიის შენახვა '%1'-ში"
-
-#: src/folderscommand.cpp:217
+#: src/folderscommand.cpp:231
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
 msgstr "ვერ ჩავწერე მიმდინარე სია '%1'-ში"
 
-#: src/folderscommand.cpp:285
+#: src/folderscommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
 msgstr "საქაღალდეების ID არ შეცვლილა"
 
-#: src/folderscommand.cpp:290
+#: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
 msgstr "შეიცვალა %1 საქაღალდის ID"
 
-#: src/folderscommand.cpp:307
+#: src/folderscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
 msgstr "მუშავდება კონფიგურაციის ფაილი '%1'..."
 
-#: src/folderscommand.cpp:403
+#: src/folderscommand.cpp:416
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
 msgstr "%1 ჯგუფს სახელი გადაერქვა"
 
-#: src/folderscommand.cpp:517
+#: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
 msgstr "შეიცვალა %1 პარამეტრის მნიშვნელობა"
 
-#: src/folderscommand.cpp:523
+#: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
 msgstr "კონფიგურაციის ცვლილებები საჭირო არაა"
 
-#: src/folderscommand.cpp:532
-#, kde-kuit-format
+#: src/folderscommand.cpp:545
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid ""
+#| "Configuration changes are required (%1 group renames and %2 settings "
+#| "changes).<nl/>Quit all running PIM applications and stop the Akonadi "
+#| "server, then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</"
+#| "bcode><nl/>to implement the required changes."
 msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings "
 "changes).<nl/>Quit all running PIM applications and stop the Akonadi server, "
 "then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
-"implement the required changes."
+"implement the changes."
 msgstr ""
 "აუცილებელია კონფიგურაციის ცვლილებები (%1 ჯგუფის სახელის გადარქმევა და %2 "
 "კონფიგურაციის ცვლილება).<nl/>გადით ყველა გაშვებული PIM აპლიკაციიდან და "
 "გააჩერეთ Akonadi-ის სერვერი. შემდეგ<nl/>გაუშვით ბრძანება: <nl/><bcode>  %3 "
 "%4 --restore</bcode><nl/>, რომ ეს ცვლილებები ძალაში შევიდეს."
 
-#: src/folderscommand.cpp:573
+#: src/folderscommand.cpp:564
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
 msgstr "საქაღალდის ბილიკების შენახვა '%1'-ში"
 
-#: src/folderscommand.cpp:580
+#: src/folderscommand.cpp:571
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
 msgstr "შენახული %1 კოლექციის საქაღალდის ბილიკები"
 
-#: src/folderscommand.cpp:585
+#: src/folderscommand.cpp:576
 #, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
 msgstr "შენახული საქაღალდის ბილიკების წაკითხვა '%1'-დან"
 
-#: src/folderscommand.cpp:596
+#: src/folderscommand.cpp:587
 #, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
 msgstr "წავიკითხე %1 შენახული კოლექციის ბილიკი"
 
-#: src/folderscommand.cpp:679
+#: src/folderscommand.cpp:670
 #, kde-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
 "აღწერილია %1 ცვლილების მონაცემის ნიმუში %2 კონფიგურაციის ფაილის სახელისთვის"
 
-#: src/folderscommand.cpp:695
+#: src/folderscommand.cpp:686
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
 msgstr "შენახული საქაღალდეების სია '%1' არ არსებობს"
 
-#: src/folderscommand.cpp:699
+#: src/folderscommand.cpp:690
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
 msgstr "მიმდინარე საქაღალდის სია '%1' არ არსებობს"
 
-#: src/folderscommand.cpp:703
+#: src/folderscommand.cpp:694
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
 msgstr "მიმდინარე საქაღალდეების სია '%1' უფრო ძველია, ვიდრე შენახული სია '%2'"
 
-#: src/folderscommand.cpp:706
+#: src/folderscommand.cpp:697
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
 msgstr "ჯერ გაუშვით '%1 %2 --check'"
 
-#: src/folderscommand.cpp:718
+#: src/folderscommand.cpp:709
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
@@ -1167,73 +1357,73 @@ msgstr ""
 "ახალი კონფიგურაციის ფაილი '%1' არ არსებობს, ან უფრო ძველია, ვიდრე "
 "საქაღალდეების სია '%2'"
 
-#: src/folderscommand.cpp:735
+#: src/folderscommand.cpp:726
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
 msgstr "შემოწმება, გაშვებულია Akonadi-ის სერვერი, თუ არა..."
 
-#: src/folderscommand.cpp:740
+#: src/folderscommand.cpp:731
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
 msgstr "Akonadi-ის სერვერი გაჩერებულია"
 
-#: src/folderscommand.cpp:745
+#: src/folderscommand.cpp:736
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server..."
 msgstr "მიმდინარეობს Akonadi-ის სერვერის გაჩერება..."
 
-#: src/folderscommand.cpp:754
+#: src/folderscommand.cpp:745
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
 msgstr "მიმდინარეობს %1 კონფიგურაციის ფაილის განახლება '%2'-ში"
 
-#: src/folderscommand.cpp:765
+#: src/folderscommand.cpp:756
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
 msgstr "ძველი '%1'-ის წაშლა"
 
-#: src/folderscommand.cpp:768
+#: src/folderscommand.cpp:759
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
 msgstr "ძველი '%1'-ის წაშლა შეუძლებელია"
 
-#: src/folderscommand.cpp:773
+#: src/folderscommand.cpp:764
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
 msgstr "ახალი '%2'-ის კოპირება '%1'-ში"
 
-#: src/folderscommand.cpp:776
+#: src/folderscommand.cpp:767
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
 msgstr "%1-დან %2-მდე კოპირების შეცდომა"
 
-#: src/folderscommand.cpp:781
+#: src/folderscommand.cpp:772
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
 msgstr "აღდგენა დასრულდა"
 
-#: src/folderscommand.cpp:794
+#: src/folderscommand.cpp:785
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
 msgstr "მომხმარებლის კონფიგურაციის საქაღალდე აღმოჩენილი არაა"
 
-#: src/folderscommand.cpp:801
+#: src/folderscommand.cpp:792
 #, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
 msgstr "კონფიგურაციის საქაღალდე '%1' არ არსებობს"
 
-#: src/folderscommand.cpp:822
+#: src/folderscommand.cpp:813
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
@@ -2212,3 +2402,11 @@ msgstr "ფაილი მითითებული არაა"
 msgctxt "@info:shell"
 msgid "Item updated successfully"
 msgstr "ელემენტი წარმატებით განახლდა"
+
+#~ msgctxt "@info:shell"
+#~ msgid ""
+#~ "Only one of the 'show', 'add', 'modify' or 'delete' options may be "
+#~ "specified"
+#~ msgstr ""
+#~ "შეგიძლიათ მიუთითოთ მხოლოდ ერთი სიიდან: 'show' (ჩვენება), "
+#~ "'add' (დამატება), 'modify' (შეცვლა) და 'delete' (წაშლა)"
