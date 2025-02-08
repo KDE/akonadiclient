@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-07 00:43+0000\n"
-"PO-Revision-Date: 2025-01-31 11:11+0100\n"
+"PO-Revision-Date: 2025-02-07 12:01+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -414,21 +414,19 @@ msgid "Show or interpret the attribute value as hex encoded"
 msgstr "De waarde van een attribuut als hex gecodeerd tonen of interpreteren"
 
 #: src/attributescommand.cpp:108
-#, fuzzy, kde-format
-#| msgid "Save current folder ID assignments"
+#, kde-format
 msgid "Save current folder attributes"
-msgstr "Huidige toekenningen van map-ID's opslaan"
+msgstr "Huidige attributen van map opslaan"
 
 #: src/attributescommand.cpp:111
-#, fuzzy, kde-format
-#| msgid "Check current against saved folder ID assignments"
+#, kde-format
 msgid "Check current against saved folder attributes"
-msgstr "Huidige map-ID's vergelijken met die zijn opgeslagen"
+msgstr "Huidige attributen van map vergelijken met die zijn opgeslagen"
 
 #: src/attributescommand.cpp:114
 #, kde-format
 msgid "Restore changed folder attributes"
-msgstr ""
+msgstr "Gewijzigde attributen van map herstellen"
 
 #: src/attributescommand.cpp:125
 #, kde-format
@@ -460,14 +458,10 @@ msgid "Hex encoded value contained invalid characters"
 msgstr "Hex gecodeerde waarde bevat ongeldige tekens"
 
 #: src/attributescommand.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one operation mode option may be specified"
-msgstr ""
-"Slechts één van de opties 'tonen', 'toevoegen', 'verwijderen' mag "
-"gespecificeerd worden"
+msgstr "Slechts één optie voor bewerkingsmodus mag gespecificeerd worden"
 
 #: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -501,12 +495,10 @@ msgid "Too many arguments specified, from '%1'"
 msgstr "Teveel argumenten gespecificeerd, van '%1'"
 
 #: src/attributescommand.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot read saved list from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved attributes from '%1'"
-msgstr "Kan opgeslagen lijst uit '%1' niet openen"
+msgstr "Kan opgeslagen attributen uit '%1' niet lezen"
 
 #: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #, kde-format
@@ -515,39 +507,30 @@ msgid "Run '%1 %2 --backup' first"
 msgstr "Opdracht '%1 %2 --backup' eerst uitvoeren"
 
 #: src/attributescommand.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection already has an attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr "Verzameling heeft al een attribuut '%1'"
+msgstr "Verzameling %2 heeft al een attribuut '%1'"
 
 #: src/attributescommand.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 has no attribute '%1'"
-msgstr "Verzameling heeft geen attribuut '%1'"
+msgstr "Verzameling %2 heeft geen attribuut '%1'"
 
 #: src/attributescommand.cpp:379
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no attributes"
-msgstr "Verzameling %1 heeft geen items"
+msgstr "Verzameling %1 heeft geen attributen"
 
 #: src/attributescommand.cpp:387
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %2 has %1 attribute:"
 msgid_plural "Collection %2 has %1 attributes:"
-msgstr[0] "Verzameling %2 heeft %1 items:"
-msgstr[1] "Verzameling %2 heeft %1 items:"
+msgstr[0] "Verzameling %2 heeft %1 attribuut:"
+msgstr[1] "Verzameling %2 heeft %1 attributen:"
 
 #: src/attributescommand.cpp:403 src/folderscommand.cpp:197
 #, kde-format
@@ -562,139 +545,112 @@ msgid "Cannot save backup list to '%1'"
 msgstr "Kan reservekopielijst niet opslaan naar '%1' "
 
 #: src/attributescommand.cpp:424
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving collection attributes to '%1'"
-msgstr "Verzameling heeft geen attribuut '%1'"
+msgstr "Attributen van verzameling worden opgeslagen naar '%1'"
 
 #: src/attributescommand.cpp:456
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved attributes for %1 collections"
-msgstr "Attributen voor een verzameling tonen of bijwerken"
+msgstr "Opgeslagen attributen voor %1 verzamelingen"
 
 #: src/attributescommand.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Reading saved folder paths from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved attributes from '%1'"
-msgstr "Opgeslagen mappaden worden gelezen uit '%1'"
+msgstr "Opgeslagen attributen uit '%1' worden gelezen"
 
 #: src/attributescommand.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read attributes for %1 collections"
-msgstr "Attributen voor een verzameling tonen of bijwerken"
+msgstr "Lees attributen voor %1 verzamelingen"
 
 #: src/attributescommand.cpp:530
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder '%1' had attributes but is no longer present"
-msgstr ""
+msgstr "Map '%1' had attributen maar is niet langer aanwezig"
 
 #: src/attributescommand.cpp:553
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot fetch parent collection '%1', %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
-msgstr "Kan hoofdverzameling '%1', %2 niet ophalen"
+msgstr "Kan verzameling %1 niet ophalen \"%2\""
 
 #: src/attributescommand.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection \"%2\" changed ID from %1 to %3"
-msgstr "Verzameling %2 heeft %1 items:"
+msgstr "Verzameling \"%2\" wijzigde ID van %1 naar %3"
 
 #: src/attributescommand.cpp:634
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
-msgstr ""
+msgstr "Map \"%1\" attribuut \"%2\" gewijzigd van %3 naar %4"
 
 #: src/attributescommand.cpp:643
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" attribute \"%2\" added %3"
-msgstr ""
+msgstr "Map \"%1\" attribuut \"%2\" toegevoegd %3"
 
 #: src/attributescommand.cpp:666
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" needs update of %1 attribute"
 msgid_plural "Folder \"%2\" needs update of %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Map \"%2\" moet %1 attribuut bijwerken"
+msgstr[1] "Map \"%2\" moet %1 attributen bijwerken"
 
 #: src/attributescommand.cpp:672
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" updating %1 attribute"
 msgid_plural "Folder \"%2\" updating %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Map \"%2\" werkt %1 attribuut bij"
+msgstr[1] "Map \"%2\" werkt %1 attributen bij"
 
 #: src/attributescommand.cpp:697
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes need to be restored"
-msgstr "Attributen van de verzameling tonen (de standaard bewerking)"
+msgstr "Geen attributen van verzamelingen moeten hersteld worden"
 
 #: src/attributescommand.cpp:699
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes needed to be restored"
-msgstr "Attributen van de verzameling tonen (de standaard bewerking)"
+msgstr "Geen attributen van verzamelingen moesten hersteld worden"
 
 #: src/attributescommand.cpp:704
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Recursive list can only be used for collections"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes need to be restored for %1 collection"
 msgid_plural "Attributes need to be restored for %1 collections"
-msgstr[0] "Recursieve lijst kan alleen gebruikt worden voor verzamelingen"
-msgstr[1] "Recursieve lijst kan alleen gebruikt worden voor verzamelingen"
+msgstr[0] "Attributen moeten hersteld worden voor %1 verzameling"
+msgstr[1] "Attributen moeten hersteld worden voor %1 verzamelingen"
 
 #: src/attributescommand.cpp:711
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Configuration changes are required (%1 group renames and %2 settings "
-#| "changes).<nl/>Quit all running PIM applications and stop the Akonadi "
-#| "server, then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</"
-#| "bcode><nl/>to implement the required changes."
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
 "restore</bcode><nl/>to implement the changes."
 msgstr ""
-"Wijzigingen in configuratie zijn vereist (%1 hernoemen van groep en %2 "
-"wijzigingen van instellingen).<nl/>Verlaat alle actieve PIM-toepassingen en "
-"stop de Akonadi-server, daarna<nl/>voer uit de opdracht:<nl/><bcode>  %3 %4 "
-"--restore</bcode><nl/>om de vereiste wijzigingen te implementeren."
+"Wijziging van attributen zijn vereist, voer de opdracht:<nl/><bcode>  %1 %2 "
+"--restore</bcode><nl/>uit om de wijzigingen te implementeren."
 
 #: src/attributescommand.cpp:722
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Files or directories to add to the collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes were restored for %1 collection"
 msgid_plural "Attributes were restored for %1 collections"
-msgstr[0] "Bestanden of mappen om toe te voegen aan de verzameling."
-msgstr[1] "Bestanden of mappen om toe te voegen aan de verzameling."
+msgstr[0] "Attributen zijn hersteld voor %1 verzameling"
+msgstr[1] "Attributen zijn hersteld voor %1 verzamelingen"
 
 #: src/collectionlistcommand.cpp:49
 #, kde-format
@@ -1269,13 +1225,7 @@ msgid "No configuration changes are required"
 msgstr "Geen wijzigingen in configuratie zijn vereist"
 
 #: src/folderscommand.cpp:545
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Configuration changes are required (%1 group renames and %2 settings "
-#| "changes).<nl/>Quit all running PIM applications and stop the Akonadi "
-#| "server, then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</"
-#| "bcode><nl/>to implement the required changes."
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings "
@@ -1286,7 +1236,7 @@ msgstr ""
 "Wijzigingen in configuratie zijn vereist (%1 hernoemen van groep en %2 "
 "wijzigingen van instellingen).<nl/>Verlaat alle actieve PIM-toepassingen en "
 "stop de Akonadi-server, daarna<nl/>voer uit de opdracht:<nl/><bcode>  %3 %4 "
-"--restore</bcode><nl/>om de vereiste wijzigingen te implementeren."
+"--restore</bcode><nl/>om de wijzigingen te implementeren."
 
 #: src/folderscommand.cpp:564
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-07 00:43+0000\n"
-"PO-Revision-Date: 2025-01-31 12:21+0100\n"
+"PO-Revision-Date: 2025-02-07 12:38+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -416,11 +416,9 @@ msgid "Show or interpret the attribute value as hex encoded"
 msgstr ""
 
 #: src/attributescommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Saved %1 collection folder paths"
+#, kde-format
 msgid "Save current folder attributes"
-msgstr "Salveguardate %1 percursos de dossier de collection"
+msgstr "Salveguardate  attributos de dossier currente"
 
 #: src/attributescommand.cpp:111
 #, kde-format
@@ -462,12 +460,10 @@ msgid "Hex encoded value contained invalid characters"
 msgstr ""
 
 #: src/attributescommand.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "New collection name not specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one operation mode option may be specified"
-msgstr "Nove nomine de collection non specificate"
+msgstr "Solmente un option de modo de operation pote esser specificate"
 
 #: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -501,12 +497,10 @@ msgid "Too many arguments specified, from '%1'"
 msgstr ""
 
 #: src/attributescommand.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot read saved list from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved attributes from '%1'"
-msgstr "Il non pote leger lista salveguardate ab '%1'"
+msgstr "Il non pote leger attributos salveguardate ab '%1'"
 
 #: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #, kde-format
@@ -515,39 +509,30 @@ msgid "Run '%1 %2 --backup' first"
 msgstr ""
 
 #: src/attributescommand.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection already has an attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr "Collection ja ha un attributo '%1'"
+msgstr "Collection %2 ja ha un attributo '%1'"
 
 #: src/attributescommand.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 has no attribute '%1'"
-msgstr "Collection non ha ulle attributo '%1'"
+msgstr "Collection %2 non ha ulle attributo '%1'"
 
 #: src/attributescommand.cpp:379
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no attributes"
-msgstr "Collection non ha ulle attributo '%1'"
+msgstr "Collection %1 non ha ulle attributos"
 
 #: src/attributescommand.cpp:387
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %2 has %1 attribute:"
 msgid_plural "Collection %2 has %1 attributes:"
-msgstr[0] "Collection %2 ha %1 elemento:"
-msgstr[1] "Collection %2 ha %1 elementos:"
+msgstr[0] "Collection %2 ha %1 attributo:"
+msgstr[1] "Collection %2 ha %1 attributos:"
 
 #: src/attributescommand.cpp:403 src/folderscommand.cpp:197
 #, kde-format
@@ -562,36 +547,28 @@ msgid "Cannot save backup list to '%1'"
 msgstr "Il non pote salveguardar lista de backup (copia de securitate) a '%1'"
 
 #: src/attributescommand.cpp:424
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving collection attributes to '%1'"
-msgstr "Collection non ha ulle attributo '%1'"
+msgstr "Salveguardante attributos de collection a '%1'"
 
 #: src/attributescommand.cpp:456
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved attributes for %1 collections"
-msgstr "Monstra o actualisa attributos per un collection"
+msgstr "Salveguardate attributos per %1 collectiones"
 
 #: src/attributescommand.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Reading saved folder paths from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved attributes from '%1'"
-msgstr "Legente percursos de dossier salveguardate ab '%1'"
+msgstr "Attributos de lectura salveguardate ab '%1'"
 
 #: src/attributescommand.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read attributes for %1 collections"
-msgstr "Monstra o actualisa attributos per un collection"
+msgstr "Lege attributos per %1 collectiones"
 
 #: src/attributescommand.cpp:530
 #, kde-kuit-format
@@ -600,21 +577,16 @@ msgid "Folder '%1' had attributes but is no longer present"
 msgstr ""
 
 #: src/attributescommand.cpp:553
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot fetch parent collection '%1', %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
-msgstr "Non pote trovar collection genitor '%1',%2"
+msgstr "Il non pote trovar collection %1 \"%2\""
 
 #: src/attributescommand.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection \"%2\" changed ID from %1 to %3"
-msgstr "Collection %2 ha %1 elemento:"
+msgstr "Collection %2 ha cambiate ID ab %1 a %3"
 
 #: src/attributescommand.cpp:634
 #, kde-kuit-format
@@ -645,18 +617,16 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: src/attributescommand.cpp:697
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes need to be restored"
-msgstr "Monstra le attributos de collection (le operation predefinite)"
+msgstr "Necun attributos de collection necessita esser restabilite"
 
 #: src/attributescommand.cpp:699
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes needed to be restored"
-msgstr "Monstra le attributos de collection (le operation predefinite)"
+msgstr "Necun attributos de collection necessita esser restabilite"
 
 #: src/attributescommand.cpp:704
 #, kde-kuit-format
@@ -675,14 +645,12 @@ msgid ""
 msgstr ""
 
 #: src/attributescommand.cpp:722
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Files or directories to add to the collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes were restored for %1 collection"
 msgid_plural "Attributes were restored for %1 collections"
-msgstr[0] "Files o directorios de adder a collection"
-msgstr[1] "Files o directorios de adder a collection"
+msgstr[0] "Attributos esseva restabilite per %1 collection"
+msgstr[1] "Attributos esseva restabilite per %1 collectiones"
 
 #: src/collectionlistcommand.cpp:49
 #, kde-format
