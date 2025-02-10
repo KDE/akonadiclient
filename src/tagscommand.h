@@ -52,6 +52,7 @@ private:
     bool mUrlsOutput;
     TagsCommand::Mode mOperationMode;
     int mAddForceId;
+    bool mAddForceRetain;
     Akonadi::Tag::List mFetchedTags;
 
 private:

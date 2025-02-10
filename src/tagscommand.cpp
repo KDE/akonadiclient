@@ -25,6 +25,7 @@
 #include <Akonadi/TagCreateJob>
 #include <Akonadi/TagDeleteJob>
 #include <Akonadi/TagFetchJob>
+#include <Akonadi/TagModifyJob>
 
 #include "commandfactory.h"
 #include "errorreporter.h"
@@ -39,6 +40,7 @@ TagsCommand::TagsCommand(QObject *parent)
     , mUrlsOutput(false)
     , mOperationMode(ModeList)
     , mAddForceId(0)
+    , mAddForceRetain(false)
 {
 }
 
@@ -61,8 +63,8 @@ void TagsCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addOption(QCommandLineOption((QStringList() << "d"
                                                         << "delete"),
                                          i18n("Delete tags")));
-    parser->addOption(QCommandLineOption((QStringList() << "i" << "id"), i18n("ID for a tag to be added (default automatic)"), i18n("id")));
-
+    parser->addOption(QCommandLineOption((QStringList() << "I" << "id"), i18n("ID for a tag to be added (default automatic)"), i18n("id")));
+    parser->addOption(QCommandLineOption((QStringList() << "R" << "retain"), i18n("Retain intermediate tags added when the 'id' option is used")));
     parser->addPositionalArgument(i18n("TAG"), i18n("The name of a tag to add, or the name, ID or URL of a tag to delete"), i18n("[TAG...]"));
 }
 
@@ -74,7 +76,7 @@ AbstractCommand::Error TagsCommand::initCommand(QCommandLineParser *parser)
     if (parser->isSet("id")) {
         bool ok;
         mAddForceId = parser->value("id").toUInt(&ok);
-        if (!ok || mAddForceId == 0) {
+        if (!ok || (mAddForceId == 0)) {
             emitErrorSeeHelp(i18nc("@info:shell", "Invalid value for the 'id' option"));
             return (InvalidUsage);
         }
@@ -126,6 +128,14 @@ AbstractCommand::Error TagsCommand::initCommand(QCommandLineParser *parser)
 
         if (tagArgs.isEmpty()) {
             emitErrorSeeHelp(i18nc("@info:shell", "No tags specified to delete"));
+            return (InvalidUsage);
+        }
+    }
+
+    mAddForceRetain = parser->isSet("retain");
+    if ((mAddForceId != 0) || mAddForceRetain) {
+        if (mOperationMode != ModeAdd) {
+            emitErrorSeeHelp(i18nc("@info:shell", "The 'id' or 'retain' options can only be used with 'add'"));
             return (InvalidUsage);
         }
     }
@@ -186,7 +196,7 @@ void TagsCommand::onTagAdded(KJob *job)
     TagCreateJob *createJob = qobject_cast<TagCreateJob *>(job);
     Q_ASSERT(createJob != nullptr);
 
-    const Tag addedTag = createJob->tag();
+    Tag addedTag = createJob->tag();
     const Tag::Id forcedId = createJob->property("requested").value<Tag::Id>();
     const Tag::Id addedId = addedTag.id();
 
@@ -219,27 +229,46 @@ void TagsCommand::onTagAdded(KJob *job)
             // checked that there is only one tag argument.
             ErrorReporter::error(
                 xi18nc("@info:shell", "Cannot create a tag with ID %1, sequence already at ID %2", QString::number(forcedId), QString::number(addedId)));
-            // TODO:  if (!retain)
-            TagDeleteJob *deleteJob = new TagDeleteJob(addedTag, this);
-            qDebug() << "delete unwanted tag" << addedTag.id();
-            deleteJob->setProperty("toohigh", true);
-            deleteJob->setProperty("requested", createJob->property("requested"));
-            connect(deleteJob, &KJob::result, this, &TagsCommand::onTagDeleted);
-            deleteJob->start();
+            if (!mAddForceRetain) {
+                qDebug() << "delete unwanted tag" << addedTag.id();
+                TagDeleteJob *deleteJob = new TagDeleteJob(addedTag, this);
+                deleteJob->setProperty("toohigh", true);
+                deleteJob->setProperty("requested", createJob->property("requested"));
+                connect(deleteJob, &KJob::result, this, &TagsCommand::onTagDeleted);
+                deleteJob->start();
+            } else {
+                const QString newName = QCoreApplication::applicationName() + "-added-" + QString::number(addedTag.id());
+                qDebug() << "rename unwanted tag" << addedTag.id() << "->" << newName;
+                addedTag.setName(newName);
+                TagModifyJob *modifyJob = new TagModifyJob(addedTag, this);
+                modifyJob->setProperty("toohigh", true);
+                modifyJob->setProperty("requested", createJob->property("requested"));
+                connect(modifyJob, &KJob::result, this, &TagsCommand::onTagDeleted);
+                modifyJob->start();
+            }
         } else { // not high enough
 
             // The tag ID allocated was numerically less than the requested
             // one.  Delete the tag that was just added and repeat the operation -
             // as many times as is necessary, until the allocated tag ID
             // reaches the requested one.
-
-            // TODO:  if (!retain)
-            TagDeleteJob *deleteJob = new TagDeleteJob(addedTag, this);
-            qDebug() << "delete temp tag" << addedTag.id();
-            deleteJob->setProperty("toohigh", false);
-            deleteJob->setProperty("requested", createJob->property("requested"));
-            connect(deleteJob, &KJob::result, this, &TagsCommand::onTagDeleted);
-            deleteJob->start();
+            if (!mAddForceRetain) {
+                qDebug() << "delete temp tag" << addedTag.id();
+                TagDeleteJob *deleteJob = new TagDeleteJob(addedTag, this);
+                deleteJob->setProperty("toohigh", false);
+                deleteJob->setProperty("requested", createJob->property("requested"));
+                connect(deleteJob, &KJob::result, this, &TagsCommand::onTagDeleted);
+                deleteJob->start();
+            } else {
+                const QString newName = QCoreApplication::applicationName() + "-added-" + QString::number(addedTag.id());
+                qDebug() << "rename temp tag" << addedTag.id() << "->" << newName;
+                addedTag.setName(newName);
+                TagModifyJob *modifyJob = new TagModifyJob(addedTag, this);
+                modifyJob->setProperty("toohigh", false);
+                modifyJob->setProperty("requested", createJob->property("requested"));
+                connect(modifyJob, &KJob::result, this, &TagsCommand::onTagDeleted);
+                modifyJob->start();
+            }
         }
 
         return;
@@ -333,15 +362,17 @@ void TagsCommand::onTagDeleted(KJob *job)
 {
     if (!checkJobResult(job))
         return;
-    TagDeleteJob *deleteJob = qobject_cast<TagDeleteJob *>(job);
-    Q_ASSERT(deleteJob != nullptr);
 
-    const Tag deletedTag = deleteJob->tags().first(); // must be one and only one
-    const Tag::Id forcedId = deleteJob->property("requested").value<Tag::Id>();
-
+    // This may be called on completion of either a TagDeleteJob or a
+    // TagModifyJob.  So do not try to cast or check the type of the 'job'
+    // parameter until which of those has been resolved.  A TagModifyJob
+    // will only have been created by onTagAdded() and will always have
+    // the "requested" property set.
+    const Tag::Id forcedId = job->property("requested").value<Tag::Id>();
     if (forcedId != 0) {
-        // This deletion was done as a result of trying to force an tag to be
-        // created with a specific ID, and that was not possible in some way.
+        // This deletion or renaming was done as a result of trying to force a
+        // tag to be created with a specific ID, and that was not possible in
+        // some way.
         if (job->property("toohigh").toBool()) {
             // The tag could not be created because the creation sequence is
             // already past that point.  There is no point in trying again.
@@ -355,6 +386,10 @@ void TagsCommand::onTagDeleted(KJob *job)
         addTag();
         return;
     }
+
+    TagDeleteJob *deleteJob = qobject_cast<TagDeleteJob *>(job);
+    Q_ASSERT(deleteJob != nullptr);
+    const Tag deletedTag = deleteJob->tags().first(); // must be one and only one
 
     // The tag has been deleted as requested by a user action, so acknowledge it.
     if (mBriefOutput)
