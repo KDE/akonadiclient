@@ -56,6 +56,7 @@ private:
 
 private:
     void listTags();
+    void addTag();
 
 private Q_SLOTS:
     void onTagsFetched(KJob *job);

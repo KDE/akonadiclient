@@ -18,6 +18,8 @@
 
 #include "tagscommand.h"
 
+#include <qvariant.h>
+
 #include <iostream>
 
 #include <Akonadi/TagCreateJob>
@@ -25,6 +27,7 @@
 #include <Akonadi/TagFetchJob>
 
 #include "commandfactory.h"
+#include "errorreporter.h"
 
 using namespace Akonadi;
 using namespace Qt::Literals::StringLiterals;
@@ -58,9 +61,7 @@ void TagsCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addOption(QCommandLineOption((QStringList() << "d"
                                                         << "delete"),
                                          i18n("Delete tags")));
-    // This option would be nice to have but will not work, an ID is
-    // automatically assigned by the Akonadi server when a tag is created.
-    // parser->addOption(QCommandLineOption((QStringList() << "i" << "id"), i18n("ID for a tag to be added (default automatic)"), i18n("id")));
+    parser->addOption(QCommandLineOption((QStringList() << "i" << "id"), i18n("ID for a tag to be added (default automatic)"), i18n("id")));
 
     parser->addPositionalArgument(i18n("TAG"), i18n("The name of a tag to add, or the name, ID or URL of a tag to delete"), i18n("[TAG...]"));
 }
@@ -70,16 +71,14 @@ AbstractCommand::Error TagsCommand::initCommand(QCommandLineParser *parser)
     mBriefOutput = parser->isSet("brief"_L1);
     mUrlsOutput = parser->isSet("urls"_L1);
 
-    // if (parser->isSet("id"))
-    //{
-    //     bool ok;
-    //     mAddForceId = parser->value("id").toUInt(&ok);
-    //     if (!ok || mAddForceId==0)
-    //     {
-    //         emitErrorSeeHelp(i18nc("@info:shell", "Invalid value for the 'id' option"));
-    //         return (InvalidUsage);
-    //     }
-    // }
+    if (parser->isSet("id")) {
+        bool ok;
+        mAddForceId = parser->value("id").toUInt(&ok);
+        if (!ok || mAddForceId == 0) {
+            emitErrorSeeHelp(i18nc("@info:shell", "Invalid value for the 'id' option"));
+            return (InvalidUsage);
+        }
+    }
 
     if (mBriefOutput && mUrlsOutput) {
         emitErrorSeeHelp(i18nc("@info:shell", "The 'brief' and 'urls' options cannot both be specified"));
@@ -137,7 +136,13 @@ AbstractCommand::Error TagsCommand::initCommand(QCommandLineParser *parser)
 
 void TagsCommand::start()
 {
-    if (mOperationMode == ModeDelete) {
+    // Deleting a tag is obviously a dangerous operation.  Adding a tag with
+    // a forced ID is also considered to be so, because it permanently assigns
+    // not only the requested tag ID but also any intermediate numbered ones.
+    // The same happens, of course, with adding a tag as normal without a
+    // forced ID, but in this case it can be assumed that the user is not
+    // actually interested in the assigned ID.
+    if ((mOperationMode == ModeDelete) || ((mOperationMode == ModeAdd) && (mAddForceId != 0))) {
         if (!isDryRun()) { // allow if not doing anything
             if (!allowDangerousOperation()) {
                 Q_EMIT finished(RuntimeError);
@@ -161,11 +166,17 @@ void TagsCommand::addNextTag()
         }
     }
 
+    addTag();
+}
+
+void TagsCommand::addTag()
+{
     Tag newTag(currentArg());
-    if (mAddForceId != 0)
-        newTag.setId(mAddForceId);
     TagCreateJob *createJob = new TagCreateJob(newTag, this);
+    if (mAddForceId != 0)
+        createJob->setProperty("requested", mAddForceId);
     connect(createJob, &KJob::result, this, &TagsCommand::onTagAdded);
+    createJob->start();
 }
 
 void TagsCommand::onTagAdded(KJob *job)
@@ -175,21 +186,74 @@ void TagsCommand::onTagAdded(KJob *job)
     TagCreateJob *createJob = qobject_cast<TagCreateJob *>(job);
     Q_ASSERT(createJob != nullptr);
 
-    Tag addedTag = createJob->tag();
+    const Tag addedTag = createJob->tag();
+    const Tag::Id forcedId = createJob->property("requested").value<Tag::Id>();
+    const Tag::Id addedId = addedTag.id();
+
     if (!addedTag.isValid()) {
-        if (mAddForceId != 0) {
-            Q_EMIT error(i18nc("@info:shell", "Cannot add tag '%1' ID %2", currentArg(), QString::number(mAddForceId)));
+        // It was not possible to add the tag.  Since the presence of an
+        // already existing name or ID was checked above, this is unlikely
+        // to happen unless there is a serious problem with the Akonadi
+        // server or database.
+        if (forcedId != 0) {
+            Q_EMIT error(i18nc("@info:shell", "Failed to add tag '%1' ID %2", currentArg(), QString::number(forcedId)));
         } else {
-            Q_EMIT error(i18nc("@info:shell", "Cannot add tag '%1'", currentArg()));
+            Q_EMIT error(i18nc("@info:shell", "Failed to add tag '%1'", currentArg()));
         }
-    } else {
-        if (mBriefOutput)
-            std::cout << addedTag.id() << std::endl;
-        else if (mUrlsOutput)
-            std::cout << qPrintable(addedTag.url().toDisplayString()) << std::endl;
-        else
-            std::cout << "Added tag '" << qPrintable(addedTag.name()) << "' ID " << addedTag.id() << std::endl;
+
+        processNext(); // try again with next
+        return;
     }
+
+    // The tag was successfully added.  If a forced ID was requested,
+    // then check the three possible cases for the ID of the tag that
+    // was actually added.
+    if ((forcedId != 0) && (addedId != forcedId)) { // didn't create the one requested
+
+        if (addedId > forcedId) { // too high
+
+            // A tag with the requested ID could not and will never be able
+            // to be created, because the ID sequence is already past that.
+            // Delete the tag that was just added, and give up.  There is
+            // no need to call processNext() because initCommand() above
+            // checked that there is only one tag argument.
+            ErrorReporter::error(
+                xi18nc("@info:shell", "Cannot create a tag with ID %1, sequence already at ID %2", QString::number(forcedId), QString::number(addedId)));
+            // TODO:  if (!retain)
+            TagDeleteJob *deleteJob = new TagDeleteJob(addedTag, this);
+            qDebug() << "delete unwanted tag" << addedTag.id();
+            deleteJob->setProperty("toohigh", true);
+            deleteJob->setProperty("requested", createJob->property("requested"));
+            connect(deleteJob, &KJob::result, this, &TagsCommand::onTagDeleted);
+            deleteJob->start();
+        } else { // not high enough
+
+            // The tag ID allocated was numerically less than the requested
+            // one.  Delete the tag that was just added and repeat the operation -
+            // as many times as is necessary, until the allocated tag ID
+            // reaches the requested one.
+
+            // TODO:  if (!retain)
+            TagDeleteJob *deleteJob = new TagDeleteJob(addedTag, this);
+            qDebug() << "delete temp tag" << addedTag.id();
+            deleteJob->setProperty("toohigh", false);
+            deleteJob->setProperty("requested", createJob->property("requested"));
+            connect(deleteJob, &KJob::result, this, &TagsCommand::onTagDeleted);
+            deleteJob->start();
+        }
+
+        return;
+    }
+
+    // If we get here the tag was successfully added and, if an ID was forced,
+    // that ID was allocated as intended.  Report the result and go on to the
+    // next argument if there is one.
+    if (mBriefOutput)
+        std::cout << addedTag.id() << std::endl;
+    else if (mUrlsOutput)
+        std::cout << qPrintable(addedTag.url().toDisplayString()) << std::endl;
+    else
+        ErrorReporter::success(xi18nc("@info:shell", "Added tag '%1' ID %2", addedTag.name(), QString::number(addedId)));
 
     processNext(); // continue to do next
 }
@@ -256,6 +320,7 @@ void TagsCommand::deleteNextTag()
             // be reported later.
             TagDeleteJob *deleteJob = new TagDeleteJob(tag, this);
             connect(deleteJob, &KJob::result, this, &TagsCommand::onTagDeleted);
+            deleteJob->start();
             return;
         }
     }
@@ -271,13 +336,34 @@ void TagsCommand::onTagDeleted(KJob *job)
     TagDeleteJob *deleteJob = qobject_cast<TagDeleteJob *>(job);
     Q_ASSERT(deleteJob != nullptr);
 
-    Tag deletedTag = deleteJob->tags().first(); // must be one and only one
+    const Tag deletedTag = deleteJob->tags().first(); // must be one and only one
+    const Tag::Id forcedId = deleteJob->property("requested").value<Tag::Id>();
+
+    if (forcedId != 0) {
+        // This deletion was done as a result of trying to force an tag to be
+        // created with a specific ID, and that was not possible in some way.
+        if (job->property("toohigh").toBool()) {
+            // The tag could not be created because the creation sequence is
+            // already past that point.  There is no point in trying again.
+            ErrorReporter::warning(xi18nc("@info:shell", "Tag could not be created with the requested ID"));
+            Q_EMIT finished(RuntimeError);
+            return;
+        }
+
+        // Try again to add the tag, which this time will get the next ID
+        // in sequence.
+        addTag();
+        return;
+    }
+
+    // The tag has been deleted as requested by a user action, so acknowledge it.
     if (mBriefOutput)
         std::cout << deletedTag.id() << std::endl;
     else if (mUrlsOutput)
         std::cout << qPrintable(deletedTag.url().toDisplayString()) << std::endl;
     else
-        std::cout << "Deleted tag '" << qPrintable(deletedTag.name()) << "' ID " << deletedTag.id() << std::endl;
+        ErrorReporter::success(i18nc("@info:shell", "Deleted tag '%1' ID %2", deletedTag.name(), QString::number(deletedTag.id())));
+
     processNext(); // continue to do next
 }
 
