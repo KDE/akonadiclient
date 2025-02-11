@@ -18,6 +18,7 @@
 
 #include "tagscommand.h"
 
+#include <qsavefile.h>
 #include <qvariant.h>
 
 #include <iostream>
@@ -63,6 +64,9 @@ void TagsCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addOption(QCommandLineOption((QStringList() << "d"
                                                         << "delete"),
                                          i18n("Delete tags")));
+    parser->addOption(QCommandLineOption((QStringList() << "s"
+                                                        << "backup"),
+                                         i18n("Save the current tags")));
     parser->addOption(QCommandLineOption((QStringList() << "I" << "id"), i18n("ID for a tag to be added (default automatic)"), i18n("id")));
     parser->addOption(QCommandLineOption((QStringList() << "R" << "retain"), i18n("Retain intermediate tags added when the 'id' option is used")));
     parser->addPositionalArgument(i18n("TAG"), i18n("The name of a tag to add, or the name, ID or URL of a tag to delete"), i18n("[TAG...]"));
@@ -97,8 +101,11 @@ AbstractCommand::Error TagsCommand::initCommand(QCommandLineParser *parser)
     if (parser->isSet("delete"_L1)) {
         ++modeCount;
     }
+    if (parser->isSet("backup"_L1)) {
+        ++modeCount;
+    }
     if (modeCount > 1) {
-        emitErrorSeeHelp(i18nc("@info:shell", "Only one of the 'list', 'add' or 'delete' options may be specified"));
+        emitErrorSeeHelp(i18nc("@info:shell", "Only one of the 'list', 'add', 'delete' or 'backup' options may be specified"));
         return (InvalidUsage);
     }
 
@@ -130,6 +137,9 @@ AbstractCommand::Error TagsCommand::initCommand(QCommandLineParser *parser)
             emitErrorSeeHelp(i18nc("@info:shell", "No tags specified to delete"));
             return (InvalidUsage);
         }
+    } else if (parser->isSet("backup"_L1)) // see if "Backup" mode
+    {
+        mOperationMode = ModeBackup;
     }
 
     mAddForceRetain = parser->isSet("retain");
@@ -152,7 +162,7 @@ void TagsCommand::start()
     // The same happens, of course, with adding a tag as normal without a
     // forced ID, but in this case it can be assumed that the user is not
     // actually interested in the assigned ID.
-    if ((mOperationMode == ModeDelete) || ((mOperationMode == ModeAdd) && (mAddForceId != 0))) {
+    if ((mOperationMode == ModeDelete) || (mOperationMode == ModeRestore) || ((mOperationMode == ModeAdd) && (mAddForceId != 0))) {
         if (!isDryRun()) { // allow if not doing anything
             if (!allowDangerousOperation()) {
                 Q_EMIT finished(RuntimeError);
@@ -432,6 +442,8 @@ void TagsCommand::onTagsFetched(KJob *job)
         startProcessLoop("addNextTag");
     else if (mOperationMode == ModeDelete)
         startProcessLoop("deleteNextTag");
+    else if (mOperationMode == ModeBackup)
+        backupTags();
 }
 
 void TagsCommand::listTags()
@@ -457,4 +469,31 @@ void TagsCommand::listTags()
     }
 
     Q_EMIT finished();
+}
+
+void TagsCommand::backupTags()
+{
+    ErrorReporter::info(i18nc("@info:shell", "Found %1 current Akonadi tags", mFetchedTags.count()));
+
+    // Save the current list of tags to the "saved"
+    // data file.  After that there is no more to do.
+    const QString saveFileName = findSaveFile("savedtags.dat", true);
+    qDebug() << "backup to" << saveFileName;
+    QSaveFile saveFile(saveFileName);
+    if (!saveFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+        Q_EMIT error(i18nc("@info:shell", "Cannot save backup list to '%1'", saveFile.fileName()));
+        Q_EMIT finished(RuntimeError);
+        return;
+    }
+
+    QTextStream ts(&saveFile);
+    for (const Tag &tag : std::as_const(mFetchedTags)) {
+        ts << Qt::left << qSetFieldWidth(8) << QString::number(tag.id()) << qSetFieldWidth(0) << "  " << qSetFieldWidth(20) << tag.url().toDisplayString()
+           << qSetFieldWidth(0) << "  " << qSetFieldWidth(0) << tag.name() << Qt::endl;
+    }
+
+    ts.flush();
+    saveFile.commit(); // finished with save file
+
+    ErrorReporter::success(i18nc("@info:shell", "Saved tags to '%1'", saveFile.fileName()));
 }

@@ -45,7 +45,9 @@ private:
     enum Mode {
         ModeList,
         ModeAdd,
-        ModeDelete
+        ModeDelete,
+        ModeBackup,
+        ModeRestore,
     };
 
     bool mBriefOutput;
@@ -58,6 +60,7 @@ private:
 private:
     void listTags();
     void addTag();
+    void backupTags();
 
 private Q_SLOTS:
     void onTagsFetched(KJob *job);
