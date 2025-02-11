@@ -414,11 +414,9 @@ msgid "Show or interpret the attribute value as hex encoded"
 msgstr ""
 
 #: src/attributescommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Delete a collection or an item"
+#, kde-format
 msgid "Save current folder attributes"
-msgstr "Smazat sbírku nebo položku"
+msgstr ""
 
 #: src/attributescommand.cpp:111
 #, kde-format
@@ -497,12 +495,10 @@ msgid "Too many arguments specified, from '%1'"
 msgstr ""
 
 #: src/attributescommand.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved attributes from '%1'"
-msgstr "Nelze uložit soubor '%1'"
+msgstr ""
 
 #: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #, kde-format
@@ -544,12 +540,10 @@ msgid "Found %1 current Akonadi collections"
 msgstr ""
 
 #: src/attributescommand.cpp:413 src/folderscommand.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "Nelze uložit soubor '%1'"
+msgstr ""
 
 #: src/attributescommand.cpp:424
 #, kde-format
@@ -558,28 +552,22 @@ msgid "Saving collection attributes to '%1'"
 msgstr ""
 
 #: src/attributescommand.cpp:456
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Add items to a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved attributes for %1 collections"
-msgstr "Přidat položky do sbírky"
+msgstr ""
 
 #: src/attributescommand.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved attributes from '%1'"
-msgstr "Nelze uložit soubor '%1'"
+msgstr ""
 
 #: src/attributescommand.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Add items to a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read attributes for %1 collections"
-msgstr "Přidat položky do sbírky"
+msgstr ""
 
 #: src/attributescommand.cpp:530
 #, kde-kuit-format
@@ -588,12 +576,10 @@ msgid "Folder '%1' had attributes but is no longer present"
 msgstr ""
 
 #: src/attributescommand.cpp:553
-#, fuzzy, kde-kuit-format
-#| msgctxt "info:shell"
-#| msgid "Create a new collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
-msgstr "Vytvořit novou sbírku"
+msgstr ""
 
 #: src/attributescommand.cpp:561
 #, kde-kuit-format
@@ -632,20 +618,16 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: src/attributescommand.cpp:697
-#, fuzzy, kde-kuit-format
-#| msgctxt "info:shell"
-#| msgid "Copy collections or items into a new collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes need to be restored"
-msgstr "Zkopírovat sbírky nebo položky do nové sbírky"
+msgstr ""
 
 #: src/attributescommand.cpp:699
-#, fuzzy, kde-kuit-format
-#| msgctxt "info:shell"
-#| msgid "Copy collections or items into a new collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes needed to be restored"
-msgstr "Zkopírovat sbírky nebo položky do nové sbírky"
+msgstr ""
 
 #: src/attributescommand.cpp:704
 #, kde-kuit-format
@@ -674,12 +656,10 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: src/collectionlistcommand.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Create a new collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "Vytvořit novou sbírku"
+msgstr ""
 
 #: src/collectionlistcommand.cpp:86
 #, kde-format
@@ -688,12 +668,10 @@ msgid "Save location '%1' exists but is not a directory"
 msgstr ""
 
 #: src/collectionlistcommand.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Nelze vytvořit adresář '%1/%2'"
+msgstr ""
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -1200,20 +1178,16 @@ msgid "One of the 'backup', 'check' or 'restore' options must be specified"
 msgstr ""
 
 #: src/folderscommand.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "Nelze uložit soubor '%1'"
+msgstr ""
 
 #: src/folderscommand.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "Nelze vytvořit adresář '%1/%2'"
+msgstr ""
 
 #: src/folderscommand.cpp:299
 #, kde-format
@@ -1268,12 +1242,10 @@ msgid "Saving folder paths to '%1'"
 msgstr ""
 
 #: src/folderscommand.cpp:571
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Delete a collection or an item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "Smazat sbírku nebo položku"
+msgstr ""
 
 #: src/folderscommand.cpp:576
 #, kde-format
@@ -1282,12 +1254,10 @@ msgid "Reading saved folder paths from '%1'"
 msgstr ""
 
 #: src/folderscommand.cpp:587
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Přejmenovat sbírku"
+msgstr ""
 
 #: src/folderscommand.cpp:670
 #, kde-format
@@ -1296,18 +1266,16 @@ msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
 
 #: src/folderscommand.cpp:686
-#, fuzzy, kde-kuit-format
-#| msgid "File '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "Soubor '%1' neexistuje"
+msgstr ""
 
 #: src/folderscommand.cpp:690
-#, fuzzy, kde-kuit-format
-#| msgid "File '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "Soubor '%1' neexistuje"
+msgstr ""
 
 #: src/folderscommand.cpp:694
 #, kde-format
@@ -1359,12 +1327,10 @@ msgid "Removing old '%1'"
 msgstr ""
 
 #: src/folderscommand.cpp:759
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "Nelze uložit soubor '%1'"
+msgstr ""
 
 #: src/folderscommand.cpp:764
 #, kde-format
@@ -1391,11 +1357,10 @@ msgid "Cannot locate user configuration directory"
 msgstr ""
 
 #: src/folderscommand.cpp:792
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "Soubor '%1' neexistuje"
+msgstr ""
 
 #: src/folderscommand.cpp:813
 #, kde-format
