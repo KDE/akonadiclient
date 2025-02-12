@@ -46,7 +46,26 @@ CommandFactory::CommandFactory(const QStringList *parsedArgs)
 AbstractCommand *CommandFactory::createCommand()
 {
     const QString commandName = mParsedArgs->first();
-    CommandData *data = sCommands->value(commandName);
+    CommandData *data = nullptr;
+
+    if (commandName.length() >= 2) {
+        const QStringList availableCommands = sCommands->keys();
+        QStringList matchingCommands;
+        for (const QString &command : std::as_const(availableCommands)) {
+            if (command.startsWith(commandName))
+                matchingCommands.append(command);
+        }
+
+        if (matchingCommands.count() == 1) {
+            data = sCommands->value(matchingCommands.first());
+        } else if (!matchingCommands.isEmpty()) {
+            ErrorReporter::error(i18nc("@info:shell", "Ambiguous command '%1', possibilities are '%2'", commandName, matchingCommands.join("'/'")));
+            if (!CommandShell::isActive())
+                std::exit(EXIT_FAILURE);
+            return (nullptr);
+        }
+    }
+
     if (data == nullptr) {
         ErrorReporter::error(i18nc("@info:shell", "Unknown command '%1'", commandName));
         if (!CommandShell::isActive())
