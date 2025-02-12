@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 00:41+0000\n"
-"PO-Revision-Date: 2025-01-31 10:52+0100\n"
+"POT-Creation-Date: 2025-02-07 00:43+0000\n"
+"PO-Revision-Date: 2025-02-07 10:00+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -390,55 +390,70 @@ msgctxt "@info:shell"
 msgid "Status:  "
 msgstr "Estat:   "
 
-#: src/attributescommand.cpp:72
+#: src/attributescommand.cpp:80
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
 msgstr "Mostra o actualitza els atributs d'una col·lecció"
 
-#: src/attributescommand.cpp:89
+#: src/attributescommand.cpp:93
 #, kde-format
 msgid "Show the collection attributes (the default operation)"
 msgstr "Mostra els atributs de la col·lecció (l'operació predeterminada)"
 
-#: src/attributescommand.cpp:92
+#: src/attributescommand.cpp:96
 #, kde-format
 msgid "Add an attribute"
 msgstr "Afegeix un atribut"
 
-#: src/attributescommand.cpp:95
+#: src/attributescommand.cpp:99
 #, kde-format
 msgid "Modify an existing attribute"
 msgstr "Modifica un atribut existent"
 
-#: src/attributescommand.cpp:98
+#: src/attributescommand.cpp:102
 #, kde-format
 msgid "Delete an existing attribute"
 msgstr "Suprimeix un atribut existent"
 
-#: src/attributescommand.cpp:101
+#: src/attributescommand.cpp:105
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
 msgstr ""
 "Mostra o interpreta el valor de l'atribut com a codificat en hexadecimal"
 
-#: src/attributescommand.cpp:103
+#: src/attributescommand.cpp:108
+#, kde-format
+msgid "Save current folder attributes"
+msgstr "Desa els atributs actuals de les carpetes"
+
+#: src/attributescommand.cpp:111
+#, kde-format
+msgid "Check current against saved folder attributes"
+msgstr "Verifica els actuals respecte als atributs desats de les carpetes"
+
+#: src/attributescommand.cpp:114
+#, kde-format
+msgid "Restore changed folder attributes"
+msgstr "Restaura els atributs canviats de les carpetes"
+
+#: src/attributescommand.cpp:125
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
 msgstr "La col·lecció: un ID, camí o URL de l'Akonadi"
 
-#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for the operation"
 msgstr "Arguments per a l'operació"
 
-#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgid "args..."
 msgstr "arguments..."
 
-#: src/attributescommand.cpp:120
+#: src/attributescommand.cpp:142
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
@@ -446,64 +461,225 @@ msgstr ""
 "S'esperava una cadena codificada en hexadecimal, però la longitud %1 no és "
 "parell"
 
-#: src/attributescommand.cpp:127
+#: src/attributescommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
 msgstr "El valor codificat en hexadecimal conté caràcters no vàlids"
 
 # skip-rule: kct-delete
-#: src/attributescommand.cpp:160
+#: src/attributescommand.cpp:206
 #, kde-format
 msgctxt "@info:shell"
-msgid ""
-"Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
-msgstr ""
-"Només es pot especificar una de les opcions «show», «add», «modify» o "
-"«delete»"
+msgid "Only one operation mode option may be specified"
+msgstr "Només es pot especificar una opció de mode d'operació"
 
-#: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
+#: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
 msgstr "No s'ha especificat la col·lecció"
 
-#: src/attributescommand.cpp:172
+#: src/attributescommand.cpp:220
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
 msgstr "No s'ha especificat cap nom/valor a afegir"
 
-#: src/attributescommand.cpp:181
+#: src/attributescommand.cpp:228
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
 msgstr "No s'ha especificat cap nom d'atribut a suprimir"
 
-#: src/attributescommand.cpp:188
+#: src/attributescommand.cpp:234
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
 msgstr "No s'ha especificat cap nom/valor a modificar"
 
-#: src/attributescommand.cpp:198
+#: src/attributescommand.cpp:243
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
 msgstr "Hi ha massa arguments especificats, a partir de «%1»"
 
-#: src/attributescommand.cpp:243
+#: src/attributescommand.cpp:269
 #, kde-format
 msgctxt "@info:shell"
-msgid "Collection already has an attribute '%1'"
-msgstr "La col·lecció ja té un atribut «%1»"
+msgid "Cannot read saved attributes from '%1'"
+msgstr "No s'han pogut llegir els atributs desats des de «%1»"
 
-#: src/attributescommand.cpp:254
+#: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
-msgid "Collection has no attribute '%1'"
-msgstr "La col·lecció no té cap atribut «%1»"
+msgid "Run '%1 %2 --backup' first"
+msgstr "Primer executeu «%1 %2 --backup»"
+
+#: src/attributescommand.cpp:304
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %2 already has an attribute '%1'"
+msgstr "La col·lecció %2 ja té un atribut «%1»"
+
+#: src/attributescommand.cpp:310
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %2 has no attribute '%1'"
+msgstr "La col·lecció %2 no té l'atribut «%1»"
+
+#: src/attributescommand.cpp:379
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Collection %1 has no attributes"
+msgstr "La col·lecció %1 no té cap atribut"
+
+#: src/attributescommand.cpp:387
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Collection %2 has %1 attribute:"
+msgid_plural "Collection %2 has %1 attributes:"
+msgstr[0] "La col·lecció %2 té %1 atribut:"
+msgstr[1] "La col·lecció %2 té %1 atributs:"
+
+#: src/attributescommand.cpp:403 src/folderscommand.cpp:197
+#, kde-format
+msgctxt "@info:shell"
+msgid "Found %1 current Akonadi collections"
+msgstr "S'han trobat %1 col·leccions actuals de l'Akonadi"
+
+#: src/attributescommand.cpp:413 src/folderscommand.cpp:213
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot save backup list to '%1'"
+msgstr "No s'ha pogut desar la llista de còpia de seguretat a «%1»"
+
+#: src/attributescommand.cpp:424
+#, kde-format
+msgctxt "@info:shell"
+msgid "Saving collection attributes to '%1'"
+msgstr "S'estan desant els atributs de la col·lecció a «%1»"
+
+#: src/attributescommand.cpp:456
+#, kde-format
+msgctxt "@info:shell"
+msgid "Saved attributes for %1 collections"
+msgstr "S'han desat els atributs de %1 col·leccions"
+
+#: src/attributescommand.cpp:462
+#, kde-format
+msgctxt "@info:shell"
+msgid "Reading saved attributes from '%1'"
+msgstr "S'estan llegint els atributs desats des de «%1»"
+
+#: src/attributescommand.cpp:483
+#, kde-format
+msgctxt "@info:shell"
+msgid "Read attributes for %1 collections"
+msgstr "S'han llegit els atributs de %1 col·leccions"
+
+#: src/attributescommand.cpp:530
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder '%1' had attributes but is no longer present"
+msgstr "La carpeta «%1» tenia atributs però ja no hi són"
+
+#: src/attributescommand.cpp:553
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Cannot fetch collection %1 \"%2\""
+msgstr "No s'ha pogut recuperar la col·lecció %1 «%2»"
+
+#: src/attributescommand.cpp:561
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Collection \"%2\" changed ID from %1 to %3"
+msgstr "La col·lecció «%2» ha canviat l'ID de %1 a %3"
+
+#: src/attributescommand.cpp:634
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
+msgstr "L'atribut «%2» de la carpeta «%1» ha canviat de %3 a %4"
+
+#: src/attributescommand.cpp:643
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%1\" attribute \"%2\" added %3"
+msgstr "L'atribut «%2» de la carpeta «%1» ha afegit %3"
+
+#: src/attributescommand.cpp:666
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%2\" needs update of %1 attribute"
+msgid_plural "Folder \"%2\" needs update of %1 attributes"
+msgstr[0] "La carpeta «%2» necessita actualitzar %1 atribut"
+msgstr[1] "La carpeta «%2» necessita actualitzar %1 atributs"
+
+#: src/attributescommand.cpp:672
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%2\" updating %1 attribute"
+msgid_plural "Folder \"%2\" updating %1 attributes"
+msgstr[0] "La carpeta «%2» actualitza %1 atribut"
+msgstr[1] "La carpeta «%2» actualitza %1 atributs"
+
+#: src/attributescommand.cpp:697
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "No collection attributes need to be restored"
+msgstr "No cal restaurar cap atribut de la col·lecció"
+
+#: src/attributescommand.cpp:699
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "No collection attributes needed to be restored"
+msgstr "No calia restaurar cap atribut de la col·lecció"
+
+#: src/attributescommand.cpp:704
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Attributes need to be restored for %1 collection"
+msgid_plural "Attributes need to be restored for %1 collections"
+msgstr[0] "Cal restaurar els atributs per a %1 col·lecció"
+msgstr[1] "Cal restaurar els atributs per a %1 col·leccions"
+
+#: src/attributescommand.cpp:711
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid ""
+"Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
+"restore</bcode><nl/>to implement the changes."
+msgstr ""
+"Es requereixen canvis dels atributs, executeu l'ordre:<nl/><bcode> %1 %2 --"
+"restore</bcode><nl/>per a implementar els canvis."
+
+#: src/attributescommand.cpp:722
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Attributes were restored for %1 collection"
+msgid_plural "Attributes were restored for %1 collections"
+msgstr[0] "S'han restaurat els atributs per a %1 col·lecció"
+msgstr[1] "S'han restaurat els atributs per a %1 col·leccions"
+
+#: src/collectionlistcommand.cpp:49
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot list any collections"
+msgstr "No s'ha pogut llistar cap col·lecció"
+
+#: src/collectionlistcommand.cpp:86
+#, kde-format
+msgctxt "@info:shell"
+msgid "Save location '%1' exists but is not a directory"
+msgstr "La ubicació de desament «%1» existeix, però no és un directori"
+
+#: src/collectionlistcommand.cpp:94
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot create save directory '%1'"
+msgstr "No s'ha pogut crear el directori de desament «%1»"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -975,23 +1151,23 @@ msgctxt "@info:shell"
 msgid "No export file specified"
 msgstr "No s'ha especificat cap fitxer a exportar"
 
-#: src/folderscommand.cpp:40
+#: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
 msgstr "Desa, verifica o restaura els ID de les carpetes de l'Akonadi"
 
-#: src/folderscommand.cpp:52
+#: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
 msgstr "Desa les assignacions actuals d'ID de les carpetes"
 
-#: src/folderscommand.cpp:55
+#: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
 msgstr ""
 "Verifica les actuals respecte a les assignacions d'ID desades de les carpetes"
 
-#: src/folderscommand.cpp:58
+#: src/folderscommand.cpp:118
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
@@ -999,7 +1175,7 @@ msgstr ""
 "carpetes canviades"
 
 # skip-rule: kct-delete
-#: src/folderscommand.cpp:81
+#: src/folderscommand.cpp:141
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
@@ -1007,135 +1183,99 @@ msgstr ""
 "Només es pot especificar una de les opcions «backup», «check» o «restore»"
 
 # skip-rule: kct-delete
-#: src/folderscommand.cpp:85
+#: src/folderscommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
 msgstr "Cal especificar una de les opcions «backup», «check» o «restore»"
 
-#: src/folderscommand.cpp:100
-#, kde-format
-msgctxt "@info:shell"
-msgid "Save location '%1' exists but is not a directory"
-msgstr "La ubicació de desament «%1» existeix, però no és un directori"
-
-#: src/folderscommand.cpp:108
-#, kde-format
-msgctxt "@info:shell"
-msgid "Cannot create save directory '%1'"
-msgstr "No s'ha pogut crear el directori de desament «%1»"
-
-#: src/folderscommand.cpp:148
+#: src/folderscommand.cpp:180
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
 msgstr "No s'ha pogut llegir la llista desada des de «%1»"
 
-#: src/folderscommand.cpp:149
-#, kde-format
-msgctxt "@info:shell"
-msgid "Run '%1 %2 --backup' first"
-msgstr "Primer executeu «%1 %2 --backup»"
-
-#: src/folderscommand.cpp:178
-#, kde-format
-msgctxt "@info:shell"
-msgid "Cannot list any collections"
-msgstr "No s'ha pogut llistar cap col·lecció"
-
-#: src/folderscommand.cpp:183
-#, kde-format
-msgctxt "@info:shell"
-msgid "Found %1 current Akonadi collections"
-msgstr "S'han trobat %1 col·leccions actuals de l'Akonadi"
-
-#: src/folderscommand.cpp:199
-#, kde-format
-msgctxt "@info:shell"
-msgid "Cannot save backup list to '%1'"
-msgstr "No s'ha pogut desar la llista de còpia de seguretat a «%1»"
-
-#: src/folderscommand.cpp:217
+#: src/folderscommand.cpp:231
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
 msgstr "No s'ha pogut escriure la llista actual a «%1»"
 
-#: src/folderscommand.cpp:285
+#: src/folderscommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
 msgstr "No ha canviat cap ID de carpeta"
 
-#: src/folderscommand.cpp:290
+#: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
 msgstr "Ha canviat %1 ID de carpeta"
 
-#: src/folderscommand.cpp:307
+#: src/folderscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
 msgstr "S'està processant el fitxer de configuració «%1»..."
 
-#: src/folderscommand.cpp:403
+#: src/folderscommand.cpp:416
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
 msgstr "S'han reanomenat %1 grups"
 
-#: src/folderscommand.cpp:517
+#: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
 msgstr "Han canviat %1 valors de la configuració"
 
-#: src/folderscommand.cpp:523
+#: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
 msgstr "No cal cap canvi de configuració"
 
-#: src/folderscommand.cpp:532
+#: src/folderscommand.cpp:545
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings "
 "changes).<nl/>Quit all running PIM applications and stop the Akonadi server, "
 "then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
-"implement the required changes."
+"implement the changes."
 msgstr ""
 "Es requereixen canvis de configuració (%1 canvis de nom de grup i %2 canvis "
 "de configuració).<nl/>Sortiu de totes les aplicacions PIM en execució i "
 "atureu el servidor Akonadi, després<nl/>executeu l'ordre:<nl/><bcode> %3 %4 "
-"--restore</bcode><nl/>per a implementar els canvis necessaris."
+"--restore</bcode><nl/>per a implementar els canvis."
 
-#: src/folderscommand.cpp:573
+#: src/folderscommand.cpp:564
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
 msgstr "S'estan desant els camins de carpeta a «%1»"
 
-#: src/folderscommand.cpp:580
+#: src/folderscommand.cpp:571
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
 msgstr "S'han desat %1 camins de carpeta de col·lecció"
 
-#: src/folderscommand.cpp:585
+#: src/folderscommand.cpp:576
 #, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
 msgstr "S'estan llegint els camins de carpeta desats des de «%1»"
 
-#: src/folderscommand.cpp:596
+#: src/folderscommand.cpp:587
 #, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
 msgstr "Llegeix «%1» camins de carpeta desats"
 
-#: src/folderscommand.cpp:679
+#: src/folderscommand.cpp:670
 #, kde-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
@@ -1143,19 +1283,19 @@ msgstr ""
 "S'han definit %1 canvis en els patrons de dades per a %2 noms de fitxers de "
 "configuració"
 
-#: src/folderscommand.cpp:695
+#: src/folderscommand.cpp:686
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
 msgstr "La llista de carpetes desades «%1» no existeix"
 
-#: src/folderscommand.cpp:699
+#: src/folderscommand.cpp:690
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
 msgstr "La llista de carpetes actual «%1» no existeix"
 
-#: src/folderscommand.cpp:703
+#: src/folderscommand.cpp:694
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
@@ -1163,13 +1303,13 @@ msgstr ""
 "La llista de carpetes actual «%1» és més antiga que la llista de carpetes "
 "desada «%2»"
 
-#: src/folderscommand.cpp:706
+#: src/folderscommand.cpp:697
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
 msgstr "Primer executeu «%1 %2 --check»"
 
-#: src/folderscommand.cpp:718
+#: src/folderscommand.cpp:709
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
@@ -1178,73 +1318,73 @@ msgstr ""
 "El fitxer de configuració nou «%1» no existeix, o és més antic que la llista "
 "de carpetes «%2»"
 
-#: src/folderscommand.cpp:735
+#: src/folderscommand.cpp:726
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
 msgstr "S'està comprovant si el servidor Akonadi s'està executant..."
 
-#: src/folderscommand.cpp:740
+#: src/folderscommand.cpp:731
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
 msgstr "El servidor Akonadi està aturat"
 
-#: src/folderscommand.cpp:745
+#: src/folderscommand.cpp:736
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server..."
 msgstr "El servidor Akonadi està aturant-se..."
 
-#: src/folderscommand.cpp:754
+#: src/folderscommand.cpp:745
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
 msgstr "S'estan actualitzant %1 fitxers de configuració a «%2»"
 
-#: src/folderscommand.cpp:765
+#: src/folderscommand.cpp:756
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
 msgstr "S'està eliminant «%1» l'antic"
 
-#: src/folderscommand.cpp:768
+#: src/folderscommand.cpp:759
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
 msgstr "No s'ha pogut eliminar l'antic «%1»"
 
-#: src/folderscommand.cpp:773
+#: src/folderscommand.cpp:764
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
 msgstr "S'està copiant el «%2» nou a «%1»"
 
-#: src/folderscommand.cpp:776
+#: src/folderscommand.cpp:767
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
 msgstr "No s'ha pogut copiar el «%2» nou a «%1»"
 
-#: src/folderscommand.cpp:781
+#: src/folderscommand.cpp:772
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
 msgstr "Ha finalitzat la restauració"
 
-#: src/folderscommand.cpp:794
+#: src/folderscommand.cpp:785
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
 msgstr "No s'ha pogut trobar el directori de configuració de l'usuari"
 
-#: src/folderscommand.cpp:801
+#: src/folderscommand.cpp:792
 #, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
 msgstr "El directori de configuració «%1» no existeix"
 
-#: src/folderscommand.cpp:822
+#: src/folderscommand.cpp:813
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
@@ -2219,3 +2359,12 @@ msgstr "No s'ha especificat cap fitxer"
 msgctxt "@info:shell"
 msgid "Item updated successfully"
 msgstr "L'element s'ha actualitzat amb èxit"
+
+# skip-rule: kct-delete
+#~ msgctxt "@info:shell"
+#~ msgid ""
+#~ "Only one of the 'show', 'add', 'modify' or 'delete' options may be "
+#~ "specified"
+#~ msgstr ""
+#~ "Només es pot especificar una de les opcions «show», «add», «modify» o "
+#~ "«delete»"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 00:41+0000\n"
-"PO-Revision-Date: 2025-01-31 11:11+0100\n"
+"POT-Creation-Date: 2025-02-07 00:43+0000\n"
+"PO-Revision-Date: 2025-02-07 12:01+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -383,116 +383,292 @@ msgctxt "@info:shell"
 msgid "Status:  "
 msgstr "Status:  "
 
-#: src/attributescommand.cpp:72
+#: src/attributescommand.cpp:80
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
 msgstr "Attributen voor een verzameling tonen of bijwerken"
 
-#: src/attributescommand.cpp:89
+#: src/attributescommand.cpp:93
 #, kde-format
 msgid "Show the collection attributes (the default operation)"
 msgstr "Attributen van de verzameling tonen (de standaard bewerking)"
 
-#: src/attributescommand.cpp:92
+#: src/attributescommand.cpp:96
 #, kde-format
 msgid "Add an attribute"
 msgstr "Een attribuut toevoegen"
 
-#: src/attributescommand.cpp:95
+#: src/attributescommand.cpp:99
 #, kde-format
 msgid "Modify an existing attribute"
 msgstr "Een bestaand attribuut wijzigen"
 
-#: src/attributescommand.cpp:98
+#: src/attributescommand.cpp:102
 #, kde-format
 msgid "Delete an existing attribute"
 msgstr "Een bestaand attribuut verwijderen"
 
-#: src/attributescommand.cpp:101
+#: src/attributescommand.cpp:105
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
 msgstr "De waarde van een attribuut als hex gecodeerd tonen of interpreteren"
 
-#: src/attributescommand.cpp:103
+#: src/attributescommand.cpp:108
+#, kde-format
+msgid "Save current folder attributes"
+msgstr "Huidige attributen van map opslaan"
+
+#: src/attributescommand.cpp:111
+#, kde-format
+msgid "Check current against saved folder attributes"
+msgstr "Huidige attributen van map vergelijken met die zijn opgeslagen"
+
+#: src/attributescommand.cpp:114
+#, kde-format
+msgid "Restore changed folder attributes"
+msgstr "Gewijzigde attributen van map herstellen"
+
+#: src/attributescommand.cpp:125
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
 msgstr "De verzameling: een ID, pad of Akonadi-URL"
 
-#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for the operation"
 msgstr "Argumenten voor de bewerking"
 
-#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgid "args..."
 msgstr "argumenten..."
 
-#: src/attributescommand.cpp:120
+#: src/attributescommand.cpp:142
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
 msgstr "Hex gecodeerde tekenreeks verwacht, maar de lengte %1 is niet even"
 
-#: src/attributescommand.cpp:127
+#: src/attributescommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
 msgstr "Hex gecodeerde waarde bevat ongeldige tekens"
 
-#: src/attributescommand.cpp:160
+#: src/attributescommand.cpp:206
 #, kde-format
 msgctxt "@info:shell"
-msgid ""
-"Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
-msgstr ""
-"Slechts één van de opties 'tonen', 'toevoegen', 'wijzigen' of 'verwijderen' "
-"mag gespecificeerd worden"
+msgid "Only one operation mode option may be specified"
+msgstr "Slechts één optie voor bewerkingsmodus mag gespecificeerd worden"
 
-#: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
+#: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
 msgstr "Geen verzameling gespecificeerd"
 
-#: src/attributescommand.cpp:172
+#: src/attributescommand.cpp:220
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
 msgstr "Geen toe te voegen naam of waarde van een attribuut gespecificeerd"
 
-#: src/attributescommand.cpp:181
+#: src/attributescommand.cpp:228
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
 msgstr "Geen te verwijderen naam van attribuut gespecificeerd"
 
-#: src/attributescommand.cpp:188
+#: src/attributescommand.cpp:234
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
 msgstr "Geen te wijzigen naam/waarde van attribuut gespecificeerd"
 
-#: src/attributescommand.cpp:198
+#: src/attributescommand.cpp:243
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
 msgstr "Teveel argumenten gespecificeerd, van '%1'"
 
-#: src/attributescommand.cpp:243
+#: src/attributescommand.cpp:269
 #, kde-format
 msgctxt "@info:shell"
-msgid "Collection already has an attribute '%1'"
-msgstr "Verzameling heeft al een attribuut '%1'"
+msgid "Cannot read saved attributes from '%1'"
+msgstr "Kan opgeslagen attributen uit '%1' niet lezen"
 
-#: src/attributescommand.cpp:254
+#: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
-msgid "Collection has no attribute '%1'"
-msgstr "Verzameling heeft geen attribuut '%1'"
+msgid "Run '%1 %2 --backup' first"
+msgstr "Opdracht '%1 %2 --backup' eerst uitvoeren"
+
+#: src/attributescommand.cpp:304
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %2 already has an attribute '%1'"
+msgstr "Verzameling %2 heeft al een attribuut '%1'"
+
+#: src/attributescommand.cpp:310
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %2 has no attribute '%1'"
+msgstr "Verzameling %2 heeft geen attribuut '%1'"
+
+#: src/attributescommand.cpp:379
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Collection %1 has no attributes"
+msgstr "Verzameling %1 heeft geen attributen"
+
+#: src/attributescommand.cpp:387
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Collection %2 has %1 attribute:"
+msgid_plural "Collection %2 has %1 attributes:"
+msgstr[0] "Verzameling %2 heeft %1 attribuut:"
+msgstr[1] "Verzameling %2 heeft %1 attributen:"
+
+#: src/attributescommand.cpp:403 src/folderscommand.cpp:197
+#, kde-format
+msgctxt "@info:shell"
+msgid "Found %1 current Akonadi collections"
+msgstr "Gevonden %1 huidige Akonadi verzamelingen"
+
+#: src/attributescommand.cpp:413 src/folderscommand.cpp:213
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot save backup list to '%1'"
+msgstr "Kan reservekopielijst niet opslaan naar '%1' "
+
+#: src/attributescommand.cpp:424
+#, kde-format
+msgctxt "@info:shell"
+msgid "Saving collection attributes to '%1'"
+msgstr "Attributen van verzameling worden opgeslagen naar '%1'"
+
+#: src/attributescommand.cpp:456
+#, kde-format
+msgctxt "@info:shell"
+msgid "Saved attributes for %1 collections"
+msgstr "Opgeslagen attributen voor %1 verzamelingen"
+
+#: src/attributescommand.cpp:462
+#, kde-format
+msgctxt "@info:shell"
+msgid "Reading saved attributes from '%1'"
+msgstr "Opgeslagen attributen uit '%1' worden gelezen"
+
+#: src/attributescommand.cpp:483
+#, kde-format
+msgctxt "@info:shell"
+msgid "Read attributes for %1 collections"
+msgstr "Lees attributen voor %1 verzamelingen"
+
+#: src/attributescommand.cpp:530
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder '%1' had attributes but is no longer present"
+msgstr "Map '%1' had attributen maar is niet langer aanwezig"
+
+#: src/attributescommand.cpp:553
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Cannot fetch collection %1 \"%2\""
+msgstr "Kan verzameling %1 niet ophalen \"%2\""
+
+#: src/attributescommand.cpp:561
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Collection \"%2\" changed ID from %1 to %3"
+msgstr "Verzameling \"%2\" wijzigde ID van %1 naar %3"
+
+#: src/attributescommand.cpp:634
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
+msgstr "Map \"%1\" attribuut \"%2\" gewijzigd van %3 naar %4"
+
+#: src/attributescommand.cpp:643
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%1\" attribute \"%2\" added %3"
+msgstr "Map \"%1\" attribuut \"%2\" toegevoegd %3"
+
+#: src/attributescommand.cpp:666
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%2\" needs update of %1 attribute"
+msgid_plural "Folder \"%2\" needs update of %1 attributes"
+msgstr[0] "Map \"%2\" moet %1 attribuut bijwerken"
+msgstr[1] "Map \"%2\" moet %1 attributen bijwerken"
+
+#: src/attributescommand.cpp:672
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%2\" updating %1 attribute"
+msgid_plural "Folder \"%2\" updating %1 attributes"
+msgstr[0] "Map \"%2\" werkt %1 attribuut bij"
+msgstr[1] "Map \"%2\" werkt %1 attributen bij"
+
+#: src/attributescommand.cpp:697
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "No collection attributes need to be restored"
+msgstr "Geen attributen van verzamelingen moeten hersteld worden"
+
+#: src/attributescommand.cpp:699
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "No collection attributes needed to be restored"
+msgstr "Geen attributen van verzamelingen moesten hersteld worden"
+
+#: src/attributescommand.cpp:704
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Attributes need to be restored for %1 collection"
+msgid_plural "Attributes need to be restored for %1 collections"
+msgstr[0] "Attributen moeten hersteld worden voor %1 verzameling"
+msgstr[1] "Attributen moeten hersteld worden voor %1 verzamelingen"
+
+#: src/attributescommand.cpp:711
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid ""
+"Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
+"restore</bcode><nl/>to implement the changes."
+msgstr ""
+"Wijziging van attributen zijn vereist, voer de opdracht:<nl/><bcode>  %1 %2 "
+"--restore</bcode><nl/>uit om de wijzigingen te implementeren."
+
+#: src/attributescommand.cpp:722
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Attributes were restored for %1 collection"
+msgid_plural "Attributes were restored for %1 collections"
+msgstr[0] "Attributen zijn hersteld voor %1 verzameling"
+msgstr[1] "Attributen zijn hersteld voor %1 verzamelingen"
+
+#: src/collectionlistcommand.cpp:49
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot list any collections"
+msgstr "Kan van geen enkele verzameling een lijst maken"
+
+#: src/collectionlistcommand.cpp:86
+#, kde-format
+msgctxt "@info:shell"
+msgid "Save location '%1' exists but is not a directory"
+msgstr "Opslaglocatie '%1' bestaat maar is geen map"
+
+#: src/collectionlistcommand.cpp:94
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot create save directory '%1'"
+msgstr "Kan opslagmap '%1' niet aanmaken"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -964,28 +1140,28 @@ msgctxt "@info:shell"
 msgid "No export file specified"
 msgstr "Geen te exporteren bestand gespecificeerd"
 
-#: src/folderscommand.cpp:40
+#: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
 msgstr "Opslaan, controleer of herstel map-ID's van Akonadi"
 
-#: src/folderscommand.cpp:52
+#: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
 msgstr "Huidige toekenningen van map-ID's opslaan"
 
-#: src/folderscommand.cpp:55
+#: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
 msgstr "Huidige map-ID's vergelijken met die zijn opgeslagen"
 
-#: src/folderscommand.cpp:58
+#: src/folderscommand.cpp:118
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
 "Configuratiebestanden herstellen met gewijzigde toekenningen van map-ID's"
 
-#: src/folderscommand.cpp:81
+#: src/folderscommand.cpp:141
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
@@ -993,168 +1169,132 @@ msgstr ""
 "Slechts één van de opties 'backup', 'check' of 'restore' mag gespecificeerd "
 "worden"
 
-#: src/folderscommand.cpp:85
+#: src/folderscommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
 msgstr ""
 "Eén van de opties 'backup', 'check' of 'restore' moet gespecificeerd worden"
 
-#: src/folderscommand.cpp:100
-#, kde-format
-msgctxt "@info:shell"
-msgid "Save location '%1' exists but is not a directory"
-msgstr "Opslaglocatie '%1' bestaat maar is geen map"
-
-#: src/folderscommand.cpp:108
-#, kde-format
-msgctxt "@info:shell"
-msgid "Cannot create save directory '%1'"
-msgstr "Kan opslagmap '%1' niet aanmaken"
-
-#: src/folderscommand.cpp:148
+#: src/folderscommand.cpp:180
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
 msgstr "Kan opgeslagen lijst uit '%1' niet openen"
 
-#: src/folderscommand.cpp:149
-#, kde-format
-msgctxt "@info:shell"
-msgid "Run '%1 %2 --backup' first"
-msgstr "Opdracht '%1 %2 --backup' eerst uitvoeren"
-
-#: src/folderscommand.cpp:178
-#, kde-format
-msgctxt "@info:shell"
-msgid "Cannot list any collections"
-msgstr "Kan van geen enkele verzameling een lijst maken"
-
-#: src/folderscommand.cpp:183
-#, kde-format
-msgctxt "@info:shell"
-msgid "Found %1 current Akonadi collections"
-msgstr "Gevonden %1 huidige Akonadi verzamelingen"
-
-#: src/folderscommand.cpp:199
-#, kde-format
-msgctxt "@info:shell"
-msgid "Cannot save backup list to '%1'"
-msgstr "Kan reservekopielijst niet opslaan naar '%1' "
-
-#: src/folderscommand.cpp:217
+#: src/folderscommand.cpp:231
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
 msgstr "Kan huidige lijst niet schrijven naar '%1'"
 
-#: src/folderscommand.cpp:285
+#: src/folderscommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
 msgstr "Geen map-ID's zijn gewijzigd"
 
-#: src/folderscommand.cpp:290
+#: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
 msgstr "%1 map-ID's zijn gewijzigd"
 
-#: src/folderscommand.cpp:307
+#: src/folderscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
 msgstr "Configuratiebestand '%1' wordt verwerkt..."
 
-#: src/folderscommand.cpp:403
+#: src/folderscommand.cpp:416
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
 msgstr "%1 groepen zijn hernoemd"
 
-#: src/folderscommand.cpp:517
+#: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
 msgstr "%1 instellingswaarden zijn gewijzigd"
 
-#: src/folderscommand.cpp:523
+#: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
 msgstr "Geen wijzigingen in configuratie zijn vereist"
 
-#: src/folderscommand.cpp:532
+#: src/folderscommand.cpp:545
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings "
 "changes).<nl/>Quit all running PIM applications and stop the Akonadi server, "
 "then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
-"implement the required changes."
+"implement the changes."
 msgstr ""
 "Wijzigingen in configuratie zijn vereist (%1 hernoemen van groep en %2 "
 "wijzigingen van instellingen).<nl/>Verlaat alle actieve PIM-toepassingen en "
 "stop de Akonadi-server, daarna<nl/>voer uit de opdracht:<nl/><bcode>  %3 %4 "
-"--restore</bcode><nl/>om de vereiste wijzigingen te implementeren."
+"--restore</bcode><nl/>om de wijzigingen te implementeren."
 
-#: src/folderscommand.cpp:573
+#: src/folderscommand.cpp:564
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
 msgstr "Mappaden worden opgeslagen naar '%1'"
 
-#: src/folderscommand.cpp:580
+#: src/folderscommand.cpp:571
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
 msgstr "Opgeslagen %1 mappaden van verzamelingen"
 
-#: src/folderscommand.cpp:585
+#: src/folderscommand.cpp:576
 #, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
 msgstr "Opgeslagen mappaden worden gelezen uit '%1'"
 
-#: src/folderscommand.cpp:596
+#: src/folderscommand.cpp:587
 #, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
 msgstr "Gelezen %1 opgeslagen verzamelingpaden"
 
-#: src/folderscommand.cpp:679
+#: src/folderscommand.cpp:670
 #, kde-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
 "Gedefinieerd %1 gewijzigde gegevenspatronen voor %2 configuratiebestandsnamen"
 
-#: src/folderscommand.cpp:695
+#: src/folderscommand.cpp:686
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
 msgstr "Opgeslagen lijst met mappen '%1' bestaat niet"
 
-#: src/folderscommand.cpp:699
+#: src/folderscommand.cpp:690
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
 msgstr "Huidige lijst met mappen '%1' bestaat niet"
 
-#: src/folderscommand.cpp:703
+#: src/folderscommand.cpp:694
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
 msgstr ""
 "Huidige lijst met mappen '%1' is ouder dan opgeslagen lijst met mappen '%2'"
 
-#: src/folderscommand.cpp:706
+#: src/folderscommand.cpp:697
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
 msgstr "Eerst '%1 %2 --check' uitvoeren"
 
-#: src/folderscommand.cpp:718
+#: src/folderscommand.cpp:709
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
@@ -1163,73 +1303,73 @@ msgstr ""
 "Nieuw configuratiebestand '%1' bestaat niet of is ouder dan lijst met mappen "
 "'%2'"
 
-#: src/folderscommand.cpp:735
+#: src/folderscommand.cpp:726
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
 msgstr "Controleren of de Akonadi-server actief is..."
 
-#: src/folderscommand.cpp:740
+#: src/folderscommand.cpp:731
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
 msgstr "Akonadi-server is gestopt"
 
-#: src/folderscommand.cpp:745
+#: src/folderscommand.cpp:736
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server..."
 msgstr "Akonadi-server wordt afgesloten..."
 
-#: src/folderscommand.cpp:754
+#: src/folderscommand.cpp:745
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
 msgstr "%1 configuratiebestanden in '%2' worden bijgewerkt"
 
-#: src/folderscommand.cpp:765
+#: src/folderscommand.cpp:756
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
 msgstr "Oude '%1' wordt verwijderd"
 
-#: src/folderscommand.cpp:768
+#: src/folderscommand.cpp:759
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
 msgstr "Oude '%1' kan niet verwijderd worden"
 
-#: src/folderscommand.cpp:773
+#: src/folderscommand.cpp:764
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
 msgstr "Nieuwe '%2' wordt gekopieerd naar '%1'"
 
-#: src/folderscommand.cpp:776
+#: src/folderscommand.cpp:767
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
 msgstr "Kan nieuwe %2 niet kopiëren naar '%1'"
 
-#: src/folderscommand.cpp:781
+#: src/folderscommand.cpp:772
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
 msgstr "Herstellen voltooid"
 
-#: src/folderscommand.cpp:794
+#: src/folderscommand.cpp:785
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
 msgstr "Kant configuratiemap van gebruiker niet lokaliseren"
 
-#: src/folderscommand.cpp:801
+#: src/folderscommand.cpp:792
 #, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
 msgstr "Configuratiemap '%1' bestaat niet"
 
-#: src/folderscommand.cpp:822
+#: src/folderscommand.cpp:813
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
@@ -2210,6 +2350,14 @@ msgstr "Geen bestand gespecificeerd"
 msgctxt "@info:shell"
 msgid "Item updated successfully"
 msgstr "Item met succes bijgewerkt"
+
+#~ msgctxt "@info:shell"
+#~ msgid ""
+#~ "Only one of the 'show', 'add', 'modify' or 'delete' options may be "
+#~ "specified"
+#~ msgstr ""
+#~ "Slechts één van de opties 'tonen', 'toevoegen', 'wijzigen' of "
+#~ "'verwijderen' mag gespecificeerd worden"
 
 #~ msgctxt "@info:shell"
 #~ msgid "Error: %1"

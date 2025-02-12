@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 00:41+0000\n"
-"PO-Revision-Date: 2025-02-01 10:42+0100\n"
+"POT-Creation-Date: 2025-02-07 00:43+0000\n"
+"PO-Revision-Date: 2025-02-09 12:49+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -390,117 +390,292 @@ msgctxt "@info:shell"
 msgid "Status:  "
 msgstr "Estado:  "
 
-#: src/attributescommand.cpp:72
+#: src/attributescommand.cpp:80
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
 msgstr "Amosar ou actualizar os atributos dunha colección."
 
-#: src/attributescommand.cpp:89
+#: src/attributescommand.cpp:93
 #, kde-format
 msgid "Show the collection attributes (the default operation)"
 msgstr "Amosar os atributos da colección (a operación predeterminada)."
 
-#: src/attributescommand.cpp:92
+#: src/attributescommand.cpp:96
 #, kde-format
 msgid "Add an attribute"
 msgstr "Engadir un atributo"
 
-#: src/attributescommand.cpp:95
+#: src/attributescommand.cpp:99
 #, kde-format
 msgid "Modify an existing attribute"
 msgstr "Modificar o atributo existente"
 
-#: src/attributescommand.cpp:98
+#: src/attributescommand.cpp:102
 #, kde-format
 msgid "Delete an existing attribute"
 msgstr "Eliminar o atributo existente"
 
-#: src/attributescommand.cpp:101
+#: src/attributescommand.cpp:105
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
 msgstr ""
 "Amosar ou interpretar o valor do atributo como codificado en hexadecimal."
 
-#: src/attributescommand.cpp:103
+#: src/attributescommand.cpp:108
+#, kde-format
+msgid "Save current folder attributes"
+msgstr "Gardar os atributos do cartafol."
+
+#: src/attributescommand.cpp:111
+#, kde-format
+msgid "Check current against saved folder attributes"
+msgstr "Comparar os atributos de cartafol actuais e gardados."
+
+#: src/attributescommand.cpp:114
+#, kde-format
+msgid "Restore changed folder attributes"
+msgstr "Restaurar os atributos de cartafol cambiados."
+
+#: src/attributescommand.cpp:125
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
 msgstr "A colección: un identificador, unha ruta ou un URL de Akonadi."
 
-#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for the operation"
 msgstr "Argumentos para a operación"
 
-#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgid "args..."
 msgstr "argumentos…"
 
-#: src/attributescommand.cpp:120
+#: src/attributescommand.cpp:142
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
 msgstr "Esperábase unha cadea hexadecimal, pero a lonxitude %1 non é par."
 
-#: src/attributescommand.cpp:127
+#: src/attributescommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
 msgstr "O valor hexadecimal contiña caracteres non válidos."
 
-#: src/attributescommand.cpp:160
+#: src/attributescommand.cpp:206
 #, kde-format
 msgctxt "@info:shell"
-msgid ""
-"Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
-msgstr ""
-"Só se pode indicar unha destas opcións: «show» (amosar), «add» (engadir), "
-"«modify» (modificar) ou «delete» (eliminar)."
+msgid "Only one operation mode option may be specified"
+msgstr "Só é posíbel indicar unha opción de modo de operación."
 
-#: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
+#: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
 msgstr "Non se indicou unha colección"
 
-#: src/attributescommand.cpp:172
+#: src/attributescommand.cpp:220
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
 msgstr "Non se indicaron os nomes e valores de atributos para engadir."
 
-#: src/attributescommand.cpp:181
+#: src/attributescommand.cpp:228
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
 msgstr "Non se indicaron os nomes de atributos para eliminar."
 
-#: src/attributescommand.cpp:188
+#: src/attributescommand.cpp:234
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
 msgstr "Non se indicaron os nomes e valores de atributos para modificar."
 
-#: src/attributescommand.cpp:198
+#: src/attributescommand.cpp:243
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
 msgstr "Indicáronse demasiados argumentos, de «%1»."
 
-#: src/attributescommand.cpp:243
+#: src/attributescommand.cpp:269
 #, kde-format
 msgctxt "@info:shell"
-msgid "Collection already has an attribute '%1'"
-msgstr "A colección xa ten un atributo «%1»."
+msgid "Cannot read saved attributes from '%1'"
+msgstr "Non é posíbel ler os atributos gardados de «%1»."
 
-#: src/attributescommand.cpp:254
+#: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
-msgid "Collection has no attribute '%1'"
-msgstr "A colección non ten ningún atributo «%1»."
+msgid "Run '%1 %2 --backup' first"
+msgstr "Primeiro execute «%1 %2 --backup»."
+
+#: src/attributescommand.cpp:304
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %2 already has an attribute '%1'"
+msgstr "A colección %2 xa ten un atributo «%1»."
+
+#: src/attributescommand.cpp:310
+#, kde-format
+msgctxt "@info:shell"
+msgid "Collection %2 has no attribute '%1'"
+msgstr "A colección %2 non ten ningún atributo «%1»."
+
+#: src/attributescommand.cpp:379
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Collection %1 has no attributes"
+msgstr "A colección %1 non ten atributos."
+
+#: src/attributescommand.cpp:387
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Collection %2 has %1 attribute:"
+msgid_plural "Collection %2 has %1 attributes:"
+msgstr[0] "A colección %2 ten %1 atributo:"
+msgstr[1] "A colección %2 ten %1 atributos:"
+
+#: src/attributescommand.cpp:403 src/folderscommand.cpp:197
+#, kde-format
+msgctxt "@info:shell"
+msgid "Found %1 current Akonadi collections"
+msgstr "Atopáronse %1 coleccións actuais de Akonadi."
+
+#: src/attributescommand.cpp:413 src/folderscommand.cpp:213
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot save backup list to '%1'"
+msgstr "Non é posíbel gardar a lista de salvagarda en «%1»."
+
+#: src/attributescommand.cpp:424
+#, kde-format
+msgctxt "@info:shell"
+msgid "Saving collection attributes to '%1'"
+msgstr "Gardando os atributos de colección en «%1»…"
+
+#: src/attributescommand.cpp:456
+#, kde-format
+msgctxt "@info:shell"
+msgid "Saved attributes for %1 collections"
+msgstr "Gardáronse os atributos de %1 coleccións."
+
+#: src/attributescommand.cpp:462
+#, kde-format
+msgctxt "@info:shell"
+msgid "Reading saved attributes from '%1'"
+msgstr "Lendo os atributos gardados de «%1»…"
+
+#: src/attributescommand.cpp:483
+#, kde-format
+msgctxt "@info:shell"
+msgid "Read attributes for %1 collections"
+msgstr "Léronse os atributos de %1 coleccións."
+
+#: src/attributescommand.cpp:530
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder '%1' had attributes but is no longer present"
+msgstr "O cartafol «%1» ten atributos pero xa non está presente."
+
+#: src/attributescommand.cpp:553
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Cannot fetch collection %1 \"%2\""
+msgstr "Non é posíbel obter a colección %1, «%2»."
+
+#: src/attributescommand.cpp:561
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Collection \"%2\" changed ID from %1 to %3"
+msgstr "O identificador da colección «%2» cambiou de «%1» a «%3»."
+
+#: src/attributescommand.cpp:634
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
+msgstr "O atributo «%2» do cartafol «%1» cambiou de «%3» a «%4»."
+
+#: src/attributescommand.cpp:643
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%1\" attribute \"%2\" added %3"
+msgstr "Engadiuse  «%3» ao atributo «%2» do cartafol «%1»."
+
+#: src/attributescommand.cpp:666
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%2\" needs update of %1 attribute"
+msgid_plural "Folder \"%2\" needs update of %1 attributes"
+msgstr[0] "Hai que actualizar %1 atributo do cartafol «%2»."
+msgstr[1] "Hai que actualizar %1 atributos do cartafol «%2»."
+
+#: src/attributescommand.cpp:672
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%2\" updating %1 attribute"
+msgid_plural "Folder \"%2\" updating %1 attributes"
+msgstr[0] "Actualizando %1 atributo do cartafol «%2»…"
+msgstr[1] "Actualizando %1 atributos do cartafol «%2»…"
+
+#: src/attributescommand.cpp:697
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "No collection attributes need to be restored"
+msgstr "Non hai que restaurar ningún atributo de colección."
+
+#: src/attributescommand.cpp:699
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "No collection attributes needed to be restored"
+msgstr "Non houbo que restaurar ningún atributo de colección."
+
+#: src/attributescommand.cpp:704
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Attributes need to be restored for %1 collection"
+msgid_plural "Attributes need to be restored for %1 collections"
+msgstr[0] "Hai que restaurar os atributos de %1 colección."
+msgstr[1] "Hai que restaurar os atributos de %1 coleccións."
+
+#: src/attributescommand.cpp:711
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid ""
+"Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
+"restore</bcode><nl/>to implement the changes."
+msgstr ""
+"Hai que cambiar atributos. Execute:<nl/><bcode>  %1 %2 --restore</bcode>"
+
+#: src/attributescommand.cpp:722
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Attributes were restored for %1 collection"
+msgid_plural "Attributes were restored for %1 collections"
+msgstr[0] "Restauráronse os atributos de %1 colección."
+msgstr[1] "Restauráronse os atributos de %1 coleccións."
+
+#: src/collectionlistcommand.cpp:49
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot list any collections"
+msgstr "Non é posíbel listar ningunha colección."
+
+#: src/collectionlistcommand.cpp:86
+#, kde-format
+msgctxt "@info:shell"
+msgid "Save location '%1' exists but is not a directory"
+msgstr "A localización de garda «%1» existe, pero non é un cartafol."
+
+#: src/collectionlistcommand.cpp:94
+#, kde-format
+msgctxt "@info:shell"
+msgid "Cannot create save directory '%1'"
+msgstr "Non é posíbel crear o cartafol de garda «%1»."
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -978,30 +1153,30 @@ msgctxt "@info:shell"
 msgid "No export file specified"
 msgstr "Non se indicou un ficheiro no que exportar"
 
-#: src/folderscommand.cpp:40
+#: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
 msgstr "Gardar, comprobar ou restaurar identificadores de cartafol de Akonadi."
 
-#: src/folderscommand.cpp:52
+#: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
 msgstr "Gardar as asignacións actuais de identificadores de cartafol."
 
-#: src/folderscommand.cpp:55
+#: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
 msgstr ""
 "Comparar as asignacións de identificadores de cartafol actuais e gardadas."
 
-#: src/folderscommand.cpp:58
+#: src/folderscommand.cpp:118
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
 "Restaurar os ficheiros de configuración con asignacións de identificadores "
 "de cartafol cambiadas."
 
-#: src/folderscommand.cpp:81
+#: src/folderscommand.cpp:141
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
@@ -1009,7 +1184,7 @@ msgstr ""
 "Só pode indicar unha destas opcións: «backup» (salvagardar), "
 "«check» (comprobar) ou «restore» (restaurar)."
 
-#: src/folderscommand.cpp:85
+#: src/folderscommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
@@ -1017,254 +1192,206 @@ msgstr ""
 "Debe indicar unha destas opcións: «backup» (salvagardar), "
 "«check» (comprobar) ou «restore» (restaurar)."
 
-#: src/folderscommand.cpp:100
-#, kde-format
-msgctxt "@info:shell"
-msgid "Save location '%1' exists but is not a directory"
-msgstr "A localización de garda «%1» existe, pero non é un cartafol."
-
-#: src/folderscommand.cpp:108
-#, kde-format
-msgctxt "@info:shell"
-msgid "Cannot create save directory '%1'"
-msgstr "Non é posíbel crear o cartafol de garda «%1»."
-
-#: src/folderscommand.cpp:148
+#: src/folderscommand.cpp:180
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
 msgstr "Non é posíbel ler a lista gardada de «%1»."
 
-#: src/folderscommand.cpp:149
+#: src/folderscommand.cpp:231
 #, kde-format
-msgctxt "@info:shell"
-msgid "Run '%1 %2 --backup' first"
-msgstr "Primeiro execute «%1 %2 --backup»."
-
-#: src/folderscommand.cpp:178
-#, kde-format
-msgctxt "@info:shell"
-msgid "Cannot list any collections"
-msgstr "Non é posíbel listar ningunha colección."
-
-#: src/folderscommand.cpp:183
-#, kde-format
-msgctxt "@info:shell"
-msgid "Found %1 current Akonadi collections"
-msgstr "Atopáronse %1 coleccións actuais de Akonadi."
-
-#: src/folderscommand.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
-msgctxt "@info:shell"
-msgid "Cannot save backup list to '%1'"
-msgstr "Non é posíbel gardar o ficheiro «%1»"
-
-#: src/folderscommand.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "Non é posíbel crear o cartafol «%1/%2»."
+msgstr "Non é posíbel escribir a lista actual en «%1»."
 
-#: src/folderscommand.cpp:285
+#: src/folderscommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "Non se cambiou ningún identificador de cartafol."
 
-#: src/folderscommand.cpp:290
+#: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "Cambiáronse %1 identificadores de cartafol."
 
-#: src/folderscommand.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#: src/folderscommand.cpp:321
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "Procesando a colección «%1»"
+msgstr "Procesando o ficheiro de configuración «%1»…"
 
-#: src/folderscommand.cpp:403
+#: src/folderscommand.cpp:416
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "Renomeáronse %1 grupos."
 
-#: src/folderscommand.cpp:517
+#: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "Cambiouse o valor de %1 opcións."
 
-#: src/folderscommand.cpp:523
+#: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "Non foron necesarios cambios de configuración."
 
-#: src/folderscommand.cpp:532
+#: src/folderscommand.cpp:545
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings "
 "changes).<nl/>Quit all running PIM applications and stop the Akonadi server, "
 "then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
-"implement the required changes."
+"implement the changes."
 msgstr ""
+"Fan falla cambios de configuración (%1 renomeamentos de grupos e %2 cambios "
+"de opcións).<nl/> Saia de todas as aplicacións de xestión de información "
+"persoal e deteña o servidor de Akonadi.<nl/> Despois execute:<nl/> <bcode>  "
+"%3 %4 --restore</bcode>"
 
-#: src/folderscommand.cpp:573
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#: src/folderscommand.cpp:564
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "Cambiouse o nome do cartafol de maildir a «%1»"
+msgstr "Gardando as rutas de cartafoles en «%1»…"
 
-#: src/folderscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#: src/folderscommand.cpp:571
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "A colección ou elemento"
+msgstr "Gardáronse as rutas de cartafoles de %1 colección."
 
-#: src/folderscommand.cpp:585
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#: src/folderscommand.cpp:576
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "Cambiouse o nome do cartafol de maildir a «%1»"
+msgstr "Lendo as rutas de cartafoles gardadas de «%1»…"
 
-#: src/folderscommand.cpp:596
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#: src/folderscommand.cpp:587
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Renomear unha colección"
+msgstr "Léronse %1 rutas de colección gardadas."
 
-#: src/folderscommand.cpp:679
+#: src/folderscommand.cpp:670
 #, kde-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
+"Definíronse %1 padróns de cambio de datos para %2 nomes de ficheiros de "
+"configuración."
 
-#: src/folderscommand.cpp:695
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#: src/folderscommand.cpp:686
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "A etiqueta para eliminar, «%1», non existe"
+msgstr "A lista de cartafoles gardada «%1» non existe."
 
-#: src/folderscommand.cpp:699
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#: src/folderscommand.cpp:690
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "A etiqueta para eliminar, «%1», non existe"
+msgstr "A lista de cartafoles actual «%1» non existe."
 
-#: src/folderscommand.cpp:703
+#: src/folderscommand.cpp:694
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
 msgstr ""
+"A lista de cartafoles actual «%1» é máis vella que a lista de cartafoles "
+"gardados «%2»."
 
-#: src/folderscommand.cpp:706
+#: src/folderscommand.cpp:697
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "Primeiro execute «%1 %2 --check»."
 
-#: src/folderscommand.cpp:718
+#: src/folderscommand.cpp:709
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
 msgstr ""
+"O novo ficheiro de configuración, «%1», non existe, ou é máis vello que a "
+"lista de cartafoles «%2»."
 
-#: src/folderscommand.cpp:735
+#: src/folderscommand.cpp:726
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "Comprobando se o servidor de Akonadi está en execución…"
 
-#: src/folderscommand.cpp:740
+#: src/folderscommand.cpp:731
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "O servidor de Akonadi está detido."
+
+#: src/folderscommand.cpp:736
+#, kde-format
+msgctxt "@info:shell"
+msgid "Shutting down Akonadi server..."
+msgstr "Apagando o servidor de Akonadi…"
 
 #: src/folderscommand.cpp:745
 #, kde-format
 msgctxt "@info:shell"
-msgid "Shutting down Akonadi server..."
-msgstr ""
-
-#: src/folderscommand.cpp:754
-#, kde-format
-msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "Actualizando %1 ficheiros de configuración en «%2»…"
 
-#: src/folderscommand.cpp:765
+#: src/folderscommand.cpp:756
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "Retirando o «%1» vello…"
 
-#: src/folderscommand.cpp:768
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#: src/folderscommand.cpp:759
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "Non é posíbel gardar o ficheiro «%1»"
+msgstr "Non é posíbel retirar o «%1» vello."
 
-#: src/folderscommand.cpp:773
+#: src/folderscommand.cpp:764
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "Copiando o «%2» novo en «%1»…"
 
-#: src/folderscommand.cpp:776
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#: src/folderscommand.cpp:767
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
-msgstr "Non é posíbel copiar ou mover desde «%1», %2"
+msgstr "Non é posíbel copiar o novo «%2» en «%1»."
 
-#: src/folderscommand.cpp:781
+#: src/folderscommand.cpp:772
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "Completouse a restauración."
 
-#: src/folderscommand.cpp:794
+#: src/folderscommand.cpp:785
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "Non é posíbel atopar o cartafol de configuración da persoa usuaria."
 
-#: src/folderscommand.cpp:801
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#: src/folderscommand.cpp:792
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "A etiqueta para eliminar, «%1», non existe"
+msgstr "O cartafol de configuración «%1» non existe."
 
-#: src/folderscommand.cpp:822
+#: src/folderscommand.cpp:813
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "Non se atoparon ficheiros de configuración aplicábeis."
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
@@ -2223,7 +2350,7 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "Non foi posíbel preparar o terminal."
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
@@ -2253,6 +2380,14 @@ msgstr "Non se indicou ningún ficheiro"
 msgctxt "@info:shell"
 msgid "Item updated successfully"
 msgstr "O elemento actualizouse correctamente"
+
+#~ msgctxt "@info:shell"
+#~ msgid ""
+#~ "Only one of the 'show', 'add', 'modify' or 'delete' options may be "
+#~ "specified"
+#~ msgstr ""
+#~ "Só se pode indicar unha destas opcións: «show» (amosar), «add» (engadir), "
+#~ "«modify» (modificar) ou «delete» (eliminar)."
 
 #~ msgctxt "@info:shell"
 #~ msgid "Error: %1"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-31 00:41+0000\n"
+"POT-Creation-Date: 2025-02-07 00:43+0000\n"
 "PO-Revision-Date: 2024-03-14 10:04+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -390,41 +390,58 @@ msgctxt "@info:shell"
 msgid "Status:  "
 msgstr "Állapot:  "
 
-#: src/attributescommand.cpp:72
+#: src/attributescommand.cpp:80
 #, fuzzy
 #| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
 msgstr "Elemek hozzáadása gyűjteményhez"
 
-#: src/attributescommand.cpp:89
+#: src/attributescommand.cpp:93
 #, fuzzy, kde-format
 #| msgid "Show the expanded contact group (the default operation)"
 msgid "Show the collection attributes (the default operation)"
 msgstr "A kibontott névjegycsoport megjelenítése (alapértelmezett művelet)"
 
-#: src/attributescommand.cpp:92
+#: src/attributescommand.cpp:96
 #, kde-format
 msgid "Add an attribute"
 msgstr ""
 
-#: src/attributescommand.cpp:95
+#: src/attributescommand.cpp:99
 #, kde-format
 msgid "Modify an existing attribute"
 msgstr ""
 
-#: src/attributescommand.cpp:98
+#: src/attributescommand.cpp:102
 #, fuzzy, kde-format
 #| msgid "Delete a collection or an item"
 msgid "Delete an existing attribute"
 msgstr "Gyűjtemény vagy elem törlése"
 
-#: src/attributescommand.cpp:101
+#: src/attributescommand.cpp:105
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
 msgstr ""
 
-#: src/attributescommand.cpp:103
+#: src/attributescommand.cpp:108
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "The collection or item"
+msgid "Save current folder attributes"
+msgstr "A gyűjtemény vagy elem"
+
+#: src/attributescommand.cpp:111
+#, kde-format
+msgid "Check current against saved folder attributes"
+msgstr ""
+
+#: src/attributescommand.cpp:114
+#, kde-format
+msgid "Restore changed folder attributes"
+msgstr ""
+
+#: src/attributescommand.cpp:125
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "The collection to dump: an ID, path or Akonadi URL"
@@ -432,46 +449,45 @@ msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
 msgstr "A kiírandó gyűjtemény: egy azonosító, elérési út vagy Akonadi URL"
 
-#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for the operation"
 msgstr "A művelet argumentumai"
 
-#: src/attributescommand.cpp:104 src/groupcommand.cpp:78
+#: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgid "args..."
 msgstr "arg…"
 
-#: src/attributescommand.cpp:120
+#: src/attributescommand.cpp:142
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
 msgstr ""
 
-#: src/attributescommand.cpp:127
+#: src/attributescommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
 msgstr ""
 
-#: src/attributescommand.cpp:160
+#: src/attributescommand.cpp:206
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
 msgctxt "@info:shell"
-msgid ""
-"Only one of the 'show', 'add', 'modify' or 'delete' options may be specified"
+msgid "Only one operation mode option may be specified"
 msgstr "Csak a „list”, „add”, vagy „delete” opciók adhatóak meg"
 
-#: src/attributescommand.cpp:164 src/dumpcommand.cpp:74
+#: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
 msgstr "Nincs megadva gyűjtemény"
 
-#: src/attributescommand.cpp:172
+#: src/attributescommand.cpp:220
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "No items specified to add"
@@ -479,7 +495,7 @@ msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
 msgstr "Nincsenek megadva a hozzáadandó elemek"
 
-#: src/attributescommand.cpp:181
+#: src/attributescommand.cpp:228
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "No items specified to delete"
@@ -487,7 +503,7 @@ msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
 msgstr "Nincsenek megadva a törlendő elemek"
 
-#: src/attributescommand.cpp:188
+#: src/attributescommand.cpp:234
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "No items specified to add"
@@ -495,27 +511,218 @@ msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
 msgstr "Nincsenek megadva a hozzáadandó elemek"
 
-#: src/attributescommand.cpp:198
+#: src/attributescommand.cpp:243
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
 msgstr ""
 
-#: src/attributescommand.cpp:243
+#: src/attributescommand.cpp:269
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot save file '%1'"
+msgctxt "@info:shell"
+msgid "Cannot read saved attributes from '%1'"
+msgstr "A(z) „%1” fájl nem menthető"
+
+#: src/attributescommand.cpp:270 src/folderscommand.cpp:181
+#, kde-format
+msgctxt "@info:shell"
+msgid "Run '%1 %2 --backup' first"
+msgstr ""
+
+#: src/attributescommand.cpp:304
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Collection %1 has no items"
 msgctxt "@info:shell"
-msgid "Collection already has an attribute '%1'"
+msgid "Collection %2 already has an attribute '%1'"
 msgstr "A(z) %1 gyűjteménynek nincsenek elemei"
 
-#: src/attributescommand.cpp:254
+#: src/attributescommand.cpp:310
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Collection %1 has no items"
 msgctxt "@info:shell"
-msgid "Collection has no attribute '%1'"
+msgid "Collection %2 has no attribute '%1'"
 msgstr "A(z) %1 gyűjteménynek nincsenek elemei"
+
+#: src/attributescommand.cpp:379
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid "Collection %1 has no items"
+msgctxt "@info:shell"
+msgid "Collection %1 has no attributes"
+msgstr "A(z) %1 gyűjteménynek nincsenek elemei"
+
+#: src/attributescommand.cpp:387
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell output section header 1=count, 2=collection"
+#| msgid "Collection %2 has %1 item:"
+#| msgid_plural "Collection %2 has %1 items:"
+msgctxt "@info:shell"
+msgid "Collection %2 has %1 attribute:"
+msgid_plural "Collection %2 has %1 attributes:"
+msgstr[0] "A(z) %2 gyűjteményben %1 elem van:"
+msgstr[1] "A(z) %2 gyűjteményben %1 elem van:"
+
+#: src/attributescommand.cpp:403 src/folderscommand.cpp:197
+#, kde-format
+msgctxt "@info:shell"
+msgid "Found %1 current Akonadi collections"
+msgstr ""
+
+#: src/attributescommand.cpp:413 src/folderscommand.cpp:213
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot save file '%1'"
+msgctxt "@info:shell"
+msgid "Cannot save backup list to '%1'"
+msgstr "A(z) „%1” fájl nem menthető"
+
+#: src/attributescommand.cpp:424
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Collection %1 has no items"
+msgctxt "@info:shell"
+msgid "Saving collection attributes to '%1'"
+msgstr "A(z) %1 gyűjteménynek nincsenek elemei"
+
+#: src/attributescommand.cpp:456
+#, fuzzy, kde-format
+#| msgid "Add items to a collection"
+msgctxt "@info:shell"
+msgid "Saved attributes for %1 collections"
+msgstr "Elemek hozzáadása gyűjteményhez"
+
+#: src/attributescommand.cpp:462
+#, fuzzy, kde-format
+#| msgid "Changed maildir folder name to '%1'"
+msgctxt "@info:shell"
+msgid "Reading saved attributes from '%1'"
+msgstr "A maildir mappa neve megváltozott: „%1”"
+
+#: src/attributescommand.cpp:483
+#, fuzzy, kde-format
+#| msgid "Add items to a collection"
+msgctxt "@info:shell"
+msgid "Read attributes for %1 collections"
+msgstr "Elemek hozzáadása gyűjteményhez"
+
+#: src/attributescommand.cpp:530
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder '%1' had attributes but is no longer present"
+msgstr ""
+
+#: src/attributescommand.cpp:553
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot fetch parent collection '%1', %2"
+msgctxt "@info:shell"
+msgid "Cannot fetch collection %1 \"%2\""
+msgstr "Nem sikerült lekérni a(z) „%1” szülőgyűjteményt, %2"
+
+#: src/attributescommand.cpp:561
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell output section header 1=count, 2=collection"
+#| msgid "Collection %2 has %1 item:"
+#| msgid_plural "Collection %2 has %1 items:"
+msgctxt "@info:shell"
+msgid "Collection \"%2\" changed ID from %1 to %3"
+msgstr "A(z) %2 gyűjteményben %1 elem van:"
+
+#: src/attributescommand.cpp:634
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
+msgstr ""
+
+#: src/attributescommand.cpp:643
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%1\" attribute \"%2\" added %3"
+msgstr ""
+
+#: src/attributescommand.cpp:666
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%2\" needs update of %1 attribute"
+msgid_plural "Folder \"%2\" needs update of %1 attributes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/attributescommand.cpp:672
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Folder \"%2\" updating %1 attribute"
+msgid_plural "Folder \"%2\" updating %1 attributes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/attributescommand.cpp:697
+#, fuzzy, kde-kuit-format
+#| msgid "Show the expanded contact group (the default operation)"
+msgctxt "@info:shell"
+msgid "No collection attributes need to be restored"
+msgstr "A kibontott névjegycsoport megjelenítése (alapértelmezett művelet)"
+
+#: src/attributescommand.cpp:699
+#, fuzzy, kde-kuit-format
+#| msgid "Show the expanded contact group (the default operation)"
+msgctxt "@info:shell"
+msgid "No collection attributes needed to be restored"
+msgstr "A kibontott névjegycsoport megjelenítése (alapértelmezett művelet)"
+
+#: src/attributescommand.cpp:704
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Attributes need to be restored for %1 collection"
+msgid_plural "Attributes need to be restored for %1 collections"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/attributescommand.cpp:711
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid ""
+"Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
+"restore</bcode><nl/>to implement the changes."
+msgstr ""
+
+#: src/attributescommand.cpp:722
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid "Files or directories to add to the collection"
+msgctxt "@info:shell"
+msgid "Attributes were restored for %1 collection"
+msgid_plural "Attributes were restored for %1 collections"
+msgstr[0] "A gyűjteményhez adandó fájlok vagy mappák"
+msgstr[1] "A gyűjteményhez adandó fájlok vagy mappák"
+
+#: src/collectionlistcommand.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot delete the root collection"
+msgctxt "@info:shell"
+msgid "Cannot list any collections"
+msgstr "Nem sikerült törölni a gyökérgyűjteményt"
+
+#: src/collectionlistcommand.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Directory '%1' not found or not a directory"
+msgctxt "@info:shell"
+msgid "Save location '%1' exists but is not a directory"
+msgstr "A(z) „%1” mappa nem található, vagy nem mappa"
+
+#: src/collectionlistcommand.cpp:94
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot create directory '%1/%2'"
+msgctxt "@info:shell"
+msgid "Cannot create save directory '%1'"
+msgstr "Nem lehet létrehozni a mappát: „%1/%2”"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -1003,27 +1210,27 @@ msgctxt "@info:shell"
 msgid "No export file specified"
 msgstr "Nincs megadva exportfájl"
 
-#: src/folderscommand.cpp:40
+#: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
 msgstr ""
 
-#: src/folderscommand.cpp:52
+#: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
 msgstr ""
 
-#: src/folderscommand.cpp:55
+#: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
 msgstr ""
 
-#: src/folderscommand.cpp:58
+#: src/folderscommand.cpp:118
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
 
-#: src/folderscommand.cpp:81
+#: src/folderscommand.cpp:141
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
@@ -1031,7 +1238,7 @@ msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
 msgstr "Csak a „list”, „add”, vagy „delete” opciók adhatóak meg"
 
-#: src/folderscommand.cpp:85
+#: src/folderscommand.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
@@ -1039,23 +1246,7 @@ msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
 msgstr "Csak a „list”, „add”, vagy „delete” opciók adhatóak meg"
 
-#: src/folderscommand.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
-msgctxt "@info:shell"
-msgid "Save location '%1' exists but is not a directory"
-msgstr "A(z) „%1” mappa nem található, vagy nem mappa"
-
-#: src/folderscommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
-msgctxt "@info:shell"
-msgid "Cannot create save directory '%1'"
-msgstr "Nem lehet létrehozni a mappát: „%1/%2”"
-
-#: src/folderscommand.cpp:148
+#: src/folderscommand.cpp:180
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Cannot save file '%1'"
@@ -1063,35 +1254,7 @@ msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
 msgstr "A(z) „%1” fájl nem menthető"
 
-#: src/folderscommand.cpp:149
-#, kde-format
-msgctxt "@info:shell"
-msgid "Run '%1 %2 --backup' first"
-msgstr ""
-
-#: src/folderscommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
-msgctxt "@info:shell"
-msgid "Cannot list any collections"
-msgstr "Nem sikerült törölni a gyökérgyűjteményt"
-
-#: src/folderscommand.cpp:183
-#, kde-format
-msgctxt "@info:shell"
-msgid "Found %1 current Akonadi collections"
-msgstr ""
-
-#: src/folderscommand.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
-msgctxt "@info:shell"
-msgid "Cannot save backup list to '%1'"
-msgstr "A(z) „%1” fájl nem menthető"
-
-#: src/folderscommand.cpp:217
+#: src/folderscommand.cpp:231
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Cannot create directory '%1/%2'"
@@ -1099,19 +1262,19 @@ msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
 msgstr "Nem lehet létrehozni a mappát: „%1/%2”"
 
-#: src/folderscommand.cpp:285
+#: src/folderscommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
 msgstr ""
 
-#: src/folderscommand.cpp:290
+#: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
 msgstr ""
 
-#: src/folderscommand.cpp:307
+#: src/folderscommand.cpp:321
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Processing collection '%1'"
@@ -1119,42 +1282,42 @@ msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
 msgstr "Gyűjtemény feldolgozása: „%1”"
 
-#: src/folderscommand.cpp:403
+#: src/folderscommand.cpp:416
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
 msgstr ""
 
-#: src/folderscommand.cpp:517
+#: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
 msgstr ""
 
-#: src/folderscommand.cpp:523
+#: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
 msgstr ""
 
-#: src/folderscommand.cpp:532
+#: src/folderscommand.cpp:545
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings "
 "changes).<nl/>Quit all running PIM applications and stop the Akonadi server, "
 "then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
-"implement the required changes."
+"implement the changes."
 msgstr ""
 
-#: src/folderscommand.cpp:573
+#: src/folderscommand.cpp:564
 #, fuzzy, kde-format
 #| msgid "Changed maildir folder name to '%1'"
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
 msgstr "A maildir mappa neve megváltozott: „%1”"
 
-#: src/folderscommand.cpp:580
+#: src/folderscommand.cpp:571
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "The collection or item"
@@ -1162,27 +1325,27 @@ msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
 msgstr "A gyűjtemény vagy elem"
 
-#: src/folderscommand.cpp:585
+#: src/folderscommand.cpp:576
 #, fuzzy, kde-format
 #| msgid "Changed maildir folder name to '%1'"
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
 msgstr "A maildir mappa neve megváltozott: „%1”"
 
-#: src/folderscommand.cpp:596
+#: src/folderscommand.cpp:587
 #, fuzzy, kde-format
 #| msgid "Rename a collection"
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
 msgstr "Gyűjtemény átnevezése"
 
-#: src/folderscommand.cpp:679
+#: src/folderscommand.cpp:670
 #, kde-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
 
-#: src/folderscommand.cpp:695
+#: src/folderscommand.cpp:686
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:shell"
 #| msgid "Tag to delete '%1' does not exist"
@@ -1190,7 +1353,7 @@ msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
 msgstr "A(z) „%1” törlésére szolgáló címke nem létezik"
 
-#: src/folderscommand.cpp:699
+#: src/folderscommand.cpp:690
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:shell"
 #| msgid "Tag to delete '%1' does not exist"
@@ -1198,56 +1361,56 @@ msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
 msgstr "A(z) „%1” törlésére szolgáló címke nem létezik"
 
-#: src/folderscommand.cpp:703
+#: src/folderscommand.cpp:694
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
 msgstr ""
 
-#: src/folderscommand.cpp:706
+#: src/folderscommand.cpp:697
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
 msgstr ""
 
-#: src/folderscommand.cpp:718
+#: src/folderscommand.cpp:709
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
 msgstr ""
 
-#: src/folderscommand.cpp:735
+#: src/folderscommand.cpp:726
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
 msgstr ""
 
-#: src/folderscommand.cpp:740
+#: src/folderscommand.cpp:731
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
 msgstr ""
 
-#: src/folderscommand.cpp:745
+#: src/folderscommand.cpp:736
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server..."
 msgstr ""
 
-#: src/folderscommand.cpp:754
+#: src/folderscommand.cpp:745
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
 msgstr ""
 
-#: src/folderscommand.cpp:765
+#: src/folderscommand.cpp:756
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
 msgstr ""
 
-#: src/folderscommand.cpp:768
+#: src/folderscommand.cpp:759
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Cannot save file '%1'"
@@ -1255,13 +1418,13 @@ msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
 msgstr "A(z) „%1” fájl nem menthető"
 
-#: src/folderscommand.cpp:773
+#: src/folderscommand.cpp:764
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
 msgstr ""
 
-#: src/folderscommand.cpp:776
+#: src/folderscommand.cpp:767
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Cannot copy/move from '%1', %2"
@@ -1269,19 +1432,19 @@ msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
 msgstr "Nem sikerült másolni/áthelyezni innen: „%1”, %2"
 
-#: src/folderscommand.cpp:781
+#: src/folderscommand.cpp:772
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
 msgstr ""
 
-#: src/folderscommand.cpp:794
+#: src/folderscommand.cpp:785
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
 msgstr ""
 
-#: src/folderscommand.cpp:801
+#: src/folderscommand.cpp:792
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
 #| msgid "Tag to delete '%1' does not exist"
@@ -1289,7 +1452,7 @@ msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
 msgstr "A(z) „%1” törlésére szolgáló címke nem létezik"
 
-#: src/folderscommand.cpp:822
+#: src/folderscommand.cpp:813
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
@@ -2289,6 +2452,15 @@ msgstr "Nincs megadva fájl"
 msgctxt "@info:shell"
 msgid "Item updated successfully"
 msgstr "Elem sikeresen frissítve"
+
+#, fuzzy
+#~| msgctxt "@info:shell"
+#~| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#~ msgctxt "@info:shell"
+#~ msgid ""
+#~ "Only one of the 'show', 'add', 'modify' or 'delete' options may be "
+#~ "specified"
+#~ msgstr "Csak a „list”, „add”, vagy „delete” opciók adhatóak meg"
 
 #~ msgctxt "@info:shell"
 #~ msgid "Error: %1"
