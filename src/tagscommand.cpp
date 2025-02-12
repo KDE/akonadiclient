@@ -18,6 +18,8 @@
 
 #include "tagscommand.h"
 
+#include <qfile.h>
+#include <qregularexpression.h>
 #include <qsavefile.h>
 #include <qvariant.h>
 
@@ -67,8 +69,11 @@ void TagsCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addOption(QCommandLineOption((QStringList() << "s"
                                                         << "backup"),
                                          i18n("Save the current tags")));
+    parser->addOption(QCommandLineOption((QStringList() << "r"
+                                                        << "restore"),
+                                         i18n("Restore the saved tags (into a new database)")));
     parser->addOption(QCommandLineOption((QStringList() << "I" << "id"), i18n("ID for a tag to be added (default automatic)"), i18n("id")));
-    parser->addOption(QCommandLineOption((QStringList() << "R" << "retain"), i18n("Retain intermediate tags added when the 'id' option is used")));
+    parser->addOption(QCommandLineOption((QStringList() << "K" << "retain"), i18n("Retain intermediate tags added when the 'id' option is used")));
     parser->addPositionalArgument(i18n("TAG"), i18n("The name of a tag to add, or the name, ID or URL of a tag to delete"), i18n("[TAG...]"));
 }
 
@@ -79,7 +84,7 @@ AbstractCommand::Error TagsCommand::initCommand(QCommandLineParser *parser)
 
     if (parser->isSet("id")) {
         bool ok;
-        mAddForceId = parser->value("id").toUInt(&ok);
+        mAddForceId = parser->value("id"_L1).toUInt(&ok);
         if (!ok || (mAddForceId == 0)) {
             emitErrorSeeHelp(i18nc("@info:shell", "Invalid value for the 'id' option"));
             return (InvalidUsage);
@@ -104,8 +109,11 @@ AbstractCommand::Error TagsCommand::initCommand(QCommandLineParser *parser)
     if (parser->isSet("backup"_L1)) {
         ++modeCount;
     }
+    if (parser->isSet("restore"_L1)) {
+        ++modeCount;
+    }
     if (modeCount > 1) {
-        emitErrorSeeHelp(i18nc("@info:shell", "Only one of the 'list', 'add', 'delete' or 'backup' options may be specified"));
+        emitErrorSeeHelp(i18nc("@info:shell", "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may be specified"));
         return (InvalidUsage);
     }
 
@@ -137,17 +145,21 @@ AbstractCommand::Error TagsCommand::initCommand(QCommandLineParser *parser)
             emitErrorSeeHelp(i18nc("@info:shell", "No tags specified to delete"));
             return (InvalidUsage);
         }
-    } else if (parser->isSet("backup"_L1)) // see if "Backup" mode
-    {
+    } else if (parser->isSet("backup"_L1)) { // see if "Backup" mode
         mOperationMode = ModeBackup;
+    } else if (parser->isSet("restore"_L1)) { // see if "Restore" mode
+        mOperationMode = ModeRestore;
     }
 
-    mAddForceRetain = parser->isSet("retain");
-    if ((mAddForceId != 0) || mAddForceRetain) {
-        if (mOperationMode != ModeAdd) {
-            emitErrorSeeHelp(i18nc("@info:shell", "The 'id' or 'retain' options can only be used with 'add'"));
-            return (InvalidUsage);
-        }
+    mAddForceRetain = parser->isSet("retain"_L1);
+
+    if (mAddForceRetain && (mOperationMode != ModeAdd) && (mOperationMode != ModeRestore)) {
+        emitErrorSeeHelp(i18nc("@info:shell", "The 'retain' option can only be used with 'add' or 'restore'"));
+        return (InvalidUsage);
+    }
+    if ((mAddForceId != 0) && (mOperationMode != ModeAdd)) {
+        emitErrorSeeHelp(i18nc("@info:shell", "The 'id' option can only be used with 'add'"));
+        return (InvalidUsage);
     }
 
     initProcessLoop(tagArgs);
@@ -171,30 +183,64 @@ void TagsCommand::start()
         }
     }
 
-    TagFetchJob *job = new TagFetchJob(this); // always need tag list
+    if (mOperationMode == ModeRestore) {
+        // In this mode, first read the original list of tags that was
+        // saved by a previous backup operation.
+        const QString readFileName = findSaveFile("savedtags.dat", false);
+        qDebug() << "read from" << readFileName;
+        QFile readFile(readFileName, this);
+        if (!readFile.open(QIODevice::ReadOnly)) {
+            Q_EMIT error(i18nc("@info:shell", "Cannot read saved tags from '%1'", readFile.fileName()));
+            Q_EMIT error(i18nc("@info:shell", "Run '%1 %2 --backup' first", QCoreApplication::applicationName(), name()));
+            Q_EMIT finished(RuntimeError);
+            return;
+        }
+
+        readSavedTags(&readFile); // populates mOrigTagMap
+        if (mOrigTagMap.isEmpty()) {
+            ErrorReporter::notice(i18nc("@info:shell", "No saved tags to restore"));
+            return;
+        }
+    }
+
+    TagFetchJob *job = new TagFetchJob(this); // always need current tag list
     connect(job, &KJob::result, this, &TagsCommand::onTagsFetched);
 }
 
 void TagsCommand::addNextTag()
 {
+    Tag::Id id;
+    QString name;
+
+    if (mOperationMode == ModeRestore) { // restore, currentArg() is tag ID
+        id = static_cast<Tag::Id>(currentArg().toULong());
+        name = mOrigTagMap[id];
+    } else { // add, currentArg() is name
+        name = currentArg();
+        id = mAddForceId;
+    }
+
+    qDebug() << id << name;
+
     // See whether a tag with that name or ID already exists
     for (const Tag &tag : mFetchedTags) {
-        if (tag.name() == currentArg() || (mAddForceId != 0 && tag.id() == mAddForceId)) {
+        if (tag.name() == name || (id != 0 && tag.id() == id)) {
             Q_EMIT error(i18nc("@info:shell", "A tag named '%1' ID %2 already exists", tag.name(), QString::number(tag.id())));
             processNext(); // ignore the conflicting tag
             return;
         }
     }
 
-    addTag();
-}
-
-void TagsCommand::addTag()
-{
-    Tag newTag(currentArg());
+    // Try to add the tag.  The construction must be done in this order
+    // (using the constructor taking a name and then setting the ID), because
+    // constructing a tag using the ID and then setting the name does not set
+    // the tag GID.
+    Tag newTag(name);
+    if (id != 0)
+        newTag.setId(id);
     TagCreateJob *createJob = new TagCreateJob(newTag, this);
-    if (mAddForceId != 0)
-        createJob->setProperty("requested", mAddForceId);
+    if (id != 0)
+        createJob->setProperty("requested", id);
     connect(createJob, &KJob::result, this, &TagsCommand::onTagAdded);
     createJob->start();
 }
@@ -207,16 +253,16 @@ void TagsCommand::onTagAdded(KJob *job)
     Q_ASSERT(createJob != nullptr);
 
     Tag addedTag = createJob->tag();
-    const Tag::Id forcedId = createJob->property("requested").value<Tag::Id>();
+    const Tag::Id requestedId = createJob->property("requested").value<Tag::Id>();
     const Tag::Id addedId = addedTag.id();
 
     if (!addedTag.isValid()) {
         // It was not possible to add the tag.  Since the presence of an
-        // already existing name or ID was checked above, this is unlikely
+        // already existing name or ID has already checked, this is unlikely
         // to happen unless there is a serious problem with the Akonadi
         // server or database.
-        if (forcedId != 0) {
-            Q_EMIT error(i18nc("@info:shell", "Failed to add tag '%1' ID %2", currentArg(), QString::number(forcedId)));
+        if (requestedId != 0) {
+            Q_EMIT error(i18nc("@info:shell", "Failed to add tag '%1' ID %2", currentArg(), QString::number(requestedId)));
         } else {
             Q_EMIT error(i18nc("@info:shell", "Failed to add tag '%1'", currentArg()));
         }
@@ -225,12 +271,12 @@ void TagsCommand::onTagAdded(KJob *job)
         return;
     }
 
-    // The tag was successfully added.  If a forced ID was requested,
+    // The tag was successfully added.  If a particular ID was requested,
     // then check the three possible cases for the ID of the tag that
     // was actually added.
-    if ((forcedId != 0) && (addedId != forcedId)) { // didn't create the one requested
+    if ((requestedId != 0) && (addedId != requestedId)) { // didn't create the one requested
 
-        if (addedId > forcedId) { // too high
+        if (addedId > requestedId) { // too high
 
             // A tag with the requested ID could not and will never be able
             // to be created, because the ID sequence is already past that.
@@ -238,7 +284,7 @@ void TagsCommand::onTagAdded(KJob *job)
             // no need to call processNext() because initCommand() above
             // checked that there is only one tag argument.
             ErrorReporter::error(
-                xi18nc("@info:shell", "Cannot create a tag with ID %1, sequence already at ID %2", QString::number(forcedId), QString::number(addedId)));
+                xi18nc("@info:shell", "Cannot create a tag with ID %1, sequence already at ID %2", QString::number(requestedId), QString::number(addedId)));
             if (!mAddForceRetain) {
                 qDebug() << "delete unwanted tag" << addedTag.id();
                 TagDeleteJob *deleteJob = new TagDeleteJob(addedTag, this);
@@ -247,7 +293,7 @@ void TagsCommand::onTagAdded(KJob *job)
                 connect(deleteJob, &KJob::result, this, &TagsCommand::onTagDeleted);
                 deleteJob->start();
             } else {
-                const QString newName = QCoreApplication::applicationName() + "-added-" + QString::number(addedTag.id());
+                const QString newName = QCoreApplication::applicationName() + "-" + QString::number(addedTag.id());
                 qDebug() << "rename unwanted tag" << addedTag.id() << "->" << newName;
                 addedTag.setName(newName);
                 TagModifyJob *modifyJob = new TagModifyJob(addedTag, this);
@@ -270,7 +316,7 @@ void TagsCommand::onTagAdded(KJob *job)
                 connect(deleteJob, &KJob::result, this, &TagsCommand::onTagDeleted);
                 deleteJob->start();
             } else {
-                const QString newName = QCoreApplication::applicationName() + "-added-" + QString::number(addedTag.id());
+                const QString newName = QCoreApplication::applicationName() + "-" + QString::number(addedTag.id());
                 qDebug() << "rename temp tag" << addedTag.id() << "->" << newName;
                 addedTag.setName(newName);
                 TagModifyJob *modifyJob = new TagModifyJob(addedTag, this);
@@ -378,22 +424,30 @@ void TagsCommand::onTagDeleted(KJob *job)
     // parameter until which of those has been resolved.  A TagModifyJob
     // will only have been created by onTagAdded() and will always have
     // the "requested" property set.
-    const Tag::Id forcedId = job->property("requested").value<Tag::Id>();
-    if (forcedId != 0) {
+    const Tag::Id requestedId = job->property("requested").value<Tag::Id>();
+    if (requestedId != 0) {
+        qDebug() << "requested" << requestedId << "toohigh?" << job->property("toohigh").toBool();
+
         // This deletion or renaming was done as a result of trying to force a
         // tag to be created with a specific ID, and that was not possible in
         // some way.
         if (job->property("toohigh").toBool()) {
             // The tag could not be created because the creation sequence is
-            // already past that point.  There is no point in trying again.
+            // already past that point.  There is no point in trying again for
+            // that particular tag, but if restoring then try subsequent ones
+            // because there may be a gap.
             ErrorReporter::warning(xi18nc("@info:shell", "Tag could not be created with the requested ID"));
-            Q_EMIT finished(RuntimeError);
+            if (mOperationMode == ModeRestore) {
+                processNext();
+            } else {
+                Q_EMIT finished(RuntimeError);
+            }
             return;
         }
 
         // Try again to add the tag, which this time will get the next ID
         // in sequence.
-        addTag();
+        addNextTag();
         return;
     }
 
@@ -432,18 +486,23 @@ void TagsCommand::onTagsFetched(KJob *job)
 
     // Now that the current tag list has been fetched,
     // look at what to do.
-    if (mOperationMode == ModeList) {
+    if ((mOperationMode == ModeList) || (mOperationMode == ModeBackup)) {
         if (mFetchedTags.isEmpty()) {
             Q_EMIT error(i18nc("@info:shell", "No tags found"));
             Q_EMIT finished(NoError);
-        } else
-            listTags();
-    } else if (mOperationMode == ModeAdd)
+        }
+    }
+
+    if (mOperationMode == ModeList)
+        listTags();
+    else if (mOperationMode == ModeAdd)
         startProcessLoop("addNextTag");
     else if (mOperationMode == ModeDelete)
         startProcessLoop("deleteNextTag");
     else if (mOperationMode == ModeBackup)
         backupTags();
+    else if (mOperationMode == ModeRestore)
+        restoreTags();
 }
 
 void TagsCommand::listTags()
@@ -496,4 +555,48 @@ void TagsCommand::backupTags()
     saveFile.commit(); // finished with save file
 
     ErrorReporter::success(i18nc("@info:shell", "Saved tags to '%1'", saveFile.fileName()));
+    Q_EMIT finished();
+}
+
+void TagsCommand::readSavedTags(QFileDevice *file)
+{
+    ErrorReporter::progress(i18nc("@info:shell", "Reading saved tags from '%1'", file->fileName()));
+    QTextStream ts(file);
+    const QRegularExpression rx("^(\\d+)\\s+(\\S+)\\s+(.+)$");
+    while (!ts.atEnd()) {
+        const QString line = ts.readLine().trimmed();
+        const QRegularExpressionMatch match = rx.match(line);
+        if (!match.hasMatch())
+            continue;
+
+        // It is not necessary to parse and restore the tag URL, since it
+        // can be obtained simply by creating a Tag with a given ID, with
+        // no Akonadi operations required.
+        const Tag::Id id = static_cast<Tag::Id>(match.captured(1).toULong());
+        const QString name = match.captured(3);
+        mOrigTagMap.insert(id, name);
+    }
+
+    ErrorReporter::info(i18nc("@info:shell", "Read %1 saved tags", mOrigTagMap.count()));
+}
+
+void TagsCommand::restoreTags()
+{
+    // Get the list of tag IDs to be restored, in numerical order.  The new
+    // tags must be created in this order, but there may be gaps in the
+    // sequence.
+    QList<Tag::Id> tagIds = mOrigTagMap.keys();
+    std::sort(tagIds.begin(), tagIds.end());
+    qDebug() << "to restore" << tagIds;
+
+    QStringList tagArgs;
+    // The process loop arguments need to be a list of strings.  Yes, this
+    // does involve a round trip ID -> string -> ID conversion, but the
+    // total number of tags to restore is expected to be fairly small.
+    for (const Tag::Id &id : std::as_const(tagIds)) {
+        tagArgs.append(QString::number(id));
+    }
+
+    initProcessLoop(tagArgs, i18n("Tags restored"));
+    startProcessLoop("addNextTag");
 }

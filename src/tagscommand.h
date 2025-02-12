@@ -21,8 +21,10 @@
 #include "abstractcommand.h"
 
 #include <akonadi/tag.h>
+using namespace Akonadi;
 
 class KJob;
+class QFileDevice;
 
 class TagsCommand : public AbstractCommand
 {
@@ -59,13 +61,18 @@ private:
 
 private:
     void listTags();
-    void addTag();
     void backupTags();
+    void restoreTags();
+    void readSavedTags(QFileDevice *file);
 
 private Q_SLOTS:
     void onTagsFetched(KJob *job);
-    void addNextTag();
     void onTagAdded(KJob *job);
-    void deleteNextTag();
     void onTagDeleted(KJob *job);
+
+    void addNextTag();
+    void deleteNextTag();
+
+private:
+    QMap<Tag::Id, QString> mOrigTagMap;
 };

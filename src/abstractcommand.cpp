@@ -222,6 +222,7 @@ void AbstractCommand::initProcessLoop(const QStringList &args, const QString &fi
 
 void AbstractCommand::startProcessLoop(const char *slot)
 {
+    QCoreApplication::setQuitLockEnabled(false);
     mProcessLoopSlot = slot;
     processNext();
 }
