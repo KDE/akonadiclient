@@ -34,11 +34,10 @@ msgid "The name of the command"
 msgstr "命令名称"
 
 #: src/abstractcommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "获取指定代理的状态"
+msgstr "提供指定命令的帮助信息"
 
 #: src/abstractcommand.cpp:103 src/main.cpp:67
 #, kde-format
@@ -415,21 +414,19 @@ msgid "Show or interpret the attribute value as hex encoded"
 msgstr ""
 
 #: src/attributescommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgid "Save current folder attributes"
-msgstr "集合或项目"
+msgstr "保存当前文件夹属性"
 
 #: src/attributescommand.cpp:111
 #, kde-format
 msgid "Check current against saved folder attributes"
-msgstr ""
+msgstr "将当前文件夹属性与已保存的属性进行核对"
 
 #: src/attributescommand.cpp:114
 #, kde-format
 msgid "Restore changed folder attributes"
-msgstr ""
+msgstr "恢复已更改的文件夹属性"
 
 #: src/attributescommand.cpp:125
 #, kde-format
@@ -461,14 +458,10 @@ msgid "Hex encoded value contained invalid characters"
 msgstr ""
 
 #: src/attributescommand.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one operation mode option may be specified"
-msgstr "只能指定一个‘扩展’，‘添加’，‘删除’或‘清除’选项"
+msgstr "只允许指定一种操作模式选项"
 
 #: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -502,164 +495,140 @@ msgid "Too many arguments specified, from '%1'"
 msgstr ""
 
 #: src/attributescommand.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved attributes from '%1'"
-msgstr "无法保存文件 ‘%1’"
+msgstr "无法从“%1”读取保存的属性"
 
 #: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "先运行 '%1 %2 --backup'"
 
 #: src/attributescommand.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr "集合 %1 中没有项目"
+msgstr "集合 %2 已经有属性“%1”"
 
 #: src/attributescommand.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 has no attribute '%1'"
-msgstr "集合 %1 中没有项目"
+msgstr "集合 %2 没有属性“%1”"
 
 #: src/attributescommand.cpp:379
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no attributes"
-msgstr "集合 %1 中没有项目"
+msgstr "集合 %1 没有属性"
 
 #: src/attributescommand.cpp:387
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %2 has %1 attribute:"
 msgid_plural "Collection %2 has %1 attributes:"
-msgstr[0] "集合 %2 有 %1 个项目："
+msgstr[0] "集合 %2 有 %1 个属性："
 
 #: src/attributescommand.cpp:403 src/folderscommand.cpp:197
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "找到 %1 个当前的 Akonadi 集合"
 
 #: src/attributescommand.cpp:413 src/folderscommand.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "无法保存文件 ‘%1’"
+msgstr "无法将备份列表保存到 '%1'"
 
 #: src/attributescommand.cpp:424
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving collection attributes to '%1'"
-msgstr "已将邮件目录名更改为 “%1”"
+msgstr "将集合属性保存到 '%1' "
 
 #: src/attributescommand.cpp:456
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "New name for collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved attributes for %1 collections"
-msgstr "集合的新名称"
+msgstr "为 %1 个集合保存属性"
 
 #: src/attributescommand.cpp:462
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved attributes from '%1'"
-msgstr "已将邮件目录名更改为 “%1”"
+msgstr "读取 “%1” 中已保存的属性"
 
 #: src/attributescommand.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "New name for collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read attributes for %1 collections"
-msgstr "集合的新名称"
+msgstr "读取 %1 个集合的属性"
 
 #: src/attributescommand.cpp:530
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder '%1' had attributes but is no longer present"
-msgstr ""
+msgstr "文件夹 “%1” 有属性但不再存在"
 
 #: src/attributescommand.cpp:553
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot fetch parent collection '%1', %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
-msgstr "无法获取父集合 ‘%1’，%2"
+msgstr "无法获取集合 %1 “%2”"
 
 #: src/attributescommand.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection \"%2\" changed ID from %1 to %3"
-msgstr "集合 %2 有 %1 个项目："
+msgstr "集合 \"%2\" 的 ID 已从 %1 更改为 %3 "
 
 #: src/attributescommand.cpp:634
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
-msgstr ""
+msgstr "文件夹 \"%1\" 属性 \"%2\" 已从 %3 更改为 %4 "
 
 #: src/attributescommand.cpp:643
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" attribute \"%2\" added %3"
-msgstr ""
+msgstr "文件夹 \"%1\" 属性 \"%2\" 添加了 %3 "
 
 #: src/attributescommand.cpp:666
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" needs update of %1 attribute"
 msgid_plural "Folder \"%2\" needs update of %1 attributes"
-msgstr[0] ""
+msgstr[0] "文件夹 \"%2\" 需要更新 %1 个属性"
 
 #: src/attributescommand.cpp:672
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" updating %1 attribute"
 msgid_plural "Folder \"%2\" updating %1 attributes"
-msgstr[0] ""
+msgstr[0] "文件夹 \"%2\" 正在更新 %1 个属性"
 
 #: src/attributescommand.cpp:697
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes need to be restored"
-msgstr ""
+msgstr "没有需要还原的集合属性"
 
 #: src/attributescommand.cpp:699
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes needed to be restored"
-msgstr ""
+msgstr "无需还原集合属性"
 
 #: src/attributescommand.cpp:704
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes need to be restored for %1 collection"
 msgid_plural "Attributes need to be restored for %1 collections"
-msgstr[0] ""
+msgstr[0] "%1 个集合的属性需要还原"
 
 #: src/attributescommand.cpp:711
 #, kde-kuit-format
@@ -668,39 +637,33 @@ msgid ""
 "Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
 "restore</bcode><nl/>to implement the changes."
 msgstr ""
+"需要更改属性。执行以下命令：<nl/><bcode>  %1 %2 --return</bcode><nl/>以实现更"
+"改。"
 
 #: src/attributescommand.cpp:722
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Files or directories to add to the collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes were restored for %1 collection"
 msgid_plural "Attributes were restored for %1 collections"
-msgstr[0] "要添加到集合的文件或目录"
+msgstr[0] "%1 个集合的属性已还原"
 
 #: src/collectionlistcommand.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "不能删除根集合"
+msgstr "无法列出任何集合"
 
 #: src/collectionlistcommand.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "找不到目录 ‘%1’ 或不是目录"
+msgstr "保存位置 '%1' 存在，但不是一个目录"
 
 #: src/collectionlistcommand.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "无法创建目录 ‘%1/%2’"
+msgstr "无法创建目录 '%1'"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -1135,13 +1098,13 @@ msgstr "已保存对项目 ‘%1’ 的更改"
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "错误"
 
 #: src/errorreporter.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "警告"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -1169,96 +1132,82 @@ msgstr "未指定输出文件"
 #: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "保存、检查或恢复 Akonadi 文件夹 ID"
 
 #: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "保存当前文件夹 ID 分配"
 
 #: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
-msgstr ""
+msgstr "将当前文件夹 ID 分配情况与已保存的情况进行核对"
 
 #: src/folderscommand.cpp:118
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
-msgstr ""
+msgstr "恢复文件夹 ID 分配已更改的配置文件"
 
 #: src/folderscommand.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
-msgstr "只能指定一个‘扩展’，‘添加’，‘删除’或‘清除’选项"
+msgstr "“备份”、“检查”或“恢复”选项中只能指定其中一个。"
 
 #: src/folderscommand.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
-msgstr "只能指定一个‘扩展’，‘添加’，‘删除’或‘清除’选项"
+msgstr "必须指定“备份”、“检查”或“恢复”选项中的一个。"
 
 #: src/folderscommand.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "无法保存文件 ‘%1’"
+msgstr "无法从 '%1' 读取保存的列表"
 
 #: src/folderscommand.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "无法创建目录 ‘%1/%2’"
+msgstr "无法将当前列表写入到 '%1'"
 
 #: src/folderscommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "没有文件夹 ID 发生更改"
 
 #: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "%1 个文件夹 ID 发生更改"
 
 #: src/folderscommand.cpp:321
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "正在处理集合 %1"
+msgstr "正在处理配置文件 '%1' ..."
 
 #: src/folderscommand.cpp:416
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "%1 个分组被重命名"
 
 #: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "%1 个设置值已更改"
 
 #: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "无需更改配置"
 
 #: src/folderscommand.cpp:545
 #, kde-kuit-format
@@ -1269,152 +1218,142 @@ msgid ""
 "then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</bcode><nl/>to "
 "implement the changes."
 msgstr ""
+"需要更改配置 (%1 个分组重命名和 %2 个设置更改) 。<nl/>请关闭所有正在运行的 "
+"PIM 应用程序并停止 Akonadi 服务器，然后<nl/>执行以下命令：<nl/><bcode> %3 %4 "
+"--restore</bcode><nl/>以实现更改。"
 
 #: src/folderscommand.cpp:564
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "已将邮件目录名更改为 “%1”"
+msgstr "将文件夹路径保存到 '%1'"
 
 #: src/folderscommand.cpp:571
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "集合或项目"
+msgstr "已保存 %1 个集合文件夹路径"
 
 #: src/folderscommand.cpp:576
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "已将邮件目录名更改为 “%1”"
+msgstr "正在从 '%1' 读取已保存的文件夹路径"
 
 #: src/folderscommand.cpp:587
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot find '%1' as a collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "找不到 ‘%1’ 作为集合或项目"
+msgstr "读取 %1 个已保存的集合路径"
 
 #: src/folderscommand.cpp:670
 #, kde-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
-msgstr ""
+msgstr "为 %2 个配置文件名定义了 %1 个更改数据模式"
 
 #: src/folderscommand.cpp:686
-#, fuzzy, kde-kuit-format
-#| msgid "File '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "文件 '%1' 不存在"
+msgstr "已保存的文件夹列表 '%1' 不存在"
 
 #: src/folderscommand.cpp:690
-#, fuzzy, kde-kuit-format
-#| msgid "File '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "文件 '%1' 不存在"
+msgstr "当前文件夹列表 '%1' 不存在"
 
 #: src/folderscommand.cpp:694
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
-msgstr ""
+msgstr "当前文件夹列表 '%1' 旧于已保存的文件夹列表 '%2' "
 
 #: src/folderscommand.cpp:697
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "先运行 '%1 %2 --check'"
 
 #: src/folderscommand.cpp:709
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
-msgstr ""
+msgstr "新的配置文件 '%1' 不存在，或者比文件夹列表 '%2' 旧。"
 
 #: src/folderscommand.cpp:726
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "正在检查 Akonadi 服务器是否在运行..."
 
 #: src/folderscommand.cpp:731
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Akonadi 服务器已停止"
 
 #: src/folderscommand.cpp:736
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server..."
-msgstr ""
+msgstr "正在关闭 Akonadi 服务器..."
 
 #: src/folderscommand.cpp:745
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "正在更新 '%2' 中的 %1 个配置文件 。"
 
 #: src/folderscommand.cpp:756
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "正在移除旧的 '%1'"
 
 #: src/folderscommand.cpp:759
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "无法保存文件 ‘%1’"
+msgstr "无法移除旧的 '%1'"
 
 #: src/folderscommand.cpp:764
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "正在复制新的 '%2' 到 '%1'"
 
 #: src/folderscommand.cpp:767
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2'to '%1'"
-msgstr "无法从 '%1', %2 复制/移动"
+msgstr "无法复制新的 '%2' 到 '%1'"
 
 #: src/folderscommand.cpp:772
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "恢复成功"
 
 #: src/folderscommand.cpp:785
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "无法定位用户配置目录"
 
 #: src/folderscommand.cpp:792
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "文件 '%1' 不存在"
+msgstr "配置目录 '%1' 不存在"
 
 #: src/folderscommand.cpp:813
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "未找到适用的配置文件"
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
@@ -2347,7 +2286,7 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "无法设置终端"
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
