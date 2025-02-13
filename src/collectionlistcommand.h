@@ -37,7 +37,6 @@ public:
 protected:
     void listCollections(CollectionFetchJob::Type type);
     void getCurrentPaths();
-    QString findSaveFile(const QString &name, bool createDir);
 
 protected Q_SLOTS:
     virtual void onCollectionsListed() = 0;

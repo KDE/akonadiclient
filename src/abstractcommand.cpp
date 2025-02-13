@@ -18,7 +18,11 @@
 
 #include "abstractcommand.h"
 
-#include <KLocalizedString>
+#include <qdir.h>
+#include <qfileinfo.h>
+#include <qstandardpaths.h>
+
+#include <klocalizedstring.h>
 
 #include "collectionresolvejob.h"
 #include "commandshell.h"
@@ -218,6 +222,7 @@ void AbstractCommand::initProcessLoop(const QStringList &args, const QString &fi
 
 void AbstractCommand::startProcessLoop(const char *slot)
 {
+    QCoreApplication::setQuitLockEnabled(false);
     mProcessLoopSlot = slot;
     processNext();
 }
@@ -237,4 +242,32 @@ void AbstractCommand::processNext()
     Q_ASSERT(mProcessLoopSlot != nullptr);
     mCurrentArg = mProcessLoopArgs.takeFirst();
     QMetaObject::invokeMethod(this, mProcessLoopSlot, Qt::QueuedConnection);
+}
+
+// Find the full path for a save file, optionally creating the parent
+// directory if required.
+QString AbstractCommand::findSaveFile(const QString &name, bool createDir)
+{
+    const QString saveDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + '/';
+    QFileInfo info(saveDir);
+    if (!info.isDir()) {
+        if (info.exists()) {
+            Q_EMIT error(i18nc("@info:shell", "Save location '%1' exists but is not a directory", info.absoluteFilePath()));
+            Q_EMIT finished(RuntimeError);
+            return (QString());
+        }
+
+        if (createDir) {
+            QDir d(info.dir());
+            if (!d.mkpath(saveDir)) {
+                Q_EMIT error(i18nc("@info:shell", "Cannot create save directory '%1'", info.absoluteFilePath()));
+                Q_EMIT finished(RuntimeError);
+                return (QString());
+            }
+        }
+    }
+
+    info.setFile(info.dir(), name);
+    qDebug() << info.absoluteFilePath();
+    return (info.absoluteFilePath());
 }

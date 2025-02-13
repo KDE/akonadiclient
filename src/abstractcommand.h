@@ -161,6 +161,14 @@ protected:
         return (mProcessLoopArgs.isEmpty());
     }
 
+    /** Get a name for a file to be saved.
+     *
+     * @param name The base name of the required file
+     * @param createDir If @c true and the containing directory does not exist, create it
+     * @return the full path of the file, or a null string if an error
+     **/
+    QString findSaveFile(const QString &name, bool createDir);
+
 private:
     bool mDryRun;
     bool mWantCollection;
