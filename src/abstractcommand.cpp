@@ -176,10 +176,10 @@ void AbstractCommand::emitErrorSeeHelp(const QString &msg)
 {
     QString s;
     if (CommandShell::isActive()) {
-        s = i18nc("@info:shell %1 is subcommand name, %2 is error message", "%2. See 'help %1'", this->name(), msg);
+        s = i18nc("@info:shell %1 is subcommand name, %2 is error message", "%2, see 'help %1'", this->name(), msg);
     } else {
         s = i18nc("@info:shell %1 is application name, %2 is subcommand name, %3 is error message",
-                  "%3. See '%1 help %2'",
+                  "%3, see '%1 help %2'",
                   QCoreApplication::applicationName(),
                   this->name(),
                   msg);
