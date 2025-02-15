@@ -3,14 +3,14 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2018, 2019, 2021, 2022, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2018, 2020, 2021.
+# Josep M. Ferrer <txemaq@gmail.com>, 2018, 2019, 2021, 2022, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-14 00:43+0000\n"
-"PO-Revision-Date: 2025-02-07 10:00+0100\n"
+"PO-Revision-Date: 2025-02-14 11:07+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -85,24 +85,18 @@ msgid "Invalid collection/item argument '%1', %2"
 msgstr "Argument no vàlid de col·lecció/element «%1», %2"
 
 #: src/abstractcommand.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:shell %1 is subcommand name, %2 is error message"
-#| msgid "%2. See 'help %1'"
+#, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
-msgstr "%2. Vegeu «help %1»"
+msgstr "%2, vegeu «help %1»"
 
 #: src/abstractcommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
-#| "message"
-#| msgid "%3. See '%1 help %2'"
+#, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3, see '%1 help %2'"
-msgstr "%3. Vegeu «%1 help %2»"
+msgstr "%3, vegeu «%1 help %2»"
 
 #: src/abstractcommand.cpp:198
 #, kde-format
@@ -600,11 +594,10 @@ msgid "Read attributes for %1 collections"
 msgstr "S'han llegit els atributs de %1 col·leccions"
 
 #: src/attributescommand.cpp:507
-#, fuzzy, kde-kuit-format
-#| msgid "Save current folder attributes"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
-msgstr "Desa els atributs actuals de les carpetes"
+msgstr "S'estan comprovant els atributs actuals de la col·lecció"
 
 #: src/attributescommand.cpp:531
 #, kde-kuit-format
@@ -730,7 +723,7 @@ msgstr "Sintaxi no vàlida de l'element «%1»"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "Ordre ambigua «%1», les possibilitats són «%2»"
 
 #: src/commandfactory.cpp:70 src/commandfactory.cpp:122
 #, kde-format
@@ -1153,19 +1146,19 @@ msgstr "avís"
 #, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr ""
+msgstr "nota"
 
 #: src/errorreporter.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "success"
-msgstr ""
+msgstr "correcte"
 
 #: src/errorreporter.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr ""
+msgstr "info"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -1263,12 +1256,14 @@ msgstr "S'està processant el fitxer de configuració «%1»..."
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
 msgstr ""
+"No s'ha pogut reanomenar el grup «%1» per a la carpeta «%2» que ja no "
+"existeix"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "El grup «%1» per a la carpeta «%2» s'ha reanomenat a «%3»"
 
 #: src/folderscommand.cpp:413
 #, kde-format
@@ -1282,12 +1277,14 @@ msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
 msgstr ""
+"No s'ha pogut actualitzar «%1» en el grup «%2» per a la carpeta «%3» que ja "
+"no existeix"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "S'ha actualitzat «%1» al grup «%2» per a la carpeta «%3» a %4"
 
 #: src/folderscommand.cpp:530
 #, kde-format
@@ -1307,25 +1304,20 @@ msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
 msgstr ""
+"Es requereixen canvis de configuració (%1 canvis de nom de grup i %2 canvis "
+"de configuració)"
 
 #: src/folderscommand.cpp:544
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Configuration changes are required (%1 group renames and %2 settings "
-#| "changes).<nl/>Quit all running PIM applications and stop the Akonadi "
-#| "server, then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</"
-#| "bcode><nl/>to implement the changes."
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Quit all running PIM applications and stop the Akonadi server, then<nl/"
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
-"Es requereixen canvis de configuració (%1 canvis de nom de grup i %2 canvis "
-"de configuració).<nl/>Sortiu de totes les aplicacions PIM en execució i "
-"atureu el servidor Akonadi, després<nl/>executeu l'ordre:<nl/><bcode> %3 %4 "
-"--restore</bcode><nl/>per a implementar els canvis."
+"Sortiu de totes les aplicacions PIM en execució i atureu el servidor "
+"Akonadi, després<nl/>executeu l'ordre:<nl/><bcode> %1 %2 --restore</"
+"bcode><nl/>per a implementar els canvis."
 
 #: src/folderscommand.cpp:558
 #, kde-format
@@ -1352,20 +1344,16 @@ msgid "Read %1 saved collection paths"
 msgstr "Llegeix «%1» camins de carpeta desats"
 
 #: src/folderscommand.cpp:601
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Folder '%1' had attributes but is no longer present"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr "La carpeta «%1» tenia atributs però ja no hi són"
+msgstr "La carpeta «%1» era ID %2 però ja no hi és"
 
 #: src/folderscommand.cpp:604
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection \"%2\" changed ID from %1 to %3"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr "La col·lecció «%2» ha canviat l'ID de %1 a %3"
+msgstr "La carpeta «%1» ha canviat l'ID de %2 a %3"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
@@ -1423,12 +1411,10 @@ msgid "Akonadi server is stopped"
 msgstr "El servidor Akonadi està aturat"
 
 #: src/folderscommand.cpp:735
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Shutting down Akonadi server..."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr "El servidor Akonadi està aturant-se..."
+msgstr "El servidor Akonadi està aturant-se"
 
 #: src/folderscommand.cpp:744
 #, kde-format
@@ -1461,12 +1447,10 @@ msgid "Cannot copy new '%2'to '%1'"
 msgstr "No s'ha pogut copiar el «%2» nou a «%1»"
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot remove old '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr "No s'ha pogut eliminar l'antic «%1»"
+msgstr "No s'ha pogut eliminar el fitxer copiat «%1»"
 
 #: src/folderscommand.cpp:775
 #, kde-format
@@ -2340,27 +2324,27 @@ msgstr "Suprimeix les etiquetes"
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "Desa les etiquetes actuals"
 
 #: src/tagscommand.cpp:74
 #, kde-format
 msgid "Restore the saved tags (into a new database)"
-msgstr ""
+msgstr "Restaura les etiquetes desades (en una base de dades nova)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr ""
+msgstr "ID de l'etiqueta a afegir (automàtic predeterminat)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "id"
-msgstr ""
+msgstr "ID"
 
 #: src/tagscommand.cpp:76
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
-msgstr ""
+msgstr "Manté les etiquetes intermèdies afegides quan s'utilitza l'opció «id»"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2382,7 +2366,7 @@ msgstr "[ETIQUETA...]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr ""
+msgstr "Valor no vàlid per a l'opció «id»"
 
 #: src/tagscommand.cpp:95
 #, kde-format
@@ -2392,18 +2376,14 @@ msgstr "No es poden especificar juntes les opcions «breu» i «URL»"
 
 # skip-rule: kct-delete
 #: src/tagscommand.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
 msgstr ""
-"Només es pot especificar una de les opcions «expand», «add», «delete» o "
-"«clean»"
+"Només es pot especificar una de les opcions «list», «add», «delete» o "
+"«backup»/«restore»"
 
 #: src/tagscommand.cpp:131
 #, kde-format
@@ -2424,34 +2404,28 @@ msgid "No tags specified to delete"
 msgstr "No s'ha especificat cap etiqueta per a suprimir"
 
 #: src/tagscommand.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr "L'opció «comment» només es permet amb «add»"
+msgstr "L'opció «retain» només es pot fer servir amb «add» o «restore»"
 
 #: src/tagscommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr "L'opció «comment» només es permet amb «add»"
+msgstr "L'opció «id» només es pot fer servir amb «add»"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot read saved list from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "No s'ha pogut llegir la llista desada des de «%1»"
+msgstr "No s'han pogut llegir les etiquetes desades des de «%1»"
 
 #: src/tagscommand.cpp:201
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "No hi ha etiquetes desades a restaurar"
 
 #: src/tagscommand.cpp:228
 #, kde-format
@@ -2460,34 +2434,29 @@ msgid "A tag named '%1' ID %2 already exists"
 msgstr "Ja existeix una etiqueta anomenada «%1» ID %2"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr "No s'ha pogut afegir l'etiqueta «%1» ID %2"
+msgstr "Ha fallat en afegir l'etiqueta «%1» ID %2"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr "No s'ha pogut afegir l'etiqueta «%1»"
+msgstr "Ha fallat en afegir l'etiqueta «%1»"
 
 #: src/tagscommand.cpp:287
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
 msgstr ""
+"No s'ha pogut crear una etiqueta amb l'ID %1, la seqüència ja és a l'ID %2"
 
 #: src/tagscommand.cpp:341
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr "No s'ha pogut afegir l'etiqueta «%1» ID %2"
+msgstr "S'ha afegir l'etiqueta «%1» ID %2"
 
 #: src/tagscommand.cpp:376
 #, kde-format
@@ -2505,15 +2474,13 @@ msgstr "L'etiqueta a suprimir ID %1 no existeix"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr ""
+msgstr "No s'ha pogut crear l'etiqueta amb l'ID sol·licitat"
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "No s'ha pogut afegir l'etiqueta «%1» ID %2"
+msgstr "S'ha suprimit l'etiqueta «%1» ID %2"
 
 #: src/tagscommand.cpp:491
 #, kde-format
@@ -2528,41 +2495,33 @@ msgid "URL"
 msgstr "URL"
 
 #: src/tagscommand.cpp:535
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Found %1 current Akonadi collections"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr "S'han trobat %1 col·leccions actuals de l'Akonadi"
+msgstr "S'han trobat %1 etiquetes actuals de l'Akonadi"
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Saving folder paths to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr "S'estan desant els camins de carpeta a «%1»"
+msgstr "Les etiquetes s'han desat a «%1»"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Reading saved attributes from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr "S'estan llegint els atributs desats des de «%1»"
+msgstr "S'estan llegint les etiquetes desades des de «%1»"
 
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Read %1 saved collection paths"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "Llegeix «%1» camins de carpeta desats"
+msgstr "Llegeix %1 etiquetes desades"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "Etiquetes restaurades"
 
 #: src/terminalcolour.cpp:45
 #, kde-format

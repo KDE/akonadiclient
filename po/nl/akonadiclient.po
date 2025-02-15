@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-14 00:43+0000\n"
-"PO-Revision-Date: 2025-02-07 12:01+0100\n"
+"PO-Revision-Date: 2025-02-14 14:33+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -82,24 +82,18 @@ msgid "Invalid collection/item argument '%1', %2"
 msgstr "Ongeldig argument voor verzameling/item '%1', %2"
 
 #: src/abstractcommand.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:shell %1 is subcommand name, %2 is error message"
-#| msgid "%2. See 'help %1'"
+#, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
-msgstr "%2. Zie 'help %1'"
+msgstr "%2, zie 'help %1'"
 
 #: src/abstractcommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
-#| "message"
-#| msgid "%3. See '%1 help %2'"
+#, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3, see '%1 help %2'"
-msgstr "%3. Zie '%1 help %2'"
+msgstr "%3, zie '%1 help %2'"
 
 #: src/abstractcommand.cpp:198
 #, kde-format
@@ -589,11 +583,10 @@ msgid "Read attributes for %1 collections"
 msgstr "Lees attributen voor %1 verzamelingen"
 
 #: src/attributescommand.cpp:507
-#, fuzzy, kde-kuit-format
-#| msgid "Save current folder attributes"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
-msgstr "Huidige attributen van map opslaan"
+msgstr "Huidige attributen van verzameling worden gecontroleerd"
 
 #: src/attributescommand.cpp:531
 #, kde-kuit-format
@@ -719,7 +712,7 @@ msgstr "Ongeldige syntaxis van een item '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "Dubbelzinnige opdracht '%1', mogelijkheden zijn '%2'"
 
 #: src/commandfactory.cpp:70 src/commandfactory.cpp:122
 #, kde-format
@@ -1142,19 +1135,19 @@ msgstr "waarschuwing"
 #, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr ""
+msgstr "opmerking"
 
 #: src/errorreporter.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "success"
-msgstr ""
+msgstr "succes"
 
 #: src/errorreporter.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr ""
+msgstr "info"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -1250,12 +1243,13 @@ msgstr "Configuratiebestand '%1' wordt verwerkt..."
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
 msgstr ""
+"Kan groep \"%1\" niet hernoemen voor map \"%2\" die niet langer bestaat"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "Groep \"%1\" voor map \"%2\" hernoemd naar \"%3\""
 
 #: src/folderscommand.cpp:413
 #, kde-format
@@ -1269,12 +1263,14 @@ msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
 msgstr ""
+"Kan \"%1\" in groep \"%2\" niet bijwerken voor map \"%3\" die niet langer "
+"bestaat"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "\"%1\" in groep \"%2\" bijgewerkt voor map \"%3\" naar %4"
 
 #: src/folderscommand.cpp:530
 #, kde-format
@@ -1296,23 +1292,16 @@ msgid ""
 msgstr ""
 
 #: src/folderscommand.cpp:544
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Configuration changes are required (%1 group renames and %2 settings "
-#| "changes).<nl/>Quit all running PIM applications and stop the Akonadi "
-#| "server, then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</"
-#| "bcode><nl/>to implement the changes."
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Quit all running PIM applications and stop the Akonadi server, then<nl/"
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
-"Wijzigingen in configuratie zijn vereist (%1 hernoemen van groep en %2 "
-"wijzigingen van instellingen).<nl/>Verlaat alle actieve PIM-toepassingen en "
-"stop de Akonadi-server, daarna<nl/>voer uit de opdracht:<nl/><bcode>  %3 %4 "
-"--restore</bcode><nl/>om de wijzigingen te implementeren."
+"Verlaat alle actieve PIM-toepassingen en stop de Akonadi-server, daarna<nl/"
+">voer uit de opdracht:<nl/><bcode>  %1 %2 --restore</bcode><nl/>om de "
+"wijzigingen te implementeren."
 
 #: src/folderscommand.cpp:558
 #, kde-format
@@ -1339,20 +1328,16 @@ msgid "Read %1 saved collection paths"
 msgstr "Gelezen %1 opgeslagen verzamelingpaden"
 
 #: src/folderscommand.cpp:601
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Folder '%1' had attributes but is no longer present"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr "Map '%1' had attributen maar is niet langer aanwezig"
+msgstr "Map '%1' was ID %2 maar is niet langer aanwezig"
 
 #: src/folderscommand.cpp:604
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection \"%2\" changed ID from %1 to %3"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr "Verzameling \"%2\" wijzigde ID van %1 naar %3"
+msgstr "Map \"%1\" wijzigde ID van %2 naar %3"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
@@ -2341,9 +2326,9 @@ msgid "ID for a tag to be added (default automatic)"
 msgstr ""
 
 #: src/tagscommand.cpp:75
-#, kde-format
+#, fuzzy, kde-format
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: src/tagscommand.cpp:76
 #, kde-format

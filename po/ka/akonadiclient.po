@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-14 00:43+0000\n"
-"PO-Revision-Date: 2025-02-08 04:18+0100\n"
+"PO-Revision-Date: 2025-02-14 03:42+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -83,19 +83,13 @@ msgid "Invalid collection/item argument '%1', %2"
 msgstr "არასწორი კოლექცია/ჩანაწერის არგუმენტი %1, %2"
 
 #: src/abstractcommand.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:shell %1 is subcommand name, %2 is error message"
-#| msgid "%2. See 'help %1'"
+#, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
 msgstr "%2. იხილეთ 'help %1'"
 
 #: src/abstractcommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
-#| "message"
-#| msgid "%3. See '%1 help %2'"
+#, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
@@ -593,11 +587,10 @@ msgid "Read attributes for %1 collections"
 msgstr "წაკითხულია ატრიბუტები %1 კოლექციისთვის"
 
 #: src/attributescommand.cpp:507
-#, fuzzy, kde-kuit-format
-#| msgid "Save current folder attributes"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
-msgstr "მიმდინარე საქაღალდის ატრიბუტების შენახვა"
+msgstr "მიმდინარე კოლექციის ატრიბუტების შემოწმება"
 
 #: src/attributescommand.cpp:531
 #, kde-kuit-format
@@ -723,7 +716,7 @@ msgstr "ჩანაწერის არასწორი სინტაქ�
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "გაურკვეველი ბრძანება '%1'. შესაძლებლობებია '%2'"
 
 #: src/commandfactory.cpp:70 src/commandfactory.cpp:122
 #, kde-format
@@ -1147,19 +1140,19 @@ msgstr "გაფრთხილება"
 #, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr ""
+msgstr "შეტყობინება"
 
 #: src/errorreporter.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "success"
-msgstr ""
+msgstr "წარმატება"
 
 #: src/errorreporter.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr ""
+msgstr "ინფორმაცია"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -1255,12 +1248,14 @@ msgstr "მუშავდება კონფიგურაციის ფ�
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
 msgstr ""
+"ვერ გადავარქვი სახელი ჯგუფს \"%1\" საქაღალდისთვის \"%2\", რომელიც აღარ არ "
+"არსებობს"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "ჯგუფს \"%1\" საქაღალდისთვის \"%2\" სახელი გადაერქვა \"%3\"-ზე"
 
 #: src/folderscommand.cpp:413
 #, kde-format
@@ -1274,12 +1269,14 @@ msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
 msgstr ""
+"ვერ განვაახლე \"%1\" ჯგუფში \"%2\" საქაღალდისთვის \"%3\", რომელიც აღარ "
+"არსებობს"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "განახლდა \"%1\" ჯგუფში \"%2\" საქაღალდისთვის \"%3\" \"%4\"-ზე"
 
 #: src/folderscommand.cpp:530
 #, kde-format
@@ -1299,25 +1296,20 @@ msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
 msgstr ""
+"აუცილებელია კონფიგურაციის ცვლილებები (%1 ჯგუფის სახელის გადარქმევა და %2 "
+"პარამეტრის ცვლილება)"
 
 #: src/folderscommand.cpp:544
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Configuration changes are required (%1 group renames and %2 settings "
-#| "changes).<nl/>Quit all running PIM applications and stop the Akonadi "
-#| "server, then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</"
-#| "bcode><nl/>to implement the changes."
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Quit all running PIM applications and stop the Akonadi server, then<nl/"
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
-"აუცილებელია კონფიგურაციის ცვლილებები (%1 ჯგუფის სახელის გადარქმევა და %2 "
-"კონფიგურაციის ცვლილება).<nl/>გადით ყველა გაშვებული PIM აპლიკაციიდან და "
-"გააჩერეთ Akonadi-ის სერვერი. შემდეგ<nl/>გაუშვით ბრძანება: <nl/><bcode>  %3 "
-"%4 --restore</bcode><nl/>, რომ ეს ცვლილებები ძალაში შევიდეს."
+"გადით ყველა გაშვებული PIM აპლიკაციიდან და გააჩერეთ Akonadi-ის სერვერი. "
+"შემდეგ<nl/>გაუშვით ბრძანება: <nl/><bcode>  %1 %2 --restore</bcode><nl/>, რომ "
+"ეს ცვლილებები ძალაში შევიდეს."
 
 #: src/folderscommand.cpp:558
 #, kde-format
@@ -1344,20 +1336,16 @@ msgid "Read %1 saved collection paths"
 msgstr "წავიკითხე %1 შენახული კოლექციის ბილიკი"
 
 #: src/folderscommand.cpp:601
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Folder '%1' had attributes but is no longer present"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr "საქაღალდეს '%1' ჰქონდა ატრიბუტები, მაგრამ, ახლა აღარ"
+msgstr "საქაღალდეს '%1' ჰქონდა ID %2, მაგრამ, ახლა აღარ"
 
 #: src/folderscommand.cpp:604
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection \"%2\" changed ID from %1 to %3"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr "კოლექციის \"%2\" შეეცვალა ID %1-დან %3-ზე"
+msgstr "საქაღალდეს \"%1\" შეეცვალა ID %2-დან %3-ზე"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
@@ -1412,12 +1400,10 @@ msgid "Akonadi server is stopped"
 msgstr "Akonadi-ის სერვერი გაჩერებულია"
 
 #: src/folderscommand.cpp:735
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Shutting down Akonadi server..."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr "მიმდინარეობს Akonadi-ის სერვერის გაჩერება..."
+msgstr "მიმდინარეობს Akonadi-ის სერვერის გაჩერება"
 
 #: src/folderscommand.cpp:744
 #, kde-format
@@ -1450,12 +1436,10 @@ msgid "Cannot copy new '%2'to '%1'"
 msgstr "%1-დან %2-მდე კოპირების შეცდომა"
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot remove old '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr "ძველი '%1'-ის წაშლა შეუძლებელია"
+msgstr "დაკოპირებული ფაილის '%1' წაშლა შეუძლებელია"
 
 #: src/folderscommand.cpp:775
 #, kde-format
@@ -2333,27 +2317,27 @@ msgstr "ჭდეების წაშლა"
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "მიმინდარე ჭდეების შენახვა"
 
 #: src/tagscommand.cpp:74
 #, kde-format
 msgid "Restore the saved tags (into a new database)"
-msgstr ""
+msgstr "შენახული ჭდეების აღდგენა (ახალ მონაცემთა ბაზაში)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr ""
+msgstr "დასამატებელი ID ჭდისთვის (ნაგულისხმევად ავტომატურია)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: src/tagscommand.cpp:76
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
-msgstr ""
+msgstr "შუალედური ჭდეების შენარჩუნება, როცა გამოიყენება პარამეტრი 'id'"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2374,7 +2358,7 @@ msgstr "[ჭდე...]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr ""
+msgstr "არასწორი მნიშვნელობა პარამეტრისთვის 'id'"
 
 #: src/tagscommand.cpp:95
 #, kde-format
@@ -2383,18 +2367,14 @@ msgid "The 'brief' and 'urls' options cannot both be specified"
 msgstr "'brief' და 'urls' პარამეტრებს ერთდროულად ვერ მიუთითებთ"
 
 #: src/tagscommand.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
 msgstr ""
-"შეგიძლიათ მიუთითოთ მხოლოდ ერთი სიიდან: 'expand' (გაფართოება), "
-"'add' (დამატება) და 'clean' (გასუფთავება)"
+"შეგიძლიათ, მიუთითოთ, მხოლოდ, ერთი სიიდან: 'add', 'delete', ან "
+"'backup'/'restore'"
 
 #: src/tagscommand.cpp:131
 #, kde-format
@@ -2415,34 +2395,30 @@ msgid "No tags specified to delete"
 msgstr "წასაშლელი ჭდეები მითითებული არაა"
 
 #: src/tagscommand.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr "პარამეტრი 'კომენტარი' მხოლოდ 'დამატებასთან' ერთადაა ნებადართული"
+msgstr ""
+"პარამეტრი 'retain', მხოლოდ, ბრძანებებთან 'add' ან 'restore' შეგიძლიათ, "
+"გამოიყენოთ"
 
 #: src/tagscommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr "პარამეტრი 'კომენტარი' მხოლოდ 'დამატებასთან' ერთადაა ნებადართული"
+msgstr "პარამეტრი 'id', მხოლოდ, ბრძანებასთან 'add' ერთად შეგიძლიათ, გამოიყენოთ"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot read saved list from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "შეუძლებელია შენახული სიის წაკითხვა '%1'-დან"
+msgstr "შეუძლებელია შენახული ჭდეების წაკითხვა '%1'-დან"
 
 #: src/tagscommand.cpp:201
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "აღსადგენი შენახული ჭდეების გარეშე"
 
 #: src/tagscommand.cpp:228
 #, kde-format
@@ -2451,17 +2427,13 @@ msgid "A tag named '%1' ID %2 already exists"
 msgstr "ჭდე სახელით '%1' და ID-ით '%2' უკვე არსებობს"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
 msgstr "ჭდის სახელით '%1' და ID-ით %2 დამატება შეუძლებელია"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
 msgstr "ჭდის '%1' დამატების შეცდომა"
@@ -2470,15 +2442,13 @@ msgstr "ჭდის '%1' დამატების შეცდომა"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
-msgstr ""
+msgstr "შეუძლებელია ჭდის შექმნა ID-ით %1. მიმდევრობას უკვე აქვს ID %2"
 
 #: src/tagscommand.cpp:341
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr "ჭდის სახელით '%1' და ID-ით %2 დამატება შეუძლებელია"
+msgstr "ჭდე სახელით '%1' და ID-ით %2 დაემატა"
 
 #: src/tagscommand.cpp:376
 #, kde-format
@@ -2496,15 +2466,13 @@ msgstr "წასაშლელი ID %1 არ არსებობს"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr ""
+msgstr "ჭდის შექმნა მოთხოვნილი ID-ით შეუძლებელია"
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "ჭდის სახელით '%1' და ID-ით %2 დამატება შეუძლებელია"
+msgstr "ჭდე სახელით '%1' და ID-ით %2 წაიშალა"
 
 #: src/tagscommand.cpp:491
 #, kde-format
@@ -2519,41 +2487,33 @@ msgid "URL"
 msgstr "URL"
 
 #: src/tagscommand.cpp:535
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Found %1 current Akonadi collections"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr "აღმოჩენილია %1 მიმდინარე Akonadi-ის კოლექცია"
+msgstr "აღმოჩენილია %1 მიმდინარე Akonadi-ის ჭდე"
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Saving folder paths to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr "საქაღალდის ბილიკების შენახვა '%1'-ში"
+msgstr "ჭდეების შენახვა '%1'-ში"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Reading saved attributes from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr "მიმდინარეობს შენახული ატრიბუტების წაკითხვა '%1'-დან"
+msgstr "მიმდინარეობს შენახული ჭდეების წაკითხვა '%1'-დან"
 
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Read %1 saved collection paths"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "წავიკითხე %1 შენახული კოლექციის ბილიკი"
+msgstr "წავიკითხე %1 შენახული ჭდე"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "ჭდეები აღდგენილია"
 
 #: src/terminalcolour.cpp:45
 #, kde-format
