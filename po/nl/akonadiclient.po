@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-14 00:43+0000\n"
-"PO-Revision-Date: 2025-02-14 14:33+0100\n"
+"PO-Revision-Date: 2025-02-15 18:42+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1290,6 +1290,8 @@ msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
 msgstr ""
+"Wijzigingen in de configuratie zijn vereist (%1 hernoemen van groepen en %2 "
+"wijzigingen in instellingen)"
 
 #: src/folderscommand.cpp:544
 #, kde-kuit-format
@@ -1393,12 +1395,10 @@ msgid "Akonadi server is stopped"
 msgstr "Akonadi-server is gestopt"
 
 #: src/folderscommand.cpp:735
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Shutting down Akonadi server..."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr "Akonadi-server wordt afgesloten..."
+msgstr "Akonadi-server wordt afgesloten"
 
 #: src/folderscommand.cpp:744
 #, kde-format
@@ -1431,12 +1431,10 @@ msgid "Cannot copy new '%2'to '%1'"
 msgstr "Kan nieuwe %2 niet kopiëren naar '%1'"
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot remove old '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr "Oude '%1' kan niet verwijderd worden"
+msgstr "Kan gekopieerd bestand '%1' niet verwijderen"
 
 #: src/folderscommand.cpp:775
 #, kde-format
@@ -2313,20 +2311,20 @@ msgstr "Tags verwijderen"
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "De huidige tags opslaan"
 
 #: src/tagscommand.cpp:74
 #, kde-format
 msgid "Restore the saved tags (into a new database)"
-msgstr ""
+msgstr "De opgeslagen tags herstellen (in een nieuwe database)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr ""
+msgstr "ID voor een toe te voegen tag (standaard automatisch)"
 
 #: src/tagscommand.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgid "id"
 msgstr "id"
 
@@ -2334,6 +2332,8 @@ msgstr "id"
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
 msgstr ""
+"Tussenliggende tags behouden die zijn toegevoegd toen de optie 'id' werd "
+"gebruikt"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2356,7 +2356,7 @@ msgstr "[TAG...]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr ""
+msgstr "Ongeldige waarde voor de optie 'id'"
 
 #: src/tagscommand.cpp:95
 #, kde-format
@@ -2365,17 +2365,13 @@ msgid "The 'brief' and 'urls' options cannot both be specified"
 msgstr "De opties 'brief' en 'urls' kunnen niet beiden gespecificeerd worden"
 
 #: src/tagscommand.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
 msgstr ""
-"Slechts één van de opties 'expand', 'add', 'delete' of 'clean' mag "
+"Slechts één van de opties 'list', 'add', 'delete' of 'clean' mag "
 "gespecificeerd worden"
 
 #: src/tagscommand.cpp:131
@@ -2398,34 +2394,28 @@ msgid "No tags specified to delete"
 msgstr "Geen te verwijderen tags gespecificeerd"
 
 #: src/tagscommand.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr "De optie 'comment' is alleen toegestaan met 'add'"
+msgstr "De optie 'retain' kan alleen gebruikt worden met 'add' of 'restore'"
 
 #: src/tagscommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr "De optie 'comment' is alleen toegestaan met 'add'"
+msgstr "De optie 'id' kan alleen gebruikt worden met 'add'"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot read saved list from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "Kan opgeslagen lijst uit '%1' niet openen"
+msgstr "Kan opgeslagen tags uit '%1' niet lezen"
 
 #: src/tagscommand.cpp:201
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "Geen opgeslagen tags on te herstellen"
 
 #: src/tagscommand.cpp:228
 #, kde-format
@@ -2434,34 +2424,28 @@ msgid "A tag named '%1' ID %2 already exists"
 msgstr "Een tag met de naam '%1'ID %2 bestaat al"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr "Tag '%1' ID %2 kan niet worden toegevoegd"
+msgstr "Tag '%1' ID %2 toevoegen is mislukt"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr "Tag '%1' kan niet worden toegevoegd"
+msgstr "Tag '%1' toevoegen is mislukt"
 
 #: src/tagscommand.cpp:287
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
-msgstr ""
+msgstr "Een tag met ID %1 aanmaken kan niet, reeks is al op ID %2"
 
 #: src/tagscommand.cpp:341
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr "Tag '%1' ID %2 kan niet worden toegevoegd"
+msgstr "Tag '%1' ID %2 toegevoegd"
 
 #: src/tagscommand.cpp:376
 #, kde-format
@@ -2479,15 +2463,13 @@ msgstr "Te verwijderen tag met ID %1 bestaat niet"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr ""
+msgstr "Tag kon niet aangemaakt worden met de gevraagde ID"
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "Tag '%1' ID %2 kan niet worden toegevoegd"
+msgstr "Tag '%1' ID %2 verwijderd"
 
 #: src/tagscommand.cpp:491
 #, kde-format
@@ -2502,41 +2484,33 @@ msgid "URL"
 msgstr "URL-adres"
 
 #: src/tagscommand.cpp:535
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Found %1 current Akonadi collections"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr "Gevonden %1 huidige Akonadi verzamelingen"
+msgstr "Gevonden %1 huidige Akonadi tags"
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Saving folder paths to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr "Mappaden worden opgeslagen naar '%1'"
+msgstr "Tags opgeslagen naar '%1'"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Reading saved attributes from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr "Opgeslagen attributen uit '%1' worden gelezen"
+msgstr "Opgeslagen tags uit '%1' worden gelezen"
 
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Read %1 saved collection paths"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "Gelezen %1 opgeslagen verzamelingpaden"
+msgstr "Gelezen %1 opgeslagen tags"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "Tags hersteld"
 
 #: src/terminalcolour.cpp:45
 #, kde-format
