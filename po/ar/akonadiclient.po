@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-14 00:43+0000\n"
+"POT-Creation-Date: 2025-02-17 00:41+0000\n"
 "PO-Revision-Date: 2022-08-23 22:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
@@ -1461,10 +1461,12 @@ msgid "Copying new '%2' to '%1'"
 msgstr ""
 
 #: src/folderscommand.cpp:766
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Cannot save file '%1'"
 msgctxt "@info:shell"
-msgid "Cannot copy new '%2'to '%1'"
-msgstr ""
+msgid "Cannot copy new '%2' to '%1'"
+msgstr "تعذّر حفظ الملف '%1'"
 
 #: src/folderscommand.cpp:769
 #, fuzzy, kde-format

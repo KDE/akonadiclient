@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-14 00:43+0000\n"
-"PO-Revision-Date: 2024-12-29 12:45+0100\n"
+"POT-Creation-Date: 2025-02-17 00:41+0000\n"
+"PO-Revision-Date: 2025-02-16 17:10+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -35,11 +35,10 @@ msgid "The name of the command"
 msgstr "La nomo de la komando"
 
 #: src/abstractcommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "Akiri staton por la specifita klientprocezo"
+msgstr "Doni helpon por la specifita komando"
 
 #: src/abstractcommand.cpp:107 src/main.cpp:67
 #, kde-format
@@ -84,24 +83,18 @@ msgid "Invalid collection/item argument '%1', %2"
 msgstr "Nevalida aro/elementa argumento '%1', %2"
 
 #: src/abstractcommand.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:shell %1 is subcommand name, %2 is error message"
-#| msgid "%2. See 'help %1'"
+#, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
-msgstr "%2. Vidu 'helpo %1'"
+msgstr "%2, vidu 'helpo %1'"
 
 #: src/abstractcommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
-#| "message"
-#| msgid "%3. See '%1 help %2'"
+#, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3, see '%1 help %2'"
-msgstr "%3. Vidu '%1 helpon %2'"
+msgstr "%3, vidu '%1 helpon %2'"
 
 #: src/abstractcommand.cpp:198
 #, kde-format
@@ -116,20 +109,16 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Agordi %1=\"%2\" en medio"
 
 #: src/abstractcommand.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "Dosierujo '%1' ne trovita aŭ ne dosierujo"
+msgstr "Konservejo '%1' ekzistas sed ne estas dosierujo"
 
 #: src/abstractcommand.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Ne povas krei dosierujon '%1/%2'"
+msgstr "Ne eblas krei konservan dosierujon '%1'"
 
 #: src/addcommand.cpp:41
 msgctxt "info:shell"
@@ -438,21 +427,19 @@ msgid "Show or interpret the attribute value as hex encoded"
 msgstr "Montri aŭ interpreti la atributvaloron kiel deksesum-kodita"
 
 #: src/attributescommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgid "Save current folder attributes"
-msgstr "La aro aŭ objekto"
+msgstr "Konservi aktualajn atributojn de dosierujo"
 
 #: src/attributescommand.cpp:111
 #, kde-format
 msgid "Check current against saved folder attributes"
-msgstr ""
+msgstr "Kontroli aktualajn kontraŭ konservitaj dosieruj-atributoj"
 
 #: src/attributescommand.cpp:114
 #, kde-format
 msgid "Restore changed folder attributes"
-msgstr ""
+msgstr "Restaŭri ŝanĝitajn dosieruj-atributojn"
 
 #: src/attributescommand.cpp:125
 #, kde-format
@@ -484,9 +471,7 @@ msgid "Hex encoded value contained invalid characters"
 msgstr "Deksesume kodita ĉeno enhavis nevalidajn signojn"
 
 #: src/attributescommand.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one operation mode option may be specified"
 msgstr ""
@@ -524,131 +509,104 @@ msgid "Too many arguments specified, from '%1'"
 msgstr "Specifiĝis tro da argumentoj, el '%1'"
 
 #: src/attributescommand.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved attributes from '%1'"
-msgstr "Ne povas konservi dosieron '%1'"
+msgstr "Ne eblas legi konservitajn atributojn el '%1'"
 
 #: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #: src/tagscommand.cpp:194
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "Unue rulu '%1 %2 --backup'"
 
 #: src/attributescommand.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection already has an attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr "Kolekto jam havas atributon '%1'"
+msgstr "Kolekto %2 jam havas atributon '%1'"
 
 #: src/attributescommand.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 has no attribute '%1'"
-msgstr "Kolekto ne havas atributon '%1'"
+msgstr "Kolekto %2 ne havas atributon '%1'"
 
 #: src/attributescommand.cpp:379
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no attributes"
-msgstr "Kolekto %1 havas neniujn erojn"
+msgstr "Kolekto %1 havas neniujn atributojn"
 
 #: src/attributescommand.cpp:387
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %2 has %1 attribute:"
 msgid_plural "Collection %2 has %1 attributes:"
-msgstr[0] "Kolekto %2 havas %1 eron:"
-msgstr[1] "Kolekto %2 havas %1 erojn:"
+msgstr[0] "Kolekto %2 havas %1 atributon:"
+msgstr[1] "Kolekto %2 havas %1 atributojn:"
 
 #: src/attributescommand.cpp:403 src/folderscommand.cpp:197
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "Trovis %1 aktualajn Akonadi-kolektojn"
 
 #: src/attributescommand.cpp:413 src/folderscommand.cpp:213
 #: src/tagscommand.cpp:543
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "Ne povas konservi dosieron '%1'"
+msgstr "Ne eblas konservi sekurkopian liston al '%1'"
 
 #: src/attributescommand.cpp:424
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving collection attributes to '%1'"
-msgstr "Kolekto ne havas atributon '%1'"
+msgstr "Konservante kolekt-atributojn al '%1'"
 
 #: src/attributescommand.cpp:456
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved attributes for %1 collections"
-msgstr "Montri aŭ ĝisdatigi atributojn por aro"
+msgstr "Konservis atributojn por %1 aroj"
 
 #: src/attributescommand.cpp:462
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved attributes from '%1'"
-msgstr "Ŝanĝita maildir dosierujo nomo al '%1'"
+msgstr "Legante konservitajn atributojn el '%1'"
 
 #: src/attributescommand.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read attributes for %1 collections"
-msgstr "Montri aŭ ĝisdatigi atributojn por aro"
+msgstr "Legi atributojn por %1 aroj"
 
 #: src/attributescommand.cpp:507
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
-msgstr "La aro aŭ objekto"
+msgstr "Kontrolante la aktualajn ar-atributojn"
 
 #: src/attributescommand.cpp:531
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder '%1' had attributes but is no longer present"
-msgstr ""
+msgstr "Dosierujo '%1' havis atributojn sed ne plu ĉeestas"
 
 #: src/attributescommand.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot fetch parent collection '%1', %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
-msgstr "Ne povas preni gepatran aron '%1', %2"
+msgstr "Ne eblas preni aron %1 \"%2\""
 
 #: src/attributescommand.cpp:562
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection \"%2\" changed ID from %1 to %3"
-msgstr "Kolekto %2 havas %1 eron:"
+msgstr "Kolekto \"%2\" ŝanĝis ID de %1 al %3"
 
 #: src/attributescommand.cpp:635
 #, kde-kuit-format
@@ -679,28 +637,24 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: src/attributescommand.cpp:698
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes need to be restored"
-msgstr "Montri la atributojn de aro (la defaŭlta operacio)"
+msgstr "Neniuj ar-atributoj bezonas restaŭron"
 
 #: src/attributescommand.cpp:700
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes needed to be restored"
-msgstr "Montri la atributojn de aro (la defaŭlta operacio)"
+msgstr "Neniuj ar-atributoj bezonis restaŭron"
 
 #: src/attributescommand.cpp:705
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Recursive list can only be used for collections"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes need to be restored for %1 collection"
 msgid_plural "Attributes need to be restored for %1 collections"
-msgstr[0] "Rikura listigo povas nur esti uzata por kolektoj"
-msgstr[1] "Rikura listigo povas nur esti uzata por kolektoj"
+msgstr[0] "Atributoj bezonas restaŭron por %1 kolekto"
+msgstr[1] "Atributoj bezonas restaŭron por %1 kolektoj"
 
 #: src/attributescommand.cpp:711
 #, kde-kuit-format
@@ -711,22 +665,18 @@ msgid ""
 msgstr ""
 
 #: src/attributescommand.cpp:721
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Files or directories to add to the collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes were restored for %1 collection"
 msgid_plural "Attributes were restored for %1 collections"
-msgstr[0] "Dosieroj aŭ dosierujoj por aldoni al la aro"
-msgstr[1] "Dosieroj aŭ dosierujoj por aldoni al la aro"
+msgstr[0] "Atributoj estis restaŭritaj por %1 kolekto"
+msgstr[1] "Atributoj estis restaŭritaj por %1 kolektoj"
 
 #: src/collectionlistcommand.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "Ne povas forigi la radikan aron"
+msgstr "Ne eblas listigi iujn arojn"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -1241,38 +1191,29 @@ msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
 
 #: src/folderscommand.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
 msgstr ""
-"Nur unu el la 'listo', 'aldoni' aŭ 'forigi' opcioj povas esti specifita"
+"Nur unu el la opcioj 'backup', 'check' aŭ 'restore' povas esti specifita"
 
 #: src/folderscommand.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
-msgstr ""
-"Nur unu el la 'listo', 'aldoni' aŭ 'forigi' opcioj povas esti specifita"
+msgstr "Unu el la opcioj 'backup', 'check' aŭ 'forigi' devas esti specifita"
 
 #: src/folderscommand.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "Ne povas konservi dosieron '%1'"
+msgstr "Ne eblas legi konservitan liston el '%1'"
 
 #: src/folderscommand.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "Ne povas krei dosierujon '%1/%2'"
+msgstr "Ne eblas skribi aktualan liston al '%1'"
 
 #: src/folderscommand.cpp:299
 #, kde-format
@@ -1287,12 +1228,10 @@ msgid "%1 folder IDs have changed"
 msgstr ""
 
 #: src/folderscommand.cpp:321
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "Prilaboranta aron '%1'"
+msgstr "Prilaboranta agorddosieron '%1'..."
 
 #: src/folderscommand.cpp:393
 #, kde-format
@@ -1354,34 +1293,28 @@ msgid ""
 msgstr ""
 
 #: src/folderscommand.cpp:558
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "Ŝanĝita maildir dosierujo nomo al '%1'"
+msgstr "Konservante dosierujajn vojojn al '%1'"
 
 #: src/folderscommand.cpp:565
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "La aro aŭ objekto"
+msgstr "Konservis %1 kolektajn dosieruj-vojojn"
 
 #: src/folderscommand.cpp:570
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "Ŝanĝita maildir dosierujo nomo al '%1'"
+msgstr "Legante konservitajn dosieruj-vojojn el '%1'"
 
 #: src/folderscommand.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Alinomi aron"
+msgstr "Legis %1 konservitajn kolektovojojn"
 
 #: src/folderscommand.cpp:601
 #, kde-format
@@ -1390,13 +1323,10 @@ msgid "Folder \"%1\" was ID %2 but is no longer present"
 msgstr ""
 
 #: src/folderscommand.cpp:604
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr "Kolekto %2 havas %1 eron:"
+msgstr "Dosierujo \"%1\" ŝanĝis ID de %2 al %3"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
@@ -1405,20 +1335,16 @@ msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
 
 #: src/folderscommand.cpp:685
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "Etikedo por forigi '%1' ne ekzistas"
+msgstr "Konservita dosierujolisto '%1' ne ekzistas"
 
 #: src/folderscommand.cpp:689
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "Etikedo por forigi '%1' ne ekzistas"
+msgstr "Aktuala dosierujolisto '%1' ne ekzistas"
 
 #: src/folderscommand.cpp:693
 #, kde-format
@@ -1470,12 +1396,10 @@ msgid "Removing old '%1'"
 msgstr ""
 
 #: src/folderscommand.cpp:758
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "Ne povas konservi dosieron '%1'"
+msgstr "Ne eblas forigi malnovan '%1'"
 
 #: src/folderscommand.cpp:763
 #, kde-format
@@ -1486,18 +1410,16 @@ msgstr ""
 #: src/folderscommand.cpp:766
 #, fuzzy, kde-format
 #| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#| msgid "Cannot copy new '%2'to '%1'"
 msgctxt "@info:shell"
-msgid "Cannot copy new '%2'to '%1'"
-msgstr "Ne povas kopii/movi de '%1', %2"
+msgid "Cannot copy new '%2' to '%1'"
+msgstr "Ne eblas kopii novan '%2' al '%1'"
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr "Ne povas konservi dosieron '%1'"
+msgstr "Ne eblas forigi kopiitan dosieron '%1'"
 
 #: src/folderscommand.cpp:775
 #, kde-format
@@ -1512,12 +1434,10 @@ msgid "Cannot locate user configuration directory"
 msgstr ""
 
 #: src/folderscommand.cpp:795
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "Etikedo por forigi '%1' ne ekzistas"
+msgstr "Agorddosierujo '%1' ne ekzistas"
 
 #: src/folderscommand.cpp:816
 #, kde-format
@@ -2420,20 +2340,16 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr "La opcioj 'breve' kaj 'urls' ne povas ambaŭ esti specifitaj"
+msgstr "La opcioj 'brief' kaj 'urls' ne povas ambaŭ esti specifitaj"
 
 #: src/tagscommand.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
 msgstr ""
-"Nur unu el la opcioj 'pligrandigi', 'aldoni', 'forigi' aŭ 'purigi' povas "
+"Nur unu el la opcioj 'list', 'add', 'delete', aŭ 'backup'/'restore' povas "
 "esti specifita"
 
 #: src/tagscommand.cpp:131
@@ -2455,28 +2371,22 @@ msgid "No tags specified to delete"
 msgstr "Neniuj etikedoj specifitaj por forigi"
 
 #: src/tagscommand.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr "La opcio 'komento' estas permesita nur kun 'aldoni'"
+msgstr "La opcion 'retain' eblas uzi nur kun 'add' aŭ 'restore'"
 
 #: src/tagscommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr "La opcio 'komento' estas permesita nur kun 'aldoni'"
+msgstr "La opcion 'id' eblas uzi nur kun 'add'"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "Ne povas konservi dosieron '%1'"
+msgstr "Ne eblas legi konservitajn etikedojn el '%1'"
 
 #: src/tagscommand.cpp:201
 #, kde-format
@@ -2491,20 +2401,16 @@ msgid "A tag named '%1' ID %2 already exists"
 msgstr "Etikedo nomita '%1' ID %2 jam ekzistas"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr "Ne povas aldoni etikedon '%1' ID %2"
+msgstr "Malsukcesis aldoni etikedon '%1' ID %2"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr "Ne povas aldoni etikedon '%1'"
+msgstr "Malsukcesis aldoni etikedon '%1'"
 
 #: src/tagscommand.cpp:287
 #, kde-kuit-format
@@ -2513,12 +2419,10 @@ msgid "Cannot create a tag with ID %1, sequence already at ID %2"
 msgstr ""
 
 #: src/tagscommand.cpp:341
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr "Ne povas aldoni etikedon '%1' ID %2"
+msgstr "Aldonis etikedon '%1' ID %2"
 
 #: src/tagscommand.cpp:376
 #, kde-format
@@ -2539,12 +2443,10 @@ msgid "Tag could not be created with the requested ID"
 msgstr ""
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "Ne povas aldoni etikedon '%1' ID %2"
+msgstr "Forigis etikedon '%1' ID %2"
 
 #: src/tagscommand.cpp:491
 #, kde-format
@@ -2565,37 +2467,33 @@ msgid "Found %1 current Akonadi tags"
 msgstr ""
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr "Ŝanĝita maildir dosierujo nomo al '%1'"
+msgstr "Konservis etikedojn al '%1'"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr "Ŝanĝita maildir dosierujo nomo al '%1'"
+msgstr "Legante konservitajn etikedojn el '%1'"
 
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "Alinomi aron"
+msgstr "Legis %1 konservitajn etikedojn"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "Restaŭris etikedojn"
 
 #: src/terminalcolour.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "Ne eblis agordi terminalon"
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
@@ -2625,16 +2523,3 @@ msgstr "Neniu dosiero specifita"
 msgctxt "@info:shell"
 msgid "Item updated successfully"
 msgstr "Ero ĝisdatigita sukcese"
-
-#~ msgctxt "@info:shell"
-#~ msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
-#~ msgstr ""
-#~ "Nur unu el la 'listo', 'aldoni' aŭ 'forigi' opcioj povas esti specifita"
-
-#~ msgctxt "@info:shell"
-#~ msgid ""
-#~ "Only one of the 'show', 'add', 'modify' or 'delete' options may be "
-#~ "specified"
-#~ msgstr ""
-#~ "Nur unu el la 'montri', 'aldoni', 'modifi' aŭ 'forigi' opcioj povas esti "
-#~ "specifita"
