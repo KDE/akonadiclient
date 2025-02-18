@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2025-02-14 08:24+0100\n"
+"PO-Revision-Date: 2025-02-17 18:13+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -1422,9 +1422,7 @@ msgid "Copying new '%2' to '%1'"
 msgstr "Kopierar ny '%2' till '%1'"
 
 #: src/folderscommand.cpp:766
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy new '%2'to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
 msgstr "Kan inte kopiera ny '%2' till '%1'"

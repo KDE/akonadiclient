@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2025-02-14 11:07+0100\n"
+"PO-Revision-Date: 2025-02-17 10:06+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1441,9 +1441,7 @@ msgid "Copying new '%2' to '%1'"
 msgstr "S'està copiant el «%2» nou a «%1»"
 
 #: src/folderscommand.cpp:766
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy new '%2'to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
 msgstr "No s'ha pogut copiar el «%2» nou a «%1»"
@@ -2559,18 +2557,3 @@ msgstr "No s'ha especificat cap fitxer"
 msgctxt "@info:shell"
 msgid "Item updated successfully"
 msgstr "L'element s'ha actualitzat amb èxit"
-
-# skip-rule: kct-delete
-#~ msgctxt "@info:shell"
-#~ msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
-#~ msgstr ""
-#~ "Només es pot especificar una de les opcions «list», «add» o «delete»"
-
-# skip-rule: kct-delete
-#~ msgctxt "@info:shell"
-#~ msgid ""
-#~ "Only one of the 'show', 'add', 'modify' or 'delete' options may be "
-#~ "specified"
-#~ msgstr ""
-#~ "Només es pot especificar una de les opcions «show», «add», «modify» o "
-#~ "«delete»"

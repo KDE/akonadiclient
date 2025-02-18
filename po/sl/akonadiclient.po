@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2025-02-14 09:44+0100\n"
+"PO-Revision-Date: 2025-02-17 10:31+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1442,12 +1442,10 @@ msgid "Copying new '%2' to '%1'"
 msgstr "Kopiranje novega '%2' v '%1'"
 
 #: src/folderscommand.cpp:766
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy new '%2'to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
-msgstr "Novega '%2' ni mogoče kopirati v '%1'"
+msgstr "Ni mogoče kopirati novega '%2' v '%1'"
 
 #: src/folderscommand.cpp:769
 #, kde-format
