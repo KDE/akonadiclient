@@ -1441,8 +1441,6 @@ msgstr "Copiando el nuevo «%2» en «%1»"
 
 #: src/folderscommand.cpp:766
 #, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy new '%2'to '%1'"
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
 msgstr "No se puede copiar el nuevo «%2» en «%1»"
