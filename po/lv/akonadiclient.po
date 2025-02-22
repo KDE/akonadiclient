@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2025-02-10 17:21+0200\n"
+"PO-Revision-Date: 2025-02-20 20:23+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -83,24 +83,18 @@ msgid "Invalid collection/item argument '%1', %2"
 msgstr "Nederīgs kolekcijas/vienuma parametrs „%1“: %2"
 
 #: src/abstractcommand.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:shell %1 is subcommand name, %2 is error message"
-#| msgid "%2. See 'help %1'"
+#, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
-msgstr "%2. Skatiet “help %1“"
+msgstr "%2, skatiet „help %1“"
 
 #: src/abstractcommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
-#| "message"
-#| msgid "%3. See '%1 help %2'"
+#, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3, see '%1 help %2'"
-msgstr "%3. Skatiet „%1 help %2“"
+msgstr "%3, skatiet „%1 help %2“"
 
 #: src/abstractcommand.cpp:198
 #, kde-format
@@ -591,11 +585,10 @@ msgid "Read attributes for %1 collections"
 msgstr "Lasīt atribūtus %1 kolekcijām"
 
 #: src/attributescommand.cpp:507
-#, fuzzy, kde-kuit-format
-#| msgid "Save current folder attributes"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
-msgstr "Saglabāt pašreizējās mapes atribūtus"
+msgstr "Pārbaude pašreizējās kolekcijas atribūtus"
 
 #: src/attributescommand.cpp:531
 #, kde-kuit-format
@@ -725,7 +718,7 @@ msgstr "Nederīga vienuma sintakse „%1“"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "Pārprotama komanda „%1“, iespējas ir „%2“"
 
 #: src/commandfactory.cpp:70 src/commandfactory.cpp:122
 #, kde-format
@@ -1153,19 +1146,19 @@ msgstr "uzmanību"
 #, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr ""
+msgstr "paziņojums"
 
 #: src/errorreporter.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "success"
-msgstr ""
+msgstr "izdevās"
 
 #: src/errorreporter.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr ""
+msgstr "informācija"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -1258,32 +1251,32 @@ msgstr "Apstrādā konfigurācijas datni „%1“..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
-msgstr ""
+msgstr "Neizdodas pārdēvēt grupu „%1“ mapei „%2“, kas vairs nepastāv"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "Grupa „%1“ mapei „%2“ ir pārdēvēta par „%3“"
 
 #: src/folderscommand.cpp:413
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr "Pārdēvēts %1 grupas"
+msgstr "Pārdēvētas %1 grupas"
 
 #: src/folderscommand.cpp:498
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
-msgstr ""
+msgstr "Nevar atjaunināt „%1“ grupā „%2“ mapei „%3“, kas vairs nepastāv"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "Atjaunināts „%1“ grupā „%2“ mapei „%3“ uz „%4“"
 
 #: src/folderscommand.cpp:530
 #, kde-format
@@ -1303,25 +1296,20 @@ msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
 msgstr ""
+"Nepieciešamas konfigurācijas izmaiņas (%1 grupu pārdēvēšanas un %2 "
+"iestatījumu izmaiņas)"
 
 #: src/folderscommand.cpp:544
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Configuration changes are required (%1 group renames and %2 settings "
-#| "changes).<nl/>Quit all running PIM applications and stop the Akonadi "
-#| "server, then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</"
-#| "bcode><nl/>to implement the changes."
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Quit all running PIM applications and stop the Akonadi server, then<nl/"
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
-"Nepieciešamas konfigurācijas izmaiņas (%1 grupas pārdēvēšanas un %2 "
-"iestatījumu izmaiņas).<nl/>Izejiet no visām palaistajām PIM programmām un "
-"apturiet „Akonadi“ serveri, pēc tam<nl/>izpildiet komandu:<nl/><bcode>  %3 "
-"%4 --restore</bcode><nl/>, kas veiks izmaiņas."
+"Izejiet no visām palaistajām PIM programmām un <nl/>apturiet „Akonadi“ "
+"serveri, pēc tam<nl/>izpildiet komandu:<nl/><bcode> %1 %2 --restore</"
+"bcode><nl/>, kas veiks izmaiņas."
 
 #: src/folderscommand.cpp:558
 #, kde-format
@@ -1348,20 +1336,16 @@ msgid "Read %1 saved collection paths"
 msgstr "Nolasa %1 saglabātos kolekciju ceļus"
 
 #: src/folderscommand.cpp:601
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Folder '%1' had attributes but is no longer present"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr "Mapei „%1“ bija atribūti, bet to vairs nav"
+msgstr "Mapei „%1“ bija ID %2, bet tā vairs nav"
 
 #: src/folderscommand.cpp:604
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection \"%2\" changed ID from %1 to %3"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr "Kolekcija „%2“ mainīja ID no %1 uz %3"
+msgstr "Mapei „%1“ ir mainīts ID no %2 uz %3"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
@@ -1416,12 +1400,10 @@ msgid "Akonadi server is stopped"
 msgstr "„Akonadi“ serveris ir apturēts"
 
 #: src/folderscommand.cpp:735
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Shutting down Akonadi server..."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr "Izslēdz „Akonadi“ serveri..."
+msgstr "Izslēdz „Akonadi“ serveri"
 
 #: src/folderscommand.cpp:744
 #, kde-format
@@ -1448,20 +1430,16 @@ msgid "Copying new '%2' to '%1'"
 msgstr "Kopē jauno „%2“ uz „%1“"
 
 #: src/folderscommand.cpp:766
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy new '%2'to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
 msgstr "Nevar nokopēt jauno „%2“ uz „%1“"
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot remove old '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr "Nevar noņemt veco „%1“"
+msgstr "Nevar noņemt nokopēto datni „%1“"
 
 #: src/folderscommand.cpp:775
 #, kde-format
@@ -2337,27 +2315,27 @@ msgstr "Dzēst birkas"
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "Saglabāt pašreizējās birkas"
 
 #: src/tagscommand.cpp:74
 #, kde-format
 msgid "Restore the saved tags (into a new database)"
-msgstr ""
+msgstr "Atjaunot saglabātās birkas (jaunā datubāzē)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr ""
+msgstr "Pievienojamās birkas ID (pēc noklusējuma automātisks)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: src/tagscommand.cpp:76
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
-msgstr ""
+msgstr "Atjaunot pievienotās starpbirkas, kad izmanto „id“ opciju"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2379,7 +2357,7 @@ msgstr "[BIRKA...]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr ""
+msgstr "Nederīga „id“ opcijas vērtība"
 
 #: src/tagscommand.cpp:95
 #, kde-format
@@ -2388,17 +2366,14 @@ msgid "The 'brief' and 'urls' options cannot both be specified"
 msgstr "Nevar reizē norādīt „brief“ un „urls“ opciju"
 
 #: src/tagscommand.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
 msgstr ""
-"Iespējams precizēt tikai vienu no „expand“, „add“ „delete“ vai „clean“ opciju"
+"Iespējams precizēt tikai vienu no „list“, „add“ „delete“ vai „backup/"
+"restore“ opciju"
 
 #: src/tagscommand.cpp:131
 #, kde-format
@@ -2419,34 +2394,28 @@ msgid "No tags specified to delete"
 msgstr "Dzēšanai nav norādīta neviena birka"
 
 #: src/tagscommand.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr "„comment“ opcija ir atļauta tikai ar „add“"
+msgstr "„retain“ opcija ir atļauta tikai ar „add“ vai „restore“"
 
 #: src/tagscommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr "„comment“ opcija ir atļauta tikai ar „add“"
+msgstr "„id“ opcija ir atļauta tikai ar „add“"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot read saved list from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "Nevar nolasīt saglabāto sarakstu no „%1“"
+msgstr "Nevar nolasīt saglabātās birkas no „%1“"
 
 #: src/tagscommand.cpp:201
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "Nav saglabātu birku, ko atjaunot"
 
 #: src/tagscommand.cpp:228
 #, kde-format
@@ -2455,34 +2424,28 @@ msgid "A tag named '%1' ID %2 already exists"
 msgstr "Birka ar nosaukumu „%1“ ID %2 jau pastāv"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr "Nevar pievienot birku „%1“ ID %2"
+msgstr "Neizdevās pievienot birku „%1“ ID %2"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr "Nevar pievienot birku „%1“"
+msgstr "Neizdevās pievienot birku „%1“"
 
 #: src/tagscommand.cpp:287
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
-msgstr ""
+msgstr "Neizdevās pievienot birku ar ID %1, sekvencei jau pastāv pie ID %2"
 
 #: src/tagscommand.cpp:341
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr "Nevar pievienot birku „%1“ ID %2"
+msgstr "Pievienota birka „%1“ ID %2"
 
 #: src/tagscommand.cpp:376
 #, kde-format
@@ -2500,15 +2463,13 @@ msgstr "Dzēšamās birkas ID %1 nepastāv"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr ""
+msgstr "Nevar pievienot birku ar pieprasīto ID"
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "Nevar pievienot birku „%1“ ID %2"
+msgstr "Dzēsta birka „%1“ ID %2"
 
 #: src/tagscommand.cpp:491
 #, kde-format
@@ -2523,41 +2484,33 @@ msgid "URL"
 msgstr "URL"
 
 #: src/tagscommand.cpp:535
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Found %1 current Akonadi collections"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr "Atrastas %1 pašreizējas „Akonadi“ kolekcijas"
+msgstr "Atrastas %1 pašreizējas „Akonadi“ birkas"
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Saving folder paths to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr "Saglabā mapju ceļus uz „%1“"
+msgstr "Saglabātas birkas uz „%1“"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Reading saved attributes from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr "Nolasa saglabātos atribūtus no „%1“"
+msgstr "Nolasa saglabātās birkas no „%1“"
 
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Read %1 saved collection paths"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "Nolasa %1 saglabātos kolekciju ceļus"
+msgstr "Nolasītas %1 saglabātās birkas"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "Birkas ir atjaunotas"
 
 #: src/terminalcolour.cpp:45
 #, kde-format
