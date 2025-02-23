@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2025-02-16 17:10+0100\n"
+"PO-Revision-Date: 2025-02-22 21:54+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -612,29 +612,29 @@ msgstr "Kolekto \"%2\" ŝanĝis ID de %1 al %3"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
-msgstr ""
+msgstr "Dosierujo \"%1\" atributo \"%2\" ŝanĝiĝis de %3 al %4"
 
 #: src/attributescommand.cpp:644
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" attribute \"%2\" added %3"
-msgstr ""
+msgstr "Dosierujo \"%1\" atributo \"%2\" aldonis %3"
 
 #: src/attributescommand.cpp:667
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" needs update of %1 attribute"
 msgid_plural "Folder \"%2\" needs update of %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dosierujo \"%2\" bezonas ĝisdatigon de %1 atributo"
+msgstr[1] "Dosierujo \"%2\" bezonas ĝisdatigon de %1 atributoj"
 
 #: src/attributescommand.cpp:673
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" updating %1 attribute"
 msgid_plural "Folder \"%2\" updating %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dosierujo \"%2\" ĝisdatigante %1 atributon"
+msgstr[1] "Dosierujo \"%2\" ĝisdatigante %1 atributojn"
 
 #: src/attributescommand.cpp:698
 #, kde-kuit-format
@@ -712,7 +712,7 @@ msgstr "Nevalida ero-sintakso '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "Plursenca komando '%1', eblecoj estas '%2'"
 
 #: src/commandfactory.cpp:70 src/commandfactory.cpp:122
 #, kde-format
@@ -1121,31 +1121,31 @@ msgstr "Ŝanĝoj al ero '%1' estas konservitaj"
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "eraro"
 
 #: src/errorreporter.cpp:46
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "averto"
 
 #: src/errorreporter.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr ""
+msgstr "sciigo"
 
 #: src/errorreporter.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "success"
-msgstr ""
+msgstr "sukceso"
 
 #: src/errorreporter.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr ""
+msgstr "informo"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -1173,17 +1173,17 @@ msgstr "Neniu eksportdosiero specifita"
 #: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "Konservi, kontroli aŭ restaŭri Akonadi-dosierujajn ID-ojn"
 
 #: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "Konservi ID-atribuojn de aktuala dosierujo"
 
 #: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
-msgstr ""
+msgstr "Kontroli aktualajn kontraŭ konservitaj ID-atribuoj de dosierujo"
 
 #: src/folderscommand.cpp:118
 #, kde-format
@@ -1219,13 +1219,13 @@ msgstr "Ne eblas skribi aktualan liston al '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "Neniuj dosierujo-IDoj ŝanĝiĝis"
 
 #: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "%1 dosieruj-IDoj ŝanĝiĝis"
 
 #: src/folderscommand.cpp:321
 #, kde-format
@@ -1237,19 +1237,19 @@ msgstr "Prilaboranta agorddosieron '%1'..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
-msgstr ""
+msgstr "Ne eblas forigi grupon \"%1\" por dosierujo \"%2\" kiu ne plu ekzistas"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "Grupo \"%1\" por dosierujo \"%2\" alinomiĝis al \"%3\""
 
 #: src/folderscommand.cpp:413
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "%1 grupoj estis alinomitaj"
 
 #: src/folderscommand.cpp:498
 #, kde-format
@@ -1262,26 +1262,26 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "Ĝisdatigis \"%1\" en grupo \"%2\" por dosierujo \"%3\" al %4"
 
 #: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "%1 agordvaloroj estis ŝanĝitaj"
 
 #: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "Neniuj agordŝanĝoj estas necesaj"
 
 #: src/folderscommand.cpp:542
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
-msgstr ""
+msgstr "Agordŝanĝoj estas necesaj (%1 grup-alinomiĝoj kaj %2 agordŝanĝoj)"
 
 #: src/folderscommand.cpp:544
 #, kde-kuit-format
@@ -1363,37 +1363,37 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "Efektivigu '%1 %2 --check' unuq"
 
 #: src/folderscommand.cpp:725
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "Kontrolante ĉu la Akonadi-servilo estas rulanta..."
 
 #: src/folderscommand.cpp:730
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Akonadi-servilon estas haltita"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr ""
+msgstr "Sistemfermante Akonadi-servilon"
 
 #: src/folderscommand.cpp:744
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "Ĝisdatigante %1 agorddosieroj en '%2'"
 
 #: src/folderscommand.cpp:755
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "Forigante malnovan '%1'"
 
 #: src/folderscommand.cpp:758
 #, kde-format
@@ -1405,12 +1405,10 @@ msgstr "Ne eblas forigi malnovan '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "Kopiante novan '%2' al '%1'"
 
 #: src/folderscommand.cpp:766
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy new '%2'to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
 msgstr "Ne eblas kopii novan '%2' al '%1'"
@@ -1425,7 +1423,7 @@ msgstr "Ne eblas forigi kopiitan dosieron '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "Restaŭro plenumita"
 
 #: src/folderscommand.cpp:788
 #, kde-format
@@ -2292,12 +2290,12 @@ msgstr "Forigi etikedojn"
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "Konservi la aktualajn etikedojn"
 
 #: src/tagscommand.cpp:74
 #, kde-format
 msgid "Restore the saved tags (into a new database)"
-msgstr ""
+msgstr "Restaŭri la konservitajn etikedojn (en novan datumbazon)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
@@ -2307,12 +2305,12 @@ msgstr ""
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: src/tagscommand.cpp:76
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
-msgstr ""
+msgstr "Reteni interajn etikedojn aldonitajn kiam la opcio 'id' estas uzata"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2334,7 +2332,7 @@ msgstr "[ETIKEDO...]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr ""
+msgstr "Nevalida valoro por la opcio 'id'"
 
 #: src/tagscommand.cpp:95
 #, kde-format
@@ -2392,7 +2390,7 @@ msgstr "Ne eblas legi konservitajn etikedojn el '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "Neniuj konservitaj etokedoj por restaŭri"
 
 #: src/tagscommand.cpp:228
 #, kde-format
@@ -2464,7 +2462,7 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr ""
+msgstr "Trovis %1 aktualajn Akonadi-etikedojn"
 
 #: src/tagscommand.cpp:557
 #, kde-format
