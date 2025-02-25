@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2025-02-02 13:08+0100\n"
+"PO-Revision-Date: 2025-02-18 08:44+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -82,24 +82,18 @@ msgid "Invalid collection/item argument '%1', %2"
 msgstr "Argomento della raccolta/elemento non valido «%1», %2"
 
 #: src/abstractcommand.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:shell %1 is subcommand name, %2 is error message"
-#| msgid "%2. See 'help %1'"
+#, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
-msgstr "%2. Vedi «help %1»"
+msgstr "%2, vedi «help %1»"
 
 #: src/abstractcommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
-#| "message"
-#| msgid "%3. See '%1 help %2'"
+#, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3, see '%1 help %2'"
-msgstr "%3. Vedi «%1 help %2»"
+msgstr "%3, vedi «%1 help %2»"
 
 #: src/abstractcommand.cpp:198
 #, kde-format
@@ -437,23 +431,20 @@ msgstr ""
 "Mostra o interpreta il valore dell'attributo come codificato in esadecimale"
 
 #: src/attributescommand.cpp:108
-#, fuzzy, kde-format
-#| msgid "Save current folder ID assignments"
+#, kde-format
 msgid "Save current folder attributes"
-msgstr "Salva le assegnazioni ID delle cartelle attuali"
+msgstr "Salva gli attributi della cartella attuale"
 
 #: src/attributescommand.cpp:111
-#, fuzzy, kde-format
-#| msgid "Check current against saved folder ID assignments"
+#, kde-format
 msgid "Check current against saved folder attributes"
 msgstr ""
-"Controlla le assegnazioni degli ID delle cartelle attuali rispetto a quelle "
-"salvate"
+"Controlla gli attributi della cartella attuale rispetto a quelli salvati"
 
 #: src/attributescommand.cpp:114
 #, kde-format
 msgid "Restore changed folder attributes"
-msgstr ""
+msgstr "Ripristina gli attributi modificati della cartella"
 
 #: src/attributescommand.cpp:125
 #, kde-format
@@ -487,14 +478,10 @@ msgid "Hex encoded value contained invalid characters"
 msgstr "Il valore codificato in esadecimale conteneva caratteri non validi"
 
 #: src/attributescommand.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one operation mode option may be specified"
-msgstr ""
-"Può essere specificata solo una delle opzioni «elenca», «aggiungi» o "
-"«elimina»"
+msgstr "È possibile specificare solo un'opzione di modalità operativa"
 
 #: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -528,12 +515,10 @@ msgid "Too many arguments specified, from '%1'"
 msgstr "Sono stati specificati troppi argomenti, da «%1»"
 
 #: src/attributescommand.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot read saved list from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved attributes from '%1'"
-msgstr "Impossibile leggere l'elenco salvato da «%1»"
+msgstr "Impossibile leggere gli attributi salvati da «%1»"
 
 #: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #: src/tagscommand.cpp:194
@@ -543,39 +528,30 @@ msgid "Run '%1 %2 --backup' first"
 msgstr "Esegui prima «%1 %2 --backup»"
 
 #: src/attributescommand.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection already has an attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr "La raccolta ha già un attributo «%1»"
+msgstr "La raccolta %2 ha già un attributo «%1»"
 
 #: src/attributescommand.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 has no attribute '%1'"
-msgstr "La raccolta non ha l'attributo «%1»"
+msgstr "La raccolta %2 non ha l'attributo «%1»"
 
 #: src/attributescommand.cpp:379
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no attributes"
-msgstr "La raccolta %1 non ha elementi"
+msgstr "La raccolta %1 non ha attributi"
 
 #: src/attributescommand.cpp:387
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %2 has %1 attribute:"
 msgid_plural "Collection %2 has %1 attributes:"
-msgstr[0] "La raccolta %2 ha %1 elemento:"
-msgstr[1] "La raccolta %2 ha %1 elementi:"
+msgstr[0] "La raccolta %2 ha %1 attributo:"
+msgstr[1] "La raccolta %2 ha %1 attributi:"
 
 #: src/attributescommand.cpp:403 src/folderscommand.cpp:197
 #, kde-format
@@ -591,145 +567,118 @@ msgid "Cannot save backup list to '%1'"
 msgstr "Impossibile salvare l'elenco di backup su «%1»"
 
 #: src/attributescommand.cpp:424
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving collection attributes to '%1'"
-msgstr "La raccolta non ha l'attributo «%1»"
+msgstr "Salvataggio degli attributi della raccolta in «%1»"
 
 #: src/attributescommand.cpp:456
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved attributes for %1 collections"
-msgstr "Mostra o aggiorna gli attributi per una raccolta"
+msgstr "Attributi salvati per %1 raccolte"
 
 #: src/attributescommand.cpp:462
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved attributes from '%1'"
-msgstr "Nome della cartella maildir modificato in «%1»"
+msgstr "Lettura degli attributi salvati da «%1»"
 
 #: src/attributescommand.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read attributes for %1 collections"
-msgstr "Mostra o aggiorna gli attributi per una raccolta"
+msgstr "Leggi gli attributi per %1 raccolte"
 
 #: src/attributescommand.cpp:507
-#, fuzzy, kde-kuit-format
-#| msgid "Save current folder ID assignments"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
-msgstr "Salva le assegnazioni ID delle cartelle attuali"
+msgstr "Controllo degli attributi della raccolta attuale"
 
 #: src/attributescommand.cpp:531
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder '%1' had attributes but is no longer present"
-msgstr ""
+msgstr "La cartella «%1» aveva attributi, ma non sono più presenti"
 
 #: src/attributescommand.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot fetch parent collection '%1', %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
-msgstr "Impossibile recuperare la raccolta superiore «%1», %2"
+msgstr "Impossibile recuperare la raccolta %1 «%2»"
 
 #: src/attributescommand.cpp:562
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection \"%2\" changed ID from %1 to %3"
-msgstr "La raccolta %2 ha %1 elemento:"
+msgstr "La raccolta «%2» ha cambiato ID da %1 a %3"
 
 #: src/attributescommand.cpp:635
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
-msgstr ""
+msgstr "Attributo «%2» della cartella «%1» modificato da %3 a %4"
 
 #: src/attributescommand.cpp:644
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" attribute \"%2\" added %3"
-msgstr ""
+msgstr "L'attributo «%2» della cartella «%1» ha aggiunto %3"
 
 #: src/attributescommand.cpp:667
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" needs update of %1 attribute"
 msgid_plural "Folder \"%2\" needs update of %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "La cartella «%2» richiede l'aggiornamento di %1 attributo"
+msgstr[1] "La cartella «%2» richiede l'aggiornamento di %1 attributi"
 
 #: src/attributescommand.cpp:673
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" updating %1 attribute"
 msgid_plural "Folder \"%2\" updating %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "La cartella «%2» sta aggiornando %1 attributo"
+msgstr[1] "La cartella «%2» sta aggiornando %1 attributi"
 
 #: src/attributescommand.cpp:698
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes need to be restored"
-msgstr "Mostra gli attributi della raccolta (operazione predefinita)"
+msgstr "Non è necessario ripristinare alcun attributo della raccolta"
 
 #: src/attributescommand.cpp:700
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes needed to be restored"
-msgstr "Mostra gli attributi della raccolta (operazione predefinita)"
+msgstr "Non è necessario ripristinare alcun attributo della raccolta"
 
 #: src/attributescommand.cpp:705
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Recursive list can only be used for collections"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes need to be restored for %1 collection"
 msgid_plural "Attributes need to be restored for %1 collections"
-msgstr[0] "L'elenco ricorsivo può essere utilizzato solo per le raccolte"
-msgstr[1] "L'elenco ricorsivo può essere utilizzato solo per le raccolte"
+msgstr[0] "Gli attributi devono essere ripristinati per %1 raccolta"
+msgstr[1] "Gli attributi devono essere ripristinati per %1 raccolte"
 
 #: src/attributescommand.cpp:711
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Configuration changes are required (%1 group renames and %2 settings "
-#| "changes).<nl/>Quit all running PIM applications and stop the Akonadi "
-#| "server, then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</"
-#| "bcode><nl/>to implement the required changes."
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
 "restore</bcode><nl/>to implement the changes."
 msgstr ""
-"Sono necessarie modifiche alla configurazione (%1 rinomina del gruppo e %2 "
-"modifiche alle impostazioni).<nl/>Chiudi tutte le applicazioni PIM in "
-"esecuzione e arresta il server Akonadi, quindi<nl/>esegui il comando:<nl/"
-"><bcode> %3 %4 --restore</bcode><nl/>per implementare le modifiche richieste."
+"Sono necessarie modifiche agli attributi, esegui il comando:<nl/><bcode> %1 "
+"%2 --restore</bcode><nl/>per implementare le modifiche."
 
 #: src/attributescommand.cpp:721
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Files or directories to add to the collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes were restored for %1 collection"
 msgid_plural "Attributes were restored for %1 collections"
-msgstr[0] "I file o le cartelle da aggiungere alla raccolta"
-msgstr[1] "I file o le cartelle da aggiungere alla raccolta"
+msgstr[0] "Gli attributi sono stati ripristinati per %1 raccolta"
+msgstr[1] "Gli attributi sono stati ripristinati per %1 raccolte"
 
 #: src/collectionlistcommand.cpp:45
 #, kde-format
@@ -771,7 +720,7 @@ msgstr "Sintassi dell'elemento non valida «%1»"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "Comando ambiguo «%1», le possibilità sono «%2»"
 
 #: src/commandfactory.cpp:70 src/commandfactory.cpp:122
 #, kde-format
@@ -1199,19 +1148,19 @@ msgstr "avviso"
 #, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr ""
+msgstr "avviso"
 
 #: src/errorreporter.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "success"
-msgstr ""
+msgstr "successo"
 
 #: src/errorreporter.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr ""
+msgstr "informazioni"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -1257,26 +1206,22 @@ msgstr ""
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
+"Ripristina i file di configurazione con assegnazioni degli ID delle cartelle "
+"modificate"
 
 #: src/folderscommand.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
 msgstr ""
-"Può essere specificata solo una delle opzioni «elenca», «aggiungi» o "
-"«elimina»"
+"Può essere specificata solo una delle opzioni «backup», «check» o «restore»"
 
 #: src/folderscommand.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
 msgstr ""
-"Può essere specificata solo una delle opzioni «elenca», «aggiungi» o "
-"«elimina»"
+"È necessario specificare una delle opzioni «backup», «check» o «restore»"
 
 #: src/folderscommand.cpp:180
 #, kde-format
@@ -1306,19 +1251,20 @@ msgstr "%1 ID di cartella sono cambiati"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "Elaborazione del file di configurazione «%1»"
+msgstr "Elaborazione del file di configurazione «%1»..."
 
 #: src/folderscommand.cpp:393
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
 msgstr ""
+"Impossibile rinominare il gruppo «%1» per la cartella «%2» che non esiste più"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "Il gruppo «%1» per la cartella «%2» è stato rinominato in «%3»"
 
 #: src/folderscommand.cpp:413
 #, kde-format
@@ -1332,12 +1278,14 @@ msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
 msgstr ""
+"Impossibile aggiornare «%1» nel gruppo «%2» per la cartella «%3» che non "
+"esiste più"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "Aggiornato «%1» nel gruppo «%2» per la cartella «%3» a %4"
 
 #: src/folderscommand.cpp:530
 #, kde-format
@@ -1357,25 +1305,20 @@ msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
 msgstr ""
+"Sono necessarie modifiche alla configurazione (%1 rinomine di gruppo e %2 "
+"modifiche di impostazioni)"
 
 #: src/folderscommand.cpp:544
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Configuration changes are required (%1 group renames and %2 settings "
-#| "changes).<nl/>Quit all running PIM applications and stop the Akonadi "
-#| "server, then<nl/>execute the command:<nl/><bcode>  %3 %4 --restore</"
-#| "bcode><nl/>to implement the required changes."
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Quit all running PIM applications and stop the Akonadi server, then<nl/"
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
-"Sono necessarie modifiche alla configurazione (%1 rinomina del gruppo e %2 "
-"modifiche alle impostazioni).<nl/>Chiudi tutte le applicazioni PIM in "
-"esecuzione e arresta il server Akonadi, quindi<nl/>esegui il comando:<nl/"
-"><bcode> %3 %4 --restore</bcode><nl/>per implementare le modifiche richieste."
+"Chiudi tutte le applicazioni PIM in esecuzione e ferma il server Akonadi, "
+"poi<nl/>esegui il comando:<nl/><bcode> %1 %2 --restore</bcode><nl/>per "
+"implementare le modifiche."
 
 #: src/folderscommand.cpp:558
 #, kde-format
@@ -1384,19 +1327,16 @@ msgid "Saving folder paths to '%1'"
 msgstr "Salvataggio dei percorsi delle cartelle in «%1»"
 
 #: src/folderscommand.cpp:565
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "La raccolta o l'elemento"
+msgstr "Salvati %1 percorsi delle cartelle delle raccolte"
 
 #: src/folderscommand.cpp:570
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "Nome della cartella maildir modificato in «%1»"
+msgstr "Lettura dei percorsi delle cartelle salvate da «%1»"
 
 #: src/folderscommand.cpp:581
 #, kde-format
@@ -1408,16 +1348,13 @@ msgstr "Leggi %1 percorsi di raccolta salvati"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr ""
+msgstr "La cartella «%1» aveva ID %2, ma non è più presente"
 
 #: src/folderscommand.cpp:604
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr "La raccolta %2 ha %1 elemento:"
+msgstr "La cartella «%1» ha cambiato ID da %2 a %3"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
@@ -1474,18 +1411,16 @@ msgid "Akonadi server is stopped"
 msgstr "Il server Akonadi è fermo"
 
 #: src/folderscommand.cpp:735
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Shutting down Akonadi server..."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr "Spegnimento del server Akonadi..."
+msgstr "Spegnimento del server Akonadi"
 
 #: src/folderscommand.cpp:744
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "Aggiornamento di %1 file di configurazione in «%2»"
 
 #: src/folderscommand.cpp:755
 #, kde-format
@@ -1506,20 +1441,16 @@ msgid "Copying new '%2' to '%1'"
 msgstr "Copia del nuovo «%2» in «%1»"
 
 #: src/folderscommand.cpp:766
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy new '%2'to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
-msgstr "Impossibile copiare «%2» in «%1»"
+msgstr "Impossibile copiare il nuovo «%2» in «%1»"
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot remove old '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr "Impossibile rimuovere il vecchio «%1»"
+msgstr "Impossibile rimuovere il file copiato «%1»"
 
 #: src/folderscommand.cpp:775
 #, kde-format
@@ -2393,27 +2324,29 @@ msgstr "Elimina etichette"
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "Salva le etichette attuali"
 
 #: src/tagscommand.cpp:74
 #, kde-format
 msgid "Restore the saved tags (into a new database)"
-msgstr ""
+msgstr "Ripristina le etichette salvate (in una nuova banca dati)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr ""
+msgstr "ID per un'etichetta da aggiungere (automatico predefinito)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: src/tagscommand.cpp:76
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
 msgstr ""
+"Mantieni le etichette intermedie aggiunte quando viene utilizzata l'opzione "
+"«id»"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2436,7 +2369,7 @@ msgstr "[ETICHETTA...]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr ""
+msgstr "Valore non valido per l'opzione «id»"
 
 #: src/tagscommand.cpp:95
 #, kde-format
@@ -2446,17 +2379,13 @@ msgstr ""
 "Le opzioni «brief» e «urls» non possono essere specificate contemporaneamente"
 
 #: src/tagscommand.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
 msgstr ""
-"Solo una delle opzioni «espandi», «aggiungi», «elimina» o «cancella» può "
+"Solo una delle opzioni «list», «add», «delete» o «backup»/«restore»può "
 "essere specificata"
 
 #: src/tagscommand.cpp:131
@@ -2478,34 +2407,28 @@ msgid "No tags specified to delete"
 msgstr "Nessuna etichetta specificata da eliminare"
 
 #: src/tagscommand.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr "L'opzione «commento» è consentita solo con «aggiungi»"
+msgstr "L'opzione «retain» può essere utilizzata solo con «add» o «restore»"
 
 #: src/tagscommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr "L'opzione «commento» è consentita solo con «aggiungi»"
+msgstr "L'opzione «id» è consentita solo con «add»"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot read saved list from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "Impossibile leggere l'elenco salvato da «%1»"
+msgstr "Impossibile leggere le etichette salvate da «%1»"
 
 #: src/tagscommand.cpp:201
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "Nessuna etichetta salvata da ripristinare"
 
 #: src/tagscommand.cpp:228
 #, kde-format
@@ -2514,17 +2437,13 @@ msgid "A tag named '%1' ID %2 already exists"
 msgstr "Un'etichetta con nome «%1» ID %2 esiste già"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
 msgstr "Impossibile aggiungere l'etichetta «%1» ID %2"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
 msgstr "Impossibile aggiungere l'etichetta «%1»"
@@ -2533,15 +2452,13 @@ msgstr "Impossibile aggiungere l'etichetta «%1»"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
-msgstr ""
+msgstr "Impossibile creare un'etichetta con ID %1, la sequenza è già all'ID %2"
 
 #: src/tagscommand.cpp:341
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr "Impossibile aggiungere l'etichetta «%1» ID %2"
+msgstr "Aggiunta l'etichetta «%1» ID %2"
 
 #: src/tagscommand.cpp:376
 #, kde-format
@@ -2559,15 +2476,13 @@ msgstr "L'etichetta da eliminare ID «%1» non esiste"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr ""
+msgstr "Impossibile creare l'etichetta con l'ID richiesto"
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "Impossibile aggiungere l'etichetta «%1» ID %2"
+msgstr "Eliminata l'etichetta «%1» ID %2"
 
 #: src/tagscommand.cpp:491
 #, kde-format
@@ -2582,40 +2497,33 @@ msgid "URL"
 msgstr "URL"
 
 #: src/tagscommand.cpp:535
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Found %1 current Akonadi collections"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr "Trovate %1 raccolte Akonadi attuali"
+msgstr "Trovate %1 etichette Akonadi attuali"
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Saving folder paths to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr "Salvataggio dei percorsi delle cartelle in «%1»"
+msgstr "Etichette salvate in «%1»"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr "Nome della cartella maildir modificato in «%1»"
+msgstr "Lettura delle etichette salvate da «%1»"
 
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Read %1 saved collection paths"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "Leggi %1 percorsi di raccolta salvati"
+msgstr "Leggi %1 etichette salvate"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "Etichette ripristinate"
 
 #: src/terminalcolour.cpp:45
 #, kde-format
