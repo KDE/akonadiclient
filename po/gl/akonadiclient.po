@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2025-02-19 07:33+0100\n"
+"PO-Revision-Date: 2025-03-02 08:46+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -662,6 +662,7 @@ msgid_plural "Attributes need to be restored for %1 collections"
 msgstr[0] "Hai que restaurar os atributos de %1 colección."
 msgstr[1] "Hai que restaurar os atributos de %1 coleccións."
 
+# skip-rule: trasno-command
 #: src/attributescommand.cpp:711
 #, kde-kuit-format
 msgctxt "@info:shell"
@@ -1309,6 +1310,7 @@ msgstr ""
 "Requírense cambios de configuración (%1 renomeamentos de grupos e %2 cambios "
 "de configuración)."
 
+# skip-rule: trasno-change, trasno-command
 #: src/folderscommand.cpp:544
 #, kde-kuit-format
 msgctxt "@info:shell"
