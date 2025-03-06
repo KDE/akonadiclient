@@ -93,7 +93,7 @@ msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3, see '%1 help %2'"
-msgstr ""
+msgstr "%3，参见 '%1 help %2'"
 
 #: src/abstractcommand.cpp:198
 #, kde-format
@@ -1130,7 +1130,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "success"
-msgstr ""
+msgstr "操作成功"
 
 #: src/errorreporter.cpp:61
 #, kde-format
