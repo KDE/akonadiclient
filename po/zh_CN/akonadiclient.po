@@ -85,7 +85,7 @@ msgstr "集合/项目的参数 '%1' 无效，%2"
 #, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
-msgstr ""
+msgstr "%2，参见 'help %1'"
 
 #: src/abstractcommand.cpp:182
 #, kde-format
@@ -585,7 +585,7 @@ msgstr "读取 %1 个集合的属性"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
-msgstr ""
+msgstr "正在检查当前集合属性"
 
 #: src/attributescommand.cpp:531
 #, kde-kuit-format
@@ -707,7 +707,7 @@ msgstr "无效的项目语法 '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "模糊的命令 “%1” ,可能的命令 “%2”"
 
 #: src/commandfactory.cpp:70 src/commandfactory.cpp:122
 #, kde-format
@@ -1124,7 +1124,7 @@ msgstr "警告"
 #, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr ""
+msgstr "注意"
 
 #: src/errorreporter.cpp:56
 #, kde-format
@@ -1136,7 +1136,7 @@ msgstr "操作成功"
 #, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr ""
+msgstr "信息"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -1227,13 +1227,13 @@ msgstr "正在处理配置文件 '%1' ..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
-msgstr ""
+msgstr "无法重命名\"%1\"组，文件夹\"%2\"不存在"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "文件夹“%2”的“%1”组成功重命名为“%3”"
 
 #: src/folderscommand.cpp:413
 #, kde-format
@@ -1246,13 +1246,13 @@ msgstr "%1 个分组被重命名"
 msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
-msgstr ""
+msgstr "无法更新“%2”组中的“%1”，文件夹\"%3\"不存在"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "已将组“%2”中的“%1”所在文件夹“%3”更新到 %4"
 
 #: src/folderscommand.cpp:530
 #, kde-format
@@ -1271,7 +1271,7 @@ msgstr "无需更改配置"
 msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
-msgstr ""
+msgstr "需要手动触发配置更新 ( 重命名%1个组和%2条设置 )"
 
 #: src/folderscommand.cpp:544
 #, kde-kuit-format
