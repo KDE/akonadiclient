@@ -1281,6 +1281,8 @@ msgid ""
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
+"退出所有正在运行的 PIM 应用程序并关闭 Akonadi 服务器。并<nl/>执行命令：:<nl/"
+"><bcode>  %1 %2 --restore</bcode><nl/>，以应用更改。"
 
 #: src/folderscommand.cpp:558
 #, kde-format
@@ -1310,13 +1312,13 @@ msgstr "读取 %1 个已保存的集合路径"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr ""
+msgstr "文件夹“%1”的原ID为%2，但该路径已不存在"
 
 #: src/folderscommand.cpp:604
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr ""
+msgstr "文件夹“%1”的ID已从%2更改为%3"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
@@ -1371,7 +1373,7 @@ msgstr "Akonadi 服务器已停止"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr ""
+msgstr "正在关闭 Akonadi 服务器"
 
 #: src/folderscommand.cpp:744
 #, kde-format
@@ -1401,13 +1403,13 @@ msgstr "正在复制新的 '%2' 到 '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
-msgstr ""
+msgstr "无法复制新的 '%2' 到 '%1'"
 
 #: src/folderscommand.cpp:769
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr ""
+msgstr "无法移除复制的文件 '%1'"
 
 #: src/folderscommand.cpp:775
 #, kde-format
@@ -2275,27 +2277,27 @@ msgstr ""
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "保存当前标签"
 
 #: src/tagscommand.cpp:74
 #, kde-format
 msgid "Restore the saved tags (into a new database)"
-msgstr ""
+msgstr "还原已保存的标签 (进入新数据库)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr ""
+msgstr "要添加标签的 ID (默认为自动)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: src/tagscommand.cpp:76
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
-msgstr ""
+msgstr "保留使用“id”选项时添加的中间标签"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2316,7 +2318,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr ""
+msgstr "“id”选项的值无效"
 
 #: src/tagscommand.cpp:95
 #, kde-format
@@ -2331,6 +2333,7 @@ msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
 msgstr ""
+"只能指定 'list', 'add', 'delete' 或 'backup'/'restore' 选项中的其中一个"
 
 #: src/tagscommand.cpp:131
 #, kde-format
@@ -2354,13 +2357,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr ""
+msgstr "'retain' 选项只能与 'add' 或 'restore' 选项一起使用"
 
 #: src/tagscommand.cpp:161
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr ""
+msgstr "'id' 选项只能与 'add' 选项一起使用"
 
 #: src/tagscommand.cpp:193
 #, kde-format
