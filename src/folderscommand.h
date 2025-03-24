@@ -27,7 +27,6 @@ using namespace Akonadi;
 
 class QSaveFile;
 class QFileDevice;
-class KJob;
 class ChangeData;
 
 class FoldersCommand : public CollectionListCommand

@@ -29,7 +29,6 @@ namespace Akonadi
 class XmlDocument;
 };
 
-class QFile;
 class KJob;
 
 class ImportCommand : public AbstractCommand
