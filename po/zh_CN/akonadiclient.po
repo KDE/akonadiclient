@@ -2369,13 +2369,13 @@ msgstr "'id' 选项只能与 'add' 选项一起使用"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr ""
+msgstr "无法从 '%1' 读取保存的标签"
 
 #: src/tagscommand.cpp:201
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "没有需要还原的已保存标签"
 
 #: src/tagscommand.cpp:228
 #, kde-format
@@ -2387,25 +2387,25 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr ""
+msgstr "添加标签 '%1' ID %2 失败"
 
 #: src/tagscommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr ""
+msgstr "添加标签 '%1' 失败"
 
 #: src/tagscommand.cpp:287
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
-msgstr ""
+msgstr "无法使用ID %1 创建标签，序列已存在于ID %2"
 
 #: src/tagscommand.cpp:341
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr ""
+msgstr "已添加标签 '%1' ID %2"
 
 #: src/tagscommand.cpp:376
 #, kde-format
@@ -2423,13 +2423,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr ""
+msgstr "无法使用请求的ID创建标签"
 
 #: src/tagscommand.cpp:464
 #, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr ""
+msgstr "删除标签 '%1' ID %2"
 
 #: src/tagscommand.cpp:491
 #, kde-format
@@ -2447,30 +2447,30 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr ""
+msgstr "找到 %1 个当前的 Akonadi 标签"
 
 #: src/tagscommand.cpp:557
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr ""
+msgstr "将标签保存到 '%1"
 
 #: src/tagscommand.cpp:563
 #, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr ""
+msgstr "正在从 '%1 ' 读取保存的标签"
 
 #: src/tagscommand.cpp:580
 #, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr ""
+msgstr "读取了 %1 个保存的标签"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "标签已恢复"
 
 #: src/terminalcolour.cpp:45
 #, kde-format
