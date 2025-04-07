@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2024, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2024-11-29 00:58+0100\n"
+"PO-Revision-Date: 2025-04-06 21:41+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -34,11 +34,10 @@ msgid "The name of the command"
 msgstr "명령 이름"
 
 #: src/abstractcommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "지정한 에이전트의 상태 가져오기"
+msgstr "지정한 명령의 도움말 표시"
 
 #: src/abstractcommand.cpp:107 src/main.cpp:67
 #, kde-format
@@ -83,19 +82,13 @@ msgid "Invalid collection/item argument '%1', %2"
 msgstr "잘못된 모음집/항목 인자 '%1', %2"
 
 #: src/abstractcommand.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:shell %1 is subcommand name, %2 is error message"
-#| msgid "%2. See 'help %1'"
+#, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
 msgstr "%2. 'help %1' 명령을 참조하십시오"
 
 #: src/abstractcommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
-#| "message"
-#| msgid "%3. See '%1 help %2'"
+#, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
@@ -115,20 +108,16 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "환경 변수에 %1=\"%2\"을(를) 설정하십시오"
 
 #: src/abstractcommand.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "디렉터리 '%1'을(를) 찾을 수 없거나 디렉터리가 아님"
+msgstr "저장할 위치 '%1'이(가) 존재하지만 디렉터리가 아님"
 
 #: src/abstractcommand.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "'%1/%2' 디렉터리를 생성할 수 없음"
+msgstr "저장할 디렉터리 '%1'을(를) 생성할 수 없음"
 
 #: src/addcommand.cpp:41
 msgctxt "info:shell"
@@ -437,21 +426,19 @@ msgid "Show or interpret the attribute value as hex encoded"
 msgstr "값을 16진수 인코딩된 형태로 표시하거나 해석"
 
 #: src/attributescommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgid "Save current folder attributes"
-msgstr "모음집이나 항목"
+msgstr "현재 폴더 속성 저장"
 
 #: src/attributescommand.cpp:111
 #, kde-format
 msgid "Check current against saved folder attributes"
-msgstr ""
+msgstr "현재 폴더 속성과 저장된 폴더 속성 비교"
 
 #: src/attributescommand.cpp:114
 #, kde-format
 msgid "Restore changed folder attributes"
-msgstr ""
+msgstr "변경된 폴더 속성 복원"
 
 #: src/attributescommand.cpp:125
 #, kde-format
@@ -483,12 +470,10 @@ msgid "Hex encoded value contained invalid characters"
 msgstr "16진 인코딩된 문자열에 잘못된 문자가 있음"
 
 #: src/attributescommand.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one operation mode option may be specified"
-msgstr "'list', 'add', 'delete' 옵션 중 하나만 지정할 수 있음"
+msgstr "하나의 작업 모드 옵션만 지정할 수 있음"
 
 #: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -522,179 +507,148 @@ msgid "Too many arguments specified, from '%1'"
 msgstr "'%1'에서 너무 많은 인자가 지정됨"
 
 #: src/attributescommand.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved attributes from '%1'"
-msgstr "파일 '%1'을(를) 저장할 수 없음|/|파일 '%1'$[을를 %1] 저장할 수 없음"
+msgstr "'%1'에서 저장된 속성을 읽을 수 없음"
 
 #: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #: src/tagscommand.cpp:194
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "'%1 %2 --backup' 명령을 먼저 실행하십시오"
 
 #: src/attributescommand.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection already has an attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr "모음집에 이미 '%1' 속성이 있음"
+msgstr "%2 모음집에 이미 '%1' 속성이 있음"
 
 #: src/attributescommand.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 has no attribute '%1'"
-msgstr "모음집에 '%1' 속성이 없음"
+msgstr "%2 모음집에 '%1' 속성이 없음"
 
 #: src/attributescommand.cpp:379
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no attributes"
-msgstr "모음집 %1에 항목이 없음"
+msgstr "%1 모음집에 항목이 없음"
 
 #: src/attributescommand.cpp:387
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %2 has %1 attribute:"
 msgid_plural "Collection %2 has %1 attributes:"
-msgstr[0] "모음집 %2에 항목이 %1개 있음:"
+msgstr[0] "%2 모음집에 속성 %1개 있음:"
 
 #: src/attributescommand.cpp:403 src/folderscommand.cpp:197
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "현재 Akonadi 모음집 %1개를 찾음"
 
 #: src/attributescommand.cpp:413 src/folderscommand.cpp:213
 #: src/tagscommand.cpp:543
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "파일 '%1'을(를) 저장할 수 없음|/|파일 '%1'$[을를 %1] 저장할 수 없음"
+msgstr "백업 목록을 '%1'(으)로 저장할 수 없음"
 
 #: src/attributescommand.cpp:424
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving collection attributes to '%1'"
-msgstr "모음집에 '%1' 속성이 없음"
+msgstr "모음집 속성을 '%1'(으)로 저장하는 중"
 
 #: src/attributescommand.cpp:456
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved attributes for %1 collections"
-msgstr "모음집의 속성을 표시하거나 업데이트"
+msgstr "모음집 %1개의 속성을 저장함"
 
 #: src/attributescommand.cpp:462
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved attributes from '%1'"
-msgstr "maildir 폴더 이름을 '%1'(으)로 변경함"
+msgstr "'%1'에서 저장된 속성을 읽는 중"
 
 #: src/attributescommand.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read attributes for %1 collections"
-msgstr "모음집의 속성을 표시하거나 업데이트"
+msgstr "모음집 %1개의 속성을 읽음"
 
 #: src/attributescommand.cpp:507
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
-msgstr "모음집이나 항목"
+msgstr "현재 모음집 속성 확인 중"
 
 #: src/attributescommand.cpp:531
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder '%1' had attributes but is no longer present"
-msgstr ""
+msgstr "'%1' 폴더에 속성이 있었으나 더 이상 존재하지 않음"
 
 #: src/attributescommand.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot fetch parent collection '%1', %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
-msgstr "부모 모음집 '%1'을(를) 가져올 수 없음, %2"
+msgstr "%1 \"%2\" 모음집을 가져올 수 없음"
 
 #: src/attributescommand.cpp:562
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection \"%2\" changed ID from %1 to %3"
-msgstr "모음집 %2에 항목이 %1개 있음:"
+msgstr "\"%2\" 모음집의 ID가 %1에서 %3(으)로 변경됨"
 
 #: src/attributescommand.cpp:635
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
-msgstr ""
+msgstr "\"%1\" 폴더의 \"%2\" 속성이 %3에서 %4(으)로 변경됨"
 
 #: src/attributescommand.cpp:644
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" attribute \"%2\" added %3"
-msgstr ""
+msgstr "\"%1\" 폴더에 \"%2\" 속성이 추가됨: %3"
 
 #: src/attributescommand.cpp:667
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" needs update of %1 attribute"
 msgid_plural "Folder \"%2\" needs update of %1 attributes"
-msgstr[0] ""
+msgstr[0] "\"%2\" 폴더의 속성 %1개를 업데이트해야 함"
 
 #: src/attributescommand.cpp:673
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" updating %1 attribute"
 msgid_plural "Folder \"%2\" updating %1 attributes"
-msgstr[0] ""
+msgstr[0] "\"%2\" 폴더의 속성 %1개 업데이트 중"
 
 #: src/attributescommand.cpp:698
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes need to be restored"
-msgstr "모음집 속성 표시(기본 동작)"
+msgstr "복원할 모음집 속성 없음"
 
 #: src/attributescommand.cpp:700
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes needed to be restored"
-msgstr "모음집 속성 표시(기본 동작)"
+msgstr "복원할 모음집 속성 없음"
 
 #: src/attributescommand.cpp:705
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Recursive list can only be used for collections"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes need to be restored for %1 collection"
 msgid_plural "Attributes need to be restored for %1 collections"
-msgstr[0] "재귀적 목록은 모음집에서만 사용할 수 있음"
+msgstr[0] "모음집 %1개의 속성을 복원해야 함"
 
 #: src/attributescommand.cpp:711
 #, kde-kuit-format
@@ -703,23 +657,21 @@ msgid ""
 "Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
 "restore</bcode><nl/>to implement the changes."
 msgstr ""
+"속성 변경이 필요하므로 다음 명령을 실행해야 합니다.<nl/><bcode>  %1 %2 --"
+"restore</bcode><nl/>명령을 실행하면 변경 사항을 적용합니다."
 
 #: src/attributescommand.cpp:721
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Files or directories to add to the collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes were restored for %1 collection"
 msgid_plural "Attributes were restored for %1 collections"
-msgstr[0] "모음집에 추가할 파일이나 디렉터리"
+msgstr[0] "모음집 %1개의 속성을 복원함"
 
 #: src/collectionlistcommand.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "루트 모음집을 삭제할 수 없음"
+msgstr "모음집 목록을 가져올 수 없음"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -749,13 +701,13 @@ msgstr "%1(\"%2\")"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
-msgstr "잘못된 항목 문법 '%1'"
+msgstr "Invalid item syntax '%1'"
 
 #: src/commandfactory.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "모호한 명령 '%1', 해석 가능한 명령: '%2'"
 
 #: src/commandfactory.cpp:70 src/commandfactory.cpp:122
 #, kde-format
@@ -1160,31 +1112,31 @@ msgstr "항목 '%1'의 변경 사항이 저장됨"
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "오류"
 
 #: src/errorreporter.cpp:46
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "경고"
 
 #: src/errorreporter.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr ""
+msgstr "공지"
 
 #: src/errorreporter.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "success"
-msgstr ""
+msgstr "성공"
 
 #: src/errorreporter.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr ""
+msgstr "정보"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -1212,124 +1164,114 @@ msgstr "내보낼 파일을 지정하지 않았음"
 #: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "Akonadi 폴더 ID를 저장 또는 확인, 복원"
 
 #: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "현재 폴더 ID 할당 저장"
 
 #: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
-msgstr ""
+msgstr "현재 폴더 ID 할당과 저장된 폴더 ID 할당 비교"
 
 #: src/folderscommand.cpp:118
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
-msgstr ""
+msgstr "폴더 ID 할당이 변경된 설정 파일 복원"
 
 #: src/folderscommand.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
-msgstr "'list', 'add', 'delete' 옵션 중 하나만 지정할 수 있음"
+msgstr "'backup', 'check', 'restore' 옵션 중 하나만 지정할 수 있음"
 
 #: src/folderscommand.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
-msgstr "'list', 'add', 'delete' 옵션 중 하나만 지정할 수 있음"
+msgstr "'backup', 'check', 'restore' 옵션 중 하나를 지정해야 함"
 
 #: src/folderscommand.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "파일 '%1'을(를) 저장할 수 없음|/|파일 '%1'$[을를 %1] 저장할 수 없음"
+msgstr "'%1'에서 저장된 목록을 읽을 수 없음"
 
 #: src/folderscommand.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "'%1/%2' 디렉터리를 생성할 수 없음"
+msgstr "현재 목록을 '%1'에 쓸 수 없음"
 
 #: src/folderscommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "변경된 폴더 ID 없음"
 
 #: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "폴더 ID %1개가 변경됨"
 
 #: src/folderscommand.cpp:321
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "모음집 '%1' 처리 중"
+msgstr "'%1' 설정 파일 처리 중..."
 
 #: src/folderscommand.cpp:393
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
-msgstr ""
+msgstr "존재하지 않는 \"%2\" 폴더의 \"%1\" 그룹의 이름을 변경할 수 없음"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "\"%2\" 폴더의 \"%1\" 그룹의 이름을 \"%3\"(으)로 변경함"
 
 #: src/folderscommand.cpp:413
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "그룹 %1개의 이름을 변경함"
 
 #: src/folderscommand.cpp:498
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
-msgstr ""
+msgstr "존재하지 않는 \"%3\" 폴더의 \"%2\" 그룹의 \"%1\"을 업데이트할 수 없음"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "\"%3\" 폴더의 \"%2\" 그룹의 \"%1\"을(를) %4(으)로 변경함"
 
 #: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "설정 값 %1개가 변경됨"
 
 #: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "설정 변경이 필요하지 않음"
 
 #: src/folderscommand.cpp:542
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
-msgstr ""
+msgstr "설정 변경이 필요함(그룹 이름 변경 %1개, 설정 변경 %2개)"
 
 #: src/folderscommand.cpp:544
 #, kde-kuit-format
@@ -1339,178 +1281,160 @@ msgid ""
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
+"모든 실행 중인 PIM 앱을 끝내고 Akonadi 서버를 종료한 다음,<nl/>다음 명령을 실"
+"행하십시오.<nl/><bcode>  %1 %2 --restore</bcode><nl/>그러면 변경 사항을 적용"
+"합니다."
 
 #: src/folderscommand.cpp:558
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "maildir 폴더 이름을 '%1'(으)로 변경함"
+msgstr "폴더 경로를 '%1'에 저장하는 중"
 
 #: src/folderscommand.cpp:565
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "모음집이나 항목"
+msgstr "모음집 폴더 경로 %1개를 저장함"
 
 #: src/folderscommand.cpp:570
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "maildir 폴더 이름을 '%1'(으)로 변경함"
+msgstr "'%1'에서 저장된 폴더 경로 복원 중"
 
 #: src/folderscommand.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "모음집 이름 바꾸기"
+msgstr "저장된 모음집 경로 %1개를 읽음"
 
 #: src/folderscommand.cpp:601
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr ""
+msgstr "\"%1\" 폴더의 ID가 %2였으나 더 이상 존재하지 않음"
 
 #: src/folderscommand.cpp:604
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr "모음집 %2에 항목이 %1개 있음:"
+msgstr "\"%1\" 폴더의 ID가 %2에서 %3(으)로 변경됨"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
-msgstr ""
+msgstr "설정 파일 이름 %2개에서 데이터 변경 패턴 %1개를 정의함"
 
 #: src/folderscommand.cpp:685
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "삭제할 태그 '%1'이(가) 없음"
+msgstr "저장된 폴더 목록 '%1'(이)가 없음"
 
 #: src/folderscommand.cpp:689
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "삭제할 태그 '%1'이(가) 없음"
+msgstr "현재 폴더 목록 '%1'이(가) 없음"
 
 #: src/folderscommand.cpp:693
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
-msgstr ""
+msgstr "현재 폴더 목록 '%1'이(가) 저장된 폴더 목록 '%2'보다 오래됨"
 
 #: src/folderscommand.cpp:707
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
-msgstr ""
+msgstr "새 설정 파일 '%1'이(가) 없거나 폴더 목록 '%2'보다 오래됨"
 
 #: src/folderscommand.cpp:718
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "'%1 %2 --check' 명령을 먼저 실행하십시오"
 
 #: src/folderscommand.cpp:725
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "Akonadi 서버가 실행 중인지 확인 중..."
 
 #: src/folderscommand.cpp:730
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Akonadi 서버가 중단됨"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr ""
+msgstr "Akonadi 서버 종료 중"
 
 #: src/folderscommand.cpp:744
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "'%2'에 있는 설정 파일 %1개 업데이트 중"
 
 #: src/folderscommand.cpp:755
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "오래된 '%1' 삭제 중"
 
 #: src/folderscommand.cpp:758
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "파일 '%1'을(를) 저장할 수 없음|/|파일 '%1'$[을를 %1] 저장할 수 없음"
+msgstr "오래된 '%1'을(를) 삭제할 수 없음"
 
 #: src/folderscommand.cpp:763
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "새로운 '%2'을(를) '%1'(으)로 복사하는 중"
 
 #: src/folderscommand.cpp:766
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
-msgstr "'%1'에서 복사/이동할 수 없음, %2"
+msgstr "새로운 '%2'을(를) '%1'(으)로 복사할 수 없음"
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr "파일 '%1'을(를) 저장할 수 없음|/|파일 '%1'$[을를 %1] 저장할 수 없음"
+msgstr "복사된 파일 '%1'을(를) 삭제할 수 없음"
 
 #: src/folderscommand.cpp:775
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "복원 완료됨"
 
 #: src/folderscommand.cpp:788
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "사용자 설정 디렉터리를 찾을 수 없음"
 
 #: src/folderscommand.cpp:795
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "삭제할 태그 '%1'이(가) 없음"
+msgstr "'%1' 설정 디렉터리가 없음"
 
 #: src/folderscommand.cpp:816
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "적용 가능한 설정 파일이 없음"
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
@@ -2354,27 +2278,27 @@ msgstr "태그 삭제"
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "현재 태그 저장"
 
 #: src/tagscommand.cpp:74
 #, kde-format
 msgid "Restore the saved tags (into a new database)"
-msgstr ""
+msgstr "저장된 태그를 (새 데이터베이스에) 복원"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr ""
+msgstr "추가할 태그의 ID(기본값: 자동)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: src/tagscommand.cpp:76
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
-msgstr ""
+msgstr "'id' 옵션을 사용할 때 중간 태그 유지"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2395,7 +2319,7 @@ msgstr "[TAG...]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr ""
+msgstr "'id' 옵션의 값이 잘못됨"
 
 #: src/tagscommand.cpp:95
 #, kde-format
@@ -2404,16 +2328,13 @@ msgid "The 'brief' and 'urls' options cannot both be specified"
 msgstr "'brief' 및 'urls' 옵션을 같이 지정할 수 없음"
 
 #: src/tagscommand.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
-msgstr "'expand', 'add', 'delete', 'clean' 옵션 중 하나만 지정할 수 있음"
+msgstr ""
+"'list', 'add', 'delete', 'backup', 'restore' 옵션 중 하나만 지정할 수 있음"
 
 #: src/tagscommand.cpp:131
 #, kde-format
@@ -2434,34 +2355,28 @@ msgid "No tags specified to delete"
 msgstr "삭제할 태그를 지정하지 않았음"
 
 #: src/tagscommand.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr "'comment' 옵션은 'add'에만 사용할 수 있음"
+msgstr "'retain' 옵션은 'add' 또는 'restore'에만 사용할 수 있음"
 
 #: src/tagscommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr "'comment' 옵션은 'add'에만 사용할 수 있음"
+msgstr "'id' 옵션은 'add'에만 사용할 수 있음"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "파일 '%1'을(를) 저장할 수 없음|/|파일 '%1'$[을를 %1] 저장할 수 없음"
+msgstr "'%1'에서 저장된 태그를 복원할 수 없음"
 
 #: src/tagscommand.cpp:201
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "복원할 저장된 태그가 없음"
 
 #: src/tagscommand.cpp:228
 #, kde-format
@@ -2470,17 +2385,13 @@ msgid "A tag named '%1' ID %2 already exists"
 msgstr "이름이 '%1'인 태그(ID %2)가 이미 존재함"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
 msgstr "태그 '%1' ID %2을(를) 추가할 수 없음"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
 msgstr "태그 '%1'을(를) 추가할 수 없음"
@@ -2489,15 +2400,13 @@ msgstr "태그 '%1'을(를) 추가할 수 없음"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
-msgstr ""
+msgstr "ID가 %1인 태그를 만들 수 없음, 시퀀스가 이미 ID %2에 존재함"
 
 #: src/tagscommand.cpp:341
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr "태그 '%1' ID %2을(를) 추가할 수 없음"
+msgstr "태그 '%1' ID %2을(를) 추가함"
 
 #: src/tagscommand.cpp:376
 #, kde-format
@@ -2515,15 +2424,13 @@ msgstr "ID %1인 삭제할 태그가 없음"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr ""
+msgstr "요청한 ID를 사용하여 태그를 만들 수 없음"
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "태그 '%1' ID %2을(를) 추가할 수 없음"
+msgstr "태그 '%1' ID %2을(를) 삭제함"
 
 #: src/tagscommand.cpp:491
 #, kde-format
@@ -2541,40 +2448,36 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr ""
+msgstr "현재 Akonadi 태그 %1개를 찾음"
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr "maildir 폴더 이름을 '%1'(으)로 변경함"
+msgstr "'%1'에 태그를 저장함"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr "maildir 폴더 이름을 '%1'(으)로 변경함"
+msgstr "'%1'에서 저장된 태그 읽는 중"
 
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "모음집 이름 바꾸기"
+msgstr "저장된 태그 %1개를 읽음"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "태그 복원됨"
 
 #: src/terminalcolour.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "터미널을 설정할 수 없음"
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
