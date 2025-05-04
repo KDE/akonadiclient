@@ -48,8 +48,8 @@ if (Curses_FOUND)
 endif ()
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
-ecm_set_disabled_deprecation_versions(QT 6.8.1
-    KF 6.12.0
+ecm_set_disabled_deprecation_versions(QT 6.9.0
+    KF 6.13.0
    )
 
 find_package(KF6DocTools ${KF_MIN_VERSION})
