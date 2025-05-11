@@ -67,4 +67,5 @@ private:
     AgentState mStateArg;
     Option mOption;
     QStringList mArguments;
+    bool mJsonOutput = false;
 };

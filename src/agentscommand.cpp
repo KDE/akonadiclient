@@ -24,8 +24,11 @@
 #include <Akonadi/AgentInstance>
 #include <Akonadi/AgentManager>
 
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QStringList>
 #include <QVector>
-#include <qstringlist.h>
 
 #include <iomanip>
 #include <iostream>
@@ -62,6 +65,9 @@ void AgentsCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addOption(QCommandLineOption((QStringList() << "r"
                                                         << "restart"),
                                          i18n("Restart the specified agent")));
+    parser->addOption(QCommandLineOption((QStringList() << "j"
+                                                        << "json"),
+                                         i18n("Output in JSON format")));
     addDryRunOption(parser);
 
     parser->addPositionalArgument("agents", i18nc("@info:shell", "Agents to operate on"), i18nc("@info:shell", "[agents...]"));
@@ -70,6 +76,8 @@ void AgentsCommand::setupCommandOptions(QCommandLineParser *parser)
 AbstractCommand::Error AgentsCommand::initCommand(QCommandLineParser *parser)
 {
     mArguments = parser->positionalArguments();
+
+    mJsonOutput = parser->isSet("json");
 
     if (!getCommonOptions(parser))
         return InvalidUsage;
@@ -149,22 +157,61 @@ void AgentsCommand::start()
     Q_EMIT finished(NoError);
 }
 
+static QJsonObject agentToJson(const AgentInstance &agent)
+{
+    QJsonObject agentObject;
+    agentObject["identifier"] = agent.identifier();
+    agentObject["type"] = agent.type().identifier();
+    agentObject["name"] = agent.name();
+    agentObject["isOnline"] = agent.isOnline();
+    switch (agent.status()) {
+    case AgentInstance::Status::Broken:
+        agentObject["status"] = "broken";
+        break;
+    case AgentInstance::Status::Idle:
+        agentObject["status"] = "idle";
+        break;
+    case AgentInstance::Status::NotConfigured:
+        agentObject["status"] = "not-configured";
+        break;
+    case AgentInstance::Status::Running:
+        agentObject["status"] = "running";
+        break;
+    }
+    agentObject["statusMessage"] = agent.statusMessage();
+
+    return agentObject;
+}
+
+static void dumpAgentsJson(const QVector<AgentInstance> &agents)
+{
+    QJsonArray agentsArray;
+    for (const AgentInstance &agent : agents) {
+        agentsArray.append(agentToJson(agent));
+    }
+    std::cout << QJsonDocument(agentsArray).toJson(QJsonDocument::Indented).toStdString() << std::endl;
+}
+
 void AgentsCommand::printAgentStatus(const QVector<AgentInstance> &agents)
 {
-    int max_width = 0;
-    for (int i = 0; i < agents.length(); i++) {
-        AgentInstance agent = agents.at(i);
-        if (max_width < agent.identifier().length()) {
-            max_width = agent.identifier().length();
+    if (mJsonOutput) {
+        dumpAgentsJson(agents);
+    } else {
+        int max_width = 0;
+        for (int i = 0; i < agents.length(); i++) {
+            AgentInstance agent = agents.at(i);
+            if (max_width < agent.identifier().length()) {
+                max_width = agent.identifier().length();
+            }
         }
-    }
 
-    std::cout << "Name" << std::setw(max_width + 20) << "Status" << std::endl;
-    for (int i = 0; i < agents.length(); i++) {
-        AgentInstance agent = agents.at(i);
-        int width = max_width - agent.identifier().length();
-        std::cout << agent.identifier().toLocal8Bit().data() << std::setw(width + 18) << " ";
-        std::cout << agent.statusMessage().toLocal8Bit().data() << std::endl;
+        std::cout << "Name" << std::setw(max_width + 20) << "Status" << std::endl;
+        for (int i = 0; i < agents.length(); i++) {
+            AgentInstance agent = agents.at(i);
+            int width = max_width - agent.identifier().length();
+            std::cout << agent.identifier().toLocal8Bit().data() << std::setw(width + 18) << " ";
+            std::cout << agent.statusMessage().toLocal8Bit().data() << std::endl;
+        }
     }
 }
 
@@ -233,13 +280,17 @@ void AgentsCommand::showInfo()
         agentList.append(instance);
     }
 
-    for (int i = 0; i < agentList.length(); i++) {
-        AgentInstance instance = agentList.at(i);
-        std::cout << qPrintable(i18nc("@info:shell", "ID:      ")) << qPrintable(instance.identifier()) << std::endl;
-        std::cout << qPrintable(i18nc("@info:shell", "Name:    ")) << qPrintable(instance.name()) << std::endl;
-        std::cout << qPrintable(i18nc("@info:shell", "Status:  ")) << qPrintable(instance.statusMessage()) << std::endl;
-        if ((i + 1) < mArguments.length()) {
-            std::cout << std::endl;
+    if (mJsonOutput) {
+        dumpAgentsJson(agentList);
+    } else {
+        for (int i = 0; i < agentList.length(); i++) {
+            AgentInstance instance = agentList.at(i);
+            std::cout << qPrintable(i18nc("@info:shell", "ID:      ")) << qPrintable(instance.identifier()) << std::endl;
+            std::cout << qPrintable(i18nc("@info:shell", "Name:    ")) << qPrintable(instance.name()) << std::endl;
+            std::cout << qPrintable(i18nc("@info:shell", "Status:  ")) << qPrintable(instance.statusMessage()) << std::endl;
+            if ((i + 1) < mArguments.length()) {
+                std::cout << std::endl;
+            }
         }
     }
 }

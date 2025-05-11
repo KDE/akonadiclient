@@ -20,6 +20,7 @@
 
 #include "collectionpathjob.h"
 #include "collectionresolvejob.h"
+#include "jsonformatter.h"
 
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
@@ -27,7 +28,10 @@
 #include <Akonadi/ItemFetchScope>
 
 #include <QDateTime>
+#include <QJsonArray>
+#include <QJsonObject>
 
+#include <akonadi/itemfetchscope.h>
 #include <iostream>
 
 #include "commandfactory.h"
@@ -56,6 +60,7 @@ void ListCommand::setupCommandOptions(QCommandLineParser *parser)
     parser->addOption(QCommandLineOption((QStringList() << "R"
                                                         << "recursive"),
                                          i18n("List sub-collections recursively")));
+    parser->addOption(QCommandLineOption((QStringList() << "j" << "json"), i18n("Output in JSON format")));
 
     parser->addPositionalArgument("collection", i18nc("@info:shell", "The collection to list: an ID, path or Akonadi URL"));
 }
@@ -73,6 +78,7 @@ AbstractCommand::Error ListCommand::initCommand(QCommandLineParser *parser)
     }
     mListDetails = parser->isSet("details"); // detailed option specified
     mListRecursive = parser->isSet("recursive"); // recursive option specified
+    mJsonOutput = parser->isSet("json");
     if (mListRecursive && mListItems) {
         Q_EMIT error(i18nc("@info:shell", "Recursive list can only be used for collections"));
         return InvalidUsage;
@@ -110,8 +116,9 @@ void ListCommand::onBaseResolved(KJob *job)
     }
 
     CollectionResolveJob *res = resolveJob();
+    mBaseCollection = res->collection();
 
-    CollectionPathJob *pathJob = new CollectionPathJob(res->collection(), this);
+    CollectionPathJob *pathJob = new CollectionPathJob(mBaseCollection, this);
     connect(pathJob, &KJob::result, this, &ListCommand::onBaseFetched);
     pathJob->start();
 }
@@ -154,41 +161,58 @@ void ListCommand::onCollectionsFetched(KJob *job)
     CollectionFetchJob *fetchJob = qobject_cast<CollectionFetchJob *>(job);
     Q_ASSERT(fetchJob != nullptr);
 
-    Collection::List collections = fetchJob->collections();
-    if (collections.isEmpty()) {
-        if (mListCollections) { // message only if collections requested
-            std::cout << qPrintable(i18nc("@info:shell", "Collection %1 has no sub-collections", resolveJob()->formattedCollectionName())) << std::endl;
-        }
+    mCollections = fetchJob->collections();
+
+    for (const auto &collection : mCollections) {
+        mCollectionTree[collection.parentCollection().id()].append(collection);
+    }
+
+    if (mListItems) {
+        fetchItems();
     } else {
-        // This works because Akonadi::Entity implements operator<
-        // which compares item IDs numerically
-        std::sort(collections.begin(), collections.end());
+        writeCollectionTree();
+    }
+}
 
-        if (mListRecursive) {
-            std::cout << qPrintable(i18ncp("@info:shell output section header 1=count, 2=collection",
-                                           "Collection %2 has %1 recursive sub-collection:",
-                                           "Collection %2 has %1 recursive sub-collections:",
-                                           collections.count(),
-                                           resolveJob()->formattedCollectionName()));
+void ListCommand::writeCollectionTree()
+{
+    if (mJsonOutput) {
+        JsonFormatter::writeDocument(JsonFormatter::collectionToJson(mBaseCollection, mCollectionTree, mCollectionItems));
+    } else {
+        if (mCollectionTree.isEmpty()) {
+            if (mListCollections) { // message only if collections requested
+                std::cout << qPrintable(i18nc("@info:shell", "Collection %1 has no sub-collections", resolveJob()->formattedCollectionName())) << std::endl;
+            }
         } else {
-            std::cout << qPrintable(i18ncp("@info:shell output section header 1=count, 2=collection",
-                                           "Collection %2 has %1 sub-collection:",
-                                           "Collection %2 has %1 sub-collections:",
-                                           collections.count(),
-                                           resolveJob()->formattedCollectionName()));
-        }
-        std::cout << std::endl;
+            // This works because Akonadi::Entity implements operator<
+            // which compares item IDs numerically
+            std::sort(mCollections.begin(), mCollections.end());
 
-        if (mListDetails) {
-            std::cout << "  ";
-            writeColumn(i18nc("@info:shell column header", "ID"), 8);
-            writeColumn(i18nc("@info:shell column header", "Name"));
+            if (mListRecursive) {
+                std::cout << qPrintable(i18ncp("@info:shell output section header 1=count, 2=collection",
+                                               "Collection %2 has %1 recursive sub-collection:",
+                                               "Collection %2 has %1 recursive sub-collections:",
+                                               mCollections.count(),
+                                               resolveJob()->formattedCollectionName()));
+            } else {
+                std::cout << qPrintable(i18ncp("@info:shell output section header 1=count, 2=collection",
+                                               "Collection %2 has %1 sub-collection:",
+                                               "Collection %2 has %1 sub-collections:",
+                                               mCollections.count(),
+                                               resolveJob()->formattedCollectionName()));
+            }
             std::cout << std::endl;
-        }
 
-        mCollections = collections;
-        processCollections();
-        return;
+            if (mListDetails) {
+                std::cout << "  ";
+                writeColumn(i18nc("@info:shell column header", "ID"), 8);
+                writeColumn(i18nc("@info:shell column header", "Name"));
+                std::cout << std::endl;
+            }
+
+            processCollections();
+            return;
+        }
     }
 
     if (mListItems) {
@@ -273,41 +297,49 @@ void ListCommand::onItemsFetched(KJob *job)
     Q_ASSERT(fetchJob != nullptr);
     Item::List items = fetchJob->items();
 
-    if (items.isEmpty()) {
-        if (mListItems) { // message only if items requested
-            std::cout << qPrintable(i18nc("@info:shell", "Collection %1 has no items", resolveJob()->formattedCollectionName())) << std::endl;
-        }
+    for (const Item &item : items) {
+        mCollectionItems[item.storageCollectionId()].append(item);
+    }
+
+    if (mJsonOutput) {
+        JsonFormatter::writeDocument(JsonFormatter::collectionToJson(mBaseCollection, mCollectionTree, mCollectionItems));
     } else {
-        std::sort(items.begin(), items.end());
-
-        std::cout << qPrintable(i18ncp("@info:shell output section header 1=count, 2=collection",
-                                       "Collection %2 has %1 item:",
-                                       "Collection %2 has %1 items:",
-                                       items.count(),
-                                       resolveJob()->formattedCollectionName()))
-                  << std::endl;
-        if (mListDetails) {
-            std::cout << "  ";
-            writeColumn(i18nc("@info:shell column header", "ID"), 8);
-            writeColumn(i18nc("@info:shell column header", "MIME type"), 20);
-            writeColumn(i18nc("@info:shell column header", "Size"), 10);
-            writeColumn(i18nc("@info:shell column header", "Modification Time"));
-            std::cout << std::endl;
-        }
-
-        for (const Item &item : std::as_const(items)) {
-            std::cout << "  ";
-            if (mListDetails) {
-                writeColumn(item.id(), 8);
-                writeColumn(item.mimeType(), 20);
-                const QString size = QLocale::system().formattedDataSize(item.size());
-                writeColumn(size, 10);
-                // from kdepim/akonadiconsole/browserwidget.cpp BrowserWidget::setItem()
-                writeColumn((item.modificationTime().toString() + " UTC"));
-            } else {
-                std::cout << item.id();
+        if (items.isEmpty()) {
+            if (mListItems) { // message only if items requested
+                std::cout << qPrintable(i18nc("@info:shell", "Collection %1 has no items", resolveJob()->formattedCollectionName())) << std::endl;
             }
-            std::cout << std::endl;
+        } else {
+            std::sort(items.begin(), items.end());
+
+            std::cout << qPrintable(i18ncp("@info:shell output section header 1=count, 2=collection",
+                                           "Collection %2 has %1 item:",
+                                           "Collection %2 has %1 items:",
+                                           items.count(),
+                                           resolveJob()->formattedCollectionName()))
+                      << std::endl;
+            if (mListDetails) {
+                std::cout << "  ";
+                writeColumn(i18nc("@info:shell column header", "ID"), 8);
+                writeColumn(i18nc("@info:shell column header", "MIME type"), 20);
+                writeColumn(i18nc("@info:shell column header", "Size"), 10);
+                writeColumn(i18nc("@info:shell column header", "Modification Time"));
+                std::cout << std::endl;
+            }
+
+            for (const Item &item : std::as_const(items)) {
+                std::cout << "  ";
+                if (mListDetails) {
+                    writeColumn(item.id(), 8);
+                    writeColumn(item.mimeType(), 20);
+                    const QString size = QLocale::system().formattedDataSize(item.size());
+                    writeColumn(size, 10);
+                    // from kdepim/akonadiconsole/browserwidget.cpp BrowserWidget::setItem()
+                    writeColumn((item.modificationTime().toString() + " UTC"));
+                } else {
+                    std::cout << item.id();
+                }
+                std::cout << std::endl;
+            }
         }
     }
 

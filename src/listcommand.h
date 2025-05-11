@@ -20,7 +20,7 @@
 
 #include "abstractcommand.h"
 #include <Akonadi/Collection>
-
+#include <Akonadi/Item>
 class KJob;
 
 class ListCommand : public AbstractCommand
@@ -45,14 +45,20 @@ private:
     bool mListCollections;
     bool mListDetails;
     bool mListRecursive;
+    bool mJsonOutput;
     Akonadi::Collection::List mCollections; // needed for recursive list
+    Akonadi::Collection mBaseCollection;
     QString mBasePath; // only used for recursive list
+    QHash<Akonadi::Collection::Id /* parent */, Akonadi::Collection::List /* children */> mCollectionTree;
+    QHash<Akonadi::Collection::Id /* parent */, Akonadi::Item::List> mCollectionItems;
 
 private:
     void fetchCollections();
     void fetchItems();
     void processCollections();
     void writeCollection(const Akonadi::Collection::Id &id, const QString &nameOrPath);
+
+    void writeCollectionTree();
 
 private Q_SLOTS:
     void onBaseFetched(KJob *job);

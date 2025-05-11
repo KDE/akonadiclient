@@ -33,6 +33,7 @@ set(libakonadiclient_SRCS
     attributescommand.cpp
     terminalcolour.cpp
     folderscommand.cpp
+    jsonformatter.cpp
 )
 
 add_library(libakonadiclient STATIC)

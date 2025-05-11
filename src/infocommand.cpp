@@ -17,6 +17,7 @@
 */
 
 #include "infocommand.h"
+#include "jsonformatter.h"
 
 #include <Akonadi/CollectionStatistics>
 #include <Akonadi/CollectionStatisticsJob>
@@ -54,6 +55,8 @@ void InfoCommand::setupCommandOptions(QCommandLineParser *parser)
     addOptionsOption(parser);
     addCollectionItemOptions(parser);
 
+    parser->addOption(QCommandLineOption((QStringList() << "j" << "json"), i18nc("@info:shell", "Output in JSON format")));
+
     parser->addPositionalArgument("entity", i18nc("@info:shell", "Collections or items to display"), i18n("entity..."));
 }
 
@@ -65,6 +68,8 @@ AbstractCommand::Error InfoCommand::initCommand(QCommandLineParser *parser)
 
     if (!getCommonOptions(parser))
         return InvalidUsage;
+
+    mJsonOutput = parser->isSet("json");
 
     initProcessLoop(args);
     return NoError;
@@ -217,86 +222,94 @@ void InfoCommand::onParentPathFetched(KJob *job)
     if (mInfoCollection != nullptr) { // for a collection
         Q_ASSERT(mInfoCollection->isValid());
 
-        writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoCollection->id()));
-        writeInfo(i18nc("@info:shell", "URL"), mInfoCollection->url().toDisplayString());
-        writeInfo(i18nc("@info:shell", "Parent"), parentString);
-        writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Collection"));
-        writeInfo(i18nc("@info:shell", "Name"), mInfoCollection->name());
-        writeInfo(i18nc("@info:shell", "Owner"), mInfoCollection->resource());
-        writeInfo(i18nc("@info:shell", "MIME"), mInfoCollection->contentMimeTypes().join(" "));
-        writeInfo(i18nc("@info:shell", "Remote ID"), mInfoCollection->remoteId());
-        writeInfo(i18nc("@info:shell", "Path"), '"' + pathJob->collectionPath() + '/' + mInfoCollection->name() + '"');
+        if (mJsonOutput) {
+            JsonFormatter::writeDocument(JsonFormatter::collectionToJson(*mInfoCollection));
+        } else {
+            writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoCollection->id()));
+            writeInfo(i18nc("@info:shell", "URL"), mInfoCollection->url().toDisplayString());
+            writeInfo(i18nc("@info:shell", "Parent"), parentString);
+            writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Collection"));
+            writeInfo(i18nc("@info:shell", "Name"), mInfoCollection->name());
+            writeInfo(i18nc("@info:shell", "Owner"), mInfoCollection->resource());
+            writeInfo(i18nc("@info:shell", "MIME"), mInfoCollection->contentMimeTypes().join(" "));
+            writeInfo(i18nc("@info:shell", "Remote ID"), mInfoCollection->remoteId());
+            writeInfo(i18nc("@info:shell", "Path"), '"' + pathJob->collectionPath() + '/' + mInfoCollection->name() + '"');
 
-        QStringList rightsList;
-        Collection::Rights rights = mInfoCollection->rights();
-        if (rights & Collection::ReadOnly) {
-            rightsList << i18nc("@info:shell", "ReadOnly");
-        }
-        if (rights & Collection::CanChangeItem) {
-            rightsList << i18nc("@info:shell", "ChangeItem");
-        }
-        if (rights & Collection::CanCreateItem) {
-            rightsList << i18nc("@info:shell", "CreateItem");
-        }
-        if (rights & Collection::CanDeleteItem) {
-            rightsList << i18nc("@info:shell", "DeleteItem");
-        }
-        if (rights & Collection::CanChangeCollection) {
-            rightsList << i18nc("@info:shell", "ChangeColl");
-        }
-        if (rights & Collection::CanCreateCollection) {
-            rightsList << i18nc("@info:shell", "CreateColl");
-        }
-        if (rights & Collection::CanDeleteCollection) {
-            rightsList << i18nc("@info:shell", "DeleteColl");
-        }
-        if (rights & Collection::CanLinkItem) {
-            rightsList << i18nc("@info:shell", "LinkItem");
-        }
-        if (rights & Collection::CanUnlinkItem) {
-            rightsList << i18nc("@info:shell", "UnlinkItem");
-        }
-        writeInfo(i18nc("@info:shell", "Rights"), rightsList.join(" "));
+            QStringList rightsList;
+            Collection::Rights rights = mInfoCollection->rights();
+            if (rights & Collection::ReadOnly) {
+                rightsList << i18nc("@info:shell", "ReadOnly");
+            }
+            if (rights & Collection::CanChangeItem) {
+                rightsList << i18nc("@info:shell", "ChangeItem");
+            }
+            if (rights & Collection::CanCreateItem) {
+                rightsList << i18nc("@info:shell", "CreateItem");
+            }
+            if (rights & Collection::CanDeleteItem) {
+                rightsList << i18nc("@info:shell", "DeleteItem");
+            }
+            if (rights & Collection::CanChangeCollection) {
+                rightsList << i18nc("@info:shell", "ChangeColl");
+            }
+            if (rights & Collection::CanCreateCollection) {
+                rightsList << i18nc("@info:shell", "CreateColl");
+            }
+            if (rights & Collection::CanDeleteCollection) {
+                rightsList << i18nc("@info:shell", "DeleteColl");
+            }
+            if (rights & Collection::CanLinkItem) {
+                rightsList << i18nc("@info:shell", "LinkItem");
+            }
+            if (rights & Collection::CanUnlinkItem) {
+                rightsList << i18nc("@info:shell", "UnlinkItem");
+            }
+            writeInfo(i18nc("@info:shell", "Rights"), rightsList.join(" "));
 
-        Q_ASSERT(mInfoStatistics != nullptr);
-        writeInfo(i18nc("@info:shell", "Count"), QLocale::system().toString(mInfoStatistics->count()));
-        writeInfo(i18nc("@info:shell", "Unread"), QLocale::system().toString(mInfoStatistics->unreadCount()));
-        const QString size = QLocale::system().formattedDataSize(mInfoStatistics->size());
-        writeInfo(i18nc("@info:shell", "Size"), size);
+            Q_ASSERT(mInfoStatistics != nullptr);
+            writeInfo(i18nc("@info:shell", "Count"), QLocale::system().toString(mInfoStatistics->count()));
+            writeInfo(i18nc("@info:shell", "Unread"), QLocale::system().toString(mInfoStatistics->unreadCount()));
+            const QString size = QLocale::system().formattedDataSize(mInfoStatistics->size());
+            writeInfo(i18nc("@info:shell", "Size"), size);
+        }
     } else if (mInfoItem != nullptr) { // for an item
-        writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoItem->id()));
-        writeInfo(i18nc("@info:shell", "URL"), mInfoItem->url().toDisplayString());
-        writeInfo(i18nc("@info:shell", "Parent"), parentString);
-        writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Item"));
-        writeInfo(i18nc("@info:shell", "MIME"), mInfoItem->mimeType());
-        // from kdepim/akonadiconsole/browserwidget.cpp BrowserWidget::setItem()
-        writeInfo(i18nc("@info:shell", "Modified"), (mInfoItem->modificationTime().toString() + " UTC"));
-        writeInfo(i18nc("@info:shell", "Revision"), mInfoItem->revision());
-        writeInfo(i18nc("@info:shell", "Remote ID"), mInfoItem->remoteId());
-        writeInfo(i18nc("@info:shell", "Payload"), (mInfoItem->hasPayload() ? i18nc("@info:shell", "yes") : i18nc("@info:shell", "no")));
+        if (mJsonOutput) {
+            JsonFormatter::writeDocument(JsonFormatter::itemToJson(*mInfoItem));
+        } else {
+            writeInfo(i18nc("@info:shell", "ID"), QString::number(mInfoItem->id()));
+            writeInfo(i18nc("@info:shell", "URL"), mInfoItem->url().toDisplayString());
+            writeInfo(i18nc("@info:shell", "Parent"), parentString);
+            writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Item"));
+            writeInfo(i18nc("@info:shell", "MIME"), mInfoItem->mimeType());
+            // from kdepim/akonadiconsole/browserwidget.cpp BrowserWidget::setItem()
+            writeInfo(i18nc("@info:shell", "Modified"), (mInfoItem->modificationTime().toString() + " UTC"));
+            writeInfo(i18nc("@info:shell", "Revision"), mInfoItem->revision());
+            writeInfo(i18nc("@info:shell", "Remote ID"), mInfoItem->remoteId());
+            writeInfo(i18nc("@info:shell", "Payload"), (mInfoItem->hasPayload() ? i18nc("@info:shell", "yes") : i18nc("@info:shell", "no")));
 
-        const Item::Flags flags = mInfoItem->flags();
-        QStringList flagDisp;
-        for (const QByteArray &flag : flags) {
-            flagDisp << flag;
-        }
-        if (flagDisp.isEmpty()) {
-            flagDisp << i18nc("@info:shell", "(none)");
-        }
-        writeInfo(i18nc("@info:shell", "Flags"), flagDisp.join(" "));
+            const Item::Flags flags = mInfoItem->flags();
+            QStringList flagDisp;
+            for (const QByteArray &flag : flags) {
+                flagDisp << flag;
+            }
+            if (flagDisp.isEmpty()) {
+                flagDisp << i18nc("@info:shell", "(none)");
+            }
+            writeInfo(i18nc("@info:shell", "Flags"), flagDisp.join(" "));
 
-        const Tag::List tags = mInfoItem->tags();
-        QStringList tagDisp;
-        for (const Akonadi::Tag &tag : tags) {
-            tagDisp << tag.url().url();
-        }
-        if (tagDisp.isEmpty()) {
-            tagDisp << i18nc("@info:shell", "(none)");
-        }
-        writeInfo(i18nc("@info:shell", "Tags"), tagDisp.join(" "));
+            const Tag::List tags = mInfoItem->tags();
+            QStringList tagDisp;
+            for (const Akonadi::Tag &tag : tags) {
+                tagDisp << tag.url().url();
+            }
+            if (tagDisp.isEmpty()) {
+                tagDisp << i18nc("@info:shell", "(none)");
+            }
+            writeInfo(i18nc("@info:shell", "Tags"), tagDisp.join(" "));
 
-        const QString size = QLocale::system().formattedDataSize(mInfoItem->size());
-        writeInfo(i18nc("@info:shell", "Size"), size);
+            const QString size = QLocale::system().formattedDataSize(mInfoItem->size());
+            writeInfo(i18nc("@info:shell", "Size"), size);
+        }
     } else { // neither collection nor item?
         // should never happen
         writeInfo(i18nc("@info:shell", "Type"), i18nc("@info:shell entity type", "Unknown"));

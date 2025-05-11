@@ -47,6 +47,7 @@ protected:
     AbstractCommand::Error initCommand(QCommandLineParser *parser) override;
 
 private:
+    bool mJsonOutput = false;
     Akonadi::Collection *mInfoCollection = nullptr;
     Akonadi::Item *mInfoItem = nullptr;
     Akonadi::CollectionStatistics *mInfoStatistics = nullptr;
