@@ -1420,12 +1420,10 @@ msgid "Cannot copy new '%2' to '%1'"
 msgstr ""
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr "Nelze uložit soubor '%1'"
+msgstr ""
 
 #: src/folderscommand.cpp:775
 #, kde-format
@@ -2385,12 +2383,10 @@ msgid "The 'id' option can only be used with 'add'"
 msgstr ""
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "Nelze uložit soubor '%1'"
+msgstr ""
 
 #: src/tagscommand.cpp:201
 #, kde-format
@@ -2405,20 +2401,16 @@ msgid "A tag named '%1' ID %2 already exists"
 msgstr ""
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Failed to add ‘%1’, %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr "Selhalo přidání ‘%1’, %2"
+msgstr ""
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Failed to add ‘%1’, %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr "Selhalo přidání ‘%1’, %2"
+msgstr ""
 
 #: src/tagscommand.cpp:287
 #, kde-kuit-format
@@ -2451,11 +2443,10 @@ msgid "Tag could not be created with the requested ID"
 msgstr ""
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgid "Delete tags"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "Smazat značky"
+msgstr ""
 
 #: src/tagscommand.cpp:491
 #, kde-format
@@ -2476,12 +2467,10 @@ msgid "Found %1 current Akonadi tags"
 msgstr ""
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid state '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr "Neplatný stav '%1'"
+msgstr ""
 
 #: src/tagscommand.cpp:563
 #, kde-format
