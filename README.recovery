@@ -1,5 +1,5 @@
-Settings Recovery - Using the 'folders' and 'attributes' commands
-=================================================================
+Settings Recovery - Using the 'folders', 'tags' and 'attributes' commands
+=========================================================================
 
 These commands are intended to be used to recover from situations where
 the Akonadi database is lost or becomes corrupted and has to be recreated
@@ -15,8 +15,8 @@ In particular, settings such as:
   - folder assignments for POP/IMAP agents
   - favourite folders and their display order
 
-may change because they refer to the internal Akonadi collection IDs
-as they were before.
+may change because they refer to internal Akonadi IDs as they were
+before.
 
 Most of the above settings are stored in PIM application or agent
 configuration files, and are backed up and restored by the 'folders'
@@ -25,7 +25,7 @@ new mail in this folder" option in KMail, and expiry settings, are
 stored as collection attributes in the Akonadi database and are
 backed up and restored by the 'attributes' command.
 
-The 'akonadiclient folders' and 'akonadiclient attributes' commands
+The 'folders', 'tags' and 'attributes' subcommands of 'akonadiclient'
 attempt to automatically fix up these folder assignments and settings
 after the Akonadi database had had to be regenerated.  Each command
 operates in three modes:
@@ -33,22 +33,23 @@ operates in three modes:
 
 Backup					akonadiclient folders -b
 ------					akonadiclient attributes -b
+					akonadiclient tags -s
 
-This should be run when the current Akonadi database and application
-settings are known to be good.  They do not change anything in the
-database or applications, but simply save lists of the current
-folders with their collection ID assignments and attributes.  These
-lists are saved to the "$XDG_DATA_HOME/akonadiclient" directory and
-are readable plain text files named "savedfolders.dat" and
-"savedattributes.dat" respectively.
+Each of these should be run when the current Akonadi database and
+application settings are known to be good.  They do not change
+anything in the database or applications, but simply save lists of the
+current folders with their collection ID assignments, attributes and
+tags.  These lists are saved to the "$XDG_DATA_HOME/akonadiclient"
+directory and are readable plain text files named "savedfolders.dat",
+"savedattributes.dat" and "savedtags.dat" respectively.
 
 To ensure that this reflects the latest good state, these commands
 should be run whenever significant changes are made to the PIM
-resources:  for example, adding a new Akonadi resource or online
-account, moving around or renaming folders, or changing folder
-display options.
+resources: for example, adding a new Akonadi resource or online
+account, adding a tag, moving around or renaming folders, or changing
+folder display options.
 
-The Akonadi server must be running when either of these commands are
+The Akonadi server must be running when any of these commands are
 used; if it is not already running, then it will be automatically
 started.
 
@@ -78,7 +79,7 @@ Restore folders				akonadiclient folders -r
 ---------------
 
 If changes to folder IDs are necessary, then exit all running PIM
-applications and stop the Akonadi server ("akondictl stop").  Then
+applications and stop the Akonadi server ("akonadictl stop").  Then
 enable the dangerous akonadiclient actions by setting the environment
 variable:
 
@@ -96,12 +97,18 @@ account settings and then immediately run the command again in 'backup'
 mode to save the new folder assignments.
 
 
-Restore attributes			akonadiclient attributes -r
-------------------
+Restore attributes/tags			akonadiclient attributes -r
+-----------------------			akonadiclient tags -r
 
-If changes to collection attributes are necessary, then run this command
-in the same way.  It is not necessary to exit any PIM applications or
-stop the Akonadi server in this case.
+If changes to collection attributes or tags are necessary, then run
+these commands in the same way.  It is not necessary to exit any PIM
+applications or stop the Akonadi server in this case.
+
+Due to the implementation of the Akonadi database, the 'tags' command
+can only restore the original tag assignments if there are no currently
+defined tags and never have been.  So this can effectively only be used
+if the Akonadi database has had to be regenerated and the tags have all
+been lost.
 
 
 Caution
@@ -112,4 +119,4 @@ intended for use by those familiar with the Akonadi system and its
 maintenance.  They do try to check the integrity of saved files and
 data before changing anything, but it is always possible that something
 could go wrong.  You are recommended to back up the $XDG_CONFIG_HOME
-directory before running the command in 'check' or 'restore' mode.
+directory before running any command in 'check' or 'restore' mode.
