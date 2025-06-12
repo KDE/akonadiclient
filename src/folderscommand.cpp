@@ -460,7 +460,7 @@ void FoldersCommand::processChanges()
                         continue;
 
                     // The key name pattern matched.  Get the corresponding
-                    // value or list of values as appropriate.  For simplicitly
+                    // value or list of values as appropriate.  For simplicity
                     // a single value is treated here as a one-item list,
                     // although it must be read as a single string value
                     // because it may contain a comma.

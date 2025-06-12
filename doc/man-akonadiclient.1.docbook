@@ -220,7 +220,7 @@ For example, adding items, collections, renaming or moving collections and also 
 					<term><option>-m, --maildir</option></term>
 					<listitem><para>Dump email messages in maildir directory structure</para></listitem>
 					</varlistentry>
-                                        
+
                                         <varlistentry>
 					<term><option>-a, --akonadi-categories</option></term>
 					<listitem><para>Dump items with Akonadi categories, otherwise text</para></listitem>
@@ -290,7 +290,7 @@ For example, adding items, collections, renaming or moving collections and also 
 				</variablelist>
 				</listitem>
 			</varlistentry>
-                        
+
                         <varlistentry>
 				<term><option>group</option></term>
 				<listitem>
@@ -303,7 +303,7 @@ For example, adding items, collections, renaming or moving collections and also 
 					<term><option>-e, --expand</option></term>
 					<listitem><para>Show the expanded contact group (the default operation)</para></listitem>
 					</varlistentry>
-                                        
+
                                         <varlistentry>
 					<term><option>-a, --add</option></term>
 					<listitem><para>Add a contact to the group</para></listitem>

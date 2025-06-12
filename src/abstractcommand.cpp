@@ -73,7 +73,7 @@ AbstractCommand::Error AbstractCommand::init(const QStringList &parsedArgs, bool
         QString s = parser.helpText(); // parser is still available
 
         // This substitutes the first "[options]" (between the "akonadiclient"
-        // and the comand name) with blank, because it is not relevant and
+        // and the command name) with blank, because it is not relevant and
         // would be confused with the command options (following the command
         // name).  Cannot use QString::replace() with a regular expression
         // here, as that would substitute any subsequent "[optional]" help
