@@ -396,7 +396,7 @@
 >Estrai i messaggi di posta in una struttura di cartelle maildir</para
 ></listitem>
 					</varlistentry>
-                                        
+
                                         <varlistentry>
 					<term
 ><option
@@ -520,7 +520,7 @@
 				</variablelist>
 				</listitem>
 			</varlistentry>
-                        
+
                         <varlistentry>
 				<term
 ><option
@@ -545,7 +545,7 @@
 >Mostra il gruppo di contatti espanso (l'operazione predefinita)</para
 ></listitem>
 					</varlistentry>
-                                        
+
                                         <varlistentry>
 					<term
 ><option
