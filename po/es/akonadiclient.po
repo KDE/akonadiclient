@@ -1,15 +1,15 @@
 # Spanish translations for akonadiclient.po package.
-# Copyright (C) 2018 This file is copyright:
+# Copyright (C) 2018-2025 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
-#
 # Automatically generated, 2018.
+#
 # SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2022, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2025-02-17 03:34+0100\n"
+"PO-Revision-Date: 2025-06-29 13:43+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -167,7 +167,7 @@ msgstr "Archivos o directorios a añadir a la colección"
 #: src/addcommand.cpp:71
 #, kde-format
 msgid "files..."
-msgstr "archivos..."
+msgstr "archivos…"
 
 #: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
 #: src/renamecommand.cpp:52
@@ -349,7 +349,7 @@ msgstr "Agentes en los que operar"
 #, kde-format
 msgctxt "@info:shell"
 msgid "[agents...]"
-msgstr "[agentes...]"
+msgstr "[agentes…]"
 
 #: src/agentscommand.cpp:80
 #, kde-format
@@ -461,7 +461,7 @@ msgstr "Argumentos para la operación"
 #: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgid "args..."
-msgstr "args..."
+msgstr "args…"
 
 #: src/attributescommand.cpp:142
 #, kde-format
@@ -758,7 +758,7 @@ msgstr "Copiar colecciones o elementos a una nueva colección"
 #: src/copycommand.cpp:59 src/movecommand.cpp:40
 #, kde-format
 msgid "source..."
-msgstr "fuente..."
+msgstr "fuente…"
 
 #: src/copycommand.cpp:59
 #, kde-format
@@ -1248,7 +1248,7 @@ msgstr "Han cambiado %1 ID de carpetas"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "Procesando el archivo de configuración «%1»..."
+msgstr "Procesando el archivo de configuración «%1»…"
 
 #: src/folderscommand.cpp:393
 #, kde-format
@@ -1401,7 +1401,7 @@ msgstr "Ejecute primero «%1 %2 --check»"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr "Comprobando si el servidor Akonadi está en ejecución..."
+msgstr "Comprobando si el servidor Akonadi está en ejecución…"
 
 #: src/folderscommand.cpp:730
 #, kde-format
@@ -1826,7 +1826,7 @@ msgstr "Colecciones o elementos a mostrar"
 #: src/infocommand.cpp:57
 #, kde-format
 msgid "entity..."
-msgstr "entidad..."
+msgstr "entidad…"
 
 #: src/infocommand.cpp:63
 #, kde-format
@@ -2266,7 +2266,7 @@ msgstr "Los elementos a mostrar"
 #, kde-format
 msgctxt "@info:shell"
 msgid "item..."
-msgstr "elemento..."
+msgstr "elemento…"
 
 #: src/showcommand.cpp:45
 #, kde-format
@@ -2364,7 +2364,7 @@ msgstr ""
 #: src/tagscommand.cpp:77
 #, kde-format
 msgid "[TAG...]"
-msgstr "[ETIQUETA...]"
+msgstr "[ETIQUETA…]"
 
 #: src/tagscommand.cpp:89
 #, kde-format
@@ -2559,27 +2559,3 @@ msgstr "No se ha indicado ningún archivo"
 msgctxt "@info:shell"
 msgid "Item updated successfully"
 msgstr "Elemento actualizado con éxito"
-
-#~ msgctxt "@info:shell"
-#~ msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
-#~ msgstr "Solo se puede indicar una de las opciones «list», «add» o «delete»"
-
-#~ msgctxt "@info:shell"
-#~ msgid ""
-#~ "Only one of the 'show', 'add', 'modify' or 'delete' options may be "
-#~ "specified"
-#~ msgstr ""
-#~ "Solo se puede indicar una de las opciones «show», «add», «modify» o "
-#~ "«delete»"
-
-#~ msgctxt "@info:shell"
-#~ msgid "Error: %1"
-#~ msgstr "Error: %1"
-
-#~ msgctxt "@info:shell"
-#~ msgid "Invalid item/collection syntax"
-#~ msgstr "Sintaxis no válida del elemento o de la colección"
-
-#~ msgctxt "@info:shell"
-#~ msgid "Options for command:"
-#~ msgstr "Opciones para la orden:"
