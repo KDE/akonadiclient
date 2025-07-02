@@ -396,7 +396,7 @@
 >Dump e-mailberichten in maildir-mapstructuur</para
 ></listitem>
 					</varlistentry>
-                                        
+
                                         <varlistentry>
 					<term
 ><option
@@ -520,7 +520,7 @@
 				</variablelist>
 				</listitem>
 			</varlistentry>
-                        
+
                         <varlistentry>
 				<term
 ><option
@@ -545,7 +545,7 @@
 >Toon de uitgevouwen contactgroep (de standaard verwerking)</para
 ></listitem>
 					</varlistentry>
-                                        
+
                                         <varlistentry>
 					<term
 ><option
