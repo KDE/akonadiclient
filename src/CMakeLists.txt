@@ -44,12 +44,22 @@ target_link_libraries(
     KPim6::AkonadiContactCore
     KPim6::Mime
 )
-target_link_libraries(libakonadiclient KF6::I18n KF6::Codecs KF6::ConfigCore)
+target_link_libraries(
+    libakonadiclient
+    KF6::I18n
+    KF6::Codecs
+    KF6::ConfigCore
+)
 target_link_libraries(libakonadiclient Qt::Core)
 if(HAVE_TERMINFO)
     target_link_libraries(libakonadiclient ${CURSES_LIBRARIES})
 endif()
-set_target_properties(libakonadiclient PROPERTIES ENABLE_EXPORTS TRUE)
+set_target_properties(
+    libakonadiclient
+    PROPERTIES
+        ENABLE_EXPORTS
+            TRUE
+)
 
 ###### executable ######
 
@@ -59,4 +69,8 @@ target_link_libraries(akonadiclient libakonadiclient)
 
 ###### install ######
 
-install(TARGETS akonadiclient ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS
+        akonadiclient
+        ${INSTALL_TARGETS_DEFAULT_ARGS}
+)

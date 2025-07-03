@@ -26,11 +26,13 @@ include(ECMAddTests)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 
-configure_file(
-    config-akonadiclient.h.in
-    ${CMAKE_CURRENT_BINARY_DIR}/config-akonadiclient.h
+configure_file(config-akonadiclient.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-akonadiclient.h)
+file(
+    GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
+    *.cpp
+    *.h
+    *.c
 )
-file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h *.c)
 set(PRE_COMMIT_INSTALLED FALSE)
 if(${CMAKE_SOURCE_DIR} STREQUAL ${PROJECT_SOURCE_DIR})
     if(EXISTS "${PROJECT_SOURCE_DIR}/.git/hooks/pre-commit")
@@ -65,9 +67,20 @@ find_package(
     ${QT_MIN_VERSION}
     REQUIRED
     NO_MODULE
-    COMPONENTS Core Widgets Test
+    COMPONENTS
+        Core
+        Widgets
+        Test
 )
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n Config)
+find_package(
+    KF6
+    ${KF_MIN_VERSION}
+    REQUIRED
+    COMPONENTS
+        CoreAddons
+        I18n
+        Config
+)
 
 # Only 'ncurses' includes terminfo support, not classic 'curses'
 set(CURSES_NEED_NCURSES TRUE)
@@ -84,7 +97,11 @@ ecm_set_disabled_deprecation_versions(QT 6.10.0
 find_package(KF6DocTools ${KF_MIN_VERSION})
 set_package_properties(
     KF6DocTools
-    PROPERTIES DESCRIPTION "Tools to generate documentation" TYPE OPTIONAL
+    PROPERTIES
+        DESCRIPTION
+            "Tools to generate documentation"
+        TYPE
+            OPTIONAL
 )
 
 add_subdirectory(src)
@@ -96,8 +113,4 @@ endif()
 if(DEFINED kde_configure_git_pre_commit_hook)
     kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 endif()
-feature_summary(
-    WHAT ALL
-    INCLUDE_QUIET_PACKAGES
-    FATAL_ON_MISSING_REQUIRED_PACKAGES
-)
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
