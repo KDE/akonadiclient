@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2024-11-18 09:31+0200\n"
+"PO-Revision-Date: 2025-07-11 11:28+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -440,21 +440,19 @@ msgid "Show or interpret the attribute value as hex encoded"
 msgstr "Näytä tai tulkitse määritteen arvo heksana"
 
 #: src/attributescommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgid "Save current folder attributes"
-msgstr "Kokoelma tai tietue"
+msgstr "Tallenna nykyisen kansion määritteet"
 
 #: src/attributescommand.cpp:111
 #, kde-format
 msgid "Check current against saved folder attributes"
-msgstr ""
+msgstr "Tarkista nykyiset kansiomääritteet tallennettuja vasten"
 
 #: src/attributescommand.cpp:114
 #, kde-format
 msgid "Restore changed folder attributes"
-msgstr ""
+msgstr "Palauta muuttuneet kansiomääritteet"
 
 #: src/attributescommand.cpp:125
 #, kde-format
@@ -538,7 +536,7 @@ msgstr "Tiedostoa ”%1” ei voi tallentaa"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "Suorita ensin ”%1 %2 --backup”"
 
 #: src/attributescommand.cpp:304
 #, fuzzy, kde-format
@@ -579,7 +577,7 @@ msgstr[1] "Kokoelmassa %2 on %1 tietuetta:"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "Löytyi %1 nykyistä Akonadi-kokoelmaa"
 
 #: src/attributescommand.cpp:413 src/folderscommand.cpp:213
 #: src/tagscommand.cpp:543
@@ -633,7 +631,7 @@ msgstr "Kokoelma tai tietue"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder '%1' had attributes but is no longer present"
-msgstr ""
+msgstr "Kansiolla ”%1” oli määritteitä, mutta sitä ei enää ole"
 
 #: src/attributescommand.cpp:554
 #, fuzzy, kde-kuit-format
@@ -656,29 +654,29 @@ msgstr "Kokoelmassa %2 on %1 tietue:"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
-msgstr ""
+msgstr "Kansion ”%1” määrite ”%2” muuttunut: %3 → %4"
 
 #: src/attributescommand.cpp:644
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" attribute \"%2\" added %3"
-msgstr ""
+msgstr "Kansion ”%1” määritteeseen ”%2” lisätty %3"
 
 #: src/attributescommand.cpp:667
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" needs update of %1 attribute"
 msgid_plural "Folder \"%2\" needs update of %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Kansio ”%2” vaatii määritteen päivityksen"
+msgstr[1] "Kansio ”%2” vaatii %1 määritteen päivityksen"
 
 #: src/attributescommand.cpp:673
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" updating %1 attribute"
 msgid_plural "Folder \"%2\" updating %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Kansio ”%2” päivittää määritteen"
+msgstr[1] "Kansio ”%2” päivittää %1 määritettä"
 
 #: src/attributescommand.cpp:698
 #, fuzzy, kde-kuit-format
@@ -711,6 +709,8 @@ msgid ""
 "Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
 "restore</bcode><nl/>to implement the changes."
 msgstr ""
+"Määritemuutoksia vaaditaan. Suorita komento:<nl/><bcode>%1 %2 --restore</"
+"bcode><nl/>muutosten toteuttamiseksi."
 
 #: src/attributescommand.cpp:721
 #, fuzzy, kde-kuit-format
@@ -764,7 +764,7 @@ msgstr "Virheellinen tietuesyntaksi ”%1”"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "Moniselitteinen komento ”%1”, mahdollisia ovat ”%2”"
 
 #: src/commandfactory.cpp:70 src/commandfactory.cpp:122
 #, kde-format
@@ -1173,31 +1173,31 @@ msgstr "Muutokset tietueeseen ”%1” on tallennettu"
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "virhe"
 
 #: src/errorreporter.cpp:46
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "varoitus"
 
 #: src/errorreporter.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr ""
+msgstr "ilmoitus"
 
 #: src/errorreporter.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "success"
-msgstr ""
+msgstr "onnistui"
 
 #: src/errorreporter.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr ""
+msgstr "tiedote"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -1225,22 +1225,23 @@ msgstr "Vientitiedosto ei määritetty"
 #: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "Tallenna, tarkista tai palauta Akonadi-kansioiden tunnisteet"
 
 #: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "Tallenna nykyisen kansion tunnisteosoitukset"
 
 #: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
-msgstr ""
+msgstr "Tarkista kansion nykyiset tunnisteosoitukset tallennettuja vasten"
 
 #: src/folderscommand.cpp:118
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
+"Palauta asetustiedostot, joissa on muuttuneita kansiotunnisteosoituksia"
 
 #: src/folderscommand.cpp:141
 #, fuzzy, kde-format
@@ -1278,13 +1279,13 @@ msgstr "Kansiota ”%1/%2” ei voi luoda"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "Kansiotunnisteet eivät ole muuttuneet"
 
 #: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "%1 kansiotunnistetta on muuttunut"
 
 #: src/folderscommand.cpp:321
 #, fuzzy, kde-format
@@ -1299,18 +1300,19 @@ msgstr "Käsitellään kokoelmaa ”%1”"
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
 msgstr ""
+"Ryhmän ”%1” nimeä ei voi muuttaa kansiolle ”%2”, jota ei enää ole olemassa"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "Ryhmän ”%1” nimeksi muutettu ”%3” kansiolle ”%2”"
 
 #: src/folderscommand.cpp:413
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "%1 ryhmän nimeä muutettiin"
 
 #: src/folderscommand.cpp:498
 #, kde-format
@@ -1424,7 +1426,7 @@ msgstr "Poistettavaa luokitusta ”%1” ei ole olemassa"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
-msgstr ""
+msgstr "Nykyinen kansioluettelo ”%1” on tallennettua ”%2” vanhempi"
 
 #: src/folderscommand.cpp:707
 #, kde-format
@@ -1432,42 +1434,43 @@ msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
 msgstr ""
+"Uutta asetustiedostoa ”%1” ei ole tai se on kansioluetteloa ”%2” vanhempi"
 
 #: src/folderscommand.cpp:718
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "Suorita ensin ”%1 %2 --check”"
 
 #: src/folderscommand.cpp:725
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "Tarkistetaan, onko Akonadi-palvelin käynnissä…"
 
 #: src/folderscommand.cpp:730
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Akonadi-palvelin on pysähtynyt"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr ""
+msgstr "Sammutetaan Akonadi-palvelinta"
 
 #: src/folderscommand.cpp:744
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "Päivitetään %1 asetustiedostoa kohteessa ”%2”"
 
 #: src/folderscommand.cpp:755
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "Poistetaan vanha ”%1”"
 
 #: src/folderscommand.cpp:758
 #, fuzzy, kde-format
@@ -1481,7 +1484,7 @@ msgstr "Tiedostoa ”%1” ei voi tallentaa"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "Kopioidaan uusi ”%2” kohteeseen ”%1”"
 
 #: src/folderscommand.cpp:766
 #, fuzzy, kde-format
@@ -1503,13 +1506,13 @@ msgstr "Tiedostoa ”%1” ei voi tallentaa"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "Palautus valmis"
 
 #: src/folderscommand.cpp:788
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "Käyttäjän asetuskansiota ei voida paikantaa"
 
 #: src/folderscommand.cpp:795
 #, fuzzy, kde-format
@@ -1523,7 +1526,7 @@ msgstr "Poistettavaa luokitusta ”%1” ei ole olemassa"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "Soveltuvia asetustiedostoja ei löytynyt"
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
@@ -2373,22 +2376,22 @@ msgstr "Poista luokituksia"
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "Tallenna nykyiset luokitukset"
 
 #: src/tagscommand.cpp:74
 #, kde-format
 msgid "Restore the saved tags (into a new database)"
-msgstr ""
+msgstr "Palauta tallennetut luokitukset (uuteen tietokantaan)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr ""
+msgstr "Lisättävän luokituksen tunniste (oletuksena automaattinen)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "id"
-msgstr ""
+msgstr "tunniste"
 
 #: src/tagscommand.cpp:76
 #, kde-format
