@@ -3,7 +3,7 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2022.
 # Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
-# Alois Spitzbart <spitz234@hotmail.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2025 Alois Spitzbart <spitz234@hotmail.com>
 # SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
 #
 msgid ""
@@ -11,15 +11,15 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2024-12-23 16:16+0100\n"
-"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
+"PO-Revision-Date: 2025-07-23 14:10+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,11 +38,10 @@ msgid "The name of the command"
 msgstr "Der Name des Befehls"
 
 #: src/abstractcommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "Status des angegebenen Agenten holen"
+msgstr "Hilfe für den angegebenen Befehl anzeigen"
 
 #: src/abstractcommand.cpp:107 src/main.cpp:67
 #, kde-format
@@ -87,19 +86,13 @@ msgid "Invalid collection/item argument '%1', %2"
 msgstr "Ungültiges Argument „%1“ für Sammlung oder Eintrag, %2"
 
 #: src/abstractcommand.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:shell %1 is subcommand name, %2 is error message"
-#| msgid "%2. See 'help %1'"
+#, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
 msgstr "%2. Siehe „help %1“"
 
 #: src/abstractcommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
-#| "message"
-#| msgid "%3. See '%1 help %2'"
+#, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
@@ -120,20 +113,16 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "%1 = \"%2\" als Umgebungsvariable festlegen"
 
 #: src/abstractcommand.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "Der Ordner „%1“ wurde nicht gefunden oder ist kein Ordner"
+msgstr "Der Speicherort „%1“ ist vorhanden, ist aber kein Ordner"
 
 #: src/abstractcommand.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Der Ordner „%1/%2“ lässt sich nicht erstellen"
+msgstr "Der Speicherordner „%1“ lässt sich nicht erstellen"
 
 #: src/addcommand.cpp:41
 msgctxt "info:shell"
@@ -446,11 +435,9 @@ msgid "Show or interpret the attribute value as hex encoded"
 msgstr "Den Attributswert als Hexwert anzeigen oder interpretieren"
 
 #: src/attributescommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgid "Save current folder attributes"
-msgstr "Sammlung oder Eintrag"
+msgstr "Aktuelle Ordnerattribute speichern"
 
 #: src/attributescommand.cpp:111
 #, kde-format
@@ -460,7 +447,7 @@ msgstr ""
 #: src/attributescommand.cpp:114
 #, kde-format
 msgid "Restore changed folder attributes"
-msgstr ""
+msgstr "Geänderte Ordnerattribute wiederherstellen"
 
 #: src/attributescommand.cpp:125
 #, kde-format
@@ -547,39 +534,30 @@ msgid "Run '%1 %2 --backup' first"
 msgstr ""
 
 #: src/attributescommand.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection already has an attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr "Sammlung enthält bereits ein Attribut „%1“"
+msgstr "Sammlung „%2“ enthält bereits ein Attribut „%1“"
 
 #: src/attributescommand.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 has no attribute '%1'"
-msgstr "Sammlung enthält kein Attribut „%1“"
+msgstr "Sammlung „%2“ enthält kein Attribut „%1“"
 
 #: src/attributescommand.cpp:379
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no attributes"
-msgstr "Sammlung „%1“ enthält keine Einträge"
+msgstr "Sammlung „%1“ enthält keine Attribute"
 
 #: src/attributescommand.cpp:387
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %2 has %1 attribute:"
 msgid_plural "Collection %2 has %1 attributes:"
-msgstr[0] "Sammlung „%2“ enthält %1 Eintrag:"
-msgstr[1] "Sammlung „%2“ enthält %1 Einträge:"
+msgstr[0] "Sammlung „%2“ enthält %1 Attribut:"
+msgstr[1] "Sammlung „%2“ enthält %1 Attribute:"
 
 #: src/attributescommand.cpp:403 src/folderscommand.cpp:197
 #, kde-format
@@ -589,20 +567,16 @@ msgstr ""
 
 #: src/attributescommand.cpp:413 src/folderscommand.cpp:213
 #: src/tagscommand.cpp:543
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "Die Datei „%1“ kann nicht gespeichert werden"
+msgstr "Die Sicherungsliste kann nicht nach „%1“ gespeichert werden"
 
 #: src/attributescommand.cpp:424
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving collection attributes to '%1'"
-msgstr "Sammlung enthält kein Attribut „%1“"
+msgstr "Sammlungsattribute werden nach „%1“ gespeichert"
 
 #: src/attributescommand.cpp:456
 #, fuzzy, kde-format
@@ -1465,13 +1439,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Akonadi-Server ist angehalten"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr ""
+msgstr "Akonadi-Server wird herunterfahren"
 
 #: src/folderscommand.cpp:744
 #, kde-format
@@ -2391,7 +2365,7 @@ msgstr "Tags löschen"
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "Die aktuellen Tags speichern"
 
 #: src/tagscommand.cpp:74
 #, kde-format
@@ -2513,20 +2487,16 @@ msgid "A tag named '%1' ID %2 already exists"
 msgstr "Ein Tag mit dem Namen „%1“ Kennung %2 existiert bereits"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr "Tag „%1“ Kennung %2 kann nicht hinzugefügt werden"
+msgstr "Hinzufügen des Tags „%1“ Kennung %2 fehlgeschlagen"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr "Tag „%1“ kann nicht hinzugefügt werden"
+msgstr "Hinzufügen des Tags „%1“ fehlgeschlagen"
 
 #: src/tagscommand.cpp:287
 #, kde-kuit-format
