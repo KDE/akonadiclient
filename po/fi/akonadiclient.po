@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2025-07-11 11:28+0300\n"
+"PO-Revision-Date: 2025-07-14 10:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -34,11 +34,10 @@ msgid "The name of the command"
 msgstr "Komennon nimi"
 
 #: src/abstractcommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "Nouda annetun agentin tila"
+msgstr "Näytä annetun komennon ohje"
 
 #: src/abstractcommand.cpp:107 src/main.cpp:67
 #, kde-format
@@ -83,24 +82,18 @@ msgid "Invalid collection/item argument '%1', %2"
 msgstr "Virheellinen kokoelma- tai tietueparametri ”%1”, %2"
 
 #: src/abstractcommand.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:shell %1 is subcommand name, %2 is error message"
-#| msgid "%2. See 'help %1'"
+#, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
-msgstr "%2. Ks. ”help %1”"
+msgstr "%2, ks. ”help %1”"
 
 #: src/abstractcommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
-#| "message"
-#| msgid "%3. See '%1 help %2'"
+#, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3, see '%1 help %2'"
-msgstr "%3. Ks. ”%1 help %2”"
+msgstr "%3, ks. ”%1 help %2”"
 
 #: src/abstractcommand.cpp:198
 #, kde-format
@@ -115,20 +108,16 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Aseta ympäristössä %1=\"%2\""
 
 #: src/abstractcommand.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "Kansiota ”%1” ei löydy tai se ei ole kansio"
+msgstr "Tallennussijainti ”%1” on olemassa muttei kansio"
 
 #: src/abstractcommand.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Kansiota ”%1/%2” ei voi luoda"
+msgstr "Tallennuskansiota ”%1” ei voida luoda"
 
 #: src/addcommand.cpp:41
 msgctxt "info:shell"
@@ -485,12 +474,10 @@ msgid "Hex encoded value contained invalid characters"
 msgstr "Heksakoodattu arvo sisälsi virheellisiä merkkejä"
 
 #: src/attributescommand.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one operation mode option may be specified"
-msgstr "Vain yhden komennoista ”list”, ”add” tai ”delete” voi antaa kerrallaan"
+msgstr "Vain yhden toimenpidevalinnan voi antaa kerrallaan"
 
 #: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -524,12 +511,10 @@ msgid "Too many arguments specified, from '%1'"
 msgstr "Liian monta parametria annettua, alkaen: ”%1”"
 
 #: src/attributescommand.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved attributes from '%1'"
-msgstr "Tiedostoa ”%1” ei voi tallentaa"
+msgstr "Ei voida lukea määritteitä: ”%1”"
 
 #: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #: src/tagscommand.cpp:194
@@ -539,39 +524,30 @@ msgid "Run '%1 %2 --backup' first"
 msgstr "Suorita ensin ”%1 %2 --backup”"
 
 #: src/attributescommand.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection already has an attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr "Kokoelmassa on jo määrite ”%1”"
+msgstr "Kokoelmalla %2 on jo määrite ”%1”"
 
 #: src/attributescommand.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 has no attribute '%1'"
-msgstr "Kokoelmassa ei ole määritettä ”%1”"
+msgstr "Kokoelmalla %2 ei ole määritettä ”%1”"
 
 #: src/attributescommand.cpp:379
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no attributes"
-msgstr "Kokoelmassa %1 ei ole tietueita"
+msgstr "Kokoelmalla %1 ei ole määritteitä"
 
 #: src/attributescommand.cpp:387
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %2 has %1 attribute:"
 msgid_plural "Collection %2 has %1 attributes:"
-msgstr[0] "Kokoelmassa %2 on %1 tietue:"
-msgstr[1] "Kokoelmassa %2 on %1 tietuetta:"
+msgstr[0] "Kokoelmalla %2 on määrite:"
+msgstr[1] "Kokoelmalla %2 on %1 määritettä:"
 
 #: src/attributescommand.cpp:403 src/folderscommand.cpp:197
 #, kde-format
@@ -1319,25 +1295,25 @@ msgstr "%1 ryhmän nimeä muutettiin"
 msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
-msgstr ""
+msgstr "Ei voida päivittää ”%1” ryhmässä ”%2” kansiolle ”%3”, jota ei enää ole"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "Päivitettiin ”%1” ryhmässä ”%2” kansiolle ”%3” arvoon %4"
 
 #: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "%1 asetusarvoa on muuttunut"
 
 #: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "Määritysmuutoksia ei tarvita"
 
 #: src/folderscommand.cpp:542
 #, kde-kuit-format
@@ -1345,6 +1321,7 @@ msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
 msgstr ""
+"Määritysmuutoksia tarvitaan (%1 ryhmän nimen muutosta ja %2 asetusmuutosta)"
 
 #: src/folderscommand.cpp:544
 #, kde-kuit-format
@@ -1354,6 +1331,9 @@ msgid ""
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
+"Lopeta kaikki käynnissä olevat PIM-sovellukset, pysäytä Akonadi-palvelin<nl/"
+">ja suorita komento:<nl/><bcode>%1 %2 --restore</bcode><nl/>muutosten "
+"toteuttamiseksi."
 
 #: src/folderscommand.cpp:558
 #, fuzzy, kde-format
@@ -1389,16 +1369,13 @@ msgstr "Muuta kokoelman nimeä"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr ""
+msgstr "Kansiota ”%1” (oli tunniste %2) ei enää ole"
 
 #: src/folderscommand.cpp:604
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr "Kokoelmassa %2 on %1 tietue:"
+msgstr "Kansion ”%1” tunniste vaihtui: %2 → %3"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
@@ -1495,12 +1472,10 @@ msgid "Cannot copy new '%2' to '%1'"
 msgstr "Ei voida kopioida tai siirtää lähteestä ”%1”, %2"
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr "Tiedostoa ”%1” ei voi tallentaa"
+msgstr "Ei voitu poistaa kopioitua tiedostoa ”%1”"
 
 #: src/folderscommand.cpp:775
 #, kde-format
@@ -1515,12 +1490,10 @@ msgid "Cannot locate user configuration directory"
 msgstr "Käyttäjän asetuskansiota ei voida paikantaa"
 
 #: src/folderscommand.cpp:795
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "Poistettavaa luokitusta ”%1” ei ole olemassa"
+msgstr "Asetuskansiota ”%1” ei ole olemassa"
 
 #: src/folderscommand.cpp:816
 #, kde-format
@@ -2396,7 +2369,7 @@ msgstr "tunniste"
 #: src/tagscommand.cpp:76
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
-msgstr ""
+msgstr "Säilytä lisätyt väliluokitukset käytettäessä ”id”-valintaa"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2419,7 +2392,7 @@ msgstr "[LUOKITUS…]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr ""
+msgstr "Virheellinen ”id”-valinnan arvo"
 
 #: src/tagscommand.cpp:95
 #, kde-format
@@ -2428,17 +2401,14 @@ msgid "The 'brief' and 'urls' options cannot both be specified"
 msgstr "Yhtä aikaa ei voi asettaa ”brief” ja ”urls”"
 
 #: src/tagscommand.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
 msgstr ""
-"Vain yksi vaihtoehdoista ”expand”, ”add”, ”delete” tai ”clean” kerrallaan"
+"Vain yhden komennoista ”list”, ”delete”, ”backup” tai ”restore” voi antaa "
+"kerrallaan"
 
 #: src/tagscommand.cpp:131
 #, kde-format
@@ -2459,34 +2429,29 @@ msgid "No tags specified to delete"
 msgstr "Poistettavia luokituksia ei annettu"
 
 #: src/tagscommand.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr "”comment”-valitsin sallitaan vain ”add”-komennossa"
+msgstr ""
+"”retain”-valintaa voi käyttää vain ”add”- tai ”restore”-komennon kanssa"
 
 #: src/tagscommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr "”comment”-valitsin sallitaan vain ”add”-komennossa"
+msgstr "”id”-valintaa voi käyttää vain ”add”-komennon kanssa"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "Tiedostoa ”%1” ei voi tallentaa"
+msgstr "Ei voida lukea tallennettuja luokituksia kohteesta ”%1”"
 
 #: src/tagscommand.cpp:201
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "Ei tallennettuja luokituksia palautettavaksi"
 
 #: src/tagscommand.cpp:228
 #, kde-format
@@ -2495,34 +2460,29 @@ msgid "A tag named '%1' ID %2 already exists"
 msgstr "Luokitus ”%1” (tunniste %2) on jo olemassa"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr "Luokitusta %1 (tunniste %2) ei voi lisätä"
+msgstr "Luokituksen ”%1”, tunniste %2, lisääminen epäonnistui"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr "Luokitusta ”%1” ei voi lisätä"
+msgstr "Luokituksen ”%1” lisääminen epäonnistui"
 
 #: src/tagscommand.cpp:287
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
 msgstr ""
+"Ei voida luoda luokitusta tunnisteella %1, sekvenssi on jo tunnisteessa %2"
 
 #: src/tagscommand.cpp:341
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr "Luokitusta %1 (tunniste %2) ei voi lisätä"
+msgstr "Lisättiin luokitus ”%1”, tunniste %2"
 
 #: src/tagscommand.cpp:376
 #, kde-format
@@ -2543,12 +2503,10 @@ msgid "Tag could not be created with the requested ID"
 msgstr ""
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "Luokitusta %1 (tunniste %2) ei voi lisätä"
+msgstr "Poistettiin luokitus ”%1”, tunniste %2"
 
 #: src/tagscommand.cpp:491
 #, kde-format
@@ -2569,11 +2527,10 @@ msgid "Found %1 current Akonadi tags"
 msgstr ""
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr "Muutettiin maildir-kansion nimeksi ”%1”"
+msgstr "Tallennettiin luokitukset kohteeseen ”%1”"
 
 #: src/tagscommand.cpp:563
 #, fuzzy, kde-format
@@ -2582,24 +2539,23 @@ msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
 msgstr "Muutettiin maildir-kansion nimeksi ”%1”"
 
+# *** TARKISTA: Voisi yhtä hyvin olla käsky, ”Lue… luokitukset”
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "Muuta kokoelman nimeä"
+msgstr "Luettiin %1 tallennettua luokitusta"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "Luokitukset palautettu"
 
 #: src/terminalcolour.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "Päätettä ei voitu asettaa"
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
