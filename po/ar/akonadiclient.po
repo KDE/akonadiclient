@@ -1,21 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
+# SPDX-FileCopyrightText: 2022, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-17 00:41+0000\n"
-"PO-Revision-Date: 2022-08-23 22:41+0400\n"
+"PO-Revision-Date: 2025-09-17 19:05+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
-"Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -31,19 +32,19 @@ msgstr "zayed.alsaidi@gmail.com"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The name of the command"
-msgstr ""
+msgstr "اسم الأمر"
 
 #: src/abstractcommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr ""
+msgstr "أعطِ المساعدة للأمر المحدد"
 
 #: src/abstractcommand.cpp:107 src/main.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "Options for command"
-msgstr ""
+msgstr "خيارات للأمر"
 
 #: src/abstractcommand.cpp:107 src/main.cpp:67
 #, kde-format
@@ -55,37 +56,37 @@ msgstr "[خيارات]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that a collection is specified"
-msgstr ""
+msgstr "افترض أن تجميعة محددة"
 
 #: src/abstractcommand.cpp:118
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that an item is specified"
-msgstr ""
+msgstr "افترض أن عنصراً محدداً"
 
 #: src/abstractcommand.cpp:126
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run without making any actual changes"
-msgstr ""
+msgstr "شغّل دون إجراء أي تغييرات فعلية"
 
 #: src/abstractcommand.cpp:141
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot specify as both an item and a collection"
-msgstr ""
+msgstr "لا يمكن التحديد كعنصر وتجميعة في نفس الوقت"
 
 #: src/abstractcommand.cpp:161
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid collection/item argument '%1', %2"
-msgstr ""
+msgstr "وسيط التجميعة/العنصر '%1' غير صالح، %2"
 
 #: src/abstractcommand.cpp:179
 #, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
-msgstr ""
+msgstr "%2، انظر 'help %1'"
 
 #: src/abstractcommand.cpp:182
 #, kde-format
@@ -93,43 +94,41 @@ msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3, see '%1 help %2'"
-msgstr ""
+msgstr "%3، انظر '%1 help %2'"
 
 #: src/abstractcommand.cpp:198
 #, kde-format
 msgctxt "@info:shell"
 msgid "Dangerous or destructive operations are not allowed"
-msgstr ""
+msgstr "العمليات الخطرة أو المدمرة غير مسموحة"
 
 #: src/abstractcommand.cpp:199
 #, kde-format
 msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
-msgstr ""
+msgstr "اضبط %1=\"%2\" في البيئة"
 
 #: src/abstractcommand.cpp:255
 #, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr ""
+msgstr "موقع الحفظ '%1' موجود ولكنه ليس دليلاً"
 
 #: src/abstractcommand.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "تعذّر إنشاء الدّليل '%1/%2'"
+msgstr "تعذّر إنشاء دليل الحفظ '%1'"
 
 #: src/addcommand.cpp:41
 msgctxt "info:shell"
 msgid "Add items to a collection"
-msgstr ""
+msgstr "أضِف عناصر إلى تجميعة"
 
 #: src/addcommand.cpp:59
 #, kde-format
 msgid "Base directory for input files/directories, default is current"
-msgstr ""
+msgstr "الدليل الأساسي لملفات/أدلة الإدخال، المبدئي هو الحالي"
 
 #: src/addcommand.cpp:60
 #, kde-format
@@ -139,15 +138,15 @@ msgstr "الدّليل"
 #: src/addcommand.cpp:63
 #, kde-format
 msgid "Flat mode, do not duplicate subdirectory structure"
-msgstr ""
+msgstr "الوضع المسطح، لا تكرر بنية الدليل الفرعي"
 
 #: src/addcommand.cpp:66
 #, kde-format
 msgid "MIME type of added items, default is to auto-detect"
-msgstr ""
+msgstr "نوع MIME للعناصر المضافة، المبدئي هو الكشف التلقائي"
 
 #: src/addcommand.cpp:67
-#, fuzzy, kde-format
+#, kde-format
 msgid "mimetype"
 msgstr "نوع Mime"
 
@@ -155,13 +154,13 @@ msgstr "نوع Mime"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to add to: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "التجميعة المراد الإضافة إليها: معرّف أو مسار أو مسار أكوُنادي"
 
 #: src/addcommand.cpp:71
 #, kde-format
 msgctxt "@info:shell"
 msgid "Files or directories to add to the collection"
-msgstr ""
+msgstr "ملفات أو أدلة لإضافتها إلى التجميعة"
 
 #: src/addcommand.cpp:71
 #, kde-format
@@ -173,211 +172,211 @@ msgstr "الملفات"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection argument"
-msgstr ""
+msgstr "وسيط التجميعة مفقود"
 
 #: src/addcommand.cpp:79
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file or directory arguments"
-msgstr ""
+msgstr "لا يوجد وسائط ملفات أو أدلة"
 
 #: src/addcommand.cpp:95
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid MIME type argument '%1'"
-msgstr ""
+msgstr "وسيط نوع MIME غير صالح '%1'"
 
 #: src/addcommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
-msgstr ""
+msgstr "الدليل الأساسي '%1' غير موجود"
 
 #: src/addcommand.cpp:125
-#, fuzzy, kde-format
+#, kde-format
 msgid "File '%1' does not exist"
-msgstr "الملفّ غير موجود."
+msgstr "الملف '%1' غير موجود."
 
 #: src/addcommand.cpp:128
 #, kde-format
 msgid "Error accessing file '%1'"
-msgstr ""
+msgstr "خطأ في الوصول إلى الملف '%1'"
 
 #: src/addcommand.cpp:156
 #, kde-format
 msgctxt "@info:shell"
 msgid "No valid file or directory arguments"
-msgstr ""
+msgstr "لا يوجد وسائط ملفات أو أدلة صالحة"
 
 #: src/addcommand.cpp:166
 #, kde-format
 msgid "No more directories to process"
-msgstr ""
+msgstr "لا يوجد المزيد من الأدلة للمعالجة"
 
 #: src/addcommand.cpp:190 src/addcommand.cpp:212
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
-msgstr ""
+msgstr "الدليل '%1' لم يعد موجوداً"
 
 #: src/addcommand.cpp:229
 #, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
-msgstr ""
+msgstr "يجلب التجميعة \"%3\" في الأصل %1 \"%2\""
 
 #: src/addcommand.cpp:241
 #, kde-format
 msgid "Need to create collection for '%1'"
-msgstr ""
+msgstr "تحتاج إلى إنشاء تجميعة لـ '%1'"
 
 #: src/addcommand.cpp:253
 #, kde-format
 msgid "No more files to process"
-msgstr ""
+msgstr "لا يوجد المزيد من الملفات للمعالجة"
 
 #: src/addcommand.cpp:264 src/updatecommand.cpp:86
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ does not exist"
-msgstr "الملفّ غير موجود."
+msgstr "الملف '%1' غير موجود."
 
 #: src/addcommand.cpp:270 src/updatecommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ cannot be read"
-msgstr ""
+msgstr "لا يمكن قراءة الملف '%1'"
 
 #: src/addcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine MIME type of file ‘%1’"
-msgstr ""
+msgstr "لا يمكن تحديد نوع MIME للملف '%1'"
 
 #: src/addcommand.cpp:287
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine parent collection for file ‘%1’"
-msgstr ""
+msgstr "لا يمكن تحديد التجميعة الأصل للملف '%1'"
 
 #: src/addcommand.cpp:293
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
-msgstr ""
+msgstr "ينشئ عنصراً في التجميعة %1 \"%2\" من '%3' بحجم %4"
 
 #: src/addcommand.cpp:315
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch target collection, %1"
-msgstr ""
+msgstr "لا يمكن جلب التجميعة المستهدفة، %1"
 
 #: src/addcommand.cpp:325
 #, kde-format
 msgid "Root folder is %1 \"%2\""
-msgstr ""
+msgstr "المجلد الجذر هو %1 \"%2\""
 
 #: src/addcommand.cpp:373
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
-msgstr ""
+msgstr "خطأ في جلب التجميعة %1 \"%2\"، %3"
 
 #: src/addcommand.cpp:386
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
-msgstr ""
+msgstr "غيّر اسم مجلد maildir إلى '%1'"
 
 #: src/addcommand.cpp:396
 #, kde-format
 msgid "Creating collection \"%3\" under parent %1 \"%2\""
-msgstr ""
+msgstr "ينشئ تجميعة \"%3\" تحت الأصل %1 \"%2\""
 
 #: src/addcommand.cpp:414
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
-msgstr "فشلت إضافة %1"
+msgstr "فشلت إضافة %1، %2"
 
 #: src/addcommand.cpp:418
 #, kde-format
 msgid "Added file '%2' as item %1"
-msgstr ""
+msgstr "أضاف الملف '%2' كعنصر %1"
 
 #: src/agentscommand.cpp:37
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
-msgstr ""
+msgstr "أدر وكلاء أكوُنادي"
 
 #: src/agentscommand.cpp:51
 #, kde-format
 msgid "List all agents"
-msgstr ""
+msgstr "سرد كل الوكلاء"
 
 #: src/agentscommand.cpp:54
 #, kde-format
 msgid "Set state \"online\" or \"offline\" for specified agents"
-msgstr ""
+msgstr "اضبط الحالة \"متصل\" أو \"غير متصل\" للوكلاء المحددين"
 
 #: src/agentscommand.cpp:55
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "state"
-msgstr "الحالة"
+msgstr "حالة"
 
 #: src/agentscommand.cpp:58
 #, kde-format
 msgid "Get state for the specified agent"
-msgstr ""
+msgstr "احصل على الحالة للوكيل المحدد"
 
 #: src/agentscommand.cpp:61
 #, kde-format
 msgid "Show information about the specified agent"
-msgstr ""
+msgstr "أظهِر معلومات حول الوكيل المحدد"
 
 #: src/agentscommand.cpp:64
 #, kde-format
 msgid "Restart the specified agent"
-msgstr ""
+msgstr "أعِد تشغيل الوكيل المحدد"
 
 #: src/agentscommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "Agents to operate on"
-msgstr ""
+msgstr "وكلاء للعمل عليهم"
 
 #: src/agentscommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "[agents...]"
-msgstr ""
+msgstr "[وكلاء...]"
 
 #: src/agentscommand.cpp:80
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agents or options specified"
-msgstr ""
+msgstr "لم يحدد أي وكلاء أو خيارات"
 
 #: src/agentscommand.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid state '%1'"
-msgstr ""
+msgstr "حالة غير صالحة '%1'"
 
 #: src/agentscommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "No option specified"
-msgstr ""
+msgstr "لم يحدد أي خيار"
 
 #: src/agentscommand.cpp:143
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parameters"
-msgstr ""
+msgstr "معاملات غير صالحة"
 
 #: src/agentscommand.cpp:179 src/agentscommand.cpp:211
 #: src/agentscommand.cpp:229 src/agentscommand.cpp:255
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agent exists with the identifier '%1'"
-msgstr ""
+msgstr "لا يوجد وكيل بالمعرف '%1'"
 
 #: src/agentscommand.cpp:238
 #, kde-format
@@ -400,285 +399,277 @@ msgstr "الحالة:  "
 #: src/attributescommand.cpp:80
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr ""
+msgstr "أظهِر أو حدّث سمات تجميعة"
 
 #: src/attributescommand.cpp:93
 #, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr ""
+msgstr "أظهِر سمات التجميعة (العملية المبدئية)"
 
 #: src/attributescommand.cpp:96
 #, kde-format
 msgid "Add an attribute"
-msgstr ""
+msgstr "أضِف سمة"
 
 #: src/attributescommand.cpp:99
 #, kde-format
 msgid "Modify an existing attribute"
-msgstr ""
+msgstr "عدّل سمة موجودة"
 
 #: src/attributescommand.cpp:102
 #, kde-format
 msgid "Delete an existing attribute"
-msgstr ""
+msgstr "احذف سمة موجودة"
 
 #: src/attributescommand.cpp:105
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
-msgstr ""
+msgstr "أظهِر أو فسّر قيمة السمة مرمزة برمز ستة عشر"
 
 #: src/attributescommand.cpp:108
 #, kde-format
 msgid "Save current folder attributes"
-msgstr ""
+msgstr "احفظ سمات المجلد الحالية"
 
 #: src/attributescommand.cpp:111
 #, kde-format
 msgid "Check current against saved folder attributes"
-msgstr ""
+msgstr "افحص السمات الحالية مقابل سمات المجلد المحفوظة"
 
 #: src/attributescommand.cpp:114
 #, kde-format
 msgid "Restore changed folder attributes"
-msgstr ""
+msgstr "أعِد سمات المجلد المتغيرة"
 
 #: src/attributescommand.cpp:125
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "التجميعة: معرّف أو مسار أو مسار أكوُنادي"
 
 #: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgctxt "@info:shell"
 msgid "Arguments for the operation"
-msgstr ""
+msgstr "وسائط للعملية"
 
 #: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
 msgid "args..."
-msgstr ""
+msgstr "وسائط..."
 
 #: src/attributescommand.cpp:142
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr ""
+msgstr "يتوقع سلسلة مرمزة بترميز ستة عشر، ولكن الطول %1 ليس زوجياً"
 
 #: src/attributescommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr ""
+msgstr "قيمة مرمزة بترميز ستة عشر تحتوي على أحرف غير صالحة"
 
 #: src/attributescommand.cpp:206
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one operation mode option may be specified"
-msgstr ""
+msgstr "يمكن تحديد خيار وضع تشغيل واحد فقط"
 
 #: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collection specified"
-msgstr ""
+msgstr "لم يحدد تجميعة"
 
 #: src/attributescommand.cpp:220
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
-msgstr ""
+msgstr "لم يحدد اسم/قيمة سمة للإضافة"
 
 #: src/attributescommand.cpp:228
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
-msgstr ""
+msgstr "لم يحدد اسم سمة للحذف"
 
 #: src/attributescommand.cpp:234
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr ""
+msgstr "لم يحدد اسم/قيمة سمة للتعديل"
 
 #: src/attributescommand.cpp:243
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr ""
+msgstr "حُدد عدد كبير جداً من الوسائط، من '%1'"
 
 #: src/attributescommand.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved attributes from '%1'"
-msgstr "تعذّر حفظ الملف '%1'"
+msgstr "تعذّر قراءة السمات المحفوظة من '%1'"
 
 #: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #: src/tagscommand.cpp:194
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "شغّل '%1 %2 --backup' أولاً"
 
 #: src/attributescommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr ""
+msgstr "التجميعة %2 لديها بالفعل سمة '%1'"
 
 #: src/attributescommand.cpp:310
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 has no attribute '%1'"
-msgstr ""
+msgstr "التجميعة %2 لا تحتوي على السمة '%1'"
 
 #: src/attributescommand.cpp:379
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no attributes"
-msgstr ""
+msgstr "التجميعة %1 لا تحتوي على سمات"
 
 #: src/attributescommand.cpp:387
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %2 has %1 attribute:"
 msgid_plural "Collection %2 has %1 attributes:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "التجميعة %2 لديها %1 سمة:"
+msgstr[1] "التجميعة %2 لديها سمة واحدة:"
+msgstr[2] "التجميعة %2 لديها سمتان:"
+msgstr[3] "التجميعة %2 لديها %1 سمات:"
+msgstr[4] "التجميعة %2 لديها %1 سمة:"
+msgstr[5] "التجميعة %2 لديها %1 سمة:"
 
 #: src/attributescommand.cpp:403 src/folderscommand.cpp:197
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "عثر على %1 تجميعة أكوُنادي حالية"
 
 #: src/attributescommand.cpp:413 src/folderscommand.cpp:213
 #: src/tagscommand.cpp:543
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "تعذّر حفظ الملف '%1'"
+msgstr "لا يمكن حفظ قائمة النسخ الاحتياطي في '%1'"
 
 #: src/attributescommand.cpp:424
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saving collection attributes to '%1'"
-msgstr ""
+msgstr "يحفظ سمات التجميعة في '%1'"
 
 #: src/attributescommand.cpp:456
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saved attributes for %1 collections"
-msgstr ""
+msgstr "حفظ سمات %1 تجميعة"
 
 #: src/attributescommand.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved attributes from '%1'"
-msgstr "تعذّر حفظ الملف '%1'"
+msgstr "يقرأ السمات المحفوظة من '%1'"
 
 #: src/attributescommand.cpp:483
-#, fuzzy, kde-format
-#| msgid "collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read attributes for %1 collections"
-msgstr "التّجميعة"
+msgstr "اقرأ سمات %1 تجميعة"
 
 #: src/attributescommand.cpp:507
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
-msgstr ""
+msgstr "يفحص سمات التجميعة الحالية"
 
 #: src/attributescommand.cpp:531
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder '%1' had attributes but is no longer present"
-msgstr ""
+msgstr "المجلد '%1' كان يحتوي على سمات ولكنه لم يعد موجوداً"
 
 #: src/attributescommand.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgid "collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
-msgstr "التّجميعة"
+msgstr "لا يمكن جلب التجميعة %1 \"%2\""
 
 #: src/attributescommand.cpp:562
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection \"%2\" changed ID from %1 to %3"
-msgstr ""
+msgstr "التجميعة \"%2\" غيرت المعرّف من %1 إلى %3"
 
 #: src/attributescommand.cpp:635
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
-msgstr ""
+msgstr "سمة المجلد \"%1\" \"%2\" تغيرت من %3 إلى %4"
 
 #: src/attributescommand.cpp:644
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" attribute \"%2\" added %3"
-msgstr ""
+msgstr "سمة المجلد \"%1\" \"%2\" أضيفت %3"
 
 #: src/attributescommand.cpp:667
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" needs update of %1 attribute"
 msgid_plural "Folder \"%2\" needs update of %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "المجلد \"%2\" يحتاج تحديث %1 سمة"
+msgstr[1] "المجلد \"%2\" يحتاج تحديث سمة واحدة"
+msgstr[2] "المجلد \"%2\" يحتاج تحديث سمتين"
+msgstr[3] "المجلد \"%2\" يحتاج تحديث %1 سمات"
+msgstr[4] "المجلد \"%2\" يحتاج تحديث %1 سمة"
+msgstr[5] "المجلد \"%2\" يحتاج تحديث %1 سمة"
 
 #: src/attributescommand.cpp:673
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" updating %1 attribute"
 msgid_plural "Folder \"%2\" updating %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "المجلد \"%2\" يحدث %1 سمة"
+msgstr[1] "المجلد \"%2\" يحدث سمة واحدة"
+msgstr[2] "المجلد \"%2\" يحدث سمتين"
+msgstr[3] "المجلد \"%2\" يحدث %1 سمات"
+msgstr[4] "المجلد \"%2\" يحدث %1 سمة"
+msgstr[5] "المجلد \"%2\" يحدث %1 سمة"
 
 #: src/attributescommand.cpp:698
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes need to be restored"
-msgstr ""
+msgstr "لا يوجد سمات تجميعة تحتاج إلى استعادة"
 
 #: src/attributescommand.cpp:700
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes needed to be restored"
-msgstr ""
+msgstr "لا يوجد سمات تجميعة تحتاج إلى استعادة"
 
 #: src/attributescommand.cpp:705
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes need to be restored for %1 collection"
 msgid_plural "Attributes need to be restored for %1 collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "السمات تحتاج إلى استعادة لـ %1 تجميعة"
+msgstr[1] "السمات تحتاج إلى استعادة لتجميعة واحدة"
+msgstr[2] "السمات تحتاج إلى استعادة لتجمعتين"
+msgstr[3] "السمات تحتاج إلى استعادة لـ %1 تجميعات"
+msgstr[4] "السمات تحتاج إلى استعادة لـ %1 تجميعة"
+msgstr[5] "السمات تحتاج إلى استعادة لـ %1 تجميعة"
 
 #: src/attributescommand.cpp:711
 #, kde-kuit-format
@@ -687,37 +678,38 @@ msgid ""
 "Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
 "restore</bcode><nl/>to implement the changes."
 msgstr ""
+"تغييرات السمة مطلوبة، نفذ الأمر: <nl/><bcode>  %1 %2 --restore</bcode><nl/"
+">لتنفيذ التغييرات."
 
 #: src/attributescommand.cpp:721
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes were restored for %1 collection"
 msgid_plural "Attributes were restored for %1 collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "السمات أُعيدت لـ %1 تجميعة"
+msgstr[1] "السمات أُعيدت لتجميعة واحدة"
+msgstr[2] "السمات أُعيدت لتجمعتين"
+msgstr[3] "السمات أُعيدت لـ %1 تجميعات"
+msgstr[4] "السمات أُعيدت لـ %1 تجميعة"
+msgstr[5] "السمات أُعيدت لـ %1 تجميعة"
 
 #: src/collectionlistcommand.cpp:45
-#, fuzzy, kde-format
-#| msgid "collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "التّجميعة"
+msgstr "لا يمكن سرد أي تجميعات"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection path"
 msgid "%1 (\"/%2\")"
-msgstr ""
+msgstr "%1 (\"/%2\")"
 
 #: src/collectionresolvejob.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown Akonadi collection format '%1'"
-msgstr ""
+msgstr "صيغة تجميعة أكوُنادي غير معروفة '%1'"
 
 #: src/collectionresolvejob.cpp:141
 #, kde-format
@@ -729,19 +721,19 @@ msgstr "%1 (جذر)"
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection name"
 msgid "%1 (\"%2\")"
-msgstr ""
+msgstr "%1 (\"%2\")"
 
 #: src/collectionresolvejob.cpp:167
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
-msgstr ""
+msgstr "صيغة عنصر غير صالحة '%1'"
 
 #: src/commandfactory.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "أمر مبهم '%1'، الاحتمالات هي '%2'"
 
 #: src/commandfactory.cpp:70 src/commandfactory.cpp:122
 #, kde-format
@@ -753,17 +745,17 @@ msgstr "الأمر '%1' مجهول"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
-msgstr ""
+msgstr "لم يحدد أي أمر (جرّب '%1 --help')"
 
 #: src/commandfactory.cpp:154
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
-msgstr ""
+msgstr "الأوامر المتاحة هي:"
 
 #: src/commandshell.cpp:30
 msgid "Enter commands in an interactive shell"
-msgstr ""
+msgstr "أدخِل أوامر في صدفة تفاعلية"
 
 #: src/commandshell.cpp:74
 #, kde-format
@@ -774,7 +766,7 @@ msgstr "أمر غير صحيح"
 #: src/copycommand.cpp:40
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
-msgstr ""
+msgstr "انسخ تجميعات أو عناصر إلى تجميعة جديدة"
 
 #: src/copycommand.cpp:59 src/movecommand.cpp:40
 #, kde-format
@@ -785,161 +777,159 @@ msgstr "المصدر..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to copy"
-msgstr ""
+msgstr "تجميعات أو عناصر موجودة للنسخ"
 
 #: src/copycommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to copy into"
-msgstr ""
+msgstr "تجميعة الوجهة للنسخ إليها"
 
 #: src/copycommand.cpp:69
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing source/destination arguments"
-msgstr ""
+msgstr "وسائط المصدر/الوجهة مفقودة"
 
 #: src/copycommand.cpp:77
 #, kde-format
 msgid "No more sources to process"
-msgstr ""
+msgstr "لا يوجد المزيد من المصادر للمعالجة"
 
 #: src/copycommand.cpp:83
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve destination collection '%1', %2"
-msgstr ""
+msgstr "لا يمكن حل تجميعة الوجهة '%1'، %2"
 
 #: src/copycommand.cpp:116
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve source '%1', %2"
-msgstr ""
+msgstr "لا يمكن حل المصدر '%1'، %2"
 
 #: src/copycommand.cpp:141
 #, kde-format
 msgid "Moving contents of %1 -> %2"
-msgstr ""
+msgstr "ينقل محتويات %1 -> %2"
 
 #: src/copycommand.cpp:143
 #, kde-format
 msgid "Copying contents of %1 -> %2"
-msgstr ""
+msgstr "ينسخ محتويات %1 -> %2"
 
 #: src/copycommand.cpp:159
 #, kde-format
 msgid "Moving collection %1 -> %2"
-msgstr ""
+msgstr "ينقل التجميعة %1 -> %2"
 
 #: src/copycommand.cpp:164
 #, kde-format
 msgid "Copying collection %1 -> %2"
-msgstr ""
+msgstr "ينسخ التجميعة %1 -> %2"
 
 #: src/copycommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move from '%1', %2"
-msgstr ""
+msgstr "لا يمكن النسخ/النقل من '%1'، %2"
 
 #: src/copycommand.cpp:191
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch subcollections of '%1', %2"
-msgstr ""
+msgstr "لا يمكن جلب التجميعات الفرعية لـ '%1'، %2"
 
 #: src/copycommand.cpp:199
 #, kde-format
 msgid "No sub-collections to copy/move"
-msgstr ""
+msgstr "لا يوجد تجميعات فرعية للنسخ/النقل"
 
 #: src/copycommand.cpp:205
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 sub-collection"
 msgid_plural "Moving %1 sub-collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "ينقل %1 تجميعة فرعية"
+msgstr[1] "ينقل %1 تجميعة فرعية"
+msgstr[2] "ينقل %1 تجميعتان فرعيتان"
+msgstr[3] "ينقل %1 تجميعات فرعية"
+msgstr[4] "ينقل %1 تجميعة فرعية"
+msgstr[5] "ينقل %1 تجميعة فرعية"
 
 #: src/copycommand.cpp:207
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 sub-collection"
 msgid_plural "Copying %1 sub-collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "ينسخ %1 تجميعة فرعية"
+msgstr[1] "ينسخ %1 تجميعة فرعية"
+msgstr[2] "ينسخ %1 تجميعتان فرعيتان"
+msgstr[3] "ينسخ %1 تجميعات فرعية"
+msgstr[4] "ينسخ %1 تجميعة فرعية"
+msgstr[5] "ينسخ %1 تجميعة فرعية"
 
 #: src/copycommand.cpp:220
 #, kde-format
 msgid "No more sub-collections to process"
-msgstr ""
+msgstr "لا يوجد المزيد من التجميعات الفرعية للمعالجة"
 
 #: src/copycommand.cpp:253
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
-msgstr ""
+msgstr "لا يمكن نسخ/نقل التجميعة الفرعية '%2' من '%1'، %3"
 
 #: src/copycommand.cpp:270
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch items of '%1', %2"
-msgstr ""
+msgstr "لا يمكن جلب عناصر '%1'، %2"
 
 #: src/copycommand.cpp:278
 #, kde-format
 msgid "No items to process"
-msgstr ""
+msgstr "لا يوجد عناصر للمعالجة"
 
 #: src/copycommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 item"
 msgid_plural "Moving %1 items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "ينقل %1 عنصر"
+msgstr[1] "ينقل %1 عنصر"
+msgstr[2] "ينقل %1 عنصران"
+msgstr[3] "ينقل %1 عناصر"
+msgstr[4] "ينقل %1 عنصر"
+msgstr[5] "ينقل %1 عنصر"
 
 #: src/copycommand.cpp:290
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 item"
 msgid_plural "Copying %1 items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "ينسخ %1 عنصر"
+msgstr[1] "ينسخ %1 عنصر"
+msgstr[2] "ينسخ %1 عنصران"
+msgstr[3] "ينسخ %1 عناصر"
+msgstr[4] "ينسخ %1 عنصر"
+msgstr[5] "ينسخ %1 عنصر"
 
 #: src/copycommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move items from '%1', %2"
-msgstr ""
+msgstr "لا يمكن نسخ/نقل العناصر من '%1'، %2"
 
 #: src/createcommand.cpp:35
-#, fuzzy
-#| msgid "collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
-msgstr "التّجميعة"
+msgstr "أنشِئ تجميعة جديدة"
 
 #: src/createcommand.cpp:53
 #, kde-format
 msgid "Parent collection to create in"
-msgstr ""
+msgstr "التجميعة الأصل للإنشاء فيها"
 
 #: src/createcommand.cpp:54
 #, kde-format
@@ -952,164 +942,164 @@ msgctxt "@info:shell"
 msgid ""
 "The collection to create, either as a path or a name (with a parent "
 "specified)"
-msgstr ""
+msgstr "التجميعة المراد إنشاؤها، إما كمسار أو اسم (مع تحديد أصل)"
 
 #: src/createcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (with parent) cannot be a path"
-msgstr ""
+msgstr "وسيط التجميعة (مع الأصل) لا يمكن أن يكون مساراً"
 
 #: src/createcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (without parent) must be a path"
-msgstr ""
+msgstr "وسيط التجميعة (بدون أصل) يجب أن يكون مساراً"
 
 #: src/createcommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "New collection name not specified"
-msgstr ""
+msgstr "لم يحدد اسم التجميعة الجديدة"
 
 #: src/createcommand.cpp:114
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch parent collection '%1', %2"
-msgstr ""
+msgstr "لا يمكن جلب التجميعة الأصل '%1'، %2"
 
 #: src/createcommand.cpp:125
 #, kde-format
 msgid "Creating a maildir folder named '%1' may not work"
-msgstr ""
+msgstr "إنشاء مجلد maildir باسم '%1' قد لا يعمل"
 
 #: src/createcommand.cpp:144
 #, kde-format
 msgid "Error creating collection '%1' under '%2', %3"
-msgstr ""
+msgstr "خطأ في إنشاء التجميعة '%1' تحت '%2'، %3"
 
 #: src/createcommand.cpp:156
 #, kde-format
 msgid "Error getting path of new collection, %1"
-msgstr ""
+msgstr "خطأ في الحصول على مسار التجميعة الجديدة، %1"
 
 #: src/createcommand.cpp:161
 #, kde-format
 msgid "Created new collection '%1'"
-msgstr ""
+msgstr "أنشأ تجميعة جديدة '%1'"
 
 #: src/deletecommand.cpp:39
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
-msgstr ""
+msgstr "احذف تجميعة أو عنصراً"
 
 #: src/deletecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection or item"
-msgstr ""
+msgstr "التجميعة أو العنصر"
 
 #: src/deletecommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection/item argument"
-msgstr ""
+msgstr "وسيط التجميعة/العنصر مفقود"
 
 #: src/deletecommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot delete the root collection"
-msgstr ""
+msgstr "لا يمكن حذف التجميعة الجذر"
 
 #: src/deletecommand.cpp:121
 #, kde-format
 msgid "Collection deleted successfully"
-msgstr ""
+msgstr "حُذفت التجميعة بنجاح"
 
 #: src/deletecommand.cpp:129 src/infocommand.cpp:148
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item/collection syntax '%1'"
-msgstr ""
+msgstr "صيغة عنصر/تجميعة غير صالحة '%1'"
 
 #: src/deletecommand.cpp:152 src/infocommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
-msgstr ""
+msgstr "لا يمكن العثور على '%1' كتجميعة أو عنصر"
 
 #: src/deletecommand.cpp:164
 #, kde-format
 msgid "Item deleted successfully"
-msgstr ""
+msgstr "حُذف العنصر بنجاح"
 
 #: src/dumpcommand.cpp:46
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
-msgstr ""
+msgstr "افرغ تجميعة إلى بنية دليل"
 
 #: src/dumpcommand.cpp:58
 #, kde-format
 msgid "Dump email messages in maildir directory structure"
-msgstr ""
+msgstr "افرغ رسائل البريد الإلكتروني في بنية دليل maildir"
 
 #: src/dumpcommand.cpp:61
 #, kde-format
 msgid "Dump items with Akonadi category URLs, otherwise text names"
-msgstr ""
+msgstr "افرغ العناصر بمسارات فئة أكوُنادي، وإلا استخدم أسماء نصية"
 
 #: src/dumpcommand.cpp:64
 #, kde-format
 msgid "Operate even if destination directory is not empty"
-msgstr ""
+msgstr "اعمل حتى لو كان دليل الوجهة ليس فارغاً"
 
 #: src/dumpcommand.cpp:67
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to dump: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "التجميعة المراد إفراغها: معرّف أو مسار أو مسار أكوُنادي"
 
 #: src/dumpcommand.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "The destination directory to dump to"
-msgstr ""
+msgstr "دليل الوجهة للإفراغ فيه"
 
 #: src/dumpcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
 msgid "No destination directory specified"
-msgstr ""
+msgstr "لم يحدد دليل وجهة"
 
 #: src/dumpcommand.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' not found or not a directory"
-msgstr ""
+msgstr "الدليل '%1' غير موجود أو ليس دليلاً"
 
 #: src/dumpcommand.cpp:97
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
-msgstr ""
+msgstr "الدليل '%1' ليس فارغاً (استخدم '-f' لإجبار العملية)"
 
 #: src/dumpcommand.cpp:121 src/listcommand.cpp:263
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
-msgstr ""
+msgstr "التجميعة %1 لا يمكن أن تحتوي على عناصر"
 
 #: src/dumpcommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 contains no items"
-msgstr ""
+msgstr "التجميعة %1 لا تحتوي على عناصر"
 
 #: src/dumpcommand.cpp:200 src/editcommand.cpp:103 src/showcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no payload"
-msgstr ""
+msgstr "العنصر '%1' لا يحتوي على حمولة"
 
 #: src/dumpcommand.cpp:242
 #, kde-format
@@ -1126,180 +1116,176 @@ msgstr "تعذّر حفظ الملف '%1'"
 #: src/editcommand.cpp:37
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
-msgstr ""
+msgstr "عدّل الحمولة الخام للعنصر المحدد باستخدام $EDITOR"
 
 #: src/editcommand.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to edit"
-msgstr ""
+msgstr "العنصر المراد تعديله"
 
 #: src/editcommand.cpp:60 src/updatecommand.cpp:59
 #, kde-format
 msgctxt "@info:shell"
 msgid "No item specified"
-msgstr ""
+msgstr "لم يحدد عنصر"
 
 #: src/editcommand.cpp:95
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result found for item '%1'"
-msgstr ""
+msgstr "لم يعثر على نتيجة للعنصر '%1'"
 
 #: src/editcommand.cpp:110
 #, kde-format
 msgctxt "@info:shell"
 msgid "EDITOR environment variable needs to be set"
-msgstr ""
+msgstr "متغير البيئة EDITOR يحتاج إلى ضبط"
 
 #: src/editcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot launch text editor '%1'"
-msgstr ""
+msgstr "لا يمكن إطلاق محرر النصوص '%1'"
 
 #: src/editcommand.cpp:144
 #, kde-format
 msgctxt "@info:shell"
 msgid "Changes to item '%1' have been saved"
-msgstr ""
+msgstr "حُفظت التغييرات على العنصر '%1'"
 
 #: src/errorreporter.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "خطأ"
 
 #: src/errorreporter.cpp:46
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "تحذير"
 
 #: src/errorreporter.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr ""
+msgstr "ملاحظة"
 
 #: src/errorreporter.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "success"
-msgstr ""
+msgstr "نجاح"
 
 #: src/errorreporter.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr ""
+msgstr "معلومات"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
-msgstr ""
+msgstr "صدّر تجميعة إلى ملف XML"
 
 #: src/exportcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to export: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "التجميعة المراد تصديرها: معرّف أو مسار أو مسار أكوُنادي"
 
 #: src/exportcommand.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to export to"
-msgstr ""
+msgstr "الملف المراد التصدير إليه"
 
 #: src/exportcommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "No export file specified"
-msgstr ""
+msgstr "لم يحدد ملف تصدير"
 
 #: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "احفظ، افحص أو أعِد معرّفات مجلدات أكوُنادي"
 
 #: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "احفظ مهمات معرّفات المجلد الحالية"
 
 #: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
-msgstr ""
+msgstr "افحص المهمات الحالية مقابل مهمات معرّفات المجلد المحفوظة"
 
 #: src/folderscommand.cpp:118
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
-msgstr ""
+msgstr "أعِد ملفات التهيئة بمهمات معرّفات المجلد المتغيرة"
 
 #: src/folderscommand.cpp:141
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
-msgstr ""
+msgstr "يمكن تحديد خيار واحد فقط من 'backup' أو 'check' أو 'restore'"
 
 #: src/folderscommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
-msgstr ""
+msgstr "يجب تحديد أحد الخيارات 'backup' أو 'check' أو 'restore'"
 
 #: src/folderscommand.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "تعذّر حفظ الملف '%1'"
+msgstr "لا يمكن قراءة القائمة المحفوظة من '%1'"
 
 #: src/folderscommand.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "تعذّر إنشاء الدّليل '%1/%2'"
+msgstr "لا يمكن كتابة القائمة الحالية إلى '%1'"
 
 #: src/folderscommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "لم تتغير أي معرّفات للمجلدات"
 
 #: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "تغيرت %1 معرّف مجلد"
 
 #: src/folderscommand.cpp:321
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr ""
+msgstr "يعالج ملف التهيئة '%1'..."
 
 #: src/folderscommand.cpp:393
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
-msgstr ""
+msgstr "لا يمكن إعادة تسمية المجموعة \"%1\" للمجلد \"%2\" الذي لم يعد موجوداً"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "أُعيد تسمية المجموعة \"%1\" للمجلد \"%2\" إلى \"%3\""
 
 #: src/folderscommand.cpp:413
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "أُعيدت تسمية %1 مجموعة"
 
 #: src/folderscommand.cpp:498
 #, kde-format
@@ -1307,31 +1293,32 @@ msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
 msgstr ""
+"لا يمكن تحديث \"%1\" في المجموعة \"%2\" للمجلد \"%3\" الذي لم يعد موجوداً"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "حدّث \"%1\" في المجموعة \"%2\" للمجلد \"%3\" إلى %4"
 
 #: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "تغيرت %1 قيمة إعدادات"
 
 #: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "لا يوجد تغييرات تهيئة مطلوبة"
 
 #: src/folderscommand.cpp:542
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
-msgstr ""
+msgstr "تغييرات التهيئة مطلوبة (%1 إعادة تسمية مجموعة و%2 تغييرات إعدادات)"
 
 #: src/folderscommand.cpp:544
 #, kde-kuit-format
@@ -1341,194 +1328,189 @@ msgid ""
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
+"أنهِ كل تطبيقات PIM التي تعمل وأوقف خادم أكوُنادي، ثم <nl/>نفذ الأمر: <nl/"
+"><bcode>  %1 %2 --restore</bcode><nl/>لتنفيذ التغييرات."
 
 #: src/folderscommand.cpp:558
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr ""
+msgstr "يحفظ مسارات المجلد في '%1'"
 
 #: src/folderscommand.cpp:565
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr ""
+msgstr "حفظ %1 مسار مجلد تجميعة"
 
 #: src/folderscommand.cpp:570
 #, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr ""
+msgstr "يقرأ مسارات المجلد المحفوظة من '%1'"
 
 #: src/folderscommand.cpp:581
-#, fuzzy, kde-format
-#| msgid "collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "التّجميعة"
+msgstr "قرأ %1 مسار تجميعة محفوظة"
 
 #: src/folderscommand.cpp:601
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr ""
+msgstr "المجلد \"%1\" كان بمعرّف %2 ولكنه لم يعد موجوداً"
 
 #: src/folderscommand.cpp:604
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr ""
+msgstr "المجلد \"%1\" غير المعرّف من %2 إلى %3"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
-msgstr ""
+msgstr "عرّف %1 نمط تغيير بيانات لـ %2 اسم ملف تهيئة"
 
 #: src/folderscommand.cpp:685
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "الملفّ غير موجود."
+msgstr "قائمة المجلدات المحفوظة '%1' غير موجودة."
 
 #: src/folderscommand.cpp:689
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "الملفّ غير موجود."
+msgstr "قائمة المجلدات الحالية '%1' غير موجودة."
 
 #: src/folderscommand.cpp:693
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
-msgstr ""
+msgstr "قائمة المجلدات الحالية '%1' أقدم من قائمة المجلدات المحفوظة '%2'"
 
 #: src/folderscommand.cpp:707
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
-msgstr ""
+msgstr "ملف التهيئة الجديد '%1' غير موجود، أو أقدم من قائمة المجلدات '%2'"
 
 #: src/folderscommand.cpp:718
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "شغّل '%1 %2 --check' أولاً"
 
 #: src/folderscommand.cpp:725
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "يفحص ما إذا كان خادم أكوُنادي يعمل..."
 
 #: src/folderscommand.cpp:730
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "خادم أكوُنادي متوقف"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr ""
+msgstr "يوقف خادم أكوُنادي"
 
 #: src/folderscommand.cpp:744
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "يحدث %1 ملف تهيئة في '%2'"
 
 #: src/folderscommand.cpp:755
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "يزيل '%1' القديم"
 
 #: src/folderscommand.cpp:758
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "تعذّر حفظ الملف '%1'"
+msgstr "لا يمكن إزالة '%1' القديم"
 
 #: src/folderscommand.cpp:763
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "ينسخ '%2' الجديد إلى '%1'"
 
 #: src/folderscommand.cpp:766
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
-msgstr "تعذّر حفظ الملف '%1'"
+msgstr "لا يمكن نسخ '%2' الجديد إلى '%1'"
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr "تعذّر حفظ الملف '%1'"
+msgstr "لا يمكن إزالة الملف المنسوخ '%1'"
 
 #: src/folderscommand.cpp:775
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "اكتملت الاستعادة"
 
 #: src/folderscommand.cpp:788
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "لا يمكن العثور على دليل تهيئة المستخدم"
 
 #: src/folderscommand.cpp:795
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "الملفّ غير موجود."
+msgstr "دليل التهيئة '%1' غير موجود"
 
 #: src/folderscommand.cpp:816
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "لا يوجد ملفات تهيئة قابلة للتطبيق"
 
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
-msgstr ""
+msgstr "وسّع أو عدّل مجموعة جهات اتصال"
 
 #: src/groupcommand.cpp:58
 #, kde-format
 msgid "Show the expanded contact group (the default operation)"
-msgstr ""
+msgstr "أظهِر مجموعة جهات الاتصال الموسعة (العملية المبدئية)"
 
 #: src/groupcommand.cpp:61
 #, kde-format
 msgid "Add a contact to the group"
-msgstr ""
+msgstr "أضِف جهة اتصال إلى المجموعة"
 
 #: src/groupcommand.cpp:64
 #, kde-format
 msgid "Delete a contact from the group"
-msgstr ""
+msgstr "احذف جهة اتصال من المجموعة"
 
 #: src/groupcommand.cpp:67
 #, kde-format
 msgid "Remove unknown item references from the group"
-msgstr ""
+msgstr "أزِل مراجع العناصر غير المعروفة من المجموعة"
 
 #: src/groupcommand.cpp:70
 #, kde-format
 msgid "Email comment (name) for an added item"
-msgstr ""
+msgstr "تعليق البريد الإلكتروني (الاسم) لعنصر مُضاف"
 
 #: src/groupcommand.cpp:71
 #, kde-format
@@ -1538,98 +1520,98 @@ msgstr "الاسم"
 #: src/groupcommand.cpp:74
 #, kde-format
 msgid "Brief output (for 'expand', email addresses only)"
-msgstr ""
+msgstr "مخرج موجز (لـ 'expand'، عناوين البريد الإلكتروني فقط)"
 
 #: src/groupcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
-msgstr ""
+msgstr "عنصر مجموعة جهات الاتصال، معرّف أو مسار أكوُنادي"
 
 #: src/groupcommand.cpp:84
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing group argument"
-msgstr ""
+msgstr "وسيط المجموعة مفقود"
 
 #: src/groupcommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"
-msgstr ""
+msgstr "يمكن تحديد خيار واحد فقط من 'expand' أو 'add' أو 'delete' أو 'clean'"
 
 #: src/groupcommand.cpp:115
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to add"
-msgstr ""
+msgstr "لم يحدد عناصر للإضافة"
 
 #: src/groupcommand.cpp:124
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one item may be specified to add with 'comment'"
-msgstr ""
+msgstr "يمكن تحديد عنصر واحد فقط للإضافة مع 'comment'"
 
 #: src/groupcommand.cpp:133
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to delete"
-msgstr ""
+msgstr "لم يحدد عناصر للحذف"
 
 #: src/groupcommand.cpp:147
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'comment' option is only allowed with 'add'"
-msgstr ""
+msgstr "الخيار 'comment' مسموح به فقط مع 'add'"
 
 #: src/groupcommand.cpp:197
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as an item"
-msgstr ""
+msgstr "لا يمكن العثور على '%1' كعنصر"
 
 #: src/groupcommand.cpp:204
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' is not a contact group"
-msgstr ""
+msgstr "العنصر '%1' ليس مجموعة جهات اتصال"
 
 #: src/groupcommand.cpp:210
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no contact group payload"
-msgstr ""
+msgstr "العنصر '%1' لا يحتوي على حمولة مجموعة جهات اتصال"
 
 #: src/groupcommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "Errors occurred, group not updated"
-msgstr ""
+msgstr "حدثت أخطاء، لم يتم تحديث المجموعة"
 
 #: src/groupcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell"
 msgid "(unknown referenced item)"
-msgstr ""
+msgstr "(عنصر مرجعي غير معروف)"
 
 #: src/groupcommand.cpp:299 src/groupcommand.cpp:320
 #, kde-format
 msgctxt "@info:shell"
 msgid "(item has no Addressee payload)"
-msgstr ""
+msgstr "(العنصر لا يحتوي على حمولة Addressee)"
 
 #: src/groupcommand.cpp:339
 #, kde-format
 msgctxt "@item:shell"
 msgid "(invalid referenced item)"
-msgstr ""
+msgstr "(عنصر مرجعي غير صالح)"
 
 #: src/groupcommand.cpp:341
 #, kde-format
 msgctxt "@item:shell"
 msgid "(unknown referenced item)"
-msgstr ""
+msgstr "(عنصر مرجعي غير معروف)"
 
 #: src/groupcommand.cpp:392
 #, kde-format
@@ -1637,7 +1619,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" has %2 groups, %3 references and %4 data items:"
-msgstr ""
+msgstr "المجموعة %1 \"%5\" لديها %2 مجموعة، %3 مرجع و%4 عنصر بيانات:"
 
 #: src/groupcommand.cpp:401
 #, kde-format
@@ -1668,7 +1650,7 @@ msgstr "الاسم"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items could be fetched"
-msgstr ""
+msgstr "لا يمكن جلب أي عناصر"
 
 #: src/groupcommand.cpp:497
 #, kde-format
@@ -1676,31 +1658,31 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Adding to group %1 \"%2\":"
-msgstr ""
+msgstr "يضيف إلى المجموعة %1 \"%2\":"
 
 #: src/groupcommand.cpp:512 src/groupcommand.cpp:624
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot search for email '%1', %2"
-msgstr ""
+msgstr "لا يمكن البحث عن البريد الإلكتروني '%1'، %2"
 
 #: src/groupcommand.cpp:523
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple contacts found for '%1', using the first one"
-msgstr ""
+msgstr "عثر على عدة جهات اتصال لـ '%1'، يستخدم الأول"
 
 #: src/groupcommand.cpp:558
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch requested item %1, %2"
-msgstr ""
+msgstr "لا يمكن جلب العنصر المطلوب %1، %2"
 
 #: src/groupcommand.cpp:568
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item %1 is not a contact item"
-msgstr ""
+msgstr "العنصر %1 ليس عنصر جهة اتصال"
 
 #: src/groupcommand.cpp:583 src/groupcommand.cpp:666 src/groupcommand.cpp:715
 #, kde-format
@@ -1708,7 +1690,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" now has %2 groups, %3 references and %4 data items"
-msgstr ""
+msgstr "المجموعة %1 \"%5\" لديها الآن %2 مجموعة، %3 مرجع و%4 عنصر بيانات"
 
 #: src/groupcommand.cpp:601
 #, kde-format
@@ -1716,13 +1698,13 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Removing from group %1 \"%2\":"
-msgstr ""
+msgstr "يزيل من المجموعة %1 \"%2\":"
 
 #: src/groupcommand.cpp:638
 #, kde-format
 msgctxt "@info:shell"
 msgid "Nothing to remove for email '%1'"
-msgstr ""
+msgstr "لا يوجد شيء لإزالته للبريد الإلكتروني '%1'"
 
 #: src/groupcommand.cpp:682
 #, kde-format
@@ -1730,119 +1712,119 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Cleaning references from group %1 \"%2\":"
-msgstr ""
+msgstr "ينظف المراجع من المجموعة %1 \"%2\":"
 
 #: src/importcommand.cpp:39
 msgctxt "info:shell"
 msgid "Import an XML file"
-msgstr ""
+msgstr "استورِد ملف XML"
 
 #: src/importcommand.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "The parent collection under which to import the file"
-msgstr ""
+msgstr "التجميعة الأصل التي يتم استيراد الملف تحتها"
 
 #: src/importcommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to import"
-msgstr ""
+msgstr "الملف المراد استيراده"
 
 #: src/importcommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "No parent collection specified"
-msgstr ""
+msgstr "لم يحدد تجميعة أصل"
 
 #: src/importcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "No import file specified"
-msgstr ""
+msgstr "لم يحدد ملف استيراد"
 
 #: src/importcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid XML file, %1"
-msgstr ""
+msgstr "ملف XML غير صالح، %1"
 
 #: src/importcommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch parent collection, %1"
-msgstr ""
+msgstr "غير قادر على جلب التجميعة الأصل، %1"
 
 #: src/importcommand.cpp:103
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch children of parent collection, %1"
-msgstr ""
+msgstr "غير قادر على جلب أبناء التجميعة الأصل، %1"
 
 #: src/importcommand.cpp:122
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection '%1' already exists"
-msgstr ""
+msgstr "التجميعة '%1' موجودة بالفعل"
 
 #: src/importcommand.cpp:126
 #, kde-format
 msgctxt "@info:shell"
 msgid "Creating collection '%1'"
-msgstr ""
+msgstr "ينشئ التجميعة '%1'"
 
 #: src/importcommand.cpp:148
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing collection '%1'"
-msgstr ""
+msgstr "يعالج التجميعة '%1'"
 
 #: src/importcommand.cpp:155
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parent for collection with remote ID '%1'"
-msgstr ""
+msgstr "أصل غير صالح لتجميعة بمعرّف عن بعد '%1'"
 
 #: src/importcommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
-msgstr ""
+msgstr "غير قادر على جلب تجميعة بمعرّف عن بعد '%1'، %2"
 
 #: src/importcommand.cpp:194
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
-msgstr ""
+msgstr "غير قادر على إنشاء تجميعة بمعرّف عن بعد '%1'"
 
 #: src/importcommand.cpp:212
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing items for '%1'"
-msgstr ""
+msgstr "يعالج العناصر لـ '%1'"
 
 #: src/importcommand.cpp:234
 #, kde-format
 msgctxt "@info:shell"
 msgid "Error creating item, %1"
-msgstr ""
+msgstr "خطأ في إنشاء العنصر، %1"
 
 #: src/importcommand.cpp:237
 #, kde-format
 msgctxt "@info:shell"
 msgid "Created item '%1'"
-msgstr ""
+msgstr "أنشأ العنصر '%1'"
 
 #: src/infocommand.cpp:38
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
-msgstr ""
+msgstr "أظهِر معلومات كاملة لتجميعة أو عنصر"
 
 #: src/infocommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
-msgstr ""
+msgstr "تجميعات أو عناصر للعرض"
 
 #: src/infocommand.cpp:57
 #, kde-format
@@ -1853,13 +1835,13 @@ msgstr "كيان..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
-msgstr ""
+msgstr "لم يحدد أي تجميعات أو عناصر"
 
 #: src/infocommand.cpp:117
 #, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
-msgstr ""
+msgstr "لا توجد معلومات متاحة لجذر التجميعة"
 
 #: src/infocommand.cpp:220 src/infocommand.cpp:267
 #, kde-format
@@ -1913,67 +1895,67 @@ msgstr "امتدادات البريد المتعددة"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Remote ID"
-msgstr ""
+msgstr "معرّف عن بعد"
 
 #: src/infocommand.cpp:228
 #, kde-format
 msgctxt "@info:shell"
 msgid "Path"
-msgstr ""
+msgstr "مسار"
 
 #: src/infocommand.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
-msgstr ""
+msgstr "للقراءة فقط"
 
 #: src/infocommand.cpp:236
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
-msgstr ""
+msgstr "تغيير عنصر"
 
 #: src/infocommand.cpp:239
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
-msgstr ""
+msgstr "إنشاء عنصر"
 
 #: src/infocommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
-msgstr ""
+msgstr "حذف عنصر"
 
 #: src/infocommand.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
-msgstr ""
+msgstr "تغيير تجميعة"
 
 #: src/infocommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
-msgstr ""
+msgstr "إنشاء تجميعة"
 
 #: src/infocommand.cpp:251
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
-msgstr ""
+msgstr "حذف تجميعة"
 
 #: src/infocommand.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
-msgstr ""
+msgstr "ربط عنصر"
 
 #: src/infocommand.cpp:257
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
-msgstr ""
+msgstr "إلغاء ربط عنصر"
 
 #: src/infocommand.cpp:259
 #, kde-format
@@ -2062,96 +2044,96 @@ msgstr "مجهول"
 #: src/listcommand.cpp:37
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
-msgstr ""
+msgstr "سرد تجميعات فرعية و/أو عناصر في تجميعة محددة"
 
 #: src/listcommand.cpp:49
 #, kde-format
 msgid "List more detailed information"
-msgstr ""
+msgstr "سرد معلومات أكثر تفصيلاً"
 
 #: src/listcommand.cpp:52
 #, kde-format
 msgid "List only sub-collections"
-msgstr ""
+msgstr "سرد التجميعات الفرعية فقط"
 
 #: src/listcommand.cpp:55
 #, kde-format
 msgid "List only contained items"
-msgstr ""
+msgstr "سرد العناصر المحتواة فقط"
 
 #: src/listcommand.cpp:58
 #, kde-format
 msgid "List sub-collections recursively"
-msgstr ""
+msgstr "سرد التجميعات الفرعية بشكل متكرر"
 
 #: src/listcommand.cpp:60
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "التجميعة المراد سردها: معرّف أو مسار أو مسار أكوُنادي"
 
 #: src/listcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "السرد المتكرر يمكن استخدامه للتجميعات فقط"
 
 #: src/listcommand.cpp:160
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
-msgstr ""
+msgstr "التجميعة %1 لا تحتوي على تجميعات فرعية"
 
 #: src/listcommand.cpp:169
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "التجميعة %2 لديها %1 تجميعة فرعية متكررة:"
+msgstr[1] "التجميعة %2 لديها %1 تجميعة فرعية متكررة:"
+msgstr[2] "التجميعة %2 لديها %1 تجميعتان فرعيتان متكررتان:"
+msgstr[3] "التجميعة %2 لديها %1 تجميعات فرعية متكررة:"
+msgstr[4] "التجميعة %2 لديها %1 تجميعة فرعية متكررة:"
+msgstr[5] "التجميعة %2 لديها %1 تجميعة فرعية متكررة:"
 
 #: src/listcommand.cpp:175
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "التجميعة %2 لديها %1 تجميعة فرعية:"
+msgstr[1] "التجميعة %2 لديها تجميعة فرعية:"
+msgstr[2] "التجميعة %2 لديها تجميعتان فرعيتان:"
+msgstr[3] "التجميعة %2 لديها %1 تجميعات فرعية:"
+msgstr[4] "التجميعة %2 لديها %1 تجميعة فرعية:"
+msgstr[5] "التجميعة %2 لديها %1 تجميعة فرعية:"
 
 #: src/listcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
-msgstr ""
+msgstr "التجميعة %1 لا تحتوي على عناصر"
 
 #: src/listcommand.cpp:284
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "التجميعة %2 لديها %1 عنصر:"
+msgstr[1] "التجميعة %2 لديها عنصر:"
+msgstr[2] "التجميعة %2 لديها عنصرين:"
+msgstr[3] "التجميعة %2 لديها %1 عناصر:"
+msgstr[4] "التجميعة %2 لديها %1 عنصر:"
+msgstr[5] "التجميعة %2 لديها %1 عنصر:"
 
 #: src/listcommand.cpp:292
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
-msgstr "نوع تنسيق الملف"
+msgstr "نوع MIME"
 
 #: src/listcommand.cpp:293
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "الحجم"
@@ -2166,23 +2148,22 @@ msgstr "وقت التعديل"
 #, kde-format
 msgctxt "@title program name"
 msgid "Akonadi Client"
-msgstr ""
+msgstr "عميل أكوُنادي"
 
 #: src/main.cpp:47
 #, kde-format
 msgctxt "@info:shell short description"
 msgid "A command-line/shell client for Akonadi"
-msgstr ""
+msgstr "عميل سطر الأوامر/الصدفة لأكوُنادي"
 
 #: src/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Kevin Krammer"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
-msgstr "Kevin Krammer"
+msgstr "كيفن كرامر"
 
 #: src/main.cpp:51
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title about data task"
 msgid "Original Author"
 msgstr "المؤلف الأصلي"
@@ -2191,31 +2172,31 @@ msgstr "المؤلف الأصلي"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
-msgstr ""
+msgstr "جوناثان مارتن"
 
 #: src/main.cpp:52
 #, kde-format
 msgctxt "@title about data task"
 msgid "Additions and new commands"
-msgstr ""
+msgstr "إضافات وأوامر جديدة"
 
 #: src/main.cpp:53
 #, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
-msgstr ""
+msgstr "بهاسكار كانديال"
 
 #: src/main.cpp:53
 #, kde-format
 msgctxt "@title about data task"
 msgid "New commands, GSOC 2014"
-msgstr ""
+msgstr "أوامر جديدة، GSOC 2014"
 
 #: src/main.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "Command to execute"
-msgstr "الأمر لتنفيذه"
+msgstr "أمر للتنفيذ"
 
 #: src/main.cpp:68
 #, kde-format
@@ -2227,7 +2208,7 @@ msgstr "معطيات الأمر"
 #, kde-format
 msgctxt "@info:shell"
 msgid "[args]"
-msgstr ""
+msgstr "[وسائط]"
 
 #: src/main.cpp:86
 #, kde-format
@@ -2236,42 +2217,42 @@ msgid ""
 "See '%1 help' for available commands.\n"
 "See '%1 help command' for information on a specific command."
 msgstr ""
+"انظر '%1 help' للأوامر المتاحة.\n"
+"انظر '%1 help command' للحصول على معلومات حول أمر معين."
 
 #: src/movecommand.cpp:27
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
-msgstr ""
+msgstr "انقل تجميعات أو عناصر إلى تجميعة جديدة"
 
 #: src/movecommand.cpp:40
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to move"
-msgstr ""
+msgstr "تجميعات أو عناصر موجودة للنقل"
 
 #: src/movecommand.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to move into"
-msgstr ""
+msgstr "تجميعة الوجهة للنقل إليها"
 
 #: src/renamecommand.cpp:33
-#, fuzzy
-#| msgid "collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
-msgstr "التّجميعة"
+msgstr "أعِد تسمية تجميعة"
 
 #: src/renamecommand.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to rename"
-msgstr ""
+msgstr "التجميعة المراد إعادة تسميتها"
 
 #: src/renamecommand.cpp:46
 #, kde-format
 msgctxt "@info:shell"
 msgid "New name for collection"
-msgstr ""
+msgstr "اسم جديد للتجميعة"
 
 #: src/renamecommand.cpp:54
 #, kde-format
@@ -2283,129 +2264,129 @@ msgstr "اسم جديد غير محدد"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection renamed successfully"
-msgstr ""
+msgstr "أُعيدت تسمية التجميعة بنجاح"
 
 #: src/showcommand.cpp:34
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
-msgstr ""
+msgstr "أظهِر الحمولة الخام لعنصر"
 
 #: src/showcommand.cpp:43
 #, kde-format
 msgctxt "@info:shell"
 msgid "The items to show"
-msgstr ""
+msgstr "العناصر المراد عرضها"
 
 #: src/showcommand.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "item..."
-msgstr "عنصر"
+msgstr "عنصر..."
 
 #: src/showcommand.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "Use raw payload (disables quoted-printable decoding)"
-msgstr ""
+msgstr "استخدم الحمولة الخام (يعطل فك ترميز quoted-printable)"
 
 #: src/showcommand.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified"
-msgstr ""
+msgstr "لم يحدد عناصر"
 
 #: src/showcommand.cpp:89 src/updatecommand.cpp:116
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result returned for item '%1'"
-msgstr ""
+msgstr "لم ترجع نتيجة للعنصر '%1'"
 
 #: src/showcommand.cpp:104
 #, kde-format
 msgid "Item has no main body part"
-msgstr ""
+msgstr "العنصر لا يحتوي على جزء جسم رئيسي"
 
 #: src/tagscommand.cpp:38
 msgctxt "info:shell"
 msgid "List or modify tags"
-msgstr ""
+msgstr "سرد أو عدّل الوسوم"
 
 #: src/tagscommand.cpp:55
 #, kde-format
 msgid "Brief output, tag names or IDs only"
-msgstr ""
+msgstr "مخرج موجز، أسماء الوسوم أو المعرّفات فقط"
 
 #: src/tagscommand.cpp:58
 #, kde-format
 msgid "Brief output, tag URLs only"
-msgstr ""
+msgstr "مخرج موجز، مسارات الوسوم فقط"
 
 #: src/tagscommand.cpp:62
 #, kde-format
 msgid "List all known tags (the default operation)"
-msgstr ""
+msgstr "سرد كل الوسوم المعروفة (العملية المبدئية)"
 
 #: src/tagscommand.cpp:65
 #, kde-format
 msgid "Add named tags"
-msgstr ""
+msgstr "أضِف وسوماً مسماة"
 
 #: src/tagscommand.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgid "Delete tags"
-msgstr "أأحذف الوسوم %2؟"
+msgstr "احذف الوسوم"
 
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "احفظ الوسوم الحالية"
 
 #: src/tagscommand.cpp:74
 #, kde-format
 msgid "Restore the saved tags (into a new database)"
-msgstr ""
+msgstr "أعِد الوسوم المحفوظة (إلى قاعدة بيانات جديدة)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr ""
+msgstr "معرّف لوسم سيضاف (المبدئي تلقائي)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "id"
-msgstr ""
+msgstr "معرّف"
 
 #: src/tagscommand.cpp:76
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
-msgstr ""
+msgstr "احتفظ بالوسوم الوسيطة المضافة عند استخدام خيار 'id'"
 
 #: src/tagscommand.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgid "TAG"
 msgstr "الوسم"
 
 #: src/tagscommand.cpp:77
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
-msgstr ""
+msgstr "اسم وسم للإضافة، أو اسم، معرّف أو مسار وسم للحذف"
 
 #: src/tagscommand.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgid "[TAG...]"
-msgstr "الوسم"
+msgstr "[وسم...]"
 
 #: src/tagscommand.cpp:89
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr ""
+msgstr "قيمة غير صالحة للخيار 'id'"
 
 #: src/tagscommand.cpp:95
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr ""
+msgstr "لا يمكن تحديد الخيارين 'brief' و 'urls' معاً"
 
 #: src/tagscommand.cpp:116
 #, kde-format
@@ -2414,113 +2395,112 @@ msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
 msgstr ""
+"يمكن تحديد خيار واحد فقط من 'list' أو 'add' أو 'delete' أو 'backup'/'restore'"
 
 #: src/tagscommand.cpp:131
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
-msgstr ""
+msgstr "لم يحدد وسوم للإضافة"
 
 #: src/tagscommand.cpp:136
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr ""
+msgstr "لا يمكن تحديد عدة وسوم للإضافة مع 'id'"
 
 #: src/tagscommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
-msgstr ""
+msgstr "لم يحدد وسوم للحذف"
 
 #: src/tagscommand.cpp:157
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr ""
+msgstr "الخيار 'retain' يمكن استخدامه فقط مع 'add' أو 'restore'"
 
 #: src/tagscommand.cpp:161
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr ""
+msgstr "الخيار 'id' يمكن استخدامه فقط مع 'add'"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "تعذّر حفظ الملف '%1'"
+msgstr "لا يمكن قراءة الوسوم المحفوظة من '%1'"
 
 #: src/tagscommand.cpp:201
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "لا يوجد وسوم محفوظة للاستعادة"
 
 #: src/tagscommand.cpp:228
 #, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr ""
+msgstr "وسم اسمه '%1' بمعرّف %2 موجود بالفعل"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr "فشلت إضافة %1"
+msgstr "فشلت إضافة الوسم '%1' بمعرّف %2"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr "فشلت إضافة %1"
+msgstr "فشلت إضافة الوسم '%1'"
 
 #: src/tagscommand.cpp:287
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
-msgstr ""
+msgstr "لا يمكن إنشاء وسم بمعرّف %1، التسلسل بالفعل عند المعرّف %2"
 
 #: src/tagscommand.cpp:341
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr ""
+msgstr "أضاف الوسم '%1' بمعرّف %2"
 
 #: src/tagscommand.cpp:376
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
-msgstr ""
+msgstr "الوسم المراد حذفه '%1' غير موجود"
 
 #: src/tagscommand.cpp:413
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete ID %1 does not exist"
-msgstr ""
+msgstr "الوسم المراد حذفه بمعرّف %1 غير موجود"
 
 #: src/tagscommand.cpp:439
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr ""
+msgstr "لا يمكن إنشاء الوسم بالمعرّف المطلوب"
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "أأحذف الوسوم %2؟"
+msgstr "حذف الوسم '%1' بمعرّف %2"
 
 #: src/tagscommand.cpp:491
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags found"
-msgstr ""
+msgstr "لا يوجد وسوم"
 
 #: src/tagscommand.cpp:512
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell column header"
 msgid "URL"
 msgstr "المسار"
@@ -2529,59 +2509,56 @@ msgstr "المسار"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr ""
+msgstr "عثر على %1 وسم أكوُنادي حالي"
 
 #: src/tagscommand.cpp:557
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr ""
+msgstr "حفظ الوسوم في '%1'"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr "تعذّر حفظ الملف '%1'"
+msgstr "يقرأ الوسوم المحفوظة من '%1'"
 
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgid "collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "التّجميعة"
+msgstr "قرأ %1 وسم محفوظ"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "أُعيدت الوسوم"
 
 #: src/terminalcolour.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "لا يمكن إعداد الطرفية"
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
-msgstr ""
+msgstr "حدّث حمولة عنصر من ملف"
 
 #: src/updatecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to update, an ID or Akonadi URL"
-msgstr ""
+msgstr "العنصر المراد تحديثه، معرّف أو مسار أكوُنادي"
 
 #: src/updatecommand.cpp:53
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to update the item from"
-msgstr ""
+msgstr "الملف الذي سيُحدَّث منه العنصر"
 
 #: src/updatecommand.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:shell"
 msgid "No file specified"
 msgstr "لم يُحدّد أيّ ملفّ."
@@ -2590,4 +2567,4 @@ msgstr "لم يُحدّد أيّ ملفّ."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item updated successfully"
-msgstr ""
+msgstr "حُدّث العنصر بنجاح"
