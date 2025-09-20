@@ -23,7 +23,6 @@
 #include "errorreporter.h"
 #include "terminalcolour.h"
 
-#include <QDebug>
 #include <QHash>
 
 #include <iostream>

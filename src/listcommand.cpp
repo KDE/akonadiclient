@@ -26,8 +26,6 @@
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 
-#include <QDateTime>
-
 #include <iostream>
 
 #include "commandfactory.h"

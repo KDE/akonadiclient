@@ -20,8 +20,6 @@
 
 #include "abstractcommand.h"
 
-#include <QStringList>
-
 class KJob;
 
 class ShowCommand : public AbstractCommand
