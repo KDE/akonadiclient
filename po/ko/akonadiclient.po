@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-17 00:41+0000\n"
+"POT-Creation-Date: 2025-09-21 00:42+0000\n"
 "PO-Revision-Date: 2025-04-06 21:41+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -166,7 +166,7 @@ msgstr "모음집에 추가할 파일이나 디렉터리"
 msgid "files..."
 msgstr "파일..."
 
-#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
+#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:64
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
@@ -703,25 +703,25 @@ msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
 msgstr "Invalid item syntax '%1'"
 
-#: src/commandfactory.cpp:62
+#: src/commandfactory.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
 msgstr "모호한 명령 '%1', 해석 가능한 명령: '%2'"
 
-#: src/commandfactory.cpp:70 src/commandfactory.cpp:122
+#: src/commandfactory.cpp:69 src/commandfactory.cpp:121
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
 msgstr "알 수 없는 명령 '%1'"
 
-#: src/commandfactory.cpp:110
+#: src/commandfactory.cpp:109
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
 msgstr "지정한 명령이 없음('%1 --help' 입력)"
 
-#: src/commandfactory.cpp:154
+#: src/commandfactory.cpp:153
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
@@ -1037,7 +1037,7 @@ msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr "디렉터리 '%1'이(가) 비어 있지 않음('-f'를 지정하면 강제로 실행)"
 
-#: src/dumpcommand.cpp:121 src/listcommand.cpp:263
+#: src/dumpcommand.cpp:121 src/listcommand.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -1581,7 +1581,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "형식"
 
-#: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
+#: src/groupcommand.cpp:402 src/listcommand.cpp:182 src/listcommand.cpp:289
 #: src/tagscommand.cpp:511
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1594,7 +1594,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "이메일"
 
-#: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:513
+#: src/groupcommand.cpp:404 src/listcommand.cpp:183 src/tagscommand.cpp:513
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -1995,89 +1995,89 @@ msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: src/listcommand.cpp:37
+#: src/listcommand.cpp:35
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "지정한 모음집의 하위 모음집이나 항목 표시"
 
-#: src/listcommand.cpp:49
+#: src/listcommand.cpp:47
 #, kde-format
 msgid "List more detailed information"
 msgstr "더 자세한 정보 표시"
 
-#: src/listcommand.cpp:52
+#: src/listcommand.cpp:50
 #, kde-format
 msgid "List only sub-collections"
 msgstr "하위 모음집만 표시"
 
-#: src/listcommand.cpp:55
+#: src/listcommand.cpp:53
 #, kde-format
 msgid "List only contained items"
 msgstr "포함된 항목만 표시"
 
-#: src/listcommand.cpp:58
+#: src/listcommand.cpp:56
 #, kde-format
 msgid "List sub-collections recursively"
 msgstr "하위 모음집을 재귀적으로 표시"
 
-#: src/listcommand.cpp:60
+#: src/listcommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr "표시할 모음집: ID, 경로, Akonadi URL"
 
-#: src/listcommand.cpp:77
+#: src/listcommand.cpp:75
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
 msgstr "재귀적 목록은 모음집에서만 사용할 수 있음"
 
-#: src/listcommand.cpp:160
+#: src/listcommand.cpp:158
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "모음집 %1에 하위 모음집이 없음"
 
-#: src/listcommand.cpp:169
+#: src/listcommand.cpp:167
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
 msgstr[0] "모음집 %2에 재귀적 하위 모음집이 %1개 있음:"
 
-#: src/listcommand.cpp:175
+#: src/listcommand.cpp:173
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] "모음집 %2에 하위 모음집이 %1개 있음:"
 
-#: src/listcommand.cpp:278
+#: src/listcommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "모음집 %1에 항목이 없음"
 
-#: src/listcommand.cpp:284
+#: src/listcommand.cpp:282
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
 msgstr[0] "모음집 %2에 항목이 %1개 있음:"
 
-#: src/listcommand.cpp:292
+#: src/listcommand.cpp:290
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "MIME 형식"
 
-#: src/listcommand.cpp:293
+#: src/listcommand.cpp:291
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "크기"
 
-#: src/listcommand.cpp:294
+#: src/listcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"

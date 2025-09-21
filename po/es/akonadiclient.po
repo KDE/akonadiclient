@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-17 00:41+0000\n"
+"POT-Creation-Date: 2025-09-21 00:42+0000\n"
 "PO-Revision-Date: 2025-06-29 13:43+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -169,7 +169,7 @@ msgstr "Archivos o directorios a añadir a la colección"
 msgid "files..."
 msgstr "archivos…"
 
-#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
+#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:64
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
@@ -716,25 +716,25 @@ msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
 msgstr "Sintaxis de elemento no válida «%1»"
 
-#: src/commandfactory.cpp:62
+#: src/commandfactory.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
 msgstr "Orden ambigua «%1». Las posibilidades son «%2»"
 
-#: src/commandfactory.cpp:70 src/commandfactory.cpp:122
+#: src/commandfactory.cpp:69 src/commandfactory.cpp:121
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
 msgstr "Orden desconocida «%1»"
 
-#: src/commandfactory.cpp:110
+#: src/commandfactory.cpp:109
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
 msgstr "No se ha indicado ninguna orden (pruebe «%1 --help»)"
 
-#: src/commandfactory.cpp:154
+#: src/commandfactory.cpp:153
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
@@ -1060,7 +1060,7 @@ msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr "El directorio «%1» no está vacío (use «-f» para forzar la operación)"
 
-#: src/dumpcommand.cpp:121 src/listcommand.cpp:263
+#: src/dumpcommand.cpp:121 src/listcommand.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -1622,7 +1622,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "Tipo"
 
-#: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
+#: src/groupcommand.cpp:402 src/listcommand.cpp:182 src/listcommand.cpp:289
 #: src/tagscommand.cpp:511
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1635,7 +1635,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:513
+#: src/groupcommand.cpp:404 src/listcommand.cpp:183 src/tagscommand.cpp:513
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -2038,50 +2038,50 @@ msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: src/listcommand.cpp:37
+#: src/listcommand.cpp:35
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Listar las subcolecciones y los elementos de una determinada colección"
 
-#: src/listcommand.cpp:49
+#: src/listcommand.cpp:47
 #, kde-format
 msgid "List more detailed information"
 msgstr "Listar información más detallada"
 
-#: src/listcommand.cpp:52
+#: src/listcommand.cpp:50
 #, kde-format
 msgid "List only sub-collections"
 msgstr "Listar solo las subcolecciones"
 
-#: src/listcommand.cpp:55
+#: src/listcommand.cpp:53
 #, kde-format
 msgid "List only contained items"
 msgstr "Listar solo los elementos contenidos"
 
-#: src/listcommand.cpp:58
+#: src/listcommand.cpp:56
 #, kde-format
 msgid "List sub-collections recursively"
 msgstr "Listar subcolecciones recursivamente"
 
-#: src/listcommand.cpp:60
+#: src/listcommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr "La colección a listar: un ID, ruta o URL de Akonadi"
 
-#: src/listcommand.cpp:77
+#: src/listcommand.cpp:75
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
 msgstr "La lista recursiva solo se puede usar en colecciones"
 
-#: src/listcommand.cpp:160
+#: src/listcommand.cpp:158
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "La colección %1 no tiene subcolecciones"
 
-#: src/listcommand.cpp:169
+#: src/listcommand.cpp:167
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
@@ -2089,7 +2089,7 @@ msgid_plural "Collection %2 has %1 recursive sub-collections:"
 msgstr[0] "La colección %2 tiene %1 subcolección recursiva:"
 msgstr[1] "La colección %2 tiene %1 subcolecciones recursivas:"
 
-#: src/listcommand.cpp:175
+#: src/listcommand.cpp:173
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
@@ -2097,13 +2097,13 @@ msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] "La colección %2 tiene %1 subcolección:"
 msgstr[1] "La colección %2 tiene %1 subcolecciones:"
 
-#: src/listcommand.cpp:278
+#: src/listcommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "La colección %1 no tiene ningún elemento"
 
-#: src/listcommand.cpp:284
+#: src/listcommand.cpp:282
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
@@ -2111,19 +2111,19 @@ msgid_plural "Collection %2 has %1 items:"
 msgstr[0] "La colección %2 tiene %1 elemento:"
 msgstr[1] "La colección %2 tiene %1 elementos:"
 
-#: src/listcommand.cpp:292
+#: src/listcommand.cpp:290
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "Tipo MIME"
 
-#: src/listcommand.cpp:293
+#: src/listcommand.cpp:291
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "Tamaño"
 
-#: src/listcommand.cpp:294
+#: src/listcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"

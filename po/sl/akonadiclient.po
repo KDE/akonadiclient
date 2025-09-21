@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-17 00:41+0000\n"
+"POT-Creation-Date: 2025-09-21 00:42+0000\n"
 "PO-Revision-Date: 2025-02-17 10:31+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -170,7 +170,7 @@ msgstr "Izberi datoteke ali mape za dodajanje v zbirko"
 msgid "files..."
 msgstr "datoteke..."
 
-#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
+#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:64
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
@@ -722,25 +722,25 @@ msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
 msgstr "Neveljaven predmet skladnje '%1'"
 
-#: src/commandfactory.cpp:62
+#: src/commandfactory.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
 msgstr "Dvoumen ukaz '%1', možnosti so '%2'"
 
-#: src/commandfactory.cpp:70 src/commandfactory.cpp:122
+#: src/commandfactory.cpp:69 src/commandfactory.cpp:121
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
 msgstr "Neznan ukaz '%1'"
 
-#: src/commandfactory.cpp:110
+#: src/commandfactory.cpp:109
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
 msgstr "Noben ukaz ni določen  (poskusite '%1 --help')"
 
-#: src/commandfactory.cpp:154
+#: src/commandfactory.cpp:153
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
@@ -1071,7 +1071,7 @@ msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr "Mapa '%1' ni prazna (uporabi -f za vsiljeno opravilo)"
 
-#: src/dumpcommand.cpp:121 src/listcommand.cpp:263
+#: src/dumpcommand.cpp:121 src/listcommand.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -1623,7 +1623,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "Tip"
 
-#: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
+#: src/groupcommand.cpp:402 src/listcommand.cpp:182 src/listcommand.cpp:289
 #: src/tagscommand.cpp:511
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1636,7 +1636,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "E-pošta"
 
-#: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:513
+#: src/groupcommand.cpp:404 src/listcommand.cpp:183 src/tagscommand.cpp:513
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -2038,50 +2038,50 @@ msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: src/listcommand.cpp:37
+#: src/listcommand.cpp:35
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Prikaz podrejenih zbirk in/ali predmetov v določeni zbirki"
 
-#: src/listcommand.cpp:49
+#: src/listcommand.cpp:47
 #, kde-format
 msgid "List more detailed information"
 msgstr "Prikaz podrobnejših informacij"
 
-#: src/listcommand.cpp:52
+#: src/listcommand.cpp:50
 #, kde-format
 msgid "List only sub-collections"
 msgstr "Prikaži le podrejene zbirke"
 
-#: src/listcommand.cpp:55
+#: src/listcommand.cpp:53
 #, kde-format
 msgid "List only contained items"
 msgstr "Prikaži le vsebovane predmete"
 
-#: src/listcommand.cpp:58
+#: src/listcommand.cpp:56
 #, kde-format
 msgid "List sub-collections recursively"
 msgstr "Prikaži rekurzivni seznam podzbirk"
 
-#: src/listcommand.cpp:60
+#: src/listcommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr "Zbirka za prikaz: ID, pot ali Arkonadi URL"
 
-#: src/listcommand.cpp:77
+#: src/listcommand.cpp:75
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
 msgstr "Rekurzivni seznam se lahko uporablja samo za zbirke"
 
-#: src/listcommand.cpp:160
+#: src/listcommand.cpp:158
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "Zbirka %1 nima podrejenih zbirk"
 
-#: src/listcommand.cpp:169
+#: src/listcommand.cpp:167
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
@@ -2091,7 +2091,7 @@ msgstr[1] "Zbirka %2 ima %1 rekurzivno zbirko:"
 msgstr[2] "Zbirka %2 ima %1 rekurzivni zbirki:"
 msgstr[3] "Zbirka %2 ima %1 rekurzivne zbirke:"
 
-#: src/listcommand.cpp:175
+#: src/listcommand.cpp:173
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
@@ -2101,13 +2101,13 @@ msgstr[1] "Zbirka %2 ima %1 podrejeni zbirki:"
 msgstr[2] "Zbirka %2 ima %1 podrejene zbirke:"
 msgstr[3] "Zbirka %2 ima %1 podrejenih zbirk:"
 
-#: src/listcommand.cpp:278
+#: src/listcommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "Zbirka %1 je brez predmetov"
 
-#: src/listcommand.cpp:284
+#: src/listcommand.cpp:282
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
@@ -2117,19 +2117,19 @@ msgstr[1] "Zbirka %2 ima %1 predmeta:"
 msgstr[2] "Zbirka %2 ima %1 predmete:"
 msgstr[3] "Zbirka %2 ima %1 predmetov:"
 
-#: src/listcommand.cpp:292
+#: src/listcommand.cpp:290
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "Tip MIME"
 
-#: src/listcommand.cpp:293
+#: src/listcommand.cpp:291
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "Velikost"
 
-#: src/listcommand.cpp:294
+#: src/listcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"

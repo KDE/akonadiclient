@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-17 00:41+0000\n"
+"POT-Creation-Date: 2025-09-21 00:42+0000\n"
 "PO-Revision-Date: 2025-02-20 20:23+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -167,7 +167,7 @@ msgstr "Kolekcijai pievienojamās datnes vai mapes"
 msgid "files..."
 msgstr "datnes..."
 
-#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
+#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:64
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
@@ -714,25 +714,25 @@ msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
 msgstr "Nederīga vienuma sintakse „%1“"
 
-#: src/commandfactory.cpp:62
+#: src/commandfactory.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
 msgstr "Pārprotama komanda „%1“, iespējas ir „%2“"
 
-#: src/commandfactory.cpp:70 src/commandfactory.cpp:122
+#: src/commandfactory.cpp:69 src/commandfactory.cpp:121
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
 msgstr "Nezināma komanda „%1“"
 
-#: src/commandfactory.cpp:110
+#: src/commandfactory.cpp:109
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
 msgstr "Nav precizēta komanda (mēģiniet „%1 --help“)"
 
-#: src/commandfactory.cpp:154
+#: src/commandfactory.cpp:153
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
@@ -1058,7 +1058,7 @@ msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr "Mape „%1“ nav tukša (izmantojiet „-f“, lai darbību piespiestu)"
 
-#: src/dumpcommand.cpp:121 src/listcommand.cpp:263
+#: src/dumpcommand.cpp:121 src/listcommand.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -1611,7 +1611,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "Tips"
 
-#: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
+#: src/groupcommand.cpp:402 src/listcommand.cpp:182 src/listcommand.cpp:289
 #: src/tagscommand.cpp:511
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1624,7 +1624,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "E-pasts"
 
-#: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:513
+#: src/groupcommand.cpp:404 src/listcommand.cpp:183 src/tagscommand.cpp:513
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -2025,50 +2025,50 @@ msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "Nezināms"
 
-#: src/listcommand.cpp:37
+#: src/listcommand.cpp:35
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Saraksts ar norādītās kolekcijas apakškolekcijām un/vai vienumiem"
 
-#: src/listcommand.cpp:49
+#: src/listcommand.cpp:47
 #, kde-format
 msgid "List more detailed information"
 msgstr "Saraksts ar sīkāku informāciju"
 
-#: src/listcommand.cpp:52
+#: src/listcommand.cpp:50
 #, kde-format
 msgid "List only sub-collections"
 msgstr "Uzskaitīt tikai apakškolekcijas"
 
-#: src/listcommand.cpp:55
+#: src/listcommand.cpp:53
 #, kde-format
 msgid "List only contained items"
 msgstr "Uzskaitīt tikai ietvertos vienumus"
 
-#: src/listcommand.cpp:58
+#: src/listcommand.cpp:56
 #, kde-format
 msgid "List sub-collections recursively"
 msgstr "Uzskaitīt apakškolekcijas rekursīvi"
 
-#: src/listcommand.cpp:60
+#: src/listcommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr "Uzskaitāmās kolekcijas: OD, ceļš vai „Akonadi“ URL"
 
-#: src/listcommand.cpp:77
+#: src/listcommand.cpp:75
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
 msgstr "Rekursīvo sarakstu varat lietot tikai kolekcijām"
 
-#: src/listcommand.cpp:160
+#: src/listcommand.cpp:158
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "Kolekcijai „%1“ nav apakškolekciju"
 
-#: src/listcommand.cpp:169
+#: src/listcommand.cpp:167
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
@@ -2077,7 +2077,7 @@ msgstr[0] "Kolekcijai „%2“ ir %1 rekursīva apakškolekcija:"
 msgstr[1] "Kolekcijai „%2“ ir %1 rekursīvas apakškolekcija:"
 msgstr[2] "Kolekcijai „%2“ ir %1 rekursīvu apakškolekciju:"
 
-#: src/listcommand.cpp:175
+#: src/listcommand.cpp:173
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
@@ -2086,13 +2086,13 @@ msgstr[0] "Kolekcijai „%2“ ir %1 apakškolekcija:"
 msgstr[1] "Kolekcijai „%2“ ir %1 apakškolekcijas:"
 msgstr[2] "Kolekcijai „%2“ ir %1 apakškolekciju:"
 
-#: src/listcommand.cpp:278
+#: src/listcommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "Kolekcijai „%1“ nav apakškolekciju"
 
-#: src/listcommand.cpp:284
+#: src/listcommand.cpp:282
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
@@ -2101,19 +2101,19 @@ msgstr[0] "Kolekcijai „%2“ ir %1 vienums:"
 msgstr[1] "Kolekcijai „%2“ ir %1 vienumi:"
 msgstr[2] "Kolekcijai „%2“ ir %1 vienumu:"
 
-#: src/listcommand.cpp:292
+#: src/listcommand.cpp:290
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "MIME tips"
 
-#: src/listcommand.cpp:293
+#: src/listcommand.cpp:291
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "Izmērs"
 
-#: src/listcommand.cpp:294
+#: src/listcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"

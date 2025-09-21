@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-17 00:41+0000\n"
+"POT-Creation-Date: 2025-09-21 00:42+0000\n"
 "PO-Revision-Date: 2024-12-29 18:08+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -179,7 +179,7 @@ msgstr "संग्रहे योजयितुं सञ्चिकाः 
 msgid "files..."
 msgstr "सञ्चिकाः..."
 
-#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:66
+#: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:64
 #: src/renamecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
@@ -758,25 +758,25 @@ msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
 msgstr "अमान्य मदवाक्यविन्यासः '%1'."
 
-#: src/commandfactory.cpp:62
+#: src/commandfactory.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
 msgstr ""
 
-#: src/commandfactory.cpp:70 src/commandfactory.cpp:122
+#: src/commandfactory.cpp:69 src/commandfactory.cpp:121
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
 msgstr "अज्ञात आदेशः '%1'।"
 
-#: src/commandfactory.cpp:110
+#: src/commandfactory.cpp:109
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
 msgstr "निर्दिष्टः आदेशः नास्ति ('%1 --help' इति प्रयतस्व)"
 
-#: src/commandfactory.cpp:154
+#: src/commandfactory.cpp:153
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
@@ -1096,7 +1096,7 @@ msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr "'%1' निर्देशिका रिक्तं नास्ति (सञ्चालनं बाध्यं कर्तुं '-f' इत्यस्य उपयोगं कुर्वन्तु)"
 
-#: src/dumpcommand.cpp:121 src/listcommand.cpp:263
+#: src/dumpcommand.cpp:121 src/listcommand.cpp:261
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
@@ -1669,7 +1669,7 @@ msgctxt "@info:shell column header"
 msgid "Type"
 msgstr "प्रकारः"
 
-#: src/groupcommand.cpp:402 src/listcommand.cpp:184 src/listcommand.cpp:291
+#: src/groupcommand.cpp:402 src/listcommand.cpp:182 src/listcommand.cpp:289
 #: src/tagscommand.cpp:511
 #, kde-format
 msgctxt "@info:shell column header"
@@ -1682,7 +1682,7 @@ msgctxt "@info:shell column header"
 msgid "Email"
 msgstr "ईमेल"
 
-#: src/groupcommand.cpp:404 src/listcommand.cpp:185 src/tagscommand.cpp:513
+#: src/groupcommand.cpp:404 src/listcommand.cpp:183 src/tagscommand.cpp:513
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Name"
@@ -2083,50 +2083,50 @@ msgctxt "@info:shell entity type"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: src/listcommand.cpp:37
+#: src/listcommand.cpp:35
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "निर्दिष्टसङ्ग्रहे उपसङ्ग्रहान्/अथवा वस्तूनि सूचीबद्धं कुर्वन्तु"
 
-#: src/listcommand.cpp:49
+#: src/listcommand.cpp:47
 #, kde-format
 msgid "List more detailed information"
 msgstr "अधिकविस्तृतसूचनाः सूचीबद्धाः कुर्वन्तु"
 
-#: src/listcommand.cpp:52
+#: src/listcommand.cpp:50
 #, kde-format
 msgid "List only sub-collections"
 msgstr "केवलं उपसङ्ग्रहान् एव सूचीबद्धं कुर्वन्तु"
 
-#: src/listcommand.cpp:55
+#: src/listcommand.cpp:53
 #, kde-format
 msgid "List only contained items"
 msgstr "केवलं समाविष्टानि वस्तूनि सूचीत"
 
-#: src/listcommand.cpp:58
+#: src/listcommand.cpp:56
 #, kde-format
 msgid "List sub-collections recursively"
 msgstr "उपसङ्ग्रहान् पुनरावर्तनीयरूपेण सूचीबद्धं कुर्वन्तु"
 
-#: src/listcommand.cpp:60
+#: src/listcommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
 msgstr "सूचीकृत्य संग्रहः: एकः ID, मार्गः अथवा अकोनाडी URL"
 
-#: src/listcommand.cpp:77
+#: src/listcommand.cpp:75
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
 msgstr "पुनरावर्तनीयसूची केवलं संग्रहाणां कृते एव उपयोक्तुं शक्यते"
 
-#: src/listcommand.cpp:160
+#: src/listcommand.cpp:158
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
 msgstr "%1 सङ्ग्रहे उपसङ्ग्रहाः नास्ति"
 
-#: src/listcommand.cpp:169
+#: src/listcommand.cpp:167
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
@@ -2134,7 +2134,7 @@ msgid_plural "Collection %2 has %1 recursive sub-collections:"
 msgstr[0] "%2 संग्रहे %1 पुनरावर्तनीयः उपसङ्ग्रहः अस्ति:"
 msgstr[1] "%2 संग्रहे %1 पुनरावर्तनीय उपसङ्ग्रहाः सन्ति:"
 
-#: src/listcommand.cpp:175
+#: src/listcommand.cpp:173
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
@@ -2142,13 +2142,13 @@ msgid_plural "Collection %2 has %1 sub-collections:"
 msgstr[0] "%2 संग्रहे %1 उपसङ्ग्रहः अस्ति:"
 msgstr[1] "%2 संग्रहे %1 उपसङ्ग्रहाः सन्ति:"
 
-#: src/listcommand.cpp:278
+#: src/listcommand.cpp:276
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
 msgstr "संग्रह %1 इत्यस्य कोऽपि द्रव्यः नास्ति"
 
-#: src/listcommand.cpp:284
+#: src/listcommand.cpp:282
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
@@ -2156,19 +2156,19 @@ msgid_plural "Collection %2 has %1 items:"
 msgstr[0] "संग्रहे %2 मध्ये %1 द्रव्यम् अस्ति:"
 msgstr[1] "Collection %2 has %1 items:"
 
-#: src/listcommand.cpp:292
+#: src/listcommand.cpp:290
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "MIME type"
 msgstr "MIME प्रकार"
 
-#: src/listcommand.cpp:293
+#: src/listcommand.cpp:291
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Size"
 msgstr "आकृति"
 
-#: src/listcommand.cpp:294
+#: src/listcommand.cpp:292
 #, kde-format
 msgctxt "@info:shell column header"
 msgid "Modification Time"
