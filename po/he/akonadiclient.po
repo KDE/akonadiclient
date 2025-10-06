@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-21 00:42+0000\n"
-"PO-Revision-Date: 2025-09-30 15:09+0300\n"
+"PO-Revision-Date: 2025-10-05 13:28+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Poedit 3.6\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -499,44 +499,44 @@ msgstr "לא צוין שם מאפיין למחיקה"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr ""
+msgstr "לא צוין שם/ערך מאפיין לשינוי"
 
 #: src/attributescommand.cpp:243
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr ""
+msgstr "צוינו יותר מדי ארגומנטים, מ־‚%1’"
 
 #: src/attributescommand.cpp:269
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved attributes from '%1'"
-msgstr ""
+msgstr "לא ניתן לקרוא את המאפיינים השמורים מתוך ‚%1’"
 
 #: src/attributescommand.cpp:270 src/folderscommand.cpp:181
 #: src/tagscommand.cpp:194
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "יש להריץ ‚‎%1 %2 --backup’ תחילה"
 
 #: src/attributescommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr ""
+msgstr "לאוסף %2 כבר יש את המאפיין ‚%1’"
 
 #: src/attributescommand.cpp:310
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 has no attribute '%1'"
-msgstr ""
+msgstr "לאוסף %2 אין את המאפיין ‚%1’"
 
 #: src/attributescommand.cpp:379
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no attributes"
-msgstr ""
+msgstr "לאוסף %1 אין מאפיינים"
 
 #: src/attributescommand.cpp:387
 #, kde-kuit-format
@@ -685,13 +685,13 @@ msgstr[3] ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr ""
+msgstr "לא ניתן להציג אוספים כלל"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection path"
 msgid "%1 (\"/%2\")"
-msgstr ""
+msgstr "%1 („/%2”)"
 
 #: src/collectionresolvejob.cpp:98
 #, kde-format
@@ -709,41 +709,41 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection name"
 msgid "%1 (\"%2\")"
-msgstr ""
+msgstr "%1 („%2”)"
 
 #: src/collectionresolvejob.cpp:167
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
-msgstr ""
+msgstr "תחביר הפריט ‚%1’ שגוי"
 
 #: src/commandfactory.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "הפקודה ‚%1’ אינה חד־משמעית, האפשרויות הן ‚%2’"
 
 #: src/commandfactory.cpp:69 src/commandfactory.cpp:121
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
-msgstr ""
+msgstr "הפקודה ‚%1’ אינה ידועה"
 
 #: src/commandfactory.cpp:109
 #, kde-format
 msgctxt "@info:shell"
 msgid "No command specified (try '%1 --help')"
-msgstr ""
+msgstr "לא צוינה פקודה (כדאי לנסות ‚‎%1 --help’)"
 
 #: src/commandfactory.cpp:153
 #, kde-format
 msgctxt "@info:shell"
 msgid "Available commands are:"
-msgstr ""
+msgstr "הפקודות הזמינות הן:"
 
 #: src/commandshell.cpp:30
 msgid "Enter commands in an interactive shell"
-msgstr ""
+msgstr "אפשר למלא פקודות במעטפת האינטראקטיבית"
 
 #: src/commandshell.cpp:74
 #, kde-format
@@ -788,50 +788,50 @@ msgstr "אין מקורות נוספים לעיבוד"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve destination collection '%1', %2"
-msgstr ""
+msgstr "לא ניתן לפתור את אוסף היעד ‚%1’, %2"
 
 #: src/copycommand.cpp:116
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve source '%1', %2"
-msgstr ""
+msgstr "לא ניתן לפתור את המקור ‚%1’, %2"
 
 #: src/copycommand.cpp:141
 #, kde-format
 msgid "Moving contents of %1 -> %2"
-msgstr ""
+msgstr "התוכן של %1 מועבר אל %2"
 
 #: src/copycommand.cpp:143
 #, kde-format
 msgid "Copying contents of %1 -> %2"
-msgstr ""
+msgstr "התוכן של %1 מועתק על %2"
 
 #: src/copycommand.cpp:159
 #, kde-format
 msgid "Moving collection %1 -> %2"
-msgstr ""
+msgstr "האוסף %1 מועבר אל %2"
 
 #: src/copycommand.cpp:164
 #, kde-format
 msgid "Copying collection %1 -> %2"
-msgstr ""
+msgstr "האוסף %1 מועתק אל %2"
 
 #: src/copycommand.cpp:183
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move from '%1', %2"
-msgstr ""
+msgstr "לא ניתן להעתיק/להעביר מ־‚%1’, %2"
 
 #: src/copycommand.cpp:191
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch subcollections of '%1', %2"
-msgstr ""
+msgstr "לא ניתן למשוך תת־אוספים של ‚%1’, %2"
 
 #: src/copycommand.cpp:199
 #, kde-format
 msgid "No sub-collections to copy/move"
-msgstr ""
+msgstr "אין תת־אוספים להעתקה/העברה"
 
 #: src/copycommand.cpp:205
 #, kde-format
@@ -856,7 +856,7 @@ msgstr[3] ""
 #: src/copycommand.cpp:220
 #, kde-format
 msgid "No more sub-collections to process"
-msgstr ""
+msgstr "אין יותר תת־אוספים לעיבוד"
 
 #: src/copycommand.cpp:253
 #, kde-format
@@ -868,53 +868,53 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch items of '%1', %2"
-msgstr ""
+msgstr "לא ניתן למשוך את הפריטים של ‚%1’, %2"
 
 #: src/copycommand.cpp:278
 #, kde-format
 msgid "No items to process"
-msgstr ""
+msgstr "אין פריטים לעיבוד"
 
 #: src/copycommand.cpp:285
 #, kde-format
 msgctxt "@info:shell"
 msgid "Moving %1 item"
 msgid_plural "Moving %1 items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "פריט מועבר"
+msgstr[1] "שני פריטים מועברים"
+msgstr[2] "%1 פריטים מועברים"
+msgstr[3] "%1 פריטים מועברים"
 
 #: src/copycommand.cpp:290
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 item"
 msgid_plural "Copying %1 items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "פריט מועתק"
+msgstr[1] "שני פריטים מועתקים"
+msgstr[2] "%1 פריטים מועתקים"
+msgstr[3] "%1 פריטים מועתקים"
 
 #: src/copycommand.cpp:306
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move items from '%1', %2"
-msgstr ""
+msgstr "לא ניתן להעתיק/להעביר פריטים מ־‚%1’, %2"
 
 #: src/createcommand.cpp:35
 msgctxt "info:shell"
 msgid "Create a new collection"
-msgstr ""
+msgstr "יצירת אוסף חדש"
 
 #: src/createcommand.cpp:53
 #, kde-format
 msgid "Parent collection to create in"
-msgstr ""
+msgstr "אוסף הורה ליצור תחתיו"
 
 #: src/createcommand.cpp:54
 #, kde-format
 msgid "collection"
-msgstr ""
+msgstr "אוסף"
 
 #: src/createcommand.cpp:57
 #, kde-format
@@ -922,41 +922,41 @@ msgctxt "@info:shell"
 msgid ""
 "The collection to create, either as a path or a name (with a parent "
 "specified)"
-msgstr ""
+msgstr "האוסף ליצירה, או כנתיב או כשם (בציון הורה)"
 
 #: src/createcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (with parent) cannot be a path"
-msgstr ""
+msgstr "ארגומנט אוסף (עם ההורה) לא יכול להיות נתיב"
 
 #: src/createcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (without parent) must be a path"
-msgstr ""
+msgstr "ארגומנט אוסף (ללא ההורה) חייב להיות נתיב"
 
 #: src/createcommand.cpp:102
 #, kde-format
 msgctxt "@info:shell"
 msgid "New collection name not specified"
-msgstr ""
+msgstr "לא צוין שם חדש לאוסף"
 
 #: src/createcommand.cpp:114
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch parent collection '%1', %2"
-msgstr ""
+msgstr "לא ניתן למשוך את אוסף ההורה ‚%1’, %2"
 
 #: src/createcommand.cpp:125
 #, kde-format
 msgid "Creating a maildir folder named '%1' may not work"
-msgstr ""
+msgstr "יצירת תיקיית maildir בשם ‚%1’ עלולה שלא לעבוד"
 
 #: src/createcommand.cpp:144
 #, kde-format
 msgid "Error creating collection '%1' under '%2', %3"
-msgstr ""
+msgstr "שגיאה ביצירת האוסף ‚%1’ תחת ‚%2’, %3"
 
 #: src/createcommand.cpp:156
 #, kde-format
@@ -971,57 +971,57 @@ msgstr ""
 #: src/deletecommand.cpp:39
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
-msgstr ""
+msgstr "מחיקת אוסף או פריט"
 
 #: src/deletecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection or item"
-msgstr ""
+msgstr "האוסף או הפריט"
 
 #: src/deletecommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection/item argument"
-msgstr ""
+msgstr "חסר ארגומנט אוסף/פריט"
 
 #: src/deletecommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot delete the root collection"
-msgstr ""
+msgstr "לא ניתן למחוק את אוסף העל"
 
 #: src/deletecommand.cpp:121
 #, kde-format
 msgid "Collection deleted successfully"
-msgstr ""
+msgstr "האוסף נמחק בהצלחה"
 
 #: src/deletecommand.cpp:129 src/infocommand.cpp:148
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item/collection syntax '%1'"
-msgstr ""
+msgstr "תחביר הפריט/האוסף ‚%1’ שגוי"
 
 #: src/deletecommand.cpp:152 src/infocommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
-msgstr ""
+msgstr "לא ניתן למצוא את ‚%1’ כאוסף או כפריט"
 
 #: src/deletecommand.cpp:164
 #, kde-format
 msgid "Item deleted successfully"
-msgstr ""
+msgstr "הפריט נמחק בהצלחה"
 
 #: src/dumpcommand.cpp:46
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
-msgstr ""
+msgstr "היטל של אוסף למבנה תיקיות"
 
 #: src/dumpcommand.cpp:58
 #, kde-format
 msgid "Dump email messages in maildir directory structure"
-msgstr ""
+msgstr "היטל הודעות דוא״ל במבנה תיקיות maildir"
 
 #: src/dumpcommand.cpp:61
 #, kde-format
@@ -1037,25 +1037,25 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to dump: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "האוסף להטלה: מזהה, נתיב או כתובת Akonadi"
 
 #: src/dumpcommand.cpp:68
 #, kde-format
 msgctxt "@info:shell"
 msgid "The destination directory to dump to"
-msgstr ""
+msgstr "תיקיית היעד להטיל אליה"
 
 #: src/dumpcommand.cpp:76
 #, kde-format
 msgctxt "@info:shell"
 msgid "No destination directory specified"
-msgstr ""
+msgstr "לא צוינה תיקיית יעד"
 
 #: src/dumpcommand.cpp:91
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' not found or not a directory"
-msgstr ""
+msgstr "התיקייה ‚%1’ לא נמצאה או שאינה תיקייה"
 
 #: src/dumpcommand.cpp:97
 #, kde-format
@@ -1217,7 +1217,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
-msgstr ""
+msgstr "יש לציין אחת מבין האפשרויות ‚backup’,‏ ‚check’ או ‚restore’"
 
 #: src/folderscommand.cpp:180
 #, kde-format
@@ -1241,7 +1241,7 @@ msgstr "אף מזהי תיקיות לא השתנו"
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "%1 מזהי תיקיות השתנו"
 
 #: src/folderscommand.cpp:321
 #, kde-format
@@ -1265,7 +1265,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "שמות של %1 קבוצות השתנו"
 
 #: src/folderscommand.cpp:498
 #, kde-format
@@ -1284,20 +1284,20 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "%1 ערכי הגדרות השתנו"
 
 #: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "לא נחוצים שינויים בהגדרות"
 
 #: src/folderscommand.cpp:542
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
-msgstr ""
+msgstr "נחוצים שינויים בהגדרות (שינוי שמות של %1 קבוצות ו־%2 שינויי הגדרות)"
 
 #: src/folderscommand.cpp:544
 #, kde-kuit-format
@@ -1312,7 +1312,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr ""
+msgstr "נתיבי התיקיות נשמרים אל ‚%1’"
 
 #: src/folderscommand.cpp:565
 #, kde-format
@@ -1336,13 +1336,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr ""
+msgstr "לתיקייה „%1” היה את המזהה %2 אך אינה קיימת עוד"
 
 #: src/folderscommand.cpp:604
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr ""
+msgstr "התיקייה „%1” החליפה מזהה מ־%2 ל־%3"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
@@ -1354,26 +1354,26 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr ""
+msgstr "רשימת התיקיות השמורה ‚%1’ לא קיימת"
 
 #: src/folderscommand.cpp:689
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr ""
+msgstr "רשימת התיקיות הנוכחית ‚%1’ אינה קיימת"
 
 #: src/folderscommand.cpp:693
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
-msgstr ""
+msgstr "רשימת התיקיות הנוכחית ‚%1’ ישנה מרשימת התיקיות השמורה ‚%2’"
 
 #: src/folderscommand.cpp:707
 #, kde-format
 msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
-msgstr ""
+msgstr "קובץ ההגדרות החדש ‚%1’ לא קיים או שהוא ישן מרשימת התיקיות ‚%2’"
 
 #: src/folderscommand.cpp:718
 #, kde-format
@@ -1509,7 +1509,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Missing group argument"
-msgstr ""
+msgstr "חסר ארגומנט קבוצה"
 
 #: src/groupcommand.cpp:104
 #, kde-format
@@ -1522,7 +1522,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to add"
-msgstr ""
+msgstr "לא צוינו פריטים להוספה"
 
 #: src/groupcommand.cpp:124
 #, kde-format
@@ -1534,13 +1534,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "No items specified to delete"
-msgstr ""
+msgstr "לא צוינו פריטים למחיקה"
 
 #: src/groupcommand.cpp:147
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'comment' option is only allowed with 'add'"
-msgstr ""
+msgstr "האפשרות ‚comment’ מותרת רק עם ‚add’"
 
 #: src/groupcommand.cpp:197
 #, kde-format
@@ -1641,13 +1641,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot search for email '%1', %2"
-msgstr ""
+msgstr "לא ניתן לחפש אחר הדוא״ל ‚%1’, %2"
 
 #: src/groupcommand.cpp:523
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple contacts found for '%1', using the first one"
-msgstr ""
+msgstr "נמצאו מספר אנשי קשר עבור ‚%1’, נעשה שימוש בראשון מביניהם"
 
 #: src/groupcommand.cpp:558
 #, kde-format
@@ -1675,13 +1675,13 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Removing from group %1 \"%2\":"
-msgstr ""
+msgstr "מתבצעת הסרה מהקבוצה %1 „%2”:"
 
 #: src/groupcommand.cpp:638
 #, kde-format
 msgctxt "@info:shell"
 msgid "Nothing to remove for email '%1'"
-msgstr ""
+msgstr "אין מה להסיר לדוא״ל ‚%1’"
 
 #: src/groupcommand.cpp:682
 #, kde-format
@@ -1689,7 +1689,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Cleaning references from group %1 \"%2\":"
-msgstr ""
+msgstr "ההפניות נמחקות מהקבוצה %1 „%2”:"
 
 #: src/importcommand.cpp:39
 msgctxt "info:shell"
@@ -1700,85 +1700,85 @@ msgstr "ייבוא קובץ XML"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The parent collection under which to import the file"
-msgstr ""
+msgstr "אוסף ההורה שתחתיו לייבא את הקובץ"
 
 #: src/importcommand.cpp:57
 #, kde-format
 msgctxt "@info:shell"
 msgid "The file to import"
-msgstr ""
+msgstr "הקובץ לייבוא"
 
 #: src/importcommand.cpp:63
 #, kde-format
 msgctxt "@info:shell"
 msgid "No parent collection specified"
-msgstr ""
+msgstr "לא צוין אוסף הורה"
 
 #: src/importcommand.cpp:65
 #, kde-format
 msgctxt "@info:shell"
 msgid "No import file specified"
-msgstr ""
+msgstr "לא צוין קובץ ייבוא"
 
 #: src/importcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid XML file, %1"
-msgstr ""
+msgstr "קובץ XML שגוי, %1"
 
 #: src/importcommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch parent collection, %1"
-msgstr ""
+msgstr "לא ניתן למשוך את אוסף ההורה, %1"
 
 #: src/importcommand.cpp:103
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch children of parent collection, %1"
-msgstr ""
+msgstr "לא ניתן למשוך את הצאצאים של אוסף ההורה, %1"
 
 #: src/importcommand.cpp:122
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection '%1' already exists"
-msgstr ""
+msgstr "האוסף ‚%1’ כבר קיים"
 
 #: src/importcommand.cpp:126
 #, kde-format
 msgctxt "@info:shell"
 msgid "Creating collection '%1'"
-msgstr ""
+msgstr "האוסף ‚%1’ נוצר"
 
 #: src/importcommand.cpp:148
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing collection '%1'"
-msgstr ""
+msgstr "האוסף ‚%1’ עובד עיבוד"
 
 #: src/importcommand.cpp:155
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parent for collection with remote ID '%1'"
-msgstr ""
+msgstr "משתנה שגוי לאוסף עם המזהה המרוחק ‚%1’"
 
 #: src/importcommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
-msgstr ""
+msgstr "לא ניתן למצוא אוסף עם המזהה המרוחק ‚%1’, %2"
 
 #: src/importcommand.cpp:194
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
-msgstr ""
+msgstr "לא ניתן ליצור אוסף עם המזהה המרוחק ‚%1’"
 
 #: src/importcommand.cpp:212
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing items for '%1'"
-msgstr ""
+msgstr "מתבצע עיבוד של פריטים עבור ‚%1’"
 
 #: src/importcommand.cpp:234
 #, kde-format
@@ -2021,7 +2021,7 @@ msgstr "לא ידוע"
 #: src/listcommand.cpp:35
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
-msgstr ""
+msgstr "הצגת תת־אוספית ו/או פריטים באוסף מסוים"
 
 #: src/listcommand.cpp:47
 #, kde-format
@@ -2031,29 +2031,29 @@ msgstr "להציג מידע מפורט יותר"
 #: src/listcommand.cpp:50
 #, kde-format
 msgid "List only sub-collections"
-msgstr ""
+msgstr "הצגת תת־אוספים בלבד"
 
 #: src/listcommand.cpp:53
 #, kde-format
 msgid "List only contained items"
-msgstr ""
+msgstr "הצגת הפריטים המוכלים בלבד"
 
 #: src/listcommand.cpp:56
 #, kde-format
 msgid "List sub-collections recursively"
-msgstr ""
+msgstr "הצגת תת־האוספים בנסיגה"
 
 #: src/listcommand.cpp:58
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "האוסף להצגה: מזהה, נתיב או כתובת Akonadi"
 
 #: src/listcommand.cpp:75
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "אפשר להשתמש ברשימות נסוגות רק לאוספים"
 
 #: src/listcommand.cpp:158
 #, kde-format
@@ -2085,17 +2085,17 @@ msgstr[3] ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
-msgstr ""
+msgstr "לאוסף %1 אין פריטים"
 
 #: src/listcommand.cpp:282
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לאוסף %1 יש פריט:"
+msgstr[1] "לאוסף %2 יש שני פריטים:"
+msgstr[2] "לאוסף %2 יש %1 פריטים:"
+msgstr[3] "לאוסף %2 יש %1 פריטים:"
 
 #: src/listcommand.cpp:290
 #, kde-format
@@ -2192,19 +2192,19 @@ msgstr ""
 #: src/movecommand.cpp:27
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
-msgstr ""
+msgstr "העברת אוספים או פריטים לאוסף חדש"
 
 #: src/movecommand.cpp:40
 #, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to move"
-msgstr ""
+msgstr "אוסף או פריטים קיימים להעברה"
 
 #: src/movecommand.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to move into"
-msgstr ""
+msgstr "אוסף היעד להעברה אליו"
 
 #: src/renamecommand.cpp:33
 msgctxt "info:shell"
@@ -2328,12 +2328,12 @@ msgstr "מזהה"
 #: src/tagscommand.cpp:76
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
-msgstr ""
+msgstr "לשמר את תגיות הביניים שנוסף כשנעשה שימוש באפשרות ‚id’ (מזהה)"
 
 #: src/tagscommand.cpp:77
 #, kde-format
 msgid "TAG"
-msgstr ""
+msgstr "תגית"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2343,7 +2343,7 @@ msgstr "שם התגית להוספה, או השם, המזהה או כתובת ה
 #: src/tagscommand.cpp:77
 #, kde-format
 msgid "[TAG...]"
-msgstr ""
+msgstr "[תגית…]"
 
 #: src/tagscommand.cpp:89
 #, kde-format
@@ -2355,7 +2355,7 @@ msgstr "ערך שגוי לאפשרות ‚id’"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr ""
+msgstr "אי אפשר לציין את שתי האפשרויות ‚brief’ ו־‚urls’ יחד"
 
 #: src/tagscommand.cpp:116
 #, kde-format
@@ -2387,7 +2387,7 @@ msgstr "לא צוינו תגיות למחיקה"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr ""
+msgstr "באפשרות ‚retain’ אפשר להשתמש רק עם ‚add’ או ‚restore’"
 
 #: src/tagscommand.cpp:161
 #, kde-format
