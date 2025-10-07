@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-21 00:42+0000\n"
-"PO-Revision-Date: 2025-10-05 13:28+0300\n"
+"PO-Revision-Date: 2025-10-06 10:35+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -589,25 +589,25 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
-msgstr ""
+msgstr "מאפייני האוסף הנוכחי נבדקים"
 
 #: src/attributescommand.cpp:531
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder '%1' had attributes but is no longer present"
-msgstr ""
+msgstr "לתיקייה ‚%1’ היו מאפיינים אבל היא לא קיימת עוד"
 
 #: src/attributescommand.cpp:554
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
-msgstr ""
+msgstr "לא ניתן למשוך את האוסף %1 „%2”"
 
 #: src/attributescommand.cpp:562
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection \"%2\" changed ID from %1 to %3"
-msgstr ""
+msgstr "האוסף „%2” החליף מהמזהה %1 למזהה %3"
 
 #: src/attributescommand.cpp:635
 #, kde-kuit-format
@@ -1497,13 +1497,13 @@ msgstr "שם"
 #: src/groupcommand.cpp:74
 #, kde-format
 msgid "Brief output (for 'expand', email addresses only)"
-msgstr ""
+msgstr "פלט מקוצר (ל־‚expand’, כתובות דוא״ל בלבד)"
 
 #: src/groupcommand.cpp:77
 #, kde-format
 msgctxt "@info:shell"
 msgid "The contact group item, an ID or Akonadi URL"
-msgstr ""
+msgstr "פריט קבוצת אנשי הקשר, מזהה או כתובת Akonadi"
 
 #: src/groupcommand.cpp:84
 #, kde-format
@@ -1516,7 +1516,7 @@ msgstr "חסר ארגומנט קבוצה"
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'expand', 'add', 'delete' or 'clean' options may be specified"
-msgstr ""
+msgstr "אפשר לציין רק אחת מבין האפשרויות ‚expand’,‏ ‚add’,‏ ‚delete’ או ‚clean’"
 
 #: src/groupcommand.cpp:115
 #, kde-format
@@ -1528,7 +1528,7 @@ msgstr "לא צוינו פריטים להוספה"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one item may be specified to add with 'comment'"
-msgstr ""
+msgstr "אפשר לציין רק פריט אחד להוספה עם ‚comment’"
 
 #: src/groupcommand.cpp:133
 #, kde-format
@@ -1596,7 +1596,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" has %2 groups, %3 references and %4 data items:"
-msgstr ""
+msgstr "בקבוצה %1 „%5” יש %2 קבוצות, %3 הפניות ו־%4 פריטי נתונים:"
 
 #: src/groupcommand.cpp:401
 #, kde-format
@@ -1635,7 +1635,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Adding to group %1 \"%2\":"
-msgstr ""
+msgstr "נוספים לקבוצה %1 „%2”:"
 
 #: src/groupcommand.cpp:512 src/groupcommand.cpp:624
 #, kde-format
@@ -1667,7 +1667,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" now has %2 groups, %3 references and %4 data items"
-msgstr ""
+msgstr "בקבוצה %1 „%5” יש כעת %2 קבוצות, %3 הפניות ו־%4 פריטי נתונים"
 
 #: src/groupcommand.cpp:601
 #, kde-format
@@ -1818,7 +1818,7 @@ msgstr "אין אוספים לפריטים שצוינו"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
-msgstr ""
+msgstr "אין פרטים זמינים לראש האוסף"
 
 #: src/infocommand.cpp:220 src/infocommand.cpp:267
 #, kde-format
