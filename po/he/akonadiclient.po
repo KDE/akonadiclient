@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-21 00:42+0000\n"
-"PO-Revision-Date: 2025-10-06 10:35+0300\n"
+"PO-Revision-Date: 2025-10-07 09:16+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -645,7 +645,7 @@ msgstr[3] ""
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes need to be restored"
-msgstr ""
+msgstr "לא צריך לשחזר אף מאפיינים של אוסף"
 
 #: src/attributescommand.cpp:700
 #, kde-kuit-format
@@ -703,7 +703,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell 1=collection ID"
 msgid "%1 (root)"
-msgstr ""
+msgstr "%1 (משתמש על/root)"
 
 #: src/collectionresolvejob.cpp:143
 #, kde-format
@@ -961,12 +961,12 @@ msgstr "שגיאה ביצירת האוסף ‚%1’ תחת ‚%2’, %3"
 #: src/createcommand.cpp:156
 #, kde-format
 msgid "Error getting path of new collection, %1"
-msgstr ""
+msgstr "שגיאה במשיכת נתיב האוסף החדש, %1"
 
 #: src/createcommand.cpp:161
 #, kde-format
 msgid "Created new collection '%1'"
-msgstr ""
+msgstr "נוצר אוסף חדש ‚%1’"
 
 #: src/deletecommand.cpp:39
 msgctxt "info:shell"
@@ -1026,12 +1026,12 @@ msgstr "היטל הודעות דוא״ל במבנה תיקיות maildir"
 #: src/dumpcommand.cpp:61
 #, kde-format
 msgid "Dump items with Akonadi category URLs, otherwise text names"
-msgstr ""
+msgstr "להטיל פריטים עם כתובות קטגוריות של Akonadi, אחרת שמות טקסט"
 
 #: src/dumpcommand.cpp:64
 #, kde-format
 msgid "Operate even if destination directory is not empty"
-msgstr ""
+msgstr "לבצע את הפעולה גם אם תיקיית היעד אינה ריקה"
 
 #: src/dumpcommand.cpp:67
 #, kde-format
@@ -1211,7 +1211,7 @@ msgstr "לשחזר את קובצי ההגדרות עם הקצאות מזהי ת�
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
-msgstr ""
+msgstr "אפשר לציין רק אחת מבין האפשרויות ‚backup’,‏ ‚check’ או ‚restore’"
 
 #: src/folderscommand.cpp:145
 #, kde-format
@@ -1253,7 +1253,7 @@ msgstr "קובץ ההגדרות ‚%1’ עובר עיבוד…"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
-msgstr ""
+msgstr "לא ניתן לשנות את שם הקבוצה „%1” לתיקייה „%2” שאינה קיימת עוד"
 
 #: src/folderscommand.cpp:399
 #, kde-format
@@ -1307,6 +1307,9 @@ msgid ""
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
+"יש לצאת מכל היישומים לניהול פרטים אישיים ולעצור את שרת Akonadi, <nl/>לאחר "
+"מכן, להריץ את הפקודה:<nl/><bcode>‎  %1 %2 --restore</bcode><nl/>כדי להטמיע את "
+"השינויים."
 
 #: src/folderscommand.cpp:558
 #, kde-format
