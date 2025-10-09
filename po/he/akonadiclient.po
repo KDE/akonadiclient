@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-21 00:42+0000\n"
-"PO-Revision-Date: 2025-10-07 09:16+0300\n"
+"PO-Revision-Date: 2025-10-08 13:33+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1327,7 +1327,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr ""
+msgstr "נתיבי התיקיות השמורים נקראים מתוך ‚%1’"
 
 #: src/folderscommand.cpp:581
 #, kde-format
