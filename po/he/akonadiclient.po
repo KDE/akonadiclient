@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-21 00:42+0000\n"
-"PO-Revision-Date: 2025-10-08 13:33+0300\n"
+"PO-Revision-Date: 2025-10-13 09:04+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -462,19 +462,19 @@ msgstr "ארגומנטים…"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr ""
+msgstr "אמורה להיות מחרוזת בקידוד הקסדצימלי, אבל האורך %1 אינו זוגי"
 
 #: src/attributescommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr ""
+msgstr "הערך בקידוד ההקסדצימלי הכיל תווים שגויים"
 
 #: src/attributescommand.cpp:206
 #, kde-format
 msgctxt "@info:shell"
 msgid "Only one operation mode option may be specified"
-msgstr ""
+msgstr "אפשר לציין רק אפשרות מצב אחת"
 
 #: src/attributescommand.cpp:211 src/dumpcommand.cpp:74
 #: src/exportcommand.cpp:50
@@ -2069,20 +2069,20 @@ msgstr "לאוסף %1 אין תת־אוספים"
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לאוסף %2 יש תת־אוסף נסוג:"
+msgstr[1] "לאוסף %2 יש שני תת־אוספים נסוגים:"
+msgstr[2] "לאוסף %2 יש %1 תת־אוספים נסוגים:"
+msgstr[3] "לאוסף %2 יש %1 תת־אוספים נסוגים:"
 
 #: src/listcommand.cpp:173
 #, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לאוסף %2 יש תת־אוסף:"
+msgstr[1] "לאוסף %2 יש שני תת־אוספים:"
+msgstr[2] "לאוסף %2 יש %1 תת־אוספים:"
+msgstr[3] "לאוסף %2 יש %1 תת־אוספים:"
 
 #: src/listcommand.cpp:276
 #, kde-format
@@ -2191,6 +2191,8 @@ msgid ""
 "See '%1 help' for available commands.\n"
 "See '%1 help command' for information on a specific command."
 msgstr ""
+"הפקודות הזמינות מופיעות בהרצת ‚‎%1 help’.\n"
+"הרצת ‚%1 help command’ תציג פרטים על פקודה (להחליף את command בשם הפקודה)."
 
 #: src/movecommand.cpp:27
 msgctxt "info:shell"
