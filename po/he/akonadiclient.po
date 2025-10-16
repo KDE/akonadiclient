@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-21 00:42+0000\n"
-"PO-Revision-Date: 2025-10-13 09:04+0300\n"
+"PO-Revision-Date: 2025-10-15 20:50+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -221,7 +221,7 @@ msgstr "התיקייה ‚%1’ לא קיימת עוד"
 #: src/addcommand.cpp:229
 #, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
-msgstr ""
+msgstr "האוסף „%3” בהורה %1 „%2” מתקבל"
 
 #: src/addcommand.cpp:241
 #, kde-format
@@ -260,7 +260,7 @@ msgstr "לא ניתן לאתר את אוסף ההורה של הקובץ ‚%1’
 #: src/addcommand.cpp:293
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
-msgstr ""
+msgstr "נוצר פריט באוסף %1 „%2” מתוך ‚%3’ בגודל %4"
 
 #: src/addcommand.cpp:315
 #, kde-format
@@ -276,7 +276,7 @@ msgstr "תיקיית העל היא %1 „%2”"
 #: src/addcommand.cpp:373
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
-msgstr ""
+msgstr "שגיאה במשיכת האוסף %1 „%2”, %3"
 
 #: src/addcommand.cpp:386
 #, kde-format
@@ -312,7 +312,7 @@ msgstr "הצגת כל הסוכנים"
 #: src/agentscommand.cpp:54
 #, kde-format
 msgid "Set state \"online\" or \"offline\" for specified agents"
-msgstr ""
+msgstr "הגדרת המצב ל־„online” או ל־„offline” לסוכנים מסוימים"
 
 #: src/agentscommand.cpp:55
 #, kde-format
@@ -323,12 +323,12 @@ msgstr "מצב"
 #: src/agentscommand.cpp:58
 #, kde-format
 msgid "Get state for the specified agent"
-msgstr ""
+msgstr "קבלת מצב מהסוכן שצוין"
 
 #: src/agentscommand.cpp:61
 #, kde-format
 msgid "Show information about the specified agent"
-msgstr ""
+msgstr "הצגת פרטים על סוכן מסוים"
 
 #: src/agentscommand.cpp:64
 #, kde-format
@@ -424,7 +424,7 @@ msgstr "מחיקת מאפיין קיים"
 #: src/attributescommand.cpp:105
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
-msgstr ""
+msgstr "הצגת או פענוח ערך המאפיין בקידוד הקסדצימלי"
 
 #: src/attributescommand.cpp:108
 #, kde-format
@@ -543,10 +543,10 @@ msgstr "לאוסף %1 אין מאפיינים"
 msgctxt "@info:shell"
 msgid "Collection %2 has %1 attribute:"
 msgid_plural "Collection %2 has %1 attributes:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לאוסף %2 יש מאפיין:"
+msgstr[1] "לאוסף %2 יש שני מאפיינים:"
+msgstr[2] "לאוסף %2 יש %1 מאפיינים:"
+msgstr[3] "לאוסף %2 יש %1 מאפיינים:"
 
 #: src/attributescommand.cpp:403 src/folderscommand.cpp:197
 #, kde-format
@@ -565,25 +565,25 @@ msgstr "לא ניתן לשמור את רשימת הגיבוי ל־‚%1’"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saving collection attributes to '%1'"
-msgstr ""
+msgstr "המאפיינים של האוסף נשמרים אל ‚%1’"
 
 #: src/attributescommand.cpp:456
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saved attributes for %1 collections"
-msgstr ""
+msgstr "נשמרו המאפיינים של %1 אוספים"
 
 #: src/attributescommand.cpp:462
 #, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved attributes from '%1'"
-msgstr ""
+msgstr "המאפיינים השמורים נקראים מתוך ‚%1’"
 
 #: src/attributescommand.cpp:483
 #, kde-format
 msgctxt "@info:shell"
 msgid "Read attributes for %1 collections"
-msgstr ""
+msgstr "קריאת מאפיינים עבור %1 אוספים"
 
 #: src/attributescommand.cpp:507
 #, kde-kuit-format
@@ -613,7 +613,7 @@ msgstr "האוסף „%2” החליף מהמזהה %1 למזהה %3"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
-msgstr ""
+msgstr "המאפיין „%2” של התיקייה „%1” השתנה מ־%3 ל־%4"
 
 #: src/attributescommand.cpp:644
 #, kde-kuit-format
@@ -651,17 +651,17 @@ msgstr "לא צריך לשחזר אף מאפיינים של אוסף"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes needed to be restored"
-msgstr ""
+msgstr "לא צריך לשחזר אף מאפיינים של אוסף"
 
 #: src/attributescommand.cpp:705
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes need to be restored for %1 collection"
 msgid_plural "Attributes need to be restored for %1 collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "מאפיינים שיש לשחזר לאוסף"
+msgstr[1] "מאפיינים שיש לשחזר לשני אוספים"
+msgstr[2] "מאפיינים שיש לשחזר ל־%1 אוספים"
+msgstr[3] "מאפיינים שיש לשחזר ל־%1 אוספים"
 
 #: src/attributescommand.cpp:711
 #, kde-kuit-format
@@ -670,16 +670,18 @@ msgid ""
 "Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
 "restore</bcode><nl/>to implement the changes."
 msgstr ""
+"יש להחיל שינויי מאפיינים, נא להריץ את הפקודה:<nl/><bcode>‎  %1 %2 --restore</"
+"bcode><nl/>כדי לבצע זאת."
 
 #: src/attributescommand.cpp:721
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes were restored for %1 collection"
 msgid_plural "Attributes were restored for %1 collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "מאפיינים שוחזרו לאוסף"
+msgstr[1] "מאפיינים שוחזרו לשני אוספים"
+msgstr[2] "מאפיינים שוחזרו ל־%1 אוספים"
+msgstr[3] "מאפיינים שוחזרו ל־%1 אוספים"
 
 #: src/collectionlistcommand.cpp:45
 #, kde-format
@@ -697,7 +699,7 @@ msgstr "%1 („/%2”)"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown Akonadi collection format '%1'"
-msgstr ""
+msgstr "תסדיר אוסף Akonadi‏ ‚%1’ לא ידוע"
 
 #: src/collectionresolvejob.cpp:141
 #, kde-format
@@ -838,20 +840,20 @@ msgstr "אין תת־אוספים להעתקה/העברה"
 msgctxt "@info:shell"
 msgid "Moving %1 sub-collection"
 msgid_plural "Moving %1 sub-collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "תת־אוסף מועבר"
+msgstr[1] "שני תת־אוספים מועברים"
+msgstr[2] "%1 תת־אוספים מועברים"
+msgstr[3] "%1 תת־אוספים מועברים"
 
 #: src/copycommand.cpp:207
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying %1 sub-collection"
 msgid_plural "Copying %1 sub-collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "תת־אוסף מועתק"
+msgstr[1] "שני תת־אוספים מועתקים"
+msgstr[2] "%1 תת־אוספים מועתקים"
+msgstr[3] "%1 תת־אוספים מועתקים"
 
 #: src/copycommand.cpp:220
 #, kde-format
@@ -862,7 +864,7 @@ msgstr "אין יותר תת־אוספים לעיבוד"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
-msgstr ""
+msgstr "לא ניתן להעתיק/להעביר את תת־האוסף ‚%2’ מתוך ‚%1’, %3"
 
 #: src/copycommand.cpp:270
 #, kde-format
@@ -1259,7 +1261,7 @@ msgstr "לא ניתן לשנות את שם הקבוצה „%1” לתיקייה 
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "שם הקבוצה „%1” לתיקייה „%2” השתנה לשם „%3”"
 
 #: src/folderscommand.cpp:413
 #, kde-format
@@ -1272,13 +1274,13 @@ msgstr "שמות של %1 קבוצות השתנו"
 msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
-msgstr ""
+msgstr "לא ניתן לעדכן „%1” בקבוצה „%2” לתיקייה „%3” שלא קיימת עוד"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "„%1” עודכן בקבוצה „%2” לתיקייה „%3” אל %4"
 
 #: src/folderscommand.cpp:530
 #, kde-format
@@ -1321,7 +1323,7 @@ msgstr "נתיבי התיקיות נשמרים אל ‚%1’"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr ""
+msgstr "נשמרו %1 נתיבי תיקיות אוספים"
 
 #: src/folderscommand.cpp:570
 #, kde-format
