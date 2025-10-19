@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-21 00:42+0000\n"
-"PO-Revision-Date: 2025-10-15 20:50+0300\n"
+"PO-Revision-Date: 2025-10-18 20:49+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Poedit 3.6\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -619,27 +619,27 @@ msgstr "המאפיין „%2” של התיקייה „%1” השתנה מ־%3 �
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" attribute \"%2\" added %3"
-msgstr ""
+msgstr "לתיקייה „%1” למאפיין „%2” נוסף %3"
 
 #: src/attributescommand.cpp:667
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" needs update of %1 attribute"
 msgid_plural "Folder \"%2\" needs update of %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "התיקייה „%2” צריכה עדכון של מאפיין"
+msgstr[1] "התיקייה „%2” צריכה עדכון של שני מאפיינים"
+msgstr[2] "התיקייה „%2” צריכה עדכון של %1 מאפיינים"
+msgstr[3] "התיקייה „%2” צריכה עדכון של %1 מאפיינים"
 
 #: src/attributescommand.cpp:673
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" updating %1 attribute"
 msgid_plural "Folder \"%2\" updating %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "התיקייה „%2” מעדכנת מאפיין אחד"
+msgstr[1] "התיקייה „%2” מעדכנת שני מאפיינים"
+msgstr[2] "התיקייה „%2” מעדכנת %1 מאפיינים"
+msgstr[3] "התיקייה „%2” מעדכנת %1 מאפיינים"
 
 #: src/attributescommand.cpp:698
 #, kde-kuit-format
@@ -1335,7 +1335,7 @@ msgstr "נתיבי התיקיות השמורים נקראים מתוך ‚%1’"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr ""
+msgstr "קריאת %1 נתיבי אוספים שמורים"
 
 #: src/folderscommand.cpp:601
 #, kde-format
@@ -1353,7 +1353,7 @@ msgstr "התיקייה „%1” החליפה מזהה מ־%2 ל־%3"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
-msgstr ""
+msgstr "הוגדרו %1 תבניות נתוני שינוי ל־%2 שמות קובצי הגדרות"
 
 #: src/folderscommand.cpp:685
 #, kde-kuit-format
@@ -1889,55 +1889,55 @@ msgstr "נתיב"
 #, kde-format
 msgctxt "@info:shell"
 msgid "ReadOnly"
-msgstr ""
+msgstr "קריאה_בלבד"
 
 #: src/infocommand.cpp:236
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
-msgstr ""
+msgstr "שינוי_פריטים"
 
 #: src/infocommand.cpp:239
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
-msgstr ""
+msgstr "יצירת_פריטים"
 
 #: src/infocommand.cpp:242
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
-msgstr ""
+msgstr "מחיקת_פריטים"
 
 #: src/infocommand.cpp:245
 #, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
-msgstr ""
+msgstr "שינוי_אוספים"
 
 #: src/infocommand.cpp:248
 #, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
-msgstr ""
+msgstr "יצירת_אוספים"
 
 #: src/infocommand.cpp:251
 #, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
-msgstr ""
+msgstr "מחיקת_אוספים"
 
 #: src/infocommand.cpp:254
 #, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
-msgstr ""
+msgstr "קישור_פריטים"
 
 #: src/infocommand.cpp:257
 #, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
-msgstr ""
+msgstr "ניתוק_פריטים"
 
 #: src/infocommand.cpp:259
 #, kde-format
@@ -2371,6 +2371,8 @@ msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
 msgstr ""
+"אפשר לציין רק אחת מבין האפשרויות ‚list’,‏ ‚add’,‏ ‚delete’‏, או "
+"‚backup‚/’restore’."
 
 #: src/tagscommand.cpp:131
 #, kde-format
