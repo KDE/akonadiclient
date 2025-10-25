@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-21 00:42+0000\n"
-"PO-Revision-Date: 2025-02-24 20:24+0100\n"
+"PO-Revision-Date: 2025-10-24 22:18+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -76,7 +76,7 @@ msgstr "Не може да се посочи нито елемент нито к
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid collection/item argument '%1', %2"
-msgstr "Невалиден аргумент на колекция/елемент \"%1\" ,\"%2\"."
+msgstr "Невалиден аргумент на колекция/елемент „%1“  ,\"%2\"."
 
 #: src/abstractcommand.cpp:179
 #, kde-format
@@ -182,23 +182,23 @@ msgstr "Няма аргументи за файл или директория"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid MIME type argument '%1'"
-msgstr "Невалиден аргумент за MIME тип \"%1\""
+msgstr "Невалиден аргумент за MIME тип „%1“ "
 
 #: src/addcommand.cpp:104
 #, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
-msgstr "Базовата директория \"%1\" не е намерена"
+msgstr "Базовата директория „%1“  не е намерена"
 
 #: src/addcommand.cpp:125
 #, kde-format
 msgid "File '%1' does not exist"
-msgstr "Файл \"%1\" не съществува"
+msgstr "Файл „%1“  не съществува"
 
 #: src/addcommand.cpp:128
 #, kde-format
 msgid "Error accessing file '%1'"
-msgstr "Грешка при достъпа до файл \"%1\""
+msgstr "Грешка при достъпа до файл „%1“ "
 
 #: src/addcommand.cpp:156
 #, kde-format
@@ -214,17 +214,17 @@ msgstr "Няма повече директории за обработка"
 #: src/addcommand.cpp:190 src/addcommand.cpp:212
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
-msgstr "Директория \"%1\" вече не съществува"
+msgstr "Директория „%1“  вече не съществува"
 
 #: src/addcommand.cpp:229
 #, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
-msgstr "Извличане на колекция \"%3\" в съдържаща папка %1 \"%2\""
+msgstr "Извличане на колекция \"%3\" в съдържаща папка %1 „%2“"
 
 #: src/addcommand.cpp:241
 #, kde-format
 msgid "Need to create collection for '%1'"
-msgstr "Трябва да се създаде колекция за \"%1\""
+msgstr "Трябва да се създаде колекция за „%1“ "
 
 #: src/addcommand.cpp:253
 #, kde-format
@@ -235,30 +235,30 @@ msgstr "Няма повече файлове за обработка"
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ does not exist"
-msgstr "Файл \"%1\" не съществува"
+msgstr "Файл „%1“  не съществува"
 
 #: src/addcommand.cpp:270 src/updatecommand.cpp:94
 #, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ cannot be read"
-msgstr "Файлът \"%1\" не може да бъде прочетен"
+msgstr "Файлът „%1“  не може да бъде прочетен"
 
 #: src/addcommand.cpp:278
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine MIME type of file ‘%1’"
-msgstr "Не може да се определи MIME тип на файла \"%1\""
+msgstr "Не може да се определи MIME тип на файла „%1“ "
 
 #: src/addcommand.cpp:287
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot determine parent collection for file ‘%1’"
-msgstr "Не може да се определи родителската колекция за файл \"%1\""
+msgstr "Не може да се определи родителската колекция за файл „%1“ "
 
 #: src/addcommand.cpp:293
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
-msgstr "Създаване на елемент в колекция %1 \"%2\" от '%3' размер %4"
+msgstr "Създаване на елемент в колекция %1 „%2“  от '%3' размер %4"
 
 #: src/addcommand.cpp:315
 #, kde-format
@@ -269,33 +269,33 @@ msgstr "Не може да се извлече целева колекция, %1
 #: src/addcommand.cpp:325
 #, kde-format
 msgid "Root folder is %1 \"%2\""
-msgstr "Кореновата папка е %1 \"%2\""
+msgstr "Кореновата папка е %1 „%2“ "
 
 #: src/addcommand.cpp:373
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
-msgstr "Грешка при извличане на колекция %1 \"%2\", %3"
+msgstr "Грешка при извличане на колекция %1 „%2“ , %3"
 
 #: src/addcommand.cpp:386
 #, kde-format
 msgid "Changed maildir folder name to '%1'"
-msgstr "Името на папката на maildir е променено на \"%1\""
+msgstr "Името на папката на maildir е променено на „%1“ "
 
 #: src/addcommand.cpp:396
 #, kde-format
 msgid "Creating collection \"%3\" under parent %1 \"%2\""
-msgstr "Създаване на колекция \"%3\" под родителски елемент %1 \"%2\""
+msgstr "Създаване на колекция „%3“ под родителски елемент %1 „%2“ "
 
 #: src/addcommand.cpp:414
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
-msgstr "Неуспешно добавяне на \"%1\", %2"
+msgstr "Неуспешно добавяне на „%1“ , %2"
 
 #: src/addcommand.cpp:418
 #, kde-format
 msgid "Added file '%2' as item %1"
-msgstr "Добавен е файл \"%2\" като елемент %1"
+msgstr "Добавен е файл „%2“  като елемент %1"
 
 #: src/agentscommand.cpp:37
 msgctxt "info:shell"
@@ -355,7 +355,7 @@ msgstr "Няма посочени агенти или опции"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid state '%1'"
-msgstr "Невалидно състояние \"%1\""
+msgstr "Невалидно състояние „%1“ "
 
 #: src/agentscommand.cpp:102
 #, kde-format
@@ -374,7 +374,7 @@ msgstr "Невалидни параметри"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No agent exists with the identifier '%1'"
-msgstr "Не съществува агент с идентификатор \"%1\""
+msgstr "Не съществува агент с идентификатор „%1“ "
 
 #: src/agentscommand.cpp:238
 #, kde-format
@@ -683,13 +683,13 @@ msgstr "Не могат да бъдат изброени колекции"
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection path"
 msgid "%1 (\"/%2\")"
-msgstr "%1 (\"/%2\")"
+msgstr "%1 („/%2“)"
 
 #: src/collectionresolvejob.cpp:98
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown Akonadi collection format '%1'"
-msgstr "Неизвестен формат за колекция Akonadi \"%1\""
+msgstr "Неизвестен формат за колекция Akonadi „%1“ "
 
 #: src/collectionresolvejob.cpp:141
 #, kde-format
@@ -701,13 +701,13 @@ msgstr "%1 (root)"
 #, kde-format
 msgctxt "@info:shell 1=collection ID, 2=collection name"
 msgid "%1 (\"%2\")"
-msgstr "%1 (\"%2\")"
+msgstr "%1 („%2“)"
 
 #: src/collectionresolvejob.cpp:167
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item syntax '%1'"
-msgstr "Невалиден синтаксис на елемент \"%1\""
+msgstr "Невалиден синтаксис на елемент „%1“ "
 
 #: src/commandfactory.cpp:61
 #, kde-format
@@ -719,7 +719,7 @@ msgstr "Двусмислена команда „%1“, възможностит
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unknown command '%1'"
-msgstr "Неизвестна команда \"%1\""
+msgstr "Неизвестна команда „%1“ "
 
 #: src/commandfactory.cpp:109
 #, kde-format
@@ -786,7 +786,7 @@ msgstr "Не може да се открие местоназначение на
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot resolve source '%1', %2"
-msgstr "Не може да се открие източник \"%1\", %2"
+msgstr "Не може да се открие източник „%1“ , %2"
 
 #: src/copycommand.cpp:141
 #, kde-format
@@ -812,13 +812,13 @@ msgstr "Копиране на колекция %1 -> %2"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move from '%1', %2"
-msgstr "Не може да се копира/премести от \"%1\", %2"
+msgstr "Не може да се копира/премести от „%1“ , %2"
 
 #: src/copycommand.cpp:191
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch subcollections of '%1', %2"
-msgstr "Не могат да бъдат извлечени подколекции от \"%1\", %2"
+msgstr "Не могат да бъдат извлечени подколекции от „%1“ , %2"
 
 #: src/copycommand.cpp:199
 #, kde-format
@@ -850,13 +850,13 @@ msgstr "Няма повече подколекции за обработка"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move sub-collection '%2' from '%1', %3"
-msgstr "Не може да се копира/премести подколекция \"%2\" от \"%1\", %3"
+msgstr "Не може да се копира/премести подколекция „%2“  от „%1“ , %3"
 
 #: src/copycommand.cpp:270
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch items of '%1', %2"
-msgstr "Не може да се извлекат елементи от \"%1\", %2"
+msgstr "Не може да се извлекат елементи от „%1“ , %2"
 
 #: src/copycommand.cpp:278
 #, kde-format
@@ -883,7 +883,7 @@ msgstr[1] "Копиране на %1 елемента"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy/move items from '%1', %2"
-msgstr "Не може да се копират/преместят елементи от \"%1\", %2"
+msgstr "Не може да се копират/преместят елементи от „%1“ , %2"
 
 #: src/createcommand.cpp:35
 msgctxt "info:shell"
@@ -932,17 +932,17 @@ msgstr "Името на новата колекция не е посочено"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot fetch parent collection '%1', %2"
-msgstr "Не може да се извлече родителска колекция \"%1\", %2"
+msgstr "Не може да се извлече родителска колекция „%1“ , %2"
 
 #: src/createcommand.cpp:125
 #, kde-format
 msgid "Creating a maildir folder named '%1' may not work"
-msgstr "Създаването на папка maildir с име \"%1\" може да не работи"
+msgstr "Създаването на папка maildir с име „%1“  може да не работи"
 
 #: src/createcommand.cpp:144
 #, kde-format
 msgid "Error creating collection '%1' under '%2', %3"
-msgstr "Грешка при създаването на колекция \"%1\" под \"%2\", %3"
+msgstr "Грешка при създаването на колекция „%1“  под „%2“ , %3"
 
 #: src/createcommand.cpp:156
 #, kde-format
@@ -952,7 +952,7 @@ msgstr "Грешка при получаване на пътя на новата
 #: src/createcommand.cpp:161
 #, kde-format
 msgid "Created new collection '%1'"
-msgstr "Създадена нова колекция \"%1\""
+msgstr "Създадена нова колекция „%1“ "
 
 #: src/deletecommand.cpp:39
 msgctxt "info:shell"
@@ -986,13 +986,13 @@ msgstr "Колекцията е изтрита успешно"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid item/collection syntax '%1'"
-msgstr "Невалиден синтаксис на елемент/колекция \"%1\""
+msgstr "Невалиден синтаксис на елемент/колекция „%1“ "
 
 #: src/deletecommand.cpp:152 src/infocommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as a collection or item"
-msgstr "Не може да се намери \"%1\" като колекция или елемент"
+msgstr "Не може да се намери „%1“  като колекция или елемент"
 
 #: src/deletecommand.cpp:164
 #, kde-format
@@ -1044,14 +1044,14 @@ msgstr "Няма посочена директория за дестинация
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' not found or not a directory"
-msgstr "Директория \"%1\" не е намерена или не е директория"
+msgstr "Директория „%1“  не е намерена или не е директория"
 
 #: src/dumpcommand.cpp:97
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
 msgstr ""
-"Директорията \"%1\" не е празна (използвайте \"-f\", за да принудите "
+"Директорията „%1“  не е празна (използвайте \"-f\", за да принудите "
 "операцията)"
 
 #: src/dumpcommand.cpp:121 src/listcommand.cpp:261
@@ -1070,7 +1070,7 @@ msgstr "Колекция %1 не съдържа елементи"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no payload"
-msgstr "Елементът \"%1\" няма данни"
+msgstr "Елементът „%1“  няма данни"
 
 #: src/dumpcommand.cpp:242
 #, kde-format
@@ -1082,7 +1082,7 @@ msgstr "Не може да се създаде директория \"%1/%2\""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save file '%1'"
-msgstr "Не може да се запише файл \"%1\""
+msgstr "Не може да се запише файл „%1“ "
 
 #: src/editcommand.cpp:37
 msgctxt "info:shell"
@@ -1106,7 +1106,7 @@ msgstr "Няма посочен елемент"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result found for item '%1'"
-msgstr "Няма намерен резултат за елемент \"%1\""
+msgstr "Няма намерен резултат за елемент „%1“ "
 
 #: src/editcommand.cpp:110
 #, kde-format
@@ -1118,13 +1118,13 @@ msgstr "Трябва да се зададе променливата EDITOR на
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot launch text editor '%1'"
-msgstr "Не може да се стартира текстов редактор \"%1\""
+msgstr "Не може да се стартира текстов редактор „%1“ "
 
 #: src/editcommand.cpp:144
 #, kde-format
 msgctxt "@info:shell"
 msgid "Changes to item '%1' have been saved"
-msgstr "Промените в елемент \"%1\" бяха запазени"
+msgstr "Промените в елемент „%1“  бяха запазени"
 
 #: src/errorreporter.cpp:41
 #, kde-format
@@ -1559,19 +1559,19 @@ msgstr "Опцията comment е разрешена само с add"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot find '%1' as an item"
-msgstr "Не може да се намери \"%1\" като елемент"
+msgstr "Не може да се намери „%1“  като елемент"
 
 #: src/groupcommand.cpp:204
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' is not a contact group"
-msgstr "Елемент \"%1\" не е група за контакти"
+msgstr "Елемент „%1“  не е група за контакти"
 
 #: src/groupcommand.cpp:210
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no contact group payload"
-msgstr "Елементът \"%1\" няма данни на група за контакти"
+msgstr "Елементът „%1“  няма данни на група за контакти"
 
 #: src/groupcommand.cpp:248
 #, kde-format
@@ -1609,7 +1609,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" has %2 groups, %3 references and %4 data items:"
-msgstr "Група %1 \"%5\" има %2 групи, %3 препратки и %4 елемента от данни:"
+msgstr "Група %1 „%5“ има %2 групи, %3 препратки и %4 елемента от данни:"
 
 #: src/groupcommand.cpp:401
 #, kde-format
@@ -1648,19 +1648,19 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Adding to group %1 \"%2\":"
-msgstr "Добавяне към група %1 \"%2\":"
+msgstr "Добавяне към група %1 „%2“ :"
 
 #: src/groupcommand.cpp:512 src/groupcommand.cpp:624
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot search for email '%1', %2"
-msgstr "Не може да се търси за имейл \"%1\", %2"
+msgstr "Не може да се търси за имейл „%1“ , %2"
 
 #: src/groupcommand.cpp:523
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple contacts found for '%1', using the first one"
-msgstr "Намерени са множество контакти за \"%1\", използва се първият"
+msgstr "Намерени са множество контакти за „%1“ , използва се първият"
 
 #: src/groupcommand.cpp:558
 #, kde-format
@@ -1680,7 +1680,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Group %1 \"%5\" now has %2 groups, %3 references and %4 data items"
-msgstr "Група %1 \"%5\" вече има %2 групи, %3 препратки и %4 елемента от данни"
+msgstr "Група %1 „%5“ вече има %2 групи, %3 препратки и %4 елемента от данни"
 
 #: src/groupcommand.cpp:601
 #, kde-format
@@ -1688,13 +1688,13 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Removing from group %1 \"%2\":"
-msgstr "Премахване от група %1 \"%2\":"
+msgstr "Премахване от група %1 „%2“ :"
 
 #: src/groupcommand.cpp:638
 #, kde-format
 msgctxt "@info:shell"
 msgid "Nothing to remove for email '%1'"
-msgstr "Няма нищо за премахване за имейл \"%1\""
+msgstr "Няма нищо за премахване за имейл „%1“ "
 
 #: src/groupcommand.cpp:682
 #, kde-format
@@ -1702,7 +1702,7 @@ msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Cleaning references from group %1 \"%2\":"
-msgstr "Изчистване на препратките от група %1 \"%2\":"
+msgstr "Изчистване на препратките от група %1 „%2“ :"
 
 #: src/importcommand.cpp:39
 msgctxt "info:shell"
@@ -1755,43 +1755,43 @@ msgstr "Не може да се извлекат дъщерни елементи
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection '%1' already exists"
-msgstr "Колекция \"%1\" вече съществува"
+msgstr "Колекция „%1“  вече съществува"
 
 #: src/importcommand.cpp:126
 #, kde-format
 msgctxt "@info:shell"
 msgid "Creating collection '%1'"
-msgstr "Създаване на колекция \"%1\""
+msgstr "Създаване на колекция „%1“ "
 
 #: src/importcommand.cpp:148
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing collection '%1'"
-msgstr "Обработване на колекция \"%1\""
+msgstr "Обработване на колекция „%1“ "
 
 #: src/importcommand.cpp:155
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parent for collection with remote ID '%1'"
-msgstr "Невалиден родител за колекция с отдалечен идентификатор \"%1\""
+msgstr "Невалиден родител за колекция с отдалечен идентификатор „%1“ "
 
 #: src/importcommand.cpp:176
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
-msgstr "Не може да се извлече колекция с отдалечен идентификатор \"%1\", %2"
+msgstr "Не може да се извлече колекция с отдалечен идентификатор „%1“ , %2"
 
 #: src/importcommand.cpp:194
 #, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
-msgstr "Не може да се създаде колекция с отдалечен идентификатор \"%1\""
+msgstr "Не може да се създаде колекция с отдалечен идентификатор „%1“ "
 
 #: src/importcommand.cpp:212
 #, kde-format
 msgctxt "@info:shell"
 msgid "Processing items for '%1'"
-msgstr "Обработване на елементи за \"%1\""
+msgstr "Обработване на елементи за „%1“ "
 
 #: src/importcommand.cpp:234
 #, kde-format
@@ -1803,7 +1803,7 @@ msgstr "Грешка при създаването на елемент, %1"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Created item '%1'"
-msgstr "Създаден елемент \"%1\""
+msgstr "Създаден елемент „%1“ "
 
 #: src/infocommand.cpp:38
 msgctxt "info:shell"
@@ -2278,7 +2278,7 @@ msgstr "Няма посочени елементи"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No result returned for item '%1'"
-msgstr "Няма върнати резултати за елемент \"%1\""
+msgstr "Няма върнати резултати за елемент „%1“ "
 
 #: src/showcommand.cpp:104
 #, kde-format
@@ -2430,7 +2430,7 @@ msgstr "Няма запазени маркери за възстановяван
 #, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr "Етикет с име \"%1\" и ID %2  вече съществува"
+msgstr "Етикет с име „%1“  и ID %2  вече съществува"
 
 #: src/tagscommand.cpp:265
 #, kde-format
@@ -2461,7 +2461,7 @@ msgstr "Добавен етикет „%1“ ID %2"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
-msgstr "Етикет за изтриване  \"%1\" не съществува"
+msgstr "Етикет за изтриване  „%1“  не съществува"
 
 #: src/tagscommand.cpp:413
 #, kde-format
