@@ -122,7 +122,7 @@ msgstr "无法创建目录 '%1'"
 #: src/addcommand.cpp:41
 msgctxt "info:shell"
 msgid "Add items to a collection"
-msgstr ""
+msgstr "添加项目到集合"
 
 #: src/addcommand.cpp:59
 #, kde-format
@@ -301,7 +301,7 @@ msgstr "添加文件“%2”为项目 %1"
 #: src/agentscommand.cpp:37
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
-msgstr ""
+msgstr "管理 Akonadi 代理"
 
 #: src/agentscommand.cpp:51
 #, kde-format
@@ -398,32 +398,32 @@ msgstr "状态:  "
 #: src/attributescommand.cpp:80
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
-msgstr ""
+msgstr "显示或更新集合属性"
 
 #: src/attributescommand.cpp:93
 #, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr ""
+msgstr "显示集合属性 (默认操作) "
 
 #: src/attributescommand.cpp:96
 #, kde-format
 msgid "Add an attribute"
-msgstr ""
+msgstr "添加属性"
 
 #: src/attributescommand.cpp:99
 #, kde-format
 msgid "Modify an existing attribute"
-msgstr ""
+msgstr "修改现有属性"
 
 #: src/attributescommand.cpp:102
 #, kde-format
 msgid "Delete an existing attribute"
-msgstr ""
+msgstr "删除已有属性"
 
 #: src/attributescommand.cpp:105
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
-msgstr ""
+msgstr "以十六进制编码显示或解释属性"
 
 #: src/attributescommand.cpp:108
 #, kde-format
@@ -444,7 +444,7 @@ msgstr "恢复已更改的文件夹属性"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
-msgstr ""
+msgstr "集合：ID、路径或者 Akonadi URL"
 
 #: src/attributescommand.cpp:126 src/groupcommand.cpp:78
 #, kde-format
@@ -461,13 +461,13 @@ msgstr "参数"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr ""
+msgstr "需要十六进制编码字符串，但字符串长度 %1 不是偶数"
 
 #: src/attributescommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr ""
+msgstr "十六进制编码值包含无效字符"
 
 #: src/attributescommand.cpp:206
 #, kde-format
@@ -486,25 +486,25 @@ msgstr "未指定集合"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
-msgstr ""
+msgstr "未指定要添加的属性名称/值"
 
 #: src/attributescommand.cpp:228
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
-msgstr ""
+msgstr "未指定要删除的属性名称"
 
 #: src/attributescommand.cpp:234
 #, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
-msgstr ""
+msgstr "未指定要修改的属性名称/值"
 
 #: src/attributescommand.cpp:243
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr ""
+msgstr "“%1”：过多的参数"
 
 #: src/attributescommand.cpp:269
 #, kde-format
@@ -740,7 +740,7 @@ msgstr "无效的命令"
 #: src/copycommand.cpp:40
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
-msgstr ""
+msgstr "将集合或项目复制到新集合中"
 
 #: src/copycommand.cpp:59 src/movecommand.cpp:40
 #, kde-format
@@ -878,7 +878,7 @@ msgstr "无法从 '%1', %2 复制/移动项目"
 #: src/createcommand.cpp:35
 msgctxt "info:shell"
 msgid "Create a new collection"
-msgstr ""
+msgstr "创建新集合"
 
 #: src/createcommand.cpp:53
 #, kde-format
@@ -945,7 +945,7 @@ msgstr "创建新集合 ‘%1’"
 #: src/deletecommand.cpp:39
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
-msgstr ""
+msgstr "删除集合或项目"
 
 #: src/deletecommand.cpp:52
 #, kde-format
@@ -990,7 +990,7 @@ msgstr "项目成功删除"
 #: src/dumpcommand.cpp:46
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
-msgstr ""
+msgstr "将集合转储到目录结构"
 
 #: src/dumpcommand.cpp:58
 #, kde-format
@@ -1070,7 +1070,7 @@ msgstr "无法保存文件 ‘%1’"
 #: src/editcommand.cpp:37
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
-msgstr ""
+msgstr "使用 $EDITOR 编辑指定项目的原始有效负载"
 
 #: src/editcommand.cpp:54
 #, kde-format
@@ -1141,7 +1141,7 @@ msgstr "信息"
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
-msgstr ""
+msgstr "将集合导出到 XML 文件"
 
 #: src/exportcommand.cpp:43
 #, kde-format
@@ -1438,7 +1438,7 @@ msgstr "未找到适用的配置文件"
 #: src/groupcommand.cpp:39
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
-msgstr ""
+msgstr "展开或修改联系人组"
 
 #: src/groupcommand.cpp:58
 #, kde-format
@@ -1670,7 +1670,7 @@ msgstr "正在清理来自组 %1 “%2”的引用："
 #: src/importcommand.cpp:39
 msgctxt "info:shell"
 msgid "Import an XML file"
-msgstr ""
+msgstr "导入一个 XML 文件"
 
 #: src/importcommand.cpp:56
 #, kde-format
@@ -1771,7 +1771,7 @@ msgstr "创建项目 %1"
 #: src/infocommand.cpp:38
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
-msgstr ""
+msgstr "显示收藏或项目的完整信息"
 
 #: src/infocommand.cpp:57
 #, kde-format
@@ -1854,7 +1854,7 @@ msgstr "远程 ID"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Path"
-msgstr ""
+msgstr "路径"
 
 #: src/infocommand.cpp:233
 #, kde-format
@@ -1997,7 +1997,7 @@ msgstr "未知算法"
 #: src/listcommand.cpp:35
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
-msgstr ""
+msgstr "列出指定集合中的子集合或项目"
 
 #: src/listcommand.cpp:47
 #, kde-format
@@ -2017,7 +2017,7 @@ msgstr "只列出包含的项目"
 #: src/listcommand.cpp:56
 #, kde-format
 msgid "List sub-collections recursively"
-msgstr ""
+msgstr "递归列出子集合"
 
 #: src/listcommand.cpp:58
 #, kde-format
@@ -2029,7 +2029,7 @@ msgstr "要列出的集合：ID、路径或者 Akonadi URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "递归列表只能用于集合"
 
 #: src/listcommand.cpp:158
 #, kde-format
@@ -2042,7 +2042,7 @@ msgstr "集合 %1 没有子集合"
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] ""
+msgstr[0] "集合 %2 包含 %1 个递归子集合："
 
 #: src/listcommand.cpp:173
 #, kde-format
@@ -2098,7 +2098,7 @@ msgstr "Akonadi 的命令行、shell 客户端"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
-msgstr ""
+msgstr "Kevin Krammer"
 
 #: src/main.cpp:51
 #, kde-format
@@ -2110,7 +2110,7 @@ msgstr "原作者"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
-msgstr ""
+msgstr "Jonathan Marten"
 
 #: src/main.cpp:52
 #, kde-format
@@ -2122,7 +2122,7 @@ msgstr "扩展和新的命令"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
-msgstr ""
+msgstr "Bhaskar Kandiyal"
 
 #: src/main.cpp:53
 #, kde-format
@@ -2161,7 +2161,7 @@ msgstr ""
 #: src/movecommand.cpp:27
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
-msgstr ""
+msgstr "移动集合或项目到新集合"
 
 #: src/movecommand.cpp:40
 #, kde-format
@@ -2178,7 +2178,7 @@ msgstr "要移动到的目标集合"
 #: src/renamecommand.cpp:33
 msgctxt "info:shell"
 msgid "Rename a collection"
-msgstr ""
+msgstr "重命名集合"
 
 #: src/renamecommand.cpp:45
 #, kde-format
@@ -2207,7 +2207,7 @@ msgstr "集合重命名成功"
 #: src/showcommand.cpp:34
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
-msgstr ""
+msgstr "显示一个项目的原始有效负载"
 
 #: src/showcommand.cpp:43
 #, kde-format
@@ -2247,7 +2247,7 @@ msgstr "项目没有主体部分"
 #: src/tagscommand.cpp:38
 msgctxt "info:shell"
 msgid "List or modify tags"
-msgstr ""
+msgstr "列表或修改标签"
 
 #: src/tagscommand.cpp:55
 #, kde-format
@@ -2267,12 +2267,12 @@ msgstr "列出所有已知标签 (默认操作)"
 #: src/tagscommand.cpp:65
 #, kde-format
 msgid "Add named tags"
-msgstr ""
+msgstr "添加命名标签"
 
 #: src/tagscommand.cpp:68
 #, kde-format
 msgid "Delete tags"
-msgstr ""
+msgstr "删除标签"
 
 #: src/tagscommand.cpp:71
 #, kde-format
@@ -2302,17 +2302,17 @@ msgstr "保留使用“id”选项时添加的中间标签"
 #: src/tagscommand.cpp:77
 #, kde-format
 msgid "TAG"
-msgstr ""
+msgstr "标签"
 
 #: src/tagscommand.cpp:77
 #, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
-msgstr ""
+msgstr "要添加的标签名称，或要删除的标签的名称、ID 或 URL"
 
 #: src/tagscommand.cpp:77
 #, kde-format
 msgid "[TAG...]"
-msgstr ""
+msgstr "[标签...]"
 
 #: src/tagscommand.cpp:89
 #, kde-format
@@ -2324,7 +2324,7 @@ msgstr "“id”选项的值无效"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr ""
+msgstr "无法同时指定 \"brief\" 和 \"url\" 选项"
 
 #: src/tagscommand.cpp:116
 #, kde-format
@@ -2339,19 +2339,19 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
-msgstr ""
+msgstr "未指定要添加的标签"
 
 #: src/tagscommand.cpp:136
 #, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr ""
+msgstr "无法使用选项“id”添加多个标签。"
 
 #: src/tagscommand.cpp:145
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
-msgstr ""
+msgstr "未指定要删除的标签"
 
 #: src/tagscommand.cpp:157
 #, kde-format
@@ -2381,7 +2381,7 @@ msgstr "没有需要还原的已保存标签"
 #, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr ""
+msgstr "名为“%1”的标签 ID %2 已存在"
 
 #: src/tagscommand.cpp:265
 #, kde-format
@@ -2411,13 +2411,13 @@ msgstr "已添加标签 '%1' ID %2"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
-msgstr ""
+msgstr "标签“%1”不存在"
 
 #: src/tagscommand.cpp:413
 #, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete ID %1 does not exist"
-msgstr ""
+msgstr "ID为 %1 的标签不存在"
 
 #: src/tagscommand.cpp:439
 #, kde-kuit-format
@@ -2435,7 +2435,7 @@ msgstr "删除标签 '%1' ID %2"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No tags found"
-msgstr ""
+msgstr "未找到标签"
 
 #: src/tagscommand.cpp:512
 #, kde-format
@@ -2481,28 +2481,28 @@ msgstr "无法设置终端"
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
-msgstr ""
+msgstr "从文件更新项目的有效载荷"
 
 #: src/updatecommand.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "The item to update, an ID or Akonadi URL"
-msgstr ""
+msgstr "要更新的项目，使用 ID 或 Akonadi URL"
 
 #: src/updatecommand.cpp:53
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to update the item from"
-msgstr ""
+msgstr "要更新的项目所在的文件"
 
 #: src/updatecommand.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "No file specified"
-msgstr ""
+msgstr "未指定文件"
 
 #: src/updatecommand.cpp:136
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item updated successfully"
-msgstr ""
+msgstr "项目更新成功"
