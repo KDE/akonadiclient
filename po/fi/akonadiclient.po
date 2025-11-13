@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-21 00:42+0000\n"
-"PO-Revision-Date: 2025-07-14 10:44+0300\n"
+"PO-Revision-Date: 2025-10-22 18:19+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -557,51 +557,40 @@ msgstr "Löytyi %1 nykyistä Akonadi-kokoelmaa"
 
 #: src/attributescommand.cpp:413 src/folderscommand.cpp:213
 #: src/tagscommand.cpp:543
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "Tiedostoa ”%1” ei voi tallentaa"
+msgstr "Varmuuskopioluetteloa ei voi tallentaa tiedostoon ”%1”"
 
 #: src/attributescommand.cpp:424
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection has no attribute '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving collection attributes to '%1'"
-msgstr "Kokoelmassa ei ole määritettä ”%1”"
+msgstr "Tallennetaan kokoelmamääritteitä tiedostoon ”%1”"
 
 #: src/attributescommand.cpp:456
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved attributes for %1 collections"
-msgstr "Näytä määritteet tai päivitä ne kokoelmaan"
+msgstr "%1 kokoelman määritteet tallennettiin"
 
 #: src/attributescommand.cpp:462
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved attributes from '%1'"
-msgstr "Muutettiin maildir-kansion nimeksi ”%1”"
+msgstr "Luetaan tallennettuja määritteitä tiedostosta ”%1”"
 
 #: src/attributescommand.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Show or update attributes for a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read attributes for %1 collections"
-msgstr "Näytä määritteet tai päivitä ne kokoelmaan"
+msgstr "Lue määritteet %1 kokoelmalle"
 
 #: src/attributescommand.cpp:507
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
-msgstr "Kokoelma tai tietue"
+msgstr "Tarkistetaan kokoelman nykyisiä määritteitä"
 
 #: src/attributescommand.cpp:531
 #, kde-kuit-format
@@ -610,21 +599,16 @@ msgid "Folder '%1' had attributes but is no longer present"
 msgstr "Kansiolla ”%1” oli määritteitä, mutta sitä ei enää ole"
 
 #: src/attributescommand.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot fetch parent collection '%1', %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
-msgstr "Emokokoelmaa “%1” ei voi noutaa, %2"
+msgstr "Ei voida noutaa kokoelmaa %1 ”%2”"
 
 #: src/attributescommand.cpp:562
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection \"%2\" changed ID from %1 to %3"
-msgstr "Kokoelmassa %2 on %1 tietue:"
+msgstr "Kokoelman ”%1” tunniste muuttui: %2 → %3"
 
 #: src/attributescommand.cpp:635
 #, kde-kuit-format
@@ -655,28 +639,24 @@ msgstr[0] "Kansio ”%2” päivittää määritteen"
 msgstr[1] "Kansio ”%2” päivittää %1 määritettä"
 
 #: src/attributescommand.cpp:698
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes need to be restored"
-msgstr "Näytä kokoelman määritteet (oletustoimenpide)"
+msgstr "Kokoelmamääritteitä ei tarvitse palauttaa"
 
 #: src/attributescommand.cpp:700
-#, fuzzy, kde-kuit-format
-#| msgid "Show the collection attributes (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes needed to be restored"
-msgstr "Näytä kokoelman määritteet (oletustoimenpide)"
+msgstr "Kokoelmamääritteitä ei tarvinnut palauttaa"
 
 #: src/attributescommand.cpp:705
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Recursive list can only be used for collections"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes need to be restored for %1 collection"
 msgid_plural "Attributes need to be restored for %1 collections"
-msgstr[0] "Rekursiivista luettelointia voi käyttää vain kokoelmiin"
-msgstr[1] "Rekursiivista luettelointia voi käyttää vain kokoelmiin"
+msgstr[0] "%1 kokoelman määritteet tarvitsee palauttaa"
+msgstr[1] "%1 kokoelman määritteet tarvitsee palauttaa"
 
 #: src/attributescommand.cpp:711
 #, kde-kuit-format
@@ -689,22 +669,18 @@ msgstr ""
 "bcode><nl/>muutosten toteuttamiseksi."
 
 #: src/attributescommand.cpp:721
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Files or directories to add to the collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes were restored for %1 collection"
 msgid_plural "Attributes were restored for %1 collections"
-msgstr[0] "Kokoelmaan lisättävät tiedostot tai kansiot"
-msgstr[1] "Kokoelmaan lisättävät tiedostot tai kansiot"
+msgstr[0] "%1 kokoelman määritteet palautettiin"
+msgstr[1] "%1 kokoelman määritteet palautettiin"
 
 #: src/collectionlistcommand.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
-msgstr "Juurikokoelmaa ei voi poistaa"
+msgstr "Mitään kokoelmia ei voi luetella"
 
 #: src/collectionpathjob.cpp:70
 #, kde-format
@@ -1220,36 +1196,30 @@ msgstr ""
 "Palauta asetustiedostot, joissa on muuttuneita kansiotunnisteosoituksia"
 
 #: src/folderscommand.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
-msgstr "Vain yhden komennoista ”list”, ”add” tai ”delete” voi antaa kerrallaan"
+msgstr ""
+"Vain yhden valitsimista ”backup”, ”check” tai ”restore” voi antaa kerrallaan"
 
 #: src/folderscommand.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
-msgstr "Vain yhden komennoista ”list”, ”add” tai ”delete” voi antaa kerrallaan"
+msgstr ""
+"Vain yhden valitsimista ”backup”, ”check” tai ”restore” voi antaa kerrallaan"
 
 #: src/folderscommand.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "Tiedostoa ”%1” ei voi tallentaa"
+msgstr "Tallennettua luetteloa ei voi lukea tiedostosta ”%1”"
 
 #: src/folderscommand.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "Kansiota ”%1/%2” ei voi luoda"
+msgstr "Nykyistä luetteloa ei voi kirjoittaa tiedostoon ”%1”"
 
 #: src/folderscommand.cpp:299
 #, kde-format
@@ -1264,12 +1234,10 @@ msgid "%1 folder IDs have changed"
 msgstr "%1 kansiotunnistetta on muuttunut"
 
 #: src/folderscommand.cpp:321
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "Käsitellään kokoelmaa ”%1”"
+msgstr "Käsitellään asetustiedostoa ”%1”…"
 
 #: src/folderscommand.cpp:393
 #, kde-format
@@ -1336,34 +1304,28 @@ msgstr ""
 "toteuttamiseksi."
 
 #: src/folderscommand.cpp:558
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "Muutettiin maildir-kansion nimeksi ”%1”"
+msgstr "Tallennetaan kansioiden sijainteja tiedostoon ”%1”"
 
 #: src/folderscommand.cpp:565
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "Kokoelma tai tietue"
+msgstr "Tallennettiin %1 kokoelmakansiosijaintia"
 
 #: src/folderscommand.cpp:570
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "Muutettiin maildir-kansion nimeksi ”%1”"
+msgstr "Luetaan tallennettuja kokoelmasijainteja tiedostosta ”%1”"
 
 #: src/folderscommand.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "info:shell"
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Muuta kokoelman nimeä"
+msgstr "Luettiin %1 tallennettua kokoelmasijaintia"
 
 #: src/folderscommand.cpp:601
 #, kde-format
@@ -1381,23 +1343,19 @@ msgstr "Kansion ”%1” tunniste vaihtui: %2 → %3"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
-msgstr ""
+msgstr "Määritettiin %1 muutostietokuvioita %2 asetustiedostonimelle"
 
 #: src/folderscommand.cpp:685
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "Poistettavaa luokitusta ”%1” ei ole olemassa"
+msgstr "Tallennettua kansioluetteloa ”%1” ei ole olemassa"
 
 #: src/folderscommand.cpp:689
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "Poistettavaa luokitusta ”%1” ei ole olemassa"
+msgstr "Nykyistä kansioluetteloa ”%1” ei ole olemassa"
 
 #: src/folderscommand.cpp:693
 #, kde-format
@@ -1450,12 +1408,10 @@ msgid "Removing old '%1'"
 msgstr "Poistetaan vanha ”%1”"
 
 #: src/folderscommand.cpp:758
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "Tiedostoa ”%1” ei voi tallentaa"
+msgstr "Vanhaa kohdetta ”%1” ei voi poistaa"
 
 #: src/folderscommand.cpp:763
 #, kde-format
@@ -1849,7 +1805,7 @@ msgstr "Näytettävät kokoelmat tai tietueet"
 #: src/infocommand.cpp:57
 #, kde-format
 msgid "entity..."
-msgstr ""
+msgstr "entiteetti…"
 
 #: src/infocommand.cpp:63
 #, kde-format
@@ -2500,7 +2456,7 @@ msgstr "Poistettavaa luokitusta (tunniste %1) ei ole olemassa"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr ""
+msgstr "Luokitusta ei voitu luoda pyydetylle tunnisteelle"
 
 #: src/tagscommand.cpp:464
 #, kde-format
@@ -2524,7 +2480,7 @@ msgstr "Verkko-osoite"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr ""
+msgstr "Löytyi %1 nykyistä Akonadi-luokitusta"
 
 #: src/tagscommand.cpp:557
 #, kde-format
@@ -2533,11 +2489,10 @@ msgid "Saved tags to '%1'"
 msgstr "Tallennettiin luokitukset kohteeseen ”%1”"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr "Muutettiin maildir-kansion nimeksi ”%1”"
+msgstr "Luetaan tallennettuja luokituksia tiedostosta ”%1”"
 
 # *** TARKISTA: Voisi yhtä hyvin olla käsky, ”Lue… luokitukset”
 #: src/tagscommand.cpp:580
