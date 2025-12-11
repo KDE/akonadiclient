@@ -20,6 +20,8 @@
 
 #include "abstractcommand.h"
 
+#include <qmap.h>
+
 #include <akonadi/tag.h>
 using namespace Akonadi;
 
