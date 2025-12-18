@@ -94,8 +94,8 @@ void ShowCommand::onItemFetched(KJob *job)
             } else if (mRaw) {
                 std::cout << item.payloadData().constData(); // output the raw payload
             } else {
-                if (item.hasPayload<KMime::Message::Ptr>()) {
-                    const KMime::Message::Ptr mail = item.payload<KMime::Message::Ptr>();
+                if (item.hasPayload<std::shared_ptr<KMime::Message>>()) {
+                    const std::shared_ptr<KMime::Message> mail = item.payload<std::shared_ptr<KMime::Message>>();
                     std::cout << qPrintable(mail->head());
                     const auto mainPart = mail->mainBodyPart();
                     if (mainPart) {
