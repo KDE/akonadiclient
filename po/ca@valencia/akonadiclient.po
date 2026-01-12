@@ -205,7 +205,7 @@ msgstr "El fitxer «%1» no existix"
 #: src/addcommand.cpp:128
 #, kde-format
 msgid "Error accessing file '%1'"
-msgstr "S'ha produït un error en accedir al fitxer «%1»"
+msgstr "S'ha produït un error mentre s'accedia al fitxer «%1»"
 
 #: src/addcommand.cpp:156
 #, kde-format
@@ -281,7 +281,7 @@ msgstr "La carpeta arrel és %1 «%2»"
 #: src/addcommand.cpp:373
 #, kde-format
 msgid "Error fetching collection %1 \"%2\", %3"
-msgstr "S'ha produït un error en recuperar la col·lecció %1 «%2», %3"
+msgstr "S'ha produït un error mentre es recuperava la col·lecció %1 «%2», %3"
 
 #: src/addcommand.cpp:386
 #, kde-format
@@ -297,7 +297,7 @@ msgstr "S'està creant la col·lecció «%3» davall el pare %1 «%2»"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
-msgstr "No s'ha pogut afegir «%1», %2"
+msgstr "Ha fallat mentre s'afegia «%1», %2"
 
 #: src/addcommand.cpp:418
 #, kde-format
@@ -951,12 +951,14 @@ msgstr "La creació d'una carpeta maildir anomenada «%1» podria no funcionar"
 #: src/createcommand.cpp:144
 #, kde-format
 msgid "Error creating collection '%1' under '%2', %3"
-msgstr "S'ha produït un error en crear la col·lecció «%1» davall «%2», %3"
+msgstr ""
+"S'ha produït un error mentre es creava la col·lecció «%1» davall «%2», %3"
 
 #: src/createcommand.cpp:156
 #, kde-format
 msgid "Error getting path of new collection, %1"
-msgstr "S'ha produït un error en obtindre el camí de la col·lecció nova, %1"
+msgstr ""
+"S'ha produït un error mentre s'obtenia el camí de la col·lecció nova, %1"
 
 #: src/createcommand.cpp:161
 #, kde-format
@@ -1809,7 +1811,7 @@ msgstr "S'estan processant els elements per a «%1»"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Error creating item, %1"
-msgstr "S'ha produït un error en crear l'element, %1"
+msgstr "S'ha produït un error mentre es creava l'element, %1"
 
 #: src/importcommand.cpp:237
 #, kde-format
@@ -2444,13 +2446,13 @@ msgstr "Ja existix una etiqueta anomenada «%1» ID %2"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr "No s'ha pogut afegir l'etiqueta «%1» ID %2"
+msgstr "Ha fallat mentre s'afegia l'etiqueta «%1» ID %2"
 
 #: src/tagscommand.cpp:267
 #, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr "No s'ha pogut afegir l'etiqueta «%1»"
+msgstr "Ha fallat mentre s'afegia l'etiqueta «%1»"
 
 #: src/tagscommand.cpp:287
 #, kde-kuit-format
