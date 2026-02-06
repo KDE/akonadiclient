@@ -286,8 +286,7 @@ msgid "No more files to process"
 msgstr "Žádné další soubory ke zpracování"
 
 #: src/addcommand.cpp:264 src/updatecommand.cpp:86
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "File ‘%1’ does not exist"
 msgstr "Soubor '%1' neexistuje"
@@ -355,12 +354,10 @@ msgid "Creating collection \"%3\" under parent %1 \"%2\""
 msgstr "Vytváření sbírky \"%3\" pod nadřazenou %1 \"%2\""
 
 #: src/addcommand.cpp:414
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Failed to add '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add ‘%1’, %2"
-msgstr "Selhalo přidání '%1', %2"
+msgstr "Selhalo přidání ‘%1’, %2"
 
 #: src/addcommand.cpp:418
 #, fuzzy, kde-format
