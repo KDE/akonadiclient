@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:52+0000\n"
-"PO-Revision-Date: 2026-02-12 23:06+0200\n"
+"PO-Revision-Date: 2026-02-13 16:26+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -1205,98 +1205,87 @@ msgstr "Не был указан файл экспорта"
 #: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "Сохранение, проверка или восстановление идентификаторов папок Akonadi"
 
 #: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "Сохранить текущие назначения идентификаторов папок"
 
 #: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
-msgstr ""
+msgstr "Сравнить текущие назначения идентификаторов папок с  сохранёнными"
 
 #: src/folderscommand.cpp:118
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
 msgstr ""
+"Восстановить файлы конфигурации с изменёнными назначениями идентификаторов "
+"папок"
 
 #: src/folderscommand.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
 msgstr ""
-"Можно указать только один из параметров 'expand', 'add', 'delete' или 'clean'"
+"Можно указать только один из параметров: «backup», «check» или «restore»"
 
 #: src/folderscommand.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
-msgstr ""
-"Можно указать только один из параметров 'expand', 'add', 'delete' или 'clean'"
+msgstr "Необходимо указать один из параметров: «backup», «check» или «restore»"
 
 #: src/folderscommand.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
-msgstr "Не удалось сохранить файл «%1»"
+msgstr "Не удалось прочитать сохранённый список из «%1»"
 
 #: src/folderscommand.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "Не удалось создать каталог '%1/%2'"
+msgstr "Не удалось записать текущий список в «%1»"
 
 #: src/folderscommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "Идентификаторы папок не изменились"
 
 #: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "Изменились идентификаторы папок: %1"
 
 #: src/folderscommand.cpp:321
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
-msgstr "Обрабатывается коллекция «%1»"
+msgstr "Обработка файла конфигурации «%1»…"
 
 #: src/folderscommand.cpp:393
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
 msgstr ""
+"Не удалось переименовать группу «%1» для папки «%2», которая больше не "
+"существует"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "Группа «%1» для папки «%2» переименована в «%3»"
 
 #: src/folderscommand.cpp:413
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "Переименовано групп: %1"
 
 #: src/folderscommand.cpp:498
 #, kde-format
@@ -1304,24 +1293,26 @@ msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
 msgstr ""
+"Не удалось обновить «%1» в группе «%2» для папки «%3», которая больше не "
+"существует"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "Обновлено «%1» в группе «%2» для папки «%3» на %4"
 
 #: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "Изменено значений настроек: %1"
 
 #: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "Изменения в настройках не требуются"
 
 #: src/folderscommand.cpp:542
 #, kde-kuit-format
@@ -1329,6 +1320,8 @@ msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
 msgstr ""
+"Требуются изменения конфигурации (переименование %1 групп и изменение %2 "
+"настроек)"
 
 #: src/folderscommand.cpp:544
 #, kde-kuit-format
@@ -1338,76 +1331,70 @@ msgid ""
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
+"Закройте все запущенные приложения PIM и остановите сервер Akonadi, затем<nl/"
+">выполните команду:<nl/><bcode>  %1 %2 --restore</bcode><nl/>для применения "
+"изменений."
 
 #: src/folderscommand.cpp:558
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
-msgstr "Имя каталога maildir было изменено на «%1»"
+msgstr "Сохранение путей папок в «%1»"
 
 #: src/folderscommand.cpp:565
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "Коллекция или элемент"
+msgstr "Сохранено путей к папкам коллекции: %1"
 
 #: src/folderscommand.cpp:570
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
-msgstr "Имя каталога maildir было изменено на «%1»"
+msgstr "Чтение сохранённых путей папок из «%1»"
 
 #: src/folderscommand.cpp:581
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "New name for collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Новое имя коллекции"
+msgstr "Прочитано сохранённых путей коллекций: %1"
 
 #: src/folderscommand.cpp:601
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr ""
+msgstr "Папка «%1» имела идентификатор %2, но больше не существует"
 
 #: src/folderscommand.cpp:604
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 items:"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr "Элементов в коллекции %2: %1"
+msgstr "Папка «%1» изменила идентификатор с %2 на %3"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
 msgstr ""
+"Определено %1 шаблонов данных изменений для %2 имён файлов конфигурации"
 
 #: src/folderscommand.cpp:685
-#, fuzzy, kde-kuit-format
-#| msgid "File '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
-msgstr "Файл «%1» не существует"
+msgstr "Сохранённый список папок «%1» не существует"
 
 #: src/folderscommand.cpp:689
-#, fuzzy, kde-kuit-format
-#| msgid "File '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
-msgstr "Файл «%1» не существует"
+msgstr "Текущий список папок «%1» не существует"
 
 #: src/folderscommand.cpp:693
 #, kde-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
-msgstr ""
+msgstr "Текущий список папок «%1» старше сохранённого списка папок «%2»"
 
 #: src/folderscommand.cpp:707
 #, kde-format
@@ -1415,104 +1402,96 @@ msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
 msgstr ""
+"Новый файл конфигурации «%1» не существует или старше списка папок «%2»"
 
 #: src/folderscommand.cpp:718
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "Сначала выполните «%1 %2 --check»"
 
 #: src/folderscommand.cpp:725
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "Проверка работы сервера Akonadi…"
 
 #: src/folderscommand.cpp:730
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Сервер Akonadi остановлен"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr ""
+msgstr "Завершение работы сервера Akonadi"
 
 #: src/folderscommand.cpp:744
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "Обновление файлов конфигурации %1 в «%2»"
 
 #: src/folderscommand.cpp:755
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "Удаление старого «%1»"
 
 #: src/folderscommand.cpp:758
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
-msgstr "Не удалось сохранить файл «%1»"
+msgstr "Не удалось удалить старый «%1»"
 
 #: src/folderscommand.cpp:763
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "Копирование нового «%2» в «%1»"
 
 #: src/folderscommand.cpp:766
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
-msgstr "Невозможно скопировать/переместить из «%1», %2"
+msgstr "Не удалось скопировать новый «%2» в «%1»"
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
-msgstr "Не удалось сохранить файл «%1»"
+msgstr "Не удалось удалить скопированный файл «%1»"
 
 #: src/folderscommand.cpp:775
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "Восстановление завершено"
 
 #: src/folderscommand.cpp:788
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "Не удалось найти каталог конфигурации пользователя"
 
 #: src/folderscommand.cpp:795
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
-msgstr "Файл «%1» не существует"
+msgstr "Каталог конфигурации «%1» не существует"
 
 #: src/folderscommand.cpp:816
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "Подходящие файлы конфигурации не найдены"
 
 #: src/groupcommand.cpp:39
-#, fuzzy
-#| msgid "Add a contact to the group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
-msgstr "Добавить контакт в группу"
+msgstr "Развернуть или изменить группу контактов"
 
 #: src/groupcommand.cpp:58
 #, kde-format
@@ -1747,11 +1726,9 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "Удаление ссылок из группы %1 \"%2\":"
 
 #: src/importcommand.cpp:39
-#, fuzzy
-#| msgid "Parent collection to create in"
 msgctxt "info:shell"
 msgid "Import an XML file"
-msgstr "В какой родительской коллекции будет создано"
+msgstr "Импорт XML-файла"
 
 #: src/importcommand.cpp:56
 #, kde-format
@@ -2435,125 +2412,102 @@ msgstr ""
 "«backup»/«restore»"
 
 #: src/tagscommand.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
-msgstr "Не указаны элементы для добавления"
+msgstr "Не указаны метки для добавления"
 
 #: src/tagscommand.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one item may be specified to add with 'comment'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr ""
-"С аргументом 'comment' можно указать только один элемент для добавления"
+msgstr "Нельзя указывать несколько меток для добавления с параметром «id»"
 
 #: src/tagscommand.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
-msgstr "Не указаны элементы для удаления"
+msgstr "Не указаны метки для удаления"
 
 #: src/tagscommand.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr "Параметр 'comment' можно указать только вместе с 'add'"
+msgstr "Опция «retain» может использоваться только с «add» или «restore»"
 
 #: src/tagscommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr "Параметр 'comment' можно указать только вместе с 'add'"
+msgstr "Параметр «id» можно использовать только с командой «add»"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "Не удалось сохранить файл «%1»"
+msgstr "Не удалось прочитать сохранённые метки из «%1»"
 
 #: src/tagscommand.cpp:201
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "Нет сохранённых меток для восстановления"
 
 #: src/tagscommand.cpp:228
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection '%1' already exists"
+#, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr "Коллекция «%1» уже существует"
+msgstr "Метка с именем «%1» (ID %2) уже существует"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot search for email '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr "Не удалось выполнить поиск почтового адреса «%1», %2"
+msgstr "Не удалось добавить метку «%1» с идентификатором %2"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr "Не удалось сохранить файл «%1»"
+msgstr "Не удалось добавить метку «%1»"
 
 #: src/tagscommand.cpp:287
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
 msgstr ""
+"Не удалось создать метку с идентификатором %1, последовательность уже имеет "
+"идентификатор %2"
 
 #: src/tagscommand.cpp:341
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot search for email '%1', %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr "Не удалось выполнить поиск почтового адреса «%1», %2"
+msgstr "Добавлена метка «%1» с идентификатором %2"
 
 #: src/tagscommand.cpp:376
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
-msgstr "Файл «%1» не существует"
+msgstr "Метка для удаления «%1» не существует"
 
 #: src/tagscommand.cpp:413
-#, fuzzy, kde-format
-#| msgid "File '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete ID %1 does not exist"
-msgstr "Файл «%1» не существует"
+msgstr "Метка для удаления с идентификатором %1 не существует"
 
 #: src/tagscommand.cpp:439
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr ""
+msgstr "Не удалось создать метку с запрошенным идентификатором"
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot search for email '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "Не удалось выполнить поиск почтового адреса «%1», %2"
+msgstr "Удалена метка «%1» с идентификатором %2"
 
 #: src/tagscommand.cpp:491
 #, kde-format
@@ -2571,45 +2525,41 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr ""
+msgstr "Найдено меток Akonadi: %1"
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr "Имя каталога maildir было изменено на «%1»"
+msgstr "Метки сохранены в «%1»"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr "Имя каталога maildir было изменено на «%1»"
+msgstr "Чтение сохранённых меток из «%1»"
 
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "New name for collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "Новое имя коллекции"
+msgstr "Прочитано сохранённых меток: %1"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "Метки восстановлены"
 
 #: src/terminalcolour.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "Не удалось настроить терминал"
 
 #: src/updatecommand.cpp:35
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
-msgstr ""
+msgstr "Обновление содержимого элемента из файла"
 
 #: src/updatecommand.cpp:52
 #, kde-format
