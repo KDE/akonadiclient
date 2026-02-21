@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024, 2025, 2026 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:52+0000\n"
-"PO-Revision-Date: 2025-10-22 18:19+0300\n"
+"PO-Revision-Date: 2026-02-06 11:09+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -1420,12 +1420,10 @@ msgid "Copying new '%2' to '%1'"
 msgstr "Kopioidaan uusi ”%2” kohteeseen ”%1”"
 
 #: src/folderscommand.cpp:766
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
-msgstr "Ei voida kopioida tai siirtää lähteestä ”%1”, %2"
+msgstr "Ei voida kopioida uutta tietuetta ”%1” tietueeseen %2"
 
 #: src/folderscommand.cpp:769
 #, kde-format
