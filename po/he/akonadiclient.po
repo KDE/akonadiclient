@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the akonadiclient package.
 #
-# SPDX-FileCopyrightText: 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:52+0000\n"
-"PO-Revision-Date: 2025-10-18 20:49+0300\n"
+"PO-Revision-Date: 2026-03-20 08:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -424,7 +424,7 @@ msgstr "מחיקת מאפיין קיים"
 #: src/attributescommand.cpp:105
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
-msgstr "הצגת או פענוח ערך המאפיין בקידוד הקסדצימלי"
+msgstr "הצגת או פיענוח ערך המאפיין בקידוד הקסדצימלי"
 
 #: src/attributescommand.cpp:108
 #, kde-format
@@ -2263,7 +2263,7 @@ msgstr "פריט…"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Use raw payload (disables quoted-printable decoding)"
-msgstr "להשתמש במטען גולמי (משבית פענוח עם מירכאות לתצוגה)"
+msgstr "להשתמש במטען גולמי (משבית פיענוח עם מירכאות לתצוגה)"
 
 #: src/showcommand.cpp:51
 #, kde-format
