@@ -72,5 +72,5 @@ target_link_libraries(akonadiclient libakonadiclient)
 install(
     TARGETS
         akonadiclient
-        ${INSTALL_TARGETS_DEFAULT_ARGS}
+        ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
