@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -33,8 +33,7 @@ msgid "The name of the command"
 msgstr "Názov príkazu"
 
 #: src/abstractcommand.cpp:54
-#, fuzzy, kde-format
-#| msgid "Get state for the specified agent"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
 msgstr "Získať stav pre zadaného agenta"
@@ -82,19 +81,13 @@ msgid "Invalid collection/item argument '%1', %2"
 msgstr "Neplatný argument kolekcie/položky '%1', %2"
 
 #: src/abstractcommand.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:shell %1 is subcommand name, %2 is error message"
-#| msgid "%2. See 'help %1'"
+#, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
 msgstr "%2. Pozrite si 'help %1'"
 
 #: src/abstractcommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
-#| "message"
-#| msgid "%3. See '%1 help %2'"
+#, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
@@ -114,24 +107,18 @@ msgid "Set %1=\"%2\" in environment"
 msgstr "Nastaviť %1=\"%2\" v prostredí"
 
 #: src/abstractcommand.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Directory '%1' not found or not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
 msgstr "Adresár '%1' nebol nájdený alebo nie je adresárom"
 
 #: src/abstractcommand.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Nie je možné vytvoriť adresár '%1/%2'"
+msgstr "Nie je možné create save directory '%1'"
 
 #: src/addcommand.cpp:41
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Add items to a collection"
 msgstr "Pridať položky do kolekcie"
@@ -312,8 +299,6 @@ msgid "Added file '%2' as item %1"
 msgstr "Pridaný súbor '%2' ako položka %1"
 
 #: src/agentscommand.cpp:37
-#, fuzzy
-#| msgid "Manage Akonadi agents"
 msgctxt "info:shell"
 msgid "Manage Akonadi agents"
 msgstr "Spravovať agentov Akonadi"
@@ -411,31 +396,27 @@ msgid "Status:  "
 msgstr "Stav: "
 
 #: src/attributescommand.cpp:80
-#, fuzzy
-#| msgid "Add items to a collection"
 msgctxt "info:shell"
 msgid "Show or update attributes for a collection"
 msgstr "Pridať položky do kolekcie"
 
 #: src/attributescommand.cpp:93
-#, fuzzy, kde-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-format
 msgid "Show the collection attributes (the default operation)"
 msgstr "Zobraziť rozbalenú skupinu kontaktov (predvolená operácia)"
 
 #: src/attributescommand.cpp:96
 #, kde-format
 msgid "Add an attribute"
-msgstr ""
+msgstr "Pridať atribút"
 
 #: src/attributescommand.cpp:99
 #, kde-format
 msgid "Modify an existing attribute"
-msgstr ""
+msgstr "Upraviť existujúci atribút"
 
 #: src/attributescommand.cpp:102
-#, fuzzy, kde-format
-#| msgid "Delete a collection or an item"
+#, kde-format
 msgid "Delete an existing attribute"
 msgstr "Vymazať kolekciu alebo položku"
 
@@ -443,28 +424,25 @@ msgstr "Vymazať kolekciu alebo položku"
 #, kde-format
 msgid "Show or interpret the attribute value as hex encoded"
 msgstr ""
+"Zobraziť alebo interpretovať hodnotu atribútu ako hexadecimálne kódovanú"
 
 #: src/attributescommand.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgid "Save current folder attributes"
 msgstr "Kolekcia alebo položka"
 
 #: src/attributescommand.cpp:111
 #, kde-format
 msgid "Check current against saved folder attributes"
-msgstr ""
+msgstr "Porovnať aktuálne s uloženými atribútmi priečinkov"
 
 #: src/attributescommand.cpp:114
 #, kde-format
 msgid "Restore changed folder attributes"
-msgstr ""
+msgstr "Obnoviť zmenené atribúty priečinkov"
 
 #: src/attributescommand.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection to dump: an ID, path or Akonadi URL"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The collection: an ID, path or Akonadi URL"
 msgstr "Kolekcia, ktorá sa má vypísať: ID, cesta alebo Akonadi URL"
@@ -484,18 +462,16 @@ msgstr "argumenty..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr ""
+msgstr "Očakával sa hexadecimálne kódovaný reťazec, ale dĺžka %1 nie je párna"
 
 #: src/attributescommand.cpp:149
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded value contained invalid characters"
-msgstr ""
+msgstr "Hexadecimálne kódovaná hodnota obsahovala neplatné znaky"
 
 #: src/attributescommand.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one operation mode option may be specified"
 msgstr "Môže byť zadaná len jedna z možností  'list', 'add' alebo 'delete'"
@@ -508,25 +484,19 @@ msgid "No collection specified"
 msgstr "Žiadna kolekcia nie je zadaná"
 
 #: src/attributescommand.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to add"
 msgstr "Nie sú zadané žiadne položky na pridanie"
 
 #: src/attributescommand.cpp:228
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name specified to delete"
 msgstr "Nie sú zadané žiadne položky na vymazanie"
 
 #: src/attributescommand.cpp:234
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No attribute name/value specified to modify"
 msgstr "Nie sú zadané žiadne položky na pridanie"
@@ -535,12 +505,10 @@ msgstr "Nie sú zadané žiadne položky na pridanie"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr ""
+msgstr "Príliš veľa zadaných argumentov, od '%1'"
 
 #: src/attributescommand.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved attributes from '%1'"
 msgstr "Nedá sa uložiť súbor '%1'"
@@ -550,37 +518,28 @@ msgstr "Nedá sa uložiť súbor '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr ""
+msgstr "Najskôr spustite '%1 %2 --backup'"
 
 #: src/attributescommand.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr "Kolekcia %1 nemá žiadne položky"
+msgstr "Kolekcia %2 už má atribút '%1'"
 
 #: src/attributescommand.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 has no attribute '%1'"
-msgstr "Kolekcia %1 nemá žiadne položky"
+msgstr "Kolekcia %2 nemá atribút '%1'"
 
 #: src/attributescommand.cpp:379
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no attributes"
 msgstr "Kolekcia %1 nemá žiadne položky"
 
 #: src/attributescommand.cpp:387
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection %2 has %1 attribute:"
 msgid_plural "Collection %2 has %1 attributes:"
@@ -592,50 +551,41 @@ msgstr[2] "Kolekcia %2 má %1 položkiek:"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi collections"
-msgstr ""
+msgstr "Nájdených %1 aktuálnych kolekcií Akonadi"
 
 #: src/attributescommand.cpp:413 src/folderscommand.cpp:213
 #: src/tagscommand.cpp:543
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
 msgstr "Nedá sa uložiť súbor '%1'"
 
 #: src/attributescommand.cpp:424
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving collection attributes to '%1'"
 msgstr "Kolekcia %1 nemá žiadne položky"
 
 #: src/attributescommand.cpp:456
-#, fuzzy, kde-format
-#| msgid "Add items to a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved attributes for %1 collections"
-msgstr "Pridať položky do kolekcie"
+msgstr "Atribúty boli uložené pre %1 kolekcií"
 
 #: src/attributescommand.cpp:462
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved attributes from '%1'"
 msgstr "Zmenený názov priečinka maildir na '%1'"
 
 #: src/attributescommand.cpp:483
-#, fuzzy, kde-format
-#| msgid "Add items to a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read attributes for %1 collections"
-msgstr "Pridať položky do kolekcie"
+msgstr "Atribúty boli prečítané pre %1 kolekcií"
 
 #: src/attributescommand.cpp:507
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Checking current collection attributes"
 msgstr "Kolekcia alebo položka"
@@ -644,65 +594,58 @@ msgstr "Kolekcia alebo položka"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder '%1' had attributes but is no longer present"
-msgstr ""
+msgstr "Priečinok '%1' mal atribúty, ale už nie je prítomný"
 
 #: src/attributescommand.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot fetch parent collection '%1', %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
 msgstr "Nie je možné načítať rodičovskú kolekciu '%1', %2"
 
 #: src/attributescommand.cpp:562
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Collection \"%2\" changed ID from %1 to %3"
-msgstr "Kolekcia %2 má %1 položku:"
+msgstr "Kolekcia \"%2\" zmenila ID z %1 na %3"
 
 #: src/attributescommand.cpp:635
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder  \"%1\" attribute \"%2\" changed from %3 to %4"
-msgstr ""
+msgstr "Atribút \"%2\" priečinka \"%1\" sa zmenil z %3 na %4"
 
 #: src/attributescommand.cpp:644
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" attribute \"%2\" added %3"
-msgstr ""
+msgstr "Atribút \"%2\" priečinka \"%1\" pridaný %3"
 
 #: src/attributescommand.cpp:667
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" needs update of %1 attribute"
 msgid_plural "Folder \"%2\" needs update of %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Priečinok \"%2\" potrebuje aktualizáciu %1 atribútu"
+msgstr[1] "Priečinok \"%2\" potrebuje aktualizáciu %1 atribútov"
+msgstr[2] "Priečinok \"%2\" potrebuje aktualizáciu %1 atribútov"
 
 #: src/attributescommand.cpp:673
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder \"%2\" updating %1 attribute"
 msgid_plural "Folder \"%2\" updating %1 attributes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Priečinok \"%2\" aktualizuje %1 atribút"
+msgstr[1] "Priečinok \"%2\" aktualizuje %1 atribúty"
+msgstr[2] "Priečinok \"%2\" aktualizuje %1 atribútov"
 
 #: src/attributescommand.cpp:698
-#, fuzzy, kde-kuit-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes need to be restored"
 msgstr "Zobraziť rozbalenú skupinu kontaktov (predvolená operácia)"
 
 #: src/attributescommand.cpp:700
-#, fuzzy, kde-kuit-format
-#| msgid "Show the expanded contact group (the default operation)"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No collection attributes needed to be restored"
 msgstr "Zobraziť rozbalenú skupinu kontaktov (predvolená operácia)"
@@ -712,9 +655,9 @@ msgstr "Zobraziť rozbalenú skupinu kontaktov (predvolená operácia)"
 msgctxt "@info:shell"
 msgid "Attributes need to be restored for %1 collection"
 msgid_plural "Attributes need to be restored for %1 collections"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Atribúty je potrebné obnoviť pre %1 kolekciu"
+msgstr[1] "Atribúty je potrebné obnoviť pre %1 kolekcie"
+msgstr[2] "Atribúty je potrebné obnoviť pre %1 kolekcií"
 
 #: src/attributescommand.cpp:711
 #, kde-kuit-format
@@ -723,22 +666,20 @@ msgid ""
 "Attribute changes are required, execute the command:<nl/><bcode>  %1 %2 --"
 "restore</bcode><nl/>to implement the changes."
 msgstr ""
+"Vyžadujú sa zmeny atribútov, vykonajte príkaz:<nl/><bcode>  %1 %2 --restore</"
+"bcode><nl/>na implementáciu zmien."
 
 #: src/attributescommand.cpp:721
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Files or directories to add to the collection"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Attributes were restored for %1 collection"
 msgid_plural "Attributes were restored for %1 collections"
-msgstr[0] "Súbory alebo adresáre, ktoré sa majú pridať do kolekcie"
-msgstr[1] "Súbory alebo adresáre, ktoré sa majú pridať do kolekcie"
-msgstr[2] "Súbory alebo adresáre, ktoré sa majú pridať do kolekcie"
+msgstr[0] "Atribúty boli obnovené pre %1 kolekciu"
+msgstr[1] "Atribúty boli obnovené pre %1 kolekcie"
+msgstr[2] "Atribúty boli obnovené pre %1 kolekcií"
 
 #: src/collectionlistcommand.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot delete the root collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot list any collections"
 msgstr "Nie je možné vymazať koreňovú kolekciu"
@@ -777,7 +718,7 @@ msgstr "Nesprávna syntax položky '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Ambiguous command '%1', possibilities are '%2'"
-msgstr ""
+msgstr "Nejednoznačný príkaz '%1', možnosti sú '%2'"
 
 #: src/commandfactory.cpp:69 src/commandfactory.cpp:121
 #, kde-format
@@ -808,8 +749,6 @@ msgid "Invalid command"
 msgstr "Neplatný príkaz"
 
 #: src/copycommand.cpp:40
-#, fuzzy
-#| msgid "Copy collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Copy collections or items into a new collection"
 msgstr "Skopírovať kolekcie alebo položky do novej kolekcie"
@@ -956,8 +895,6 @@ msgid "Cannot copy/move items from '%1', %2"
 msgstr "Nie je možné kopírovať/presúvať položky z '%1', %2"
 
 #: src/createcommand.cpp:35
-#, fuzzy
-#| msgid "Create a new collection"
 msgctxt "info:shell"
 msgid "Create a new collection"
 msgstr "Vytvoriť novú kolekciu"
@@ -1027,8 +964,6 @@ msgid "Created new collection '%1'"
 msgstr "Vytvorená nová kolekcia '%1'"
 
 #: src/deletecommand.cpp:39
-#, fuzzy
-#| msgid "Delete a collection or an item"
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
 msgstr "Vymazať kolekciu alebo položku"
@@ -1074,8 +1009,6 @@ msgid "Item deleted successfully"
 msgstr "Položka úspešne vymazaná"
 
 #: src/dumpcommand.cpp:46
-#, fuzzy
-#| msgid "Dump a collection to a directory structure"
 msgctxt "info:shell"
 msgid "Dump a collection to a directory structure"
 msgstr "Výpis kolekcie do adresárovej štruktúry"
@@ -1156,8 +1089,6 @@ msgid "Cannot save file '%1'"
 msgstr "Nedá sa uložiť súbor '%1'"
 
 #: src/editcommand.cpp:37
-#, fuzzy
-#| msgid "Edit the raw payload for the specified item using $EDITOR"
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
 msgstr "Upraviť nespracovaný dátový obsah pre zadanú položku pomocou $EDITOR"
@@ -1202,35 +1133,33 @@ msgstr "Zmeny položky '%1' boli uložené"
 #, kde-format
 msgctxt "@info:shell"
 msgid "error"
-msgstr ""
+msgstr "chyba"
 
 #: src/errorreporter.cpp:46
 #, kde-format
 msgctxt "@info:shell"
 msgid "warning"
-msgstr ""
+msgstr "warning"
 
 #: src/errorreporter.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr ""
+msgstr "notice"
 
 #: src/errorreporter.cpp:56
 #, kde-format
 msgctxt "@info:shell"
 msgid "success"
-msgstr ""
+msgstr "success"
 
 #: src/errorreporter.cpp:61
 #, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr ""
+msgstr "info"
 
 #: src/exportcommand.cpp:31
-#, fuzzy
-#| msgid "Export a collection to an XML file"
 msgctxt "info:shell"
 msgid "Export a collection to an XML file"
 msgstr "Exportovať kolekciu do súboru XML"
@@ -1256,71 +1185,61 @@ msgstr "Nie je zadaný žiadny súbor na export"
 #: src/folderscommand.cpp:100
 msgctxt "info:shell"
 msgid "Save, check or restore Akonadi folder IDs"
-msgstr ""
+msgstr "Uložiť, skontrolovať alebo obnoviť ID priečinkov Akonadi"
 
 #: src/folderscommand.cpp:112
 #, kde-format
 msgid "Save current folder ID assignments"
-msgstr ""
+msgstr "Uložiť aktuálne priradenia ID priečinkov"
 
 #: src/folderscommand.cpp:115
 #, kde-format
 msgid "Check current against saved folder ID assignments"
-msgstr ""
+msgstr "Porovnať aktuálne s uloženými priradeniami ID priečinkov"
 
 #: src/folderscommand.cpp:118
 #, kde-format
 msgid "Restore configuration files with changed folder ID assignments"
-msgstr ""
+msgstr "Obnoviť konfiguračné súbory so zmenenými priradeniami ID priečinkov"
 
 #: src/folderscommand.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Only one of the 'backup', 'check' or 'restore' options may be specified"
 msgstr "Môže byť zadaná len jedna z možností  'list', 'add' alebo 'delete'"
 
 #: src/folderscommand.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "One of the 'backup', 'check' or 'restore' options must be specified"
 msgstr "Môže byť zadaná len jedna z možností  'list', 'add' alebo 'delete'"
 
 #: src/folderscommand.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved list from '%1'"
 msgstr "Nedá sa uložiť súbor '%1'"
 
 #: src/folderscommand.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create directory '%1/%2'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot write current list to '%1'"
-msgstr "Nie je možné vytvoriť adresár '%1/%2'"
+msgstr "Nie je možné write current list to '%1'"
 
 #: src/folderscommand.cpp:299
 #, kde-format
 msgctxt "@info:shell"
 msgid "No folder IDs have changed"
-msgstr ""
+msgstr "Žiadne ID priečinkov sa nezmenili"
 
 #: src/folderscommand.cpp:304
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 folder IDs have changed"
-msgstr ""
+msgstr "%1 ID priečinkov sa zmenilo"
 
 #: src/folderscommand.cpp:321
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing config file '%1'..."
 msgstr "Spracovanie kolekcie '%1'"
@@ -1330,18 +1249,20 @@ msgstr "Spracovanie kolekcie '%1'"
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
 msgstr ""
+"Nie je možné premenovať skupinu \"%1\" pre priečinok \"%2\", ktorý už "
+"neexistuje"
 
 #: src/folderscommand.cpp:399
 #, kde-format
 msgctxt "@info:shell"
 msgid "Group \"%1\" for folder \"%2\" renamed to \"%3\""
-msgstr ""
+msgstr "Skupina \"%1\" pre priečinok \"%2\" premenovaná na \"%3\""
 
 #: src/folderscommand.cpp:413
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 groups were renamed"
-msgstr ""
+msgstr "%1 skupín bolo premenovaných"
 
 #: src/folderscommand.cpp:498
 #, kde-format
@@ -1349,24 +1270,26 @@ msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
 msgstr ""
+"Nie je možné aktualizovať \"%1\" v skupine \"%2\" pre priečinok \"%3\", "
+"ktorý už neexistuje"
 
 #: src/folderscommand.cpp:508
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updated \"%1\" in group \"%2\" for folder \"%3\" to %4"
-msgstr ""
+msgstr "Aktualizované \"%1\" v skupine \"%2\" pre priečinok \"%3\" na %4"
 
 #: src/folderscommand.cpp:530
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1 settings values were changed"
-msgstr ""
+msgstr "%1 hodnôt nastavení bolo zmenených"
 
 #: src/folderscommand.cpp:536
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "No configuration changes are required"
-msgstr ""
+msgstr "Nie sú potrebné žiadne zmeny konfigurácie"
 
 #: src/folderscommand.cpp:542
 #, kde-kuit-format
@@ -1374,6 +1297,7 @@ msgctxt "@info:shell"
 msgid ""
 "Configuration changes are required (%1 group renames and %2 settings changes)"
 msgstr ""
+"Sú potrebné zmeny konfigurácie (%1 premenovaní skupín a %2 zmien nastavení)"
 
 #: src/folderscommand.cpp:544
 #, kde-kuit-format
@@ -1383,69 +1307,60 @@ msgid ""
 ">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
 "the changes."
 msgstr ""
+"Quit all running PIM applications and stop the Akonadi server, then<nl/"
+">execute the command:<nl/><bcode>  %1 %2 --restore</bcode><nl/>to implement "
+"the changes."
 
 #: src/folderscommand.cpp:558
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saving folder paths to '%1'"
 msgstr "Zmenený názov priečinka maildir na '%1'"
 
 #: src/folderscommand.cpp:565
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection or item"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved %1 collection folder paths"
-msgstr "Kolekcia alebo položka"
+msgstr "Uložených %1 ciest priečinkov kolekcií"
 
 #: src/folderscommand.cpp:570
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved folder paths from '%1'"
 msgstr "Zmenený názov priečinka maildir na '%1'"
 
 #: src/folderscommand.cpp:581
-#, fuzzy, kde-format
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved collection paths"
-msgstr "Premenovať kolekciu"
+msgstr "Prečítaných %1 uložených ciest kolekcií"
 
 #: src/folderscommand.cpp:601
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr ""
+msgstr "Priečinok \"%1\" mal ID %2, ale už nie je prítomný"
 
 #: src/folderscommand.cpp:604
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" changed ID from %2 to %3"
-msgstr "Kolekcia %2 má %1 položku:"
+msgstr "Priečinok \"%1\" zmenil ID z %2 na %3"
 
 #: src/folderscommand.cpp:669
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Defined %1 change data patterns for %2 config file names"
-msgstr ""
+msgstr "Definovaných %1 vzorov zmien dát pre %2 názvov konfiguračných súborov"
 
 #: src/folderscommand.cpp:685
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Saved folder list '%1' does not exist"
 msgstr "Značka na vymazanie '%1' neexistuje"
 
 #: src/folderscommand.cpp:689
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Current folder list '%1' does not exist"
 msgstr "Značka na vymazanie '%1' neexistuje"
@@ -1455,6 +1370,7 @@ msgstr "Značka na vymazanie '%1' neexistuje"
 msgctxt "@info:shell"
 msgid "Current folder list '%1' is older than saved folder list '%2'"
 msgstr ""
+"Aktuálny zoznam priečinkov '%1' je starší než uložený zoznam priečinkov '%2'"
 
 #: src/folderscommand.cpp:707
 #, kde-format
@@ -1462,47 +1378,47 @@ msgctxt "@info:shell"
 msgid ""
 "New configuration file '%1' does not exist, or is older than folder list '%2'"
 msgstr ""
+"Nový konfiguračný súbor '%1' neexistuje alebo je starší než zoznam "
+"priečinkov '%2'"
 
 #: src/folderscommand.cpp:718
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr ""
+msgstr "Najskôr spustite '%1 %2 --check'"
 
 #: src/folderscommand.cpp:725
 #, kde-format
 msgctxt "@info:shell"
 msgid "Checking whether the Akonadi server is running..."
-msgstr ""
+msgstr "Kontroluje sa, či je server Akonadi spustený..."
 
 #: src/folderscommand.cpp:730
 #, kde-format
 msgctxt "@info:shell"
 msgid "Akonadi server is stopped"
-msgstr ""
+msgstr "Server Akonadi je zastavený"
 
 #: src/folderscommand.cpp:735
 #, kde-format
 msgctxt "@info:shell"
 msgid "Shutting down Akonadi server"
-msgstr ""
+msgstr "Vypínanie servera Akonadi"
 
 #: src/folderscommand.cpp:744
 #, kde-format
 msgctxt "@info:shell"
 msgid "Updating %1 configuration files in '%2'"
-msgstr ""
+msgstr "Aktualizácia %1 konfiguračných súborov v '%2'"
 
 #: src/folderscommand.cpp:755
 #, kde-format
 msgctxt "@info:shell"
 msgid "Removing old '%1'"
-msgstr ""
+msgstr "Odstraňovanie starého '%1'"
 
 #: src/folderscommand.cpp:758
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove old '%1'"
 msgstr "Nedá sa uložiť súbor '%1'"
@@ -1511,20 +1427,16 @@ msgstr "Nedá sa uložiť súbor '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Copying new '%2' to '%1'"
-msgstr ""
+msgstr "Kopírovanie nového '%2' do '%1'"
 
 #: src/folderscommand.cpp:766
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot copy/move from '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot copy new '%2' to '%1'"
 msgstr "Nie je možné kopírovať/presúvať z '%1', %2"
 
 #: src/folderscommand.cpp:769
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot remove copied file '%1'"
 msgstr "Nedá sa uložiť súbor '%1'"
@@ -1533,18 +1445,16 @@ msgstr "Nedá sa uložiť súbor '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Restore finished"
-msgstr ""
+msgstr "Obnova dokončená"
 
 #: src/folderscommand.cpp:788
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot locate user configuration directory"
-msgstr ""
+msgstr "Nie je možné locate user configuration directory"
 
 #: src/folderscommand.cpp:795
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Configuration directory '%1' does not exist"
 msgstr "Značka na vymazanie '%1' neexistuje"
@@ -1553,11 +1463,9 @@ msgstr "Značka na vymazanie '%1' neexistuje"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No applicable configuration files found"
-msgstr ""
+msgstr "Nenašli sa žiadne applicable configuration files."
 
 #: src/groupcommand.cpp:39
-#, fuzzy
-#| msgid "Expand or modify a contact group"
 msgctxt "info:shell"
 msgid "Expand or modify a contact group"
 msgstr "Rozbaliť alebo zmeniť skupinu kontaktov"
@@ -1792,8 +1700,6 @@ msgid "Cleaning references from group %1 \"%2\":"
 msgstr "Čistenie odkazov zo skupiny %1 \"%2\":"
 
 #: src/importcommand.cpp:39
-#, fuzzy
-#| msgid "Import an XML file"
 msgctxt "info:shell"
 msgid "Import an XML file"
 msgstr "Importovať súbor XML"
@@ -1895,8 +1801,6 @@ msgid "Created item '%1'"
 msgstr "Vytvorená položka '%1'"
 
 #: src/infocommand.cpp:38
-#, fuzzy
-#| msgid "Show full information for a collection or item"
 msgctxt "info:shell"
 msgid "Show full information for a collection or item"
 msgstr "Zobraziť úplné informácie o kolekcii alebo položke"
@@ -1982,7 +1886,7 @@ msgstr "Vzdialené ID"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Path"
-msgstr ""
+msgstr "Cesta"
 
 #: src/infocommand.cpp:233
 #, kde-format
@@ -2123,8 +2027,6 @@ msgid "Unknown"
 msgstr "Neznáme"
 
 #: src/listcommand.cpp:35
-#, fuzzy
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Vypísať zoznam podkolekcií a/alebo položiek v zadanej kolekcii"
@@ -2145,8 +2047,7 @@ msgid "List only contained items"
 msgstr "Vypísať zoznam iba obsiahnutých položiek"
 
 #: src/listcommand.cpp:56
-#, fuzzy, kde-format
-#| msgid "List only sub-collections"
+#, kde-format
 msgid "List sub-collections recursively"
 msgstr "Vypísať zoznam iba podkolekcií"
 
@@ -2160,7 +2061,7 @@ msgstr "Kolekcia, ktorej zoznam sa má vypísať: ID, cesta alebo Akonadi URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr ""
+msgstr "Rekurzívny výpis je možné použiť iba pre kolekcie"
 
 #: src/listcommand.cpp:158
 #, kde-format
@@ -2169,10 +2070,7 @@ msgid "Collection %1 has no sub-collections"
 msgstr "Kolekcia %1 nemá žiadne podkolekcie"
 
 #: src/listcommand.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collection:"
-#| msgid_plural "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
@@ -2235,8 +2133,7 @@ msgid "A command-line/shell client for Akonadi"
 msgstr "Klient príkazového riadku/shell pre Akonadi"
 
 #: src/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Kevin Krammer"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Kevin Krammer"
 msgstr "Kevin Krammer"
@@ -2248,8 +2145,7 @@ msgid "Original Author"
 msgstr "Pôvodný autor"
 
 #: src/main.cpp:52
-#, fuzzy, kde-format
-#| msgid "Jonathan Marten"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
@@ -2261,8 +2157,7 @@ msgid "Additions and new commands"
 msgstr "Doplnky a nové príkazy"
 
 #: src/main.cpp:53
-#, fuzzy, kde-format
-#| msgid "Bhaskar Kandiyal"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
@@ -2302,8 +2197,6 @@ msgstr ""
 "Informácie o konkrétnom príkaze nájdete pomocou '%1 help command'."
 
 #: src/movecommand.cpp:27
-#, fuzzy
-#| msgid "Move collections or items into a new collection"
 msgctxt "info:shell"
 msgid "Move collections or items into a new collection"
 msgstr "Presunúť kolekcie alebo položky do novej kolekcie"
@@ -2321,8 +2214,6 @@ msgid "Destination collection to move into"
 msgstr "Cieľová kolekcia, do ktorej sa má presunúť"
 
 #: src/renamecommand.cpp:33
-#, fuzzy
-#| msgid "Rename a collection"
 msgctxt "info:shell"
 msgid "Rename a collection"
 msgstr "Premenovať kolekciu"
@@ -2352,8 +2243,6 @@ msgid "Collection renamed successfully"
 msgstr "Kolekcia úspešne premenovaná"
 
 #: src/showcommand.cpp:34
-#, fuzzy
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
 msgstr "Zobraziť nespracovaný dátový obsah"
@@ -2394,8 +2283,6 @@ msgid "Item has no main body part"
 msgstr "Položka nemá žiadnu hlavnú časť tela"
 
 #: src/tagscommand.cpp:38
-#, fuzzy
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
 msgstr "Vypísať zoznam alebo zmeniť značky"
@@ -2428,27 +2315,27 @@ msgstr "Vymazať značky"
 #: src/tagscommand.cpp:71
 #, kde-format
 msgid "Save the current tags"
-msgstr ""
+msgstr "Uložiť aktuálne značky"
 
 #: src/tagscommand.cpp:74
 #, kde-format
 msgid "Restore the saved tags (into a new database)"
-msgstr ""
+msgstr "Obnoviť uložené značky (do novej databázy)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr ""
+msgstr "ID značky na pridanie (predvolené automatické)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: src/tagscommand.cpp:76
 #, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
-msgstr ""
+msgstr "Ponechať prechodné značky pridané pri použití možnosti 'id'"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2471,7 +2358,7 @@ msgstr "[ZNAČKA...]"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr ""
+msgstr "Neplatná hodnota pre možnosť 'id'"
 
 #: src/tagscommand.cpp:95
 #, kde-format
@@ -2480,11 +2367,7 @@ msgid "The 'brief' and 'urls' options cannot both be specified"
 msgstr "Nemôžu byť zadané obe možnosti 'brief' aj 'urls'"
 
 #: src/tagscommand.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'expand', 'add', 'delete' or 'clean' options may be "
-#| "specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
@@ -2512,25 +2395,19 @@ msgid "No tags specified to delete"
 msgstr "Nie sú zadané žiadne značky na vymazanie"
 
 #: src/tagscommand.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
 msgstr "Voľba 'comment' je povolená len s 'add'"
 
 #: src/tagscommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'comment' option is only allowed with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
 msgstr "Voľba 'comment' je povolená len s 'add'"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot save file '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
 msgstr "Nedá sa uložiť súbor '%1'"
@@ -2539,7 +2416,7 @@ msgstr "Nedá sa uložiť súbor '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr ""
+msgstr "Žiadne uložené značky na obnovu"
 
 #: src/tagscommand.cpp:228
 #, kde-format
@@ -2548,17 +2425,13 @@ msgid "A tag named '%1' ID %2 already exists"
 msgstr "Značka s názvom '%1' ID %2 už existuje"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
 msgstr "Nie je možné pridať značku '%1' ID %2"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
 msgstr "Nie je možné pridať značku '%1'"
@@ -2567,12 +2440,10 @@ msgstr "Nie je možné pridať značku '%1'"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
-msgstr ""
+msgstr "Nie je možné create a tag with ID %1, sequence already at ID %2"
 
 #: src/tagscommand.cpp:341
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
 msgstr "Nie je možné pridať značku '%1' ID %2"
@@ -2593,12 +2464,10 @@ msgstr "Značka na vymazanie ID %1 neexistuje"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr ""
+msgstr "Značku nebolo možné vytvoriť s požadovaným ID"
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
 msgstr "Nie je možné pridať značku '%1' ID %2"
@@ -2619,43 +2488,38 @@ msgstr "URL"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr ""
+msgstr "Nájdených %1 aktuálnych značiek Akonadi"
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
 msgstr "Zmenený názov priečinka maildir na '%1'"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgid "Changed maildir folder name to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
 msgstr "Zmenený názov priečinka maildir na '%1'"
 
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgid "Rename a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "Premenovať kolekciu"
+msgstr "Prečítaných %1 uložených značiek"
 
 #: src/tagscommand.cpp:600
 #, kde-format
 msgid "Tags restored"
-msgstr ""
+msgstr "Značky obnovené"
 
 #: src/terminalcolour.cpp:45
 #, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
-msgstr ""
+msgstr "Nepodarilo sa set up terminal"
 
 #: src/updatecommand.cpp:35
-#, fuzzy
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
 msgstr "Aktualizovať dátový obsah položky zo súboru"
@@ -2689,8 +2553,6 @@ msgstr "Položka úspešne aktualizovaná"
 #~ msgstr "Môže byť zadaná len jedna z možností  'list', 'add' alebo 'delete'"
 
 #, fuzzy
-#~| msgctxt "@info:shell"
-#~| msgid "Only one of the 'list', 'add' or 'delete' options may be specified"
 #~ msgctxt "@info:shell"
 #~ msgid ""
 #~ "Only one of the 'show', 'add', 'modify' or 'delete' options may be "
