@@ -1,5 +1,6 @@
 {
-    "version": 3,
+    "$schema": "https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json",
+    "version": 8,
     "configurePresets": [
         {
             "name": "base",
@@ -7,21 +8,16 @@
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build-${presetName}",
             "installDir": "$env{KF6}",
-            "hidden": true,
-            "cacheVariables": {
-                "BUILD_QCH": "ON"
-            }
+            "hidden": true
         },
         {
             "name": "dev-mold",
             "displayName": "Build as debug + using mold linker",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold"
             },
             "inherits": [
-                "base"
+                "dev"
             ]
         },
         {
@@ -49,27 +45,22 @@
         {
             "name": "dev-clang",
             "displayName": "dev-clang",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            },
             "environment": {
                 "CXX": "clang++",
                 "CCACHE_DISABLE": "ON"
             },
             "inherits": [
-                "base"
+                "dev"
             ]
         },
         {
             "name": "unity",
             "displayName": "Build with CMake unity support.",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
                 "USE_UNITY_CMAKE_SUPPORT": "ON"
             },
             "inherits": [
-                "base"
+                "dev"
             ]
         },
         {
@@ -120,23 +111,9 @@
             ]
         },
         {
-            "name": "pch",
-            "displayName": "pch",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "USE_PRECOMPILED_HEADERS": "ON",
-                "BUILD_COVERAGE": "ON"
-            },
-            "inherits": [
-                "base"
-            ]
-        },
-        {
             "name": "ftime-trace",
             "displayName": "ftime-trace",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "USE_DEVELOPER_MODE": "ON",
                 "CMAKE_C_FLAGS_INIT": "-ftime-trace",
                 "CMAKE_CXX_FLAGS_INIT": "-ftime-trace"
             },
@@ -146,7 +123,7 @@
                 "CCACHE_DISABLE": "ON"
             },
             "inherits": [
-                "base"
+                "dev"
             ]
         }
     ],
@@ -166,10 +143,6 @@
         {
             "name": "dev-clang",
             "configurePreset": "dev-clang"
-        },
-        {
-            "name": "pch",
-            "configurePreset": "pch"
         },
         {
             "name": "release",
