@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:52+0000\n"
-"PO-Revision-Date: 2026-04-22 16:03+0200\n"
+"PO-Revision-Date: 2026-04-30 17:06+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1057,7 +1057,7 @@ msgstr "Le directorio '%1' non es vacue (usa '-f' per fortiar le operation)"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 cannot contain items"
-msgstr "Collection  %1  nonpote continer elementos"
+msgstr "Collection  %1  non pote continer elementos"
 
 #: src/dumpcommand.cpp:145
 #, kde-format
@@ -1247,7 +1247,8 @@ msgstr "Processante filede configuration  '%1' ..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
-msgstr "Nonpote renominar gruppo \"%1\" per dossier \"%2\" que non existe plus"
+msgstr ""
+"Non pote renominar gruppo \"%1\" per dossier \"%2\" que non existe plus"
 
 #: src/folderscommand.cpp:399
 #, kde-format
