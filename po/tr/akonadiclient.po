@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:52+0000\n"
-"PO-Revision-Date: 2026-03-09 21:58+0300\n"
+"PO-Revision-Date: 2026-05-02 18:52+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -527,7 +527,7 @@ msgstr "Önce “%1 %2 --backup” çalıştır"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection %2 already has an attribute '%1'"
-msgstr "%2 koleksiyonunda halihazırda “%1” özniteliği var"
+msgstr "%2 koleksiyonunda hâlihazırda “%1” özniteliği var"
 
 #: src/attributescommand.cpp:310
 #, kde-format
@@ -1747,7 +1747,7 @@ msgstr "Üst koleksiyonun alt ögeleri getirilemedi, %1"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection '%1' already exists"
-msgstr "“%1” koleksiyonu halihazırda var"
+msgstr "“%1” koleksiyonu hâlihazırda var"
 
 #: src/importcommand.cpp:126
 #, kde-format
@@ -2417,7 +2417,7 @@ msgstr "Geri yüklenecek kayıtlı etiket yok"
 #, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr "“%1” kimlikli %2 adlı bir etiket halihazırda var"
+msgstr "“%1” kimlikli %2 adlı bir etiket hâlihazırda var"
 
 #: src/tagscommand.cpp:265
 #, kde-format
@@ -2436,7 +2436,7 @@ msgstr "“%1” etiketi eklenemedi"
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
 msgstr ""
-"%1 kimliğine sahip bir etiket oluşturulamıyor, sıralama halihazırda %2 "
+"%1 kimliğine sahip bir etiket oluşturulamıyor, sıralama hâlihazırda %2 "
 "kimliğinde"
 
 #: src/tagscommand.cpp:341
