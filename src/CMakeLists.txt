@@ -42,7 +42,7 @@ target_link_libraries(
     KPim6::AkonadiCore
     KPim6::AkonadiXml
     KPim6::AkonadiContactCore
-    KPim6::Mime
+    KF6::Mime
 )
 target_link_libraries(
     libakonadiclient
