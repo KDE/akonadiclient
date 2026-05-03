@@ -11,4 +11,4 @@ Dependencies:
     'frameworks/kio': '@stable'
     'pim/akonadi': '@latest-kf6'
     'pim/akonadi-contacts': '@latest-kf6'
-    'pim/kmime': '@latest-kf6'
+    'frameworks/kmime': '@latest-kf6'
