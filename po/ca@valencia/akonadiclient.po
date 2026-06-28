@@ -221,7 +221,7 @@ msgstr "No hi ha més directoris que s'hagen de processar"
 #: src/addcommand.cpp:190 src/addcommand.cpp:212
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
-msgstr "El directori «%1» ja no existix"
+msgstr "La carpeta «%1» ja no existix"
 
 #: src/addcommand.cpp:229
 #, kde-format
@@ -801,22 +801,22 @@ msgstr "No s'ha pogut resoldre l'origen «%1», %2"
 #: src/copycommand.cpp:141
 #, kde-format
 msgid "Moving contents of %1 -> %2"
-msgstr "S'està movent el contingut de %1 -> %2"
+msgstr "S'està movent el contingut de %1 → %2"
 
 #: src/copycommand.cpp:143
 #, kde-format
 msgid "Copying contents of %1 -> %2"
-msgstr "S'està copiant el contingut de %1 -> %2"
+msgstr "S'està copiant el contingut de %1 → %2"
 
 #: src/copycommand.cpp:159
 #, kde-format
 msgid "Moving collection %1 -> %2"
-msgstr "S'està movent la col·lecció de %1 -> %2"
+msgstr "S'està movent la col·lecció de %1 → %2"
 
 #: src/copycommand.cpp:164
 #, kde-format
 msgid "Copying collection %1 -> %2"
-msgstr "S'està copiant la col·lecció de %1 -> %2"
+msgstr "S'està copiant la col·lecció de %1 → %2"
 
 #: src/copycommand.cpp:183
 #, kde-format
@@ -1061,8 +1061,7 @@ msgstr "No s'ha trobat el directori «%1» o no és un directori"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
-msgstr ""
-"El directori «%1» no està buit (utilitzeu «-f» per a forçar l'operació)"
+msgstr "La carpeta «%1» no està buida (utilitzeu «-f» per a forçar l'operació)"
 
 #: src/dumpcommand.cpp:121 src/listcommand.cpp:261
 #, kde-format

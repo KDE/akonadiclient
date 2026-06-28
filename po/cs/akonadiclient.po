@@ -1,52 +1,47 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # SPDX-FileCopyrightText: 2018, 2019, 2021, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:52+0000\n"
-"PO-Revision-Date: 2024-09-23 13:02+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-06-27 23:46+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: src/abstractcommand.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The name of the command"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The name of the command"
 msgstr "Název příkazu"
 
 #: src/abstractcommand.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Give help for the specified command"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Give help for the specified command"
-msgstr "Zobrazit nápovědu pro zadaný příkaz"
+msgstr "Zobrazit nápovědu k zadanému příkazu"
 
 #: src/abstractcommand.cpp:107 src/main.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Options for command"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Options for command"
 msgstr "Možnosti příkazu"
@@ -58,96 +53,72 @@ msgid "[options]"
 msgstr "[možnosti]"
 
 #: src/abstractcommand.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Assume that a collection is specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Assume that a collection is specified"
-msgstr "Předpokládat, že je zadána sbírka"
+msgstr "Předpokládejme, že je sbírka zadána"
 
 #: src/abstractcommand.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Assume that an item is specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Assume that an item is specified"
-msgstr "Předpokládat, že je zadána položka"
+msgstr "Předpokládejme, že je položka zadána"
 
 #: src/abstractcommand.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Run without making any actual changes"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Run without making any actual changes"
 msgstr "Spustit bez provedení jakýchkoli skutečných změn"
 
 #: src/abstractcommand.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot specify as both an item and a collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot specify as both an item and a collection"
-msgstr "Nelze zadat jako položku i sbírku zároveň"
+msgstr "Nelze zadat zároveň jako položku i jako sbírku"
 
 #: src/abstractcommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid collection/item argument '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Invalid collection/item argument '%1', %2"
-msgstr "Neplatný argument sbírky/položky '%1', %2"
+msgstr "Neplatný argument kolekce/položky '%1', %2"
 
 #: src/abstractcommand.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@info:shell %1 is subcommand name, %2 is error message"
-#| msgid "%2, see 'help %1'"
+#, kde-format
 msgctxt "@info:shell %1 is subcommand name, %2 is error message"
 msgid "%2, see 'help %1'"
-msgstr "%2, viz 'help %1'"
+msgstr "%2, viz 'nápověda %1'"
 
 #: src/abstractcommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
-#| "message"
-#| msgid "%3, see '%1 help %2'"
+#, kde-format
 msgctxt ""
 "@info:shell %1 is application name, %2 is subcommand name, %3 is error "
 "message"
 msgid "%3, see '%1 help %2'"
-msgstr "%3, viz '%1 help %2'"
+msgstr "%3, viz '%1 nápověda %2'"
 
 #: src/abstractcommand.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Dangerous or destructive operations are not allowed"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Dangerous or destructive operations are not allowed"
-msgstr "Nebezpečné nebo destruktivní operace nejsou povoleny"
+msgstr "Nebezpečné nebo destruktivní činnosti nejsou povoleny"
 
 #: src/abstractcommand.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Set %1=\"%2\" in environment"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Set %1=\"%2\" in environment"
-msgstr "Nastavte %1=\"%2\" v prostředí"
+msgstr "Nastavit %1=\"%2\" v proměnné prostředí"
 
 #: src/abstractcommand.cpp:255
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Save location '%1' exists but is not a directory"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "Umístění pro uložení '%1' existuje, ale není to adresář"
+msgstr "Cesta k uložení '%1' existuje, ale nejedná se o adresář"
 
 #: src/abstractcommand.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create save directory '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot create save directory '%1'"
-msgstr "Nelze vytvořit adresář pro uložení '%1'"
+msgstr "Nelze vytvořit adresář k uložení '%1'"
 
 #: src/addcommand.cpp:41
 msgctxt "info:shell"
@@ -155,10 +126,11 @@ msgid "Add items to a collection"
 msgstr "Přidat položky do sbírky"
 
 #: src/addcommand.cpp:59
-#, fuzzy, kde-format
-#| msgid "Base directory for input files/directories, default is current"
+#, kde-format
 msgid "Base directory for input files/directories, default is current"
-msgstr "Základní adresář pro vstupní soubory/adresáře, výchozí je aktuální"
+msgstr ""
+"Základní adresář pro vstupní soubory/adresáře, výchozí hodnota je aktuální "
+"adresář"
 
 #: src/addcommand.cpp:60
 #, kde-format
@@ -166,34 +138,28 @@ msgid "directory"
 msgstr "adresář"
 
 #: src/addcommand.cpp:63
-#, fuzzy, kde-format
-#| msgid "Flat mode, do not duplicate subdirectory structure"
+#, kde-format
 msgid "Flat mode, do not duplicate subdirectory structure"
-msgstr "Plochý režim, neduplikovat strukturu podadresářů"
+msgstr "Jednoduchý režim, neduplikovat strukturu podadresářů"
 
 #: src/addcommand.cpp:66
-#, fuzzy, kde-format
-#| msgid "MIME type of added items, default is to auto-detect"
+#, kde-format
 msgid "MIME type of added items, default is to auto-detect"
-msgstr "Typ MIME přidávaných položek, výchozí je automatická detekce"
+msgstr "MIME typ přidaných položek, výchozí nastavení je automatická detekce"
 
 #: src/addcommand.cpp:67
 #, kde-format
 msgid "mimetype"
-msgstr "Typ MIME"
+msgstr "typ MIME"
 
 #: src/addcommand.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection to add to: an ID, path or Akonadi URL"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The collection to add to: an ID, path or Akonadi URL"
-msgstr "Sbírka, do které se přidává: ID, cesta nebo Akonadi URL"
+msgstr "Sbírka, do které se má přidat: ID, cesta nebo URL Akonadi"
 
 #: src/addcommand.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Files or directories to add to the collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Files or directories to add to the collection"
 msgstr "Soubory nebo adresáře, které se mají přidat do sbírky"
@@ -205,33 +171,25 @@ msgstr "soubory..."
 
 #: src/addcommand.cpp:77 src/createcommand.cpp:63 src/listcommand.cpp:64
 #: src/renamecommand.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Missing collection argument"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Missing collection argument"
 msgstr "Chybí argument sbírky"
 
 #: src/addcommand.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No file or directory arguments"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No file or directory arguments"
-msgstr "Žádné argumenty souborů nebo adresářů"
+msgstr "Žádné argumenty v podobě souborů nebo adresářů"
 
 #: src/addcommand.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid MIME type argument '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Invalid MIME type argument '%1'"
 msgstr "Neplatný argument typu MIME '%1'"
 
 #: src/addcommand.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Base directory '%1' not found"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Base directory '%1' not found"
 msgstr "Základní adresář '%1' nebyl nalezen"
@@ -242,40 +200,33 @@ msgid "File '%1' does not exist"
 msgstr "Soubor '%1' neexistuje"
 
 #: src/addcommand.cpp:128
-#, fuzzy, kde-format
-#| msgid "Error accessing file '%1'"
+#, kde-format
 msgid "Error accessing file '%1'"
 msgstr "Chyba při přístupu k souboru '%1'"
 
 #: src/addcommand.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No valid file or directory arguments"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No valid file or directory arguments"
-msgstr "Žádné platné argumenty souborů nebo adresářů"
+msgstr "Žádné platné argumenty souboru nebo adresáře"
 
 #: src/addcommand.cpp:166
-#, fuzzy, kde-format
-#| msgid "No more directories to process"
+#, kde-format
 msgid "No more directories to process"
 msgstr "Žádné další adresáře ke zpracování"
 
 #: src/addcommand.cpp:190 src/addcommand.cpp:212
-#, fuzzy, kde-format
-#| msgid "Directory '%1' no longer exists"
+#, kde-format
 msgid "Directory ‘%1’ no longer exists"
 msgstr "Adresář '%1' již neexistuje"
 
 #: src/addcommand.cpp:229
-#, fuzzy, kde-format
-#| msgid "Fetching collection \"%3\" in parent %1 \"%2\""
+#, kde-format
 msgid "Fetching collection \"%3\" in parent %1 \"%2\""
-msgstr "Načítání sbírky \"%3\" v nadřazené %1 \"%2\""
+msgstr "Načítání sbírky \"%3\" v nadřazené sbírce %1 \"%2\""
 
 #: src/addcommand.cpp:241
-#, fuzzy, kde-format
-#| msgid "Need to create collection for '%1'"
+#, kde-format
 msgid "Need to create collection for '%1'"
 msgstr "Je třeba vytvořit sbírku pro '%1'"
 
@@ -386,7 +337,7 @@ msgstr "Nastavit stav \"online\" nebo \"offline\" pro zadané agenty"
 #, kde-format
 msgctxt "@info:shell"
 msgid "state"
-msgstr "Stav"
+msgstr "stav"
 
 #: src/agentscommand.cpp:58
 #, fuzzy, kde-format
@@ -415,9 +366,7 @@ msgid "Agents to operate on"
 msgstr "Agenti, se kterými se má pracovat"
 
 #: src/agentscommand.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "[agents...]"
+#, kde-format
 msgctxt "@info:shell"
 msgid "[agents...]"
 msgstr "[agenti...]"
@@ -740,9 +689,7 @@ msgid "Folder '%1' had attributes but is no longer present"
 msgstr "Složka '%1' měla atributy, ale již není přítomna"
 
 #: src/attributescommand.cpp:554
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot fetch collection %1 \"%2\""
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot fetch collection %1 \"%2\""
 msgstr "Nelze načíst sbírku %1 \"%2\""
@@ -1404,44 +1351,34 @@ msgid "Changes to item '%1' have been saved"
 msgstr "Změny v položce '%1' byly uloženy"
 
 #: src/errorreporter.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "error"
+#, kde-format
 msgctxt "@info:shell"
 msgid "error"
 msgstr "chyba"
 
 #: src/errorreporter.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "warning"
+#, kde-format
 msgctxt "@info:shell"
 msgid "warning"
 msgstr "varování"
 
 #: src/errorreporter.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "notice"
+#, kde-format
 msgctxt "@info:shell"
 msgid "notice"
-msgstr "oznámení"
+msgstr "upozornění"
 
 #: src/errorreporter.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "success"
+#, kde-format
 msgctxt "@info:shell"
 msgid "success"
 msgstr "úspěch"
 
 #: src/errorreporter.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "info"
+#, kde-format
 msgctxt "@info:shell"
 msgid "info"
-msgstr "informace"
+msgstr "info"
 
 #: src/exportcommand.cpp:31
 msgctxt "info:shell"
@@ -2498,12 +2435,10 @@ msgid "Revision"
 msgstr "Revize"
 
 #: src/infocommand.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Payload"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
-msgstr "Obsah"
+msgstr "Příloha"
 
 #: src/infocommand.cpp:276
 #, kde-format
@@ -2825,7 +2760,7 @@ msgstr "Položky k zobrazení"
 #, kde-format
 msgctxt "@info:shell"
 msgid "item..."
-msgstr "Položka..."
+msgstr "položka..."
 
 #: src/showcommand.cpp:45
 #, fuzzy, kde-format
@@ -2924,10 +2859,9 @@ msgid "Retain intermediate tags added when the 'id' option is used"
 msgstr "Zachovat mezilehlé značky přidané při použití možnosti 'id'"
 
 #: src/tagscommand.cpp:77
-#, fuzzy, kde-format
-#| msgid "TAG"
+#, kde-format
 msgid "TAG"
-msgstr "ZNAČKA"
+msgstr "Značka"
 
 #: src/tagscommand.cpp:77
 #, fuzzy, kde-format
@@ -2936,10 +2870,9 @@ msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
 msgstr "Název značky k přidání, nebo název, ID nebo URL značky ke smazání"
 
 #: src/tagscommand.cpp:77
-#, fuzzy, kde-format
-#| msgid "[TAG...]"
+#, kde-format
 msgid "[TAG...]"
-msgstr "[ŠTÍTEK...]"
+msgstr "[Značka...]"
 
 #: src/tagscommand.cpp:89
 #, fuzzy, kde-format
