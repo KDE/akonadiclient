@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:52+0000\n"
-"PO-Revision-Date: 2026-06-29 20:03+0200\n"
+"PO-Revision-Date: 2026-06-30 21:43+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -1078,7 +1078,7 @@ msgstr "Sbírka %1 neobsahuje žádné položky"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no payload"
-msgstr "Položka '%1' neobsahuje žádná užitečná data"
+msgstr "Položka '%1' neobsahuje žádný datový obsah"
 
 #: src/dumpcommand.cpp:242
 #, kde-format
@@ -1095,7 +1095,7 @@ msgstr "Nelze uložit soubor '%1'"
 #: src/editcommand.cpp:37
 msgctxt "info:shell"
 msgid "Edit the raw payload for the specified item using $EDITOR"
-msgstr "Upravte nezpracovaná data pro zadanou položku pomocí $EDITOR"
+msgstr "Upravte nezpracovaný datový obsah pro zadanou položku pomocí $EDITOR"
 
 #: src/editcommand.cpp:54
 #, kde-format
@@ -1568,7 +1568,7 @@ msgstr "Položka '%1' není skupinou kontaktů"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Item '%1' has no contact group payload"
-msgstr "Položka '%1' neobsahuje obsah kontaktní skupiny"
+msgstr "Položka '%1' neobsahuje datový obsah kontaktní skupiny"
 
 #: src/groupcommand.cpp:248
 #, kde-format
@@ -1586,7 +1586,7 @@ msgstr "(neznámá odkazovaná položka)"
 #, kde-format
 msgctxt "@info:shell"
 msgid "(item has no Addressee payload)"
-msgstr "(položka neobsahuje užitečná adresní data)"
+msgstr "(položka neobsahuje adresní datový obsah)"
 
 #: src/groupcommand.cpp:339
 #, kde-format
@@ -1681,36 +1681,26 @@ msgstr ""
 "Skupina %1 \"%5\" nyní obsahuje %2 skupiny, %3 odkazy a %4 datové položky"
 
 #: src/groupcommand.cpp:601
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell section header 1=item 2=groupref count 3=ref count 4=data "
-#| "count 5=name"
-#| msgid "Removing from group %1 \"%2\":"
+#, kde-format
 msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Removing from group %1 \"%2\":"
-msgstr "Odstraňování ze skupiny %1 \"%2\":"
+msgstr "Odstranění ze skupiny %1 \"%2\":"
 
 #: src/groupcommand.cpp:638
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Nothing to remove for email '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Nothing to remove for email '%1'"
-msgstr "Není co odstranit pro e-mail '%1'"
+msgstr "U e-mailu '%1' není třeba nic mazat."
 
 #: src/groupcommand.cpp:682
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell section header 1=item 2=groupref count 3=ref count 4=data "
-#| "count 5=name"
-#| msgid "Cleaning references from group %1 \"%2\":"
+#, kde-format
 msgctxt ""
 "@info:shell section header 1=item 2=groupref count 3=ref count 4=data count "
 "5=name"
 msgid "Cleaning references from group %1 \"%2\":"
-msgstr "Čištění odkazů ze skupiny %1 \"%2\":"
+msgstr "Vymazání odkazů ze skupiny %1 \"%2\":"
 
 #: src/importcommand.cpp:39
 msgctxt "info:shell"
@@ -1718,132 +1708,100 @@ msgid "Import an XML file"
 msgstr "Importovat soubor XML"
 
 #: src/importcommand.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The parent collection under which to import the file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The parent collection under which to import the file"
-msgstr "Nadřazená sbírka, pod kterou se importuje soubor"
+msgstr "Nadřazená sbírka, do které se má soubor importovat"
 
 #: src/importcommand.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The file to import"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The file to import"
 msgstr "Soubor k importu"
 
 #: src/importcommand.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No parent collection specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No parent collection specified"
-msgstr "Nebyla zadána nadřazená sbírka"
+msgstr "Není zadána žádná nadřazená sbírka"
 
 #: src/importcommand.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No import file specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No import file specified"
-msgstr "Nebyl zadán soubor k importu"
+msgstr "Není zadán žádný soubor k importu"
 
 #: src/importcommand.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid XML file, %1"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Invalid XML file, %1"
 msgstr "Neplatný soubor XML, %1"
 
 #: src/importcommand.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Unable to fetch parent collection, %1"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch parent collection, %1"
 msgstr "Nelze načíst nadřazenou sbírku, %1"
 
 #: src/importcommand.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Unable to fetch children of parent collection, %1"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch children of parent collection, %1"
-msgstr "Nelze načíst potomky nadřazené sbírky, %1"
+msgstr "Nelze načíst podřízené položky nadřazené kolekce, %1"
 
 #: src/importcommand.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection '%1' already exists"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection '%1' already exists"
 msgstr "Sbírka '%1' již existuje"
 
 #: src/importcommand.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Creating collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Creating collection '%1'"
 msgstr "Vytváření sbírky '%1'"
 
 #: src/importcommand.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing collection '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing collection '%1'"
-msgstr "Zpracovávání sbírky '%1'"
+msgstr "Zpracování sbírky '%1'"
 
 #: src/importcommand.cpp:155
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid parent for collection with remote ID '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Invalid parent for collection with remote ID '%1'"
-msgstr "Neplatná nadřazená sbírka pro sbírku se vzdáleným ID '%1'"
+msgstr "Neplatný nadřazený prvek pro sbírku se vzdáleným ID '%1'"
 
 #: src/importcommand.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Unable to fetch collection with remote ID '%1', %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Unable to fetch collection with remote ID '%1', %2"
 msgstr "Nelze načíst sbírku se vzdáleným ID '%1', %2"
 
 #: src/importcommand.cpp:194
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Unable to create collection with remote ID '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Unable to create collection with remote ID '%1'"
 msgstr "Nelze vytvořit sbírku se vzdáleným ID '%1'"
 
 #: src/importcommand.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Processing items for '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Processing items for '%1'"
 msgstr "Zpracovávání položek pro '%1'"
 
 #: src/importcommand.cpp:234
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Error creating item, %1"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Error creating item, %1"
-msgstr "Chyba při vytváření položky, %1"
+msgstr "Došlo k chybě při vytváření položky, %1"
 
 #: src/importcommand.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Created item '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Created item '%1'"
-msgstr "Vytvořena položka '%1'"
+msgstr "Položka '%1' byla vytvořena"
 
 #: src/infocommand.cpp:38
 msgctxt "info:shell"
@@ -1851,9 +1809,7 @@ msgid "Show full information for a collection or item"
 msgstr "Zobrazit plné informace pro sbírku nebo položku"
 
 #: src/infocommand.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collections or items to display"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collections or items to display"
 msgstr "Sbírky nebo položky k zobrazení"
@@ -1864,20 +1820,16 @@ msgid "entity..."
 msgstr "entita..."
 
 #: src/infocommand.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No collections or items specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No collections or items specified"
-msgstr "Nezadány žádné sbírky nebo položky"
+msgstr "Nebyly zadány žádné sbírky ani položky"
 
 #: src/infocommand.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No information available for collection root"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No information available for collection root"
-msgstr "Žádné informace nejsou dostupné pro kořen sbírky"
+msgstr "Pro kořenovou složku sbírky nejsou k dispozici žádné informace"
 
 #: src/infocommand.cpp:220 src/infocommand.cpp:267
 #, kde-format
@@ -1946,68 +1898,52 @@ msgid "ReadOnly"
 msgstr "Pouze ke čtení"
 
 #: src/infocommand.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "ChangeItem"
+#, kde-format
 msgctxt "@info:shell"
 msgid "ChangeItem"
 msgstr "ZměnitPoložku"
 
 #: src/infocommand.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "CreateItem"
+#, kde-format
 msgctxt "@info:shell"
 msgid "CreateItem"
 msgstr "VytvořitPoložku"
 
 #: src/infocommand.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "DeleteItem"
+#, kde-format
 msgctxt "@info:shell"
 msgid "DeleteItem"
 msgstr "SmazatPoložku"
 
 #: src/infocommand.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "ChangeColl"
+#, kde-format
 msgctxt "@info:shell"
 msgid "ChangeColl"
-msgstr "ZměnitSbírku"
+msgstr "ZměnitSloupec"
 
 #: src/infocommand.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "CreateColl"
+#, kde-format
 msgctxt "@info:shell"
 msgid "CreateColl"
-msgstr "VytvořitSbírku"
+msgstr "VytvořitSloupec"
 
 #: src/infocommand.cpp:251
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "DeleteColl"
+#, kde-format
 msgctxt "@info:shell"
 msgid "DeleteColl"
-msgstr "SmazatSbírku"
+msgstr "SmazatSloupec"
 
 #: src/infocommand.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "LinkItem"
+#, kde-format
 msgctxt "@info:shell"
 msgid "LinkItem"
-msgstr "OdkazovatPoložku"
+msgstr "PřipojitPoložku"
 
 #: src/infocommand.cpp:257
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "UnlinkItem"
+#, kde-format
 msgctxt "@info:shell"
 msgid "UnlinkItem"
-msgstr "OdodkazovatPoložku"
+msgstr "OdpojitPoložku"
 
 #: src/infocommand.cpp:259
 #, kde-format
@@ -2055,7 +1991,7 @@ msgstr "Revize"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Payload"
-msgstr "Příloha"
+msgstr "Datový obsah"
 
 #: src/infocommand.cpp:276
 #, kde-format
@@ -2094,104 +2030,80 @@ msgid "Unknown"
 msgstr "Neznámý"
 
 #: src/listcommand.cpp:35
-#, fuzzy
-#| msgctxt "info:shell"
-#| msgid "List sub-collections and/or items in a specified collection"
 msgctxt "info:shell"
 msgid "List sub-collections and/or items in a specified collection"
 msgstr "Vypsat podsbírky a/nebo položky v zadané sbírce"
 
 #: src/listcommand.cpp:47
-#, fuzzy, kde-format
-#| msgid "List more detailed information"
+#, kde-format
 msgid "List more detailed information"
 msgstr "Vypsat podrobnější informace"
 
 #: src/listcommand.cpp:50
-#, fuzzy, kde-format
-#| msgid "List only sub-collections"
+#, kde-format
 msgid "List only sub-collections"
 msgstr "Vypsat pouze podsbírky"
 
 #: src/listcommand.cpp:53
-#, fuzzy, kde-format
-#| msgid "List only contained items"
+#, kde-format
 msgid "List only contained items"
 msgstr "Vypsat pouze obsažené položky"
 
 #: src/listcommand.cpp:56
-#, fuzzy, kde-format
-#| msgid "List sub-collections recursively"
+#, kde-format
 msgid "List sub-collections recursively"
 msgstr "Vypsat podsbírky rekurzivně"
 
 #: src/listcommand.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection to list: an ID, path or Akonadi URL"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The collection to list: an ID, path or Akonadi URL"
-msgstr "Sbírka k vypsání: ID, cesta nebo Akonadi URL"
+msgstr "Sbírka, která se má zobrazit: ID, cesta nebo URL Akonadi"
 
 #: src/listcommand.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Recursive list can only be used for collections"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Recursive list can only be used for collections"
-msgstr "Rekurzivní výpis lze použít pouze pro sbírky"
+msgstr "Rekurzivní seznam lze použít pouze pro sbírky"
 
 #: src/listcommand.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no sub-collections"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no sub-collections"
-msgstr "Sbírka %1 nemá žádné podsbírky"
+msgstr "Sbírka %1 neobsahuje žádné podsbírky"
 
 #: src/listcommand.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 recursive sub-collection:"
-#| msgid_plural "Collection %2 has %1 recursive sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 recursive sub-collection:"
 msgid_plural "Collection %2 has %1 recursive sub-collections:"
-msgstr[0] "Sbírka %2 má %1 rekurzivní podsbírku:"
-msgstr[1] "Sbírka %2 má %1 rekurzivní podsbírky:"
-msgstr[2] "Sbírka %2 má %1 rekurzivních podsbírek:"
+msgstr[0] "Sbírka %2 obsahuje %1 rekurzivní podsbírku:"
+msgstr[1] "Sbírka %2 obsahuje %1 rekurzivní podsbírky:"
+msgstr[2] "Sbírka %2 obsahuje %1 rekurzivních podsbírek:"
 
 #: src/listcommand.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 sub-collection:"
-#| msgid_plural "Collection %2 has %1 sub-collections:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 sub-collection:"
 msgid_plural "Collection %2 has %1 sub-collections:"
-msgstr[0] "Sbírka %2 má %1 podsbírku:"
-msgstr[1] "Sbírka %2 má %1 podsbírky:"
-msgstr[2] "Sbírka %2 má %1 podsbírek:"
+msgstr[0] "Sbírka %2 obsahuje %1 podsbírku:"
+msgstr[1] "Sbírka %2 obsahuje %1 podsbírky:"
+msgstr[2] "Sbírka %2 obsahuje %1 podsbírek:"
 
 #: src/listcommand.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection %1 has no items"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection %1 has no items"
-msgstr "Sbírka %1 nemá žádné položky"
+msgstr "Sbírka %1 neobsahuje žádné položky"
 
 #: src/listcommand.cpp:282
-#, fuzzy, kde-format
-#| msgctxt "@info:shell output section header 1=count, 2=collection"
-#| msgid "Collection %2 has %1 item:"
-#| msgid_plural "Collection %2 has %1 items:"
+#, kde-format
 msgctxt "@info:shell output section header 1=count, 2=collection"
 msgid "Collection %2 has %1 item:"
 msgid_plural "Collection %2 has %1 items:"
-msgstr[0] "Sbírka %2 má %1 položku:"
-msgstr[1] "Sbírka %2 má %1 položky:"
-msgstr[2] "Sbírka %2 má %1 položek:"
+msgstr[0] "Sbírka %2 obsahuje %1 položku:"
+msgstr[1] "Sbírka %2 obsahuje %1 položky:"
+msgstr[2] "Sbírka %2 obsahuje %1 položek:"
 
 #: src/listcommand.cpp:290
 #, kde-format
@@ -2218,12 +2130,10 @@ msgid "Akonadi Client"
 msgstr "Klient Akonadi"
 
 #: src/main.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@info:shell short description"
-#| msgid "A command-line/shell client for Akonadi"
+#, kde-format
 msgctxt "@info:shell short description"
 msgid "A command-line/shell client for Akonadi"
-msgstr "Příkazový řádek/shell klient pro Akonadi"
+msgstr "Klient Akonadi pro příkazový řádek/shell"
 
 #: src/main.cpp:51
 #, kde-format
@@ -2244,9 +2154,7 @@ msgid "Jonathan Marten"
 msgstr "Jonathan Marten"
 
 #: src/main.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@title about data task"
-#| msgid "Additions and new commands"
+#, kde-format
 msgctxt "@title about data task"
 msgid "Additions and new commands"
 msgstr "Doplňky a nové příkazy"
@@ -2258,9 +2166,7 @@ msgid "Bhaskar Kandiyal"
 msgstr "Bhaskar Kandiyal"
 
 #: src/main.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title about data task"
-#| msgid "New commands, GSOC 2014"
+#, kde-format
 msgctxt "@title about data task"
 msgid "New commands, GSOC 2014"
 msgstr "Nové příkazy, GSOC 2014"
@@ -2278,26 +2184,20 @@ msgid "Arguments for command"
 msgstr "Argumenty pro příkaz"
 
 #: src/main.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "[args]"
+#, kde-format
 msgctxt "@info:shell"
 msgid "[args]"
-msgstr "[argumenty]"
+msgstr "[args]"
 
 #: src/main.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "See '%1 help' for available commands.\n"
-#| "See '%1 help command' for information on a specific command."
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "See '%1 help' for available commands.\n"
 "See '%1 help command' for information on a specific command."
 msgstr ""
-"Viz '%1 help' pro dostupné příkazy.\n"
-"Viz '%1 help příkaz' pro informace o konkrétním příkazu."
+"Dostupné příkazy najdete v nápovědě k příkazu '%1 help'.\n"
+"Informace o konkrétním příkazu najdete v nápovědě k příkazu '%1 help příkaz'."
 
 #: src/movecommand.cpp:27
 msgctxt "info:shell"
@@ -2305,20 +2205,16 @@ msgid "Move collections or items into a new collection"
 msgstr "Přesunout sbírky nebo položky do nové sbírky"
 
 #: src/movecommand.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Existing collections or items to move"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Existing collections or items to move"
-msgstr "Existující sbírky nebo položky k přesunutí"
+msgstr "Existující sbírky nebo položky, které je třeba přesunout"
 
 #: src/movecommand.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Destination collection to move into"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Destination collection to move into"
-msgstr "Cílová sbírka, do které se přesouvá"
+msgstr "Cílová sbírka, do které se má přesunout"
 
 #: src/renamecommand.cpp:33
 msgctxt "info:shell"
@@ -2326,52 +2222,39 @@ msgid "Rename a collection"
 msgstr "Přejmenovat sbírku"
 
 #: src/renamecommand.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The collection to rename"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The collection to rename"
-msgstr "Sbírka k přejmenování"
+msgstr "Sbírka, která se má přejmenovat"
 
 #: src/renamecommand.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "New name for collection"
+#, kde-format
 msgctxt "@info:shell"
 msgid "New name for collection"
-msgstr "Nový název pro sbírku"
+msgstr "Nový název sbírky"
 
 #: src/renamecommand.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "New name not specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "New name not specified"
 msgstr "Nový název nebyl zadán"
 
 #: src/renamecommand.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Collection renamed successfully"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Collection renamed successfully"
 msgstr "Sbírka byla úspěšně přejmenována"
 
 #: src/showcommand.cpp:34
-#, fuzzy
-#| msgctxt "info:shell"
-#| msgid "Show the raw payload of an item"
 msgctxt "info:shell"
 msgid "Show the raw payload of an item"
-msgstr "Zobrazit surový obsah položky"
+msgstr "Zobrazit nezpracovaný datový obsah položky"
 
 #: src/showcommand.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The items to show"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The items to show"
-msgstr "Položky k zobrazení"
+msgstr "Položky, které se mají zobrazit"
 
 #: src/showcommand.cpp:43
 #, kde-format
@@ -2380,64 +2263,51 @@ msgid "item..."
 msgstr "položka..."
 
 #: src/showcommand.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Use raw payload (disables quoted-printable decoding)"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Use raw payload (disables quoted-printable decoding)"
-msgstr "Použít surový obsah (vypne quoted-printable dekódování)"
+msgstr ""
+"Použít surový datový obsah (vypne dekódování ve formátu quoted-printable)"
 
 #: src/showcommand.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No items specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No items specified"
-msgstr "Nezadány žádné položky"
+msgstr "Nebyly zadány žádné položky"
 
 #: src/showcommand.cpp:89 src/updatecommand.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No result returned for item '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No result returned for item '%1'"
-msgstr "Nebyl vrácen žádný výsledek pro položku '%1'"
+msgstr "Pro položku '%1' nebyly nalezeny žádné výsledky"
 
 #: src/showcommand.cpp:104
-#, fuzzy, kde-format
-#| msgid "Item has no main body part"
+#, kde-format
 msgid "Item has no main body part"
-msgstr "Položka nemá hlavní část těla"
+msgstr "Položka nemá hlavní část"
 
 #: src/tagscommand.cpp:38
-#, fuzzy
-#| msgctxt "info:shell"
-#| msgid "List or modify tags"
 msgctxt "info:shell"
 msgid "List or modify tags"
-msgstr "Vypsat nebo upravit značky"
+msgstr "Zobrazit nebo upravit značky"
 
 #: src/tagscommand.cpp:55
-#, fuzzy, kde-format
-#| msgid "Brief output, tag names or IDs only"
+#, kde-format
 msgid "Brief output, tag names or IDs only"
-msgstr "Stručný výstup, pouze názvy nebo ID značek"
+msgstr "Stručný výstup, pouze názvy značek nebo ID"
 
 #: src/tagscommand.cpp:58
-#, fuzzy, kde-format
-#| msgid "Brief output, tag URLs only"
+#, kde-format
 msgid "Brief output, tag URLs only"
-msgstr "Stručný výstup, pouze URL značek"
+msgstr "Stručný výstup, pouze URL adresy značek"
 
 #: src/tagscommand.cpp:62
-#, fuzzy, kde-format
-#| msgid "List all known tags (the default operation)"
+#, kde-format
 msgid "List all known tags (the default operation)"
-msgstr "Vypsat všechny známé značky (výchozí operace)"
+msgstr "Zobrazit všechny známé značky (výchozí operace)"
 
 #: src/tagscommand.cpp:65
-#, fuzzy, kde-format
-#| msgid "Add named tags"
+#, kde-format
 msgid "Add named tags"
 msgstr "Přidat pojmenované značky"
 
@@ -2447,22 +2317,19 @@ msgid "Delete tags"
 msgstr "Smazat značky"
 
 #: src/tagscommand.cpp:71
-#, fuzzy, kde-format
-#| msgid "Save the current tags"
+#, kde-format
 msgid "Save the current tags"
 msgstr "Uložit aktuální značky"
 
 #: src/tagscommand.cpp:74
-#, fuzzy, kde-format
-#| msgid "Restore the saved tags (into a new database)"
+#, kde-format
 msgid "Restore the saved tags (into a new database)"
 msgstr "Obnovit uložené značky (do nové databáze)"
 
 #: src/tagscommand.cpp:75
-#, fuzzy, kde-format
-#| msgid "ID for a tag to be added (default automatic)"
+#, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr "ID pro značku, která se má přidat (výchozí automatické)"
+msgstr "ID značky, která má být přidána (výchozí nastavení: automaticky)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
@@ -2470,10 +2337,9 @@ msgid "id"
 msgstr "id"
 
 #: src/tagscommand.cpp:76
-#, fuzzy, kde-format
-#| msgid "Retain intermediate tags added when the 'id' option is used"
+#, kde-format
 msgid "Retain intermediate tags added when the 'id' option is used"
-msgstr "Zachovat mezilehlé značky přidané při použití možnosti 'id'"
+msgstr "Zachovat mezilehlé značky přidané při použití volby 'id'"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2481,10 +2347,11 @@ msgid "TAG"
 msgstr "Značka"
 
 #: src/tagscommand.cpp:77
-#, fuzzy, kde-format
-#| msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
+#, kde-format
 msgid "The name of a tag to add, or the name, ID or URL of a tag to delete"
-msgstr "Název značky k přidání, nebo název, ID nebo URL značky ke smazání"
+msgstr ""
+"Název značky, kterou chcete přidat, nebo název, ID či URL značky, kterou "
+"chcete odstranit"
 
 #: src/tagscommand.cpp:77
 #, kde-format
@@ -2492,170 +2359,128 @@ msgid "[TAG...]"
 msgstr "[Značka...]"
 
 #: src/tagscommand.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Invalid value for the 'id' option"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Invalid value for the 'id' option"
-msgstr "Neplatná hodnota pro volbu 'id'"
+msgstr "Neplatná hodnota pro parametr 'id'"
 
 #: src/tagscommand.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'brief' and 'urls' options cannot both be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr "volby 'brief' a 'urls' nelze zadat současně"
+msgstr "Nelze zadat současně možnosti 'brief' a 'urls'"
 
 #: src/tagscommand.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid ""
-#| "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options "
-#| "may be specified"
+#, kde-format
 msgctxt "@info:shell"
 msgid ""
 "Only one of the 'list', 'add', 'delete', or 'backup'/'restore' options may "
 "be specified"
 msgstr ""
-"Může být určena pouze jedna z voleb 'list', 'add', 'delete' nebo "
+"Lze zadat pouze jednu z možností 'list', 'add', 'delete' nebo "
 "'backup'/'restore'"
 
 #: src/tagscommand.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No tags specified to add"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to add"
-msgstr "Nebyly určeny žádné štítky ke přidání"
+msgstr "Nebyly zadány žádné značky k přidání"
 
 #: src/tagscommand.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Multiple tags cannot be specified to add with 'id'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Multiple tags cannot be specified to add with 'id'"
-msgstr "Při použití 'id' nelze určit více štítků k přidání"
+msgstr "Nelze zadat více značek k přidání pomocí 'id'"
 
 #: src/tagscommand.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No tags specified to delete"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No tags specified to delete"
-msgstr "Nebyly určeny žádné štítky ke smazání"
+msgstr "Nebyly zadány žádné značky k odstranění"
 
 #: src/tagscommand.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'retain' option can only be used with 'add' or 'restore'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'retain' option can only be used with 'add' or 'restore'"
-msgstr "Volbu 'retain' lze použít pouze s 'add' nebo 'restore'"
+msgstr "Možnost 'retain' lze použít pouze společně s 'add' nebo 'restore'"
 
 #: src/tagscommand.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The 'id' option can only be used with 'add'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The 'id' option can only be used with 'add'"
-msgstr "Volbu 'id' lze použít pouze s 'add'"
+msgstr "Možnost 'id' lze použít pouze s 'add'"
 
 #: src/tagscommand.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot read saved tags from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Cannot read saved tags from '%1'"
-msgstr "Nelze přečíst uložené štítky z '%1'"
+msgstr "Nelze načíst uložené značky z '%1'"
 
 #: src/tagscommand.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No saved tags to restore"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No saved tags to restore"
-msgstr "Nejsou žádné uložené štítky k obnovení"
+msgstr "Nejsou uloženy žádné značky k obnovení"
 
 #: src/tagscommand.cpp:228
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "A tag named '%1' ID %2 already exists"
+#, kde-format
 msgctxt "@info:shell"
 msgid "A tag named '%1' ID %2 already exists"
-msgstr "Štítek s názvem '%1' a ID %2 již existuje"
+msgstr "Značka s názvem '%1' a ID %2 již existuje"
 
 #: src/tagscommand.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Failed to add tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1' ID %2"
-msgstr "Selhalo přidání štítku '%1' s ID %2"
+msgstr "Nepodařilo se přidat značku '%1' s ID %2"
 
 #: src/tagscommand.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Failed to add tag '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Failed to add tag '%1'"
-msgstr "Selhalo přidání štítku '%1'"
+msgstr "Nepodařilo se přidat značku '%1'"
 
 #: src/tagscommand.cpp:287
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Cannot create a tag with ID %1, sequence already at ID %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Cannot create a tag with ID %1, sequence already at ID %2"
-msgstr "Nelze vytvořit štítek s ID %1, sekvence je již na ID %2"
+msgstr "Nelze vytvořit značku s ID %1, sekvence s ID %2 již existuje"
 
 #: src/tagscommand.cpp:341
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Added tag '%1' ID %2"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr "Přidán štítek '%1' s ID %2"
+msgstr "Přidána značka '%1' s ID %2"
 
 #: src/tagscommand.cpp:376
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete '%1' does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete '%1' does not exist"
-msgstr "Štítek ke smazání '%1' neexistuje"
+msgstr "Značka k odstranění '%1' neexistuje"
 
 #: src/tagscommand.cpp:413
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Tag to delete ID %1 does not exist"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Tag to delete ID %1 does not exist"
-msgstr "Štítek ke smazání s ID %1 neexistuje"
+msgstr "Značka k odstranění ID %1 neexistuje"
 
 #: src/tagscommand.cpp:439
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Tag could not be created with the requested ID"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Tag could not be created with the requested ID"
-msgstr "Štítek se nepodařilo vytvořit s požadovaným ID"
+msgstr "Značku s požadovaným ID nebylo možné vytvořit"
 
 #: src/tagscommand.cpp:464
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Deleted tag '%1' ID %2"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Deleted tag '%1' ID %2"
-msgstr "Smazán štítek '%1' s ID %2"
+msgstr "Značka '%1' s ID %2 byla odstraněna"
 
 #: src/tagscommand.cpp:491
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "No tags found"
+#, kde-format
 msgctxt "@info:shell"
 msgid "No tags found"
-msgstr "Nenalezeny žádné štítky"
+msgstr "Nebyly nalezeny žádné značky"
 
 #: src/tagscommand.cpp:512
 #, kde-format
@@ -2664,71 +2489,53 @@ msgid "URL"
 msgstr "URL"
 
 #: src/tagscommand.cpp:535
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Found %1 current Akonadi tags"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Found %1 current Akonadi tags"
-msgstr "Nalezeno %1 aktuálních štítků Akonadi"
+msgstr "Nalezeno %1 aktuálních značek Akonadi"
 
 #: src/tagscommand.cpp:557
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Saved tags to '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Saved tags to '%1'"
-msgstr "Štítky uloženy do '%1'"
+msgstr "Značky byly uloženy do '%1'"
 
 #: src/tagscommand.cpp:563
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Reading saved tags from '%1'"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Reading saved tags from '%1'"
-msgstr "Čtu uložené štítky z '%1'"
+msgstr "Načítání uložených značek z '%1'"
 
 #: src/tagscommand.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Read %1 saved tags"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Read %1 saved tags"
-msgstr "Přečteno %1 uložených štítků"
+msgstr "Načíst %1 uložených značek"
 
 #: src/tagscommand.cpp:600
-#, fuzzy, kde-format
-#| msgid "Tags restored"
+#, kde-format
 msgid "Tags restored"
-msgstr "Štítky obnoveny"
+msgstr "Značky obnoveny"
 
 #: src/terminalcolour.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Could not set up terminal"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Could not set up terminal"
 msgstr "Nepodařilo se nastavit terminál"
 
 #: src/updatecommand.cpp:35
-#, fuzzy
-#| msgctxt "info:shell"
-#| msgid "Update an item's payload from a file"
 msgctxt "info:shell"
 msgid "Update an item's payload from a file"
-msgstr "Aktualizovat data položky ze souboru"
+msgstr "Aktualizovat datový obsah položky ze souboru"
 
 #: src/updatecommand.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "The item to update, an ID or Akonadi URL"
+#, kde-format
 msgctxt "@info:shell"
 msgid "The item to update, an ID or Akonadi URL"
-msgstr "Položka k aktualizaci: ID nebo URL Akonadi"
+msgstr "Položka k aktualizaci, ID nebo URL Akonadi"
 
 #: src/updatecommand.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "File to update the item from"
+#, kde-format
 msgctxt "@info:shell"
 msgid "File to update the item from"
 msgstr "Soubor, ze kterého se má položka aktualizovat"
@@ -2740,12 +2547,10 @@ msgid "No file specified"
 msgstr "Nebyl zadán soubor"
 
 #: src/updatecommand.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@info:shell"
-#| msgid "Item updated successfully"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Item updated successfully"
-msgstr "Položka byla úspešně aktualizována"
+msgstr "Položka byla úspěšně aktualizována"
 
 #, fuzzy
 #~| msgctxt "@info:shell"
