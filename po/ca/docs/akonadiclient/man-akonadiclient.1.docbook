@@ -396,7 +396,7 @@
 >Bolca els missatges de correu electrònic a l'estructura del directori maildir</para
 ></listitem>
 					</varlistentry>
-                                        
+
                                         <varlistentry>
 					<term
 ><option
@@ -520,7 +520,7 @@
 				</variablelist>
 				</listitem>
 			</varlistentry>
-                        
+
                         <varlistentry>
 				<term
 ><option
@@ -545,7 +545,7 @@
 >Mostra expandit el grup de contactes (l'operació predeterminada)</para
 ></listitem>
 					</varlistentry>
-                                        
+
                                         <varlistentry>
 					<term
 ><option
