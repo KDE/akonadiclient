@@ -1705,7 +1705,8 @@ msgstr "Suche nach E-Mail „%1“ nicht möglich, %2"
 msgctxt "@info:shell"
 msgid "Multiple contacts found for '%1', using the first one"
 msgstr ""
-"Es wurden mehrere Kontakte für „%1“ gefunden, der erste Eintrag wird benutzt"
+"Es wurden mehrere Kontakte für „%1“ gefunden, der erste Eintrag wird "
+"verwendet"
 
 #: src/groupcommand.cpp:558
 #, kde-format
