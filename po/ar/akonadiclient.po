@@ -62,7 +62,7 @@ msgstr "افترض أن تجميعة محددة"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Assume that an item is specified"
-msgstr "افترض أن عنصراً محدداً"
+msgstr "افترض أن عنصرًا محددًا"
 
 #: src/abstractcommand.cpp:126
 #, kde-format
@@ -112,7 +112,7 @@ msgstr "اضبط %1=\"%2\" في البيئة"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Save location '%1' exists but is not a directory"
-msgstr "موقع الحفظ '%1' موجود ولكنه ليس دليلاً"
+msgstr "موقع الحفظ '%1' موجود ولكنه ليس دليلًا"
 
 #: src/abstractcommand.cpp:263
 #, kde-format
@@ -216,7 +216,7 @@ msgstr "لا يوجد المزيد من الأدلة للمعالجة"
 #: src/addcommand.cpp:190 src/addcommand.cpp:212
 #, kde-format
 msgid "Directory ‘%1’ no longer exists"
-msgstr "الدليل '%1' لم يعد موجوداً"
+msgstr "الدليل '%1' لم يعد موجودًا"
 
 #: src/addcommand.cpp:229
 #, kde-format
@@ -260,7 +260,7 @@ msgstr "لا يمكن تحديد التجميعة الأصل للملف '%1'"
 #: src/addcommand.cpp:293
 #, kde-format
 msgid "Creating item in collection %1 \"%2\" from '%3' size %4"
-msgstr "ينشئ عنصراً في التجميعة %1 \"%2\" من '%3' بحجم %4"
+msgstr "ينشئ عنصرًا في التجميعة %1 \"%2\" من '%3' بحجم %4"
 
 #: src/addcommand.cpp:315
 #, kde-format
@@ -462,7 +462,7 @@ msgstr "وسائط..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
-msgstr "يتوقع سلسلة مرمزة بترميز ستة عشر، ولكن الطول %1 ليس زوجياً"
+msgstr "يتوقع سلسلة مرمزة بترميز ستة عشر، ولكن الطول %1 ليس زوجيًا"
 
 #: src/attributescommand.cpp:149
 #, kde-format
@@ -505,7 +505,7 @@ msgstr "لم يحدد اسم/قيمة سمة للتعديل"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Too many arguments specified, from '%1'"
-msgstr "حُدد عدد كبير جداً من الوسائط، من '%1'"
+msgstr "حُدد عدد كبير جدًا من الوسائط، من '%1'"
 
 #: src/attributescommand.cpp:269
 #, kde-format
@@ -518,7 +518,7 @@ msgstr "تعذّر قراءة السمات المحفوظة من '%1'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --backup' first"
-msgstr "شغّل '%1 %2 --backup' أولاً"
+msgstr "شغّل '%1 %2 --backup' أولًا"
 
 #: src/attributescommand.cpp:304
 #, kde-format
@@ -597,7 +597,7 @@ msgstr "يفحص سمات التجميعة الحالية"
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Folder '%1' had attributes but is no longer present"
-msgstr "المجلد '%1' كان يحتوي على سمات ولكنه لم يعد موجوداً"
+msgstr "المجلد '%1' كان يحتوي على سمات ولكنه لم يعد موجودًا"
 
 #: src/attributescommand.cpp:554
 #, kde-kuit-format
@@ -948,13 +948,13 @@ msgstr "التجميعة المراد إنشاؤها، إما كمسار أو ا
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (with parent) cannot be a path"
-msgstr "وسيط التجميعة (مع الأصل) لا يمكن أن يكون مساراً"
+msgstr "وسيط التجميعة (مع الأصل) لا يمكن أن يكون مسارًا"
 
 #: src/createcommand.cpp:93
 #, kde-format
 msgctxt "@info:shell"
 msgid "Collection argument (without parent) must be a path"
-msgstr "وسيط التجميعة (بدون أصل) يجب أن يكون مساراً"
+msgstr "وسيط التجميعة (بدون أصل) يجب أن يكون مسارًا"
 
 #: src/createcommand.cpp:102
 #, kde-format
@@ -991,7 +991,7 @@ msgstr "أنشأ تجميعة جديدة '%1'"
 #: src/deletecommand.cpp:39
 msgctxt "info:shell"
 msgid "Delete a collection or an item"
-msgstr "احذف تجميعة أو عنصراً"
+msgstr "احذف تجميعة أو عنصرًا"
 
 #: src/deletecommand.cpp:52
 #, kde-format
@@ -1051,7 +1051,7 @@ msgstr "افرغ العناصر بمسارات فئة أكوُنادي، وإل�
 #: src/dumpcommand.cpp:64
 #, kde-format
 msgid "Operate even if destination directory is not empty"
-msgstr "اعمل حتى لو كان دليل الوجهة ليس فارغاً"
+msgstr "اعمل حتى لو كان دليل الوجهة ليس فارغًا"
 
 #: src/dumpcommand.cpp:67
 #, kde-format
@@ -1075,13 +1075,13 @@ msgstr "لم يحدد دليل وجهة"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' not found or not a directory"
-msgstr "الدليل '%1' غير موجود أو ليس دليلاً"
+msgstr "الدليل '%1' غير موجود أو ليس دليلًا"
 
 #: src/dumpcommand.cpp:97
 #, kde-format
 msgctxt "@info:shell"
 msgid "Directory '%1' is not empty (use '-f' to force operation)"
-msgstr "الدليل '%1' ليس فارغاً (استخدم '-f' لإجبار العملية)"
+msgstr "الدليل '%1' ليس فارغًا (استخدم '-f' لإجبار العملية)"
 
 #: src/dumpcommand.cpp:121 src/listcommand.cpp:261
 #, kde-format
@@ -1273,7 +1273,7 @@ msgstr "يعالج ملف التهيئة '%1'..."
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot rename group \"%1\" for folder \"%2\" which no longer exists"
-msgstr "لا يمكن إعادة تسمية المجموعة \"%1\" للمجلد \"%2\" الذي لم يعد موجوداً"
+msgstr "لا يمكن إعادة تسمية المجموعة \"%1\" للمجلد \"%2\" الذي لم يعد موجودًا"
 
 #: src/folderscommand.cpp:399
 #, kde-format
@@ -1293,7 +1293,7 @@ msgctxt "@info:shell"
 msgid ""
 "Cannot update \"%1\" in group \"%2\" for folder \"%3\" which no longer exists"
 msgstr ""
-"لا يمكن تحديث \"%1\" في المجموعة \"%2\" للمجلد \"%3\" الذي لم يعد موجوداً"
+"لا يمكن تحديث \"%1\" في المجموعة \"%2\" للمجلد \"%3\" الذي لم يعد موجودًا"
 
 #: src/folderscommand.cpp:508
 #, kde-format
@@ -1359,7 +1359,7 @@ msgstr "قرأ %1 مسار تجميعة محفوظة"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Folder \"%1\" was ID %2 but is no longer present"
-msgstr "المجلد \"%1\" كان بمعرّف %2 ولكنه لم يعد موجوداً"
+msgstr "المجلد \"%1\" كان بمعرّف %2 ولكنه لم يعد موجودًا"
 
 #: src/folderscommand.cpp:604
 #, kde-format
@@ -1402,7 +1402,7 @@ msgstr "ملف التهيئة الجديد '%1' غير موجود، أو أقد�
 #, kde-format
 msgctxt "@info:shell"
 msgid "Run '%1 %2 --check' first"
-msgstr "شغّل '%1 %2 --check' أولاً"
+msgstr "شغّل '%1 %2 --check' أولًا"
 
 #: src/folderscommand.cpp:725
 #, kde-format
@@ -2049,7 +2049,7 @@ msgstr "سرد تجميعات فرعية و/أو عناصر في تجميعة م
 #: src/listcommand.cpp:47
 #, kde-format
 msgid "List more detailed information"
-msgstr "سرد معلومات أكثر تفصيلاً"
+msgstr "سرد معلومات أكثر تفصيلًا"
 
 #: src/listcommand.cpp:50
 #, kde-format
@@ -2329,7 +2329,7 @@ msgstr "سرد كل الوسوم المعروفة (العملية المبدئي
 #: src/tagscommand.cpp:65
 #, kde-format
 msgid "Add named tags"
-msgstr "أضِف وسوماً مسماة"
+msgstr "أضِف وسومًا مسماة"
 
 #: src/tagscommand.cpp:68
 #, kde-format
@@ -2386,7 +2386,7 @@ msgstr "قيمة غير صالحة للخيار 'id'"
 #, kde-format
 msgctxt "@info:shell"
 msgid "The 'brief' and 'urls' options cannot both be specified"
-msgstr "لا يمكن تحديد الخيارين 'brief' و 'urls' معاً"
+msgstr "لا يمكن تحديد الخيارين 'brief' و 'urls' معًا"
 
 #: src/tagscommand.cpp:116
 #, kde-format
