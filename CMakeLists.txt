@@ -9,7 +9,7 @@ set(RELEASE_SERVICE_VERSION
 )
 
 set(QT_MIN_VERSION "6.6.0")
-set(KF_MIN_VERSION "6.2.3")
+set(KF_MIN_VERSION "6.27.0")
 set(AKONADI_VERSION "6.1.0")
 set(AKONADI_CONTACT_VERSION "6.1.0")
 
@@ -99,11 +99,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"akonadiclient\")
 
 find_package(KPim6Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(KPim6AkonadiContactCore ${AKONADI_CONTACT_VERSION} CONFIG REQUIRED)
-find_package(KF6Mime ${KF_MIN_VERSION} CONFIG)
-if(NOT TARGET KF6::Mime)
-    find_package(KPim6Mime ${AKONADI_VERSION} CONFIG REQUIRED)
-    add_library(KF6::Mime ALIAS KPim6::Mime)
-endif()
 
 find_package(
     Qt6
@@ -123,6 +118,7 @@ find_package(
         CoreAddons
         I18n
         Config
+        Mime
 )
 
 # Only 'ncurses' includes terminfo support, not classic 'curses'
