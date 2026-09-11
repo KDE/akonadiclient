@@ -473,7 +473,7 @@ msgstr "args..."
 msgctxt "@info:shell"
 msgid "Hex encoded string expected, but length %1 is not even"
 msgstr ""
-"Chaîne codée en hexadécimal attendue. Cependant, la longueur %1 est impaire."
+"Chaine codée en hexadécimal attendue. Cependant, la longueur %1 est impaire."
 
 #: src/attributescommand.cpp:149
 #, kde-format
