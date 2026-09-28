@@ -1,0 +1,921 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Russian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Страница руководства akonadiclient</title>
+<author
+><firstname
+>Bhaskar</firstname
+> <surname
+>Kandiyal</surname
+> <contrib
+>Страница руководства akonadiclient.</contrib
+> <email
+>bkandiyal@gmail.com</email
+></author>
+<date
+>26 июля 2018 г.</date>
+<productname
+>AkonadiClient</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>akonadiclient</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>akonadiclient</command
+></refname>
+<refpurpose
+>Клиент командной строки для Akonadi</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>akonadiclient</command
+> <arg choice="opt"
+>команда</arg
+> <arg choice="opt"
+>--help</arg
+> <arg choice="opt"
+>--version</arg
+> <arg choice="opt"
+>общие параметры &kde;</arg
+> <arg choice="opt"
+>общие параметры Qt</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Описание</title>
+<para
+>akonadiclient — клиент командной строки для работы с хранилищем данных KDE Akonadi. С его помощью можно легко управлять данными Akonadi из командной строки: например, добавлять элементы и коллекции, переименовывать и перемещать коллекции, а также управлять агентами Akonadi.</para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Команды</title>
+	<refsect2>
+		<title
+>Команды для работы с коллекциями</title>
+		<variablelist>
+
+		<varlistentry>
+		<term
+><option
+>copy</option
+></term>
+		<listitem>
+		<para
+>akonadiclient copy [ПАРАМЕТРЫ] ИСТОЧНИК НАЗНАЧЕНИЕ</para>
+		<para
+>Скопировать коллекции или элементы из одной коллекции в другую.</para>
+		<para
+>Параметры:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>create</option
+></term>
+		<listitem>
+		<para
+>akonadiclient create [ПАРАМЕТРЫ] КОЛЛЕКЦИЯ</para>
+		<para
+>Создать новую коллекцию. Учтите, что коллекции верхнего уровня может создавать только ресурс Akonadi.</para>
+		<para
+>Параметры:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-p, --parent <replaceable
+>коллекция</replaceable
+></option
+></term>
+			<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+			</varlistentry>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>delete</option
+></term>
+		<listitem>
+		<para
+>akonadiclient delete [ПАРАМЕТРЫ] КОЛЛЕКЦИЯ | ЭЛЕМЕНТ</para>
+		<para
+>Удалить коллекцию или элемент.</para>
+		<para
+>Параметры:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-c, --collection</option
+></term>
+			<listitem
+><para
+>Считать, что аргумент — коллекция</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --item</option
+></term>
+			<listitem
+><para
+>Считать, что аргумент — элемент</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>list</option
+></term>
+		<listitem>
+		<para
+>akonadiclient list [ПАРАМЕТРЫ] КОЛЛЕКЦИЯ</para>
+		<para
+>Удалить коллекцию или элемент.</para>
+		<para
+>Параметры:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-l, --details</option
+></term>
+			<listitem
+><para
+>Выводить подробные сведения</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-c, --collections</option
+></term>
+			<listitem
+><para
+>Выводить только вложенные коллекции</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --items</option
+></term>
+			<listitem
+><para
+>Выводить только содержащиеся элементы</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>move</option
+></term>
+		<listitem>
+		<para
+>akonadiclient move [ПАРАМЕТРЫ] ИСТОЧНИК НАЗНАЧЕНИЕ</para>
+		<para
+>Переместить коллекции или элементы в другую коллекцию.</para>
+		<para
+>Параметры:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>rename</option
+></term>
+		<listitem>
+		<para
+>akonadiclient rename [ПАРАМЕТРЫ] КОЛЛЕКЦИЯ ИМЯ</para>
+		<para
+>Переименовать указанную коллекцию в ИМЯ</para>
+		<para
+>Параметры:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Команды для работы с данными</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>add</option
+></term>
+				<listitem>
+				<para
+>akonadiclient add [ПАРАМЕТРЫ] КОЛЛЕКЦИЯ ФАЙЛЫ</para>
+				<para
+>Добавить элементы в указанную коллекцию</para>
+				<para
+>Параметры:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --base <replaceable
+>каталог</replaceable
+></option
+></term>
+					<listitem
+><para
+>Базовый каталог для входных файлов и каталогов, по умолчанию — текущий</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --flat</option
+></term>
+					<listitem
+><para
+>Плоский режим: не воспроизводить структуру подкаталогов</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-m, --mime <replaceable
+>тип MIME</replaceable
+></option
+></term>
+					<listitem
+><para
+>Использовать указанный тип MIME (вместо автоматического определения)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+                        <varlistentry>
+				<term
+><option
+>dump</option
+></term>
+				<listitem>
+				<para
+>akonadiclient dump [ПАРАМЕТРЫ] КОЛЛЕКЦИЯ КАТАЛОГ</para>
+				<para
+>Выгрузить КОЛЛЕКЦИЮ в структуру каталогов КАТАЛОГ</para>
+				<para
+>Параметры:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-m, --maildir</option
+></term>
+					<listitem
+><para
+>Выгрузить почтовые сообщения в структуру каталогов maildir</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-a, --akonadi-categories</option
+></term>
+					<listitem
+><para
+>Выгрузить элементы с категориями Akonadi, иначе — как текст</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f, --force</option
+></term>
+					<listitem
+><para
+>Выполнять, даже если целевой каталог не пуст</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>edit</option
+></term>
+				<listitem>
+				<para
+>akonadiclient edit [ПАРАМЕТРЫ] ЭЛЕМЕНТ</para>
+				<para
+>Открыть содержимое ЭЛЕМЕНТА в текстовом редакторе, заданном переменной среды $EDITOR</para>
+				<para
+>Параметры:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>expand</option
+></term>
+				<listitem>
+				<para
+>akonadiclient expand [ПАРАМЕТРЫ] ЭЛЕМЕНТ</para>
+				<para
+>Развернуть элемент группы контактов</para>
+				<para
+>Параметры:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Краткий вывод (только адреса электронной почты)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>export</option
+></term>
+				<listitem>
+				<para
+>akonadiclient export [ПАРАМЕТРЫ] КОЛЛЕКЦИЯ ФАЙЛ</para>
+				<para
+>Экспортировать КОЛЛЕКЦИЮ в файл XML, заданный как ФАЙЛ.</para>
+				<para
+>Параметры:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+                        <varlistentry>
+				<term
+><option
+>group</option
+></term>
+				<listitem>
+				<para
+>akonadiclient group [ПАРАМЕТРЫ] ГРУППА АРГУМЕНТЫ</para>
+				<para
+>Развернуть или изменить ГРУППУ контактов</para>
+				<para
+>Параметры:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-e, --expand</option
+></term>
+					<listitem
+><para
+>Показать развёрнутую группу контактов (действие по умолчанию)</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-a, --add</option
+></term>
+					<listitem
+><para
+>Добавить контакт в группу</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-d, --delete</option
+></term>
+					<listitem
+><para
+>Удалить контакт из группы</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-C, --clean</option
+></term>
+					<listitem
+><para
+>Удалить из группы ссылки на неизвестные элементы</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+                                            <term
+><option
+>-c, --comment <replaceable
+>имя</replaceable
+></option
+></term>
+					<listitem
+><para
+>Комментарий (имя) к адресу добавляемого элемента</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Краткий вывод (для «expand» — только адреса электронной почты)</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+
+			<varlistentry>
+				<term
+><option
+>import</option
+></term>
+				<listitem>
+				<para
+>akonadiclient import [ПАРАМЕТРЫ] РОДИТЕЛЬ ФАЙЛ</para>
+				<para
+>Импортировать файл XML в коллекцию РОДИТЕЛЬ. Если коллекция уже существует, её содержимое объединяется с содержимым коллекции из файла XML.</para>
+				<para
+>Параметры:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>info</option
+></term>
+				<listitem>
+				<para
+>akonadiclient info [ПАРАМЕТРЫ] КОЛЛЕКЦИЯ | ЭЛЕМЕНТ</para>
+				<para
+>Показать полные сведения о коллекции или элементе</para>
+				<para
+>Параметры:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-c, --collection</option
+></term>
+					<listitem
+><para
+>Считать, что указана коллекция</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-i, --item</option
+></term>
+					<listitem
+><para
+>Считать, что указан элемент</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>show</option
+></term>
+				<listitem>
+				<para
+>akonadiclient show ЭЛЕМЕНТ</para>
+				<para
+>Показать необработанное содержимое элемента</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>tags</option
+></term>
+				<listitem>
+				<para
+>akonadiclient tags [ПАРАМЕТРЫ]</para>
+				<para
+>Вывести список всех известных меток</para>
+				<para
+>Параметры:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>Краткий вывод — только названия меток</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-u, --urls</option
+></term>
+					<listitem
+><para
+>Краткий вывод — только URL меток</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>update</option
+></term>
+				<listitem>
+				<para
+>akonadiclient update [ПАРАМЕТРЫ] ЭЛЕМЕНТ ФАЙЛ</para>
+				<para
+>Заменить необработанное содержимое ЭЛЕМЕНТА содержимым ФАЙЛА</para>
+				<para
+>Параметры:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>Прочие команды</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>agents</option
+></term>
+				<listitem>
+					<para
+>akonadiclient agents [ПАРАМЕТРЫ] [АГЕНТЫ...]</para>
+					<para
+>Управление агентами Akonadi: изменение их состояния, перезапуск агента, вывод списка всех агентов и их состояния.</para>
+					<para
+>Параметры:</para>
+					<variablelist>
+
+						<varlistentry>
+							<term
+><option
+>-l, --list</option
+></term>
+							<listitem
+><para
+>Вывести список всех агентов</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-s, --setstate <replaceable
+>состояние</replaceable
+></option
+></term>
+							<listitem
+><para
+>Задать состояние указанных агентов. Допустимые состояния — «offline» и «online».</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-g, --getstate</option
+></term>
+							<listitem
+><para
+>Получить состояние указанных агентов</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-i, --info</option
+></term>
+							<listitem
+><para
+>Показать сведения об указанных агентах</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-r, --restart</option
+></term>
+							<listitem
+><para
+>Перезапустить указанных агентов</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-n, --dryrun</option
+></term>
+							<listitem
+><para
+>Выполнить без внесения реальных изменений</para
+></listitem>
+						</varlistentry>
+
+					</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>help</option
+></term>
+				<listitem>
+					<para
+>akonadiclient help [КОМАНДА]</para>
+					<para
+>Показать справку по КОМАНДЕ. Если КОМАНДА не указана, выводится список всех доступных команд</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>shell</option
+></term>
+				<listitem>
+					<para
+>akonadiclient shell</para>
+					<para
+>Вводить команды в интерактивной оболочке</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</refsect2>
+</refsect1>
+
+<refsect1>
+<title
+>Примеры</title>
+<para
+><emphasis role="bold"
+>akonadiclient list /</emphasis
+> — вывести список всех коллекций в корневой коллекции</para>
+<para
+><emphasis role="bold"
+>akonadiclient export /Notes notes.xml</emphasis
+> — экспортировать все элементы и вложенные коллекции коллекции /Notes в файл «notes.xml»</para>
+<para
+><emphasis role="bold"
+>akonadiclient agents -l</emphasis
+> — вывести список всех агентов</para>
+<para
+><emphasis role="bold"
+>akonadiclient add /Notes note.txt</emphasis
+> — добавить содержимое файла note.txt как элемент в коллекцию /Notes</para>
+<para
+><emphasis role="bold"
+>akonadiclient add -m application/x-vnd.akonadi.calendar.todo /Todos todo.ics</emphasis
+> — добавить содержимое файла todo.ics как задачу календаря в коллекцию /Todos</para>
+</refsect1>
+
+</refentry>
