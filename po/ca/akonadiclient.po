@@ -1,16 +1,16 @@
 # Translation of akonadiclient.po to Catalan
-# Copyright (C) 2018-2025 This_file_is_part_of_KDE
+# Copyright (C) 2018-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2018, 2020-2021 Antoni Bella Pérez <antonibella5@yahoo.com>
-# SPDX-FileCopyrightText: 2018-2019, 2021-2022, 2024-2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2018-2019, 2021-2022, 2024-2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:52+0000\n"
-"PO-Revision-Date: 2025-02-17 10:06+0100\n"
+"PO-Revision-Date: 2026-10-11 20:16+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -567,7 +567,7 @@ msgstr "S'han trobat %1 col·leccions actuals de l'Akonadi"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Cannot save backup list to '%1'"
-msgstr "No s'ha pogut desar la llista de còpia de seguretat a «%1»"
+msgstr "No s'ha pogut desar la llista de còpies de seguretat a «%1»"
 
 #: src/attributescommand.cpp:424
 #, kde-format
@@ -2456,7 +2456,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Added tag '%1' ID %2"
-msgstr "S'ha afegir l'etiqueta «%1» ID %2"
+msgstr "S'ha afegit l'etiqueta «%1» ID %2"
 
 #: src/tagscommand.cpp:376
 #, kde-format
