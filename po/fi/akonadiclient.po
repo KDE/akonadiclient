@@ -143,9 +143,7 @@ msgstr "Litteä tila: ei monista alikansiorakennetta"
 #, kde-format
 msgid "MIME type of added items, default is to auto-detect"
 msgstr ""
-"Lisättyjen tietueiden MIME-tyyppi, oletuksena tunnistetaan "
-"automaattisestiLisättyjen tietueiden MIME-tyyppi, oletuksena tunnistetaan "
-"automaattisesti"
+"Lisättyjen tietueiden MIME-tyyppi, oletuksena tunnistetaan automaattisesti"
 
 #: src/addcommand.cpp:67
 #, kde-format
