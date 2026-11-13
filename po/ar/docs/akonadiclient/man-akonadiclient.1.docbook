@@ -1,0 +1,921 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Arabic "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>صفحة دليل akonadiclient</title>
+<author
+><firstname
+>Bhaskar</firstname
+> <surname
+>Kandiyal</surname
+> <contrib
+>akonadiclient man page.</contrib
+> <email
+>bkandiyal@gmail.com</email
+></author>
+<date
+>2018-07-26</date>
+<productname
+>AkonadiClient</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>akonadiclient</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>akonadiclient</command
+></refname>
+<refpurpose
+>عميل سطر أوامر لـ Akonadi</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>akonadiclient</command
+> <arg choice="opt"
+>أمر</arg
+> <arg choice="opt"
+>--help</arg
+> <arg choice="opt"
+>--version</arg
+> <arg choice="opt"
+>خيارات كيدي العامة</arg
+> <arg choice="opt"
+>خيارات كيوت العامة</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>الوصف</title>
+<para
+>akonadiclient هو عميل سطر أوامر للتعامل مع مخزن بيانات Akonadi في كيدي. يوفر طريقة سهلة للتعامل مع بيانات Akonadi عبر سطر الأوامر. على سبيل المثال، إضافة عناصر، مجموعات، إعادة تسمية أو نقل المجموعات، وكذلك التحكم في وكلاء Akonadi.</para>
+
+</refsect1>
+
+<refsect1>
+<title
+>الأوامر</title>
+	<refsect2>
+		<title
+>أوامر نظام الملفات</title>
+		<variablelist>
+
+		<varlistentry>
+		<term
+><option
+>نسخ</option
+></term>
+		<listitem>
+		<para
+>akonadiclient copy [OPTIONS] SOURCE DESTINATION</para>
+		<para
+>يُستخدم لنسخ المجموعات أو العناصر من مجموعة إلى أخرى.</para>
+		<para
+>الخيارات:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>create</option
+></term>
+		<listitem>
+		<para
+>akonadiclient create [OPTIONS] COLLECTION</para>
+		<para
+>ينشئ مجموعة جديدة. يُرجى ملاحظة أن المجموعات عالية المستوى لا يمكن إنشاؤها إلا بواسطة مورد Akonadi.</para>
+		<para
+>الخيارات:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-p, --parent <replaceable
+>مجموعة</replaceable
+></option
+></term>
+			<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+			</varlistentry>
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>delete</option
+></term>
+		<listitem>
+		<para
+>akonadiclient delete [OPTIONS] COLLECTION | ITEM</para>
+		<para
+>يحذف مجموعة أو عنصرًا.</para>
+		<para
+>الخيارات:</para>
+		<variablelist>
+			<varlistentry>
+			<term
+><option
+>-c, --collection</option
+></term>
+			<listitem
+><para
+>افترض أن مجموعة محددة كوسيط</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i, --item</option
+></term>
+			<listitem
+><para
+>افترض أن عنصر محدد كوسيط</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+			</varlistentry>
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>list</option
+></term>
+		<listitem>
+		<para
+>akonadiclient list [OPTIONS] COLLECTION</para>
+		<para
+>يحذف مجموعة أو عنصرًا.</para>
+		<para
+>الخيارات:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-l, --details</option
+></term>
+			<listitem
+><para
+>اسرد معلومات أكثر تفصيلًا</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-c, --collections</option
+></term>
+			<listitem
+><para
+>اعرض المجموعات الفرعية فقط</para
+></listitem>
+			</varlistentry>
+
+			<varlistentry>
+			<term
+><option
+>-i، --items</option
+></term>
+			<listitem
+><para
+>اعرض العناصر المضمنة فقط</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>move</option
+></term>
+		<listitem>
+		<para
+>akonadiclient move [OPTIONS] SOURCE DESTINATION</para>
+		<para
+>انقل المجموعات أو العناصر إلى مجموعة أخرى.</para>
+		<para
+>الخيارات:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		<varlistentry>
+		<term
+><option
+>إعادة تسمية</option
+></term>
+		<listitem>
+		<para
+>akonadiclient rename [خيارات] المجموعة الاسم</para>
+		<para
+>يعيد تسمية مجموعة محددة إلى الاسم</para>
+		<para
+>الخيارات:</para>
+		<variablelist>
+
+			<varlistentry>
+			<term
+><option
+>-n, --dryrun</option
+></term>
+			<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+		</listitem>
+		</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>أوامر البيانات</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>add</option
+></term>
+				<listitem>
+				<para
+>akonadiclient add [OPTIONS] COLLECTION FILES</para>
+				<para
+>أضف عناصر إلى مجموعة محددة</para>
+				<para
+>الخيارات:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --base <replaceable
+>دليل</replaceable
+></option
+></term>
+					<listitem
+><para
+>الدليل الأساسي لملفات/أدلة الإدخال، المبدئي هو الحالي</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f، --flat</option
+></term>
+					<listitem
+><para
+>الوضع المسطح، لا تكرر بنية الدليل الفرعي</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-m، --mime <replaceable
+>نوع-مايم</replaceable
+></option
+></term>
+					<listitem
+><para
+>نوع مايم للاستخدام (بدلًا من الكشف الآلي)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+                        <varlistentry>
+				<term
+><option
+>تفريغ</option
+></term>
+				<listitem>
+				<para
+>akonadiclient dump [خيارات] المجموعة الدليل</para>
+				<para
+>فرغ مجموعة إلى بنية دليل</para>
+				<para
+>الخيارات:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-m، --maildir</option
+></term>
+					<listitem
+><para
+>فرغ رسائل البريد الإلكتروني في بنية دليل maildir</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-a، --akonadi-categories</option
+></term>
+					<listitem
+><para
+>فرغ العناصر مع تصنيفات أكونادي، وإلا نص</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-f، --force</option
+></term>
+					<listitem
+><para
+>اعمل حتى لو كان دليل الوجهة غير فارغ</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>edit</option
+></term>
+				<listitem>
+				<para
+>akonadiclient edit [OPTIONS] ITEM</para>
+				<para
+>يفتح محتوى العنصر في محرر نصوص محدد بمتغير البيئة $EDITOR</para>
+				<para
+>الخيارات:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>expand</option
+></term>
+				<listitem>
+				<para
+>akonadiclient expand [OPTIONS] ITEM</para>
+				<para
+>يوسّع عنصر مجموعة متراسلين</para>
+				<para
+>الخيارات:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>مخرجات مختصرة (عناوين البريد الإلكتروني فقط)</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>export</option
+></term>
+				<listitem>
+				<para
+>akonadiclient export [OPTIONS] COLLECTION FILE</para>
+				<para
+>يصدّر المجموعة المحددة بـ مجموعة إلى ملف XML محدد بـ ملف.</para>
+				<para
+>الخيارات:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+                        <varlistentry>
+				<term
+><option
+>group</option
+></term>
+				<listitem>
+				<para
+>akonadiclient group [OPTIONS] GROUP ARGS</para>
+				<para
+>يوسّع أو يعدّل مجموعة متراسلين</para>
+				<para
+>الخيارات:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-e, --expand</option
+></term>
+					<listitem
+><para
+>يظهر المجموعة الموسّعة من المتراسلين (العملية المبدئية)</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-a, --add</option
+></term>
+					<listitem
+><para
+>يضيف متراسلًا إلى المجموعة</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-d, --delete</option
+></term>
+					<listitem
+><para
+>يحذف متراسلًا من المجموعة</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-C, --clean</option
+></term>
+					<listitem
+><para
+>يزيل مراجع العناصر غير المعروفة من المجموعة</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+                                            <term
+><option
+>-c، --comment <replaceable
+>اسم</replaceable
+></option
+></term>
+					<listitem
+><para
+>تعليق البريد الإلكتروني (الاسم) لعنصر مضاف</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>مخرجات مختصرة (لـ 'وسّع'، عناوين البريد الإلكتروني فقط)</para
+></listitem>
+					</varlistentry>
+
+                                        <varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+
+			<varlistentry>
+				<term
+><option
+>import</option
+></term>
+				<listitem>
+				<para
+>akonadiclient import [OPTIONS] PARENT FILE</para>
+				<para
+>يستورد ملف XML داخل المجموعة المحددة بـ أب. إذا كانت المجموعة موجودة مسبقًا، تُدمج محتوياتها مع محتويات المجموعة في ملف XML.</para>
+				<para
+>الخيارات:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>info</option
+></term>
+				<listitem>
+				<para
+>akonadiclient info [OPTIONS] COLLECTION | ITEM</para>
+				<para
+>يظهر معلومات كاملة عن مجموعة أو عنصر</para>
+				<para
+>الخيارات:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-c, --collection</option
+></term>
+					<listitem
+><para
+>افترض أن مجموعة محددة</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-i, --item</option
+></term>
+					<listitem
+><para
+>افترض أن عنصرًا محددًا</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>show</option
+></term>
+				<listitem>
+				<para
+>akonadiclient show العنصر</para>
+				<para
+>يعرض المحتوى الخام لعنصر</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>الوسوم</option
+></term>
+				<listitem>
+				<para
+>akonadiclient وسوم [خيارات]</para>
+				<para
+>اسرد جميع الوسوم المعروفة</para>
+				<para
+>الخيارات:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-b, --brief</option
+></term>
+					<listitem
+><para
+>مخرجات موجزة - أسماء الوسوم فقط</para
+></listitem>
+					</varlistentry>
+
+					<varlistentry>
+					<term
+><option
+>-u، --urls</option
+></term>
+					<listitem
+><para
+>مخرجات موجزة - روابط الوسوم فقط</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>حدّث</option
+></term>
+				<listitem>
+				<para
+>akonadiclient حدّث [خيارات] العنصر الملف</para>
+				<para
+>يحدّث المحتوى الخام للعنصر بمحتويات الملف</para>
+				<para
+>الخيارات:</para>
+				<variablelist>
+
+					<varlistentry>
+					<term
+><option
+>-n, --dryrun</option
+></term>
+					<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+					</varlistentry>
+
+				</variablelist>
+				</listitem>
+			</varlistentry>
+
+		</variablelist>
+	</refsect2>
+
+	<refsect2>
+		<title
+>أوامر متنوعة</title>
+		<variablelist>
+
+			<varlistentry>
+				<term
+><option
+>الوكلاء</option
+></term>
+				<listitem>
+					<para
+>akonadiclient وكلاء [خيارات] [الوكلاء...]</para>
+					<para
+>يسمح بإدارة وكلاء أكيونادي مثل تغيير حالتهم أو إعادة تشغيل وكيل أو سرد جميع الوكلاء وحالتهم.</para>
+					<para
+>الخيارات:</para>
+					<variablelist>
+
+						<varlistentry>
+							<term
+><option
+>-l، --list</option
+></term>
+							<listitem
+><para
+>اسرد جميع الوكلاء</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-s، --setstate <replaceable
+>حالة</replaceable
+></option
+></term>
+							<listitem
+><para
+>اضبط الحالة للوكلاء المحددين. الحالات الصالحة هي 'غير متصل' و'متصل'.</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-g، --getstate</option
+></term>
+							<listitem
+><para
+>احصل على الحالة للوكلاء المحددين</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-i، --info</option
+></term>
+							<listitem
+><para
+>اعرض معلومات عن الوكلاء المحددين</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-r، --restart</option
+></term>
+							<listitem
+><para
+>أعد تشغيل الوكلاء المحددين</para
+></listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term
+><option
+>-n, --dryrun</option
+></term>
+							<listitem
+><para
+>شغّل دون إجراء أي تغييرات فعلية</para
+></listitem>
+						</varlistentry>
+
+					</variablelist>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>مساعدة</option
+></term>
+				<listitem>
+					<para
+>akonadiclient مساعدة [أمر]</para>
+					<para
+>يعرض المساعدة للأمر. إذا لم يُحدد الأمر، يسرد جميع الأوامر المتاحة</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term
+><option
+>صدفة</option
+></term>
+				<listitem>
+					<para
+>صدفة أكونادي العميل</para>
+					<para
+>أدخل الأوامر في صدفة تفاعلية</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</refsect2>
+</refsect1>
+
+<refsect1>
+<title
+>أمثلة</title>
+<para
+><emphasis role="bold"
+>akonadiclient list /</emphasis
+> - يسرد جميع المجموعات تحت المجموعة الجذر</para>
+<para
+><emphasis role="bold"
+>akonadiclient export /Notes notes.xml</emphasis
+> - يصدر جميع العناصر والمجموعات الفرعية للمجموعة /Notes إلى الملف 'notes.xml'</para>
+<para
+><emphasis role="bold"
+>akonadiclient agents -l</emphasis
+> - يسرد جميع الوكلاء</para>
+<para
+><emphasis role="bold"
+>akonadiclient add /Notes note.txt</emphasis
+> - يضيف محتويات الملف note.txt كعنصر في المجموعة /Notes</para>
+<para
+><emphasis role="bold"
+>akonadiclient add -m application/x-vnd.akonadi.calendar.todo /Todos todo.ics</emphasis
+> - يضيف محتويات الملف todo.ics كمدخل تقويم TODO في المجموعة /Todos</para>
+</refsect1>
+
+</refentry>
