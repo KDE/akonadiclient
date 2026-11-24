@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the akonadiclient package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2021.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022-2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadiclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:52+0000\n"
-"PO-Revision-Date: 2026-05-02 18:52+0300\n"
+"PO-Revision-Date: 2026-11-23 18:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -129,7 +129,7 @@ msgstr "Ögeleri bir koleksiyona ekle"
 #, kde-format
 msgid "Base directory for input files/directories, default is current"
 msgstr ""
-"Girdi dosyaları/koleksiyonları için temel dizin, öntanımlı dizin geçerli "
+"Girdi dosyaları/koleksiyonları için temel dizin, varsayılan dizin geçerli "
 "olandır"
 
 #: src/addcommand.cpp:60
@@ -145,7 +145,7 @@ msgstr "Düz kip, altdizin yapısını yineleme"
 #: src/addcommand.cpp:66
 #, kde-format
 msgid "MIME type of added items, default is to auto-detect"
-msgstr "Eklenen ögelerin MIME türü, öntanımlı ayar kendiliğinden algılamadır"
+msgstr "Eklenen ögelerin MIME türü, varsayılan ayar kendiliğinden algılamadır"
 
 #: src/addcommand.cpp:67
 #, kde-format
@@ -407,7 +407,7 @@ msgstr "Bir koleksiyon için olan öznitelikleri göster veya güncelle"
 #: src/attributescommand.cpp:93
 #, kde-format
 msgid "Show the collection attributes (the default operation)"
-msgstr "Koleksiyon özniteliklerini göster (öntanımlı işlem)"
+msgstr "Koleksiyon özniteliklerini göster (varsayılan işlem)"
 
 #: src/attributescommand.cpp:96
 #, kde-format
@@ -1470,7 +1470,7 @@ msgstr "Bir kişi grubunu genişlet veya değiştir"
 #: src/groupcommand.cpp:58
 #, kde-format
 msgid "Show the expanded contact group (the default operation)"
-msgstr "Genişletilmiş kişi grubunu göster (öntanımlı işlem)"
+msgstr "Genişletilmiş kişi grubunu göster (varsayılan işlem)"
 
 #: src/groupcommand.cpp:61
 #, kde-format
@@ -2295,7 +2295,7 @@ msgstr "Yalın çıktı, yalnızca etiket URL’leri"
 #: src/tagscommand.cpp:62
 #, kde-format
 msgid "List all known tags (the default operation)"
-msgstr "Bilinen tüm etiketleri listeleyin (öntanımlı işlem)"
+msgstr "Bilinen tüm etiketleri listeleyin (varsayılan işlem)"
 
 #: src/tagscommand.cpp:65
 #, kde-format
@@ -2320,7 +2320,7 @@ msgstr "Kayıtlı etiketleri (yeni bir veri tabanına) geri yükle"
 #: src/tagscommand.cpp:75
 #, kde-format
 msgid "ID for a tag to be added (default automatic)"
-msgstr "Eklenecek bir etiket için kimlik (öntanımlı kendiliğinden)"
+msgstr "Eklenecek bir etiket için kimlik (varsayılan kendiliğinden)"
 
 #: src/tagscommand.cpp:75
 #, kde-format
